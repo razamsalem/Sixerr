@@ -17,7 +17,7 @@ export function HomePage() {
 
     return (
         <section>
-            <img src={logo} alt="Logo" style={{ maxWidth: '300px' }} />
+            {/* <img src={logo} alt="Logo" style={{ maxWidth: '300px' }} />
             <h2>
                 Count {count}
                 <button onClick={() => {
@@ -27,7 +27,7 @@ export function HomePage() {
                     changeCount(10)
                 }}>+10</button>
             </h2 >
-            <img src={utilService.getAssetSrc('react.svg')} />
+            <img src={utilService.getAssetSrc('react.svg')} /> */}
         </section >
     )
 }

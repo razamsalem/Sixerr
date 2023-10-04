@@ -1,6 +1,5 @@
 .app-header {
     background-color: $light-clr;
-    padding: 10px;
 
 
     .user-info {
@@ -9,8 +8,6 @@
         .score {
             background-color: $clr2;
             color: $clr6;
-            padding: 8px;
-            margin: 10px;
             border-radius: 50%;
         }
 
@@ -39,8 +36,7 @@
 
     nav a:not(:first-child) {
         border-top: 1px solid $clr1;
-        padding: 0 5px;
-        margin: 10px;
+        padding: 0;
     }
 
     nav .active {
