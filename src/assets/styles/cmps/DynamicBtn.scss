@@ -10,6 +10,10 @@
     padding: 12px 16px;
     border: 1px solid $light-clr2;
     border-radius: 8px;
+
+    &:not(:last-child) {
+        margin-inline-end: 12px
+    }
     
     color: $dark-clr;
     background-color: $light-clr;
@@ -17,6 +21,11 @@
 
     &:focus {
         background-color: $light-clr1;
+        border: 1px solid $dark-clr1;
+    }
+
+    &:hover {
+        border: 1px solid $dark-clr1;
     }
 
     .btns {

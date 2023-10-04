@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react';
 
 import { dynamicService } from "../services/dynamicBtn.service.js"
 import DynamicModal from "./DynamicModal.jsx"
@@ -9,9 +9,11 @@ export function DynamicBtn() {
     const [btns, setBtns] = useState(null)
     const [isArrowUp, setIsArrowUp] = useState([])
     const [selectedBtn, setSelectedBtn] = useState(null)
+    const modalRef = useRef(null)
 
     useEffect(() => {
         getBtns()
+
     }, [])
 
     async function getBtns() {
@@ -24,35 +26,50 @@ export function DynamicBtn() {
         }
     }
 
+
     function onToggleArrow(ev, idx) {
         setIsArrowUp((prevStates) => {
             const newStates = prevStates.map((state, i) => (i === idx ? !state : false))
-            console.log(newStates)
             return newStates
         })
-        // console.dir(ev.target)
-        setSelectedBtn({ ...btns[idx], position: { top: ev.clientY, left: ev.clientX } })
+        const buttonRect = ev.target.getBoundingClientRect()
+        if (ev.target.className === "icon fa-solid angle-down") return
+        if (ev.target.className === "icon fa-solid angle-up") return
+        setSelectedBtn({
+            ...btns[idx],
+            position: {
+                top: buttonRect.bottom + window.scrollY,
+                left: ev.target.offsetLeft + window.scrollX,
+                btnWidth: buttonRect.width,
+            },
+        })
     }
 
     function closeModal() {
-        setSelectedBtn(null);
+        setSelectedBtn(null)
     }
 
     if (!btns) return '<div></div>'
 
     return (
         <section className="filter-btns">
-                {btns.map((btn, idx) => (
-                    <button
-                        key={btn.title}
-                        onClick={(ev) => onToggleArrow(ev,idx)}
-                        className={`filter-btn ${isArrowUp[idx] ? 'arrow-up' : ''}`}
-                    >
-                        {btn.title}{' '}
-                        <span className={`icon fa-solid ${isArrowUp[idx] ? 'angle-up' : 'angle-down'}`}></span>
-                    </button>
-                ))}
-                <DynamicModal isOpen={selectedBtn !== null} onClose={closeModal} content={'some content'} position={selectedBtn?.position}/> 
+            {btns.map((btn, idx) => (
+                <button
+                    key={btn.title}
+                    onClick={(ev) => onToggleArrow(ev, idx)}
+                    className={`filter-btn ${isArrowUp[idx] ? 'arrow-up' : ''}`}
+                >
+                    {btn.title}{' '}
+                    <span className={`icon fa-solid ${isArrowUp[idx] ? 'angle-up' : 'angle-down'}`}></span>
+                </button>
+            ))}
+            <DynamicModal
+                isOpen={selectedBtn !== null}
+                onClose={closeModal}
+                content={'some content'}
+                position={selectedBtn?.position}
+                modalRef={modalRef}
+            />
         </section>
     )
 
