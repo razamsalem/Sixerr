@@ -18,7 +18,7 @@ export function CategoryNav() {
         <div className="sub-header-container main-layout full">
             <nav className="category-header">
                 <ul className="categories-container">
-                    {categories.map(c => <Link className="category-link">{c}</Link>)}
+                    {categories.map(c => <Link key={c} className="category-link">{c}</Link>)}
                 </ul>
             </nav>
         </div>
