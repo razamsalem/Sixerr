@@ -1,0 +1,38 @@
+.filter-btn {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: start;
+    font-weight: 600;
+    min-width: 50px;
+    min-height: 48px;
+    color: $dark-clr;
+    background-color: $light-clr;
+    padding: 12px 16px;
+    border: 1px solid $dark-clr-2;
+    border-radius: 8px;
+    transition: .12s;
+
+    &:focus{
+        background-color: $light-clr1;
+    }
+
+    .icon {
+        &.fa-solid.angle-down::before {
+            font-family: fa-solid;
+        }
+    
+        &.fa-solid.angle-down::after {
+            content: " \f107";
+        }
+
+        &.fa-solid.angle-up::before {
+            font-family: fa-solid;
+        }
+    
+        &.fa-solid.angle-up::after {
+            content: " \f106";
+        }
+    }
+
+
+}
