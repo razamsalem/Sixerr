@@ -28,28 +28,30 @@
 @mixin aspect-ratio($width, $height) {
     position: relative;
     overflow: hidden;
+
     &::before {
-      display: block;
-      content: "";
-      width: 100%;
-      padding-top: calc(($height / $width) * 100%);
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: calc(($height / $width) * 100%);
     }
-    > * {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+
+    >* {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
-  
-    > img {
-      height: 100%;
-      object-fit: cover;
+
+    >img {
+        height: 100%;
+        object-fit: cover;
     }
-  }
-  
-  // Mixin for removing hover efects on iphone screen
-  @mixin hover-supported {    
+}
+
+// Mixin for removing hover efects on iphone screen
+@mixin hover-supported {
     @media not all and (pointer: coarse) {
         &:hover {
             @content;
@@ -71,3 +73,22 @@
         width: em(96px);
     }
   }
+
+
+@mixin btn($type: regular, $bg-color: $accent-clr, $color: $light-clr) {
+    background-color: $bg-color;
+    color: $color;
+    padding: em(10px) em(16px);
+    border-radius: em(5px);
+
+    @if $type ==light {
+        color: $bg-color;
+        background-color: $color;
+        transition: background-color 0.4s;
+
+        &:hover {
+            color: $color;
+            background-color: $bg-color;
+        }
+    }
+}

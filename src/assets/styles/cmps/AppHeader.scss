@@ -9,8 +9,9 @@
         background-color: $light-clr;
 
         .logo {
+            // font-family: Roboto;
             font-weight: 1000;
-            font-size: 48px;
+            font-size: em(40px);
             letter-spacing: -5px;
             cursor: pointer;
 
@@ -19,14 +20,71 @@
             }
         }
 
+        .searchbar-container {
+            display: flex;
+            width: 100%;
+            height: em(45px);
+            margin-inline: em(32px);
+
+            .search-bar {
+                font-size: 1rem;
+                width: min(100%, em(550px));
+                height: 100%;
+                padding: 10px 2px 10px 16px;
+                border: 1px solid $dark-clr-2;
+                border-inline-end: 0;
+                border-top-left-radius: em(5px);
+                border-bottom-left-radius: em(5px);
+                outline: 0;
+            }
+
+            .btn {
+                margin: 0px;
+                height: 100%;
+                padding: 8px 16px;
+                font-size: 1rem;
+                min-width: 55px;
+                border-radius: 0 em(5px) em(5px) 0;
+
+                &.search-icon {
+                    background-color: $dark-clr1;
+                    transition: background-color 0.2s;
+                }
+
+                &.search-icon:hover {
+                    background-color: $dark-clr;
+                }
+
+                &.fa-solid.search-icon::before {
+                    font-family: fa-solid;
+
+                }
+
+                &.fa-solid.search-icon::after {
+                    content: '\f002';
+
+                }
+            }
+
+        }
+
         .links-container {
             a {
-                padding-inline-end: em(20px);
+                margin-inline-end: 1.25em;
                 font-size: 1rem;
                 line-height: em(24px);
                 font-weight: 700;
                 color: $dark-clr-1;
                 transition: 0.2s color;
+
+                &.btn {
+
+                    &.join {
+                        border: 1px solid $accent-clr;
+                        @include btn($type: light, $bg-color: $accent-clr, $color: $light-clr)
+                    }
+                }
+
             }
 
             a:hover {
