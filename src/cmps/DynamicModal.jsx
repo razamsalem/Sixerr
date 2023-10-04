@@ -35,19 +35,25 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef }) {
                 <div className="more-filter-item">
                     <div className="content-title">
                         {btn.content}
-                        {btn.title === 'Seller details' && 
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br /> Nam impedit tempore, molestias doloremque sint?</p>}
+                        {btn.title === 'Seller details' &&
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br /> Nam impedit tempore, molestias doloremque sint?</p>}
                     </div>
                 </div>
                 {btn.title === 'Budget' &&
                     <section className='flex-container'>
                         <div className="left">
                             <label>MIN.</label>
-                            <input type="number" name='gig-price-range' id='gig-price-range-min' className='min' placeholder='Any' min='0' max='50000' />
+                            <div className="input-price-filter">
+                                <input type="number" name='gig-price-range' id='gig-price-range-min' className='min' placeholder='Any' min='0' max='50000' />
+                                <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696460033/dollar-symbol_hxbp91.png" alt="Dollar symbol" />
+                            </div>
                         </div>
                         <div className="right">
                             <label>MAX.</label>
-                            <input type="number" name='gig-price-range' id='gig-price-range-max' className='max' placeholder='Any' min='0' max='50000' />
+                            <div className="input-price-filter">
+                                <input type="number" name='gig-price-range' id='gig-price-range-max' className='max' placeholder='Any' min='0' max='50000' />
+                                <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696460033/dollar-symbol_hxbp91.png" alt="Dollar symbol" />
+                            </div>
                         </div>
                     </section>
                 }

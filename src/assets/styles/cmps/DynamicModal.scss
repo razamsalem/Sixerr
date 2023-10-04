@@ -3,17 +3,13 @@
     flex-direction: column;
     position: absolute;
     top: 100%;
-    left: 0;
 
-    font-size: 14px;
     line-height: 22px;
-
-    // min-width: 35%;
-    // min-height: 25%;
+    font-size: 14px;
     border: 1px solid $light-clr2;
     border-radius: 8px;
-
     background-color: $light-clr;
+
     z-index: 3;
     transition: .12s;
 
@@ -23,6 +19,7 @@
         overflow-y: scroll;
         position: relative;
         top: 0px;
+        animation: .3s fadeInDown;
         transition: .24s;
 
         .more-filter-item {
@@ -74,6 +71,12 @@
                     resize: none;
                     font: inherit;
 
+                    &::-webkit-inner-spin-button,
+                    ::-webkit-outer-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+
                     &:focus-visible {
                         outline: none;
                     }
@@ -87,6 +90,20 @@
                     }
                 }
             }
+        }
+    }
+
+    .input-price-filter {
+        display: flex;
+        position: relative;
+        align-items: center;
+
+        img {
+            position: absolute;
+            right: 7px;
+            height: 14px;
+            width: 10px;
+
         }
     }
 
