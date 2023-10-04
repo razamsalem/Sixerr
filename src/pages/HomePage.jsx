@@ -7,7 +7,7 @@ import { CHANGE_COUNT } from '../store/user.reducer'
 // import { Carousel } from 'react-responsive-carousel';
 import { utilService } from '../services/util.service'
 import { SellingArea } from './SellingArea'
-
+import { TrustedBy } from '../cmps/TrustedBy'
 
 
 export function HomePage() {
@@ -15,6 +15,7 @@ export function HomePage() {
     return (
         <section className='home main-layout full'>
             <Hero />
+            <TrustedBy />
             <SellingArea />
         </section >
     )

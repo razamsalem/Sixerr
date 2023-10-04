@@ -1,0 +1,29 @@
+.trusted-by-container {
+    background-color: $trusted-by-bg-clr;
+
+    .trusted-by {
+        display: flex;
+        gap: em(60px);
+        justify-content: center;
+        height: em(95px);
+        align-items: center;
+
+        span {
+            font-size: 1rem;
+            font-weight: 700;
+            color: $trusted-by-clr;
+        }
+
+        ul {
+            display: flex;
+            gap: 60px;
+
+            img {
+                height: 60px;
+                width: auto;
+            }
+        }
+    }
+
+
+}
