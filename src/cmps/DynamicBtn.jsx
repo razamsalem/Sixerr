@@ -32,9 +32,9 @@ export function DynamicBtn() {
             const newStates = prevStates.map((state, i) => (i === idx ? !state : false))
             return newStates
         });
-    
+
         const buttonRect = ev.currentTarget.getBoundingClientRect()
-    
+
         setSelectedBtn({
             ...btns[idx],
             position: {
@@ -64,8 +64,10 @@ export function DynamicBtn() {
                 </button>
             ))}
             <DynamicModal
+
                 isOpen={selectedBtn !== null}
                 onClose={closeModal}
+                btn={selectedBtn}
                 content={'some content'}
                 position={selectedBtn?.position}
                 modalRef={modalRef}
