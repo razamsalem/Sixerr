@@ -56,3 +56,18 @@
         }
     }
   }
+
+  @mixin owner-profile-img($type: regular) {
+    // display: inline-flex;
+    border-radius: 50%;
+    cursor: pointer;
+  
+  
+    @if $type == regular {
+        width: em(24px);
+    } @else if $type == meduim {
+        width: em(64px);
+    } @else if $type == large {
+        width: em(96px);
+    }
+  }

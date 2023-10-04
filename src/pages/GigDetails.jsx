@@ -28,14 +28,36 @@ export function GigDetails() {
         }
     }
 
-
+    if (!gig) return <div>Loading...</div>
     return (
         <section className="gig-details">
-            {console.log(gig)}
-            <h1>{gig?.title}</h1>
-            <h3>{gig?.owner?.fullname}</h3>
-            <img className="toy-img" src={gig?.imgUrls ? gig.imgUrls[0] : defaultImgUrl} alt="gig img" />  
-            <p>{gig?.desc}</p>
+            <h1>{gig.title}</h1>
+
+            <div className="owner-details-container">
+                <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-meduim"/>
+
+                <div className="owner-details">
+                    <h3 className="gig-title">{gig.owner.fullname}</h3>
+                    <span className="star-svg">
+                        <img src="src/assets/img/star.svg" alt="star-svg" className="star"/>
+                    </span>
+                    <span className="owner-rate">{gig.owner.rate}</span>
+                    <span className="owner-number-rates">(137)</span>
+                </div>
+                
+            </div>
+
+            <img className="gig-img" src={gig.imgUrls ? gig.imgUrls[0] : defaultImgUrl} alt="gig img" /> 
+
+             <div>
+                <h1>About this gig</h1>
+                <p>{gig.description}</p>
+             </div>
+
+            <div className="call-to-action">
+                <img src="src/assets/img/price.png" alt="price" />
+            </div>
+
         </section>
     )
 }
