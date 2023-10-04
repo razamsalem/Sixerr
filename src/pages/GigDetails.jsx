@@ -6,6 +6,7 @@ import { Carousel } from 'react-responsive-carousel';
 import { gigService } from "../services/gig.service.local"
 import priceUrl from "../assets/img/price.png"
 import starUrl from "../assets/img/star.svg"
+import nextUrl from "../assets/img/next.svg"
 
 export function GigDetails() {
     const user = useSelector((storeState) => storeState.userModule.loggedinUser)
@@ -58,7 +59,7 @@ export function GigDetails() {
 
             {/* <img className="gig-img" src={gig.imgUrls ? gig.imgUrls[0] : defaultImgUrl} alt="gig img" />  */}
             
-            <div style={{gridColumn:2, marginBottom: '30px'}}>
+            <div style={{gridColumn:2, marginBottom: '30px',position:'relative'}}>
             <Carousel renderArrowNext={(clickHandler, hasNext) => {
                 return (
                     // <div
@@ -69,10 +70,17 @@ export function GigDetails() {
                     // >
                     //     <RightIcon className="w-9 h-9 text-white" />
                     // </div>
-                    <button style={{color:'#1dbf73'}}>
-                        fsdfs
+                    <button className= 'next-btn' onClick={clickHandler} >
+                        <img src={nextUrl} alt="nextUrl" />
                     </button>
                     );
+            }}
+            renderArrowPrev={(clickHandler, hasNext)=>{
+                return(
+                    <button className= 'prev-btn' onClick={clickHandler} >
+                        <img src={nextUrl} alt="nextUrl" />
+                    </button>
+                )
             }}
             >
                 {gig.imgUrls.map(img=>{
