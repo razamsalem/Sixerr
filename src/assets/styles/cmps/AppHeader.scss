@@ -27,15 +27,7 @@
             margin-inline: em(32px);
 
             .search-bar {
-                font-size: 1rem;
-                width: min(100%, em(550px));
-                height: 100%;
-                padding: 10px 2px 10px 16px;
-                border: 1px solid $dark-clr-2;
-                border-inline-end: 0;
-                border-top-left-radius: em(5px);
-                border-bottom-left-radius: em(5px);
-                outline: 0;
+                @include search-bar
             }
 
             .btn {

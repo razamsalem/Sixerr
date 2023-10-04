@@ -1,7 +1,60 @@
 .hero {
     position: relative;
     height: rem(770px);
-    // max-width: 1501px;
+
+    .hero-cover {
+        width: em(650px);
+        height: 100%;
+        position: absolute;
+        z-index: 200;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+
+        .hero-heading {
+            font-size: em(48px);
+            color: $light-clr;
+
+            span {
+                font-family: fa-solid;
+            }
+        }
+
+        .search-bar-container {
+            display: flex;
+            height: em(48px);
+
+            &>* {
+                width: 100%;
+                height: 100%;
+            }
+
+            .search {
+                @include search-bar
+            }
+
+            .search-btn {
+                width: em(66px);
+                font-size: 1rem;
+
+                @include btn($bg-color: $accent-clr, $color: $light-clr);
+                border-radius: 0 em(5px) em(5px) 0;
+
+                &:hover {
+                    background-color: darken($accent-clr, 4%);
+                }
+
+                &::before {
+                    font-family: fa-solid;
+                }
+
+                &::after {
+                    content: '\f002';
+                }
+            }
+        }
+    }
 
     .hero-img-container {
         position: absolute;
@@ -13,7 +66,8 @@
             width: 100%;
             opacity: 0;
             position: absolute;
-            transition: opacity 1.7s;
+            transition: opacity 1s;
+            transition-timing-function: ease;
             z-index: 100;
 
             &.visible {

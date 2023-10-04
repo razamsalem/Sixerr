@@ -57,22 +57,26 @@
             @content;
         }
     }
-  }
+}
 
-  @mixin owner-profile-img($type: regular) {
+@mixin owner-profile-img($type: regular) {
     // display: inline-flex;
     border-radius: 50%;
     cursor: pointer;
-  
-  
-    @if $type == regular {
+
+
+    @if $type ==regular {
         width: em(24px);
-    } @else if $type == meduim {
+    }
+
+    @else if $type ==meduim {
         width: em(64px);
-    } @else if $type == large {
+    }
+
+    @else if $type ==large {
         width: em(96px);
     }
-  }
+}
 
 
 @mixin btn($type: regular, $bg-color: $accent-clr, $color: $light-clr) {
@@ -91,4 +95,17 @@
             background-color: $bg-color;
         }
     }
+}
+
+
+@mixin search-bar($type: regular) {
+    font-size: 1rem;
+    width: min(100%, 34.375em);
+    height: 100%;
+    padding: 10px 2px 10px 16px;
+    border: 1px solid #e5e5e7;
+    border-inline-end: 0;
+    border-top-left-radius: 0.3125em;
+    border-bottom-left-radius: 0.3125em;
+    outline: 0;
 }

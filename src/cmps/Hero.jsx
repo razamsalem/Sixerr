@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { HeroFilter } from "./HeroFilter";
 
 export function Hero() {
     const presenters =
@@ -12,7 +13,7 @@ export function Hero() {
     useEffect(() => {
         const interval = setInterval(() => {
             getNextPresenter()
-        }, 4500);
+        }, 6000);
         return () => clearInterval(interval);
     }, [])
 
@@ -24,12 +25,12 @@ export function Hero() {
             return nextPresenter
         });
     }
-
     return (
-        <section className="hero full">
+        <section className="full hero main-layout">
+            <HeroFilter />
             {presenters.map(presenter => {
                 return (
-                    <article className="hero-img-container" style={{ backgroundColor: `${presenter.bgColor}` }}>
+                    <article key={presenter.imgUrl} className="full hero-img-container" style={{ backgroundColor: `${presenter.bgColor}` }}>
                         <div className={`cover-img ${presenter.name === currPresenter.name ? 'visible' : ''}`} style={
                             { background: `url(${presenter.imgUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }
                         } />
