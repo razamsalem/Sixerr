@@ -34,9 +34,7 @@ export function Hero() {
                         <div className={`cover-img ${presenter.name === currPresenter.name ? 'visible' : ''}`} style={
                             { background: `url(${presenter.imgUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }
                         } />
-                    </article>
-                )
-
+                    </article>)
             })}
         </section>
     )

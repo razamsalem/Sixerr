@@ -85,6 +85,22 @@
     padding: em(10px) em(16px);
     border-radius: em(5px);
 
+    @if $type ==pill {
+        display: block;
+        border: 1px solid $color;
+        font-size: rem(14px);
+        line-height: rem(25px);
+        border-radius: 3rem;
+        padding: 1px 12px 0;
+        transition: background-color 0.5s, color 0.7s;
+
+
+        &:hover {
+            color: $dark-clr;
+            background-color: $color;
+        }
+    }
+
     @if $type ==light {
         color: $bg-color;
         background-color: $color;

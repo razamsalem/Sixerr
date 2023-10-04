@@ -1,0 +1,21 @@
+.hero-cover {
+    .popular {
+        display: flex;
+        align-items: center;
+        gap: rem(12px);
+        color: $light-clr;
+        font-size: rem(14px);
+        font-weight: 700;
+
+        ul {
+            display: flex;
+            gap: rem(12px);
+
+            li {
+                a {
+                    @include btn($type: pill, $bg-color: transparent, $color: $light-clr)
+                }
+            }
+        }
+    }
+}

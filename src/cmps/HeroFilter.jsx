@@ -1,3 +1,5 @@
+import { PopularTags } from "./PopularTags";
+
 export function HeroFilter() {
 
     return (
@@ -9,9 +11,7 @@ export function HeroFilter() {
                 <input className="search" type="text" placeholder="Search for any service..." />
                 <button className="search-btn btn fa-solid search-icon size=lg" />
             </section>
-
-
-
+            <PopularTags />
         </section>
     )
 }
