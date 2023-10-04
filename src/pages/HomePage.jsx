@@ -4,6 +4,7 @@ import logo from '../assets/img/logo.png'
 import { CHANGE_COUNT } from '../store/user.reducer'
 
 import { utilService } from '../services/util.service'
+import { SellingArea } from './SellingArea'
 
 
 export function HomePage() {
@@ -16,18 +17,10 @@ export function HomePage() {
     }
 
     return (
-        <section>
-            {/* <img src={logo} alt="Logo" style={{ maxWidth: '300px' }} />
-            <h2>
-                Count {count}
-                <button onClick={() => {
-                    changeCount(1)
-                }}>+</button>
-                <button onClick={() => {
-                    changeCount(10)
-                }}>+10</button>
-            </h2 >
-            <img src={utilService.getAssetSrc('react.svg')} /> */}
+        <section className='main-layout'>
+            <section>Popular services
+</section>
+           <SellingArea />
         </section >
     )
 }

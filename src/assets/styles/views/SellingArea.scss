@@ -1,0 +1,42 @@
+.selling-container {
+    padding-block-end: 2.6rem;
+    background-color: $home-light-clr;
+    max-height: 667.188px;
+    max-width: 1691px;
+
+    .selling {
+        display: flex;
+        max-width: 1400px;
+        max-height: 667px;
+        padding-inline-end: 32px;
+        padding-block: 61px;
+        margin-inline-end: 145px;
+        margin-inline-start: 161px;
+        gap: 100px;
+
+        .left-info {
+            max-width: 489px;
+            max-height: 475px;
+
+            h2 {
+                font-size: 2rem;
+                font-weight: 700;
+                text-align: start;
+                line-height: 2.4rem;
+
+                color: $dark-clr;
+                padding-block-end: 24px;
+            }
+        }
+
+        .right-info {
+            flex: 1;
+            align-self: center;
+
+            img {
+                // width: 121%;
+                padding-inline: 16px;
+            }
+        }
+    }
+}
