@@ -1,0 +1,25 @@
+.sub-header-container {
+    border-block-end: 1.5px solid $dark-clr-2;
+
+    .category-header {
+        .categories-container {
+            display: flex;
+            gap: rem(30px);
+
+            .category-link {
+                padding-block: 11px;
+                color: $dark-clr-1;
+                transition: 0.2s color;
+
+                &:hover {
+                    color: $dark-clr1;
+                    box-shadow: inset 0 -2.5px $accent-clr;
+                }
+            }
+
+
+        }
+    }
+
+
+}

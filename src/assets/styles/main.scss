@@ -16,10 +16,10 @@
 @import "views/AboutUs";
 @import "views/SellingArea";
 @import "views/HomePage";
-@import "views/CarIndex";
 @import "views/BabaIndex";
 @import "views/ReviewIndex";
 @import "views/UserDetails";
+@import "views/GigDetails.scss";
 
 // Components
 @import "cmps/AppHeader";
@@ -30,5 +30,6 @@
 @import "cmps/GigListWrapper..scss";
 @import "cmps/ShoppingCart";
 @import "cmps/DynamicBtn.scss";
+@import "cmps/CategoryNav";
 @import "cmps/DynamicModal.scss";
 @import "cmps/Modal";

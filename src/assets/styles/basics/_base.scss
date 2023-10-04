@@ -4,10 +4,10 @@
     margin: 0;
 }
 
-::selection {
-    background-color: $clr1;
-    color: $clr6;
-}
+// ::selection {
+//     background-color: $clr1;
+//     color: $clr6;
+// }
 
 html {
     font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -56,8 +56,20 @@ a {
     cursor: pointer;
 }
 
-a:hover {}
+// a:hover {}
 
 a:visited {
     color: $dark-clr;
+}
+
+.owner-profile-img {
+    @include owner-profile-img;
+    
+    &-meduim {
+        @include owner-profile-img($type: meduim);
+    }
+    
+    &-large {
+        @include owner-profile-img($type: large);
+    }
 }
