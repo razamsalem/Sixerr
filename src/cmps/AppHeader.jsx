@@ -40,8 +40,16 @@ export function AppHeader() {
                 <h1 className='logo' onClick={() => { navigate('/') }}>
                     Sixerr<span className='dot'>.</span>
                 </h1>
+
+                <div className="searchbar-container">
+                    <input type="text" className="search-bar" />
+                    <button className='btn'>S</button>
+                </div>
+
                 <nav className='links-container'>
-                    {routes.map(route => !route.shouldRender ? '' : <NavLink key={route.path} to={route.path}>{route.label}</NavLink>)}
+                    {routes.map(route => !route.shouldRender ? ''
+                        :
+                        <NavLink key={route.path} to={route.path}>{route.label}</NavLink>)}
 
                     {user &&
                         <span className="user-info">
