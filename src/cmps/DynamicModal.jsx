@@ -7,7 +7,6 @@ function DynamicModal({ isOpen, onClose, content, position }) {
         position: 'absolute',
         top: position.top + 'px',
         left: position.left + 'px',
-        transform: 'translate(-50%, 0)',
     }
 
     return (

@@ -18,8 +18,6 @@ export function HomePage() {
 
     return (
         <section className='main-layout'>
-            <section>Popular services
-</section>
            <SellingArea />
         </section >
     )
