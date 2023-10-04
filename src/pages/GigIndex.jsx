@@ -6,7 +6,7 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { userService } from '../services/user.service.js'
 import { gigService } from '../services/gig.service.local.js'
 import { GigList } from '../cmps/GigList.jsx'
-import { DynamicBtn } from './DynamicBtn.jsx'
+import { DynamicBtn } from '../cmps/DynamicBtn.jsx'
 
 export function GigIndex() {
 

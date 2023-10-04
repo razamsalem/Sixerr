@@ -4,7 +4,7 @@ import { CarIndex } from './pages/CarIndex.jsx'
 import { ReviewIndex } from './pages/ReviewIndex.jsx'
 import { ChatApp } from './pages/Chat.jsx'
 import { AdminApp } from './pages/AdminIndex.jsx'
-import { DynamicBtn } from './pages/DynamicBtn.jsx'
+import { DynamicBtn } from './cmps/DynamicBtn.jsx'
 import { GigIndex } from './pages/GigIndex.jsx'
 import { GigDetails } from './pages/GigDetails.jsx'
 

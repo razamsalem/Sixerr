@@ -1,18 +1,21 @@
-import { surveyService } from "../services/dynamicBtn.service.js"
-
 import { useState, useEffect } from 'react'
+
+import { dynamicService } from "../services/dynamicBtn.service.js"
+import DynamicModal from "./DynamicModal.jsx"
+
 export function DynamicBtn() {
     // const [survey, setSurvey] = useState(null)
     // const [answersMap, setAnswersMap] = useState({})
     const [btns, setBtns] = useState(null)
     const [isArrowUp, setIsArrowUp] = useState([])
+    const [selectedBtn, setSelectedBtn] = useState(null)
 
     useEffect(() => {
         getBtns()
     }, [])
 
     async function getBtns() {
-        const btns = await surveyService.getById()
+        const btns = await dynamicService.getById()
         try {
             setBtns(btns)
             setIsArrowUp(btns.map(() => false))
@@ -21,26 +24,38 @@ export function DynamicBtn() {
         }
     }
 
-    function onToggleArrow(idx) {
+    function onToggleArrow(ev, idx) {
         setIsArrowUp((prevStates) => {
             const newStates = prevStates.map((state, i) => (i === idx ? !state : false))
             console.log(newStates)
             return newStates
         })
+        // console.dir(ev.target)
+        setSelectedBtn({ ...btns[idx], position: { top: ev.clientY, left: ev.clientX } })
+    }
+
+    function closeModal() {
+        setSelectedBtn(null);
     }
 
     if (!btns) return '<div></div>'
 
     return (
         <section className="filter-btns">
-            {btns.map((btn, index) => (
-                <button key={btn.title} onClick={() => onToggleArrow(index)} className="filter-btn">
-                    {btn.title}{' '}
-                    <span className={`icon fa-solid ${isArrowUp[index] ? 'angle-up' : 'angle-down'}`}></span>
-                </button>
-            ))}
+                {btns.map((btn, idx) => (
+                    <button
+                        key={btn.title}
+                        onClick={(ev) => onToggleArrow(ev,idx)}
+                        className={`filter-btn ${isArrowUp[idx] ? 'arrow-up' : ''}`}
+                    >
+                        {btn.title}{' '}
+                        <span className={`icon fa-solid ${isArrowUp[idx] ? 'angle-up' : 'angle-down'}`}></span>
+                    </button>
+                ))}
+                <DynamicModal isOpen={selectedBtn !== null} onClose={closeModal} content={'some content'} position={selectedBtn?.position}/> 
         </section>
     )
+
 
     // return (
     //     <section className="survey-app">

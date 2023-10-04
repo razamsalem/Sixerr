@@ -1,0 +1,94 @@
+.dynamic-modal {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    font-size: 14px;
+    line-height: 22px;
+
+    min-width: 35%;
+    min-height: 25%;
+    border: 1px solid $light-clr2;
+    border-radius: 8px;
+
+    background-color: $light-clr;
+    z-index: 3;
+    transition: .12s;
+
+    .content-scroll {
+        max-height: 14.333rem;
+        padding: 24px;
+        overflow-y: scroll;
+        position: relative;
+        top: 0px;
+        transition: .24s;
+        // transform: translate(-50%, -50%);
+        .more-filter-item {
+            border-block-end: 1px solid $modal-underline-clr;
+            padding: 24px 8px;
+            padding-block-start: 0;
+
+            .content-title {
+                color: $modal-content-clr;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 24px;
+                margin-block-end: 8px;
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .button-row {
+        align-items: center;
+        border-block-start: 1px solid $light-clr2;
+        box-shadow:0 12px 18px rgba(0,0,0,.14);
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+        padding: 16px 24px;
+
+        .clear-btn {
+            border: none;
+            line-height: 24px;
+            padding: 0;
+            width: max-content;
+            background: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 600;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition: 70ms;
+            color: $modal-btn-clr;
+
+            &:hover {
+                color: $modal-hover-clr;
+            }
+        }
+
+        .apply-btn {
+            line-height: 24px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            font-weight: 600;
+            padding: 12px 24px;
+            position: relative;
+            text-align: center;
+            color: $light-clr;
+            background-color: #000;
+
+            &:hover {
+                background-color: $modal-hover-clr2;
+            }
+        }
+    }
+}
