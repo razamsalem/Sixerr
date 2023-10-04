@@ -14,17 +14,17 @@ const routes = [
         path: '/',
         component: <HomePage />,
         label: 'Home',
-        shouldRender: true
+        shouldRender: false
     },
     {
         path: 'gig',
         component: <GigIndex />,
-        label: 'Gigs',
+        label: 'Explore',
         shouldRender: true
     },
     {
         path: `gig/:gigId`,
-        component: <GigDetails/>,
+        component: <GigDetails />,
         shouldRender: false
     },
     // {

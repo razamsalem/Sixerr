@@ -1,0 +1,23 @@
+.modal-overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .65);
+
+    .modal-content {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1.4;
+        background: $light-clr;
+        padding: 14px 28px;
+        border-radius: 3px;
+        max-width: 600px;
+        min-width: 300px;
+    }
+}

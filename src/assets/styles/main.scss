@@ -1,8 +1,8 @@
 // Setup
+@import "setup/typography";
 @import "setup/variables";
 @import "setup/functions";
 @import "setup/mixins";
-@import "setup/typography";
 
 // Basics
 @import "basics/helpers";
@@ -26,9 +26,4 @@
 @import "cmps/UserMsg";
 @import "cmps/GigList.scss";
 @import "cmps/ShoppingCart";
-
-
-
-
-
-
+@import "cmps/Modal";

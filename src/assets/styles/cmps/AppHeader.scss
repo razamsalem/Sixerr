@@ -1,53 +1,38 @@
-.app-header {
-    background-color: $clr4;
-    padding: 10px;
+.header-container {
+    height: em(80px);
+    border-block-end: 1px solid $dark-clr-2;
 
+    .app-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $light-clr;
 
-    .user-info {
-        // background-color: $clr2;
-        // padding: 2px 8px;
-        padding-left: 100px;
-        color: $clr1;
+        .logo {
+            font-weight: 1000;
+            font-size: 48px;
+            letter-spacing: -5px;
+            cursor: pointer;
 
-        .score {
-            background-color: $clr2;
-            color: $clr6;
-            padding: 8px;
-            margin: 10px;
-            border-radius: 50%;
+            .dot {
+                color: $accent-clr;
+            }
         }
 
-        img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            object-fit: cover;
+        .links-container {
+            a {
+                padding-inline-end: em(20px);
+                font-size: 1rem;
+                line-height: em(24px);
+                font-weight: 700;
+                color: $dark-clr-1;
+                transition: 0.2s color;
+            }
+
+            a:hover {
+                color: $accent-clr;
+            }
         }
-    }
-
-    .user-info .btn-link {
-        color: $clr2;
-    }
-
-    nav {
-        font-size: .8em;
-        background-color: $clr5;
-        padding: 5px;
-
-    }
-
-    nav a:first-child {
-        margin-right: 30px;
-    }
-
-    nav a:not(:first-child) {
-        border-top: 1px solid $clr1;
-        padding: 0 5px;
-        margin: 10px;
-    }
-
-    nav .active {
-        color: $clr1;
     }
 
 }
