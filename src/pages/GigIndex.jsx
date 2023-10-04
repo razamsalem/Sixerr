@@ -59,6 +59,8 @@ export function GigIndex() {
 
     return (
         <div>
+            {/* <h3>Gig App</h3> */}
+           
             <h3>Gig App</h3>
             <DynamicBtn />
             <main>
