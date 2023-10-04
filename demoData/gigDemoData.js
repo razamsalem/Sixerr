@@ -13,7 +13,7 @@ const gigDemoData = [
     },
     daysToMake: 3,
     description: "You are the best as you are checking the best gig here on Fiverr and you have a very good eye for design. I will design you a logo for businesses to events, I can pull together an excellent, professional-looking artwork to be used on any type of print media or digitally. There are a lot of logos out there - but the great ones always catch your eye and leave a lasting impression. Let's design one together!",
-    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/229020114/original/e9d6bca4248af0e976ed0ec1068114090ac8e393/do-professional-modern-minimalist-logo-design.jpg"],
+    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/292332178/original/18841f3470f65b26636437baa1fd560438fb1a51/do-modern-and-elegant-logo-design-for-your-business.jpeg","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/292332178/original/748f0d7770acaa93f8e7734a78252dd0359ce24b/do-modern-and-elegant-logo-design-for-your-business.jpeg"],
     tags: [
       "logo-design",
       "artisitic",
