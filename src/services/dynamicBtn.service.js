@@ -5,20 +5,23 @@ export const dynamicService = {
 
 async function getById() {
     return filterBtns
-    return survey
 }
 
 const filterBtns = [{
     title: 'Service options',
+    content:'Service'
 },
 {
     title: 'Seller details',
+    content: 'Seller level'
 },
 {
     title: 'Budget',
+    content: ''
 },
 {
     title: 'Delivery time',
+    content: ''
 },
 ]
 

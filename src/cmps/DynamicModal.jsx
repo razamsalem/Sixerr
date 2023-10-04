@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-function DynamicModal({ isOpen, onClose, content, position, modalRef }) {
+function DynamicModal({ btn, isOpen, onClose, content, position, modalRef }) {
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -25,6 +25,8 @@ function DynamicModal({ isOpen, onClose, content, position, modalRef }) {
         position: 'absolute',
         top: position.top + 'px',
         left: position.left + 'px',
+        width: isOpen ? 'auto' : 0,
+        height: isOpen ? 'auto' : 0,
     }
 
     return (
@@ -32,10 +34,23 @@ function DynamicModal({ isOpen, onClose, content, position, modalRef }) {
             <div className="content-scroll">
                 <div className="more-filter-item">
                     <div className="content-title">
-                        Seller level
+                        {btn.content}
+                        {btn.title === 'Seller details' && 
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br /> Nam impedit tempore, molestias doloremque sint?</p>}
                     </div>
                 </div>
-                {content}
+                {btn.title === 'Budget' &&
+                    <section className='flex-container'>
+                        <div className="left">
+                            <label>MIN.</label>
+                            <input type="number" name='gig-price-range' id='gig-price-range-min' className='min' placeholder='Any' min='0' max='50000' />
+                        </div>
+                        <div className="right">
+                            <label>MAX.</label>
+                            <input type="number" name='gig-price-range' id='gig-price-range-max' className='max' placeholder='Any' min='0' max='50000' />
+                        </div>
+                    </section>
+                }
             </div>
             <div className='button-row'>
                 <button className='clear-btn'>Clear All</button>

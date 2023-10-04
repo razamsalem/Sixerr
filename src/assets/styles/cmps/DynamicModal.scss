@@ -1,4 +1,6 @@
 .dynamic-modal {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
@@ -6,8 +8,8 @@
     font-size: 14px;
     line-height: 22px;
 
-    min-width: 35%;
-    min-height: 25%;
+    // min-width: 35%;
+    // min-height: 25%;
     border: 1px solid $light-clr2;
     border-radius: 8px;
 
@@ -22,10 +24,10 @@
         position: relative;
         top: 0px;
         transition: .24s;
-        // transform: translate(-50%, -50%);
+
         .more-filter-item {
             border-block-end: 1px solid $modal-underline-clr;
-            padding: 24px 8px;
+            // padding: 24px 8px;
             padding-block-start: 0;
 
             .content-title {
@@ -43,12 +45,55 @@
             right: 10px;
             cursor: pointer;
         }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+
+            .left,
+            .right {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-size: 12px;
+                    color: $modal-filter-txt-clr;
+                    margin-bottom: 4px;
+                }
+
+                input {
+                    min-height: 36px;
+                    min-width: 120px;
+                    padding: 8px 12px;
+                    border: 1px solid $modal-filter-border-clr;
+                    border-radius: 4px;
+                    appearance: textfield;
+                    color: $dark-clr;
+                    transition: border-color 0.35s ease;
+                    resize: none;
+                    font: inherit;
+
+                    &:focus-visible {
+                        outline: none;
+                    }
+
+                    &:focus {
+                        border: 1px solid $dark-clr1;
+                    }
+
+                    &:hover {
+                        border: 1px solid $dark-clr1;
+                    }
+                }
+            }
+        }
     }
 
     .button-row {
         align-items: center;
         border-block-start: 1px solid $light-clr2;
-        box-shadow:0 12px 18px rgba(0,0,0,.14);
+        box-shadow: 0 12px 18px rgba(0, 0, 0, .14);
         display: flex;
         gap: 16px;
         justify-content: space-between;
