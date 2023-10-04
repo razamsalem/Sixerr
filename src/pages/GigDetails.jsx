@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useParams, useNavigate, Link } from "react-router-dom"
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+// import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { gigService } from "../services/gig.service.local"
 import priceUrl from "../assets/img/price.png"
 import starUrl from "../assets/img/star.svg"
@@ -33,30 +33,6 @@ export function GigDetails() {
     }
 
     if (!gig) return <div>Loading...</div>
-    // const images = [
-    //     {
-    //       original: gig.imgUrls[0],
-    //       thumbnail: "https://fiverr-res.cloudinary.com/images/t_thumbnail3_3,q_auto,f_auto/gigs/292332178/original/18841f3470f65b26636437baa1fd560438fb1a51/do-modern-and-elegant-logo-design-for-your-business.jpeg",
-    //     },
-    //     {
-    //       original: gig.imgUrls[1],
-    //       thumbnail: "https://fiverr-res.cloudinary.com/images/t_thumbnail3_3,q_auto,f_auto/gigs2/292332178/original/748f0d7770acaa93f8e7734a78252dd0359ce24b/do-modern-and-elegant-logo-design-for-your-business.jpeg",
-    //     },
-    //   ];
-    // const images = [
-    //     {
-    //       original: "https://picsum.photos/id/1018/1000/600/",
-    //       thumbnail: "https://picsum.photos/id/1018/250/150/",
-    //     },
-    //     {
-    //       original: "https://picsum.photos/id/1015/1000/600/",
-    //       thumbnail: "https://picsum.photos/id/1015/250/150/",
-    //     },
-    //     {
-    //       original: "https://picsum.photos/id/1019/1000/600/",
-    //       thumbnail: "https://picsum.photos/id/1019/250/150/",
-    //     },
-    //   ];
     return (
         <section className="gig-details">
 
@@ -81,10 +57,25 @@ export function GigDetails() {
             </div>
 
             {/* <img className="gig-img" src={gig.imgUrls ? gig.imgUrls[0] : defaultImgUrl} alt="gig img" />  */}
+            
             <div style={{gridColumn:2, marginBottom: '30px'}}>
-            <Carousel>
+            <Carousel renderArrowNext={(clickHandler, hasNext) => {
+                return (
+                    // <div
+                    //     className={`${
+                    //     hasNext ? "absolute" : "hidden"
+                    //     } top-0 bottom-0 right-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
+                    //     onClick={clickHandler}
+                    // >
+                    //     <RightIcon className="w-9 h-9 text-white" />
+                    // </div>
+                    <button style={{color:'#1dbf73'}}>
+                        fsdfs
+                    </button>
+                    );
+            }}
+            >
                 {gig.imgUrls.map(img=>{
-                    // console.log(img);
                     return <img src={img}/>
                 })}
             </Carousel>

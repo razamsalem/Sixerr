@@ -1,3 +1,12 @@
+@import url(react-responsive-carousel/lib/styles/carousel.min.css);
+
+.e-carousel .e-carousel-navigators .e-next .e-btn:not(:disabled) .e-btn-icon,
+.e-carousel .e-carousel-navigators .e-previous .e-btn:not(:disabled) .e-btn-icon
+{
+    color: greenyellow;
+    font-size: 25px;
+}
+
 .gig-details{
     display: grid;
     grid-template-columns: 32px 2fr 114px 1fr 32px;

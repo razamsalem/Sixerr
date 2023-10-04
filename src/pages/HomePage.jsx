@@ -12,8 +12,6 @@ import { SellingArea } from './SellingArea'
 
 export function HomePage() {
 
-
-
     return (
         <section className='home main-layout full'>
             <Hero />
