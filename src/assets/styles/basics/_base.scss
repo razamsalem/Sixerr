@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 ::selection {
@@ -9,15 +11,11 @@
 
 html {
     font-family: montserrat;
-    line-height: 1.6;
-    color: $clr2;
+    color: $dark-clr;
 }
 
 body {
-    font-size: rem(18px);
     margin: 0;
-    max-width: 1024px;
-    margin: auto;
     accent-color: $accent-clr;
 }
 
@@ -28,7 +26,7 @@ h4,
 h5,
 h6 {
     font-family: caveat;
-    margin: 0 0 0.6em;
+    margin: 0;
     line-height: 1;
 }
 
@@ -42,7 +40,7 @@ ul {
 section,
 main,
 footer {
-    padding: 5px;
+    padding: 0;
 }
 
 img {
@@ -50,13 +48,14 @@ img {
 }
 
 p {
-    margin: 0 0 1em;
+    margin: 0;
 }
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 a:hover {
-    text-decoration: underline;
+    // text-decoration: underline;
 }

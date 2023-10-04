@@ -35,6 +35,7 @@ export function AppHeader() {
 
     return (
         <header className="app-header">
+            <h1>Sixerr.</h1>
             <nav>
                 {routes.map(route => !route.shouldRender ? '' : <NavLink key={route.path} to={route.path}>{route.label}</NavLink>)}
 
@@ -49,12 +50,9 @@ export function AppHeader() {
                     </span>
                 }
                 {!user &&
-                    <section className="user-info">
-                        <LoginSignup onLogin={onLogin} onSignup={onSignup} />
-                    </section>
+                    <LoginSignup onLogin={onLogin} onSignup={onSignup} />
                 }
             </nav>
-            <h1>My App</h1>
         </header>
     )
 }
