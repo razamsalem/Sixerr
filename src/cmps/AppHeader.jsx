@@ -42,7 +42,7 @@ export function AppHeader() {
                 </h1>
 
                 <div className="searchbar-container">
-                    <input type="text" className="search-bar" />
+                    <input type="text" className="search-bar" placeholder='What service are you looking for today?' />
                     <button className='btn'>S</button>
                 </div>
 
