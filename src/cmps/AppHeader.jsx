@@ -43,7 +43,7 @@ export function AppHeader() {
 
                 <div className="searchbar-container">
                     <input type="text" className="search-bar" placeholder='What service are you looking for today?' />
-                    <button className='btn'>S</button>
+                    <button className='btn fa-solid search-icon size=lg'></button>
                 </div>
 
                 <nav className='links-container'>

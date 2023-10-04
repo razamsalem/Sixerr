@@ -67,8 +67,8 @@ export function LoginSignup(props) {
     }
     return (
         <>
-            <a className="btn" onClick={onSetSignIn}>Login</a>
-            <a className="btn" onClick={onSetSignup}>Join</a>
+            <a className="btn login" onClick={onSetSignIn}>Login</a>
+            <a className="btn join" onClick={onSetSignup}>Join</a>
 
             <Modal open={isModalOpen} onClose={onCloseModal}>
                 <>
