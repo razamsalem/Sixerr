@@ -19,12 +19,12 @@ const routes = [
     {
         path: 'gig',
         component: <GigIndex />,
-        label: 'Gigs',
+        label: 'Explore',
         shouldRender: true
     },
     {
         path: `gig/:gigId`,
-        component: <GigDetails/>,
+        component: <GigDetails />,
         shouldRender: false
     },
     // {

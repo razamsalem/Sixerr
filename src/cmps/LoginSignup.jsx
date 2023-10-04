@@ -45,6 +45,14 @@ export function LoginSignup(props) {
         setIsSignup(!isSignup)
     }
 
+    function onSetSignIn() {
+        setIsSignup(false)
+    }
+
+    function onSetSignup() {
+        setIsSignup(true)
+    }
+
     function onUploaded(imgUrl) {
         setCredentials({ ...credentials, imgUrl })
     }
@@ -52,7 +60,8 @@ export function LoginSignup(props) {
     return (
         <div className="login-page">
             <p>
-                <button className="btn-link" onClick={toggleSignup}>{!isSignup ? 'Signup' : 'Login'}</button>
+                <a className="btn" onClick={onSetSignup}>Join</a>
+                <a className="btn" onClick={onSetSignIn}>Login</a>
             </p>
             {!isSignup && <form className="login-form" onSubmit={onLogin}>
                 <select
@@ -80,7 +89,7 @@ export function LoginSignup(props) {
                         onChange={handleChange}
                         required
                     /> */}
-                <button>Login!</button>
+                <button>Sign in</button>
             </form>}
             <div className="signup-section">
                 {isSignup && <form className="signup-form" onSubmit={onSignup}>
@@ -109,7 +118,7 @@ export function LoginSignup(props) {
                         required
                     />
                     <ImgUploader onUploaded={onUploaded} />
-                    <button >Signup!</button>
+                    <button >Join</button>
                 </form>}
             </div>
         </div>
