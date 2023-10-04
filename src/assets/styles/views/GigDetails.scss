@@ -1,15 +1,54 @@
 .gig-details{
-    h1{
-        padding-bottom: em(16px); 
+    display: grid;
+    grid-template-columns: 32px 2fr 114px 1fr 32px;
+
+    img{
+        grid-column: 2;
+        margin-bottom: rem(30px);
+        // margin-top: 26px;
+    }
+
+    .gig-title{ 
+        // margin-top: 100px;
+        padding-bottom: rem(16px); 
     }
     .owner-details{
         h3{
-            padding: 8px;
+            padding: 8px 8px 8px 0;
         }
+    .star-wrapper{
+        display: flex;
+        gap: 3px;
+    }
     }
 
     .owner-details-container{
         display: flex;
-        gap: em(12px);
+        gap: 16px;
+        flex-direction: column;
+        grid-column: 2;
+        margin-bottom: -13px;
+        .owner-details-container-1{
+            display: flex;
+            gap: rem(12px);
+        }
     }
+
+    .about-gig{
+        grid-column: 2;
+        .gig-about-title{
+            padding-bottom: 25px;
+            line-height: 28px;
+        }
+        .gig-description{
+            color:#62646a;
+            line-height: 24px;
+        }
+    }
+    .call-to-action{
+        // margin-top: em(100px);
+        grid-column: 4;
+        grid-row: 2;
+    }
+    
 }
