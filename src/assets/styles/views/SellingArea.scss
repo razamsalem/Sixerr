@@ -1,21 +1,22 @@
 .selling-container {
-    padding: 2.438rem;
+    padding-block-end: 2.6rem;
     background-color: $home-light-clr;
+    max-height: 667.188px;
+    max-width: 1691px;
 
     .selling {
         display: flex;
         max-width: 1400px;
         max-height: 667px;
-        padding-inline: 32px;
-        padding-block: 96px;
+        padding-inline-end: 32px;
+        padding-block: 61px;
         margin-inline-end: 145px;
-        margin-inline-start: 105px;
+        margin-inline-start: 161px;
+        gap: 100px;
 
         .left-info {
-            max-width: 4710px;
+            max-width: 489px;
             max-height: 475px;
-            padding-inline-end: 105px;
-            padding-inline-start: 16px;
 
             h2 {
                 font-size: 2rem;
@@ -33,8 +34,8 @@
             align-self: center;
 
             img {
-                width: 121%;
-                padding-inline-end: 16px;
+                // width: 121%;
+                padding-inline: 16px;
             }
         }
     }
