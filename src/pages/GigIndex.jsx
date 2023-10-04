@@ -61,12 +61,10 @@ export function GigIndex() {
         <div>
             {/* <h3>Gig App</h3> */}
            
-            <h3>Gig App</h3>
             <DynamicBtn />
             <main>
                 <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
                 <button onClick={onAddGig}>Add Gig</button>
-
             </main>
         </div>
     )
