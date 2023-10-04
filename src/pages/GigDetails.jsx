@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useParams, useNavigate, Link } from "react-router-dom"
 import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { gigService } from "../services/gig.service.local"
 import priceUrl from "../assets/img/price.png"
 import starUrl from "../assets/img/star.svg"
@@ -80,12 +81,15 @@ export function GigDetails() {
             </div>
 
             {/* <img className="gig-img" src={gig.imgUrls ? gig.imgUrls[0] : defaultImgUrl} alt="gig img" />  */}
+            <div style={{gridColumn:2, marginBottom: '30px'}}>
             <Carousel>
                 {gig.imgUrls.map(img=>{
-                    console.log(img);
+                    // console.log(img);
                     return <img src={img}/>
                 })}
             </Carousel>
+            </div>
+            
 
              <div className="about-gig">
                 <h1 className="gig-about-title">About this gig</h1>

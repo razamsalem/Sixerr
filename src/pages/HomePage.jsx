@@ -2,9 +2,10 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import logo from '../assets/img/logo.png'
 import { CHANGE_COUNT } from '../store/user.reducer'
-
+// import { Carousel } from 'react-responsive-carousel';
 import { utilService } from '../services/util.service'
 import { SellingArea } from './SellingArea'
+
 
 
 export function HomePage() {
@@ -15,11 +16,10 @@ export function HomePage() {
         console.log('Changing count by:', diff);
         dispatch({ type: CHANGE_COUNT, diff })
     }
-
     return (
         <section className='main-layout'>
             <section>Popular services
-</section>
+        </section>
            <SellingArea />
         </section >
     )
