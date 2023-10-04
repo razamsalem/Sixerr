@@ -31,15 +31,15 @@ export function DynamicBtn() {
         setIsArrowUp((prevStates) => {
             const newStates = prevStates.map((state, i) => (i === idx ? !state : false))
             return newStates
-        })
-        const buttonRect = ev.target.getBoundingClientRect()
-        if (ev.target.className === "icon fa-solid angle-down") return
-        if (ev.target.className === "icon fa-solid angle-up") return
+        });
+    
+        const buttonRect = ev.currentTarget.getBoundingClientRect()
+    
         setSelectedBtn({
             ...btns[idx],
             position: {
                 top: buttonRect.bottom + window.scrollY,
-                left: ev.target.offsetLeft + window.scrollX,
+                left: buttonRect.left + window.scrollX,
                 btnWidth: buttonRect.width,
             },
         })
