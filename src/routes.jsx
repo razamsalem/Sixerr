@@ -14,7 +14,7 @@ const routes = [
         path: '/',
         component: <HomePage />,
         label: 'Home',
-        shouldRender: true
+        shouldRender: false
     },
     {
         path: 'gig',
