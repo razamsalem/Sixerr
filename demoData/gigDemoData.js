@@ -1,7 +1,7 @@
 const gigDemoData = [
   {
     _id: "i101",
-    title: "I will design your logo",
+    title: "I will create custom company logo design for your business",
     price: 12.99,
     owner: {
       "_id": "u101",
@@ -11,8 +11,8 @@ const gigDemoData = [
       "rate": 5
     },
     daysToMake: 3,
-    description: "Make unique logo...",
-    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/142024147/original/27b1fb04de81d0ba018311fd4adc95d36f2fb6ce/design-professional-business-logo-with-copyrights.jpg"],
+    description: "You are the best as you are checking the best gig here on Fiverr and you have a very good eye for design. I will design you a logo for businesses to events, I can pull together an excellent, professional-looking artwork to be used on any type of print media or digitally. There are a lot of logos out there - but the great ones always catch your eye and leave a lasting impression. Let's design one together!",
+    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/229020114/original/e9d6bca4248af0e976ed0ec1068114090ac8e393/do-professional-modern-minimalist-logo-design.jpg"],
     tags: [
       "logo-design",
       "artisitic",
@@ -23,7 +23,7 @@ const gigDemoData = [
   },
   {
     _id: "i102",
-    title: "I will build saas business as a full stack web developer",
+    title: "I will design your companys vision",
     price: 26.99,
     owner: {
       "_id": "u102",
@@ -33,8 +33,8 @@ const gigDemoData = [
       "rate": 3.2
     },
     daysToMake: 27,
-    description: "Looking for a custom-built web app for your SaaS business? As a full stack web developer, I specialize in creating tailored web applications using TypeScript, React, MongoDB, Nodejs, PHP, and JavaScript. My focus is understanding clients' unique needs and collaborating...",
-    imgUrls: ["https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/302267572/original/1106716160969d473e8e233fdeee032270b4ab10/build-a-high-performance-web-app-using-mern-stack.png"],
+    description: "Thank you for stopping by! This gig is intended for anyone who is looking for a well rounded and undefined design for their company or brand. We will try different concepts and ideas to get you where you need to be. If you aren't sure where to start, this is a good gig to choose Unlike a lot of other fiverr artists, my designs do not change in quality depending upon what package you choose. All of my designs deserve the same attention and quality guarantee. My process starts in the traditional form which means I begin with paper and pencil. Once that is complete I refine it with art and/or calligraphy pens. Once that's complete, I bring it into my computer and render it digitally. The colors can be whatever you choose and the packages are all different. So please read them carefully or send me a message if you have any questions",
+    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/118127829/original/78fe34ecddb886dd10b291634bbf2e03d55ba64e/create-marketable-and-custom-designs.png"],
     tags: [
       "logo-design",
       "artisitic",
@@ -42,7 +42,29 @@ const gigDemoData = [
       "accessible"
     ],
     likedByUsers: ['mini-user']
-  }
+  },
+  {
+    _id: "i104",
+    title: "I will do 3 modern minimalist logo design",
+    price: 12.99,
+    owner: {
+      "_id": "u104",
+      "fullname": "Justin Timber",
+      "imgUrl": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/110847760/original/00bbe27e2dc6b3b34bd1a6c02b9b5867e1aff783/do-minimalist-logo-design.jpg",
+      "level": "basic/premium",
+      "rate": 4
+    },
+    daysToMake: 20,
+    description: "Welcome to my minimal logo design gig! Being the face of a brand, the logo design should be a prime need for any brand. I will make a unique logo for your business that will help you stand out from the competition. I've been working as an Expert Logo Designer & Branding Specialist and am trusted by over 13K+ various clients worldwide.",
+    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/314856443/original/48e49502ac05c89ac031d46924d1f9b0a41b15fa/do-timeless-modern-minimalist-unique-business-logo-design-4e58.png"],
+    tags: [
+      "logo-design",
+      "artisitic",
+      "proffesional",
+      "accessible"
+    ],
+    likedByUsers: ['mini-user']
+  },
 ]
 
 export default gigDemoData
