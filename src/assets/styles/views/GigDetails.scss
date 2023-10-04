@@ -1,0 +1,15 @@
+.gig-details{
+    h1{
+        padding-bottom: em(16px); 
+    }
+    .owner-details{
+        h3{
+            padding: 8px;
+        }
+    }
+
+    .owner-details-container{
+        display: flex;
+        gap: em(12px);
+    }
+}

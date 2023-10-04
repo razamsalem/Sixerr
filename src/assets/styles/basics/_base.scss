@@ -56,8 +56,20 @@ a {
     cursor: pointer;
 }
 
-a:hover {}
+// a:hover {}
 
 a:visited {
     color: $dark-clr;
+}
+
+.owner-profile-img {
+    @include owner-profile-img;
+    
+    &-meduim {
+        @include owner-profile-img($type: meduim);
+    }
+    
+    &-large {
+        @include owner-profile-img($type: large);
+    }
 }
