@@ -1,5 +1,5 @@
 
-export const surveyService = {
+export const dynamicService = {
     getById
 }
 
