@@ -6,6 +6,7 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { userService } from '../services/user.service.js'
 import { gigService } from '../services/gig.service.local.js'
 import { GigList } from '../cmps/GigList.jsx'
+import { DynamicBtn } from './DynamicBtn.jsx'
 
 export function GigIndex() {
 
@@ -18,7 +19,7 @@ export function GigIndex() {
     async function onRemoveGig(gigId) {
         try {
             await removeGig(gigId)
-            showSuccessMsg('Gig removed')            
+            showSuccessMsg('Gig removed')
         } catch (err) {
             showErrorMsg('Cannot remove gig')
         }
@@ -32,7 +33,7 @@ export function GigIndex() {
             showSuccessMsg(`Gig added (id: ${savedGig._id})`)
         } catch (err) {
             showErrorMsg('Cannot add gig')
-        }        
+        }
     }
 
     async function onUpdateGig(gig) {
@@ -43,7 +44,7 @@ export function GigIndex() {
             showSuccessMsg(`Gig updated, new price: ${savedGig.price}`)
         } catch (err) {
             showErrorMsg('Cannot update gig')
-        }        
+        }
     }
 
     function onAddGigMsg(gig) {
@@ -60,10 +61,12 @@ export function GigIndex() {
         <div>
             {/* <h3>Gig App</h3> */}
            
+            <h3>Gig App</h3>
+            <DynamicBtn />
             <main>
                 <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
                 <button onClick={onAddGig}>Add Gig</button>
-                
+
             </main>
         </div>
     )

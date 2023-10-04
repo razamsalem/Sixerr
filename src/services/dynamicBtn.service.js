@@ -4,8 +4,23 @@ export const surveyService = {
 }
 
 async function getById() {
+    return filterBtns
     return survey
 }
+
+const filterBtns = [{
+    title: 'Service options',
+},
+{
+    title: 'Seller details',
+},
+{
+    title: 'Budget',
+},
+{
+    title: 'Delivery time',
+},
+]
 
 const survey = {
     title: 'Robots Shopping',
