@@ -58,7 +58,8 @@ export function GigIndex() {
 
     return (
         <div>
-            <h3>Gig App</h3>
+            {/* <h3>Gig App</h3> */}
+           
             <main>
                 <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
                 <button onClick={onAddGig}>Add Gig</button>
