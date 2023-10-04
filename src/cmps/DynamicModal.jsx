@@ -1,6 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-function DynamicModal({ isOpen, onClose, content, position }) {
+function DynamicModal({ isOpen, onClose, content, position, modalRef }) {
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (modalRef.current && !modalRef.current.contains(event.target)) {
+                onClose()
+            }
+        }
+
+        if (isOpen) {
+            document.addEventListener('mousedown', handleClickOutside)
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [isOpen, onClose, modalRef])
+
+
     if (!isOpen) return null
 
     const style = {
@@ -10,14 +28,13 @@ function DynamicModal({ isOpen, onClose, content, position }) {
     }
 
     return (
-        <div className="dynamic-modal" style={style}>
+        <div className="dynamic-modal" style={style} ref={modalRef}>
             <div className="content-scroll">
                 <div className="more-filter-item">
                     <div className="content-title">
                         Seller level
                     </div>
                 </div>
-                <span className="close" onClick={onClose}>&times;</span>
                 {content}
             </div>
             <div className='button-row'>

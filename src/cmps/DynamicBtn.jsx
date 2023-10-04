@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react';
 
 import { dynamicService } from "../services/dynamicBtn.service.js"
 import DynamicModal from "./DynamicModal.jsx"
@@ -9,9 +9,11 @@ export function DynamicBtn() {
     const [btns, setBtns] = useState(null)
     const [isArrowUp, setIsArrowUp] = useState([])
     const [selectedBtn, setSelectedBtn] = useState(null)
+    const modalRef = useRef(null)
 
     useEffect(() => {
         getBtns()
+
     }, [])
 
     async function getBtns() {
@@ -40,13 +42,9 @@ export function DynamicBtn() {
                 left: ev.target.offsetLeft + window.scrollX,
                 btnWidth: buttonRect.width,
             },
-
         })
-        console.log(ev);
-        console.log(ev.target.offsetLeft)
-        // console.dir()
-        // setSelectedBtn({ ...btns[idx], position: { top: ev.target.offsetTop, left: ev.target.offsetWidth, btnWidth: ev.target.clientWidth } })
     }
+
     function closeModal() {
         setSelectedBtn(null)
     }
@@ -65,7 +63,13 @@ export function DynamicBtn() {
                     <span className={`icon fa-solid ${isArrowUp[idx] ? 'angle-up' : 'angle-down'}`}></span>
                 </button>
             ))}
-            <DynamicModal isOpen={selectedBtn !== null} onClose={closeModal} content={'some content'} position={selectedBtn?.position} />
+            <DynamicModal
+                isOpen={selectedBtn !== null}
+                onClose={closeModal}
+                content={'some content'}
+                position={selectedBtn?.position}
+                modalRef={modalRef}
+            />
         </section>
     )
 
