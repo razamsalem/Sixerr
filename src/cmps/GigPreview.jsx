@@ -13,8 +13,11 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig }) {
 
             {/* <a href={gig.imgUrls ? gig.imgUrls[0] : defaultImgUrl} />  */}
             </div>
-           
+        
+            <div className="flex owner-details">
+            <img src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/3e69825348268689975368374cd57bbb-1611383243667/c28fdd4b-d5c7-4035-8379-862ac10d67fd.png" alt="progile-img" className="owner-profile-img"/>
             <span className="owner-fullname">{gig.owner.fullname}</span>
+            </div>
 
             <Link className="details-btn" to={`/gig/${gig._id}`}> <h3 className="owner-gig-title">{gig.title}</h3></Link>
 
