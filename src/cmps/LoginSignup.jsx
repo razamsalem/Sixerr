@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import { userService } from '../services/user.service'
 import { ImgUploader } from './ImgUploader'
+import { Modal } from './Modal'
 
 export function LoginSignup(props) {
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
     const [isSignup, setIsSignup] = useState(false)
     const [users, setUsers] = useState([])
+    const [isModalOpen, setModalIsOpen] = useState(false)
 
     useEffect(() => {
         loadUsers()
@@ -41,38 +43,45 @@ export function LoginSignup(props) {
         clearState()
     }
 
-    function toggleSignup() {
-        setIsSignup(!isSignup)
-    }
-
     function onSetSignIn() {
         setIsSignup(false)
+        onToggleModal()
     }
 
     function onSetSignup() {
         setIsSignup(true)
+        onToggleModal()
+    }
+
+    function onToggleModal() {
+        setModalIsOpen((prevState) => !prevState)
+    }
+
+    function onCloseModal(ev) {
+        ev.stopPropagation()
+        setModalIsOpen((prevState) => false)
     }
 
     function onUploaded(imgUrl) {
         setCredentials({ ...credentials, imgUrl })
     }
-
     return (
-        <div className="login-page">
-            <p>
-                <a className="btn" onClick={onSetSignup}>Join</a>
-                <a className="btn" onClick={onSetSignIn}>Login</a>
-            </p>
-            {!isSignup && <form className="login-form" onSubmit={onLogin}>
-                <select
-                    name="username"
-                    value={credentials.username}
-                    onChange={handleChange}
-                >
-                    <option value="">Select User</option>
-                    {users.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
-                </select>
-                {/* <input
+        <>
+            <a className="btn" onClick={onSetSignIn}>Login</a>
+            <a className="btn" onClick={onSetSignup}>Join</a>
+
+            <Modal open={isModalOpen} onClose={onCloseModal}>
+                <>
+                    {!isSignup && <form className="login-form" onSubmit={onLogin}>
+                        <select
+                            name="username"
+                            value={credentials.username}
+                            onChange={handleChange}
+                        >
+                            <option value="">Select User</option>
+                            {users.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
+                        </select>
+                        {/* <input
                         type="text"
                         name="username"
                         value={username}
@@ -89,38 +98,43 @@ export function LoginSignup(props) {
                         onChange={handleChange}
                         required
                     /> */}
-                <button>Sign in</button>
-            </form>}
-            <div className="signup-section">
-                {isSignup && <form className="signup-form" onSubmit={onSignup}>
-                    <input
-                        type="text"
-                        name="fullname"
-                        value={credentials.fullname}
-                        placeholder="Fullname"
-                        onChange={handleChange}
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="username"
-                        value={credentials.username}
-                        placeholder="Username"
-                        onChange={handleChange}
-                        required
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        value={credentials.password}
-                        placeholder="Password"
-                        onChange={handleChange}
-                        required
-                    />
-                    <ImgUploader onUploaded={onUploaded} />
-                    <button >Join</button>
-                </form>}
-            </div>
-        </div>
+                        <button>Sign in</button>
+                    </form>}
+
+                    <div className="signup-section">
+                        {isSignup && <form className="signup-form" onSubmit={onSignup}>
+                            <input
+                                type="text"
+                                name="fullname"
+                                value={credentials.fullname}
+                                placeholder="Fullname"
+                                onChange={handleChange}
+                                required
+                            />
+                            <input
+                                type="text"
+                                name="username"
+                                value={credentials.username}
+                                placeholder="Username"
+                                onChange={handleChange}
+                                required
+                            />
+                            <input
+                                type="password"
+                                name="password"
+                                value={credentials.password}
+                                placeholder="Password"
+                                onChange={handleChange}
+                                required
+                            />
+                            <ImgUploader onUploaded={onUploaded} />
+                            <button >Join us today!</button>
+                        </form>}
+                    </div>
+                </>
+            </Modal>
+
+
+        </>
     )
 }

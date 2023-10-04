@@ -50,9 +50,7 @@ export function AppHeader() {
                     </span>
                 }
                 {!user &&
-                    <section className="user-info">
-                        <LoginSignup onLogin={onLogin} onSignup={onSignup} />
-                    </section>
+                    <LoginSignup onLogin={onLogin} onSignup={onSignup} />
                 }
             </nav>
         </header>

@@ -1,12 +1,9 @@
 .app-header {
-    background-color: $clr4;
+    background-color: $light-clr;
     padding: 10px;
 
 
     .user-info {
-        // background-color: $clr2;
-        // padding: 2px 8px;
-        padding-left: 100px;
         color: $clr1;
 
         .score {
@@ -31,7 +28,7 @@
 
     nav {
         font-size: .8em;
-        background-color: $clr5;
+        background-color: $light-clr;
         padding: 5px;
 
     }
