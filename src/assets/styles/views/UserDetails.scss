@@ -1,182 +1,262 @@
-.user-details {
-    .user-card {
-        position: relative;
-        border: 1px solid $modal-filter-border-clr;
-        padding: 30px;
-        max-width: 400px;
+.user-details-container {
+    display: flex;
+    gap: 5.5rem;
+    background-color: $user-bgclr;
 
-        font-size: 14px;
-        line-height: 130%;
-        color: $dark-clr-1;
-        background-color: $light-clr;
+    .user-details {
+        margin-inline-start: 12.063rem;
 
+        .user-card {
+            position: relative;
+            border: 1px solid $modal-filter-border-clr;
+            padding: 30px;
+            margin-block-start: 50px;
 
-        .user-profile-info {
+            font-size: 14px;
+            line-height: 130%;
+            color: $dark-clr-1;
+            background-color: $light-clr;
 
-            .user-profile-img {
-                width: 150px;
-                font-size: 3em;
-                margin-block-end: 15px;
+            .user-profile-info {
 
-                img {
-                    z-index: 1;
-                    width: 100%;
-                    border-radius: 50%;
-                }
-            }
+                .user-profile-img {
+                    width: 150px;
+                    font-size: 3em;
+                    margin-block-end: 15px;
 
-            .username-info {
-                font-weight: 700;
-                color: $dark-clr1;
-                font-size: 20px;
-                line-height: 28px;
-            }
-
-            .secondary-name {
-                text-align: center !important;
-                font-size: 16px;
-                line-height: 24px;
-                color: $co-clr;
-                margin-block-end: 24px;
-            }
-
-            .location {
-                display: flex;
-                justify-content: space-between;
-                padding-block-start: 20px;
-
-                .location-icon {
-                    width: 13px;
-                    height: 13px;
-                    color: $dark-clr-1;
-                    margin-inline-end: 12px;
-                }
-
-            }
-
-            .member-since {
-                display: flex;
-                justify-content: space-between;
-                padding-block-start: 20px;
-
-                .user-icon {
-                    width: 13px;
-                    height: 13px;
-                    color: $dark-clr-1;
-                    margin-inline-end: 12px;
-
-                }
-
-            }
-
-        }
-    }
-
-    .desc-card {
-        position: relative;
-        border: 1px solid $modal-filter-border-clr;
-        padding: 30px;
-        max-width: 400px;
-        margin-block-start: 25px;
-
-        font-size: 14px;
-        line-height: 130%;
-        color: $dark-clr-1;
-        background-color: $light-clr;
-
-
-        .user-profile-desc {
-            .user-stats {
-                .user-data {
-                    padding-block-end: 20px;
-                    margin-block-end: 10px;
-
-
-                    .header {
-                        justify-content: space-between;
-                        padding-block-end: 14px;
-
-
-                        h3 {
-                            color: $darkest-clr;
-                            font-size: 16px;
-                            font-weight: 700;
-                            line-height: 150%;
-
-                        }
-
-                        button {
-                            display: inline-block;
-                            color: $btn-clr;
-                            font-size: 14px;
-                            font-weight: 400;
-                            background: none;
-
-                            &:hover {
-                                text-decoration: underline;
-                            }
-                        }
-
+                    img {
+                        z-index: 1;
+                        width: 100%;
+                        border-radius: 50%;
                     }
+                }
 
-                    p {
-                        word-wrap: break-word;
-                        line-height: 20px;
+                .username-info {
+                    font-weight: 700;
+                    color: $dark-clr1;
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+
+                .secondary-name {
+                    text-align: center !important;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: $co-clr;
+                    margin-block-end: 24px;
+                }
+
+                .location {
+                    display: flex;
+                    justify-content: space-between;
+                    padding-block-start: 20px;
+
+                    .location-icon {
+                        width: 13px;
+                        height: 13px;
                         color: $dark-clr-1;
+                        margin-inline-end: 12px;
                     }
+
                 }
 
-                .user-lang {
+                .member-since {
+                    display: flex;
+                    justify-content: space-between;
+                    padding-block-start: 20px;
 
-                    .header {
-                        justify-content: space-between;
-                        padding-block-end: 14px;
-                        margin-block-start: 20px;
+                    .user-icon {
+                        width: 13px;
+                        height: 13px;
+                        color: $dark-clr-1;
+                        margin-inline-end: 12px;
 
-                        h3 {
-                            color: $darkest-clr;
-                            font-size: 16px;
-                            font-weight: 700;
-                            line-height: 150%;
+                    }
+
+                }
+
+
+            }
+
+            @media only screen and (min-width: 600px) {
+                width: 17rem;
+            }
+
+            @media only screen and (min-width: 1200px) {
+                width: 21rem;
+            }
+
+            @media only screen and (min-width: 1315px) {
+                width: 25rem;
+            }
+        }
+
+        .desc-card {
+            position: relative;
+            border: 1px solid $modal-filter-border-clr;
+            padding: 30px;
+            max-width: 400px;
+            margin-block-start: 25px;
+
+            font-size: 14px;
+            line-height: 130%;
+            color: $dark-clr-1;
+            background-color: $light-clr;
+
+
+            .user-profile-desc {
+                .user-stats {
+                    .user-data {
+                        padding-block-end: 20px;
+                        margin-block-end: 10px;
+
+
+                        .header {
+                            justify-content: space-between;
+                            padding-block-end: 14px;
+
+
+                            h3 {
+                                color: $darkest-clr;
+                                font-size: 16px;
+                                font-weight: 700;
+                                line-height: 150%;
+
+                            }
+
+                            button {
+                                display: inline-block;
+                                color: $btn-clr;
+                                font-size: 14px;
+                                font-weight: 400;
+                                background: none;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+
                         }
 
-                        button {
-                            display: inline-block;
-                            color: $btn-clr;
-                            font-size: 14px;
-                            font-weight: 400;
-                            background: none;
-
-                            &:hover {
-                                text-decoration: underline;
-                            }
+                        p {
+                            word-wrap: break-word;
+                            line-height: 20px;
+                            color: $dark-clr-1;
                         }
                     }
 
-                    ul {
-                        padding-block: 10px;
+                    .user-lang {
 
-                        li {
+                        .header {
+                            justify-content: space-between;
+                            padding-block-end: 14px;
+                            margin-block-start: 20px;
 
-                            .title {
+                            h3 {
+                                color: $darkest-clr;
+                                font-size: 16px;
+                                font-weight: 700;
+                                line-height: 150%;
+                            }
+
+                            button {
+                                display: inline-block;
+                                color: $btn-clr;
                                 font-size: 14px;
-                                line-height: 18px;
-                                color: $list-title-clr;
-                            }
+                                font-weight: 400;
+                                background: none;
 
-                            .sub-title {
-                                color: $list-subtitle-clr;
+                                &:hover {
+                                    text-decoration: underline;
+                                }
                             }
+                        }
 
-                            &:not(:last-child) {
-                                margin-block-end: 10px;
+                        ul {
+                            padding-block: 10px;
+
+                            li {
+
+                                .title {
+                                    font-size: 14px;
+                                    line-height: 18px;
+                                    color: $list-title-clr;
+                                }
+
+                                .sub-title {
+                                    color: $list-subtitle-clr;
+                                }
+
+                                &:not(:last-child) {
+                                    margin-block-end: 10px;
+                                }
+
                             }
-
                         }
                     }
                 }
             }
         }
+
     }
 
+    .gigs-column {
+        .seller-gigs {
+            margin-inline-end: 12.063rem;
+            position: relative;
+            border: 1px solid $modal-filter-border-clr;
+            padding: 30px;
+            height: 23.629rem;
+            margin-block-start: 50px;
+
+            font-size: 14px;
+            line-height: 130%;
+            color: $dark-clr-1;
+            background-color: $light-clr;
+
+            .become-seller {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.938rem;
+                padding-block: 60px;
+
+                h3 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $dark-clr;
+                }
+
+                button {
+                    font-size: 1rem;
+                    line-height: 24px;
+                    padding: 9px 24px;
+                    background-color: $accent-clr;
+                    font-weight: 700;
+                    color: $light-clr !important;
+                    border: 1px solid transparent;
+                    border-radius: 3px;
+                    transition: color .2s, background-color .2s, box-shadow .2s, border .2s;
+
+                    &:hover {
+                        box-shadow: 0 2px 5px 1px rgba(0, 0, 0, .3);
+                    }
+                }
+
+            }
+
+            @media only screen and (min-width: 600px) {
+                width: 28rem;
+            }
+
+            @media only screen and (min-width: 1200px) {
+                width: 34rem;
+            }
+
+            @media only screen and (min-width: 1315px) {
+                width: 43.688rem;
+            }
+
+        }
+    }
 }
