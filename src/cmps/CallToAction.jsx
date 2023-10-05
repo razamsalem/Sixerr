@@ -29,7 +29,7 @@ export function CallToAction({ gig }) {
                     )
                 })}
             </ul>
-            <Link className='btn continue'>
+            <Link to={'/checkout'} onClick={() => { console.log('click') }} className='btn continue'>
                 Continue
             </Link>
             <div className='compare'>

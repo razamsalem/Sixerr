@@ -7,7 +7,7 @@ import { AdminApp } from './pages/AdminIndex.jsx'
 import { DynamicBtn } from './cmps/DynamicBtn.jsx'
 import { GigIndex } from './pages/GigIndex.jsx'
 import { GigDetails } from './pages/GigDetails.jsx'
-
+import { Checkout } from './pages/Checkout.jsx'
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
     {
@@ -27,6 +27,18 @@ const routes = [
         component: <GigDetails />,
         shouldRender: false
     },
+    {
+        path: `checkout`,
+        component: <Checkout />,
+        shouldRender: false
+    },
+    {
+        path: '*',
+        component: <HomePage />,
+        label: 'Home',
+        shouldRender: false
+    },
+
     // {
     //     path: 'survey',
     //     component: <SurveyIndex />,
