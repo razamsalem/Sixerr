@@ -57,7 +57,6 @@ export function AppHeader() {
                             <span className="user-info">
                                 <Link to={`user/${user._id}`}>
                                     {user.imgUrl && <img src={user.imgUrl} />}
-                                    {user.fullname}
                                 </Link>
                                 <span className="score">{user.score?.toLocaleString()}</span>
                                 <button onClick={onLogout}>Logout</button>
