@@ -31,7 +31,7 @@ export function DynamicBtn() {
         setIsArrowUp((prevStates) => {
             const newStates = prevStates.map((state, i) => (i === idx ? !state : false))
             return newStates
-        });
+        })
 
         const buttonRect = ev.currentTarget.getBoundingClientRect()
 

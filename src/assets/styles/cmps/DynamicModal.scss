@@ -12,6 +12,7 @@
 
     z-index: 3;
     transition: .12s;
+    box-shadow: 0 18px 12px rgba(0, 0, 0, .14);
 
     .content-scroll {
         max-height: 14.333rem;
@@ -19,11 +20,11 @@
         overflow-y: scroll;
         position: relative;
         top: 0px;
-        animation: .3s fadeInDown;
+        animation: .5s fadeIn;
         transition: .24s;
 
         .more-filter-item {
-            border-block-end: 1px solid $modal-underline-clr;
+            // border-block-end: 1px solid $modal-underline-clr;
             // padding: 24px 8px;
             padding-block-start: 0;
 
