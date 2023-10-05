@@ -94,7 +94,7 @@ const gigDemoData = [
   {
     _id: "i102",
     title: "I will design your companys vision",
-    price: 26.99,
+    price: 100.99,
     owner: {
       "_id": "u102",
       "fullname": "Julia Carter",
@@ -117,7 +117,7 @@ const gigDemoData = [
   {
     _id: "i104",
     title: "I will do 3 modern minimalist logo design",
-    price: 12.99,
+    price: 60,
     owner: {
       "_id": "u104",
       "fullname": "Justin Timber",
