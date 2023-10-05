@@ -7,6 +7,7 @@ import { gigService } from "../services/gig.service.local"
 import priceUrl from "../assets/img/price.png"
 import starUrl from "../assets/img/star.svg"
 import nextUrl from "../assets/img/next.svg"
+import { CallToAction } from "../cmps/CallToAction";
 
 export function GigDetails() {
     const user = useSelector((storeState) => storeState.userModule.loggedinUser)
@@ -36,7 +37,7 @@ export function GigDetails() {
     if (!gig) return <div>Loading...</div>
     return (
         <section className="gig-details">
-
+            <CallToAction gig={gig} />
             <div className="owner-details-container">
                 <h1 className="gig-title">{gig.title}</h1>
                 <div className="owner-details-container-1">
@@ -54,26 +55,15 @@ export function GigDetails() {
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            {/* <img className="gig-img" src={gig.imgUrls ? gig.imgUrls[0] : defaultImgUrl} alt="gig img" />  */}
-
-            <div style={{ marginBottom: '1.875rem', position: 'relative' }}>
+            <div className="carousel-container" style={{ marginBottom: '1.875rem', position: 'relative' }}>
                 <Carousel renderArrowNext={(clickHandler, hasNext) => {
                     return (
-                        // <div
-                        //     className={`${
-                        //     hasNext ? "absolute" : "hidden"
-                        //     } top-0 bottom-0 right-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
-                        //     onClick={clickHandler}
-                        // >
-                        //     <RightIcon className="w-9 h-9 text-white" />
-                        // </div>
                         <button className='next-btn' onClick={clickHandler} >
                             <img src={nextUrl} alt="nextUrl" />
                         </button>
-                    );
+                    )
                 }}
                     renderArrowPrev={(clickHandler, hasNext) => {
                         return (
@@ -84,7 +74,7 @@ export function GigDetails() {
                     }}
                 >
                     {gig.imgUrls.map(img => {
-                        return <img src={img} />
+                        return <img key={img} src={img} />
                     })}
                 </Carousel>
             </div>
@@ -94,11 +84,6 @@ export function GigDetails() {
                 <h1 className="gig-about-title">About this gig</h1>
                 <p className="gig-description">{gig.description}</p>
             </div>
-
-            {/* <aside className="call-to-action">
-                <img src={priceUrl} alt="price" style={{height:'540px'}}/>
-            </aside> */}
-
         </section>
     )
 }

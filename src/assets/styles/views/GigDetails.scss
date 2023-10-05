@@ -1,27 +1,20 @@
 @import url(react-responsive-carousel/lib/styles/carousel.min.css);
 
-.e-carousel .e-carousel-navigators .e-next .e-btn:not(:disabled) .e-btn-icon,
-.e-carousel .e-carousel-navigators .e-previous .e-btn:not(:disabled) .e-btn-icon {
-    font-size: rem(25px);
-}
-
 .gig-details {
     display: grid;
-    grid-template-columns: 750px 435px;
+    grid-template-columns: rem(750px) rem(435px);
+    justify-content: space-around;
 
-    &>* {
+    &>*:not(.call-to-action) {
         grid-column: 1;
     }
 
     img {
-        // grid-column: 2;
-        margin-bottom: rem(30px);
-        // margin-top: 26px;
+        margin: 0;
     }
 
     .gig-title {
-        // margin-top: 100px;
-        padding-bottom: rem(16px);
+        // padding-bottom: rem(16px);
     }
 
     .owner-details {
@@ -39,17 +32,17 @@
         display: flex;
         gap: em(16px);
         flex-direction: column;
-        // grid-column: 2;
         margin-bottom: em(-13px);
+        margin-block-end: em(27px);
 
         .owner-details-container-1 {
             display: flex;
+            // margin-block-end: 27px;
             gap: rem(12px);
         }
     }
 
     .about-gig {
-        // grid-column: 2;
 
         .gig-about-title {
             padding-bottom: em(25px);
@@ -60,12 +53,6 @@
             color: $dark-clr-1;
             line-height: em(24px);
         }
-    }
-
-    .call-to-action {
-        // margin-top: em(100px);
-        // grid-column: 4;
-        // grid-row: 2;
     }
 
     .next-btn {
@@ -97,7 +84,7 @@
     }
 
     .carousel {
-        /* position: relative; */
+
         width: 100%;
     }
 
