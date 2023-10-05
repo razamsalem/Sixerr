@@ -1,9 +1,11 @@
 import timeImg from '../assets/img/time.svg';
 import checkImg from '../assets/img/check.svg';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-export function CallToAction({ gig }) {
+export function CallToAction({ gig, addToCart, isPurchase }) {
     const { price, daysToMake, packages } = gig
+    const { pathname } = useLocation()
+
 
     return (
         <article className="call-to-action">
@@ -29,7 +31,7 @@ export function CallToAction({ gig }) {
                     )
                 })}
             </ul>
-            <Link to={'/checkout'} onClick={() => { console.log('click') }} className='btn continue'>
+            <Link to={`${pathname}/checkout`} onClick={() => { addToCart(gig) }} className='btn continue'>
                 Continue
             </Link>
             <div className='compare'>

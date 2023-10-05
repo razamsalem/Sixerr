@@ -12,7 +12,8 @@ export const SET_FILTER_BY = 'SET_FILTER_BY'
 
 const initialState = {
     gigs: [],
-    cart: [],
+    // cart: [],
+    cart: null,
     lastRemovedGig: null,
     filterBy: gigService.getDefaultFilter()
 }
@@ -38,7 +39,8 @@ export function gigReducer(state = initialState, action) {
             newState = { ...state, gigs }
             break
         case ADD_TO_CART:
-            newState = { ...state, cart: [...state.cart, action.gig] }
+            // newState = { ...state, cart: [...state.cart, action.gig] }
+            newState = { ...state, cart: action.gig }
             break
         case REMOVE_FROM_CART:
             cart = state.cart.filter(gig => gig._id !== action.gigId)
@@ -53,7 +55,7 @@ export function gigReducer(state = initialState, action) {
             }
             break
         case SET_FILTER_BY:
-           newState =  { ...state, filterBy: {...action.filterBy} }
+            newState = { ...state, filterBy: { ...action.filterBy } }
             break;
         default:
     }

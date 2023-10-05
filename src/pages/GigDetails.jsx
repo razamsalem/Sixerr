@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useParams, useNavigate, Link } from "react-router-dom"
 import { Carousel } from 'react-responsive-carousel';
 // import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -8,13 +8,16 @@ import priceUrl from "../assets/img/price.png"
 import starUrl from "../assets/img/star.svg"
 import nextUrl from "../assets/img/next.svg"
 import { CallToAction } from "../cmps/CallToAction";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../store/reducers/gig.reducer";
 
 export function GigDetails() {
-    const user = useSelector((storeState) => storeState.userModule.loggedinUser)
     // const [reviews, setReviews] = useState(null)
+    const user = useSelector((storeState) => storeState.userModule.loggedinUser)
     const [gig, setGig] = useState(null)
     const { gigId } = useParams()
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+
     const defaultImgUrl = 'https://res.cloudinary.com/de2rdmsca/image/upload/v1696229330/no-image-symbol-missing-available-icon-gallery-vector-47533708_yv5p2x.jpg'
 
     useEffect(() => {
@@ -34,13 +37,17 @@ export function GigDetails() {
         }
     }
 
+    function addToCart(gig) {
+        dispatch({ type: ADD_TO_CART, gig })
+    }
+
     if (!gig) return <div>Loading...</div>
     return (
         <section className="gig-details">
-            <CallToAction gig={gig} />
+            <CallToAction gig={gig} addToCart={addToCart} />
             <div className="owner-details-container">
                 <h1 className="gig-title">{gig.title}</h1>
-                <div className="owner-details-container-1">
+                <div className="profile-container">
 
                     <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-meduim" />
 

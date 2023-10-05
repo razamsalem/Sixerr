@@ -28,7 +28,7 @@ const routes = [
         shouldRender: false
     },
     {
-        path: `checkout`,
+        path: `gig/:gigId/checkout`,
         component: <Checkout />,
         shouldRender: false
     },
