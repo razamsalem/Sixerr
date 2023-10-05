@@ -1,7 +1,43 @@
 .user-details {
-    .user-img {
-        height: 200px;
-        width: 200px;
-        background-size: contain;
+    .user-card {
+        position: relative;
+        padding: 30px;
+        border: 1px solid $modal-filter-border-clr;
+
+        font-size: 14px;
+        line-height: 130%;
+        color: $dark-clr-1;
+        background-color: $light-clr;
+
+        .user-profile-info {
+
+            .user-profile-img {
+                width: 150px;
+                font-size: 3em;
+                margin-block-end: 15px;
+
+                img {
+                    z-index: 1;
+                    width: 100%;
+                    border-radius: 50%;
+                }
+            }
+
+            .username-info {
+                font-weight: 700;
+                color: $dark-clr1;
+                font-size: 20px;
+                line-height: 28px;
+            }
+
+            .secondary-name {
+                text-align: center !important;
+                font-size: 16px;
+                line-height: 24px;
+                color: $co-clr;
+            }
+
+        }
     }
+
 }

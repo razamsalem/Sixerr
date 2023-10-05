@@ -48,6 +48,7 @@
             display: flex;
             justify-content: space-between;
             gap: 12px;
+            padding-block-end: 1rem;
 
             .left,
             .right {
@@ -131,7 +132,7 @@
             text-align: center;
             text-decoration: none;
             transition: 70ms;
-            color: $modal-btn-clr;
+            color: $dark-clr-1;
 
             &:hover {
                 color: $modal-hover-clr;

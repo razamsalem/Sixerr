@@ -31,8 +31,25 @@ export function UserDetails() {
 
   return (
     <section className="user-details">
-      <h1>User Details</h1>
-      {user && <div>
+      {user && <div className='user-card'>
+        <div className='user-profile-info'>
+          <div className="flex justify-center">
+            <div className="user-profile-img">
+              {user.imgUrl && <img src={user.imgUrl} alt="user img" />}
+            </div>
+          </div>
+          <div className="user-profile-label">
+            <div className="username-line flex column align-center">
+              <div className="username-info">
+                {user.fullname}
+              </div>
+              <div className="secondary-name">
+                @{user.username}
+              </div>
+            </div>
+          </div>
+
+        </div>
         <h3>
           {user.fullname}
         </h3>
