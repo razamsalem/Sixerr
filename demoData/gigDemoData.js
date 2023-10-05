@@ -2,7 +2,7 @@ const gigDemoData = [
   {
     _id: "i101",
     title: "I will create custom company logo design for your business",
-    price: 12.99,
+    price: 14.99,
     packages: {
       basic: {
         desc: '1 initial concept with JPG+PNG+3D Mockup',
@@ -11,11 +11,10 @@ const gigDemoData = [
     },
     owner: {
       "_id": "u101",
-      "fullname": "Micky Smith",
-      "imgUrl": "url",
+      "fullname": "Taylor P",
+      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696177526/cld-sample.jpg",
       "level": "basic/premium",
       "rate": 5,
-      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/3e69825348268689975368374cd57bbb-1611383243667/c28fdd4b-d5c7-4035-8379-862ac10d67fd.png"
     },
     daysToMake: 3,
     description: "You are the best as you are checking the best gig here on Fiverr and you have a very good eye for design. I will design you a logo for businesses to events, I can pull together an excellent, professional-looking artwork to be used on any type of print media or digitally. There are a lot of logos out there - but the great ones always catch your eye and leave a lasting impression. Let's design one together!",
@@ -39,7 +38,7 @@ const gigDemoData = [
       }
     },
     owner: {
-      "_id": "u102",
+      "_id": "u192",
       "fullname": "Julia Carter",
       "imgUrl": "url",
       "level": "basic/premium",
@@ -68,12 +67,11 @@ const gigDemoData = [
       }
     },
     owner: {
-      "_id": "u104",
-      "fullname": "Justin Timber",
-      "imgUrl": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/110847760/original/00bbe27e2dc6b3b34bd1a6c02b9b5867e1aff783/do-minimalist-logo-design.jpg",
+      "_id": "u101",
+      "fullname": "Taylor P",
+      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696177526/cld-sample.jpg",
       "level": "basic/premium",
-      "rate": 4,
-      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/505cad63a9a60b5e7f007f0f70b70320-1652367443632/d7945300-9d2e-4919-948b-3bc02f5cc55a.jpg"
+      "rate": 5,
     },
     daysToMake: 20,
     description: "Welcome to my minimal logo design gig! Being the face of a brand, the logo design should be a prime need for any brand. I will make a unique logo for your business that will help you stand out from the competition. I've been working as an Expert Logo Designer & Branding Specialist and am trusted by over 13K+ various clients worldwide.",
@@ -97,7 +95,7 @@ const gigDemoData = [
       }
     },
     owner: {
-      "_id": "u101",
+      "_id": "u190",
       "fullname": "Micky Smith",
       "imgUrl": "url",
       "level": "basic/premium",
@@ -126,7 +124,7 @@ const gigDemoData = [
       }
     },
     owner: {
-      "_id": "u102",
+      "_id": "u132",
       "fullname": "Julia Carter",
       "imgUrl": "url",
       "level": "basic/premium",
@@ -155,7 +153,7 @@ const gigDemoData = [
       }
     },
     owner: {
-      "_id": "u104",
+      "_id": "u154",
       "fullname": "Justin Timber",
       "imgUrl": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/110847760/original/00bbe27e2dc6b3b34bd1a6c02b9b5867e1aff783/do-minimalist-logo-design.jpg",
       "level": "basic/premium",
@@ -186,29 +184,9 @@ const allTags = [
   "accessible",
 ]
 
-
 function isPrimaryTag(tag) {
   return allTags.slice(0, 3).includes(tag)
 }
-
-
-// HomePage
-//  list of gigs with link to gig-details
-
-// Gig Details
-// <pre>JSON, slowly improve
-
-// UserDetails 
-//  basic info
-//  orderedGigs => orderService.query({userId: 'u101'})
-//  ownedGigs => gigService.query({ownerId: 'u103'})
-
-// GigEdit - make it super easy to add Gig for development
-
-// GigList, GigOrder
-// Order, confirm Order
-// Lastly: GigExplore, Filtering
-
 
 function loadApp() {
   socketService.on(SOCKET_EVENT_ORDER_ADDED, (order) => {

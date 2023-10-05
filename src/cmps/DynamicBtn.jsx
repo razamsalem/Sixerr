@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { dynamicService } from "../services/dynamicBtn.service.js"
 import DynamicModal from "./DynamicModal.jsx"
 
-export function DynamicBtn({filterBy, onSetFilter}) {
+export function DynamicBtn({ filterBy, onSetFilter }) {
     // const [survey, setSurvey] = useState(null)
     // const [answersMap, setAnswersMap] = useState({})
     const [btns, setBtns] = useState(null)
@@ -65,7 +65,7 @@ export function DynamicBtn({filterBy, onSetFilter}) {
             ))}
             <DynamicModal
                 filterBy={filterBy}
-                onSetFilter ={onSetFilter}
+                onSetFilter={onSetFilter}
                 isOpen={selectedBtn !== null}
                 onClose={closeModal}
                 btn={selectedBtn}
@@ -75,67 +75,5 @@ export function DynamicBtn({filterBy, onSetFilter}) {
             />
         </section>
     )
-
-
-    // return (
-    //     <section className="survey-app">
-    //         <h2>Survey - {survey.title}</h2>
-    //         {
-    //             survey.cmps.map((cmp, idx) => <div key={cmp.id} style={style}>
-    //                 <DynamicCmp
-    //                     type={cmp.type} info={cmp.info} val={answersMap[cmp.id] || ''}
-    //                     onChangeVal={(val) => {
-    //                         onChangeVal(cmp.id, val)
-    //                     }}
-    //                 />
-    //             </div>)
-    //         }
-    //         <hr />
-    //         <pre>
-    //             {JSON.stringify(answersMap, null, 2)}
-    //         </pre>
-    //     </section >
-    // )
 }
-
-function TextBox({ info, val = '', onChangeVal }) {
-    const { label } = info
-    return (
-        <label>
-            {label}
-            <input type="text" value={val} onChange={(ev) => {
-                onChangeVal(ev.target.value)
-            }} />
-        </label>
-    )
-
-}
-
-function SelectBox({ info, val = '', onChangeVal }) {
-    const { label, opts } = info
-    return (
-        <label>
-            {label}
-            <select value={val} onChange={(ev) => {
-                onChangeVal(ev.target.value)
-            }}>
-                <option value="">Select an option</option>
-                {
-                    opts.map(opt => <option key={opt}>{opt}</option>)
-                }
-            </select>
-        </label>
-    )
-}
-
-function DynamicCmp(props) {
-    switch (props.type) {
-        case 'TextBox':
-            return <TextBox {...props} />
-        case 'SelectBox':
-            return <SelectBox {...props} />
-    }
-}
-
-
 
