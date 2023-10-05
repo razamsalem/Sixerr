@@ -187,18 +187,19 @@ export function UserDetails() {
           </table>
 
           <div className="my-gigs">
+          <h1>My Gigs</h1>
             {demoGig.map(gig => {
               if (gig.owner._id === params.id) {
                 userGigs.unshift(gig)
                 console.log('Gig ', gig)
               }
             })}
-            {userGigs.length &&
+            {userGigs &&
               <div>
-                <h1>My Gigs</h1>
                 <GigList gigs={userGigs} />
               </div>
             }
+            {!userGigs.length && <div> <p className='empty'>Surely someone needs your service...create your gig today!</p> </div>}
           </div>
         </div>)}
         {(!user?.isSeller && <div className="seller-gigs">

@@ -25,12 +25,13 @@ const demoUsers = [
   {
     _id: "u102",
     fullname: "Jhon Iverson",
-    imgUrl: "https://res.cloudinary.com/de2rdmsca/image/upload/v1696532379/person-human-face-smile_ol1sku.jpg",
+    imgUrl: "https://res.cloudinary.com/de2rdmsca/image/upload/v1696535727/depositphotos_405807546-stock-photo-happy-man-smile-face-handsome_kwsyuq.webp",
     username: "jhon_iverson23",
     password: "123",
     level: "basic/premium",
     desc: "Are you looking for an expert web developer to design and develop your website? If your answer is yes, then I welcome you and you are at the right place.",
     isSeller: false,
+    location: 'United States',
     lang: ['English', 'Hebrew'],
     reviews: [
       {
