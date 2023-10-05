@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { dynamicService } from "../services/dynamicBtn.service.js"
 import DynamicModal from "./DynamicModal.jsx"
 
-export function DynamicBtn() {
+export function DynamicBtn({filterBy, onSetFilter}) {
     // const [survey, setSurvey] = useState(null)
     // const [answersMap, setAnswersMap] = useState({})
     const [btns, setBtns] = useState(null)
@@ -64,7 +64,8 @@ export function DynamicBtn() {
                 </button>
             ))}
             <DynamicModal
-
+                filterBy={filterBy}
+                onSetFilter ={onSetFilter}
                 isOpen={selectedBtn !== null}
                 onClose={closeModal}
                 btn={selectedBtn}
