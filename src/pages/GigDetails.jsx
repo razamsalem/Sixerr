@@ -7,6 +7,7 @@ import { gigService } from "../services/gig.service.local"
 import priceUrl from "../assets/img/price.png"
 import starUrl from "../assets/img/star.svg"
 import nextUrl from "../assets/img/next.svg"
+import { CallToAction } from "../cmps/CallToAction";
 
 export function GigDetails() {
     const user = useSelector((storeState) => storeState.userModule.loggedinUser)
@@ -57,19 +58,10 @@ export function GigDetails() {
 
             </div>
 
-            {/* <img className="gig-img" src={gig.imgUrls ? gig.imgUrls[0] : defaultImgUrl} alt="gig img" />  */}
 
             <div style={{ marginBottom: '1.875rem', position: 'relative' }}>
                 <Carousel renderArrowNext={(clickHandler, hasNext) => {
                     return (
-                        // <div
-                        //     className={`${
-                        //     hasNext ? "absolute" : "hidden"
-                        //     } top-0 bottom-0 right-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
-                        //     onClick={clickHandler}
-                        // >
-                        //     <RightIcon className="w-9 h-9 text-white" />
-                        // </div>
                         <button className='next-btn' onClick={clickHandler} >
                             <img src={nextUrl} alt="nextUrl" />
                         </button>
