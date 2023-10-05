@@ -83,9 +83,9 @@ export function UserDetails() {
                   <h3 title='You can make up to four selections.'>Languages</h3>
                   <button>Add new</button>
                 </div>
-                <ul>{user.lang ? user.lang.map(lang => {
-                  <li>{lang}</li>
-                }) :
+                <ul>{user.lang ? user.lang.map((lang, idx) => (
+                  <li key={idx}><span className='title'>{lang}</span> - <span className='sub-title'>{demoSubtitle[1]}</span></li>
+                )) :
                   <>
                     <li><span className='title'>English</span> - <span className='sub-title'>{demoSubtitle[0]}</span></li>
                     <li><span className='title'>Hebrew <strong>(עברית)</strong></span> - <span className='sub-title'>{demoSubtitle[1]}</span></li>
