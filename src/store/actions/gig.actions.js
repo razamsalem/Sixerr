@@ -27,13 +27,13 @@ export function getActionUpdateGig(gig) {
 
 export async function loadGigs() {
     try {
-        const gigs = await gigService.query()
-        console.log('Gigs from DB:', gigs)
+        const { filterBy } = store.getState().gigModule;
+        const gigs = await gigService.query(filterBy)
+        console.log('Gigs from  Action:', gigs)
         store.dispatch({
             type: SET_GIGS,
             gigs
         })
-
     } catch (err) {
         console.log('Cannot load gigs', err)
         throw err
