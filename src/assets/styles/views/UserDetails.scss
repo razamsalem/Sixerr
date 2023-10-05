@@ -20,11 +20,12 @@
             .user-profile-info {
 
                 .user-profile-img {
-                    width: 150px;
                     font-size: 3em;
+                    width: 150px;
                     margin-block-end: 15px;
-
+                    
                     img {
+                        height: 150px;
                         z-index: 1;
                         width: 100%;
                         border-radius: 50%;
@@ -202,9 +203,9 @@
 
     .gigs-column {
         .manage-orders {
-            margin-block-start: 50px;
-
+            
             h1 {
+                margin-block-start: 50px;
                 margin-block-end: 20px;
             }
 
@@ -213,7 +214,7 @@
                 border-collapse: collapse;
                 margin-bottom: 20px;
                 margin-inline-end: 12.063rem;
-
+                
                 thead {
                     background-color: $light-clr;
                     text-transform: uppercase;
