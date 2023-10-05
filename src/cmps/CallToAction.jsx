@@ -1,5 +1,6 @@
 import timeImg from '../assets/img/time.svg';
 import checkImg from '../assets/img/check.svg';
+import { Link } from 'react-router-dom';
 
 export function CallToAction({ gig }) {
     const { price, daysToMake, packages } = gig
@@ -28,9 +29,9 @@ export function CallToAction({ gig }) {
                     )
                 })}
             </ul>
-            <button className='btn continue'>
+            <Link className='btn continue'>
                 Continue
-            </button>
+            </Link>
             <div className='compare'>
                 <a className='compare-link'>Compare packages</a>
             </div>

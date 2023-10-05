@@ -68,6 +68,9 @@
     }
 
     .continue {
+        @include btn;
+        display: block;
+        text-align: center;
         height: rem(42px);
         width: 100%;
         background-color: black;
