@@ -42,9 +42,9 @@ export function AppHeader() {
         <>
             <section className="main-layout full header-container">
                 <header className="app-header">
-                    <h1 className='logo'>
+                    <Link to={'/home'} className='logo'>
                         Sixerr<span className='dot'>.</span>
-                    </h1>
+                    </Link>
 
                     <div className="searchbar-container">
                         {/* <input type="text" className="search-bar" placeholder='What service are you looking for today?' /> */}

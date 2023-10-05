@@ -30,7 +30,7 @@ export function SearchBarFilter() {
     }
 
     return (
-        <form onSubmit={(ev) => {
+        <form className="search-bar-filter-form" onSubmit={(ev) => {
             ev.preventDefault()
             setFilterBy({ ...globalFilterBy, ...filterByToEdit })
             navigate('/gig')

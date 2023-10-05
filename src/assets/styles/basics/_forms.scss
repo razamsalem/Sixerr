@@ -7,11 +7,6 @@ button {
     cursor: pointer;
 }
 
-form>* {
-    display: block;
-    width: 200px;
-    margin: 10px 0px;
-}
 
 .btn-link {
     border: 0;
@@ -19,8 +14,3 @@ form>* {
     text-decoration: underline;
     transition: .5s;
 }
-
-// .btn-link:hover {
-//     background-color: $clr1;
-//     transform: scale(1.1);
-// }
