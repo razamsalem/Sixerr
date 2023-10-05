@@ -1,13 +1,15 @@
 .user-details {
     .user-card {
         position: relative;
-        padding: 30px;
         border: 1px solid $modal-filter-border-clr;
+        padding: 30px;
+        max-width: 400px;
 
         font-size: 14px;
         line-height: 130%;
         color: $dark-clr-1;
         background-color: $light-clr;
+
 
         .user-profile-info {
 
@@ -35,8 +37,145 @@
                 font-size: 16px;
                 line-height: 24px;
                 color: $co-clr;
+                margin-block-end: 24px;
             }
 
+            .location {
+                display: flex;
+                justify-content: space-between;
+                padding-block-start: 20px;
+
+                .location-icon {
+                    width: 13px;
+                    height: 13px;
+                    color: $dark-clr-1;
+                    margin-inline-end: 12px;
+                }
+
+            }
+
+            .member-since {
+                display: flex;
+                justify-content: space-between;
+                padding-block-start: 20px;
+
+                .user-icon {
+                    width: 13px;
+                    height: 13px;
+                    color: $dark-clr-1;
+                    margin-inline-end: 12px;
+
+                }
+
+            }
+
+        }
+    }
+
+    .desc-card {
+        position: relative;
+        border: 1px solid $modal-filter-border-clr;
+        padding: 30px;
+        max-width: 400px;
+        margin-block-start: 25px;
+
+        font-size: 14px;
+        line-height: 130%;
+        color: $dark-clr-1;
+        background-color: $light-clr;
+
+
+        .user-profile-desc {
+            .user-stats {
+                .user-data {
+                    padding-block-end: 20px;
+                    margin-block-end: 10px;
+
+
+                    .header {
+                        justify-content: space-between;
+                        padding-block-end: 14px;
+
+
+                        h3 {
+                            color: $darkest-clr;
+                            font-size: 16px;
+                            font-weight: 700;
+                            line-height: 150%;
+
+                        }
+
+                        button {
+                            display: inline-block;
+                            color: $btn-clr;
+                            font-size: 14px;
+                            font-weight: 400;
+                            background: none;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+
+                    }
+
+                    p {
+                        word-wrap: break-word;
+                        line-height: 20px;
+                        color: $dark-clr-1;
+                    }
+                }
+
+                .user-lang {
+
+                    .header {
+                        justify-content: space-between;
+                        padding-block-end: 14px;
+                        margin-block-start: 20px;
+
+                        h3 {
+                            color: $darkest-clr;
+                            font-size: 16px;
+                            font-weight: 700;
+                            line-height: 150%;
+                        }
+
+                        button {
+                            display: inline-block;
+                            color: $btn-clr;
+                            font-size: 14px;
+                            font-weight: 400;
+                            background: none;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+
+                    ul {
+                        padding-block: 10px;
+
+                        li {
+
+                            .title {
+                                font-size: 14px;
+                                line-height: 18px;
+                                color: $list-title-clr;
+                            }
+
+                            .sub-title {
+                                color: $list-subtitle-clr;
+                            }
+
+                            &:not(:last-child) {
+                                margin-block-end: 10px;
+                            }
+
+                        }
+                    }
+                }
+            }
         }
     }
 

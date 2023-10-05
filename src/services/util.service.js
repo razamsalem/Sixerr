@@ -6,7 +6,8 @@ export const utilService = {
     randomPastTime,
     saveToStorage,
     loadFromStorage,
-    getAssetSrc
+    getAssetSrc,
+    getSubtitle
 }
 
 function makeId(length = 6) {
@@ -61,6 +62,17 @@ function saveToStorage(key, value) {
 function loadFromStorage(key) {
     const data = localStorage.getItem(key)
     return (data) ? JSON.parse(data) : undefined
+}
+
+function getSubtitle() {
+    const languageLevel = ['Basic', 'Conversational', 'Fluent', 'Native/Bilingual']
+    const randIdx = getRandomIntInclusive(0, languageLevel.length - 1)
+    const randIdx2 = getRandomIntInclusive(0, languageLevel.length - 1)
+    const randIdx3 = getRandomIntInclusive(0, languageLevel.length - 1)
+
+    const randSubtitles = [languageLevel[randIdx], languageLevel[randIdx2], languageLevel[randIdx3]]
+
+    return randSubtitles
 }
 
 // util function

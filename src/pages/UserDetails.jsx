@@ -6,11 +6,13 @@ import { loadUser } from '../store/user.actions'
 import { store } from '../store/store'
 import { showSuccessMsg } from '../services/event-bus.service'
 import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
+import { utilService } from '../services/util.service'
 
 export function UserDetails() {
 
   const params = useParams()
   const user = useSelector(storeState => storeState.userModule.watchedUser)
+  const demoSubtitle = utilService.getSubtitle()
 
   useEffect(() => {
     loadUser(params.id)
@@ -23,6 +25,7 @@ export function UserDetails() {
     }
 
   }, [params.id])
+
 
   function onUserUpdate(user) {
     showSuccessMsg(`This user ${user.fullname} just got updated from socket, new score: ${user.score}`)
@@ -48,18 +51,51 @@ export function UserDetails() {
               </div>
             </div>
           </div>
-
+          <div className="user-stats-desc">
+            <ul className='user-stats with-border-top'>
+              <li className="location flex">
+                <span><span className=' fa-solid fa-location-dot location-icon'></span>From</span>
+                <b>{user.location ? user.location : 'Israel'}</b>
+              </li>
+              <li className="member-since flex">
+                <span><span className='fa-solid fa-user user-icon'></span>Member since</span>
+                <b>Oct 2023</b>
+              </li>
+            </ul>
+          </div>
         </div>
-        <h3>
-          {user.fullname}
-        </h3>
-        {/* Demo for dynamic images: */}
-        <div className="user-img" style={{ backgroundImage: `url('/img/u${0}.png')` }}>
-        </div>
-        <pre>
-          {JSON.stringify(user, null, 2)}
-        </pre>
       </div>}
+
+      {user && <div className='desc-card'>
+        <div className='user-profile-desc'>
+          <div className='user-stats'>
+            <div className="user-data">
+              <div className="header flex">
+                <h3 title='Tell us more about yourself. Buyers are also interested in learning about you as a person.'>Description</h3>
+                <button>Edit Description</button>
+              </div>
+              <p>{user.desc ? user.desc : <span className='empty'>Tell us more about yourself. Buyers are also interested in learning about you as a person.</span>}</p>
+            </div>
+            <div className="user-lang with-border-top">
+              <div className="header flex">
+                <h3 title='You can make up to four selections.'>Languages</h3>
+                <button>Add new</button>
+              </div>
+              <ul>{user.lang ? user.lang.map(lang => {
+                <li>{lang}</li>
+              }) :
+                <>
+                  <li><span className='title'>English</span> - <span className='sub-title'>{demoSubtitle[0]}</span></li>
+                  <li><span className='title'>Hebrew <strong>(עברית)</strong></span> - <span className='sub-title'>{demoSubtitle[1]}</span></li>
+                  <li><span className='title'>Spanish <strong>(español)</strong></span> - <span className='sub-title'>{demoSubtitle[2]}</span></li>
+                </>
+              }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>}
+
     </section>
   )
 }
