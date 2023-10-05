@@ -9,7 +9,9 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig }) {
         <li className="gig-preview" key={gig._id}>
 
             <div>
-                <img className="gig-img" src={gig.imgUrls ? gig.imgUrls[0] : defaultImgUrl} alt="gig-img" />
+                <Link to={`/gig/${gig._id}`}>
+                    <img className="gig-img" src={gig.imgUrls ? gig.imgUrls[0] : defaultImgUrl} alt="gig-img" />
+                </Link>
             </div>
 
             <div className="flex owner-details">
@@ -35,19 +37,6 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig }) {
 
 
             <span className="gig-price">From ${gig.price.toLocaleString()}</span>
-            {/* <p>Price: <span>${gig.price.toLocaleString()}</span></p> */}
-            {/* <p>Owner: <span>{gig.owner && gig.owner.fullname}</span></p> */}
-            {/* {shouldShowActionBtns(gig) && <div>
-                <button onClick={() => { onRemoveGig(gig._id) }}>x</button>
-                <button onClick={() => { onUpdateGig(gig) }}>Edit</button> */}
-            {/* </div>} */}
-
-            {/* <div>
-                <button onClick={() => { onRemoveGig(gig._id) }}>x</button>
-                <button onClick={() => { onUpdateGig(gig) }}>Edit</button>
-            </div> */}
-
-            {/* <button onClick={() => { onAddGigMsg(gig) }}>Add gig msg</button> */}
         </li>
 
     )
