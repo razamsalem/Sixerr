@@ -8,11 +8,20 @@ import { gigService } from '../services/gig.service.local.js'
 import { GigList } from '../cmps/GigList.jsx'
 import { DynamicBtn } from '../cmps/DynamicBtn.jsx'
 import { SET_FILTER_BY } from '../store/reducers/gig.reducer.js'
+import { useLocation } from 'react-router'
 
 export function GigIndex() {
     const dispatch = useDispatch()
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector(storeState=> storeState.gigModule.filterBy);
+
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+   
+    useEffect(()=>{
+        onSetFilter({...filterBy, txt :queryParams.get('txt') || ''})
+        loadGigs()
+    },[queryParams.get('txt')])
 
     useEffect(() => {
         loadGigs()
