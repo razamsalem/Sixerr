@@ -36,6 +36,7 @@ export function SearchBarFilter() {
             navigate('/gig')
         }}>
             <input name="txt" type="text" className="search-bar" placeholder='What service are you looking for today?' onChange={handleChange} />
+            <button className='btn fa-solid search-icon size=lg'></button>
         </form>
     )
 }

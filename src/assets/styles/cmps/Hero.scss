@@ -21,7 +21,7 @@
             }
         }
 
-        .search-bar-container {
+        .search-bar-filter-form {
             display: flex;
             height: em(48px);
 
@@ -30,11 +30,11 @@
                 height: 100%;
             }
 
-            .search {
+            .search-bar {
                 @include search-bar
             }
 
-            .search-btn {
+            .btn {
                 width: em(66px);
                 font-size: 1rem;
 

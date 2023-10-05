@@ -7,14 +7,7 @@ import { gigService } from '../services/gig.service.local';
 
 function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filterBy }) {
     const globalFilterBy = useSelector(storeState => storeState.gigModule.filterBy)
-
-    const [filterByToEdit, setFilterByToEdit] = useState({})
-
-    console.log(globalFilterBy)
-
-    // useEffect(() => {
-    //     setFilterByToEdit({ ...globalFilterBy })
-    // }, [filterByToEdit])
+    const [filterByToEdit, setFilterByToEdit] = useState({ ...globalFilterBy })
 
     const location = useLocation()
     const navigate = useNavigate()
@@ -48,12 +41,11 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
     function handleChange(ev) {
         const field = ev.target.name;
         let value = ev.target.value;
-        console.log(field, "field");
 
         switch (ev.target.type) {
             case 'number':
             case 'range':
-                value = +value || '';
+                value = +value || ''
                 break;
 
             case 'checkbox':
@@ -84,14 +76,14 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
                         <div className="left">
                             <label>MIN.</label>
                             <div className="input-price-filter">
-                                <input type="number" name='minPrice' id='gig-price-range-min' className='min' placeholder='Any' min='0' max='50000' onChange={handleChange} value={filterByToEdit?.minPrice} />
+                                <input type="number" name='minPrice' id='gig-price-range-min' className='min' placeholder='Any' min='0' max='50000' onChange={handleChange} value={filterByToEdit.minPrice} />
                                 <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696460033/dollar-symbol_hxbp91.png" alt="Dollar symbol" />
                             </div>
                         </div>
                         <div className="right">
                             <label>MAX.</label>
                             <div className="input-price-filter">
-                                <input type="number" name='maxPrice' id='gig-price-range-max' className='max' placeholder='Any' min='0' max='50000' onChange={handleChange} value={filterByToEdit?.maxPrice} />
+                                <input type="number" name='maxPrice' id='gig-price-range-max' className='max' placeholder='Any' min='0' max='50000' onChange={handleChange} value={filterByToEdit.maxPrice} />
                                 <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696460033/dollar-symbol_hxbp91.png" alt="Dollar symbol" />
                             </div>
                         </div>
@@ -103,7 +95,6 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
             <div className='button-row'>
                 <button className='clear-btn' onClick={() => setFilterByToEdit({ minPrice: '', maxPrice: '' })}>Clear All</button>
                 <button className='apply-btn' onClick={onSubmit}>Apply</button>
-                {/* <Link className='apply-btn' to={`/gig?${createSearchParams(filterByToEdit)}`}>Apply</Link> */}
             </div>
         </div>
     )

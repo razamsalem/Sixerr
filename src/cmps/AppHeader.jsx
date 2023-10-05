@@ -47,10 +47,7 @@ export function AppHeader() {
                     </Link>
 
                     <div className="searchbar-container">
-                        {/* <input type="text" className="search-bar" placeholder='What service are you looking for today?' /> */}
                         <SearchBarFilter />
-
-                        <button className='btn fa-solid search-icon size=lg'></button>
                     </div>
 
                     <nav className='links-container'>

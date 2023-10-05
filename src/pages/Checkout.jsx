@@ -17,6 +17,10 @@ export function Checkout() {
         }
     }
 
+
+    console.log(gigId)
+    console.log(gigService.getById(gigId))
+
     // function 
 
     return (
