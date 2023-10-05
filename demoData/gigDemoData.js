@@ -32,6 +32,12 @@ const gigDemoData = [
     _id: "i102",
     title: "I will design your companys vision",
     price: 26.99,
+    packages: {
+      basic: {
+        desc: '1 initial concept with JPG+PNG+3D Mockup',
+        features: ['1 concept included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file']
+      }
+    },
     owner: {
       "_id": "u102",
       "fullname": "Julia Carter",
@@ -55,6 +61,12 @@ const gigDemoData = [
     _id: "i104",
     title: "I will do 3 modern minimalist logo design",
     price: 12.99,
+    packages: {
+      basic: {
+        desc: '1 initial concept with JPG+PNG+3D Mockup',
+        features: ['1 concept included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file']
+      }
+    },
     owner: {
       "_id": "u104",
       "fullname": "Justin Timber",
@@ -78,6 +90,12 @@ const gigDemoData = [
     _id: "i101",
     title: "I will create custom company logo design for your business",
     price: 12.99,
+    packages: {
+      basic: {
+        desc: '1 initial concept with JPG+PNG+3D Mockup',
+        features: ['1 concept included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file']
+      }
+    },
     owner: {
       "_id": "u101",
       "fullname": "Micky Smith",
@@ -101,6 +119,12 @@ const gigDemoData = [
     _id: "i102",
     title: "I will design your companys vision",
     price: 100.99,
+    packages: {
+      basic: {
+        desc: '1 initial concept with JPG+PNG+3D Mockup',
+        features: ['1 concept included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file']
+      }
+    },
     owner: {
       "_id": "u102",
       "fullname": "Julia Carter",
@@ -124,6 +148,12 @@ const gigDemoData = [
     _id: "i104",
     title: "I will do 3 modern minimalist logo design",
     price: 60,
+    packages: {
+      basic: {
+        desc: '1 initial concept with JPG+PNG+3D Mockup',
+        features: ['1 concept included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file']
+      }
+    },
     owner: {
       "_id": "u104",
       "fullname": "Justin Timber",
