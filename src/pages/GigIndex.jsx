@@ -50,6 +50,7 @@ export function GigIndex() {
     function onAddGigMsg(gig) {
         console.log(`TODO Adding msg to gig`)
     }
+    
     function shouldShowActionBtns(gig) {
         const user = userService.getLoggedinUser()
         if (!user) return false

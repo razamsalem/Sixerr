@@ -1,15 +1,9 @@
 @import url(react-responsive-carousel/lib/styles/carousel.min.css);
 
-.e-carousel .e-carousel-navigators .e-next .e-btn:not(:disabled) .e-btn-icon,
-.e-carousel .e-carousel-navigators .e-previous .e-btn:not(:disabled) .e-btn-icon
-{
-    color: greenyellow;
-    font-size: 25px;
-}
 
 .gig-details{
     display: grid;
-    grid-template-columns: 32px 2fr 114px 1fr 32px;
+    grid-template-columns: rem(32px) 2fr rem(114px) 1fr rem(32px);
 
     img{
         grid-column: 2;
@@ -23,20 +17,20 @@
     }
     .owner-details{
         h3{
-            padding: 8px 8px 8px 0;
+            padding: rem(8px) rem(8px) rem(8px) 0;
         }
     .star-wrapper{
         display: flex;
-        gap: 3px;
+        gap: rem(3px);
     }
     }
 
     .owner-details-container{
         display: flex;
-        gap: 16px;
+        gap: rem(16px);
         flex-direction: column;
         grid-column: 2;
-        margin-bottom: -13px;
+        margin-bottom: rem(-13px);
         .owner-details-container-1{
             display: flex;
             gap: rem(12px);
@@ -46,12 +40,12 @@
     .about-gig{
         grid-column: 2;
         .gig-about-title{
-            padding-bottom: 25px;
-            line-height: 28px;
+            padding-bottom: rem(25px);
+            line-height: rem(28px);
         }
         .gig-description{
-            color:#62646a;
-            line-height: 24px;
+            color:$dark-clr-1;
+            line-height: rem(24px);
         }
     }
     .call-to-action{
@@ -63,27 +57,27 @@
         border-radius: 50%;
         width: 2em;
         height: 2em;
-        font-size: 18px;
+        font-size: rem(18px);
         position: absolute;
         top: 40%;
         right: -10px;
         background: #f8f8f8;
-        box-shadow: #000000 0px 2px 5px 0px;
-        color: #1dbf73;
-        line-height: 24px;
+        box-shadow: #000000 0px rem(2px) rem(5px) 0px;
+        // color: #1dbf73;
+        line-height: rem(24px);
     }
     .prev-btn{
         border-radius: 50%;
         width: 2em;
         height: 2em;
-        font-size: 18px;
+        font-size: rem(18px);
         position: absolute;
         top: 40%;
-        left: -10px;
+        left: rem(-10px);
         background: #f8f8f8;
-        box-shadow: #000000 0px 2px 5px 0px;
-        color: #1dbf73;
-        line-height: 24px;
+        box-shadow: #000000 0px rem(2px) rem(5px) 0px;
+        // color: #1dbf73;
+        line-height: rem(24px);
     }
 
     .carousel {
