@@ -2,8 +2,7 @@ import { gigService } from "../../services/gig.service.local.js";
 import { userService } from "../../services/user.service.js";
 import { store } from '../../store/store.js'
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
-import { ADD_GIG, ADD_TO_CART, CLEAR_CART, REMOVE_GIG, REMOVE_FROM_CART, SET_GIGS, UNDO_REMOVE_GIG, UPDATE_GIG } from "../reducers/gig.reducer.js";
-// import { SET_SCORE } from "./user.reducer.js";
+import { ADD_GIG, ADD_TO_CART, CLEAR_CART, REMOVE_GIG, REMOVE_FROM_CART, SET_GIGS, UNDO_REMOVE_GIG, UPDATE_GIG, SET_FILTER_BY } from "../reducers/gig.reducer.js";
 
 // Action Creators:
 export function getActionRemoveGig(gigId) {
@@ -12,6 +11,12 @@ export function getActionRemoveGig(gigId) {
         gigId
     }
 }
+
+export function setFilterBy(filterBy) {
+    store.dispatch({ type: SET_FILTER_BY, filterBy })
+}
+
+
 export function getActionAddGig(gig) {
     return {
         type: ADD_GIG,
@@ -27,9 +32,10 @@ export function getActionUpdateGig(gig) {
 
 export async function loadGigs() {
     try {
-        const { filterBy } = store.getState().gigModule;
+        const { filterBy } = store.getState().gigModule
         const gigs = await gigService.query(filterBy)
-        console.log('Gigs from  Action:', gigs)
+
+
         store.dispatch({
             type: SET_GIGS,
             gigs

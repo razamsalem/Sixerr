@@ -5,7 +5,7 @@ import { gigService } from "../services/gig.service.local"
 
 export function Checkout() {
     const { gigId } = useParams()
-    // console.log(gigId)
+
     async function onLoadGig() {
         const desiredGig = await gigService.getById(gigId)
         try {
@@ -17,6 +17,7 @@ export function Checkout() {
         }
     }
 
+    // function 
 
     return (
         <section className="checkout">

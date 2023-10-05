@@ -13,15 +13,10 @@ import { useLocation } from 'react-router'
 export function GigIndex() {
     const dispatch = useDispatch()
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
-    const filterBy = useSelector(storeState=> storeState.gigModule.filterBy);
+    const filterBy = useSelector(storeState => storeState.gigModule.filterBy);
 
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
-   
-    useEffect(()=>{
-        onSetFilter({...filterBy, txt :queryParams.get('txt') || ''})
-        loadGigs()
-    },[queryParams.get('txt')])
 
     useEffect(() => {
         loadGigs()
@@ -61,7 +56,7 @@ export function GigIndex() {
     function onAddGigMsg(gig) {
         console.log(`TODO Adding msg to gig`)
     }
-    
+
     function shouldShowActionBtns(gig) {
         const user = userService.getLoggedinUser()
         if (!user) return false
@@ -69,16 +64,11 @@ export function GigIndex() {
         return gig.owner?._id === user._id
     }
 
-    function onSetFilter(filterBy) {
-        console.log(filterBy);
-        dispatch({ type: SET_FILTER_BY, filterBy })
-    }
-
     return (
         <div>
             {/* <h3>Gig App</h3> */}
-           
-            <DynamicBtn filterBy={filterBy} onSetFilter={onSetFilter}/>
+
+            <DynamicBtn filterBy={filterBy} />
             <main>
                 <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
                 <button onClick={onAddGig}>Add Gig</button>
