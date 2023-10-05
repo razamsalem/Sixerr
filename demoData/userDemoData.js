@@ -7,6 +7,7 @@ export const users = [
     password: "secret",
     level: "basic/premium",
     desc: "Are you looking for an expert web developer to design and develop your website? If your answer is yes, then I welcome you and you are at the right place.",
+    isSeller: false,
     reviews: [
       {
         "id": "madeId",
