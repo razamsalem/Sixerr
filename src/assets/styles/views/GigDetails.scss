@@ -3,6 +3,7 @@
 .gig-details {
     display: grid;
     grid-template-columns: rem(750px) rem(435px);
+    justify-content: space-around;
 
     &>*:not(.call-to-action) {
         grid-column: 1;
@@ -13,7 +14,7 @@
     }
 
     .gig-title {
-        padding-bottom: rem(16px);
+        // padding-bottom: rem(16px);
     }
 
     .owner-details {
@@ -32,9 +33,11 @@
         gap: em(16px);
         flex-direction: column;
         margin-bottom: em(-13px);
+        margin-block-end: em(27px);
 
         .owner-details-container-1 {
             display: flex;
+            // margin-block-end: 27px;
             gap: rem(12px);
         }
     }

@@ -21,7 +21,7 @@ export function CallToAction({ gig }) {
             <ul className="feature-list">
                 {packages.basic.features.map(feature => {
                     return (
-                        <span className='feature-container'>
+                        <span key={feature} className='feature-container'>
                             <img className='icon check' src={checkImg} alt="time-icon" />
                             {feature}
                         </span>
