@@ -78,7 +78,7 @@
     }
 }
 
-
+//Cmp mixins
 @mixin btn($type: regular, $bg-color: $accent-clr, $color: $light-clr) {
     background-color: $bg-color;
     color: $color;
