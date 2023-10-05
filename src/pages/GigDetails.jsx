@@ -37,7 +37,7 @@ export function GigDetails() {
     if (!gig) return <div>Loading...</div>
     return (
         <section className="gig-details">
-
+            <CallToAction gig={gig} />
             <div className="owner-details-container">
                 <h1 className="gig-title">{gig.title}</h1>
                 <div className="owner-details-container-1">
@@ -55,17 +55,15 @@ export function GigDetails() {
                         </div>
                     </div>
                 </div>
-
             </div>
 
-
-            <div style={{ marginBottom: '1.875rem', position: 'relative' }}>
+            <div className="carousel-container" style={{ marginBottom: '1.875rem', position: 'relative' }}>
                 <Carousel renderArrowNext={(clickHandler, hasNext) => {
                     return (
                         <button className='next-btn' onClick={clickHandler} >
                             <img src={nextUrl} alt="nextUrl" />
                         </button>
-                    );
+                    )
                 }}
                     renderArrowPrev={(clickHandler, hasNext) => {
                         return (
@@ -76,7 +74,7 @@ export function GigDetails() {
                     }}
                 >
                     {gig.imgUrls.map(img => {
-                        return <img src={img} />
+                        return <img key={img} src={img} />
                     })}
                 </Carousel>
             </div>
@@ -86,11 +84,6 @@ export function GigDetails() {
                 <h1 className="gig-about-title">About this gig</h1>
                 <p className="gig-description">{gig.description}</p>
             </div>
-
-            {/* <aside className="call-to-action">
-                <img src={priceUrl} alt="price" style={{height:'540px'}}/>
-            </aside> */}
-
         </section>
     )
 }

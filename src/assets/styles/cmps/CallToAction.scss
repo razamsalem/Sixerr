@@ -1,0 +1,85 @@
+.call-to-action {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    width: em(412px);
+    border: 1px solid $dark-clr-2;
+    padding: em(32px) em(24px);
+
+    .icon {
+        width: em(16px);
+    }
+
+    .package-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-block-end: em(32px);
+
+        .package {
+            font-weight: 200;
+            text-transform: uppercase;
+            font-size: rem(18px);
+        }
+
+        .price {
+            font-size: em(20px);
+            font-weight: 200;
+            letter-spacing: em(-1.6px);
+        }
+    }
+
+    .package-desc {
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: em(0.35px);
+        color: $dark-clr-1;
+    }
+
+    .days-container {
+        margin-block: em(10px);
+        display: flex;
+        align-items: center;
+        height: em(24px);
+        gap: em(8px);
+
+        h3 {
+            font-size: em(14px);
+            color: $dark-clr-1;
+        }
+    }
+
+    .feature-list {
+        margin-block-end: em(20px);
+
+        .feature-container {
+            display: flex;
+            align-items: center;
+            gap: em(8px);
+            font-size: rem(14px);
+            line-height: em(24px);
+            color: $dark-clr-3;
+
+        }
+    }
+
+    .continue {
+        height: rem(42px);
+        width: 100%;
+        background-color: black;
+        font-size: em(16px);
+        font-weight: 700;
+        letter-spacing: em(0.5px);
+        margin-block-end: em(12px);
+        border-radius: em(5px);
+    }
+
+    .compare {
+        text-align: center;
+
+        .compare-link {
+            font-size: em(14px);
+            letter-spacing: em(-0.2px);
+        }
+    }
+}
