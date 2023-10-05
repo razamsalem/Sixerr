@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router';
+import { createSearchParams } from 'react-router-dom';
 
 function DynamicModal({ btn, isOpen, onClose, content, position, modalRef,filterBy,onSetFilter }) {
     const [filterByToEdit, setFilterByToEdit] = useState({...filterBy})
+    const location = useLocation()
+    const navigate = useNavigate()
+    const queryParams = new URLSearchParams(location.search)
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -18,6 +24,9 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef,filter
         }
     }, [isOpen, onClose, modalRef])
 
+    useEffect(()=>{
+        onSetFilter({txt:queryParams.get('txt'), minPrice:+queryParams.get('minPrice'), maxPrice:+queryParams.get('maxPrice')})
+    },[])
 
     if (!isOpen) return null
 
@@ -49,7 +58,10 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef,filter
 
     function onSubmit() {
         // console.log(filterByToEdit);
-        onSetFilter(filterByToEdit)
+       
+        const params = createSearchParams(filterByToEdit);
+        navigate(`/gig?${params}`)
+        // onSetFilter(filterByToEdit)
     }
     // if(filterBy) const {minPrice,maxPrice} = filterBy;
     return (
@@ -87,6 +99,7 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef,filter
             <div className='button-row'>
                 <button className='clear-btn' onClick={()=>setFilterByToEdit({minPrice:'',maxPrice:''})}>Clear All</button>
                 <button className='apply-btn' onClick={onSubmit}>Apply</button>
+                {/* <Link className='apply-btn' to={`/gig?${createSearchParams(filterByToEdit)}`}>Apply</Link> */}
             </div>
         </div>
     )

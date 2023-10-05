@@ -1,15 +1,26 @@
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, createSearchParams, useLocation, useNavigate} from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import routes from '../routes'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { login, logout, signup } from '../store/user.actions.js'
 import { LoginSignup } from './LoginSignup.jsx'
 import { CategoryNav } from './CategoryNav'
+import { useEffect, useState } from 'react'
 
 export function AppHeader() {
     const navigate = useNavigate()
     const user = useSelector(storeState => storeState.userModule.user)
+    const filterBy = useSelector(storeState=> storeState.gigModule.filterBy);
 
+    const [txt, setTxt] = useState('');
+    const [params, setParams] = useState(filterBy);
+
+
+    useEffect(() => {
+        setParams(prevParam=> ({...prevParam,txt}) )
+      }, [txt]);
+
+    
     async function onLogin(credentials) {
         try {
             const user = await login(credentials)
@@ -35,18 +46,32 @@ export function AppHeader() {
         }
     }
 
+
+    function searchFilter(ev){
+        ev.preventDefault()
+        navigate(`/gig?${createSearchParams(params)}`)
+    }
+
+    function clearInputAndParams() {
+        setTxt('');
+        navigate('/')
+    }
     return (
         <>
             <section className="main-layout full header-container">
                 <header className="app-header">
-                    <h1 className='logo' onClick={() => { navigate('/') }}>
+                    <h1 className='logo' onClick={clearInputAndParams}>
                         Sixerr<span className='dot'>.</span>
                     </h1>
 
-                    <div className="searchbar-container">
-                        <input type="text" className="search-bar" placeholder='What service are you looking for today?' />
-                        <button className='btn fa-solid search-icon size=lg'></button>
-                    </div>
+                    <form onSubmit={searchFilter}>
+                        <div className="searchbar-container">
+                            <input type="text" className="search-bar" placeholder='What service are you looking for today?' onChange={(e) => {
+                                setTxt(e.target.value)
+                            }} value={txt}/>
+                            <button className='btn fa-solid search-icon size=lg'></button>
+                        </div>
+                    </form>
 
                     <nav className='links-container'>
                         {routes.map(route => !route.shouldRender ? ''
