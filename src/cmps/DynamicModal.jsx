@@ -1,9 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router';
 import { createSearchParams } from 'react-router-dom';
+import { setFilterBy } from '../store/actions/gig.actions';
+import { useSelector } from 'react-redux';
+import { gigService } from '../services/gig.service.local';
 
 function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filterBy }) {
-    const [filterByToEdit, setFilterByToEdit] = useState({ ...filterBy })
+    const globalFilterBy = useSelector(storeState => storeState.gigModule.filterBy)
+
+    const [filterByToEdit, setFilterByToEdit] = useState({})
+
+    console.log(globalFilterBy)
+
+    // useEffect(() => {
+    //     setFilterByToEdit({ ...globalFilterBy })
+    // }, [filterByToEdit])
+
     const location = useLocation()
     const navigate = useNavigate()
     const queryParams = new URLSearchParams(location.search)
@@ -21,10 +33,6 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
             document.removeEventListener('mousedown', handleClickOutside)
         }
     }, [isOpen, onClose, modalRef])
-
-    useEffect(() => {
-        // onSetFilter({ txt: queryParams.get('txt'), minPrice: +queryParams.get('minPrice'), maxPrice: +queryParams.get('maxPrice') })
-    }, [])
 
     if (!isOpen) return null
 
@@ -52,17 +60,14 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
                 value = ev.target.checked;
                 break;
         }
-        setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
+        setFilterByToEdit((prevFilter) => {
+            return { ...prevFilter, [field]: value }
+        })
     }
 
     function onSubmit() {
-        // console.log(filterByToEdit);
-
-        const params = createSearchParams(filterByToEdit);
-        navigate(`/gig?${params}`)
-        // onSetFilter(filterByToEdit)
+        setFilterBy({ ...globalFilterBy, ...filterByToEdit })
     }
-    // if(filterBy) const {minPrice,maxPrice} = filterBy;
     return (
         <div className="dynamic-modal" style={style} ref={modalRef}>
             <div className="content-scroll">
@@ -79,14 +84,14 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
                         <div className="left">
                             <label>MIN.</label>
                             <div className="input-price-filter">
-                                <input type="number" name='minPrice' id='gig-price-range-min' className='min' placeholder='Any' min='0' max='50000' onChange={handleChange} value={filterByToEdit.minPrice} />
+                                <input type="number" name='minPrice' id='gig-price-range-min' className='min' placeholder='Any' min='0' max='50000' onChange={handleChange} value={filterByToEdit?.minPrice} />
                                 <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696460033/dollar-symbol_hxbp91.png" alt="Dollar symbol" />
                             </div>
                         </div>
                         <div className="right">
                             <label>MAX.</label>
                             <div className="input-price-filter">
-                                <input type="number" name='maxPrice' id='gig-price-range-max' className='max' placeholder='Any' min='0' max='50000' onChange={handleChange} value={filterByToEdit.maxPrice} />
+                                <input type="number" name='maxPrice' id='gig-price-range-max' className='max' placeholder='Any' min='0' max='50000' onChange={handleChange} value={filterByToEdit?.maxPrice} />
                                 <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696460033/dollar-symbol_hxbp91.png" alt="Dollar symbol" />
                             </div>
                         </div>
