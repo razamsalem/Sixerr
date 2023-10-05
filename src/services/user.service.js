@@ -1,5 +1,7 @@
 import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
+import demoUsers from '../../demoData/userDemoData'
+import { utilService } from './util.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 
@@ -17,7 +19,7 @@ export const userService = {
 }
 
 window.userService = userService
-
+_createusers()
 
 function getUsers() {
     return storageService.query('user')
@@ -37,7 +39,7 @@ function remove(userId) {
     // return httpService.delete(`user/${userId}`)
 }
 
-async function update({_id, score}) {
+async function update({ _id, score }) {
     const user = await storageService.get('user', _id)
     user.score = score
     await storageService.put('user', user)
@@ -78,15 +80,22 @@ async function changeScore(by) {
     return user.score
 }
 
-
 function saveLocalUser(user) {
-    user = {_id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, score: user.score}
+    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, score: user.score }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
 
 function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
+}
+
+function _createusers() {
+    let users = utilService.loadFromStorage('user')
+    if (!users || !users.length) {
+        users = demoUsers
+        utilService.saveToStorage('user', users)
+    }
 }
 
 

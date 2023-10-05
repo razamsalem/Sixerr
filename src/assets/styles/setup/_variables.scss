@@ -1,9 +1,11 @@
 // Colors
 $accent-clr: #1dbf73;
+$darkest-clr: #0e0e0f;
 $dark-clr1: #222325;
 $dark-clr: #404145;
 $dark-clr-1: #62646a;
 $dark-clr-2: lighten(#62646a, 50%);
+$dark-clr-3: #95979d;
 $light-clr2: #e4e5e7;
 $light-clr1: #f5f5f5;
 $light-clr: #fff;
@@ -22,15 +24,14 @@ $trusted-by-bg-clr: #f5f5f5;
 
 //User colors 
 $co-clr: #7a7d85;
+$btn-clr: #00698c;
+$selections-clr: #d5d4d2;
+$user-bgclr: #f7f7f7;
 
 
-$clr1: #2e3bce;
-$clr2: #6d08da;
-$clr3: #574f7d;
-$clr4: #f2a1e0;
-$clr5: #f26e93;
-$clr6: #fff;
-$clr7: #222;
+//list colors
+$list-title-clr: #555;
+$list-subtitle-clr: #b2b2b2;
 
 
 // Breakpoints

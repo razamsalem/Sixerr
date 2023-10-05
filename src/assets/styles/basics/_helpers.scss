@@ -27,6 +27,16 @@
     }
 }
 
+//Design helpers
+.with-border-top {
+    border-top: 1px solid $modal-filter-border-clr
+}
+
+.empty {
+    color: $list-subtitle-clr;
+    font-size: 14px;
+}
+
 // Media helpers
 
 .square-ratio {

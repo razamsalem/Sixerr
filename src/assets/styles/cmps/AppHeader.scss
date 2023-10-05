@@ -2,6 +2,11 @@
     height: em(80px);
     border-block-end: 1px solid $dark-clr-2;
 
+    img {
+        width: 32px;
+        border-radius: 50%;
+    }
+
     .app-header {
         display: flex;
         justify-content: space-between;

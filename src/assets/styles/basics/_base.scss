@@ -66,6 +66,11 @@ a:visited {
     color: $dark-clr;
 }
 
+::selection {
+    background: $selections-clr;
+    color: $light-clr;
+}
+
 .owner-profile-img {
     @include owner-profile-img;
     
