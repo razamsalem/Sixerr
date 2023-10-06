@@ -282,7 +282,10 @@
                 align-items: center;
                 gap: 1.938rem;
                 padding-block: 60px;
-
+                .become-seller-img{
+                    width: em(252px);
+                    height: em(104px);
+                }
                 h3 {
                     font-size: 18px;
                     font-weight: 600;
