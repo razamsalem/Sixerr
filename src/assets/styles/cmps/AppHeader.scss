@@ -15,14 +15,16 @@
         background-color: $light-clr;
 
         .logo {
-            // font-family: Roboto;
+            font-family: Macan-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-weight: 1000;
-            font-size: em(40px);
-            letter-spacing: -5px;
+            font-size: em(38px);
+            letter-spacing: -2.8px;
+            text-shadow: 1px 0 $dark-clr;
             cursor: pointer;
 
             .dot {
                 color: $accent-clr;
+                text-shadow: 0 0;
             }
         }
 

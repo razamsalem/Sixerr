@@ -1,32 +1,35 @@
 // FONT AWESOME
 @font-face {
     font-family: fa-brands;
-    src: url(../../fonts/fa-brands-400.ttf);
+    src: url(src/assets/fonts/fa-brands-400.ttf);
 }
 
 @font-face {
     font-family: fa-regular;
-    src: url(../../fonts/fa-regular-400.ttf);
+    src: url(src/assets/fonts/fa-regular-400.ttf);
 }
 
 @font-face {
     font-family: fa-solid;
-    src: url(../../fonts/fa-solid-900.ttf);
+    src: url(src/assets/fonts/fa-solid-900.ttf);
 }
 
 @font-face {
     font-family: Macan;
-    src: url(../../fonts/Macan-Medium.otf);
-    font-weight: normal;
-    font-style: normal;
+    src: url(src/assets/fonts/Macan-regular.otf);
+}
+
+@font-face {
+    font-family: Macan-Bold;
+    src: url(src/assets/fonts/Macan-Bold.otf);
 }
 
 @font-face {
     font-family: Roboto;
-    src: url(../../fonts/Roboto-Medium.ttf);
+    src: url(src/assets/fonts/Roboto-Medium.ttf);
 }
 
 @font-face {
     font-family: Domaine;
-    src: url(../../fonts/domaine.woff);
+    src: url(src/assets/fonts/domaine.woff);
 }

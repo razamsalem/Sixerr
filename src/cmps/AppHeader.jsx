@@ -43,7 +43,7 @@ export function AppHeader() {
             <section className="main-layout full header-container">
                 <header className="app-header">
                     <Link to={'/home'} className='logo'>
-                        Sixerr<span className='dot'>.</span>
+                        sixerr<span className='dot'>.</span>
                     </Link>
 
                     <div className="searchbar-container">

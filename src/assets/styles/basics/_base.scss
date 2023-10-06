@@ -26,7 +26,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     line-height: 1;
 }
@@ -53,11 +53,12 @@ p {
 }
 
 a {
+    color: $dark-clr;
     text-decoration: none;
     cursor: pointer;
 }
 
-.star{
+.star {
     width: 1em;
 }
 
@@ -74,11 +75,11 @@ a:visited {
 
 .owner-profile-img {
     @include owner-profile-img;
-    
+
     &-meduim {
         @include owner-profile-img($type: meduim);
     }
-    
+
     &-large {
         @include owner-profile-img($type: large);
     }
