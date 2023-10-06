@@ -1,20 +1,106 @@
-.app-footer {
-    background: none;
-    padding: 1rem 2rem;
-    margin-block-start: 1rem;
-    .left {
-        padding-block: .8rem;
-        justify-content: left;
-        align-items: baseline;
-        .sixerr-logo {
-            font-family: Macan-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 27px;
+.app-footer-container {
+    .app-footer {
+        font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: none;
+        padding: .8rem 2rem;
+        margin-block-start: 1rem;
+        justify-content: space-between;
+        color: $co-clr;
+
+        .btn {
+            background: none;
+            font-weight: 600;
+            padding: 8px 12px;
             color: $co-clr;
+
+            &:hover {
+                background-color: $trusted-by-bg-clr;
+                color: $dark-clr;
+                border-radius: 54px;
+            }
         }
 
-        p {
-            margin-inline-start: 24px;
+        .left {
+            padding-block: .8rem;
+            justify-content: left;
+            align-items: center;
+
+            .sixerr-logo {
+                font-family: Macan-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 27px;
+                cursor: context-menu;
+            }
+
+            p {
+                margin-inline-start: 24px;
+            }
+        }
+
+        .right {
+            padding-block: .8rem;
+            justify-content: right;
+            align-self: center;
+
+            .social {
+                padding-inline-end: 32px;
+                align-items: center;
+
+                li {
+                    font-size: 1.3rem;
+                    padding: 8px; 
+                    margin: -8px; 
+                    cursor: pointer;
+                    transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
+                    
+                    &:hover {
+                        background-color: $trusted-by-bg-clr;
+                        color: $dark-clr;
+                        border-radius: 54px;
+                    }
+
+                    &:last-child {
+                        font-size: 1.5rem;
+                    }
+
+                    &:not(:last-child) {
+                        margin-inline-end: 24px;
+                    }
+                }
+            }
+
+            .lang-btn-container {
+                margin-inline-end: 4px;
+
+                .lang-btn {
+                    .globe-icon {
+                        fill: $co-clr;
+                        font-size: 1rem;
+                        padding-inline-end: 8px;
+                    }
+                }
+            }
+
+            .currency-selection-container {
+                margin-inline-end: 4px;
+            }
+
+            .accessibility-container {
+                padding-inline-start: 8px;
+
+                .accessibility-icon {
+                    width: 32px;
+                    height: 32px;
+                    fill: $co-clr;
+                    cursor: pointer;
+
+                    &:hover {
+                        fill: #404145;
+                        border: none !important;
+                        background: none !important;
+                    }
+                }
+            }
+
         }
     }
-
 }
