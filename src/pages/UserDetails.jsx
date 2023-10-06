@@ -9,12 +9,11 @@ import { loadUser } from '../store/user.actions'
 import { store } from '../store/store'
 import { showSuccessMsg } from '../services/event-bus.service'
 import { GigList } from '../cmps/GigList'
-import demoOrders from '../../demoData/ordersDemoData'
 import { LongTxt } from '../cmps/LongTxt'
 import becomeSellerBanner from '../assets/img/become-seller.svg'
 
 export function UserDetails() {
-
+  let orders = utilService.loadFromStorage('orderDB')
   const params = useParams()
   const user = useSelector(storeState => storeState.userModule.watchedUser)
   const gigs = useSelector(storeState => storeState.gigModule.gigs)
@@ -115,7 +114,7 @@ export function UserDetails() {
       <section className="gigs-column main-layout">
         {(user?.isSeller && <div className='manage-orders'>
           <h1>Manage Orders</h1>
-          {demoOrders.map(order => {
+          {orders.map(order => {
             if (order.seller._id === params.id) {
               userOrders.push(order)
             }
@@ -138,7 +137,7 @@ export function UserDetails() {
                   <td>
                     <div className="user-with-img">
                       <img src={order.buyer.imgUrl} alt="Buyer img" />
-                      {order.buyer.username}
+                      {order.buyer.fullname}
                     </div>
                   </td>
                   <td className='order-title'><LongTxt txt={order.gig.title} length={40} showReadMore={false} /></td>
@@ -186,7 +185,7 @@ export function UserDetails() {
         </div>)}
         {(!user?.isSeller && <div className="seller-gigs">
           <div className="become-seller">
-           <img src={becomeSellerBanner} alt="becomeSellerBanner" className="become-seller-img"/>
+            <img src={becomeSellerBanner} alt="becomeSellerBanner" className="become-seller-img" />
             <h3>Ready to earn on your own terms?</h3>
             <button onClick={() => onBecomeSeller(user)}>Become a seller</button>
 
