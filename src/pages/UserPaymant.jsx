@@ -16,7 +16,7 @@ export  function  UserPayment() {
     const [radioOptions,setRadioOptions] = useState({visa: true, paypal : false})
 
     function onChangeRadioButton(ev) {
-        console.log(ev.target.name);
+        console.log(ev.target.name)
         if(ev.target.name == 'visa'){
             setRadioOptions({visa: true, paypal : false})
         }
@@ -32,7 +32,7 @@ export  function  UserPayment() {
             const orderToSave = await addOrder ({...order})
             console.log('added to store!', orderToSave)
           } catch (err) {
-              console.log('Cannot add toy', err);
+              console.log('Cannot add toy', err)
           }
     }       
 

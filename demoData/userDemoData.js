@@ -24,7 +24,7 @@ const demoUsers = [
   },
   {
     _id: "u102",
-    fullname: "Jhon Iverson",
+    fullname: "Jhon I",
     imgUrl: "https://res.cloudinary.com/de2rdmsca/image/upload/v1696584327/qcw1ydkltzywb3g4s5ty.jpg",
     username: "jhon_iverson23",
     password: "123",
@@ -49,7 +49,7 @@ const demoUsers = [
   },
   {
     _id: "u207",
-    fullname: "James Query",
+    fullname: "James Q",
     imgUrl: "https://res.cloudinary.com/de2rdmsca/image/upload/v1696177501/samples/people/boy-snow-hoodie.jpg",
     username: "james_q55",
     password: "123",
@@ -74,7 +74,7 @@ const demoUsers = [
   },
   {
     _id: "u208",
-    fullname: "Liri Cohen",
+    fullname: "Liri C",
     imgUrl: "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696589336/MV5BZDJhYzdkMTUtMTg2MS00ZTM5LWI1OGUtYTY5MzY4NDM3NThjXkEyXkFqcGdeQXVyMjQwMDg0Ng_._V1__okvske.jpg",
     username: "liri_cohen10",
     password: "123",
