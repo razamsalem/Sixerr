@@ -3,6 +3,7 @@ import { useParams } from "react-router"
 import { CallToAction } from "../cmps/CallToAction"
 import { gigService } from "../services/gig.service.local"
 import { useEffect, useState } from "react"
+import { UserPayment } from "./UserPaymant"
 
 export function Checkout() {
     const [currGig, setCurrGig] = useState(null)
@@ -26,6 +27,8 @@ export function Checkout() {
     return (
         <section className="checkout">
             {currGig !== null && <CallToAction gig={currGig} />}
+            <UserPayment />
+
             {/* {!cart && <h1>Oops, no chosen services..</h1>} */}
             {/* {cart && <CallToAction gig={cart} isPurchase={true} />} */}
         </section>
