@@ -78,9 +78,19 @@ export function getDefaultFilter() {
 function getEmptyGig() {
     return {
         title: 'Gig-' + (Date.now() % 1000),
-        price: utilService.getRandomIntInclusive(1000, 9000),
-        description: 'Desc',
-
+        price: utilService.getRandomIntInclusive(10, 90),
+        packages: {
+            basic: {
+                desc: 'Enter description',
+                features: ['1 page', 'Design customization', 'Content upload', 'Responsive design', 'Source code', 'Detailed code comments']
+            }
+        },
+        description: 'Description goes here',
+        imgUrls: [
+            "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/292211335/original/dacf3630a805a565a36cdf0af7118d7e289b9982/be-your-pro-tiktok-editor-for-all-your-tiktok-needs.jpg",
+            "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/292211335/original/f3167f823285d2c3c64a2d6d8535512dc4dd3bee/be-your-pro-tiktok-editor-for-all-your-tiktok-needs.jpg",
+            "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/53382a1f054d78854910ced5344a4388-1672934713/thumbnail-1637/do-professional-youtube-video-editing-within-24hrs.jpg"
+        ],
     }
 }
 
