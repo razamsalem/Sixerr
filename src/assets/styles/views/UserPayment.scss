@@ -1,39 +1,41 @@
-.payment-container{
-    h6{
+.payment-container {
+    h6 {
         font-size: 1rem;
     }
-    .input{
+
+    .input {
         outline: none;
         border: none;
-        padding: 0 4px;
-        height: 42px;
+        padding: 0 em(4px);
+        height: em(42px);
         margin-top: 10px;
         border: 1px solid #c5c6c9;
-        border-radius: 4px;
-        width: 340px;
+        border-radius: em(4px);
+        width: em(340px);
         padding-left: 1rem;
-        
+
     }
-    .billing-info-wrapper{
-            display: flex;
-            flex-direction: column;
-            border: 1px solid $modal-underline-clr;
-            border-radius: 4px;
-            margin-bottom: 24px;
-            // align-items: center;
-        .billing-info-header{
-                /* height: 69px; */
-                line-height: 1.5rem;
-                padding: 1rem;
-                padding-top: 23px;
-                padding-bottom: 23px;
-                background-color: $light-clr3;
-                border-bottom: 1px solid $light-clr4;
-                
+
+    .billing-info-wrapper {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid $modal-underline-clr;
+        border-radius: 4px;
+        margin-bottom: 24px;
+
+        .billing-info-header {
+            line-height: 1.5rem;
+            padding: 1rem;
+            padding-top: em(23px);
+            padding-bottom: em(23px);
+            background-color: $light-clr3;
+            border-bottom: em(1px) solid $light-clr4;
+
         }
 
-        .user-details-wrapper{
-            color: $dark-clr-1;;
+        .user-details-wrapper {
+            color: $dark-clr-1;
+            ;
             display: flex;
             flex-direction: column;
             gap: 16px;
@@ -41,18 +43,21 @@
             line-height: 24px;
             text-align: left;
             padding: 20px;
-            .username{
+
+            .username {
                 font-weight: 600;
             }
         }
     }
-    .payment-methods-wrapper{
-        .credit-card-details-wrapper{
+
+    .payment-methods-wrapper {
+        .credit-card-details-wrapper {
             padding: 24px 18px;
             border-bottom: 1px solid $light-clr4;
         }
+
         .credit-card-details {
-            .card{
+            .card {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
@@ -60,22 +65,25 @@
                 margin-top: 8px;
             }
         }
-        .credit-card-details .card-number{
-            .credit-card-input-wrapper{
+
+        .credit-card-details .card-number {
+            .credit-card-input-wrapper {
                 display: flex;
                 flex-wrap: nowrap;
-                border: 1px solid #c5c6c9;
-                border-radius: 4px;
+                border: em(1px) solid #c5c6c9;
+                border-radius: em(4px);
                 flex-basis: 100%;
                 align-items: center;
-                height: 42px;
-                margin-top: 10px;
+                height: em(42px);
+                margin-top: em(10px);
                 align-items: center;
-                gap: 18px;
-                input{
+                gap: em(18px);
+
+                input {
                     border: none;
                 }
-                .card-logo{
+
+                .card-logo {
                     display: inline-block;
                     height: 2em;
                     width: 2em;
@@ -85,30 +93,22 @@
                     margin-left: 1rem;
                 }
             }
-            
-           
+
+
         }
-       
+
     }
-    .payments-option{
+
+    .payments-option {
         display: flex;
-        padding: 16px;
-        height: 63px;
+        padding: em(16px);
+        height: em(63px);
         align-items: center;
         flex-wrap: wrap;
-        gap: 6px;
-    }
-    .paypal{
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding-left: 16px;
-        .paypal-logo{
-            width: 73px;
-            height: 20px;
+
+        label {
+            display: flex;
+            gap: em(10px);
         }
-        // border: 1px solid #c5c6c9;
-        border-radius: 4px;
-        padding: 1.5rem;
     }
 }

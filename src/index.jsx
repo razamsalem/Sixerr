@@ -9,6 +9,7 @@ import { RootCmp } from './RootCmp'
 import './assets/styles/main.scss'
 import 'animate.css'
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <Provider store={store}>
