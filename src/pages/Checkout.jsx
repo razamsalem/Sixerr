@@ -2,29 +2,30 @@
 import { useParams } from "react-router"
 import { CallToAction } from "../cmps/CallToAction"
 import { gigService } from "../services/gig.service.local"
+import { useEffect, useState } from "react"
 
 export function Checkout() {
+    const [currGig, setCurrGig] = useState(null)
     const { gigId } = useParams()
+
+    useEffect(() => {
+        onLoadGig()
+    }, [])
 
     async function onLoadGig() {
         const desiredGig = await gigService.getById(gigId)
         try {
-            setGig(desiredGig)
+            setCurrGig(desiredGig)
         } catch (err) {
             console.log('Had issues in gig details ->', err)
             showErrorMsg('Oops cannot load gig')
-            navigate('/')
+            // navigate('/')
         }
     }
 
-
-    console.log(gigId)
-    console.log(gigService.getById(gigId))
-
-    // function 
-
     return (
         <section className="checkout">
+            {currGig !== null && <CallToAction gig={currGigע} />}
             {/* {!cart && <h1>Oops, no chosen services..</h1>} */}
             {/* {cart && <CallToAction gig={cart} isPurchase={true} />} */}
         </section>
