@@ -9,7 +9,7 @@ import { loadUser } from '../store/user.actions'
 import { store } from '../store/store'
 import { showSuccessMsg } from '../services/event-bus.service'
 import { GigList } from '../cmps/GigList'
-import orders from '../../demoData/ordersDemoData'
+import demoOrders from '../../demoData/ordersDemoData'
 import { LongTxt } from '../cmps/LongTxt'
 
 export function UserDetails() {
@@ -115,7 +115,7 @@ export function UserDetails() {
       <section className="gigs-column main-layout">
         {(user?.isSeller && <div className='manage-orders'>
           <h1>Manage Orders</h1>
-          {orders.map(order => {
+          {demoOrders.map(order => {
             if (order.seller._id === params.id) {
               userOrders.push(order)
             }
@@ -162,64 +162,9 @@ export function UserDetails() {
 
             <tbody>
               <tr>
-                <td>
-                  <div className="user-with-img">
-                    <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696177501/samples/people/boy-snow-hoodie.jpg" alt="" />
-                    James_q23
-                  </div>
+                <td colSpan={5} className='no-orders'>
+                  <p className='empty'>As soon as you receive orders you will see them here</p>
                 </td>
-                <td>I will create an awesome logo for you</td>
-                <td>Thu Aug 04 2022</td>
-                <td>$360</td>
-                <td>Completed</td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="user-with-img">
-                    <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696177523/samples/man-portrait.jpg" alt="" />
-                    john_doe
-                  </div>
-                </td>
-                <td>I will design a stunning website for you</td>
-                <td>Fri Oct 21 2022</td>
-                <td>$500</td>
-                <td>In Progress</td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="user-with-img">
-                    <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696177519/samples/two-ladies.jpg" alt="" />
-                    mary_smith18
-                  </div>
-                </td>
-                <td>I will write a compelling blog post</td>
-                <td>Sat Nov 05 2022</td>
-                <td>$150</td>
-                <td>In Progress</td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="user-with-img">
-                    <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696177522/samples/look-up.jpg" alt="" />
-                    carmelo_dwang1
-                  </div>
-                </td>
-                <td>I will write a compelling blog post</td>
-                <td>Sat Nov 05 2022</td>
-                <td>$200</td>
-                <td>Pending</td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="user-with-img">
-                    <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696177496/samples/people/kitchen-bar.jpg" alt="" />
-                    victor_jong_dwang
-                  </div>
-                </td>
-                <td>I will write a compelling blog post</td>
-                <td>Sat Nov 05 2022</td>
-                <td>$500</td>
-                <td>Pending</td>
               </tr>
             </tbody>
           </table>}

@@ -72,6 +72,31 @@ const demoUsers = [
       }
     ],
   },
+  {
+    _id: "u208",
+    fullname: "Liri Cohen",
+    imgUrl: "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696589336/MV5BZDJhYzdkMTUtMTg2MS00ZTM5LWI1OGUtYTY5MzY4NDM3NThjXkEyXkFqcGdeQXVyMjQwMDg0Ng_._V1__okvske.jpg",
+    username: "liri_cohen10",
+    password: "123",
+    level: "basic/premium",
+    desc: "Hey! im Liri, Are you looking for an expert web developer to design and develop your website? If your answer is yes, then I welcome you and you are at the right place.",
+    isSeller: false,
+    location: 'Greece',
+    lang: ['English', 'Spanish', 'Hebrew'],
+    reviews: [
+      {
+        "id": "madeId",
+        "gig": "{optional-mini-gig}",
+        "txt": "Very kind and works fast",
+        "rate": 4,
+        "by": {
+          "_id": "u102",
+          "fullname": "user2",
+          "imgUrl": "/img/img2.jpg"
+        }
+      }
+    ],
+  },
 ]
 
 export default demoUsers
