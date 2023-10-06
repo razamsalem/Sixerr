@@ -68,6 +68,16 @@
         }
     }
 
+    .purchase-btn-container {
+        display: grid;
+        place-items: center;
+
+        span {
+            font-size: em(14px);
+            color: $dark-clr-1
+        }
+    }
+
     .continue {
         @include btn;
         display: block;
@@ -77,9 +87,13 @@
         background-color: black;
         font-size: em(16px);
         font-weight: 700;
-        letter-spacing: em(0.5px);
+        letter-spacing: -0.05em;
         margin-block-end: em(12px);
         border-radius: em(5px);
+
+        &:hover {
+            background-color: darken($dark-clr-1, 20%);
+        }
     }
 
     .compare {

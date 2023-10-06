@@ -11,7 +11,7 @@ import { ADD_TO_CART, REMOVE_FROM_CART } from "../store/reducers/gig.reducer";
 
 export function GigDetails() {
     // const [reviews, setReviews] = useState(null)
-    
+
     const [gig, setGig] = useState(null)
     const { gigId } = useParams()
     const navigate = useNavigate()
@@ -89,8 +89,6 @@ export function GigDetails() {
             <div className="about-gig">
                 <h1 className="gig-about-title">About this gig</h1>
                 <p className="gig-description">{gig.description}</p>
-                <Link to={`/gig/${gig._id}/payment`}>link to payment</Link>
-               
             </div>
 
         </section>
