@@ -1,3 +1,5 @@
+// @import "../node_modules/bootstrap/scss/bootstrap";
+
 // Setup
 @import "setup/typography";
 @import "setup/variables";
@@ -12,6 +14,14 @@
 @import "basics/forms";
 
 
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/_variables-dark.scss';
+@import 'node_modules/bootstrap/scss/mixins';
+@import "node_modules/bootstrap/scss/maps";
+@import "node_modules/bootstrap/scss/root";
+@import "node_modules/bootstrap/scss/forms";
+// @import "node_modules/bootstrap/scss/forms";
 // Views
 @import "views/AboutUs";
 @import "views/SellingArea";
