@@ -1,0 +1,72 @@
+.payment-container{
+    h6{
+        font-size: 1rem;
+    }
+    .billing-info-wrapper{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid $modal-underline-clr;
+            border-radius: 4px;
+            margin-bottom: 24px;
+            // align-items: center;
+        .billing-info-header{
+                /* height: 69px; */
+                line-height: 1.5rem;
+                padding: 1rem;
+                padding-top: 23px;
+                padding-bottom: 23px;
+                background-color: $light-clr3;
+                border-bottom: 1px solid $light-clr4;
+                
+        }
+
+        .user-details-wrapper{
+            color: $dark-clr-1;;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            justify-content: space-between;
+            line-height: 24px;
+            text-align: left;
+            padding: 20px;
+            .username{
+                font-weight: 600;
+            }
+        }
+    }
+    .payment-methods-wrapper{
+        .credit-card-details-wrapper{
+            padding: 24px 18px;
+        }
+        .credit-card-details .card-number{
+            .credit-card-input-wrapper{
+                display: flex;
+                flex-wrap: nowrap;
+                border: 1px solid #c5c6c9;
+                border-radius: 4px;
+                flex-basis: 100%;
+                align-items: center;
+                height: 42px;
+                margin-top: 10px;
+                align-items: center;
+                input{
+                    outline: none;
+                    border: none;
+                    padding: 0 4px;
+                }
+                .card-logo{
+                    display: inline-block;
+                    height: 40px;
+                    width: 40px;
+                    background: white no-repeat;
+                    border: none;
+                    background-position-y: center;
+                    margin-left: 1rem;
+                }
+            }
+            
+           
+        }
+       
+    }
+}
