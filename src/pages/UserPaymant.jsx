@@ -10,19 +10,10 @@ export  function  UserPayment() {
 
     const user = useSelector((storeState) => storeState.userModule.watchedUser)
     const username = user?.username || 'tzvia123'
-    // const [order,setOrder] = useState(orderService.getEmptyOrder())
     const { gigId } = useParams()
     // const name = user?. || 'tzvia123'
     // const lastName = user?.username || 'tzvia123'
     const [radioOptions,setRadioOptions] = useState({visa: true, paypal : false})
-    // useEffect(async ()=>{
-    //     try {
-    //         const orderToSave = await addOrder ({...order})
-    //         console.log('added to store!', orderToSave)
-    //       } catch (err) {
-    //           console.log('Cannot add toy', err);
-    //       }
-    // },[order])
 
     function onChangeRadioButton(ev) {
         console.log(ev.target.name);
