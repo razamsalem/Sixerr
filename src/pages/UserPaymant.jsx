@@ -3,21 +3,27 @@ import cards from "../assets/img/credit-cards.svg"
 import { RadioButton } from "../cmps/RadioButton"
 import { useEffect, useState } from "react"
 import { orderService } from "../services/order.service.local"
+import { addOrder } from "../store/actions/order.actions"
+import { useParams } from "react-router"
+import { gigService } from "../services/gig.service.local"
 export  function  UserPayment() {
 
     const user = useSelector((storeState) => storeState.userModule.watchedUser)
     const username = user?.username || 'tzvia123'
-    const [order,setOrder] = useState(orderService.getEmptyOrder());
+    const [order,setOrder] = useState(orderService.getEmptyOrder())
+    const { gigId } = useParams()
     // const name = user?. || 'tzvia123'
     // const lastName = user?.username || 'tzvia123'
     const [radioOptions,setRadioOptions] = useState({visa: true, paypal : false})
-    useEffect(async ()=>{
-        try {
-            const orderToSave = await saveOrder({...order})
-          } catch (err) {
-              console.log('Cannot add toy', err);
-          }
-    },[order])
+    // useEffect(async ()=>{
+    //     try {
+    //         const orderToSave = await addOrder ({...order})
+    //         console.log('added to store!', orderToSave)
+    //       } catch (err) {
+    //           console.log('Cannot add toy', err);
+    //       }
+    // },[order])
+
     function onChangeRadioButton(ev) {
         console.log(ev.target.name);
         if(ev.target.name == 'visa'){
@@ -29,9 +35,14 @@ export  function  UserPayment() {
     }
 
     async function onAddOrder(ev) {
-        const gig = await orderService.getById(params.gigId)
+        const gig = await gigService.getById(gigId)
         setOrder((prevOrder)=>({...prevOrder, buyer: user, seller: gig.owner, gig}))
-        
+        try {
+            const orderToSave = await addOrder ({...order})
+            console.log('added to store!', orderToSave)
+          } catch (err) {
+              console.log('Cannot add toy', err);
+          }
     }       
 
     return(
@@ -86,44 +97,6 @@ export  function  UserPayment() {
                                         <input type="text" name="" id="" className="input" value='345'/>
                                     </div>
                                 </div>
-
-                                {/* <span className="card">
-                                    <label htmlFor="">
-                                        <span>dfasd</span>
-                                        <div style={{border: '1px solid #c5c6c9',
-                                                borderRadius: '4px',
-                                                marginTop: '10px',
-                                                alignSelf: 'center',
-                                                padding: '1px 0'}}>
-                                            <input type="text" style={{
-                                                    color: '#404145',
-                                                    outline: 'none',
-                                                    width: '100%',
-                                                    paddingLeft: '16px',
-                                                    boxSizing: 'borderBox',
-                                                    border: 'none'
-                                            }}/>
-                                        </div>
-                                    </label>
-
-                                    <label htmlFor="">
-                                        <span>dfasd</span>
-                                        <div style={{border: '1px solid #c5c6c9',
-                                                borderRadius: '4px',
-                                                marginTop: '10px',
-                                                alignSelf: 'center',
-                                                padding: '1px 0'}}>
-                                            <input type="text" style={{
-                                                    color: '#404145',
-                                                    outline: 'none',
-                                                    width: '100%',
-                                                    paddingLeft: '16px',
-                                                    boxSizing: 'borderBox',
-                                                    border: 'none'
-                                            }}/>
-                                        </div>
-                                    </label>
-                                </span> */}
 
                                 <div className="card">
                                     <div className="first-name">

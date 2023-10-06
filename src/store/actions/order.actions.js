@@ -2,7 +2,7 @@ import { orderService } from "../../services/order.service.local";
 
 import { store } from '../../store/store.js'
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
-import { ADD_ORDER, REMOVE_ORDER, SET_ORDERS, UNDO_REMOVE_ORDER, UPDATE_ORDER} from "../reducers/gig.reducer.js";
+import { ADD_ORDER, REMOVE_ORDER, SET_ORDERS, UNDO_REMOVE_ORDER, UPDATE_ORDER} from "../reducers/order.reducer";
 
 
 export function getActionRemoveOrder(orderId) {
