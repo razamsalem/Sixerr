@@ -90,6 +90,19 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
                     </section>
                 }
 
+                {btn.title === 'Delivery time' &&
+                    <div className="radio-list flex">
+                        <div className="radio-item-wrapper flex">
+                            <label htmlFor="deliver-time1" className='radio-item flex'>
+                                <input type="radio" name='deliver-time1' id='deliver-time1' />
+                                <div className="inner-radio">
+                                    <span>Express 24H</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                }
+
 
             </div>
             <div className='button-row'>

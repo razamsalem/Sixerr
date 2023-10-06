@@ -25,7 +25,7 @@ export function Checkout() {
 
     return (
         <section className="checkout">
-            {currGig !== null && <CallToAction gig={currGigע} />}
+            {currGig !== null && <CallToAction gig={currGig} />}
             {/* {!cart && <h1>Oops, no chosen services..</h1>} */}
             {/* {cart && <CallToAction gig={cart} isPurchase={true} />} */}
         </section>

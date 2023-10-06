@@ -1,9 +1,9 @@
 
 export const dynamicService = {
-    getById
+    getBtn
 }
 
-async function getById() {
+async function getBtn() {
     return filterBtns
 }
 

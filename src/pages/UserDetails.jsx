@@ -9,12 +9,11 @@ import { loadUser } from '../store/user.actions'
 import { store } from '../store/store'
 import { showSuccessMsg } from '../services/event-bus.service'
 import { GigList } from '../cmps/GigList'
-import orders from '../../demoData/ordersDemoData'
 import { LongTxt } from '../cmps/LongTxt'
 import becomeSellerBanner from '../assets/img/become-seller.svg'
 
 export function UserDetails() {
-
+  let orders = utilService.loadFromStorage('orderDB')
   const params = useParams()
   const user = useSelector(storeState => storeState.userModule.watchedUser)
   const gigs = useSelector(storeState => storeState.gigModule.gigs)
@@ -138,7 +137,7 @@ export function UserDetails() {
                   <td>
                     <div className="user-with-img">
                       <img src={order.buyer.imgUrl} alt="Buyer img" />
-                      {order.buyer.username}
+                      {order.buyer.fullname}
                     </div>
                   </td>
                   <td className='order-title'><LongTxt txt={order.gig.title} length={40} showReadMore={false} /></td>
@@ -162,64 +161,9 @@ export function UserDetails() {
 
             <tbody>
               <tr>
-                <td>
-                  <div className="user-with-img">
-                    <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696177501/samples/people/boy-snow-hoodie.jpg" alt="" />
-                    James_q23
-                  </div>
+                <td colSpan={5} className='no-orders'>
+                  <p className='empty'>As soon as you receive orders you will see them here</p>
                 </td>
-                <td>I will create an awesome logo for you</td>
-                <td>Thu Aug 04 2022</td>
-                <td>$360</td>
-                <td>Completed</td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="user-with-img">
-                    <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696177523/samples/man-portrait.jpg" alt="" />
-                    john_doe
-                  </div>
-                </td>
-                <td>I will design a stunning website for you</td>
-                <td>Fri Oct 21 2022</td>
-                <td>$500</td>
-                <td>In Progress</td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="user-with-img">
-                    <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696177519/samples/two-ladies.jpg" alt="" />
-                    mary_smith18
-                  </div>
-                </td>
-                <td>I will write a compelling blog post</td>
-                <td>Sat Nov 05 2022</td>
-                <td>$150</td>
-                <td>In Progress</td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="user-with-img">
-                    <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696177522/samples/look-up.jpg" alt="" />
-                    carmelo_dwang1
-                  </div>
-                </td>
-                <td>I will write a compelling blog post</td>
-                <td>Sat Nov 05 2022</td>
-                <td>$200</td>
-                <td>Pending</td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="user-with-img">
-                    <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696177496/samples/people/kitchen-bar.jpg" alt="" />
-                    victor_jong_dwang
-                  </div>
-                </td>
-                <td>I will write a compelling blog post</td>
-                <td>Sat Nov 05 2022</td>
-                <td>$500</td>
-                <td>Pending</td>
               </tr>
             </tbody>
           </table>}
@@ -241,7 +185,7 @@ export function UserDetails() {
         </div>)}
         {(!user?.isSeller && <div className="seller-gigs">
           <div className="become-seller">
-           <img src={becomeSellerBanner} alt="becomeSellerBanner" className="become-seller-img"/>
+            <img src={becomeSellerBanner} alt="becomeSellerBanner" className="become-seller-img" />
             <h3>Ready to earn on your own terms?</h3>
             <button onClick={() => onBecomeSeller(user)}>Become a seller</button>
 

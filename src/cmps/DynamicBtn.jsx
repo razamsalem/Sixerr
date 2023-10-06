@@ -15,7 +15,7 @@ export function DynamicBtn() {
     }, [])
 
     async function getBtns() {
-        const btns = await dynamicService.getById()
+        const btns = await dynamicService.getBtn()
         try {
             setBtns(btns)
             setIsArrowUp(btns.map(() => false))

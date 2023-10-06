@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { HeroFilter } from "./HeroFilter";
+import { HeroFilter } from "./HeroFilter"
 
 export function Hero() {
     const presenters =
@@ -13,8 +13,8 @@ export function Hero() {
     useEffect(() => {
         const interval = setInterval(() => {
             getNextPresenter()
-        }, 6000);
-        return () => clearInterval(interval);
+        }, 6000)
+        return () => clearInterval(interval)
     }, [])
 
     function getNextPresenter() {
@@ -23,7 +23,7 @@ export function Hero() {
             const nextPresenterIdx = (presenterIdx + 1) % presenters.length
             const nextPresenter = presenters[nextPresenterIdx]
             return nextPresenter
-        });
+        })
     }
     return (
         <section className="full hero main-layout">
