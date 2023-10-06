@@ -1,7 +1,20 @@
-.app-footer{
-    background-color: #111;
-    // color: $clr4;
-    padding: 20px;
-    margin: 10px;
-    text-align: center;
+.app-footer {
+    background: none;
+    padding: 1rem 2rem;
+    margin-block-start: 1rem;
+    .left {
+        padding-block: .8rem;
+        justify-content: left;
+        align-items: baseline;
+        .sixerr-logo {
+            font-family: Macan-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 27px;
+            color: $co-clr;
+        }
+
+        p {
+            margin-inline-start: 24px;
+        }
+    }
+
 }
