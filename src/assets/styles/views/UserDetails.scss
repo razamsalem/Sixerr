@@ -229,9 +229,11 @@
                 tbody {
                     tr {
                         background-color: $light-clr;
+                        transition: background-color .3s;
+                        cursor: pointer;
 
-                        &:nth-child(even) {
-                            // background-color: $user-bgclr;
+                        &:hover {
+                            background-color: $user-bgclr
                         }
                     }
 
@@ -254,6 +256,7 @@
                                 margin-inline-end: 10px;
                             }
                         }
+
                     }
 
                 }
