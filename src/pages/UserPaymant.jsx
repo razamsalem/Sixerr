@@ -10,7 +10,7 @@ export  function  UserPayment() {
 
     const user = useSelector((storeState) => storeState.userModule.watchedUser)
     const username = user?.username || 'tzvia123'
-    const [order,setOrder] = useState(orderService.getEmptyOrder())
+    // const [order,setOrder] = useState(orderService.getEmptyOrder())
     const { gigId } = useParams()
     // const name = user?. || 'tzvia123'
     // const lastName = user?.username || 'tzvia123'
@@ -36,7 +36,7 @@ export  function  UserPayment() {
 
     async function onAddOrder(ev) {
         const gig = await gigService.getById(gigId)
-        setOrder((prevOrder)=>({...prevOrder, buyer: user, seller: gig.owner, gig}))
+        const order = {buyer: user, seller: gig.owner, gig}
         try {
             const orderToSave = await addOrder ({...order})
             console.log('added to store!', orderToSave)
