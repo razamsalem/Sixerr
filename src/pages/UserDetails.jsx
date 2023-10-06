@@ -131,13 +131,13 @@ export function UserDetails() {
             </thead>
 
             <tbody>
-              {console.log(userOrders)}
               {userOrders.map(order => (
                 <tr key={order._id}>
                   <td>
                     <div className="user-with-img">
-                      <img src={order.buyer.imgUrl} alt="Buyer img" />
-                      {order.buyer.fullname}
+                      {console.log(order)}
+                      {/* <img src={order.buyer.imgUrl} alt="Buyer img" /> */}
+                      {/* {order.buyer.fullname} */}
                     </div>
                   </td>
                   <td className='order-title'><LongTxt txt={order.gig.title} length={40} showReadMore={false} /></td>
