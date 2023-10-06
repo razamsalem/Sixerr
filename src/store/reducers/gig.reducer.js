@@ -57,7 +57,7 @@ export function gigReducer(state = initialState, action) {
         case SET_FILTER_BY:
             newState = { ...state, filterBy: { ...state.filterBy, ...action.filterBy } }
             break;
-        default:
+            default:
     }
     return newState
 }

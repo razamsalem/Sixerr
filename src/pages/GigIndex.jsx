@@ -13,10 +13,10 @@ import { useLocation } from 'react-router'
 export function GigIndex() {
     const dispatch = useDispatch()
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
-    const filterBy = useSelector(storeState => storeState.gigModule.filterBy);
+    const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
 
-    const location = useLocation();
-    const queryParams = new URLSearchParams(location.search);
+    const location = useLocation()
+    const queryParams = new URLSearchParams(location.search)
 
     useEffect(() => {
         loadGigs()

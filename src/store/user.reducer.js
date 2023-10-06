@@ -5,6 +5,7 @@ export const DECREMENT = 'DECREMENT'
 export const CHANGE_COUNT = 'CHANGE_COUNT'
 export const SET_USER = 'SET_USER'
 export const SET_WATCHED_USER = 'SET_WATCHED_USER'
+export const SET_USER_GIGS = 'SET_USER_GIGS'
 export const REMOVE_USER = 'REMOVE_USER'
 export const SET_USERS = 'SET_USERS'
 export const SET_SCORE = 'SET_SCORE'
@@ -13,6 +14,7 @@ const initialState = {
     count: 10,
     user: userService.getLoggedinUser(),
     users: [],
+    userGigs: [],
     watchedUser : null
 }
 
@@ -46,6 +48,8 @@ export function userReducer(state = initialState, action) {
         case SET_SCORE:
             newState = { ...state, user: { ...state.user, score: action.score } }
             break
+        case SET_USER_GIGS:
+            newState = { ...state, userGigs: action.userGigs}
         default:
     }
     // For debug:

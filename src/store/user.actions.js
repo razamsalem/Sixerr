@@ -4,7 +4,7 @@ import { store } from '../store/store.js'
 
 import { showErrorMsg } from '../services/event-bus.service.js'
 import { LOADING_DONE, LOADING_START } from "./system.reducer.js";
-import { REMOVE_USER, SET_USER, SET_USERS, SET_WATCHED_USER } from "./user.reducer.js";
+import { REMOVE_USER, SET_USER, SET_USERS, SET_WATCHED_USER, SET_USER_GIGS } from "./user.reducer.js";
 
 export async function loadUsers() {
     try {
@@ -15,6 +15,16 @@ export async function loadUsers() {
         console.log('UserActions: err in loadUsers', err)
     } finally {
         store.dispatch({ type: LOADING_DONE })
+    }
+}
+
+export async function loadUser(userId) {
+    try {
+        const user = await userService.getById(userId)
+        store.dispatch({ type: SET_WATCHED_USER, user })
+    } catch (err) {
+        showErrorMsg('Cannot load user')
+        console.log('Cannot load user', err)
     }
 }
 
@@ -71,12 +81,14 @@ export async function logout() {
     }
 }
 
-export async function loadUser(userId) {
+export async function setUserGigs(gigs) {
     try {
-        const user = await userService.getById(userId);
-        store.dispatch({ type: SET_WATCHED_USER, user })
+        store.dispatch({
+            type: SET_USER_GIGS,
+            gigs
+        })
     } catch (err) {
-        showErrorMsg('Cannot load user')
-        console.log('Cannot load user', err)
+        console.log('error in setUserGigs', err)
+        throw err
     }
 }

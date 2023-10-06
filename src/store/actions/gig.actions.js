@@ -5,17 +5,16 @@ import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.j
 import { ADD_GIG, ADD_TO_CART, CLEAR_CART, REMOVE_GIG, REMOVE_FROM_CART, SET_GIGS, UNDO_REMOVE_GIG, UPDATE_GIG, SET_FILTER_BY } from "../reducers/gig.reducer.js";
 
 // Action Creators:
+export function setFilterBy(filterBy) {
+    store.dispatch({ type: SET_FILTER_BY, filterBy })
+}
+
 export function getActionRemoveGig(gigId) {
     return {
         type: REMOVE_GIG,
         gigId
     }
 }
-
-export function setFilterBy(filterBy) {
-    store.dispatch({ type: SET_FILTER_BY, filterBy })
-}
-
 
 export function getActionAddGig(gig) {
     return {
@@ -35,7 +34,6 @@ export async function loadGigs() {
         const { filterBy } = store.getState().gigModule
         const gigs = await gigService.query(filterBy)
 
-
         store.dispatch({
             type: SET_GIGS,
             gigs
@@ -44,7 +42,6 @@ export async function loadGigs() {
         console.log('Cannot load gigs', err)
         throw err
     }
-
 }
 
 export async function removeGig(gigId) {
@@ -96,21 +93,6 @@ export function removeFromCart(gigId) {
     })
 }
 
-// export async function checkout(total) {
-//     try {
-//         const score = await userService.changeScore(-total)
-//         store.dispatch({ type: SET_SCORE, score })
-//         store.dispatch({ type: CLEAR_CART })
-//         return score
-//     } catch (err) {
-//         console.log('GigActions: err in checkout', err)
-//         throw err
-//     }
-// }
-
-
-// Demo for Optimistic Mutation 
-// (IOW - Assuming the server call will work, so updating the UI first)
 export function onRemoveGigOptimistic(gigId) {
     store.dispatch({
         type: REMOVE_GIG,
@@ -130,3 +112,19 @@ export function onRemoveGigOptimistic(gigId) {
             })
         })
 }
+
+// export async function checkout(total) {
+//     try {
+//         const score = await userService.changeScore(-total)
+//         store.dispatch({ type: SET_SCORE, score })
+//         store.dispatch({ type: CLEAR_CART })
+//         return score
+//     } catch (err) {
+//         console.log('GigActions: err in checkout', err)
+//         throw err
+//     }
+// }
+
+
+// Demo for Optimistic Mutation 
+// (IOW - Assuming the server call will work, so updating the UI first)
