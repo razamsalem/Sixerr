@@ -16,7 +16,6 @@ export function UserPayment() {
     const [radioOptions, setRadioOptions] = useState({ visa: true, paypal: false })
 
     function onChangeRadioButton(ev) {
-        console.log(ev.target.name)
         if (ev.target.name == 'visa') {
             setRadioOptions({ visa: true, paypal: false })
         }
@@ -55,17 +54,10 @@ export function UserPayment() {
                 <header className="billing-info-header payment-methods-header"><h6>Payment Options</h6></header>
 
                 <section className="payments-option">
-                    <RadioButton
-                        name="visa"
-                        id="radio"
-                        value="radio"
-                        text="Credit & Debit Cards"
-                        onChange={onChangeRadioButton}
-                        checked={radioOptions.visa} />
-                    {/* <label htmlFor="">Credit & Debit Cards</label> */}
-                    <div>
+                    <label>
+                        <input className="form-check-input radio" type="radio" name="visa" id="flexRadioDefault1" onChange={onChangeRadioButton} checked={radioOptions.visa} />
                         <img src={cards} alt="cards" />
-                    </div>
+                    </label>
                 </section>
 
                 <form className="credit-card-details-wrapper">
@@ -103,21 +95,16 @@ export function UserPayment() {
                     </article>
                 </form>
 
-                <section className="paypal">
-                    <RadioButton
-                        name="paypal"
-                        id="radio1"
-                        value="radio"
-                        text=""
-                        onChange={onChangeRadioButton}
-                        checked={radioOptions.paypal} />
-                    <img src="https://finderr.onrender.com/static/media/paypal.2268abba910e45e692258282d2801b10.svg" alt="paypal" className="paypal-logo" />
+                <section className="payments-option">
+                    <label>
+                        <input class="form-check-input radio" type="radio" name="paypal" id="flexRadioDefault1" onChange={onChangeRadioButton} checked={radioOptions.paypal} />
+                        <img src="https://finderr.onrender.com/static/media/paypal.2268abba910e45e692258282d2801b10.svg" alt="paypal" className="paypal-logo" />
+                    </label>
                 </section>
 
                 <button onClick={onAddOrder}>finish-order</button>
             </section>
 
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
             <label class="form-check-label" for="flexRadioDefault1">
                 Default radio
             </label>
