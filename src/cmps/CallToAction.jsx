@@ -36,7 +36,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder }) {
                 <div className='purchase-btn-container'>
                     <button onClick={onPurchaseOrder} className='btn continue'>Pay in USD</button>
                     <span>
-                        <i class="fa-solid fa-lock"></i>  SSL Secure Payment
+                        <i className="fa-solid fa-lock"></i>  SSL Secure Payment
                     </span>
                 </div>
                 :

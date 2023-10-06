@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams, useNavigate, Link } from "react-router-dom"
 import { Carousel } from 'react-responsive-carousel';
-// import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { gigService } from "../services/gig.service.local"
 import starUrl from "../assets/img/star.svg"
 import nextUrl from "../assets/img/next.svg"

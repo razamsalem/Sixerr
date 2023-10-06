@@ -35,6 +35,7 @@ export function Checkout() {
         try {
             const orderToSave = await addOrder({ ...order })
             console.log('added order to storage!', orderToSave)
+            showSuccessMsg(`Service purchased successfully! - Go to orders page..`)
         } catch (err) {
             console.log('Cannot add order to storage', err)
         }

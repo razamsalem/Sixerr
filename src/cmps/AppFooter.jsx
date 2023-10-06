@@ -55,7 +55,7 @@ export function AppFooter() {
                     </div>
                 </div>
             </section>
+            <UserMsg />
         </footer>
-        // <UserMsg /> 
     )
 }
