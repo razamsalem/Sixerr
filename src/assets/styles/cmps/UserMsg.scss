@@ -15,11 +15,8 @@
     font-size: rem(18px);
     padding: em(9px) em(16px);
     font-weight: 700;
-
-    animation-name: fade-in-down;
-    animation-duration: 1s;
-
     border-radius: 7px;
+    animation: fade-in-down 1s ease-in-out;
 
     .btn.close {
         color: lighten($dark-clr-1, 15%);
