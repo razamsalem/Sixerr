@@ -34,47 +34,11 @@ const routes = [
         shouldRender: false
     },
     {
-        path: `gig/:gigId/payment`,
-        component: <UserPayment/>,
-        shouldRender: false
-    },
-    {
         path: '*',
         component: <HomePage />,
         label: 'Home',
         shouldRender: false
     },
-
-    // {
-    //     path: 'survey',
-    //     component: <SurveyIndex />,
-    //     label: 'Take our survey'
-    // },
-    // {
-    //     path: 'car',
-    //     component: <CarIndex />,
-    //     label: 'Cars'
-    // },
-    // {
-    //     path: 'review',
-    //     component: <ReviewIndex />,
-    //     label: 'Reviews'
-    // },
-    // {
-    //     path: 'chat',
-    //     component: <ChatApp />,
-    //     label: 'Chat'
-    // },
-    // {
-    //     path: 'about',
-    //     component: <AboutUs />,
-    //     label: 'About us'
-    // },
-    // {
-    //     path: 'admin',
-    //     component: <AdminApp />,
-    //     label: 'Admin Only'
-    // }
 ]
 
 export default routes

@@ -2,7 +2,7 @@ import timeImg from '../assets/img/time.svg';
 import checkImg from '../assets/img/check.svg';
 import { Link, useLocation } from 'react-router-dom';
 
-export function CallToAction({ gig, addToCart, isPurchase }) {
+export function CallToAction({ gig, isPurchase = false, onPurchaseOrder }) {
     const { price, daysToMake, packages } = gig
     const { pathname } = useLocation()
 
@@ -31,12 +31,22 @@ export function CallToAction({ gig, addToCart, isPurchase }) {
                     )
                 })}
             </ul>
-            <Link to={`${pathname}/checkout`} onClick={() => { addToCart(gig) }} className='btn continue'>
-                Continue
-            </Link>
-            <div className='compare'>
+
+            {isPurchase ?
+                <div className='purchase-btn-container'>
+                    <button onClick={onPurchaseOrder} className='btn continue'>Pay in USD</button>
+                    <span>
+                        <i className="fa-solid fa-lock"></i>  SSL Secure Payment
+                    </span>
+                </div>
+                :
+                <Link to={`${pathname}/checkout`} onClick={() => { addToCart(gig) }} className='btn continue'>
+                    Continue
+                </Link>
+            }
+            {!isPurchase && <div className='compare'>
                 <a className='compare-link'>Compare packages</a>
-            </div>
+            </div>}
         </article>
     )
 }

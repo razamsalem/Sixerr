@@ -1,22 +1,12 @@
 import { useSelector } from "react-redux"
 import cards from "../assets/img/credit-cards.svg"
-import { RadioButton } from "../cmps/RadioButton"
-import { useEffect, useState } from "react"
-import { orderService } from "../services/order.service.local"
-import { addOrder } from "../store/actions/order.actions"
+import { useState } from "react"
 import { useParams } from "react-router"
-import { gigService } from "../services/gig.service.local"
 
-export function UserPayment() {
-    const { gigId } = useParams()
-
-    const user = useSelector((storeState) => storeState.userModule.user)
-    const username = user?.username
-
-    const firstName = user ? user.fullName.split(' ')[0] : ''
-    const lastName = user ? user.fullName.split(' ')[1] : ''
-
+export function UserPayment({ user }) {
     const [radioOptions, setRadioOptions] = useState({ visa: true, paypal: false })
+
+    const username = user?.username
 
     function onChangeRadioButton(ev) {
         if (ev.target.name == 'visa') {
@@ -24,17 +14,6 @@ export function UserPayment() {
         }
         if (ev.target.name == 'paypal') {
             setRadioOptions({ visa: false, paypal: true })
-        }
-    }
-
-    async function onAddOrder(ev) {
-        const gig = await gigService.getById(gigId)
-        const order = { buyer: user, seller: gig.owner, gig }
-        try {
-            const orderToSave = await addOrder({ ...order })
-            console.log('added to store!', orderToSave)
-        } catch (err) {
-            console.log('Cannot add toy', err)
         }
     }
 
@@ -67,10 +46,10 @@ export function UserPayment() {
                     <article className="credit-card-details">
                         <div className="card card-number">
                             <label htmlFor=""><h6>Card Number</h6></label>
-                            <div className="credit-card-input-wrapper">
+                            <label className="credit-card-input-wrapper">
                                 <img src="https://fiverr-res.cloudinary.com/image/upload/f_png,q_auto/v1/attachments/generic_asset/asset/2496be9dfb5983d9de91630d83bb21e0-1682945799754/generic.svg" alt="credit-card-icon" className="card-logo" />
                                 <input type="text" placeholder="0000 0000 0000 0000" defaultValue='5326-1000-0000-0000' />
-                            </div>
+                            </label>
                         </div>
 
                         <div className="card">
@@ -87,11 +66,11 @@ export function UserPayment() {
                         <div className="card">
                             <div className="first-name">
                                 <label htmlFor=""><h6>First name</h6></label>
-                                <input type="text" name="" id="" className="input" placeholder="Insert first name" defaultValue={firstName} />
+                                <input type="text" name="" id="" className="input" placeholder="Insert first name" defaultValue={user.fullname} />
                             </div>
                             <div className="last-name">
                                 <label htmlFor=""><h6>Last name</h6></label>
-                                <input type="text" name="" id="" className="input" placeholder="Insert last name" defaultValue={lastName} />
+                                <input type="text" name="" id="" className="input" placeholder="Insert last name" />
                             </div>
                         </div>
 
@@ -104,8 +83,6 @@ export function UserPayment() {
                         <img src="https://finderr.onrender.com/static/media/paypal.2268abba910e45e692258282d2801b10.svg" alt="paypal" className="paypal-logo" />
                     </label>
                 </section>
-
-                <button onClick={onAddOrder}>finish-order</button>
             </section>
         </section>
 

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams, useNavigate, Link } from "react-router-dom"
 import { Carousel } from 'react-responsive-carousel';
-// import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { gigService } from "../services/gig.service.local"
 import starUrl from "../assets/img/star.svg"
 import nextUrl from "../assets/img/next.svg"
@@ -11,7 +10,7 @@ import { ADD_TO_CART, REMOVE_FROM_CART } from "../store/reducers/gig.reducer";
 
 export function GigDetails() {
     // const [reviews, setReviews] = useState(null)
-    
+
     const [gig, setGig] = useState(null)
     const { gigId } = useParams()
     const navigate = useNavigate()
@@ -89,8 +88,6 @@ export function GigDetails() {
             <div className="about-gig">
                 <h1 className="gig-about-title">About this gig</h1>
                 <p className="gig-description">{gig.description}</p>
-                <Link to={`/gig/${gig._id}/payment`}>link to payment</Link>
-               
             </div>
 
         </section>
