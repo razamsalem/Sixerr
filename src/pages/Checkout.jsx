@@ -15,7 +15,6 @@ export function Checkout() {
 
     useEffect(() => {
         onLoadGig()
-        showSuccessMsg('hello')
     }, [])
 
     async function onLoadGig() {
@@ -34,8 +33,8 @@ export function Checkout() {
         const order = { buyer: loggedUser, seller: gig.owner, gig }
         try {
             const orderToSave = await addOrder({ ...order })
-            console.log('added order to storage!', orderToSave)
-            showSuccessMsg(`Service purchased successfully! - Go to orders page..`)
+            // console.log('added order to storage!', orderToSave)
+            showSuccessMsg(`Purchased service successfully!`)
         } catch (err) {
             console.log('Cannot add order to storage', err)
         }
