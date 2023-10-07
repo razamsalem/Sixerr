@@ -1,4 +1,8 @@
 .user-msg {
+    position: absolute;
+    top: 4vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: $light-clr;
     color: $dark-clr;
     display: flex;
@@ -12,10 +16,8 @@
     padding: em(9px) em(16px);
     font-weight: 700;
 
-    position: absolute;
-    top: 4vh;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    animation-name: fade-in-down;
+    animation-duration: 1s;
 
     border-radius: 7px;
 
