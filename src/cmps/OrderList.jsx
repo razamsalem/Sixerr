@@ -1,8 +1,14 @@
 import { useSelector } from "react-redux"
 import { OrderPreview } from "./OrderPreview"
+import { Link } from "react-router-dom"
 
-export function OrderList({ orders, mode }) {
-    const loggedUser = useSelector(storeState => storeState.userModule.user)
+export function OrderList({ orders, loggedUser, mode }) {
+
+    if (!orders.length || !loggedUser) return (
+        <Link to={'/gig'} className="logo">
+            No orders yet <span className="dot">{', '}</span> <br /> click to start exploring sixerr<span className="dot">.</span>
+        </Link>
+    )
 
     if (mode === 'buyer') {
         orders = orders.filter(order => order.buyer._id === loggedUser._id)

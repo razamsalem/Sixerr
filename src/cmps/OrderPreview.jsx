@@ -7,7 +7,6 @@ export function OrderPreview({ order, mode }) {
     return (
         <tr key={order._id}>
             <td>
-
                 <div className="user-with-img">
                     <img src={profile.imgUrl} alt="Buyer img" />
                     {profile.fullname}

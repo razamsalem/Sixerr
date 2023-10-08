@@ -12,4 +12,11 @@
         margin-block: 1.1rem;
     }
 
+    .logo {
+        @include logo;
+        text-align: center;
+        background-color: transparent;
+        margin-block: 1.5rem;
+    }
+
 }
