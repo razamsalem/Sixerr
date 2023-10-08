@@ -8,7 +8,7 @@ import { DynamicBtn } from './cmps/DynamicBtn.jsx'
 import { GigIndex } from './pages/GigIndex.jsx'
 import { GigDetails } from './pages/GigDetails.jsx'
 import { Checkout } from './pages/Checkout.jsx'
-import { Orders } from './pages/Orders.jsx'
+import { OrderIndex } from './pages/OrderIndex.jsx'
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
     {
@@ -25,7 +25,7 @@ const routes = [
     },
     {
         path: 'order',
-        component: <Orders />,
+        component: <OrderIndex />,
         label: 'Orders',
         shouldRender: true
     },

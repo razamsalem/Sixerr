@@ -1,15 +1,21 @@
-import { utilService } from "../services/util.service"
-import { LongTxt } from "./LongTxt"
+import { useSelector } from "react-redux"
+import { OrderPreview } from "./OrderPreview"
 
-export function OrderList({ orders }) {
-    console.log(orders, 'Order list')
+export function OrderList({ orders, mode }) {
+    const loggedUser = useSelector(storeState => storeState.userModule.user)
+
+    if (mode === 'buyer') {
+        orders = orders.filter(order => order.buyer._id === loggedUser._id)
+    } else {
+        orders = orders.filter(order => order.seller._id === loggedUser._id)
+    }
 
     return (
         <>
-            {orders.length && <table>
+            {orders.length && <table className="order-list">
                 <thead>
                     <tr>
-                        <td>Buyer</td>
+                        {mode === 'buyer' ? <td>Seller</td> : <td>Buyer</td>}
                         <td>Gig</td>
                         <td>Due on</td>
                         <td>Total</td>
@@ -20,18 +26,7 @@ export function OrderList({ orders }) {
                 {
                     <tbody>
                         {orders.map(order => (
-                            <tr key={order._id}>
-                                <td>
-                                    <div className="user-with-img">
-                                        <img src={order.buyer.imgUrl} alt="Buyer img" />
-                                        {order.buyer.fullname}
-                                    </div>
-                                </td>
-                                <td className='order-title'><LongTxt txt={order.gig.title} length={40} showReadMore={false} /></td>
-                                <td>Thu Aug 04 2022</td>
-                                <td>${order.gig.price}</td>
-                                <td>{utilService.capitalizeFirstLetter(order.status)}</td>
-                            </tr>
+                            <OrderPreview key={order._id} order={order} mode={mode} />
                         ))}
                     </tbody>}
 

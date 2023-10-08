@@ -30,7 +30,7 @@ export function Checkout() {
 
     async function onPurchaseOrder() {
         const gig = currGig
-        const order = { buyer: loggedUser, seller: gig.owner, gig }
+        const order = { buyer: loggedUser, seller: gig.owner, gig, status: 'pending' }
         try {
             const orderToSave = await addOrder({ ...order })
             showSuccessMsg(`Purchased service successfully!`)

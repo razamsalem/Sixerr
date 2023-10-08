@@ -23,7 +23,7 @@
                     font-size: 3em;
                     width: 150px;
                     margin-block-end: 15px;
-                    
+
                     img {
                         height: 150px;
                         z-index: 1;
@@ -203,63 +203,10 @@
 
     .gigs-column {
         .manage-orders {
-            
+
             h1 {
                 margin-block-start: 50px;
                 margin-block-end: 20px;
-            }
-
-            table {
-                width: 50vw;
-                border-collapse: collapse;
-                margin-bottom: 20px;
-                margin-inline-end: 12.063rem;
-                
-                thead {
-                    background-color: $light-clr;
-                    text-transform: uppercase;
-
-                    td {
-                        color: $co-clr;
-                        padding: 10px;
-                        // border: 1px solid $modal-filter-border-clr;
-                    }
-                }
-
-                tbody {
-                    tr {
-                        background-color: $light-clr;
-                        transition: background-color .3s;
-                        cursor: pointer;
-
-                        &:hover {
-                            background-color: $user-bgclr
-                        }
-                    }
-
-                    td {
-                        padding: 15px;
-                        border-block: 1px solid $modal-filter-border-clr;
-
-                        &:not(:first-child):not(:last-child) {
-                            color: $co-clr;
-                          }
-
-                        .user-with-img {
-                            display: flex;
-                            align-items: center;
-
-                            img {
-                                width: 30px;
-                                height: 30px;
-                                border-radius: 50%;
-                                margin-inline-end: 10px;
-                            }
-                        }
-
-                    }
-
-                }
             }
         }
 
@@ -282,10 +229,12 @@
                 align-items: center;
                 gap: 1.938rem;
                 padding-block: 60px;
-                .become-seller-img{
+
+                .become-seller-img {
                     width: em(252px);
                     height: em(104px);
                 }
+
                 h3 {
                     font-size: 18px;
                     font-weight: 600;
