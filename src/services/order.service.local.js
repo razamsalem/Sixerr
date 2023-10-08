@@ -20,9 +20,12 @@ export const orderService = {
 async function query(filterBy = {}) {
     try {
         const loggedUser = userService.getLoggedinUser()
-        let orders = await storageService.query(STORAGE_KEY)
+        let orders = []
 
-        orders = orders.filter(order => order.seller._id === loggedUser._id || order.buyer._id === loggedUser._id)
+        if (loggedUser) {
+            orders = await storageService.query(STORAGE_KEY)
+            orders = orders.filter(order => order.seller._id === loggedUser._id || order.buyer._id === loggedUser._id)
+        }
 
         if (filterBy.txt) {
             const regex = new RegExp(filterBy.txt, 'i')
