@@ -33,7 +33,6 @@ export function Checkout() {
         const order = { buyer: loggedUser, seller: gig.owner, gig }
         try {
             const orderToSave = await addOrder({ ...order })
-            // console.log('added order to storage!', orderToSave)
             showSuccessMsg(`Purchased service successfully!`)
         } catch (err) {
             console.log('Cannot add order to storage', err)

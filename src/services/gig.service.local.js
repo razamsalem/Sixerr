@@ -17,7 +17,7 @@ export const gigService = {
     getDefaultFilter,
     // addGigMsg
 }
-window.cs = gigService
+window.gs = gigService
 
 async function query(filterBy = { txt: '', minPrice: '', maxPrice: '' }) {
     let gigs = await storageService.query(STORAGE_KEY)

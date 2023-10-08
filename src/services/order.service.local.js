@@ -41,7 +41,8 @@ async function remove(orderId) {
 }
 
 async function save(order) {
-    var savedOrder
+    let savedOrder
+    console.log(order, 'order in service')
     if (order._id) {
         savedOrder = await storageService.put(STORAGE_KEY, order)
     } else {
@@ -73,7 +74,7 @@ async function save(order) {
 // }
 
 function getEmptyOrder() {
-    return {buyer:{},seller:{},gig:{}}
+    return { buyer: {}, seller: {}, gig: {} }
 }
 
 function _createOrders() {

@@ -66,7 +66,7 @@ export function UserPayment({ user }) {
                         <div className="card">
                             <div className="first-name">
                                 <label htmlFor=""><h6>First name</h6></label>
-                                <input type="text" name="" id="" className="input" placeholder="Insert first name" defaultValue={user.fullname} />
+                                <input type="text" name="" id="" className="input" placeholder="Insert first name" defaultValue={user && user.fullname || ''} />
                             </div>
                             <div className="last-name">
                                 <label htmlFor=""><h6>Last name</h6></label>
