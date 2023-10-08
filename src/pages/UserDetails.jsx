@@ -137,15 +137,14 @@ export function UserDetails() {
                 <tr key={order._id}>
                   <td>
                     <div className="user-with-img">
-                      {console.log(order)}
-                      {/* <img src={order.buyer.imgUrl} alt="Buyer img" /> */}
-                      {/* {order.buyer.fullname} */}
+                      <img src={order.buyer.imgUrl} alt="Buyer img" />
+                      {order.buyer.fullname}
                     </div>
                   </td>
                   <td className='order-title'><LongTxt txt={order.gig.title} length={40} showReadMore={false} /></td>
                   <td>Thu Aug 04 2022</td>
                   <td>${order.gig.price}</td>
-                  <td>Completed</td>
+                  <td>{utilService.capitalizeFirstLetter(order.status)}</td>
                 </tr>
               ))}
             </tbody>

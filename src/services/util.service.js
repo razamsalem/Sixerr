@@ -7,7 +7,8 @@ export const utilService = {
     saveToStorage,
     loadFromStorage,
     getAssetSrc,
-    getSubtitle
+    getSubtitle,
+    capitalizeFirstLetter
 }
 
 function makeId(length = 6) {
@@ -19,6 +20,12 @@ function makeId(length = 6) {
     }
 
     return txt
+}
+
+function capitalizeFirstLetter(str) {
+    if (str.length === 0) return str
+
+    return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
 function makeLorem(size = 100) {

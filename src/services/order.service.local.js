@@ -74,7 +74,7 @@ async function save(order) {
 // }
 
 function getEmptyOrder() {
-    return { buyer: {}, seller: {}, gig: {} }
+    return { buyer: {}, seller: {}, gig: {}, status: "pending" }
 }
 
 function _createOrders() {
