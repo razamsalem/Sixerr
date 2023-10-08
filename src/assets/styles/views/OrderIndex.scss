@@ -12,11 +12,17 @@
         margin-block: 1.1rem;
     }
 
+    .empty-tray {
+        font-size: 7rem;
+        margin-block: 3.5rem 0.5rem;
+    }
+
     .logo {
         @include logo;
+        display: flex;
+        flex-direction: column;
         text-align: center;
         background-color: transparent;
-        margin-block: 1.5rem;
     }
 
 }

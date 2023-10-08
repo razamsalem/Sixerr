@@ -2,12 +2,18 @@ import { useSelector } from "react-redux"
 import { OrderPreview } from "./OrderPreview"
 import { Link } from "react-router-dom"
 
+
 export function OrderList({ orders, loggedUser, mode }) {
 
     if (!orders.length || !loggedUser) return (
-        <Link to={'/gig'} className="logo">
-            No orders yet <span className="dot">{', '}</span> <br /> click to start exploring sixerr<span className="dot">.</span>
-        </Link>
+        <>
+            <Link to={'/gig'} className="logo">
+                <i className="empty-tray fa-solid fa-inbox"></i>
+                <span>
+                    No orders yet <span className="dot">{', '}</span> <br /> click to start exploring sixerr<span className="dot">.</span>
+                </span>
+            </Link>
+        </>
     )
 
     if (mode === 'buyer') {
@@ -18,7 +24,7 @@ export function OrderList({ orders, loggedUser, mode }) {
 
     return (
         <>
-            {orders.length && <table className="order-list">
+            {orders.length < 0 && <table className="order-list">
                 <thead>
                     <tr>
                         {mode === 'buyer' ? <td>Seller</td> : <td>Buyer</td>}
