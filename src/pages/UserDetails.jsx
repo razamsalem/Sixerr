@@ -12,7 +12,7 @@ import { showSuccessMsg } from '../services/event-bus.service'
 import { GigList } from '../cmps/GigList'
 import { LongTxt } from '../cmps/LongTxt'
 import becomeSellerBanner from '../assets/img/become-seller.svg'
-
+import { OrderList } from '../cmps/OrderList'
 
 export function UserDetails() {
   const params = useParams()
@@ -121,53 +121,8 @@ export function UserDetails() {
               userOrders.push(order)
             }
           })}
-          {userOrders.length && <table>
-            <thead>
-              <tr>
-                <td>Buyer</td>
-                <td>Gig</td>
-                <td>Due on</td>
-                <td>Total</td>
-                <td>Status</td>
-              </tr>
-            </thead>
 
-            <tbody>
-              {userOrders.map(order => (
-                <tr key={order._id}>
-                  <td>
-                    <div className="user-with-img">
-                      <img src={order.buyer.imgUrl} alt="Buyer img" />
-                      {order.buyer.fullname}
-                    </div>
-                  </td>
-                  <td className='order-title'><LongTxt txt={order.gig.title} length={40} showReadMore={false} /></td>
-                  <td>Thu Aug 04 2022</td>
-                  <td>${order.gig.price}</td>
-                  <td>{utilService.capitalizeFirstLetter(order.status)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>}
-          {!userOrders.length && <table>
-            <thead>
-              <tr>
-                <td>Buyer</td>
-                <td>Gig</td>
-                <td>Due on</td>
-                <td>Total</td>
-                <td>Status</td>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td colSpan={5} className='no-orders'>
-                  <p className='empty'>As soon as you receive orders you will see them here</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>}
+          <OrderList orders={userOrders} />
 
           <div className="my-gigs">
             <h1>My Gigs</h1>

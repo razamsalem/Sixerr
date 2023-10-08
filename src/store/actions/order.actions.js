@@ -28,7 +28,8 @@ export function getActionUpdateOrder(order) {
 export async function loadOrders() {
     try {
         // const { filterBy } = store.getState().orderModule
-        const orders = await orderService.query()
+        let orders = await orderService.query()
+
 
         store.dispatch({
             type: SET_ORDERS,
