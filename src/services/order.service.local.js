@@ -18,18 +18,18 @@ export const orderService = {
 // window.cs = gigService
 
 async function query(filterBy = {}) {
-    let gigs = await storageService.query(STORAGE_KEY)
-    if (filterBy.txt) {
-        const regex = new RegExp(filterBy.txt, 'i')
-        gigs = gigs.filter(gig => gig.tags.some(tag => regex.test(tag)))
+    try {
+        let orders = await storageService.query(STORAGE_KEY)
+        console.log(orders)
+        if (filterBy.txt) {
+            const regex = new RegExp(filterBy.txt, 'i')
+            orders = orders.filter(order => order.gig.title.regex.test(regex))
+        }
+
+        return orders
+    } catch (err) {
+        throw err
     }
-    if (filterBy.minPrice) {
-        gigs = gigs.filter(gig => gig.price >= filterBy.minPrice)
-    }
-    if (filterBy.maxPrice) {
-        gigs = gigs.filter(gig => gig.price <= filterBy.maxPrice)
-    }
-    return gigs
 }
 
 function getById(orderId) {

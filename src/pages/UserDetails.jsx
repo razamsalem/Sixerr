@@ -6,17 +6,19 @@ import { utilService } from '../services/util.service'
 import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
 import { loadGigs } from '../store/actions/gig.actions.js'
 import { loadUser } from '../store/user.actions'
+import { loadOrders } from '../store/actions/order.actions'
 import { store } from '../store/store'
 import { showSuccessMsg } from '../services/event-bus.service'
 import { GigList } from '../cmps/GigList'
 import { LongTxt } from '../cmps/LongTxt'
 import becomeSellerBanner from '../assets/img/become-seller.svg'
 
+
 export function UserDetails() {
-  let orders = utilService.loadFromStorage('orderDB')
   const params = useParams()
   const user = useSelector(storeState => storeState.userModule.watchedUser)
   const gigs = useSelector(storeState => storeState.gigModule.gigs)
+  const orders = useSelector(storeState => storeState.orderModule.orders)
   const demoSubtitle = utilService.getSubtitle()
   const userGigs = []
   const userOrders = []

@@ -7,10 +7,15 @@ import { LoginSignup } from './LoginSignup.jsx'
 import { CategoryNav } from './CategoryNav'
 import { useEffect, useState } from 'react'
 import { SearchBarFilter } from './SearchBarFilter'
+import { loadOrders } from '../store/actions/order.actions'
 
 export function AppHeader() {
     const navigate = useNavigate()
     const user = useSelector(storeState => storeState.userModule.user)
+
+    useEffect(() => {
+        loadOrders()
+    }, [])
 
     async function onLogin(credentials) {
         try {
@@ -60,7 +65,6 @@ export function AppHeader() {
                                 <Link to={`user/${user._id}`}>
                                     {user.imgUrl && <img src={user.imgUrl} />}
                                 </Link>
-                                <span className="score">{user.score?.toLocaleString()}</span>
                                 <button onClick={onLogout}>Logout</button>
                             </span>
                         }

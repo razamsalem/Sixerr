@@ -2,7 +2,7 @@ import { orderService } from "../../services/order.service.local";
 
 import { store } from '../../store/store.js'
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
-import { ADD_ORDER, REMOVE_ORDER, SET_ORDERS, UNDO_REMOVE_ORDER, UPDATE_ORDER} from "../reducers/order.reducer";
+import { ADD_ORDER, REMOVE_ORDER, SET_ORDERS, UNDO_REMOVE_ORDER, UPDATE_ORDER } from "../reducers/order.reducer";
 
 
 export function getActionRemoveOrder(orderId) {
@@ -28,7 +28,7 @@ export function getActionUpdateOrder(order) {
 export async function loadOrders() {
     try {
         // const { filterBy } = store.getState().orderModule
-        const orders = await orderService.query();
+        const orders = await orderService.query()
 
         store.dispatch({
             type: SET_ORDERS,
@@ -109,5 +109,5 @@ export function onRemoveOrderOptimistic(orderId) {
 // }
 
 
-// Demo for Optimistic Mutation 
+// Demo for Optimistic Mutation
 // (IOW - Assuming the server call will work, so updating the UI first)
