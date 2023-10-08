@@ -22,9 +22,9 @@ export function AppFooter() {
 
     return (
         <footer className="app-footer-container main-layout">
-            <section className="app-footer with-border-top flex">
+            <section className="app-footer with-border-top flex full">
                 <div className="left flex">
-                    <span className="sixerr-logo">Sixerr<span className='dot'>.</span></span>
+                    <span className="sixerr-logo">sixerr.</span>
                     <p className='empty'>© Sixerr International Ltd. 2023</p>
                 </div>
                 <div className="right flex">

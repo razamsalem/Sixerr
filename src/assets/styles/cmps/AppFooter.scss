@@ -26,8 +26,9 @@
             align-items: center;
 
             .sixerr-logo {
-                font-family: Macan-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
-                font-size: 27px;
+                @include logo($clr: $co-clr);
+                font-size: rem(27px);
+                letter-spacing: rem(-2px);
                 cursor: context-menu;
             }
 
@@ -47,11 +48,11 @@
 
                 li {
                     font-size: 1.3rem;
-                    padding: 8px; 
-                    margin: -8px; 
+                    padding: 8px;
+                    margin: -8px;
                     cursor: pointer;
                     transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
-                    
+
                     &:hover {
                         background-color: $trusted-by-bg-clr;
                         color: $dark-clr;

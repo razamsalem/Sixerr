@@ -126,12 +126,13 @@
     outline: 0;
 }
 
-@mixin logo() {
+@mixin logo($clr: $dark-clr) {
     font-family: Macan-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 1000;
     font-size: rem(38px);
     letter-spacing: rem(-2.8px);
-    text-shadow: 1px 0 $dark-clr;
+    color: $clr;
+    text-shadow: 1px 0 $clr;
     cursor: pointer;
 
     .dot {
