@@ -125,3 +125,17 @@
     border-bottom-left-radius: 0.3125em;
     outline: 0;
 }
+
+@mixin logo() {
+    font-family: Macan-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 1000;
+    font-size: rem(38px);
+    letter-spacing: rem(-2.8px);
+    text-shadow: 1px 0 $dark-clr;
+    cursor: pointer;
+
+    .dot {
+        color: $accent-clr;
+        text-shadow: 0 0;
+    }
+}

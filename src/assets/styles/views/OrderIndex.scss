@@ -1,0 +1,14 @@
+.orders-page {
+    min-height: 75vh;
+    grid-template-rows: auto 1fr;
+    background-color: $user-bgclr;
+    align-items: start;
+    justify-items: center;
+
+    .orders-heading {
+        @include logo;
+        font-size: rem(28px);
+        letter-spacing: rem(-0.6px);
+    }
+
+}
