@@ -1,5 +1,5 @@
 // import { useSelector } from "react-redux"
-import { useParams } from "react-router"
+import { useNavigate, useParams } from "react-router"
 import { CallToAction } from "../cmps/CallToAction"
 import { gigService } from "../services/gig.service.local"
 import { useEffect, useState } from "react"
@@ -9,6 +9,7 @@ import { useSelector } from "react-redux"
 import { addOrder } from "../store/actions/order.actions"
 
 export function Checkout() {
+    const navigate = useNavigate()
     const [currGig, setCurrGig] = useState(null)
     const { gigId } = useParams()
     const loggedUser = useSelector(storeState => storeState.userModule.user)
@@ -24,7 +25,6 @@ export function Checkout() {
         } catch (err) {
             console.log('Had issues in gig details ->', err)
             showErrorMsg('Oops cannot load gig')
-            // navigate('/')
         }
     }
 
@@ -33,6 +33,7 @@ export function Checkout() {
         const order = { buyer: loggedUser, seller: gig.owner, gig, status: 'pending' }
         try {
             const orderToSave = await addOrder({ ...order })
+            navigate('/order')
             showSuccessMsg(`Purchased service successfully!`)
         } catch (err) {
             console.log('Cannot add order to storage', err)
