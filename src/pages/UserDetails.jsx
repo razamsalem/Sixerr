@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-
 import { utilService } from '../services/util.service'
 import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
 import { loadGigs } from '../store/actions/gig.actions.js'
@@ -16,12 +15,12 @@ import { OrderList } from '../cmps/OrderList'
 
 export function UserDetails() {
   const params = useParams()
-  const user = useSelector(storeState => storeState.userModule.watchedUser)
+  const watchedUser = useSelector(storeState => storeState.userModule.watchedUser)
+  const loggedUser = useSelector(storeState => storeState.userModule.user)
   const gigs = useSelector(storeState => storeState.gigModule.gigs)
   const orders = useSelector(storeState => storeState.orderModule.orders)
   const demoSubtitle = utilService.getSubtitle()
   const userGigs = []
-  const userOrders = []
 
   useEffect(() => {
     loadUser(params.id)
@@ -50,20 +49,20 @@ export function UserDetails() {
   return (
     <main className='user-details-container full'>
       <section className="user-details main-layout">
-        {user && <div className='user-card'>
+        {watchedUser && <div className='user-card'>
           <div className='user-profile-info'>
             <div className="flex justify-center">
               <div className="user-profile-img">
-                {user.imgUrl && <img src={user.imgUrl} alt="user img" />}
+                {watchedUser.imgUrl && <img src={watchedUser.imgUrl} alt="user img" />}
               </div>
             </div>
             <div className="user-profile-label">
               <div className="username-line flex column align-center">
                 <div className="username-info">
-                  {user.fullname}
+                  {watchedUser.fullname}
                 </div>
                 <div className="secondary-name">
-                  @{user.username}
+                  @{watchedUser.username}
                 </div>
               </div>
             </div>
@@ -71,7 +70,7 @@ export function UserDetails() {
               <ul className='user-stats with-border-top'>
                 <li className="location flex">
                   <span><span className=' fa-solid fa-location-dot location-icon'></span>From</span>
-                  <b>{user.location ? user.location : 'Israel'}</b>
+                  <b>{watchedUser.location ? watchedUser.location : 'Israel'}</b>
                 </li>
                 <li className="member-since flex">
                   <span><span className='fa-solid fa-user user-icon'></span>Member since</span>
@@ -82,7 +81,7 @@ export function UserDetails() {
           </div>
         </div>}
 
-        {user && <div className='desc-card'>
+        {watchedUser && <div className='desc-card'>
           <div className='user-profile-desc'>
             <div className='user-stats'>
               <div className="user-data">
@@ -90,14 +89,14 @@ export function UserDetails() {
                   <h3 title='Tell us more about yourself. Buyers are also interested in learning about you as a person.'>Description</h3>
                   <button>Edit Description</button>
                 </div>
-                <p>{user.desc ? user.desc : <span className='empty'>Tell us more about yourself. Buyers are also interested in learning about you as a person.</span>}</p>
+                <p>{watchedUser.desc ? watchedUser.desc : <span className='empty'>Tell us more about yourself. Buyers are also interested in learning about you as a person.</span>}</p>
               </div>
               <div className="user-lang with-border-top">
                 <div className="header flex">
                   <h3 title='You can make up to four selections.'>Languages</h3>
                   <button>Add new</button>
                 </div>
-                <ul>{user.lang ? user.lang.map((lang, idx) => (
+                <ul>{watchedUser.lang ? watchedUser.lang.map((lang, idx) => (
                   <li key={idx}><span className='title'>{lang}</span> - <span className='sub-title'>{demoSubtitle[utilService.getRandomIntInclusive(0, 1)]}</span></li>
                 )) :
                   <>
@@ -114,15 +113,10 @@ export function UserDetails() {
       </section>
 
       <section className="gigs-column main-layout">
-        {(user?.isSeller && <div className='manage-orders'>
+        {(watchedUser?.isSeller && <div className='manage-orders'>
           <h1>Manage Orders</h1>
-          {orders.map(order => {
-            if (order.seller._id === params.id) {
-              userOrders.push(order)
-            }
-          })}
 
-          <OrderList orders={userOrders} />
+          <OrderList orders={orders} loggedUser={loggedUser} mode='seller' />
 
           <div className="my-gigs">
             <h1>My Gigs</h1>
@@ -139,11 +133,11 @@ export function UserDetails() {
             {!userGigs.length && <div> <p className='empty'>Surely someone needs your service...create your gig today!</p> </div>}
           </div>
         </div>)}
-        {(!user?.isSeller && <div className="seller-gigs">
+        {(!watchedUser?.isSeller && <div className="seller-gigs">
           <div className="become-seller">
             <img src={becomeSellerBanner} alt="becomeSellerBanner" className="become-seller-img" />
             <h3>Ready to earn on your own terms?</h3>
-            <button onClick={() => onBecomeSeller(user)}>Become a seller</button>
+            <button onClick={() => onBecomeSeller(watchedUser)}>Become a seller</button>
 
           </div>
         </div>)}
