@@ -4,22 +4,32 @@ import { Link } from "react-router-dom"
 
 
 export function OrderList({ orders, loggedUser, mode }) {
-    console.log(loggedUser)
-    // if (mode === 'buyer') return (
-    //     <>
-    //         <Link to={'/gig'} className="logo">
-    //             <i className="empty-tray fa-solid fa-inbox"></i>
-    //             <span>
-    //                 No orders yet <span className="dot">{', '}</span> <br /> click to start exploring sixerr<span className="dot">.</span>
-    //             </span>
-    //         </Link>
-    //     </>
-    // )
+
+    console.log('Orders b4 filter:', orders)
 
     if (mode === 'buyer') {
         orders = orders.filter(order => order.buyer._id === loggedUser._id)
     } else if (mode === 'seller') {
         orders = orders.filter(order => order.seller._id === loggedUser._id)
+    }
+
+    console.log('Orders after filter:', orders)
+
+    if (mode === 'buyer' && !orders.length) return (
+        <>
+            <Link to={'/gig'} className="logo">
+                <i className="empty-tray fa-solid fa-inbox"></i>
+                <span>
+                    No orders yet <span className="dot">{','}</span> <br /> Click to find services on sixerr<span className="dot">.</span>
+                </span>
+            </Link>
+        </>
+    )
+
+    if (mode === 'seller' && !orders.length) {
+        return (
+            <span className="logo">No orders to fulfill yet<span className="dot">.</span></span>
+        )
     }
 
     return (
