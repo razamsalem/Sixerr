@@ -4,16 +4,12 @@ import { Link } from "react-router-dom"
 
 
 export function OrderList({ orders, loggedUser, mode }) {
-
-    console.log('Orders b4 filter:', orders)
-
     if (mode === 'buyer') {
         orders = orders.filter(order => order.buyer._id === loggedUser._id)
     } else if (mode === 'seller') {
         orders = orders.filter(order => order.seller._id === loggedUser._id)
     }
 
-    console.log('Orders after filter:', orders)
 
     if (mode === 'buyer' && !orders.length) return (
         <>
@@ -34,6 +30,7 @@ export function OrderList({ orders, loggedUser, mode }) {
 
     return (
         <>
+            {orders.length > 0 && mode === 'buyer' && <h1 className="orders-heading"> Purchased services<span className="dot">.</span></h1>}
             {orders.length > 0 && <table className="order-list">
                 <thead>
                     <tr>

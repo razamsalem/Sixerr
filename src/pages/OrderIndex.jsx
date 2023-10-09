@@ -7,7 +7,7 @@ export function OrderIndex() {
 
     return (
         <section className="orders-page main-layout full">
-            {orders.length > 0 && <h1 className="orders-heading">{loggedUser ? 'Purchased services' : 'Log in to view your orders'}<span className="dot">.</span></h1>}
+            {/* {console.log(orders)} */}
             {<OrderList orders={orders} loggedUser={loggedUser} mode={'buyer'} />}
         </section>
     )
