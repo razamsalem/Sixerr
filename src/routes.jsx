@@ -1,14 +1,9 @@
 import { HomePage } from './pages/HomePage.jsx'
-import { AboutUs } from './pages/AboutUs.jsx'
-import { CarIndex } from './pages/CarIndex.jsx'
-import { ReviewIndex } from './pages/ReviewIndex.jsx'
-import { ChatApp } from './pages/Chat.jsx'
-import { AdminApp } from './pages/AdminIndex.jsx'
-import { DynamicBtn } from './cmps/DynamicBtn.jsx'
 import { GigIndex } from './pages/GigIndex.jsx'
 import { GigDetails } from './pages/GigDetails.jsx'
 import { Checkout } from './pages/Checkout.jsx'
 import { OrderIndex } from './pages/OrderIndex.jsx'
+
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
     {
@@ -27,7 +22,7 @@ const routes = [
         path: 'order',
         component: <OrderIndex />,
         label: 'Orders',
-        shouldRender: true
+        shouldRender: false
     },
     {
         path: `gig/:gigId`,

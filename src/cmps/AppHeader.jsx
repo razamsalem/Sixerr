@@ -65,12 +65,16 @@ export function AppHeader() {
                             <NavLink key={route.path} to={route.path}>{route.label}</NavLink>)}
 
                         {user &&
-                            <span className="user-info">
-                                <Link to={`user/${user._id}`}>
-                                    {user.imgUrl && <img src={user.imgUrl} />}
-                                </Link>
-                                <button onClick={onLogout}>Logout</button>
-                            </span>
+                            <>
+                                <NavLink key={'order'} to={'order'}>Orders</NavLink>
+                                <span className="user-info">
+                                    <NavLink to={`user/${user._id}`}>
+                                        {user.imgUrl && <img src={user.imgUrl} />}
+                                    </NavLink>
+                                    <button onClick={onLogout}>Logout</button>
+                                </span>
+                            </>
+
                         }
                         {!user &&
                             <LoginSignup onLogin={onLogin} onSignup={onSignup} />
