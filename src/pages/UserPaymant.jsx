@@ -47,7 +47,7 @@ export function UserPayment({ user }) {
                         <div className="card card-number">
                             <label htmlFor=""><h6>Card Number</h6></label>
                             <label className="credit-card-input-wrapper">
-                                <img src="https://fiverr-res.cloudinary.com/image/upload/f_png,q_auto/v1/attachments/generic_asset/asset/2496be9dfb5983d9de91630d83bb21e0-1682945799754/generic.svg" alt="credit-card-icon" className="card-logo" />
+                                <img src="https://res.cloudinary.com/dgsfbxsed/image/upload/v1696838077/cc-img_np2lxb.svg" alt="credit-card-icon" className="card-logo" />
                                 <input type="text" placeholder="0000 0000 0000 0000" defaultValue='5326-1000-0000-0000' />
                             </label>
                         </div>
@@ -80,7 +80,7 @@ export function UserPayment({ user }) {
                 <section className="payments-option">
                     <label>
                         <input className="form-check-input radio" type="radio" name="paypal" id="flexRadioDefault1" onChange={onChangeRadioButton} checked={radioOptions.paypal} />
-                        <img src="https://finderr.onrender.com/static/media/paypal.2268abba910e45e692258282d2801b10.svg" alt="paypal" className="paypal-logo" />
+                        <img src="https://res.cloudinary.com/dgsfbxsed/image/upload/v1696838077/paypal-logo_uyhsmo.svg" alt="paypal" className="paypal-logo" />
                     </label>
                 </section>
             </section>
