@@ -9,16 +9,18 @@ import { useEffect, useState } from 'react'
 import { SearchBarFilter } from './SearchBarFilter'
 import { loadOrders } from '../store/actions/order.actions'
 
+
 export function AppHeader() {
     const navigate = useNavigate()
     const user = useSelector(storeState => storeState.userModule.user)
 
     useEffect(() => {
         loadOrders()
-    }, [])
+    }, [user])
 
     async function onLogin(credentials) {
         try {
+            navigate('/')
             const user = await login(credentials)
             showSuccessMsg(`Welcome: ${user.fullname}`)
         } catch (err) {
@@ -27,6 +29,7 @@ export function AppHeader() {
     }
     async function onSignup(credentials) {
         try {
+            navigate('/')
             const user = await signup(credentials)
             showSuccessMsg(`Welcome new user: ${user.fullname}`)
         } catch (err) {
@@ -35,6 +38,7 @@ export function AppHeader() {
     }
     async function onLogout() {
         try {
+            navigate('/')
             await logout()
             showSuccessMsg(`Bye now`)
         } catch (err) {
