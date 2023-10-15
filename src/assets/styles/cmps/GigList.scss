@@ -1,19 +1,20 @@
-.gig-list{
+.gig-list {
     display: grid;
-    grid-template-columns: repeat(4, rem(282px));
-    grid-template-rows: 1fr; 
-    gap: em(34px);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: em(32px);
 
-    .gig-preview{
+    .gig-preview {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; 
-     &:hover{
-       .owner-gig-title {
-            text-decoration: underline;
-          }
-     }   
-        div .gig-img{
+        align-items: flex-start;
+
+        &:hover {
+            .owner-gig-title {
+                text-decoration: underline;
+            }
+        }
+
+        div .gig-img {
             border: 1px solid #e4e5e7;
             border-radius: 8px;
             height: 11em;
@@ -23,27 +24,29 @@
         }
     }
 
-   
-    
-    .owner-details{
+
+
+    .owner-details {
         flex-direction: column;
-    
-        .owner-details-1{
+
+        .owner-details-1 {
             gap: rem(8px);
             margin-bottom: rem(-4px);
-        } 
-        .owner-profile-img{
-                border-radius: 50%;
-                width: rem(24px);
         }
-        .owner-fullname{
-                font-size: rem(14px); 
-                font-weight:700;
-                line-height: rem(21px);
+
+        .owner-profile-img {
+            border-radius: 50%;
+            width: rem(24px);
+        }
+
+        .owner-fullname {
+            font-size: rem(14px);
+            font-weight: 700;
+            line-height: rem(21px);
         }
     }
-  
-    .owner-gig-title{
+
+    .owner-gig-title {
         margin-top: rem(23px);
         color: $dark-clr;
         display: -webkit-box;
@@ -51,19 +54,20 @@
         margin-bottom: rem(8px);
         font-weight: 400;
         min-height: 2em;
-        font-size: 1rem ;
-        &:hover{
+        font-size: 1rem;
+
+        &:hover {
             text-decoration: underline;
         }
     }
 
-    .rating-price{
+    .rating-price {
         line-height: rem(13px);
         gap: rem(3px);
-        align-items: center; 
+        align-items: center;
     }
-    
-    .rate-wrapper{
+
+    .rate-wrapper {
         gap: rem(3px)
     }
 
@@ -74,10 +78,3 @@
     }
 
 }
-
-
-
-
-
-
-
