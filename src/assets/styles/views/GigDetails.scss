@@ -58,6 +58,7 @@
     .carousel {
         padding-inline: em(25px);
         width: 100%;
+        max-height: rem(444px);
 
         .arrow {
             z-index: 2;
@@ -80,6 +81,20 @@
 
         .prev-btn {
             left: em(2px);
+        }
+    }
+
+    .thumbs {
+
+        .thumb {
+            border: 0;
+            filter: blur(0.6px);
+            opacity: 0.5;
+
+            &.selected {
+                filter: none;
+                opacity: 1;
+            }
         }
     }
 
