@@ -37,7 +37,6 @@
 
         .profile-container {
             display: flex;
-            // margin-block-end: 27px;
             gap: rem(12px);
         }
     }
@@ -55,37 +54,33 @@
         }
     }
 
-    .next-btn {
-        border-radius: 50%;
-        width: 2em;
-        height: 2em;
-        font-size: rem(18px);
-        position: absolute;
-        top: 40%;
-        right: em(-10px);
-        background: $light-clr;
-        box-shadow: $dark-clr1 0 em(2px) em(5px) 0;
-        color: $accent-clr;
-        line-height: em(24px);
-    }
-
-    .prev-btn {
-        border-radius: 50%;
-        width: 2em;
-        height: 2em;
-        font-size: em(18px);
-        position: absolute;
-        top: 40%;
-        left: em(-10px);
-        background: $light-clr;
-        box-shadow: $dark-clr1 0 em(2px) em(5px) 0;
-        color: $accent-clr;
-        line-height: em(24px);
-    }
 
     .carousel {
-
+        padding-inline: em(25px);
         width: 100%;
+
+        .arrow {
+            z-index: 2;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            width: $arrow-btn-size;
+            height: $arrow-btn-size;
+            font-size: em(18px);
+            position: absolute;
+            top: calc(50% - $arrow-btn-size / 2);
+            background: $light-clr;
+            box-shadow: $dark-clr-1 0 em(1px) em(3px) 0;
+            color: $dark-clr;
+        }
+
+        .next-btn {
+            right: em(2px);
+        }
+
+        .prev-btn {
+            left: em(2px);
+        }
     }
 
 }

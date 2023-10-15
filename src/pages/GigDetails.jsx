@@ -63,17 +63,17 @@ export function GigDetails() {
             </div>
 
             <div className="carousel-container" style={{ marginBottom: '1.875rem', position: 'relative' }}>
-                <Carousel renderArrowNext={(clickHandler, hasNext) => {
+                <Carousel showIndicators={false} showStatus={false} renderArrowNext={(clickHandler, hasNext) => {
                     return (
-                        <button className='next-btn' onClick={clickHandler} >
-                            <img src={nextUrl} alt="nextUrl" />
+                        <button className='next-btn arrow' onClick={clickHandler} >
+                            <i className="fa-solid fa-chevron-right"></i>
                         </button>
                     )
                 }}
                     renderArrowPrev={(clickHandler, hasNext) => {
                         return (
-                            <button className='prev-btn' onClick={clickHandler} >
-                                <img src={nextUrl} alt="nextUrl" />
+                            <button className='prev-btn arrow' onClick={clickHandler} >
+                                <i className="fa-solid fa-chevron-left"></i>
                             </button>
                         )
                     }}
