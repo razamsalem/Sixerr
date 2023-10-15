@@ -1,8 +1,9 @@
-import { gigService } from "../../services/gig.service.local.js";
-import { userService } from "../../services/user.service.js";
+import { gigService } from "../../services/gig.service.local.js"
+import { userService } from "../../services/user.service.js"
 import { store } from '../../store/store.js'
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
-import { ADD_GIG, ADD_TO_CART, CLEAR_CART, REMOVE_GIG, REMOVE_FROM_CART, SET_GIGS, UNDO_REMOVE_GIG, UPDATE_GIG, SET_FILTER_BY } from "../reducers/gig.reducer.js";
+import { ADD_GIG, ADD_TO_CART, CLEAR_CART, REMOVE_GIG, REMOVE_FROM_CART, SET_GIGS, UNDO_REMOVE_GIG, UPDATE_GIG, SET_FILTER_BY } from "../reducers/gig.reducer.js"
+
 
 // Action Creators:
 export function setFilterBy(filterBy) {
@@ -126,5 +127,5 @@ export function onRemoveGigOptimistic(gigId) {
 // }
 
 
-// Demo for Optimistic Mutation 
+// Demo for Optimistic Mutation
 // (IOW - Assuming the server call will work, so updating the UI first)

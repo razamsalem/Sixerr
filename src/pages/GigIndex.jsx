@@ -1,26 +1,31 @@
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { loadGigs, addGig, updateGig, removeGig } from '../store/actions/gig.actions.js'
+import { useSelector } from 'react-redux'
+import { loadGigs, addGig, updateGig, removeGig, setFilterBy } from '../store/actions/gig.actions.js'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { userService } from '../services/user.service.js'
 import { gigService } from '../services/gig.service.local.js'
 import { GigList } from '../cmps/GigList.jsx'
 import { DynamicBtn } from '../cmps/DynamicBtn.jsx'
-import { SET_FILTER_BY } from '../store/reducers/gig.reducer.js'
-import { useLocation } from 'react-router'
+import { useSearchParams } from "react-router-dom"
+// setFilterBy
+
 
 export function GigIndex() {
-    const dispatch = useDispatch()
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
+    let [searchParams, setSearchParams] = useSearchParams()
 
-    const location = useLocation()
-    const queryParams = new URLSearchParams(location.search)
+    useEffect(() => {
+        setFilterBy(Object.fromEntries([...searchParams]))
+    }, [searchParams])
+
 
     useEffect(() => {
         loadGigs()
+        setSearchParams(filterBy)
     }, [filterBy])
+
 
     async function onRemoveGig(gigId) {
         try {

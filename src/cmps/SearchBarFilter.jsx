@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setFilterBy } from "../store/actions/gig.actions";
-import { useNavigate } from "react-router";
+import { useDispatch, useSelector } from "react-redux"
+import { setFilterBy } from "../store/actions/gig.actions"
+import { useNavigate } from "react-router"
 
 export function SearchBarFilter() {
     const globalFilterBy = useSelector(storeState => storeState.gigModule.filterBy)
-    const [filterByToEdit, onSetFilterToBuild] = useState({})
+    const [filterByToEdit, onSetFilterToEdit] = useState({})
     const navigate = useNavigate()
 
     function handleChange({ target }) {
@@ -26,14 +26,14 @@ export function SearchBarFilter() {
                 break;
         }
 
-        onSetFilterToBuild(prevFilter => ({ ...prevFilter, [field]: value }))
+        onSetFilterToEdit(prevFilter => ({ ...prevFilter, [field]: value }))
     }
 
     return (
         <form className="search-bar-filter-form" onSubmit={(ev) => {
             ev.preventDefault()
             setFilterBy({ ...globalFilterBy, ...filterByToEdit })
-            navigate('/gig')
+            navigate(`/gig`)
         }}>
             <input name="txt" type="text" className="search-bar" placeholder='What service are you looking for today?' onChange={handleChange} />
             <button className='btn fa-solid search-icon size=lg'></button>
