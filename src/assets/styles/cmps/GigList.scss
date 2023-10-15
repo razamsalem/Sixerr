@@ -9,11 +9,11 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: space-between;
 
         .img-container {
             width: 100%;
             height: 55%;
+            margin-block-end: 18px;
 
             .gig-img {
                 width: 100%;
@@ -85,6 +85,7 @@
         font-weight: 700;
         line-height: rem(24px);
         margin-top: rem(8px);
+        margin-block-start: auto;
     }
 
 }
