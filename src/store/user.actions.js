@@ -4,7 +4,7 @@ import { store } from '../store/store.js'
 
 import { showErrorMsg } from '../services/event-bus.service.js'
 import { LOADING_DONE, LOADING_START } from "./system.reducer.js";
-import { REMOVE_USER, SET_USER, SET_USERS, SET_WATCHED_USER, SET_USER_GIGS } from "./user.reducer.js";
+import { REMOVE_USER, SET_USER, SET_USERS, SET_WATCHED_USER, SET_USER_GIGS, SET_MODAL_OPEN } from "./user.reducer.js";
 
 export async function loadUsers() {
     try {
@@ -91,4 +91,11 @@ export async function setUserGigs(gigs) {
         console.log('error in setUserGigs', err)
         throw err
     }
+}
+
+export async function setUserModalOpen(isOpen) {
+    store.dispatch({
+        type: SET_MODAL_OPEN,
+        isOpen
+    })
 }

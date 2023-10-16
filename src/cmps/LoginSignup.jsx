@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react'
 import { userService } from '../services/user.service'
 import { ImgUploader } from './ImgUploader'
 import { Modal } from './Modal'
+import { useSelector } from 'react-redux'
+import { setUserModalOpen } from '../store/user.actions'
 
 export function LoginSignup(props) {
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
     const [isSignup, setIsSignup] = useState(false)
     const [users, setUsers] = useState([])
-    const [isModalOpen, setModalIsOpen] = useState(false)
+    const isUserModalOpen = useSelector(storeState => storeState.userModule.isUserModalOpen)
 
     useEffect(() => {
         loadUsers()
@@ -54,12 +56,12 @@ export function LoginSignup(props) {
     }
 
     function onToggleModal() {
-        setModalIsOpen((prevState) => !prevState)
+        setUserModalOpen(!isUserModalOpen)
     }
 
     function onCloseModal(ev) {
         ev.stopPropagation()
-        setModalIsOpen((prevState) => false)
+        setUserModalOpen(false)
     }
 
     function onUploaded(imgUrl) {
@@ -70,7 +72,7 @@ export function LoginSignup(props) {
             <a className="btn login" onClick={onSetSignIn}>Login</a>
             <a className="btn join" onClick={onSetSignup}>Join</a>
 
-            <Modal open={isModalOpen} onClose={onCloseModal}>
+            <Modal open={isUserModalOpen} onClose={onCloseModal}>
                 <>
                     <img className='cover-img' src="https://res.cloudinary.com/dgsfbxsed/image/upload/v1697448779/login-img_t6g2jm.png" alt="Success starts here" />
                     <ul className='benefits-container'>

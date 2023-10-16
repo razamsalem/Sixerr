@@ -9,13 +9,15 @@ export const SET_USER_GIGS = 'SET_USER_GIGS'
 export const REMOVE_USER = 'REMOVE_USER'
 export const SET_USERS = 'SET_USERS'
 export const SET_SCORE = 'SET_SCORE'
+export const SET_MODAL_OPEN = 'SET_MODAL_OPEN'
 
 const initialState = {
     count: 10,
     user: userService.getLoggedinUser(),
     users: [],
     userGigs: [],
-    watchedUser : null
+    watchedUser: null,
+    isUserModalOpen: false
 }
 
 export function userReducer(state = initialState, action) {
@@ -49,7 +51,9 @@ export function userReducer(state = initialState, action) {
             newState = { ...state, user: { ...state.user, score: action.score } }
             break
         case SET_USER_GIGS:
-            newState = { ...state, userGigs: action.userGigs}
+            newState = { ...state, userGigs: action.userGigs }
+        case SET_MODAL_OPEN:
+            newState = { ...state, isUserModalOpen: action.isOpen }
         default:
     }
     // For debug:
