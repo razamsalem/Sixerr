@@ -6,7 +6,7 @@
         width: em(650px);
         height: 100%;
         position: absolute;
-        z-index: 200;
+        z-index: 3;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -68,7 +68,7 @@
             position: absolute;
             transition: opacity 1s;
             transition-timing-function: ease;
-            z-index: 100;
+            z-index: 2;
 
             &.visible {
                 opacity: 1;
