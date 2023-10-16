@@ -37,6 +37,10 @@ export function Checkout() {
             showSuccessMsg(`Purchased service successfully!`)
         } catch (err) {
             console.log('Cannot add order to storage', err)
+            if (err.includes('logged')) {
+                showErrorMsg('You must be logged in to purchase services..')
+            }
+
         }
     }
 

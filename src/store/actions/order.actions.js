@@ -1,8 +1,8 @@
 import { orderService } from "../../services/order.service.local";
-
 import { store } from '../../store/store.js'
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
 import { ADD_ORDER, REMOVE_ORDER, SET_ORDERS, UNDO_REMOVE_ORDER, UPDATE_ORDER } from "../reducers/order.reducer";
+import { userService } from "../../services/user.service";
 
 
 export function getActionRemoveOrder(orderId) {
@@ -53,6 +53,9 @@ export async function removeOrder(orderId) {
 
 export async function addOrder(order) {
     try {
+        const loggedUser = userService.getLoggedinUser()
+        if (!loggedUser) return Promise.reject('Not logged in')
+
         const savedOrder = await orderService.save(order)
         console.log('Added Order', savedOrder)
         store.dispatch(getActionAddOrder(savedOrder))
