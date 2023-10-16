@@ -7,11 +7,7 @@ import { gigService } from '../services/gig.service.local';
 
 function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filterBy }) {
     const globalFilterBy = useSelector(storeState => storeState.gigModule.filterBy)
-    const [filterByToEdit, setFilterByToEdit] = useState({ ...globalFilterBy })
-
-    const location = useLocation()
-    const navigate = useNavigate()
-    const queryParams = new URLSearchParams(location.search)
+    const [filterByToEdit, setFilterByToEdit] = useState(globalFilterBy)
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -26,6 +22,11 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
             document.removeEventListener('mousedown', handleClickOutside)
         }
     }, [isOpen, onClose, modalRef])
+
+
+    useEffect(() => {
+        setFilterByToEdit({ ...globalFilterBy })
+    }, [globalFilterBy])
 
     if (!isOpen) return null
 
@@ -58,6 +59,7 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
     }
 
     function onSubmit() {
+        console.log(filterByToEdit)
         setFilterBy({ ...globalFilterBy, ...filterByToEdit })
     }
     return (
