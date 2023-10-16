@@ -1,13 +1,13 @@
 import { useState } from 'react'
-import { Hero } from '../cmps/Hero'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Hero } from '../cmps/Hero'
 import logo from '../assets/img/logo.png'
 import { CHANGE_COUNT } from '../store/user.reducer'
-// import { Carousel } from 'react-responsive-carousel';
 import { utilService } from '../services/util.service'
 import { SellingArea } from './SellingArea'
 import { TrustedBy } from '../cmps/TrustedBy'
+import { SimpleSlider } from '../cmps/SimpleSlider'
 
 
 export function HomePage() {
@@ -17,6 +17,7 @@ export function HomePage() {
             <Hero />
             <TrustedBy />
             <SellingArea />
+            <SimpleSlider/>
         </section >
     )
 }
