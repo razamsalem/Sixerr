@@ -10,15 +10,25 @@
     z-index: 200;
 
     .modal-content {
+        display: flex;
         position: absolute;
-        top: 40%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         line-height: 1.4;
-        background: $light-clr;
-        padding: 14px 28px;
-        border-radius: 3px;
-        max-width: 600px;
-        min-width: 300px;
+        border-radius: em(15px);
+
+        .cover-img {
+            width: em(437.5px);
+            height: em(645px);
+            border-radius: em(15px) 0 0 em(15px);
+        }
+
+        .user-actions {
+            width: em(437.5px);
+            height: em(645px);
+            background-color: $light-clr;
+            border-radius: 0 em(15px) em(15px) 0;
+        }
     }
 }
