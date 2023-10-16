@@ -94,37 +94,51 @@ export function LoginSignup(props) {
                                 <option value="">Select User</option>
                                 {users.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
                             </select>
-                            <button>Continue</button>
+                            <button className='btn continue'>Continue</button>
                         </form>}
 
                         <div className="signup-section">
                             {isSignup && <form className="signup-form" onSubmit={onSignup}>
-                                <input
-                                    type="text"
-                                    name="fullname"
-                                    value={credentials.fullname}
-                                    placeholder="Fullname"
-                                    onChange={handleChange}
-                                    required
-                                />
-                                <input
-                                    type="text"
-                                    name="username"
-                                    value={credentials.username}
-                                    placeholder="Username"
-                                    onChange={handleChange}
-                                    required
-                                />
-                                <input
-                                    type="password"
-                                    name="password"
-                                    value={credentials.password}
-                                    placeholder="Password"
-                                    onChange={handleChange}
-                                    required
-                                />
+                                <label className='user-info-label'>
+                                    Full name
+                                    <input
+                                        className='user-info-input'
+                                        type="text"
+                                        name="fullname"
+                                        value={credentials.fullname}
+                                        placeholder="Your name"
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </label>
+
+                                <label className='user-info-label'>
+                                    Username
+                                    <input
+                                        className='user-info-input'
+                                        type="text"
+                                        name="username"
+                                        value={credentials.username}
+                                        placeholder="Username"
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </label>
+
+                                <label className='user-info-label'>
+                                    Password
+                                    <input
+                                        className='user-info-input'
+                                        type="password"
+                                        name="password"
+                                        value={credentials.password}
+                                        placeholder="Choose a password"
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </label>
                                 <ImgUploader onUploaded={onUploaded} />
-                                <button >Continue</button>
+                                <button className='btn continue'>Continue</button>
                             </form>}
                         </div>
                         <small className='terms'>

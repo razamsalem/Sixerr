@@ -16,7 +16,7 @@
         .change-action-heading {
             color: $dark-clr-1;
             font-size: em(16px);
-            margin-block-end: em(48px);
+            margin-block-end: em(32px);
 
             .change-action {
                 color: $dark-clr;
@@ -39,6 +39,48 @@
                 text-decoration: underline;
             }
         }
+
+        .user-info-label {
+            font-size: 16px;
+            font-weight: 600;
+
+            .user-info-input {
+                width: 100%;
+                height: em(42px);
+                border: 1px solid $dark-clr-1;
+                outline: 0;
+                font-size: 1rem;
+                padding: em(8px) em(12px);
+                border-radius: em(4px);
+                margin-block-start: em(5px);
+                margin-block-end: em(24px);
+
+                &:focus,
+                &:focus-visible {
+                    outline: 0;
+                    box-shadow: 1px 1px 8px $dark-clr-2;
+                }
+            }
+        }
+
+        #imgUpload {
+            margin-block-end: em(24px);
+        }
+
+        .btn.continue {
+            width: 100%;
+            height: 42px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            background-color: black;
+
+            &:hover,
+            &:active {
+                background-color: $dark-clr;
+            }
+        }
+
     }
 
 }
