@@ -35,7 +35,7 @@ export function UserMsg() {
   if (!msg) return <span></span>
   return (
     <section className={`user-msg ${msg.type}`}>
-      {msg.type === 'success' && <i className="fa-solid fa-circle-check check-icon"></i>}
+      {msg.type === 'success' ? <i className="fa-solid fa-circle-check check-icon"></i> : <i className="fa-regular fa-circle-xmark x-icon"></i>}
       {msg.txt}
       <a className="btn close" onClick={closeMsg}>
         <i className="fa-solid fa-x"></i>

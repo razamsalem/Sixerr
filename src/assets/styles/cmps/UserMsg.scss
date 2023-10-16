@@ -40,5 +40,9 @@
 }
 
 .user-msg.error {
-    background-color: rgb(216, 59, 59);
+    border-inline-start: 7px solid $error-clr;
+
+    .x-icon {
+        color: $error-clr;
+    }
 }
