@@ -127,10 +127,10 @@ export function LoginSignup(props) {
                                 <button >Continue</button>
                             </form>}
                         </div>
-                        <small>
-                            By joining, you agree to the Sixerr
-                            <a href="">Terms of Service</a> and to occasionally receive emails from us.
-                            Please read our <a href="">Privacy Policy</a> to learn how we use your personal data.
+                        <small className='terms'>
+                            By joining, you agree to the
+                            Sixerr <a href="">Terms of Service</a> and to occasionally receive emails from us.
+                            Please read our <a href=""> Privacy Policy </a>to learn how we use your personal data.
                         </small>
                     </section>
                 </>

@@ -1,3 +1,44 @@
 .modal-content {
-    .user-actions {}
+    .user-actions {
+        display: flex;
+        flex-direction: column;
+        padding: em(60px) em(40px) em(32px);
+        font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+        .login-signup-heading {
+            color: $dark-clr;
+            font-size: rem(24px);
+            line-height: 130%;
+            font-weight: 700;
+            margin-block-end: em(12px);
+        }
+
+        .change-action-heading {
+            color: $dark-clr-1;
+            font-size: em(16px);
+            margin-block-end: em(48px);
+
+            .change-action {
+                color: $dark-clr;
+                cursor: pointer;
+                text-decoration: underline;
+                text-underline-offset: em(2px);
+                margin-inline-start: em(3px);
+            }
+        }
+
+        .terms {
+            color: $dark-clr-1;
+            font-size: rem(12px);
+            margin-block-start: auto;
+
+            a {
+                font-size: inherit;
+                font-weight: inherit;
+                margin: 0;
+                text-decoration: underline;
+            }
+        }
+    }
+
 }
