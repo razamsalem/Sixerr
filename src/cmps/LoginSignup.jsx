@@ -87,6 +87,7 @@ export function LoginSignup(props) {
                         </span>
                         {!isSignup && <form className="login-form" onSubmit={onLogin}>
                             <select
+                                className='sign-in-select'
                                 name="username"
                                 value={credentials.username}
                                 onChange={handleChange}

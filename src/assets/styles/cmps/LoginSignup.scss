@@ -40,6 +40,18 @@
             }
         }
 
+        .sign-in-select {
+            height: em(40px);
+            width: 100%;
+            border: em(1px) solid $dark-clr;
+            color: $dark-clr;
+            outline: 0;
+            font-size: 1rem;
+            border-radius: em(5px);
+            margin-bottom: em(32px);
+            font-weight: 600;
+        }
+
         .user-info-label {
             font-size: 16px;
             font-weight: 600;
