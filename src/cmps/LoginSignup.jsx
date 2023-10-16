@@ -73,6 +73,21 @@ export function LoginSignup(props) {
             <Modal open={isModalOpen} onClose={onCloseModal}>
                 <>
                     <img className='cover-img' src="https://res.cloudinary.com/dgsfbxsed/image/upload/v1697448779/login-img_t6g2jm.png" alt="Success starts here" />
+                    <ul className='benefits-container'>
+                        <h2>Success starts here</h2>
+                        <li>
+                            <i className="fa-solid fa-check"></i>
+                            Over 600 categories
+                        </li>
+                        <li>
+                            <i className="fa-solid fa-check"></i>
+                            Pay per project, not per hour
+                        </li>
+                        <li>
+                            <i className="fa-solid fa-check"></i>
+                            Access to talent and businesses across the globe
+                        </li>
+                    </ul>
                     <section className='user-actions'>
                         <h4 className='login-signup-heading'>
                             {isSignup ? 'Create a new account' : 'Sign in to your account'}

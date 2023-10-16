@@ -1,5 +1,41 @@
 .modal-content {
+    .cover-img {
+        position: relative;
+        width: em(437.5px);
+        height: em(645px);
+        border-radius: em(15px) 0 0 em(15px);
+    }
+
+    .benefits-container {
+        position: absolute;
+        padding: 3.75em 2.5em 2em;
+        color: $light-clr;
+
+        h2 {
+            margin-block-end: em(24px);
+            font-size: rem(32px);
+            font-weight: 700;
+        }
+
+        li {
+            display: flex;
+            width: 80%;
+            gap: em(7px);
+            margin-block-end: rem(16px);
+            font-size: rem(18px);
+            line-height: 100%;
+
+            i {
+                font-size: rem(14px);
+            }
+        }
+    }
+
     .user-actions {
+        width: em(437.5px);
+        height: em(645px);
+        background-color: $light-clr;
+        border-radius: 0 em(15px) em(15px) 0;
         display: flex;
         flex-direction: column;
         padding: em(60px) em(40px) em(32px);
@@ -7,7 +43,7 @@
 
         .login-signup-heading {
             color: $dark-clr;
-            font-size: rem(24px);
+            font-size: rem(26px);
             line-height: 130%;
             font-weight: 700;
             margin-block-end: em(12px);
