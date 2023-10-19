@@ -1,0 +1,21 @@
+.drop-down-btn {
+    position: relative;
+    margin-inline-start: rem(5px);
+
+    .drop-down-menu {
+        position: absolute;
+        left: 0;
+        background-color: $dark-clr-2;
+        padding: em(10px) 0;
+        border-radius: em(6px);
+
+        .drop-down-item {
+            padding: em(2px) em(5px);
+            text-align: center;
+
+            &:not(:last-child) {
+                border-block-end: 1px solid $dark-clr-3;
+            }
+        }
+    }
+}
