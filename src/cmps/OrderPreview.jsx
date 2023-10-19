@@ -2,7 +2,7 @@ import { utilService } from "../services/util.service"
 import { LongTxt } from "./LongTxt"
 import { DropdownBtn } from "./DropdownBtn.jsx"
 
-export function OrderPreview({ order, mode }) {
+export function OrderPreview({ order, mode, onApproveOrder, onDeclineOrder, onFulfillOrder }) {
     const profile = mode === 'buyer' ? order.seller : order.buyer
 
     return (
@@ -20,8 +20,9 @@ export function OrderPreview({ order, mode }) {
             <td>
                 {order && utilService.capitalizeFirstLetter(order.status)}
                 <DropdownBtn icon={'V'}>
-                    <a>Approve</a>
-                    <a>Decline</a>
+                    <span onClick={(ev) => { onApproveOrder(ev, order._id) }}>Approve</span>
+                    <span onClick={(ev) => { onDeclineOrder(ev, order._id) }}>Decline</span>
+                    <span onClick={(ev) => { onFulfillOrder(ev, order._id) }}>Mark as fulfilled</span>
                 </DropdownBtn>
 
             </td>

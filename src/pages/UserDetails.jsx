@@ -5,13 +5,13 @@ import { utilService } from '../services/util.service'
 import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
 import { loadGigs } from '../store/actions/gig.actions.js'
 import { loadUser } from '../store/user.actions'
-import { loadOrders } from '../store/actions/order.actions'
 import { store } from '../store/store'
 import { showSuccessMsg } from '../services/event-bus.service'
 import { GigList } from '../cmps/GigList'
 import { LongTxt } from '../cmps/LongTxt'
 import becomeSellerBanner from '../assets/img/become-seller.svg'
 import { OrderList } from '../cmps/OrderList'
+import { orderService } from '../services/order.service.local'
 
 export function UserDetails() {
   const params = useParams()
@@ -44,6 +44,24 @@ export function UserDetails() {
   function onBecomeSeller(user) {
     const updatedUser = { ...user, isSeller: !user.isSeller }
     store.dispatch({ type: 'SET_WATCHED_USER', user: updatedUser })
+  }
+
+  async function onApproveOrder(ev, orderId) {
+    ev.stopPropagation()
+    const order = await orderService.approveOrder(orderId)
+
+    console.log([...orders, order])
+
+  }
+
+  async function onDeclineOrder(ev, orderId) {
+    ev.stopPropagation()
+    const order = await orderService.declineOrder(orderId)
+  }
+
+  async function onFulfillOrder(ev, orderId) {
+    ev.stopPropagation()
+    const order = await orderService.fulfillOrder(orderId)
   }
 
   return (
@@ -116,7 +134,7 @@ export function UserDetails() {
         {(watchedUser?.isSeller && <div className='manage-orders'>
           <h1>Manage Orders</h1>
 
-          <OrderList orders={orders} loggedUser={loggedUser} mode='seller' />
+          <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} />
 
           <div className="my-gigs">
             <h1>My Gigs</h1>

@@ -1,15 +1,13 @@
-import { useSelector } from "react-redux"
 import { OrderPreview } from "./OrderPreview"
 import { Link } from "react-router-dom"
 
 
-export function OrderList({ orders, loggedUser, mode }) {
+export function OrderList({ orders, loggedUser, mode, onApproveOrder, onDeclineOrder, onFulfillOrder }) {
     if (mode === 'buyer') {
         orders = orders.filter(order => order.buyer._id === loggedUser._id)
     } else if (mode === 'seller') {
         orders = orders.filter(order => order.seller._id === loggedUser._id)
     }
-
 
     if (mode === 'buyer' && !orders.length) return (
         <>
@@ -45,7 +43,7 @@ export function OrderList({ orders, loggedUser, mode }) {
                 {
                     <tbody>
                         {orders.map(order => (
-                            <OrderPreview key={order._id} order={order} mode={mode} />
+                            <OrderPreview key={order._id} order={order} mode={mode} onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} />
                         ))}
                     </tbody>}
 
