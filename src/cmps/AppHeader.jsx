@@ -14,6 +14,7 @@ export function AppHeader() {
     const navigate = useNavigate()
     const user = useSelector(storeState => storeState.userModule.user)
     const isTransparentHeader = useSelector(storeState => storeState.systemModule.isTransparentHeader)
+    const isTransparentSubHeader = useSelector(storeState => storeState.systemModule.isTransparentSubHeader)
 
     useEffect(() => {
         loadOrders()
@@ -83,7 +84,7 @@ export function AppHeader() {
                     </nav>
                 </header>
             </section>
-            <CategoryNav isTransparentHeader={isTransparentHeader} />
+            <CategoryNav isTransparentSubHeader={isTransparentSubHeader} />
         </>
 
     )
