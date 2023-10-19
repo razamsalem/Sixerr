@@ -79,6 +79,20 @@ export function updateOrder(order) {
         })
 }
 
+export function approveOrder(order) {
+    order.status = 'approved'
+    updateOrder(order)
+}
+
+export function declineOrder(order) {
+    order.status = 'declined'
+    updateOrder(order)
+}
+
+export function fulfillOrder(order) {
+    order.status = 'fulfilled'
+    updateOrder(order)
+}
 
 export function onRemoveOrderOptimistic(orderId) {
     store.dispatch({

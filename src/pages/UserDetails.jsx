@@ -12,6 +12,8 @@ import { LongTxt } from '../cmps/LongTxt'
 import becomeSellerBanner from '../assets/img/become-seller.svg'
 import { OrderList } from '../cmps/OrderList'
 import { orderService } from '../services/order.service.local'
+import { approveOrder, declineOrder, fulfillOrder, getActionUpdateOrder, updateOrder } from '../store/actions/order.actions'
+
 
 export function UserDetails() {
   const params = useParams()
@@ -46,22 +48,19 @@ export function UserDetails() {
     store.dispatch({ type: 'SET_WATCHED_USER', user: updatedUser })
   }
 
-  async function onApproveOrder(ev, orderId) {
-    ev.stopPropagation()
-    const order = await orderService.approveOrder(orderId)
-
-    console.log([...orders, order])
-
+  async function onApproveOrder(ev, order) {
+    // ev.stopPropagation()
+    approveOrder(order)
   }
 
-  async function onDeclineOrder(ev, orderId) {
-    ev.stopPropagation()
-    const order = await orderService.declineOrder(orderId)
+  async function onDeclineOrder(ev, order) {
+    // ev.stopPropagation()
+    declineOrder(order)
   }
 
-  async function onFulfillOrder(ev, orderId) {
-    ev.stopPropagation()
-    const order = await orderService.fulfillOrder(orderId)
+  async function onFulfillOrder(ev, order) {
+    // ev.stopPropagation()
+    fulfillOrder(order)
   }
 
   return (

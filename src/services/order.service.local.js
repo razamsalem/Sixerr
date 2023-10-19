@@ -14,9 +14,6 @@ export const orderService = {
     save,
     remove,
     getEmptyOrder,
-    approveOrder,
-    declineOrder,
-    fulfillOrder
 }
 // window.cs = gigService
 
@@ -74,20 +71,3 @@ function _createOrders() {
     }
 }
 
-async function approveOrder(orderId) {
-    const order = await getById(orderId)
-    order.status = 'approved'
-    return save(order)
-}
-
-async function declineOrder(orderId) {
-    const order = await getById(orderId)
-    order.status = 'declined'
-    return save(order)
-}
-
-async function fulfillOrder(orderId) {
-    const order = await getById(orderId)
-    order.status = 'fulfilled'
-    return save(order)
-}
