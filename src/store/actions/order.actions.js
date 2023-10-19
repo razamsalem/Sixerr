@@ -69,7 +69,7 @@ export async function addOrder(order) {
 export function updateOrder(order) {
     return orderService.save(order)
         .then(savedOrder => {
-            console.log('Updated Order:', savedOrder)
+            // console.log('Updated Order:', savedOrder)
             store.dispatch(getActionUpdateOrder(savedOrder))
             return savedOrder
         })

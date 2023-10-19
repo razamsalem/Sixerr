@@ -19,11 +19,12 @@ export function OrderPreview({ order, mode, onApproveOrder, onDeclineOrder, onFu
             <td>${order.gig.price}</td>
             <td>
                 {order && utilService.capitalizeFirstLetter(order.status)}
-                <DropdownBtn icon={'V'}>
-                    <span onClick={(ev) => { onApproveOrder(ev, order) }}>Approve</span>
-                    <span onClick={(ev) => { onDeclineOrder(ev, order) }}>Decline</span>
-                    <span onClick={(ev) => { onFulfillOrder(ev, order) }}>Mark as fulfilled</span>
-                </DropdownBtn>
+                {mode === 'seller' &&
+                    <DropdownBtn icon={'V'}>
+                        <span onClick={(ev) => { onApproveOrder(ev, order) }}>Approve</span>
+                        <span onClick={(ev) => { onDeclineOrder(ev, order) }}>Decline</span>
+                        <span onClick={(ev) => { onFulfillOrder(ev, order) }}>Mark as fulfilled</span>
+                    </DropdownBtn>}
 
             </td>
         </tr>
