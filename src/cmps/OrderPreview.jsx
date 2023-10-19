@@ -17,13 +17,13 @@ export function OrderPreview({ order, mode, onApproveOrder, onDeclineOrder, onFu
             <td className='order-title'><LongTxt txt={order.gig.title} length={40} showReadMore={false} /></td>
             <td>Thu Aug 04 2022</td>
             <td>${order.gig.price}</td>
-            <td>
+            <td className="status">
                 {order && utilService.capitalizeFirstLetter(order.status)}
                 {mode === 'seller' &&
                     <DropdownBtn icon={'V'}>
-                        <span onClick={(ev) => { onApproveOrder(ev, order) }}>Approve</span>
-                        <span onClick={(ev) => { onDeclineOrder(ev, order) }}>Decline</span>
-                        <span onClick={(ev) => { onFulfillOrder(ev, order) }}>Mark as fulfilled</span>
+                        <span className="action" onClick={(ev) => { onApproveOrder(ev, order) }}>Approve</span>
+                        <span className="action" onClick={(ev) => { onDeclineOrder(ev, order) }}>Decline</span>
+                        <span className="action" onClick={(ev) => { onFulfillOrder(ev, order) }}>Mark as fulfilled</span>
                     </DropdownBtn>}
 
             </td>

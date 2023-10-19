@@ -16,6 +16,7 @@
         tr {
             background-color: $light-clr;
             transition: background-color .3s;
+            border-block: 1px solid $modal-filter-border-clr;
             cursor: pointer;
 
             &:hover {
@@ -25,10 +26,10 @@
 
         td {
             padding: 15px;
-            border-block: 1px solid $modal-filter-border-clr;
 
-            i {
-                display: inline;
+            &.status {
+                // display: flex;
+
             }
 
             &:not(:first-child):not(:last-child) {

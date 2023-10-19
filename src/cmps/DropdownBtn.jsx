@@ -21,8 +21,8 @@ export function DropdownBtn({ icon, children = '' }) {
 
     return (
         <a className="drop-down-btn" onClick={() => { setIsOpen(!isOpen) }} ref={buttonRef}>
-            {<i className="fa-solid fa-circle-chevron-down"></i>}
-            {isOpen && <DropdownMenu items={children} />}
+            <i className={`${isOpen && 'open'} fa-solid fa-circle-chevron-down`}></i>
+            {isOpen && <DropdownMenu items={children} isOpen={isOpen} />}
         </a>
     )
 }

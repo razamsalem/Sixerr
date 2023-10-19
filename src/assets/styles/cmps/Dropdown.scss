@@ -2,20 +2,60 @@
     position: relative;
     margin-inline-start: rem(5px);
 
+    i {
+        transition: color 0.2s, transform 0.4s;
+        font-size: rem(20px);
+
+        &.open {
+            color: $dark-clr-3;
+            transform: rotate(-180deg);
+        }
+    }
+
     .drop-down-menu {
+        animation-name: short-fade-in-down;
+        animation-duration: 1s;
+
         position: absolute;
-        left: 0;
+        right: 0;
         z-index: 2;
         background-color: $dark-clr-2;
-        padding: em(10px) 0;
         border-radius: em(6px);
+        box-shadow: 1px 1px 10px lighten($dark-clr-3, 10%);
+
+        &.closed {
+            animation-name: short-fade-out;
+            animation-duration: 1s;
+
+        }
 
         .drop-down-item {
-            padding: em(2px) em(5px);
             text-align: center;
+            transition: background-color 0.4s, color 0.7s;
+            font-weight: 700;
+
+            &:hover {
+                background-color: $dark-clr;
+                color: $light-clr;
+            }
+
+            &:first-child {
+                border-radius: 6px 6px 0 0;
+                padding-block-start: 5px;
+            }
+
+            &:last-child {
+                border-radius: 0 0 6px 6px;
+                padding-block-end: 5px;
+            }
 
             &:not(:last-child) {
                 border-block-end: 1px solid $dark-clr-3;
+            }
+
+            .action {
+                display: block;
+                padding: em(4px) em(20px);
             }
         }
     }
