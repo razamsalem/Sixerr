@@ -7,6 +7,8 @@
         justify-content: center;
         height: em(95px);
         align-items: center;
+        // Temporary margin
+        margin-block-end: 10vh;
 
         span {
             font-size: 1rem;

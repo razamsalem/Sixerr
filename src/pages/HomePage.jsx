@@ -4,6 +4,8 @@ import { Hero } from '../cmps/Hero'
 import { SellingArea } from './SellingArea'
 import { TrustedBy } from '../cmps/TrustedBy'
 import { SimpleSlider } from '../cmps/SimpleSlider'
+import { setHeaderTransparent, setHeaderVisible } from '../store/actions/system.actions'
+
 
 export function HomePage() {
     const sellingRef = useRef()
@@ -18,6 +20,8 @@ export function HomePage() {
         observer.observe(sellingRef.current)
     }, [])
 
+
+    isRefVisible ? setHeaderVisible() : setHeaderTransparent()
 
     return (
         <section className='home main-layout full'>
