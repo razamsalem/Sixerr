@@ -19,9 +19,10 @@
         position: absolute;
         right: 0;
         z-index: 2;
-        background-color: $dark-clr-2;
+        background-color: $light-clr;
+        color: $dark-clr;
         border-radius: em(6px);
-        box-shadow: 1px 1px 10px lighten($dark-clr-3, 10%);
+        box-shadow: em(1px) em(1px) em(10px) lighten($dark-clr-3, 10%);
 
         &.closed {
             animation-name: short-fade-out;
@@ -31,7 +32,7 @@
 
         .drop-down-item {
             text-align: center;
-            transition: background-color 0.4s, color 0.7s;
+            transition: background-color 0.4s, color 0.4s;
             font-weight: 700;
 
             &:hover {
@@ -45,8 +46,8 @@
             }
 
             &:last-child {
-                border-radius: 0 0 6px 6px;
-                padding-block-end: 5px;
+                border-radius: 0 0 em(6px) em(6px);
+                padding-block-end: em(5px);
             }
 
             &:not(:last-child) {
@@ -55,7 +56,8 @@
 
             .action {
                 display: block;
-                padding: em(4px) em(20px);
+                padding: em(5px) em(25px);
+                font-size: rem(18px);
             }
         }
     }

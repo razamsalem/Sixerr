@@ -28,8 +28,12 @@
             padding: 15px;
 
             &.status {
-                // display: flex;
-
+                display: flex;
+                min-height: em(80px);
+                align-items: center;
+                gap: 0.5vw;
+                justify-content: space-between;
+                letter-spacing: 0.2px;
             }
 
             &:not(:first-child):not(:last-child) {
