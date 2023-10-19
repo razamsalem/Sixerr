@@ -13,6 +13,7 @@ import { loadOrders } from '../store/actions/order.actions'
 export function AppHeader() {
     const navigate = useNavigate()
     const user = useSelector(storeState => storeState.userModule.user)
+    const isTransparentHeader = useSelector(storeState => storeState.systemModule.isTransparentHeader)
 
     useEffect(() => {
         loadOrders()
@@ -49,7 +50,7 @@ export function AppHeader() {
 
     return (
         <>
-            <section className="main-layout full header-container">
+            <section className={`${isTransparentHeader ? 'transparent' : 'visible'} main-layout full header-container`}>
                 <header className="app-header">
                     <Link to={'/home'} className='logo'>
                         sixerr<span className='dot'>.</span>
@@ -82,7 +83,7 @@ export function AppHeader() {
                     </nav>
                 </header>
             </section>
-            <CategoryNav />
+            <CategoryNav isTransparentHeader={isTransparentHeader} />
         </>
 
     )

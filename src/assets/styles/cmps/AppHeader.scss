@@ -1,6 +1,48 @@
 .header-container {
-    height: em(80px);
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    width: 100%;
     border-block-end: 1px solid $dark-clr-2;
+    background-color: $light-clr;
+
+    &.transparent {
+        background-color: transparent;
+        border: 0;
+
+        .app-header {
+            background-color: transparent;
+
+            .logo {
+                color: $light-clr;
+            }
+
+            .searchbar-container {
+                display: none;
+            }
+
+            .links-container {
+                a {
+                    color: $light-clr;
+
+                    &:hover {
+                        color: $light-clr;
+                    }
+
+                    &.btn.join {
+                        color: $light-clr;
+                        background-color: transparent;
+                        border-color: $light-clr;
+
+                        &:hover {
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
     img {
         width: 32px;
@@ -13,6 +55,7 @@
         justify-content: space-between;
         align-items: center;
         background-color: $light-clr;
+        padding-block: 16px;
 
         .logo {
             @include logo;
@@ -64,8 +107,11 @@
         }
 
         .links-container {
+            display: flex;
+            align-items: center;
+
             a {
-                margin-inline-end: 1.25em;
+                margin-inline-end: em(24px);
                 font-size: 1rem;
                 line-height: em(24px);
                 font-weight: 700;
@@ -76,7 +122,8 @@
 
                     &.join {
                         border: 1px solid $accent-clr;
-                        @include btn($type: light, $bg-color: $accent-clr, $color: $light-clr)
+                        @include btn($type: light, $bg-color: $accent-clr, $color: $light-clr);
+                        line-height: 1;
                     }
                 }
 
@@ -84,6 +131,16 @@
 
             a:hover {
                 color: $accent-clr;
+            }
+
+            .user-info {
+                display: flex;
+                align-items: center;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                }
             }
         }
     }

@@ -12,10 +12,10 @@ const categories = [
     "Photography"
 ]
 
-export function CategoryNav() {
+export function CategoryNav({ isTransparentHeader }) {
 
     return (
-        <div className="sub-header-container main-layout full">
+        <div className={`${isTransparentHeader ? 'transparent' : 'visisble'} sub-header-container main-layout full`}>
             <nav className="category-header">
                 <ul className="categories-container">
                     {categories.map(c => <Link key={c} className="category-link">{c}</Link>)}

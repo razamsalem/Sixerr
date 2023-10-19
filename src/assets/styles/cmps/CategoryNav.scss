@@ -1,5 +1,15 @@
 .sub-header-container {
+    width: 100%;
     border-block-end: 1.5px solid $dark-clr-2;
+    position: fixed;
+    z-index: 10;
+    top: em(84px);
+    background-color: $light-clr;
+
+
+    &.transparent {
+        display: none;
+    }
 
     .category-header {
         .categories-container {
@@ -7,7 +17,8 @@
             gap: rem(30px);
 
             .category-link {
-                padding-block: 11px;
+                max-height: rem(40px);
+                padding-block: rem(11px);
                 color: $dark-clr-1;
                 transition: 0.2s color;
 
