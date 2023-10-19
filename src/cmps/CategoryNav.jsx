@@ -15,7 +15,7 @@ const categories = [
 export function CategoryNav({ isTransparentSubHeader }) {
 
     return (
-        <div className={`${isTransparentSubHeader ? 'transparent' : 'visisble'} sub-header-container main-layout full`}>
+        <div className={`${isTransparentSubHeader ? 'transparent' : 'visisble'} sub-header-container main-layout full animate__animated animate__flipInX`}>
             <nav className="category-header">
                 <ul className="categories-container">
                     {categories.map(c => <Link key={c} className="category-link">{c}</Link>)}

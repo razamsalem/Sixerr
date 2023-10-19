@@ -5,13 +5,14 @@
     width: 100%;
     border-block-end: 1px solid $dark-clr-2;
     background-color: $light-clr;
+    transition: background-color 0.6s, border-color 0.6s;
 
     &.transparent {
         background-color: transparent;
         border: 0;
 
         .app-header {
-            background-color: transparent;
+
 
             .logo {
                 color: $light-clr;
@@ -54,7 +55,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: $light-clr;
+        background-color: transparent;
         padding-block: 16px;
 
         .logo {
