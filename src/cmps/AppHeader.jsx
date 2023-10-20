@@ -8,7 +8,7 @@ import { CategoryNav } from './CategoryNav'
 import { useEffect, useState } from 'react'
 import { SearchBarFilter } from './SearchBarFilter'
 import { loadOrders } from '../store/actions/order.actions'
-
+import { setHeaderVisible, setSubHeaderVisible } from '../store/actions/system.actions'
 
 export function AppHeader() {
     const navigate = useNavigate()
