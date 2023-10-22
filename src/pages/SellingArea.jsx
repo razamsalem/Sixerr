@@ -6,7 +6,7 @@ export function SellingArea({ sellingRef, budgetRef }) {
         <section className="selling-container full" ref={sellingRef}>
             <div className="selling">
                 <div className="left-info">
-                    <h2>The best part? Everything.</h2>
+                    <h2>The best part<span className="questionmark">?</span> Everything.</h2>
                     <SellingText txt={'Stick to your budget'} budgetRef={budgetRef} />
                 </div>
 
