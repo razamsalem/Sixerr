@@ -2,7 +2,7 @@
     .app-footer {
         font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
         background: none;
-        padding: .8rem 2rem;
+        padding: .8rem;
         margin-block-start: .5rem;
         justify-content: space-between;
         color: $co-clr;
@@ -27,7 +27,7 @@
 
             .sixerr-logo {
                 @include logo($clr: $co-clr);
-                font-size: rem(27px);
+                font-size: rem(30px);
                 letter-spacing: rem(-2px);
                 cursor: context-menu;
             }
