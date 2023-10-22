@@ -47,12 +47,9 @@ async function remove(orderId) {
 
 async function save(order) {
     let savedOrder
-    // console.log(order, 'order in service')
     if (order._id) {
         savedOrder = await storageService.put(STORAGE_KEY, order)
     } else {
-        // Later, owner is set by the backend
-        order.buyer = userService.getLoggedinUser()
         savedOrder = await storageService.post(STORAGE_KEY, order)
     }
     return savedOrder
