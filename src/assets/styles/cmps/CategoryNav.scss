@@ -6,6 +6,9 @@
     top: em(84px);
     background-color: $light-clr;
 
+    &.static {
+        position: static;
+    }
 
     &.transparent {
         display: none;

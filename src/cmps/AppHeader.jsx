@@ -8,13 +8,16 @@ import { CategoryNav } from './CategoryNav'
 import { useEffect, useState } from 'react'
 import { SearchBarFilter } from './SearchBarFilter'
 import { loadOrders } from '../store/actions/order.actions'
-import { setHeaderVisible, setSubHeaderVisible } from '../store/actions/system.actions'
+
 
 export function AppHeader() {
     const navigate = useNavigate()
     const user = useSelector(storeState => storeState.userModule.user)
     const isTransparentHeader = useSelector(storeState => storeState.systemModule.isTransparentHeader)
     const isTransparentSubHeader = useSelector(storeState => storeState.systemModule.isTransparentSubHeader)
+    const location = useLocation()
+    const currentPath = location.pathname
+
 
     useEffect(() => {
         loadOrders()
@@ -51,7 +54,7 @@ export function AppHeader() {
 
     return (
         <>
-            <section className={`${isTransparentHeader ? 'transparent' : 'visible'} main-layout full header-container`}>
+            <section className={`${isTransparentHeader ? 'transparent' : 'visible'} ${currentPath !== '/home' ? 'static' : ''} main-layout full header-container`}>
                 <header className="app-header">
                     <Link to={'/home'} className='logo'>
                         sixerr<span className='dot'>.</span>
@@ -84,7 +87,7 @@ export function AppHeader() {
                     </nav>
                 </header>
             </section>
-            <CategoryNav isTransparentSubHeader={isTransparentSubHeader} />
+            <CategoryNav isTransparentSubHeader={isTransparentSubHeader} isStatic={currentPath !== '/home'} />
         </>
 
     )
