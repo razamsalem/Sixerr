@@ -8,7 +8,7 @@ import { CategoryNav } from './CategoryNav'
 import { useEffect, useState } from 'react'
 import { SearchBarFilter } from './SearchBarFilter'
 import { loadOrders } from '../store/actions/order.actions'
-
+import { setHeaderPosition, setSubHeaderPosition } from '../store/actions/system.actions'
 
 export function AppHeader() {
     const navigate = useNavigate()
@@ -51,6 +51,12 @@ export function AppHeader() {
         }
     }
 
+    useEffect(() => {
+        if (currentPath !== '/home') {
+            setHeaderPosition('static')
+            setSubHeaderPosition('static')
+        }
+    }, [currentPath])
 
     return (
         <>
