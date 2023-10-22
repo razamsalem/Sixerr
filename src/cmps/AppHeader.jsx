@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react'
 import { SearchBarFilter } from './SearchBarFilter'
 import { loadOrders } from '../store/actions/order.actions'
 import { setHeaderPosition, setSubHeaderPosition } from '../store/actions/system.actions'
+import { DropdownBtn } from './DropdownBtn'
 
 export function AppHeader() {
     const navigate = useNavigate()
@@ -79,10 +80,16 @@ export function AppHeader() {
                             <>
                                 <NavLink key={'order'} to={'order'}>Orders</NavLink>
                                 <span className="user-info">
-                                    <NavLink to={`user/${user._id}`}>
-                                        {user.imgUrl && <img src={user.imgUrl} />}
-                                    </NavLink>
-                                    <button onClick={onLogout}>Logout</button>
+
+                                    <DropdownBtn icon={<img src={user.imgUrl} />}>
+                                        <NavLink to={`user/${user._id}`}>
+                                            Profile
+                                        </NavLink>
+                                        <span onClick={onLogout}>
+                                            Logout
+                                        </span>
+                                    </DropdownBtn>
+
                                 </span>
                             </>
 

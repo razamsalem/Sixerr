@@ -32,9 +32,9 @@
 
         .drop-down-item {
             text-align: center;
-            transition: background-color 0.4s, color 0.4s;
+            transition: background-color 0.2s, color 0.2s;
             font-weight: 700;
-            
+
             &:first-child {
                 border-radius: 6px 6px 0 0;
                 padding-block-start: 5px;
@@ -46,7 +46,7 @@
             }
 
             &:not(:last-child) {
-                border-block-end: 1px solid $dark-clr-3;                
+                border-block-end: 1px solid $dark-clr-3;
             }
 
             .action {

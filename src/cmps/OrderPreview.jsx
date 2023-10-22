@@ -27,7 +27,7 @@ export function OrderPreview({ order, mode, onApproveOrder, onDeclineOrder, onFu
             <td className="status">
                 {order && <span className={checkStatus(order.status)}> {utilService.capitalizeFirstLetter(order.status)} </span>}
                 {mode === 'seller' &&
-                    <DropdownBtn icon={'V'}>
+                    <DropdownBtn>
                         <span className="action approve-gig" onClick={(ev) => { onApproveOrder(ev, order) }}>Approve</span>
                         <span className="action decline-gig" onClick={(ev) => { onDeclineOrder(ev, order) }}>Decline</span>
                         <span className="action fulfilled-gig" onClick={(ev) => { onFulfillOrder(ev, order) }}>Mark as fulfilled</span>

@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { DropdownMenu } from "./DropdownMenu";
 
-export function DropdownBtn({ icon, children = '' }) {
+export function DropdownBtn({ icon = '', children = '' }) {
     const [isOpen, setIsOpen] = useState(false);
     const buttonRef = useRef(null)
+    console.log('Children:', children)
 
     function closeDropdown(event) {
         if (buttonRef.current && !buttonRef.current.contains(event.target)) {
@@ -21,7 +22,9 @@ export function DropdownBtn({ icon, children = '' }) {
 
     return (
         <a className="drop-down-btn" onClick={() => { setIsOpen(!isOpen) }} ref={buttonRef}>
-            <i className={`${isOpen && 'open'} fa-solid fa-circle-chevron-down`}></i>
+            {!icon ?
+                <i className={`${isOpen && 'open'} fa-solid fa-circle-chevron-down`}></i> : icon
+            }
             {isOpen && <DropdownMenu items={children} isOpen={isOpen} />}
         </a>
     )
