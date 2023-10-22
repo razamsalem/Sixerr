@@ -35,33 +35,42 @@
             transition: background-color 0.4s, color 0.4s;
             font-weight: 700;
             
+            &:first-child {
+                border-radius: 6px 6px 0 0;
+                padding-block-start: 5px;
+            }
+
+            &:last-child {
+                border-radius: 0 0 em(6px) em(6px);
+                padding-block-end: em(5px);
+            }
+
             &:not(:last-child) {
-                border-block-end: 1px solid $dark-clr-3;
-
-                &:hover {
-                    color: $error-clr;
-                }
-
-                &:first-child {
-                    border-radius: 6px 6px 0 0;
-                    padding-block-start: 5px;
-
-                    &:hover {
-                        color: $accent-clr;
-                    }
-                }
-
-                &:last-child {
-                    border-radius: 0 0 em(6px) em(6px);
-                    padding-block-end: em(5px);
-                }
-
+                border-block-end: 1px solid $dark-clr-3;                
             }
 
             .action {
                 display: block;
                 padding: em(5px) em(25px);
                 font-size: rem(18px);
+            }
+        }
+
+        .approve-gig {
+            &:hover {
+                color: $accent-clr;
+            }
+        }
+
+        .decline-gig {
+            &:hover {
+                color: $error-clr;
+            }
+        }
+
+        .fulfilled-gig {
+            &:hover {
+                color: $fulfilled-clr;
             }
         }
     }
