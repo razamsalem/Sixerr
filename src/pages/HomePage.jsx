@@ -5,8 +5,7 @@ import { SellingArea } from './SellingArea'
 import { TrustedBy } from '../cmps/TrustedBy'
 import { SimpleSlider } from '../cmps/SimpleSlider'
 
-import { setHeaderTransparent, setHeaderVisible, setSubHeaderTransparent, setSubHeaderVisible } from '../store/actions/system.actions'
-
+import { setHeaderPosition, setSubHeaderPosition, } from '../store/actions/system.actions'
 
 export function HomePage() {
     const sellingRef = useRef()
@@ -27,8 +26,8 @@ export function HomePage() {
         observer.observe(sellingRef.current)
         observer.observe(budgetRef.current)
 
-        isRefVisible ? setHeaderVisible() : setHeaderTransparent()
-        isSecondRefVisible ? setSubHeaderVisible() : setSubHeaderTransparent()
+        isRefVisible ? setHeaderPosition('visible') : setHeaderPosition('transparent')
+        isSecondRefVisible ? setSubHeaderPosition('visible') : setSubHeaderPosition('transparent')
 
     }, [isRefVisible, isSecondRefVisible])
 

@@ -1,30 +1,17 @@
 import { store } from '../../store/store.js'
-import { SET_HEADER_TRANSPARENT, SET_HEADER_VISIBLE, SET_SUB_HEADER_TRANSPARENT, SET_SUB_HEADER_VISIBLE } from '../system.reducer'
+import { SET_HEADER_POSITION, SET_SUB_HEADER_POSITION, } from '../system.reducer'
 
-export function setHeaderTransparent() {
 
+export function setHeaderPosition(position) {
     store.dispatch({
-        type: SET_HEADER_TRANSPARENT
+        type: SET_HEADER_POSITION,
+        position
     })
 }
 
-export function setHeaderVisible() {
-
+export function setSubHeaderPosition(position) {
     store.dispatch({
-        type: SET_HEADER_VISIBLE
-    })
-}
-
-export function setSubHeaderTransparent() {
-
-    store.dispatch({
-        type: SET_SUB_HEADER_TRANSPARENT
-    })
-}
-
-export function setSubHeaderVisible() {
-
-    store.dispatch({
-        type: SET_SUB_HEADER_VISIBLE
+        type: SET_SUB_HEADER_POSITION,
+        position
     })
 }

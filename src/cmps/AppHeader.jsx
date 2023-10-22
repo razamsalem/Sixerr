@@ -13,8 +13,8 @@ import { loadOrders } from '../store/actions/order.actions'
 export function AppHeader() {
     const navigate = useNavigate()
     const user = useSelector(storeState => storeState.userModule.user)
-    const isTransparentHeader = useSelector(storeState => storeState.systemModule.isTransparentHeader)
-    const isTransparentSubHeader = useSelector(storeState => storeState.systemModule.isTransparentSubHeader)
+    const headerPosition = useSelector(storeState => storeState.systemModule.headerPosition)
+    const subHeaderPosition = useSelector(storeState => storeState.systemModule.subHeaderPosition)
     const location = useLocation()
     const currentPath = location.pathname
 
@@ -54,7 +54,7 @@ export function AppHeader() {
 
     return (
         <>
-            <section className={`${isTransparentHeader ? 'transparent' : 'visible'} ${currentPath !== '/home' ? 'static' : ''} main-layout full header-container`}>
+            <section className={`${headerPosition} main-layout full header-container`}>
                 <header className="app-header">
                     <Link to={'/home'} className='logo'>
                         sixerr<span className='dot'>.</span>
@@ -87,7 +87,7 @@ export function AppHeader() {
                     </nav>
                 </header>
             </section>
-            <CategoryNav isTransparentSubHeader={isTransparentSubHeader} isStatic={currentPath !== '/home'} />
+            <CategoryNav subHeaderPosition={subHeaderPosition} />
         </>
 
     )

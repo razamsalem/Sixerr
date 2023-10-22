@@ -1,14 +1,12 @@
 export const LOADING_START = 'LOADING_START'
 export const LOADING_DONE = 'LOADING_DONE'
-export const SET_HEADER_TRANSPARENT = 'SET_HEADER_TRANSPARENT'
-export const SET_HEADER_VISIBLE = 'SET_HEADER_VISIBLE'
-export const SET_SUB_HEADER_TRANSPARENT = 'SET_SUB_HEADER_TRANSPARENT'
-export const SET_SUB_HEADER_VISIBLE = 'SET_SUB_HEADER_VISIBLE'
+export const SET_HEADER_POSITION = 'SET_HEADER_POSITION'
+export const SET_SUB_HEADER_POSITION = 'SET_SUB_HEADER_POSITION'
 
 const initialState = {
   isLoading: false,
-  isTransparentHeader: false,
-  isTransparentSubHeader: false,
+  headerPosition: 'static',
+  subHeaderPosition: 'static',
 }
 
 export function systemReducer(state = initialState, action = {}) {
@@ -17,14 +15,10 @@ export function systemReducer(state = initialState, action = {}) {
       return { ...state, isLoading: true }
     case LOADING_DONE:
       return { ...state, isLoading: false }
-    case SET_HEADER_TRANSPARENT:
-      return { ...state, isTransparentHeader: true }
-    case SET_HEADER_VISIBLE:
-      return { ...state, isTransparentHeader: false }
-    case SET_SUB_HEADER_TRANSPARENT:
-      return { ...state, isTransparentSubHeader: true }
-    case SET_SUB_HEADER_VISIBLE:
-      return { ...state, isTransparentSubHeader: false }
+    case SET_HEADER_POSITION:
+      return { ...state, headerPosition: action.position }
+    case SET_SUB_HEADER_POSITION:
+      return { ...state, subHeaderPosition: action.position }
     default: return state
   }
 }
