@@ -3,19 +3,20 @@ import Slider from "react-slick";
 import demoCards from '../../demoData/cardsGalleryDemoData.js';
 import {CategoryCard} from "./CategoryCard.jsx";
 import { NextBtn } from "./NextBtn.jsx";
+import { PrevBtn } from "./PrevBtn.jsx";
 
 export function SimpleSlider() {
-  var settings = {
-    dots: true,
+  const settings = {
+    dots: false,
     infinite: true,
     speed: 800,
     slidesToShow: 5,
     slidesToScroll: 5,
-    // prevArrow: <NextBtn/>,
+    prevArrow: <PrevBtn/>,
     nextArrow: <NextBtn />,
   };
 
-  console.log(demoCards);
+  // console.log(demoCards);
 
   return (
     <Slider {...settings}>

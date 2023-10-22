@@ -141,4 +141,26 @@
     }
 }
 
-// @mixin prev-next-btn()
+@mixin gallry-btn($where: gallery, $type: regular ){
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.125em;
+    position: absolute;
+    top: calc(50% - 24px);
+    background: #fff;
+    box-shadow: #62646a 0 0.0625em 0.1875em 0;
+    color: #404145;
+    @if $type == next {
+        right: -17px;
+    }
+    @if $type == prev {
+        left: -17px;
+    }
+    @if $where == detail {
+        right: 0.125em;
+    }
+}
