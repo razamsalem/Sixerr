@@ -1,7 +1,7 @@
-export function NextBtn(){
-    return(
-        <button class="next-btn arrow">
-            <i class="fa-solid fa-chevron-right"></i>
+export function NextBtn() {
+    return (
+        <button className="next-btn arrow">
+            <i className="fa-solid fa-chevron-right"></i>
         </button>
     )
 }

@@ -17,9 +17,6 @@ export function HomePage() {
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
-            console.log(entries)
-            console.log(budgetRef.current)
-            console.log(isSecondRefVisible)
 
             entries.map(entry => {
                 if (Array.from(entry.target.classList).includes("selling-container")) setIsRefVisible(entry.isIntersecting)

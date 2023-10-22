@@ -15,27 +15,27 @@ const demoUsers = [
         "gig": "{optional-mini-gig}",
         "txt": "Very kind and works fast",
         "rate": 4,
-        "createdAt" : 1697993927386,
+        "createdAt": 1697993927386,
         "reviewImgUrl": null,
         "by": {
           "_id": "u207",
           "fullname": "James Q",
           "imgUrl": "/img/img2.jpg",
-          "location" : "Italy"
+          "location": "Italy"
         }
       },
       {
         "id": "r102",
         "gig": "{optional-mini-gig}",
         "txt": "Very kind and works fast",
-        "rate": 2,
-        "createdAt" : 1697993927389,
+        "rate": 5,
+        "createdAt": 1697993927389,
         "reviewImgUrl": null,
         "by": {
           "_id": "u102",
           "fullname": "Jhon I",
           "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696177501/samples/people/boy-snow-hoodie.jpg",
-          "location" : "United States"
+          "location": "United States"
         }
       },
     ],
@@ -56,16 +56,44 @@ const demoUsers = [
         "id": "r103",
         "gig": "{optional-mini-gig}",
         "txt": "Very kind and works fast",
-        "rate": 2,
-        "createdAt" : 1697993927388,
+        "rate": 5,
+        "createdAt": 1697993927388,
         "reviewImgUrl": null,
         "by": {
           "_id": "u101",
           "fullname": "Taylor P",
           "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696177526/cld-sample.jpg",
-          "location" : "United States",
+          "location": "United States",
         }
-      }
+      },
+      {
+        "id": "r106",
+        "gig": "{optional-mini-gig}",
+        "txt": "Nice work, Thank you!",
+        "rate": 5,
+        "createdAt": 1692993933389,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u207",
+          "fullname": "James Q",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696177501/samples/people/boy-snow-hoodie.jpg",
+          "location": "Italy"
+        }
+      },
+      {
+        "id": "r107",
+        "gig": "{optional-mini-gig}",
+        "txt": "Okayyy, let's gooo!",
+        "rate": 4,
+        "createdAt": 1591993933389,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u208",
+          "fullname": "Liri C",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696589336/MV5BZDJhYzdkMTUtMTg2MS00ZTM5LWI1OGUtYTY5MzY4NDM3NThjXkEyXkFqcGdeQXVyMjQwMDg0Ng_._V1__okvske.jpg",
+          "location": "Greece",
+        }
+      },
     ],
   },
   {
@@ -85,15 +113,43 @@ const demoUsers = [
         "gig": "{optional-mini-gig}",
         "txt": "Very kind and works fast",
         "rate": 3,
-        "createdAt" : 1697993927340,
+        "createdAt": 1697993927340,
         "reviewImgUrl": null,
         "by": {
           "_id": "u208",
           "fullname": "Liri C",
           "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696589336/MV5BZDJhYzdkMTUtMTg2MS00ZTM5LWI1OGUtYTY5MzY4NDM3NThjXkEyXkFqcGdeQXVyMjQwMDg0Ng_._V1__okvske.jpg",
-          "location" : "Greece",
+          "location": "Greece",
         }
-      }
+      },
+      {
+        "id": "r108",
+        "gig": "{optional-mini-gig}",
+        "txt": "I am not satisfied with the work of Mr.James..",
+        "rate": 3,
+        "createdAt": 1621993933389,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u102",
+          "fullname": "Jhon I",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696584327/qcw1ydkltzywb3g4s5ty.jpg",
+          "location": "United States",
+        }
+      },
+      {
+        "id": "r109",
+        "gig": "{optional-mini-gig}",
+        "txt": "Great work, i'm very happy with the provided service :)",
+        "rate": 5,
+        "createdAt": 1651993933389,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u208",
+          "fullname": "Liri C",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696589336/MV5BZDJhYzdkMTUtMTg2MS00ZTM5LWI1OGUtYTY5MzY4NDM3NThjXkEyXkFqcGdeQXVyMjQwMDg0Ng_._V1__okvske.jpg",
+          "location": "Greece",
+        }
+      },
     ],
   },
   {
@@ -111,15 +167,15 @@ const demoUsers = [
       {
         "id": "r105",
         "gig": "{optional-mini-gig}",
-        "txt": "Very kind and works fast",
-        "rate": 1,
-        "createdAt" : 1697993927315,
+        "txt": "Not the best result, but good effort.",
+        "rate": 3,
+        "createdAt": 1693993927315,
         "reviewImgUrl": null,
         "by": {
           "_id": "u102",
           "fullname": "Jhon I",
           "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696584327/qcw1ydkltzywb3g4s5ty.jpg",
-          "location" : "United States",
+          "location": "United States",
         }
       }
     ],
