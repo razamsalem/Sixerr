@@ -4,6 +4,7 @@ import { createSearchParams } from 'react-router-dom';
 import { setFilterBy } from '../store/actions/gig.actions';
 import { useSelector } from 'react-redux';
 import { gigService } from '../services/gig.service.local';
+import { DeliveryTimeArea } from './DeliveryTimeArea';
 
 function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filterBy }) {
     const globalFilterBy = useSelector(storeState => storeState.gigModule.filterBy)
@@ -62,6 +63,7 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
         console.log(filterByToEdit)
         setFilterBy({ ...globalFilterBy, ...filterByToEdit })
     }
+
     return (
         <div className="dynamic-modal" style={style} ref={modalRef}>
             <div className="content-scroll">
@@ -93,18 +95,8 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
                 }
 
                 {btn.title === 'Delivery time' &&
-                    <div className="radio-list flex">
-                        <div className="radio-item-wrapper flex">
-                            <label htmlFor="deliver-time1" className='radio-item flex'>
-                                <input type="radio" name='deliver-time1' id='deliver-time1' />
-                                <div className="inner-radio">
-                                    <span>Express 24H</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
+                    <DeliveryTimeArea />
                 }
-
 
             </div>
             <div className='button-row'>

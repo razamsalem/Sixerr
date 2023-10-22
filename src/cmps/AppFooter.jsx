@@ -7,22 +7,9 @@ import { removeFromCart, checkout } from '../store/car.actions'
 import { UserMsg } from './UserMsg.jsx'
 
 export function AppFooter() {
-    // const [isCartShown, setIsCartShown] = useState(false)
-    // const cart = useSelector(storeState => storeState.carModule.cart)
-    // const count = useSelector(storeState => storeState.userModule.count)
-    // const cartTotal = cart.reduce((acc, car) => acc + car.price, 0)
-
-    // async function onCheckout() {
-    //     try {
-    //         const score = await checkout(cartTotal)
-    //         showSuccessMsg(`Charged, your new score: ${score.toLocaleString()}`)
-    //     } catch(err) {
-    //         showErrorMsg('Cannot checkout')
-    //     }
-
     return (
         <footer className="app-footer-container main-layout">
-            <section className="app-footer with-border-top flex full">
+            <section className="app-footer with-border-top flex">
                 <div className="left flex">
                     <span className="sixerr-logo">sixerr.</span>
                     <p className='empty'>© Sixerr International Ltd. 2023</p>
