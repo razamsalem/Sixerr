@@ -7,6 +7,8 @@ import starUrl from "../assets/img/star.svg"
 import nextUrl from "../assets/img/next.svg"
 import { CallToAction } from "../cmps/CallToAction";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../store/reducers/gig.reducer";
+import { NextBtn } from "../cmps/NextBtn";
+import { PrevBtn } from "../cmps/PrevBtn";
 
 export function GigDetails() {
     // const [reviews, setReviews] = useState(null)
@@ -68,6 +70,7 @@ export function GigDetails() {
                         <button className='next-btn arrow' onClick={clickHandler} >
                             <i className="fa-solid fa-chevron-right"></i>
                         </button>
+                        // <PrevBtn onClick={clickHandler} where={'detail'}/>
                     )
                 }}
                     renderArrowPrev={(clickHandler, hasNext) => {
@@ -75,6 +78,8 @@ export function GigDetails() {
                             <button className='prev-btn arrow' onClick={clickHandler} >
                                 <i className="fa-solid fa-chevron-left"></i>
                             </button>
+                        // <NextBtn onClick={clickHandler} where={'detail'}/>
+                           
                         )
                     }}
                 >

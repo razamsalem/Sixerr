@@ -79,3 +79,15 @@ a:visited {
         @include owner-profile-img($type: large);
     }
 }
+
+.gallry-btn{
+    @include gallry-btn;
+    
+    &-next {
+        @include gallry-btn($type: next);
+    }
+
+    &-prev {
+        @include gallry-btn($type: prev);
+    }
+}
