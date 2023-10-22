@@ -40,7 +40,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder }) {
                     </span>
                 </div>
                 :
-                <Link to={`${pathname}/checkout`} onClick={() => { addToCart(gig) }} className='btn continue'>
+                <Link to={`${pathname}/checkout`} className='btn continue'>
                     Continue
                 </Link>
             }

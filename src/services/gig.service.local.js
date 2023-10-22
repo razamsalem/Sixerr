@@ -3,7 +3,7 @@ import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
 import demoGigs from '../../demoData/gigDemoData.js'
-
+// console.log(demoGigs);
 const STORAGE_KEY = 'gigDB'
 
 _createGigs()

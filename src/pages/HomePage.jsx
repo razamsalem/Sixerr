@@ -4,6 +4,7 @@ import { Hero } from '../cmps/Hero'
 import { SellingArea } from './SellingArea'
 import { TrustedBy } from '../cmps/TrustedBy'
 import { SimpleSlider } from '../cmps/SimpleSlider'
+
 import { setHeaderTransparent, setHeaderVisible, setSubHeaderTransparent, setSubHeaderVisible } from '../store/actions/system.actions'
 
 
@@ -34,13 +35,12 @@ export function HomePage() {
 
     }, [isRefVisible, isSecondRefVisible])
 
-
-
     return (
         <section className='home main-layout full'>
             <Hero />
             <TrustedBy />
             <SellingArea sellingRef={sellingRef} budgetRef={budgetRef} />
+            <h1 className='title-slide'>Popular services</h1>
             <SimpleSlider />
         </section >
     )

@@ -1,3 +1,8 @@
-.homepage {
-    
+.home {
+    .title-slide{
+        margin-block-start: rem(96px);
+        padding-block-end: rem(24px);
+        // font-weight: 700;
+        line-height: rem(38.4px)
+    }
 }

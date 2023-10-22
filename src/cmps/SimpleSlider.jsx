@@ -1,36 +1,29 @@
 import React from "react";
 import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
+import demoCards from '../../demoData/cardsGalleryDemoData.js';
+import {CategoryCard} from "./CategoryCard.jsx";
+import { NextBtn } from "./NextBtn.jsx";
 
-export  function SimpleSlider() {
+export function SimpleSlider() {
   var settings = {
     dots: true,
     infinite: true,
     speed: 800,
-    slidesToShow: 3,
-    slidesToScroll: 4
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    // prevArrow: <NextBtn/>,
+    nextArrow: <NextBtn />,
   };
+
+  console.log(demoCards);
+
   return (
     <Slider {...settings}>
-      <div>
-        <h3>1</h3>
-      </div>
-      <div>
-        <h3>2</h3>
-      </div>
-      <div>
-        <h3>3</h3>
-      </div>
-      <div>
-        <h3>4</h3>
-      </div>
-      <div>
-        <h3>5</h3>
-      </div>
-      <div>
-        <h3>6</h3>
-      </div>
+      {demoCards.map((card) => (
+        <div key={card.id} className="slide">
+          <CategoryCard card={card} />
+        </div>
+      ))}
     </Slider>
   );
 }

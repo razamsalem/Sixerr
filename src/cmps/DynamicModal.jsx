@@ -24,9 +24,9 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
     }, [isOpen, onClose, modalRef])
 
 
-    useEffect(() => {
-        setFilterByToEdit({ ...globalFilterBy })
-    }, [globalFilterBy])
+    // useEffect(() => {
+    //     setFilterByToEdit({ ...globalFilterBy })
+    // }, [globalFilterBy])
 
     if (!isOpen) return null
 
