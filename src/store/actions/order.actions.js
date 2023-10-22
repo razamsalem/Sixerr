@@ -84,7 +84,7 @@ export function approveOrder(order) {
 }
 
 export function declineOrder(order) {
-    order.status = 'declined'
+    order.status = 'rejected'
     updateOrder(order)
 }
 
