@@ -10,3 +10,34 @@
     box-shadow: 0 0 0 0.25rem lighten($dark-clr, 60%);
   }
 }
+
+.form-check-input.bigger {
+    width: 20px;
+    height: 20px;
+}
+
+.form-check-input.radio.delivery {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $darkest-clr;
+  border-radius: 50%;
+  position: relative;
+
+  &:checked {
+    background-color: $light-clr;
+  }
+
+}
+
+.form-check-input.radio.delivery:checked::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: $darkest-clr;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

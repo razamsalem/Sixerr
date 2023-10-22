@@ -96,15 +96,36 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
                     <div className="radio-list flex">
                         <div className="radio-item-wrapper flex">
                             <label htmlFor="deliver-time1" className='radio-item flex'>
-                                <input type="radio" name='deliver-time1' id='deliver-time1' />
+                                <input className="form-check-input bigger radio delivery" type="radio" name='deliver-time' id='deliver-time1' />
                                 <div className="inner-radio">
-                                    <span>Express 24H</span>
+                                    <p>Express 24H</p>
                                 </div>
+                            </label>
+                        </div>
+                        <div className="radio-item-wrapper flex">
+                            <label htmlFor="deliver-time2" className='radio-item flex'>
+                                <input className="form-check-input bigger radio delivery" type="radio" name='deliver-time' id='deliver-time2' />
+                                <div className="inner-radio">
+                                    <p>Up to 3 days</p>
+                                </div>
+                            </label>
+                        </div>
+                        <div className="radio-item-wrapper flex">
+                            <label htmlFor="deliver-time3" className='radio-item flex'>
+                                <input className="form-check-input bigger radio delivery" type="radio" name='deliver-time' id='deliver-time3' />
+                                <div className="inner-radio">
+                                    <p>Up to 7 days</p>
+                                </div>
+                            </label>
+                        </div>
+                        <div className="radio-item-wrapper flex">
+                            <label htmlFor="deliver-time4" className='radio-item flex'>
+                                <input className="form-check-input bigger radio delivery" type="radio" name="deliver-time" id="deliver-time4" />
+                                <p>Anytime</p>
                             </label>
                         </div>
                     </div>
                 }
-
 
             </div>
             <div className='button-row'>

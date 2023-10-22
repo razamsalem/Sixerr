@@ -155,4 +155,28 @@
             }
         }
     }
+
+    .radio-list {
+        flex-direction: column;
+        cursor: pointer;
+        
+        .radio-item-wrapper {
+            padding: rem(9px);
+            font-weight: 600;
+            
+            &:hover {
+                background-color: $light-clr3;
+            }
+
+            p {
+                margin-inline-start: rem(8px);
+                padding-inline-end: rem(60px);
+                font-size: rem(14px);
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 }
