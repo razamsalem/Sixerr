@@ -62,6 +62,7 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
         console.log(filterByToEdit)
         setFilterBy({ ...globalFilterBy, ...filterByToEdit })
     }
+
     return (
         <div className="dynamic-modal" style={style} ref={modalRef}>
             <div className="content-scroll">

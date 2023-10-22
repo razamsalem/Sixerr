@@ -164,18 +164,24 @@
             padding: rem(9px);
             font-weight: 600;
             
-            &:hover {
-                background-color: $light-clr3;
-            }
-
-            p {
-                margin-inline-start: rem(8px);
-                padding-inline-end: rem(60px);
-                font-size: rem(14px);
-
+            label{
+                width: rem(175px);
+                
                 &:hover {
                     cursor: pointer;
                 }
+            }
+            
+            
+            p {
+                margin-inline-start: rem(8px);
+                // padding-inline-end: rem(60px);
+                font-size: rem(14px);
+            }
+            
+            &:hover {
+                border-radius: 8px;
+                background-color: $light-clr3;
             }
         }
     }
