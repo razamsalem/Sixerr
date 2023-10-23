@@ -42,7 +42,7 @@
     }
 
     .about-gig {
-
+        // border-bottom: 1px solid #dadbdd;
         .gig-about-title {
             padding-bottom: em(25px);
             line-height: em(28px);
@@ -55,7 +55,9 @@
         }
     }
 
-
+    .about-seller{
+        margin-bottom: em(29px);
+    }
     .carousel {
         padding-inline: em(25px);
         width: 100%;
