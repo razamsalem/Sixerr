@@ -36,11 +36,9 @@ async function remove(reviewId) {
 }
 
 async function add(review) {
-  console.log(review)
 
   const aboutUserId = review.gig.owner._id
   const aboutUser = await userService.getById(aboutUserId)
-  console.log(aboutUser)
   aboutUser.reviews.push(review)
   userService.update(aboutUser)
 }
