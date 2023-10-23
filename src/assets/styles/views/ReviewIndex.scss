@@ -25,11 +25,13 @@
         }
 
         label {
-            font-size: rem(18px);
+            font-size: 1.3rem;
             font-weight: 700;
             display: flex;
             flex-direction: column;
+            gap: em(7px);
             color: $dark-clr;
+            margin-bottom: 5px;
         }
 
         .txt-label {
@@ -60,6 +62,19 @@
                 font-size: rem(14px);
                 color: darken($dark-clr-2, 10%);
                 font-weight: 200;
+            }
+        }
+
+        .rate-label {
+            .stars {
+                .fa-star {
+                    font-size: 1.7rem;
+                    cursor: pointer;
+
+                    &.fa-solid {
+                        color: $accent-clr;
+                    }
+                }
             }
         }
 
@@ -101,6 +116,8 @@
 
         .gig-heading {
             font-size: 1.3rem;
+            color: black;
+            margin-block-end: em(8px);
         }
 
         .order-details {

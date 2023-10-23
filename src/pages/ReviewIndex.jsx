@@ -7,6 +7,7 @@ import { loadReviews, addReview, removeReview, getActionAddReview } from '../sto
 import { loadUsers } from '../store/user.actions'
 import { reviewService } from '../services/review.service'
 import { BigOrderPreview } from '../cmps/BigOrderPreview'
+import { RatingStars } from '../cmps/RatingStars'
 
 export function ReviewIndex() {
   const orders = useSelector(storeState => storeState.orderModule.orders)
@@ -32,7 +33,12 @@ export function ReviewIndex() {
 
   const handleChange = ev => {
     let { name, value } = ev.target
+    if (ev.target.dataset.name) {
+      name = ev.target.dataset.name
+      value = ev.target.dataset.value
+    }
     if (name === 'rate') value = parseInt(value)
+
     setReviewToEdit({ ...reviewToEdit, [name]: value })
   }
 
@@ -42,27 +48,18 @@ export function ReviewIndex() {
     try {
       await addReview(reviewToEdit)
       showSuccessMsg('Review added')
-      setReviewToEdit({ txt: '', aboutUserId: '' })
     } catch (err) {
       showErrorMsg('Cannot add review')
     }
   }
-
-
   return (
     <section className="review-index">
       <form className='add-review' onChange={handleChange} onSubmit={onAddReview}>
         <h1 className='heading'>Public review</h1>
         <h2 className='sub-heading'>Share your experience with the community, to help them make better decisions.</h2>
         <label className='rate-label'>
-          Rate
-          <select name='rate'>
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
-          </select>
+          Rate your overall satisfaction of the provided service
+          <RatingStars handleChange={handleChange} rate={reviewToEdit.rate} />
         </label>
         <label className='txt-label'>
           What was it like working with this seller?
