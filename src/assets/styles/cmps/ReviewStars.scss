@@ -1,0 +1,13 @@
+.stars{
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    // justify-content: center;
+    .star{
+        height: em(14px);
+        width: em(14px);
+    }
+    .rate.padding{
+        line-height: 21px;
+    }
+}

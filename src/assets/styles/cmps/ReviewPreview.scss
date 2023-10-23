@@ -1,0 +1,66 @@
+.review-preview{
+    display: grid;
+    grid-gap: 1.5em;
+    border-top: 1px solid #dadbdd;
+    gap: 1.5em;
+    grid-template-areas: "img content";
+    grid-template-columns: 2.5em 1fr;
+    padding: 2.5em 0;
+    .seller-img{
+        border-radius: 50%;
+        grid-area: img;
+        height: em(48px);
+        width: em(48px);
+    }
+    .seller-info{
+        margin-bottom: 1.25em;
+        h4{
+            margin-bottom: .5em;
+        }
+        .country{
+            display: flex;
+            .flag{
+                border-radius: 0;
+                height: em(20px);
+                margin-right: .5em;
+                width: em(20px);
+            }
+            span{
+                color: $dark-clr-1;
+                font-size: 14px;
+                line-height: 21px;
+                padding: 0px 0px 0px 8px;
+            }
+        }
+    }
+
+    .rate-info{
+        align-items: center;
+        color: #62646a;
+        display: flex;
+        font-size: .875rem;
+        line-height: 1.3;
+        margin-bottom: em(17px);
+        .divider{
+            border-right: 1px solid $light-clr2;
+            height: 1.2142857143em;
+            margin: .1428571429em .5714285714em;
+        }
+    }
+    .long-txt{
+        margin-bottom: em(17px);
+    }
+    .helpful {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    .thums{
+        display: flex;
+        cursor: pointer;
+        gap:10px
+    }
+        img {
+          width: 14px;
+        }
+      }
+}

@@ -13,14 +13,14 @@ const demoUsers = [
       {
         "id": "r101",
         "gig": "{optional-mini-gig}",
-        "txt": "Very kind and works fast",
+        "txt": "Although my logo was drawn mostly how I described it, there were elements that she included that were clearly not thought about properly. For example, in the first sketch like the dog was floating off the book pages which made no sense as the dog was laying on the book. After a revision this was corrected but that should not be an element needed to be correcting. Apart from that I am happy with my logo and it turned out very nice. Thank you.",
         "rate": 4,
-        "createdAt": 1697993927386,
+        "createdAt": 1697993927300,
         "reviewImgUrl": null,
         "by": {
           "_id": "u207",
           "fullname": "James Q",
-          "imgUrl": "/img/img2.jpg",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696177501/samples/people/boy-snow-hoodie.jpg",
           "location": "Italy"
         }
       },
@@ -34,7 +34,7 @@ const demoUsers = [
         "by": {
           "_id": "u102",
           "fullname": "Jhon I",
-          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696177501/samples/people/boy-snow-hoodie.jpg",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696584327/qcw1ydkltzywb3g4s5ty.jpg",
           "location": "United States"
         }
       },
