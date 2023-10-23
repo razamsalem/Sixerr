@@ -73,10 +73,16 @@ export function UserDetails() {
     setDashboardOpen(false)
   }
 
+  function handleBackgroundClick(ev) {
+    if (ev.target.classList.contains("modal-background")) {
+      setDashboardOpen(false)
+    }
+  }
+
   return (
     <>
       {isDashboardOpen && (
-        <DashboardModal watchedUser={watchedUser} closeDashboard={closeDashboard} />
+        <DashboardModal watchedUser={watchedUser} closeDashboard={closeDashboard} handleBackgroundClick={handleBackgroundClick} />
       )}
       <main className='user-details-container full'>
         <section className="user-details main-layout">
