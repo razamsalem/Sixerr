@@ -23,17 +23,13 @@ export function HomePage() {
             })
         })
 
-        if (window.scrollY < 1000) {
-            observer.observe(popularRef.current)
-            observer.observe(prevBtnRef.current)
-        }
-
-        console.log(window.scrollY)
+        observer.observe(popularRef.current)
+        observer.observe(prevBtnRef.current)
 
         isRefVisible ? setHeaderPosition('visible') : setHeaderPosition('transparent')
         isSecondRefVisible ? setSubHeaderPosition('visible') : setSubHeaderPosition('transparent')
 
-    }, [isRefVisible, isSecondRefVisible, window.scrollY])
+    }, [isRefVisible, isSecondRefVisible])
 
 
     return (
