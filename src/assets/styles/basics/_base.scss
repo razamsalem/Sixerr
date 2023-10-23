@@ -15,6 +15,10 @@ body {
     accent-color: $accent-clr;
 }
 
+main.main-layout {
+    min-height: 75vh;
+}
+
 h1,
 h2,
 h3,
@@ -80,9 +84,9 @@ a:visited {
     }
 }
 
-.gallry-btn{
+.gallry-btn {
     @include gallry-btn;
-    
+
     &-next {
         @include gallry-btn($type: next);
     }
