@@ -3,6 +3,7 @@ export function BigOrderPreview({ order }) {
 
     return (
         <article className="big-order-preview">
+            <h1>Your order</h1>
             <img src={order.gig.imgUrls[0]} alt="gig-img" />
             <h2 className="gig-heading">{order.gig.title}</h2>
             <section className="order-details">

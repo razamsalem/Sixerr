@@ -51,11 +51,11 @@ export function ReviewIndex() {
 
   return (
     <section className="review-index">
-      <form onChange={handleChange} onSubmit={onAddReview}>
-        <h1>Public review</h1>
-        <h2>Share your experience with the community, to help them make better decisions.</h2>
-        <label>
-          Rate:
+      <form className='add-review' onChange={handleChange} onSubmit={onAddReview}>
+        <h1 className='heading'>Public review</h1>
+        <h2 className='sub-heading'>Share your experience with the community, to help them make better decisions.</h2>
+        <label className='rate-label'>
+          Rate
           <select name='rate'>
             <option value={1}>1</option>
             <option value={2}>2</option>
@@ -64,11 +64,13 @@ export function ReviewIndex() {
             <option value={5}>5</option>
           </select>
         </label>
-        <label>
+        <label className='txt-label'>
           What was it like working with this seller?
-          <textarea className='review-txt' name='txt'></textarea>
+          <textarea className='review-txt' maxLength="700" name='txt'>
+          </textarea>
+          <span className='letter-count'>{`${reviewToEdit.txt.length} / 700 `}</span>
         </label>
-        <button>Send feedback</button>
+        <button className='send'>Send feedback</button>
       </form>
       <BigOrderPreview order={order} />
     </section>
