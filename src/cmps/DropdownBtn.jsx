@@ -4,7 +4,6 @@ import { DropdownMenu } from "./DropdownMenu";
 export function DropdownBtn({ icon = '', children = '' }) {
     const [isOpen, setIsOpen] = useState(false);
     const buttonRef = useRef(null)
-    console.log('Children:', children)
 
     function closeDropdown(event) {
         if (buttonRef.current && !buttonRef.current.contains(event.target)) {
