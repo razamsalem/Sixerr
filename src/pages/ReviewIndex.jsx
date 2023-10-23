@@ -63,11 +63,11 @@ export function ReviewIndex() {
         </label>
         <label className='txt-label'>
           What was it like working with this seller?
-          <textarea className='review-txt' maxLength="700" name='txt'>
+          <textarea className='review-txt' maxLength="700" name='txt' placeholder='My experience working with this seller was...'>
           </textarea>
           <span className='letter-count'>{`${reviewToEdit.txt.length} / 700 `}</span>
         </label>
-        <button className='send'>Send feedback</button>
+        <button className='send' title='Send your review'>Send feedback</button>
       </form>
       <BigOrderPreview order={order} />
     </section>
