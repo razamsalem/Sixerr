@@ -8,6 +8,7 @@ import nextUrl from "../assets/img/next.svg"
 import { CallToAction } from "../cmps/CallToAction";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../store/reducers/gig.reducer";
 import { ReviewList } from "../cmps/ReviewList";
+import { ReviewChart } from "../cmps/ReviewChart";
 
 export function GigDetails() {
     // const [reviews, setReviews] = useState(null) 
@@ -92,6 +93,7 @@ export function GigDetails() {
                 <h1 className="gig-about-title">About this gig</h1>
                 <p className="gig-description">{gig.description}</p>
             </div>
+          
            <ReviewList gigOwnerId={gig.owner._id}/>
         </section>
     )

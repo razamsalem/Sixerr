@@ -3,6 +3,7 @@ import { userService } from "../services/user.service";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { ReviewPreview } from "./ReviewPreview";
+import { ReviewChart } from "./ReviewChart";
 
 export function ReviewList({gigOwnerId}) {
     const navigate = useNavigate()
@@ -27,6 +28,7 @@ export function ReviewList({gigOwnerId}) {
     return(
         <section className="reviews">
             <h1>Reviews</h1>
+            <ReviewChart reviews={seller.reviews}/>
             <ul className="review-list">
             {seller.reviews.map((rev, idx) =>
                     <ReviewPreview key={idx} review={rev}/>

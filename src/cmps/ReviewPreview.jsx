@@ -7,6 +7,7 @@ import emptyStar from "../assets/img/empty-star.svg"
 import { utilService } from "../services/util.service"
 import { LongTxt } from "./LongTxt"
 import { useState } from "react"
+import { ReviewStars } from "./ReviewStars"
 export function ReviewPreview ({review}) {
     const [isClickedTumsUp, setIsClickedTumsUp] = useState(false);
     const [isClickedTumsDown, setIsClickedTumsDown] = useState(false);
@@ -23,19 +24,7 @@ export function ReviewPreview ({review}) {
                     </div>
                 </div>
                 <div className="rate-info">
-                    <div className="stars">
-                            {Array(review.rate)
-                            .fill()
-                            .map((item, i) => (
-                                <img src={starUrl} alt="star" key={i} />
-                            ))}
-                            {Array(5-review.rate)
-                            .fill()
-                            .map((item, i) => (
-                                <img src={emptyStar} alt="empty-star" key={i} />
-                            ))}
-                        <span className="rate padding">{review.rate}</span>
-                    </div>
+                    <ReviewStars review={review}/>
                     <span className="divider"></span>
                     <span>{utilService.timeAgo(review.createdAt)}</span>
                 </div>
