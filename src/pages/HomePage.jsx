@@ -8,8 +8,8 @@ import { SimpleSlider } from '../cmps/SimpleSlider'
 import { setHeaderPosition, setSubHeaderPosition, } from '../store/actions/system.actions'
 
 export function HomePage() {
-    const sellingRef = useRef()
-    const budgetRef = useRef()
+    const popularRef = useRef()
+    const prevBtnRef = useRef()
 
     const [isRefVisible, setIsRefVisible] = useState(false)
     const [isSecondRefVisible, setIsSecondRefVisible] = useState(false)
@@ -18,26 +18,31 @@ export function HomePage() {
         const observer = new IntersectionObserver((entries) => {
 
             entries.map(entry => {
-                if (Array.from(entry.target.classList).includes("selling-container")) setIsRefVisible(entry.isIntersecting)
-                if (Array.from(entry.target.classList).includes("selling-text")) setIsSecondRefVisible(entry.isIntersecting)
+                if (Array.from(entry.target.classList).includes("title-slide")) setIsRefVisible(entry.isIntersecting)
+                if (Array.from(entry.target.classList).includes("gallry-btn-prev")) setIsSecondRefVisible(entry.isIntersecting)
             })
         })
 
-        observer.observe(sellingRef.current)
-        observer.observe(budgetRef.current)
+        if (window.scrollY < 1000) {
+            observer.observe(popularRef.current)
+            observer.observe(prevBtnRef.current)
+        }
+
+        console.log(window.scrollY)
 
         isRefVisible ? setHeaderPosition('visible') : setHeaderPosition('transparent')
         isSecondRefVisible ? setSubHeaderPosition('visible') : setSubHeaderPosition('transparent')
 
-    }, [isRefVisible, isSecondRefVisible])
+    }, [isRefVisible, isSecondRefVisible, window.scrollY])
+
 
     return (
         <section className='home main-layout full'>
             <Hero />
             <TrustedBy />
-            <h1 className='title-slide'>Popular services</h1>
-            <SimpleSlider />
-            <SellingArea sellingRef={sellingRef} budgetRef={budgetRef} />
+            <h1 ref={popularRef} className='title-slide'>Popular services</h1>
+            <SimpleSlider prevBtnRef={prevBtnRef} />
+            <SellingArea />
         </section >
     )
 }

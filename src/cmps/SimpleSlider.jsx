@@ -5,14 +5,14 @@ import { CategoryCard } from "./CategoryCard.jsx";
 import { NextBtn } from "./NextBtn.jsx";
 import { PrevBtn } from "./PrevBtn.jsx";
 
-export function SimpleSlider() {
+export function SimpleSlider({ prevBtnRef }) {
   const settings = {
     dots: false,
     infinite: true,
     speed: 800,
     slidesToShow: 5,
     slidesToScroll: 5,
-    prevArrow: <PrevBtn />,
+    prevArrow: <PrevBtn prevBtnRef={prevBtnRef} />,
     nextArrow: <NextBtn />,
   };
 

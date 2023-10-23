@@ -1,13 +1,13 @@
 import { SellingText } from "../cmps/SellingText";
 
-export function SellingArea({ sellingRef, budgetRef }) {
+export function SellingArea() {
 
     return (
-        <section className="selling-container full" ref={sellingRef}>
+        <section className="selling-container full">
             <div className="selling">
                 <div className="left-info">
                     <h2>The best part<span className="questionmark">?</span> Everything.</h2>
-                    <SellingText txt={'Stick to your budget'} budgetRef={budgetRef} />
+                    <SellingText txt={'Stick to your budget'} />
                 </div>
 
                 <div className="right-info">
