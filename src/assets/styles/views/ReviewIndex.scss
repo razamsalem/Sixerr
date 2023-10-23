@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: rem(50px);
-    margin-top: rem(40px);
+    margin-top: rem(50px);
 
     .add-review {
         display: flex;
@@ -64,6 +64,7 @@
         }
 
         .send {
+            width: 100%;
             font-size: 1.3rem;
             background-color: $dark-clr;
             align-self: flex-end;
@@ -71,7 +72,7 @@
             font-weight: 700;
             letter-spacing: em(-0.4px);
             padding: em(13px);
-            border-radius: em(4px);
+            border-radius: em(3px);
             transition: background-color 0.3s;
 
             &:hover {
@@ -79,4 +80,43 @@
             }
         }
     }
+
+    .big-order-preview {
+        width: 60%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        border: em(2px) solid $dark-clr-2;
+        padding: em(14px) em(24px);
+        gap: em(10px);
+
+        .preview-heading {
+            text-align: center;
+            color: $dark-clr-1;
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: em(-1px);
+        }
+
+        .gig-heading {
+            font-size: 1.3rem;
+        }
+
+        .order-details {
+            display: grid;
+
+            .detail-container {
+                display: grid;
+                margin-block-end: em(10px);
+                font-size: 1.2rem;
+
+                .title {
+                    font-weight: 700;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+
 }
