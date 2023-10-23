@@ -1,0 +1,29 @@
+.user-mini-detail{
+    .owner-img-wrapper{
+        gap: 8px;
+        margin-bottom: em(91px);
+    }
+    .mini{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .owner-description{
+        border: 1px solid #e4e5e7;
+        border-radius: .1875em;
+        margin-bottom: 2.25em;
+        padding: 1.5em;
+        ul{
+            border-bottom: 1px solid #e4e5e7;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 0 0 1.25em;
+        }
+        span{
+            display: block;
+        }
+        .owner-description span:nth-child(2n) {
+           font-weight: 700;
+        }
+    }
+}

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { ReviewPreview } from "./ReviewPreview";
 import { ReviewChart } from "./ReviewChart";
+import { UserMiniDetail } from "./UserMiniDetail";
 
 export function ReviewList({gigOwnerId}) {
     const navigate = useNavigate()

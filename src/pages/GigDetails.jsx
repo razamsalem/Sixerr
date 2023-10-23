@@ -4,11 +4,11 @@ import { useParams, useNavigate, Link } from "react-router-dom"
 import { Carousel } from 'react-responsive-carousel';
 import { gigService } from "../services/gig.service.local"
 import starUrl from "../assets/img/star.svg"
-import nextUrl from "../assets/img/next.svg"
 import { CallToAction } from "../cmps/CallToAction";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../store/reducers/gig.reducer";
 import { ReviewList } from "../cmps/ReviewList";
-import { ReviewChart } from "../cmps/ReviewChart";
+import { UserMiniDetail } from "../cmps/UserMiniDetail";
+
 
 export function GigDetails() {
     // const [reviews, setReviews] = useState(null) 
@@ -93,7 +93,8 @@ export function GigDetails() {
                 <h1 className="gig-about-title">About this gig</h1>
                 <p className="gig-description">{gig.description}</p>
             </div>
-          
+            <h1 className="about-seller">About the seller</h1>
+            <UserMiniDetail gig={gig}/>
            <ReviewList gigOwnerId={gig.owner._id}/>
         </section>
     )

@@ -10,7 +10,7 @@ export function ReviewStars({review}) {
             ))}
             {Array(5-review.rate)
             .fill()
-            .map((item, i) => (
+            .map((_, i) => (
                 <img src={emptyStar} alt="empty-star" key={i} className="star"/>
             ))}
             <span className="rate padding">{review.rate}</span>

@@ -21,7 +21,7 @@ export function ReviewChart({reviews}) {
             {Array(5)
             .fill()
             .map((_, i) => (
-                <div className="review-bars-container">
+                <div className="review-bars-container" key={i}>
                     <div>{5-i} Stars</div>
                     <progress value={lengthOfreviews()[4-i]/reviews.length*100} max="100" ></progress>
                     <span>({lengthOfreviews()[4-i]})</span>
