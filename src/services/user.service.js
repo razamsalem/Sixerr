@@ -29,7 +29,6 @@ function getUsers() {
 
 
 async function getById(userId) {
-    console.log(userId);
     const user = await storageService.get('user', userId)
     // const user = await httpService.get(`user/${userId}`)
     return user
@@ -40,14 +39,10 @@ function remove(userId) {
     // return httpService.delete(`user/${userId}`)
 }
 
-async function update({ _id, score }) {
+async function update({ _id, reviews }) {
     const user = await storageService.get('user', _id)
-    user.score = score
+    user.reviews = reviews
     await storageService.put('user', user)
-
-    // const user = await httpService.put(`user/${_id}`, {_id, score})
-    // // Handle case in which admin updates other user's details
-    if (getLoggedinUser()._id === user._id) saveLocalUser(user)
     return user
 }
 

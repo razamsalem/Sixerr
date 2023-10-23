@@ -17,7 +17,7 @@ function getEmptyReview() {
     "id": utilService.makeId(),
     "gig": null,
     "txt": '',
-    "rate": 0,
+    "rate": 1,
     "createdAt": Date.now(),
     "reviewImgUrl": null,
     "by": null
@@ -37,22 +37,10 @@ async function remove(reviewId) {
 
 async function add(review) {
   console.log(review)
-  // const addedReview = await httpService.post(`review`, { txt, aboutUserId })
 
-  // const aboutUser = await userService.getById(aboutUserId)
-
-  // const reviewToAdd = {
-  //   txt,
-  //   byUser: userService.getLoggedinUser(),
-  //   aboutUser: {
-  //     _id: aboutUser._id,
-  //     fullname: aboutUser.fullname,
-  //     imgUrl: aboutUser.imgUrl
-  //   }
-  // }
-
-  // reviewToAdd.byUser.score += 10
-  // await userService.update(reviewToAdd.byUser)
-  // const addedReview = await storageService.post('review', reviewToAdd)
-  // return addedReview
+  const aboutUserId = review.gig.owner._id
+  const aboutUser = await userService.getById(aboutUserId)
+  console.log(aboutUser)
+  aboutUser.reviews.push(review)
+  userService.update(aboutUser)
 }

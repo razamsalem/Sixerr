@@ -29,8 +29,6 @@ export async function addReview(review) {
   try {
     const addedReview = await reviewService.add(review)
     store.dispatch(getActionAddReview(addedReview))
-    const { score } = addedReview.byUser
-    store.dispatch({ type: SET_SCORE, score })
   } catch (err) {
     console.log('ReviewActions: err in addReview', err)
     throw err

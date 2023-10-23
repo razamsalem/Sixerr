@@ -20,11 +20,14 @@ export function ReviewIndex() {
   }, [searchParams])
 
 
+  useEffect(() => {
+    order !== null && setReviewToEdit((prevState) => ({ ...prevState, by: order.buyer, gig: order.gig }))
+  }, [order])
+
+
   function loadOrder(orderId) {
     setOrder(orders.filter(order => order._id === orderId)[0])
   }
-
-  console.log(reviewToEdit)
 
   const handleChange = ev => {
     let { name, value } = ev.target
@@ -34,7 +37,7 @@ export function ReviewIndex() {
 
   async function onAddReview(ev) {
     ev.preventDefault()
-    if (!reviewToEdit.txt || !reviewToEdit.aboutUserId) return showErrorMsg('All fields are required')
+    if (!reviewToEdit.txt || !reviewToEdit.rate) return showErrorMsg('All fields are required')
     try {
       await addReview(reviewToEdit)
       showSuccessMsg('Review added')
@@ -43,6 +46,7 @@ export function ReviewIndex() {
       showErrorMsg('Cannot add review')
     }
   }
+
 
   return (
     <section className="review-index">
