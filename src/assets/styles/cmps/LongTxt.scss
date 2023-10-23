@@ -1,0 +1,13 @@
+.long-txt{
+    .book-desc{
+        display: inline;
+       
+    }
+    .read-more-btn{
+            padding: 0;
+            text-decoration: underline;
+            background: none;
+            font-size: 1rem;
+            color: $dark-clr;
+    }
+}

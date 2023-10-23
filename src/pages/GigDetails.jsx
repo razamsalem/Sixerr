@@ -7,12 +7,10 @@ import starUrl from "../assets/img/star.svg"
 import nextUrl from "../assets/img/next.svg"
 import { CallToAction } from "../cmps/CallToAction";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../store/reducers/gig.reducer";
-import { NextBtn } from "../cmps/NextBtn";
-import { PrevBtn } from "../cmps/PrevBtn";
+import { ReviewList } from "../cmps/ReviewList";
 
 export function GigDetails() {
-    // const [reviews, setReviews] = useState(null)
-
+    // const [reviews, setReviews] = useState(null) 
     const [gig, setGig] = useState(null)
     const { gigId } = useParams()
     const navigate = useNavigate()
@@ -94,7 +92,7 @@ export function GigDetails() {
                 <h1 className="gig-about-title">About this gig</h1>
                 <p className="gig-description">{gig.description}</p>
             </div>
-
+           <ReviewList gigOwnerId={gig.owner._id}/>
         </section>
     )
 }
