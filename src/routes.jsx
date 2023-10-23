@@ -26,7 +26,7 @@ const routes = [
         shouldRender: false
     },
     {
-        path: `order/:orderId/review`,
+        path: `order/review`,
         component: <ReviewIndex />,
         shouldRender: false
     },

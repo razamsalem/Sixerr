@@ -1,17 +1,30 @@
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import { showErrorMsg, showSuccessMsg, showUserMsg } from '../services/event-bus.service'
 import { socketService, SOCKET_EVENT_REVIEW_ADDED } from '../services/socket.service'
 import { loadReviews, addReview, removeReview, getActionAddReview } from '../store/review.actions'
 import { loadUsers } from '../store/user.actions'
 import { reviewService } from '../services/review.service'
 
-export function ReviewIndex() {
-  const loggedInUser = useSelector(storeState => storeState.userModule.user)
-  const [reviewToEdit, setReviewToEdit] = useState(reviewService.getEmptyReview())
 
-  const dispatch = useDispatch()
+export function ReviewIndex() {
+  const orders = useSelector(storeState => storeState.orderModule.orders)
+  const [searchParams, setSearchParams] = useSearchParams()
+  const [reviewToEdit, setReviewToEdit] = useState(reviewService.getEmptyReview())
+  const [order, setOrder] = useState(null)
+
+  useEffect(() => {
+    const params = Object.fromEntries([...searchParams])
+    loadOrder(params.orderId)
+  }, [searchParams])
+
+
+  function loadOrder(orderId) {
+    setOrder(orders.filter(order => order._id === orderId)[0])
+  }
+
+  console.log(reviewToEdit)
 
   const handleChange = ev => {
     let { name, value } = ev.target
@@ -19,11 +32,10 @@ export function ReviewIndex() {
     setReviewToEdit({ ...reviewToEdit, [name]: value })
   }
 
-  const onAddReview = async ev => {
+  async function onAddReview(ev) {
     ev.preventDefault()
-    if (!reviewToEdit.txt || !reviewToEdit.aboutUserId) return alert('All fields are required')
+    if (!reviewToEdit.txt || !reviewToEdit.aboutUserId) return showErrorMsg('All fields are required')
     try {
-
       await addReview(reviewToEdit)
       showSuccessMsg('Review added')
       setReviewToEdit({ txt: '', aboutUserId: '' })
@@ -37,7 +49,7 @@ export function ReviewIndex() {
       <h1>Public review</h1>
       <h2>Share your experience with the community, to help them make better decisions.</h2>
 
-      <form onChange={handleChange}>
+      <form onChange={handleChange} onSubmit={onAddReview}>
         <label>
           Rate:
           <select name='rate'>
@@ -52,6 +64,7 @@ export function ReviewIndex() {
           What was it like working with this seller?
           <textarea className='review-txt' name='txt'></textarea>
         </label>
+        <button>Send feedback</button>
       </form>
     </section>
   )

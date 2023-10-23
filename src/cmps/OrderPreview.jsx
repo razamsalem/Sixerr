@@ -1,6 +1,7 @@
 import { utilService } from "../services/util.service"
 import { LongTxt } from "./LongTxt"
 import { DropdownBtn } from "./DropdownBtn.jsx"
+import { Link } from "react-router-dom"
 
 export function OrderPreview({ order, mode, onApproveOrder, onDeclineOrder, onFulfillOrder }) {
     const profile = mode === 'buyer' ? order.seller : order.buyer
@@ -32,6 +33,10 @@ export function OrderPreview({ order, mode, onApproveOrder, onDeclineOrder, onFu
                         <span className="action decline-gig" onClick={(ev) => { onDeclineOrder(ev, order) }}>Decline</span>
                         <span className="action fulfilled-gig" onClick={(ev) => { onFulfillOrder(ev, order) }}>Mark as fulfilled</span>
                     </DropdownBtn>}
+
+                {mode === 'buyer' &&
+                    <Link to={`/order/review?orderId=${order._id}`}>Review</Link>
+                }
 
             </td>
         </tr>
