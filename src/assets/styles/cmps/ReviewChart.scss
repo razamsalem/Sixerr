@@ -1,0 +1,19 @@
+.review-chart{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: em(32px);
+    .review-header{
+        margin-bottom: 13px;
+    }
+    progress{
+        width: em(259px);
+    }
+    .review-bars-container {
+        align-items: center;
+        display: flex;
+        display: grid;
+        grid-template-columns: 4.0625em 17.5em 3em;
+        font-weight: 600;
+    }
+}
