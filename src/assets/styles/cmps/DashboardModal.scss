@@ -1,0 +1,225 @@
+.dashboard-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+    background-color: $light-clr;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    overflow: hidden;
+
+    .nav-content {
+        grid-column: 1;
+        padding: 20px;
+
+        .logo {
+            font-weight: 600;
+            font-size: rem(50px);
+            text-align: center;
+            letter-spacing: rem(-2px);
+            color: $accent-clr;
+        }
+
+        .dot {
+            color: $dark-clr1;
+        }
+
+        .buttons {
+            margin-block: rem(60px);
+            gap: rem(25px);
+
+            button {
+                font-size: rem(20px);
+                font-weight: 500;
+                text-align: left;
+
+                padding-inline-start: rem(50px);
+                background: none;
+                color: $list-subtitle-clr;
+
+                span {
+                    margin-inline-end: rem(10px);
+                }
+
+                &:hover {
+                    color: $accent-clr;
+                }
+
+                &:focus {
+                    color: $accent-clr;
+                }
+            }
+        }
+
+    }
+
+    .dashboard-content {
+        grid-column: 3;
+        padding: rem(26px);
+
+        .header {
+            font-weight: 600;
+            font-size: rem(32px);
+            text-align: left;
+            letter-spacing: rem(-2px);
+            color: $accent-clr;
+        }
+
+        .front-charts {
+            justify-content: space-evenly;
+
+            .radar {
+                margin-block: rem(20px);
+                border: 2px solid $light-clr4;
+                border-radius: 8px;
+                width: rem(500px);
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            }
+
+            .needle {
+                position: relative;
+                margin-block: rem(20px);
+                border: 2px solid $light-clr4;
+                border-radius: 8px;
+                // width: rem(250px);
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                text-align: center;
+
+                h3 {
+                    color: $dark-clr-4;
+                    padding-block-start: rem(25px);
+                }
+
+                p {
+                    position: absolute;
+                    font-size: rem(13px);
+                    color: $dark-clr-3;
+                    padding-block-start: rem(16px);
+                    padding-inline: 6px;
+
+                    .alert {
+                        color: $error-clr;
+                    }
+                }
+            }
+
+        }
+
+        .sub-header {
+            color: $dark-clr-4;
+            font-size: rem(18px);
+            margin-block: rem(12px);
+            padding-inline-start: rem(16px);
+        }
+
+
+    }
+
+    .user-info {
+        grid-column: 5;
+        padding: 20px;
+        margin-inline: auto;
+        position: relative;
+
+        .user-name {
+            text-align: center;
+            color: $accent-clr;
+            font-size: rem(40px);
+            font-weight: 600;
+            letter-spacing: -2px;
+        }
+
+        .user-profile-img {
+            font-size: 3em;
+            margin-block-start: rem(35px);
+            margin-block-end: rem(15px);
+            width: 164px;
+
+            img {
+                z-index: 1;
+                border-radius: 50%;
+            }
+        }
+
+        .stats {
+            position: absolute;
+            color: $dark-clr-1;
+
+            &>* {
+                margin-block-start: rem(30px);
+            }
+
+            .avg {
+                color: $pending-clr;
+            }
+
+        }
+
+        .last-month {
+            position: absolute;
+            right: 0;
+            bottom: rem(10px);
+            text-align: center;
+            color: $dark-clr-1;
+            background-color: $light-clr4;
+            padding-inline: rem(30px);
+            padding-block: rem(15px);
+            border: 1px solid $light-clr4;
+            border-radius: 12px;
+
+            h2 {
+                margin-block-end: rem(15px);
+            }
+
+            .labels {
+                padding-block-start: rem(20px);
+                text-align: left;
+                margin-inline-start: 20%;
+            }
+
+        }
+
+    }
+
+    .icon {
+        color: $accent-clr;
+    }
+
+    .close-btn {
+        position: absolute;
+        border-radius: 8px;
+        top: 8px;
+        right: 8px;
+        cursor: pointer;
+        z-index: 999;
+
+        &:hover {
+            background-color: $accent-clr;
+        }
+    }
+
+    .space {
+        grid-column: 2;
+        background-color: $light-clr4;
+    }
+
+    .space2 {
+        grid-column: 4;
+        background-color: $light-clr4;
+    }
+}
+
+.modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    z-index: 90;
+}

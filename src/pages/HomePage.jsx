@@ -35,9 +35,9 @@ export function HomePage() {
         <section className='home main-layout full'>
             <Hero />
             <TrustedBy />
-            <SellingArea sellingRef={sellingRef} budgetRef={budgetRef} />
             <h1 className='title-slide'>Popular services</h1>
             <SimpleSlider />
+            <SellingArea sellingRef={sellingRef} budgetRef={budgetRef} />
         </section >
     )
 }

@@ -34,3 +34,8 @@
     // }
 
 }
+
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 1fr minmax(10px, 25px) 3fr minmax(10px, 25px) 1fr;
+}
