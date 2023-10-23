@@ -202,10 +202,28 @@
 
     .gigs-column {
         .manage-orders {
-
             h1 {
                 margin-block-start: 50px;
                 margin-block-end: 20px;
+            }
+
+            .order-header {
+                justify-content: space-between;
+                align-items: baseline;
+                padding-block-end: 14px;
+
+                .dash-btn {
+                    display: inline-block;
+                    color: $btn-clr;
+                    font-size: 14px;
+                    font-weight: 400;
+                    background: none;
+                    padding: 0;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
         }
 

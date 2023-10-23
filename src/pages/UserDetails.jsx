@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { utilService } from '../services/util.service'
@@ -13,6 +13,7 @@ import becomeSellerBanner from '../assets/img/become-seller.svg'
 import { OrderList } from '../cmps/OrderList'
 import { orderService } from '../services/order.service.local'
 import { approveOrder, declineOrder, fulfillOrder, getActionUpdateOrder, updateOrder } from '../store/actions/order.actions'
+import { DashboardModal } from '../cmps/DashboardModal'
 
 
 export function UserDetails() {
@@ -21,6 +22,7 @@ export function UserDetails() {
   const loggedUser = useSelector(storeState => storeState.userModule.user)
   const gigs = useSelector(storeState => storeState.gigModule.gigs)
   const orders = useSelector(storeState => storeState.orderModule.orders)
+  const [isDashboardOpen, setDashboardOpen] = useState(false)
   const demoSubtitle = utilService.getSubtitle()
   const userGigs = []
 
@@ -63,102 +65,117 @@ export function UserDetails() {
     fulfillOrder(order)
   }
 
-  return (
-    <main className='user-details-container full'>
-      <section className="user-details main-layout">
-        {watchedUser && <div className='user-card'>
-          <div className='user-profile-info'>
-            <div className="flex justify-center">
-              <div className="user-profile-img">
-                {watchedUser.imgUrl && <img src={watchedUser.imgUrl} alt="user img" />}
-              </div>
-            </div>
-            <div className="user-profile-label">
-              <div className="username-line flex column align-center">
-                <div className="username-info">
-                  {watchedUser.fullname}
-                </div>
-                <div className="secondary-name">
-                  @{watchedUser.username}
-                </div>
-              </div>
-            </div>
-            <div className="user-stats-desc">
-              <ul className='user-stats with-border-top'>
-                <li className="location flex">
-                  <span><span className=' fa-solid fa-location-dot location-icon'></span>From</span>
-                  <b>{watchedUser.location ? watchedUser.location : 'Israel'}</b>
-                </li>
-                <li className="member-since flex">
-                  <span><span className='fa-solid fa-user user-icon'></span>Member since</span>
-                  <b>Oct 2023</b>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>}
+  async function openDashboard() {
+    setDashboardOpen(true)
+  }
 
-        {watchedUser && <div className='desc-card'>
-          <div className='user-profile-desc'>
-            <div className='user-stats'>
-              <div className="user-data">
-                <div className="header flex">
-                  <h3 title='Tell us more about yourself. Buyers are also interested in learning about you as a person.'>Description</h3>
-                  <button>Edit Description</button>
+  async function closeDashboard() {
+    setDashboardOpen(false)
+  }
+
+  return (
+    <>
+      {isDashboardOpen && (
+        <DashboardModal closeDashboard={closeDashboard} />
+      )}
+      <main className='user-details-container full'>
+        <section className="user-details main-layout">
+          {watchedUser && <div className='user-card'>
+            <div className='user-profile-info'>
+              <div className="flex justify-center">
+                <div className="user-profile-img">
+                  {watchedUser.imgUrl && <img src={watchedUser.imgUrl} alt="user img" />}
                 </div>
-                <p>{watchedUser.desc ? watchedUser.desc : <span className='empty'>Tell us more about yourself. Buyers are also interested in learning about you as a person.</span>}</p>
               </div>
-              <div className="user-lang with-border-top">
-                <div className="header flex">
-                  <h3 title='You can make up to four selections.'>Languages</h3>
-                  <button>Add new</button>
+              <div className="user-profile-label">
+                <div className="username-line flex column align-center">
+                  <div className="username-info">
+                    {watchedUser.fullname}
+                  </div>
+                  <div className="secondary-name">
+                    @{watchedUser.username}
+                  </div>
                 </div>
-                <ul>{watchedUser.lang ? watchedUser.lang.map((lang, idx) => (
-                  <li key={idx}><span className='title'>{lang}</span> - <span className='sub-title'>{demoSubtitle[utilService.getRandomIntInclusive(0, 1)]}</span></li>
-                )) :
-                  <>
-                    <li><span className='title'>English</span> - <span className='sub-title'>{demoSubtitle[0]}</span></li>
-                    <li><span className='title'>Hebrew <strong>(עברית)</strong></span> - <span className='sub-title'>{demoSubtitle[1]}</span></li>
-                    <li><span className='title'>Spanish <strong>(español)</strong></span> - <span className='sub-title'>{demoSubtitle[2]}</span></li>
-                  </>
-                }
+              </div>
+              <div className="user-stats-desc">
+                <ul className='user-stats with-border-top'>
+                  <li className="location flex">
+                    <span><span className=' fa-solid fa-location-dot location-icon'></span>From</span>
+                    <b>{watchedUser.location ? watchedUser.location : 'Israel'}</b>
+                  </li>
+                  <li className="member-since flex">
+                    <span><span className='fa-solid fa-user user-icon'></span>Member since</span>
+                    <b>Oct 2023</b>
+                  </li>
                 </ul>
               </div>
             </div>
-          </div>
-        </div>}
-      </section>
+          </div>}
 
-      <section className="gigs-column main-layout">
-        {(watchedUser?.isSeller && <div className='manage-orders'>
-          <h1>Manage Orders</h1>
-
-          <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} />
-
-          <div className="my-gigs">
-            <h1>My Gigs</h1>
-            {gigs.map(gig => {
-              if (gig.owner._id === params.id) {
-                userGigs.push(gig)
-              }
-            })}
-            {userGigs &&
-              <div>
-                <GigList gigs={userGigs} />
+          {watchedUser && <div className='desc-card'>
+            <div className='user-profile-desc'>
+              <div className='user-stats'>
+                <div className="user-data">
+                  <div className="header flex">
+                    <h3 title='Tell us more about yourself. Buyers are also interested in learning about you as a person.'>Description</h3>
+                    <button>Edit Description</button>
+                  </div>
+                  <p>{watchedUser.desc ? watchedUser.desc : <span className='empty'>Tell us more about yourself. Buyers are also interested in learning about you as a person.</span>}</p>
+                </div>
+                <div className="user-lang with-border-top">
+                  <div className="header flex">
+                    <h3 title='You can make up to four selections.'>Languages</h3>
+                    <button>Add new</button>
+                  </div>
+                  <ul>{watchedUser.lang ? watchedUser.lang.map((lang, idx) => (
+                    <li key={idx}><span className='title'>{lang}</span> - <span className='sub-title'>{demoSubtitle[utilService.getRandomIntInclusive(0, 1)]}</span></li>
+                  )) :
+                    <>
+                      <li><span className='title'>English</span> - <span className='sub-title'>{demoSubtitle[0]}</span></li>
+                      <li><span className='title'>Hebrew <strong>(עברית)</strong></span> - <span className='sub-title'>{demoSubtitle[1]}</span></li>
+                      <li><span className='title'>Spanish <strong>(español)</strong></span> - <span className='sub-title'>{demoSubtitle[2]}</span></li>
+                    </>
+                  }
+                  </ul>
+                </div>
               </div>
-            }
-            {!userGigs.length && <div> <p className='empty'>Surely someone needs your service...create your gig today!</p> </div>}
-          </div>
-        </div>)}
-        {(!watchedUser?.isSeller && <div className="seller-gigs">
-          <div className="become-seller">
-            <img src={becomeSellerBanner} alt="becomeSellerBanner" className="become-seller-img" />
-            <h3>Ready to earn on your own terms?</h3>
-            <button onClick={() => onBecomeSeller(watchedUser)}>Become a seller</button>
+            </div>
+          </div>}
+        </section>
 
-          </div>
-        </div>)}
-      </section>
-    </main >
+        <section className="gigs-column main-layout">
+          {(watchedUser?.isSeller && <div className='manage-orders'>
+            <div className="order-header flex">
+              <h1>Manage Orders</h1>
+              <button onClick={openDashboard} className='dash-btn' >Dashboard Overview</button>
+            </div>
+            <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} />
+            <div className="my-gigs">
+              <h1>My Gigs</h1>
+              {gigs.map(gig => {
+                if (gig.owner._id === params.id) {
+                  userGigs.push(gig)
+                }
+              })}
+              {userGigs &&
+                <div>
+                  <GigList gigs={userGigs} />
+                </div>
+              }
+              {!userGigs.length && <div> <p className='empty'>Surely someone needs your service...create your gig today!</p> </div>}
+            </div>
+          </div>)}
+          {(!watchedUser?.isSeller && <div className="seller-gigs">
+            <div className="become-seller">
+              <img src={becomeSellerBanner} alt="becomeSellerBanner" className="become-seller-img" />
+              <h3>Ready to earn on your own terms?</h3>
+              <button onClick={() => onBecomeSeller(watchedUser)}>Become a seller</button>
+
+            </div>
+          </div>)}
+        </section>
+      </main >
+    </>
+
   )
 }
