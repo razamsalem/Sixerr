@@ -3,6 +3,7 @@ import { GigIndex } from './pages/GigIndex.jsx'
 import { GigDetails } from './pages/GigDetails.jsx'
 import { Checkout } from './pages/Checkout.jsx'
 import { OrderIndex } from './pages/OrderIndex.jsx'
+import { ReviewIndex } from './pages/ReviewIndex.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
@@ -22,6 +23,11 @@ const routes = [
         path: 'order',
         component: <OrderIndex />,
         label: 'Orders',
+        shouldRender: false
+    },
+    {
+        path: `order/:orderId/review`,
+        component: <ReviewIndex />,
         shouldRender: false
     },
     {

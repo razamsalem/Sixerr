@@ -1,12 +1,27 @@
 import { httpService } from './http.service'
 import { storageService } from './async-storage.service'
 import { userService } from './user.service'
+import { utilService } from './util.service'
 
 
 export const reviewService = {
   add,
   query,
-  remove
+  remove,
+  getEmptyReview
+}
+
+function getEmptyReview() {
+  return {
+
+    "id": utilService.makeId(),
+    "gig": null,
+    "txt": '',
+    "rate": 0,
+    "createdAt": Date.now(),
+    "reviewImgUrl": null,
+    "by": null
+  }
 }
 
 function query(filterBy) {
@@ -20,9 +35,9 @@ async function remove(reviewId) {
   // await storageService.remove('review', reviewId)
 }
 
-async function add({txt, aboutUserId}) {
-  const addedReview = await httpService.post(`review`, {txt, aboutUserId})
-  
+async function add({ txt, aboutUserId }) {
+  const addedReview = await httpService.post(`review`, { txt, aboutUserId })
+
   // const aboutUser = await userService.getById(aboutUserId)
 
   // const reviewToAdd = {
