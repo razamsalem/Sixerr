@@ -82,7 +82,7 @@ export function UserDetails() {
   return (
     <>
       {isDashboardOpen && (
-        <DashboardModal watchedUser={watchedUser} closeDashboard={closeDashboard} handleBackgroundClick={handleBackgroundClick} />
+        <DashboardModal watchedUser={watchedUser} closeDashboard={closeDashboard} handleBackgroundClick={handleBackgroundClick} orders={orders} loggedUser={loggedUser} />
       )}
       <main className='user-details-container full'>
         <section className="user-details main-layout">
@@ -153,7 +153,7 @@ export function UserDetails() {
           {(watchedUser?.isSeller && <div className='manage-orders'>
             <div className="order-header flex">
               <h1>Manage Orders</h1>
-              <button onClick={openDashboard} className='dash-btn' >Dashboard Overview</button>
+              <button onClick={openDashboard} className='dash-btn'>Dashboard Overview</button>
             </div>
             <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} />
             <div className="my-gigs">

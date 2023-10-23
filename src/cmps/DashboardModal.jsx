@@ -1,9 +1,10 @@
+import AreaResChart from "./AreaResponsiveChart"
 import { DoughnutChart } from "./DoughnutChart"
 import { NeedleChart } from "./NeedleChart"
+import { OrderList } from "./OrderList"
 import StatsRadarChart from "./RadarChart"
 
-export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundClick }) {
-
+export function DashboardModal({ watchedUser, orders, loggedUser, closeDashboard, handleBackgroundClick }) {
 
     return (
         <section className="modal-background" onClick={handleBackgroundClick}>
@@ -31,6 +32,13 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                             <NeedleChart />
                         </div>
                     </div>
+                    <main className="graph">
+                        <h4 className="sub-header">This week's sales</h4>
+                        <AreaResChart />
+                    </main>
+                    {/* <div className="activities">
+                        <h4 className="sub-header">Recent activities</h4>
+                    </div> */}
                 </div>
                 <div className="space2"></div>
                 <div className="user-info">
