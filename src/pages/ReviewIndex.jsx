@@ -6,7 +6,7 @@ import { socketService, SOCKET_EVENT_REVIEW_ADDED } from '../services/socket.ser
 import { loadReviews, addReview, removeReview, getActionAddReview } from '../store/review.actions'
 import { loadUsers } from '../store/user.actions'
 import { reviewService } from '../services/review.service'
-
+import { BigOrderPreview } from '../cmps/BigOrderPreview'
 
 export function ReviewIndex() {
   const orders = useSelector(storeState => storeState.orderModule.orders)
@@ -17,11 +17,12 @@ export function ReviewIndex() {
   useEffect(() => {
     const params = Object.fromEntries([...searchParams])
     loadOrder(params.orderId)
-  }, [searchParams])
+  }, [searchParams, orders])
 
 
   useEffect(() => {
-    order !== null && setReviewToEdit((prevState) => ({ ...prevState, by: order.buyer, gig: order.gig }))
+    if (!order || !orders.length) return
+    setReviewToEdit((prevState) => ({ ...prevState, by: order.buyer, gig: order.gig }))
   }, [order])
 
 
@@ -50,10 +51,9 @@ export function ReviewIndex() {
 
   return (
     <section className="review-index">
-      <h1>Public review</h1>
-      <h2>Share your experience with the community, to help them make better decisions.</h2>
-
       <form onChange={handleChange} onSubmit={onAddReview}>
+        <h1>Public review</h1>
+        <h2>Share your experience with the community, to help them make better decisions.</h2>
         <label>
           Rate:
           <select name='rate'>
@@ -70,6 +70,7 @@ export function ReviewIndex() {
         </label>
         <button>Send feedback</button>
       </form>
+      <BigOrderPreview order={order} />
     </section>
   )
 }
