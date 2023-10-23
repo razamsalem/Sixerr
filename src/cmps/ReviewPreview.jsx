@@ -7,6 +7,7 @@ import emptyStar from "../assets/img/empty-star.svg"
 import { utilService } from "../services/util.service"
 import { LongTxt } from "./LongTxt"
 import { useState } from "react"
+import { ReviewStars } from "./ReviewStars"
 export function ReviewPreview ({review}) {
     const [isClickedTumsUp, setIsClickedTumsUp] = useState(false);
     const [isClickedTumsDown, setIsClickedTumsDown] = useState(false);
@@ -23,19 +24,7 @@ export function ReviewPreview ({review}) {
                     </div>
                 </div>
                 <div className="rate-info">
-                    <div className="stars">
-                            {Array(review.rate)
-                            .fill()
-                            .map((item, i) => (
-                                <img src={starUrl} alt="star" key={i} />
-                            ))}
-                            {Array(5-review.rate)
-                            .fill()
-                            .map((item, i) => (
-                                <img src={emptyStar} alt="empty-star" key={i} />
-                            ))}
-                        <span className="rate padding">{review.rate}</span>
-                    </div>
+                    <ReviewStars review={review}/>
                     <span className="divider"></span>
                     <span>{utilService.timeAgo(review.createdAt)}</span>
                 </div>
@@ -51,24 +40,24 @@ export function ReviewPreview ({review}) {
                                  setIsClickedTumsDown(false)
                                 setIsClickedTumsUp(true)}} style={{color:'#222325'}} className="thums">
                                 <img src={thumsUp} alt="thumsUpGreen" id="yes"/>
-                                <label id="yes">Yes</label>
+                                <span id="yes">Yes</span>
                             </div>}
                              
                             {isClickedTumsUp && <div onClick={()=>setIsClickedTumsUp(false)} style={{color: 'rgb(29, 191, 115)'}} className="thums">
                                 <img src={thumsUpGreen} alt="thumsUp" id="yes"/>
-                                <label id="yes">Yes</label>
+                                <span id="yes">Yes</span>
                             </div>}
                         
                          {!isClickedTumsDown && <div onClick={()=>{
                              setIsClickedTumsUp(false)
                             setIsClickedTumsDown(true)}} style={{color:'#222325'}} className="thums">
                                 <img src={thumsDown} alt="thumsDown" id="no"/>
-                                <label id="no">No</label>
+                                <span id="no">No</span>
                             </div>}
                              
                             {isClickedTumsDown && <div onClick={()=>setIsClickedTumsDown(false)} style={{color:'#f74040'}} className="thums">
                                 <img src={thumsDownRed} alt="thumsDownRed" id="no"/>
-                                <label id="no">No</label>
+                                <span id="no">No</span>
                             </div>}
                        
                     </div>
