@@ -1,22 +1,22 @@
-export function UserMiniDetail({gig}) {
-    return(
+export function UserMiniDetail({ gig }) {
+    return (
         <section className="user-mini-detail">
             <div className="owner-img-wrapper flex">
                 <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-large" />
-                <div class="owner-details mini">
-                        <h3 class="gig-title">Taylor P</h3>
-                        <div class="star-wrapper">
-                            <span class="star-svg">
-                                <img src="/src/assets/img/star.svg" alt="star-svg" class="star"/>
-                            </span>
-                            <span class="owner-rate">5</span>
-                            <span class="owner-number-rates">(137)</span>
-                        </div>
+                <div className="owner-details mini">
+                    <h3 className="gig-title">Taylor P</h3>
+                    <div className="star-wrapper">
+                        <span className="star-svg">
+                            <img src="/src/assets/img/star.svg" alt="star-svg" className="star" />
+                        </span>
+                        <span className="owner-rate">5</span>
+                        <span className="owner-number-rates">(137)</span>
+                    </div>
                 </div>
             </div>
-           
 
-            <div class="owner-description">
+
+            <div className="owner-description">
                 <ul>
                     <li>
                         <span>From</span>
@@ -27,8 +27,8 @@ export function UserMiniDetail({gig}) {
                         <span>Oct 2012</span>
                     </li>
                     <li>
-                    <span>Avg. response time</span>
-                    <span>5 hours</span>
+                        <span>Avg. response time</span>
+                        <span>5 hours</span>
                     </li>
                     <li>
                         <span>Last delivery</span>
