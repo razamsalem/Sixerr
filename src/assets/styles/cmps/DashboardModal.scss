@@ -6,13 +6,15 @@
     transform: translate(-50%, -50%);
     width: 90vw;
     height: 90vh;
-    background-color: $light-clr4;
+    background-color: $light-clr;
     border: 1px solid #ccc;
     border-radius: 12px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
     z-index: 100;
+    overflow: hidden;
 
-    .dashboard-content {
+    .nav-content {
+        grid-column: 1;
         padding: 20px;
 
         .logo {
@@ -30,21 +32,105 @@
         .buttons {
             margin-block: rem(60px);
             gap: rem(25px);
-            
+
             button {
                 font-size: rem(20px);
                 font-weight: 500;
                 text-align: left;
-                
+
                 padding-inline-start: rem(50px);
                 background: none;
-                color: $accent-clr;
-                
+                color: $list-subtitle-clr;
+
                 span {
                     margin-inline-end: rem(10px);
                 }
+
+                &:hover {
+                    color: $accent-clr;
+                }
+
+                &:focus {
+                    color: $accent-clr;
+                    border: 2px solid $accent-clr;
+                    border-radius: 12px;
+                }
             }
         }
+
+    }
+
+    .dashboard-content {
+        grid-column: 3;
+        padding: 20px;
+    }
+
+    .user-info {
+        grid-column: 5;
+        padding: 20px;
+        margin-inline: auto;
+        position: relative;
+
+        .user-name {
+            color: $accent-clr;
+            font-size: rem(40px);
+            font-weight: 600;
+            letter-spacing: -2px;
+        }
+
+        .user-profile-img {
+            font-size: 3em;
+            margin-block: rem(35px);
+            width: 164px;
+            
+            img {
+                z-index: 1;
+                border-radius: 50%;
+            }
+        }
+        
+        .stats {
+            position: absolute;
+            color: $dark-clr-1;
+            
+            & > * {
+                margin-block-start: rem(30px);
+            }
+            
+            .avg {
+                color: $pending-clr;
+            }
+            
+            .icon {
+                color: $accent-clr;
+            }
+            
+        }
+
+        .last-month {
+            position: absolute;
+            right: 0;
+            bottom: rem(10px);
+            text-align: center;
+            color: $dark-clr-1;
+            background-color: $light-clr4;
+            padding-inline: rem(30px);
+            padding-block: rem(15px);
+            border: 1px solid $light-clr4;
+            border-radius: 12px;
+
+            h2 {
+                margin-block-end: rem(15px);
+            }
+
+            .labels {
+                padding-block-start: rem(20px);
+                text-align: left;
+                margin-inline-start: 20%;
+            }
+
+        }
+
     }
 
     .close-btn {
@@ -53,9 +139,20 @@
         top: 8px;
         right: 8px;
         cursor: pointer;
+        z-index: 999;
 
         &:hover {
             background-color: $error-clr;
         }
+    }
+
+    .space {
+        grid-column: 2;
+        background-color: $light-clr4;
+    }
+
+    .space2 {
+        grid-column: 4;
+        background-color: $light-clr4;
     }
 }

@@ -76,7 +76,7 @@ export function UserDetails() {
   return (
     <>
       {isDashboardOpen && (
-        <DashboardModal closeDashboard={closeDashboard} />
+        <DashboardModal watchedUser={watchedUser} closeDashboard={closeDashboard} />
       )}
       <main className='user-details-container full'>
         <section className="user-details main-layout">
