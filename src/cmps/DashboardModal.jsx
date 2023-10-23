@@ -1,4 +1,6 @@
 import { DoughnutChart } from "./DoughnutChart"
+import { NeedleChart } from "./NeedleChart"
+import StatsRadarChart from "./RadarChart"
 
 export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundClick }) {
 
@@ -18,7 +20,17 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                 </div>
                 <div className="space"></div>
                 <div className="dashboard-content">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam quae voluptas, sunt saepe dolorum facilis tempora ad est, in, nulla expedita modi aspernatur. Velit exercitationem, voluptatibus incidunt, quod minus inventore magnam illum quidem ipsa repellat ad. Omnis possimus fuga dolorem officiis? Provident porro beatae voluptates perferendis voluptatibus! Repudiandae, cum unde odit necessitatibus voluptatum itaque. Repellat ab voluptatibus laborum eos eum voluptate assumenda tempore magni eveniet! Cum cumque beatae dolore est, quia culpa deserunt iure autem iusto assumenda quis obcaecati quidem sint, magni rerum et perspiciatis exercitationem eos adipisci deleniti voluptatum perferendis. Perferendis explicabo dolorem temporibus ratione nostrum non deserunt quae quaerat magni. Quod maiores cumque sint, officia aut autem ipsum neque at, aliquam quibusdam esse, incidunt repellendus! Ab delectus voluptates soluta voluptatum laborum, ipsa veniam.
+                    <h3 className="header">Home</h3>
+                    <div className="front-charts flex">
+                        <div className="radar">
+                            <StatsRadarChart />
+                        </div>
+                        <div className="needle">
+                            <h3>Friendship Status <span className="fa-regular fa-circle-question icon" title="if you reach the red zone you will not be able to continue selling!"></span> </h3>
+                            <p>Friendship status depends on the review of your clients.</p>
+                            <NeedleChart />
+                        </div>
+                    </div>
                 </div>
                 <div className="space2"></div>
                 <div className="user-info">
