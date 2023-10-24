@@ -6,10 +6,22 @@ import { OrderList } from "./OrderList"
 import StatsRadarChart from "./RadarChart"
 import { GeoChart } from "./GeoChart"
 import DataTable from "./GeoDataTable"
+import LoadingCircle from "./LoadingCircle"
+import { CompareOrdersChart } from "./CompareOrdersChart"
+import { ViewsBarChart } from "./ViewsBarChart"
 
-export function DashboardModal({ watchedUser, orders, loggedUser, closeDashboard, handleBackgroundClick }) {
-
+export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundClick }) {
     const [activeBtn, setActiveBtn] = useState('home')
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false)
+        }, 500)
+
+        return () => clearTimeout(timer)
+    }, [activeBtn])
+
 
     return (
         <section className="modal-background" onClick={handleBackgroundClick}>
@@ -36,7 +48,7 @@ export function DashboardModal({ watchedUser, orders, loggedUser, closeDashboard
 
                         <button
                             className={activeBtn === 'impressions' ? 'active' : ''}
-                            onClick={() => setActiveBtn('impressions')}
+                            onClick={() => { setActiveBtn('impressions'); setLoading(true) }}
                         >
                             <span className="fa-solid fa-earth-asia icon"></span> Impressions
                         </button>
@@ -73,21 +85,36 @@ export function DashboardModal({ watchedUser, orders, loggedUser, closeDashboard
 
                     {activeBtn === 'dashboard' && (
                         <>
-                            <h3 className="header">Dashboard</h3>
-
+                            <h3 className="header mb">Dashboard</h3>
+                            <div className="orders-data flex">
+                                <div className="compare-orders">
+                                    <h4 className="title">Orders compared to last week</h4>
+                                    <CompareOrdersChart />
+                                </div>
+                                <div className="compare-orders">
+                                    <h4 className="title">Orders compared to Views</h4>
+                                    <ViewsBarChart />
+                                </div>
+                            </div>
                         </>
                     )}
 
-                    {activeBtn === 'impressions' && (
+                    {activeBtn === 'impressions' && loading && (
+                        <div className="loading">
+                            <LoadingCircle />
+                        </div>
+                    )}
+
+                    {activeBtn === 'impressions' && !loading && (
                         <>
-                            <h3 className="header">Impressions</h3>
+                            <h3 className="header mb">Impressions</h3>
                             <div className="country-bar">
                                 {/* <CountryBar /> */}
                             </div>
 
                             <div className="map">
                                 <h4 className="sub-header">Views by region</h4>
-                                <GeoChart/>
+                                <GeoChart />
                             </div>
 
                             <div className="data-table">

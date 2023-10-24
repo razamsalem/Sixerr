@@ -75,6 +75,10 @@
             margin-block-end: rem(12px);
         }
 
+        .mb {
+            margin-block-end: rem(24px);
+        }
+
         .front-charts {
             justify-content: space-evenly;
 
@@ -115,6 +119,29 @@
 
         }
 
+        .orders-data {
+            gap: rem(10px);
+
+            .compare-orders {
+                background-color: $light-clr3;
+                height: rem(200px);
+                width: rem(450px);
+                border: 1px solid #10e582;
+                border-radius: 12px;
+                padding: rem(16px);
+                padding-block-end: rem(24px);
+
+                h4 {
+                    color: $accent-clr;
+                    text-align: center;
+                    font-size: rem(14px);
+                    font-weight: 800;
+                    padding-block-end: rem(8px);
+                }
+            }
+        }
+
+
         .sub-header {
             color: $dark-clr-4;
             font-size: rem(18px);
@@ -149,7 +176,7 @@
                 border: 1px solid #1dbf73;
                 text-align: left;
                 padding: rem(6px);
-                
+
                 &:first-child {
                     text-align: center;
                     padding: 0;
@@ -261,6 +288,13 @@
         &:hover {
             background-color: $accent-clr;
         }
+    }
+
+    .loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
     }
 
     .space {
