@@ -10,7 +10,7 @@
     border-radius: 12px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
     z-index: 100;
-    overflow: hidden;
+    overflow: auto;
 
     .nav-content {
         grid-column: 1;
@@ -177,6 +177,25 @@
 
         }
 
+        .stacked-container {
+            background-color: $light-clr3;
+            height: rem(200px);
+            width: 100%;
+            border: 1px solid #10e582;
+            border-radius: 12px;
+            margin-block-start: rem(10px);
+            padding: rem(16px);
+            padding-block-end: rem(24px);
+
+            h4 {
+                color: $accent-clr;
+                text-align: center;
+                font-size: rem(14px);
+                font-weight: 800;
+                padding-block-end: rem(8px);
+            }
+        }
+
         .cards {
             gap: rem(10px);
             &>* {
@@ -292,7 +311,7 @@
         .last-month {
             position: absolute;
             right: 0;
-            bottom: rem(10px);
+            bottom: 15px;
             text-align: center;
             color: $dark-clr-1;
             background-color: $light-clr4;
@@ -321,7 +340,7 @@
 
     .close-btn {
         position: absolute;
-        border-radius: 8px;
+        border-radius: 12px;
         top: 8px;
         right: 8px;
         cursor: pointer;

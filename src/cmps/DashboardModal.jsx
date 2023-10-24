@@ -5,12 +5,13 @@ import { NeedleChart } from "./NeedleChart"
 import { OrderList } from "./OrderList"
 import StatsRadarChart from "./RadarChart"
 import { GeoChart } from "./GeoChart"
-import DataTable from "./GeoDataTable"
-import LoadingCircle from "./LoadingCircle"
 import { CompareOrdersChart } from "./CompareOrdersChart"
 import { ViewsBarChart } from "./ViewsBarChart"
 import { AgeRadialBar } from "./AgeRadialBar"
 import { DataComposedChart } from "./DataComposedChart"
+import { StackedArea } from "./StackedArea"
+import DataTable from "./GeoDataTable"
+import LoadingCircle from "./LoadingCircle"
 import DashboardCard from "./DashboardCard"
 
 export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundClick }) {
@@ -29,7 +30,7 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
     return (
         <section className="modal-background" onClick={handleBackgroundClick}>
             <div className="dashboard-modal dashboard-layout">
-                <button onClick={closeDashboard} className="close-btn">Close</button>
+                <button onClick={closeDashboard} className=" fa-solid fa-x close-btn"></button>
 
                 <div className="nav-content">
                     <h1 className="logo">sixerr<span className='dot'>.</span></h1>
@@ -101,6 +102,11 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                                 </div>
                             </div>
 
+                            <div className="stacked-container">
+                                <h4 className="title">Weekly Overall</h4>
+                                <StackedArea />
+                            </div>
+
                             <div className="general-info flex">
                                 <div className="age-info">
                                     <h4 className="title">Clients by age</h4>
@@ -111,7 +117,7 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                                     <DataComposedChart />
                                 </div>
                             </div>
-                            
+
                             <div className="cards flex">
                                 <DashboardCard title="Daily Orders" amount="142" icon="https://res.cloudinary.com/de2rdmsca/image/upload/v1698182770/308830_o5zknq.png" />
                                 <DashboardCard title="Daily Visits" amount="7,080" icon="https://res.cloudinary.com/de2rdmsca/image/upload/v1698182540/depositphotos_69848707-stock-illustration-pictograph-of-eye-icon_1_kgxet3.png" />
