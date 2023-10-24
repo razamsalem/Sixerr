@@ -139,6 +139,10 @@
                 border: 1px solid #ddd;
                 padding: rem(6px);
                 text-align: left;
+
+                &:not(:first-child) {
+                    cursor: pointer;
+                }
             }
 
             td {

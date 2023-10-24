@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 const DemoData = [
     ['https://res.cloudinary.com/de2rdmsca/image/upload/v1698150059/flag-round-250_igavtb.png', "Australia", 1750, 482, '$4.9K'],
@@ -9,11 +9,37 @@ const DemoData = [
     ['https://res.cloudinary.com/de2rdmsca/image/upload/v1698151083/uk-circle-01_m0gigs.png', "United Kingdom", 1429, 114, '$2.2k'],
     ['https://res.cloudinary.com/de2rdmsca/image/upload/v1698151108/1200px-Brazilian_flag_icon_round.svg_nt65il.png', "Brazil", 1382, 89, '$1.6K'],
     ['https://res.cloudinary.com/de2rdmsca/image/upload/v1698151181/6023402_q06mt2.png', "Israel", 1200, 74, '$1.1K'],
-    // ["Canada", 1078, 64, '$889'],
-    // ["France", 1074, 48, '$567'],
 ]
 
 const DataTable = () => {
+    const [data, setData] = useState(DemoData)
+    const [sortConfig, setSortConfig] = useState({ key: 2, direction: "desc" })
+
+    const handleSort = (key) => {
+        let direction = "asc"
+        if (sortConfig.key === key && sortConfig.direction === "asc") {
+            direction = "desc"
+        }
+        setSortConfig({ key, direction })
+
+        const sortedData = [...data].sort((a, b) => {
+            if (direction === "asc") {
+                return a[key] > b[key] ? 1 : -1
+            } else {
+                return a[key] < b[key] ? 1 : -1
+            }
+        })
+
+        setData(sortedData)
+    }
+
+    const getSortIndicator = (columnKey) => {
+        if (sortConfig.key === columnKey) {
+            return sortConfig.direction === "asc" ? <i class="fa-solid fa-arrow-up"></i> : <i class="fa-solid fa-arrow-down"></i>
+        }
+        return null
+    }
+
     return (
         <div className="data-table">
             <h4 className="sub-header">Top Countries by Views</h4>
@@ -21,20 +47,30 @@ const DataTable = () => {
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Country</th>
-                        <th>Total Views</th>
-                        <th>Total Orders</th>
-                        <th>Total Revenue</th>
+                        <th onClick={() => handleSort(1)}>
+                            Country {getSortIndicator(1)}
+                        </th>
+                        <th onClick={() => handleSort(2)}>
+                            Total Views {getSortIndicator(2)}
+                        </th>
+                        <th onClick={() => handleSort(3)}>
+                            Total Orders {getSortIndicator(3)}
+                        </th>
+                        <th onClick={() => handleSort(4)}>
+                            Total Revenue {getSortIndicator(4)}
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    {DemoData.map((data, index) => (
+                    {data.map((row, index) => (
                         <tr key={index}>
-                            <td><img src={data[0]} alt="" style={{ width: "18px" }} /></td>
-                            <td>{data[1]}</td>
-                            <td>{data[2]}</td>
-                            <td>{data[3]}</td>
-                            <td className="dollar">{data[4]}</td>
+                            <td>
+                                <img src={row[0]} alt="" style={{ width: "18px" }} />
+                            </td>
+                            <td>{row[1]}</td>
+                            <td>{row[2]}</td>
+                            <td>{row[3]}</td>
+                            <td className="dollar">{row[4]}</td>
                         </tr>
                     ))}
                 </tbody>
