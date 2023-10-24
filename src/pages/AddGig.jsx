@@ -4,6 +4,7 @@ import { ImgUploader } from '../cmps/ImgUploader'
 import { MultiSelect } from '../cmps/MultiSelect'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BigGigPreview } from '../cmps/BigGigPreview'
+import { useNavigate } from 'react-router'
 
 const categories = [
     "Graphics & Design",
@@ -20,6 +21,7 @@ const categories = [
 
 export function AddGig() {
     const [gigToEdit, setGigToEdit] = useState(null)
+    const navigate = useNavigate()
 
     useEffect(() => {
         setGigToEdit(gigService.getEmptyGig())
@@ -52,6 +54,7 @@ export function AddGig() {
         try {
             const savedGig = await gigService.save(gigToEdit)
             showSuccessMsg(`Added a new gig! ${savedGig._id}`)
+            navigate(`/gig/${savedGig._id}`)
         } catch (err) {
             console.log(err)
         }
@@ -77,15 +80,20 @@ export function AddGig() {
                     Category tags
                     <MultiSelect tags={categories} onChooseTag={onChooseTag} chosenTags={gigToEdit.tags} />
                 </label>
-                <label className='form-label days-to-make'>
-                    Est. Days to deliver
-                    <input className='days-input' type="number" max={90} onChange={handleChange} name='daysToMake' value={gigToEdit.daysToMake} />
-                </label>
-                <label className='form-label price'>
-                    Price in USD
-                    <input className='price-input' type="number" max={999} maxLength={3} onChange={handleChange} name='price' value={gigToEdit.price} >
-                    </input>
-                </label>
+                <span className='numbers'>
+                    <label className='form-label days-to-make'>
+                        Est. Days to deliver
+                        <span className='days-input'>
+                            <input type="number" max={90} onChange={handleChange} name='daysToMake' value={gigToEdit.daysToMake} />
+                        </span>
+                    </label>
+                    <label className='form-label price'>
+                        Price in USD
+                        <span className='price-input'>
+                            <input type="number" max={999} maxLength={3} onChange={handleChange} name='price' value={gigToEdit.price} />
+                        </span>
+                    </label>
+                </span>
                 <label className='form-label imgs'>
                     Add images of the provided service
                     <ImgUploader onUploaded={onUploadedImgs} />

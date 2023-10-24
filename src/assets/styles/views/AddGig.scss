@@ -2,16 +2,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: rem(50px);
-    margin-top: rem(50px);
+    margin-top: rem(65px);
 
     .create-gig {
         display: flex;
         flex-direction: column;
         align-items: start;
         gap: em(15px);
+        margin-block-end: em(25px);
 
         .heading {
-            color: $dark-clr;
+            color: $accent-clr;
             font-size: rem(32px);
         }
 
@@ -20,6 +21,18 @@
             color: $dark-clr-4;
             font-weight: 400;
             margin-block-end: rem(20px);
+        }
+
+        .numbers {
+            display: flex;
+
+            .form-label {
+                min-width: 0;
+
+                input {
+                    max-width: 25%;
+                }
+            }
         }
 
         .MuiFormControl-root {
@@ -59,18 +72,40 @@
             color: $dark-clr;
             margin-bottom: 5px;
 
+            &.imgs {
+                margin-block: 15px 25px;
+                width: 80%;
+
+
+                .upload-preview {
+                    background-color: $light-clr2;
+                    border-radius: em(5px);
+                    padding-inline: em(7px);
+
+                    img {
+                        display: none;
+                    }
+
+                    input {
+                        border: 0;
+                    }
+                }
+            }
+
+            .price-input {
+                &::before {
+                    content: '$';
+                    margin: em(5px);
+                    color: $accent-clr;
+                }
+            }
+
 
             input {
                 font-size: rem(20px);
                 padding: em(7px);
                 border: em(2px) solid lighten($dark-clr-3, 20%);
                 border-radius: em(5px);
-
-                &.days-input,
-                &.price-input {
-                    width: 12%;
-                }
-
 
                 &:focus-visible {
                     border: em(2px) solid lighten($dark-clr-3, 10%);
@@ -80,10 +115,9 @@
         }
 
         .send {
-            width: 100%;
+            width: 80%;
             font-size: 1.3rem;
             background-color: $dark-clr;
-            align-self: flex-end;
             margin-block-start: rem(10px);
             font-weight: 700;
             letter-spacing: em(-0.4px);
@@ -100,7 +134,7 @@
     .big-gig-preview {
         width: 60%;
         position: sticky;
-        top: 10vh;
+        top: 15vh;
         height: fit-content;
         display: flex;
         flex-direction: column;
@@ -143,6 +177,10 @@
                 overflow-wrap: break-word;
                 word-wrap: break-word;
                 hyphens: auto;
+            }
+
+            .description {
+                font-weight: 400;
             }
 
             .detail-container {
