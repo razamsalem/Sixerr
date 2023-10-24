@@ -66,6 +66,7 @@ const demoUsers = [
     isSeller: false,
     location: 'United States',
     lang: ['English', 'Hebrew'],
+    reviews: []
    
   },
   {
@@ -79,6 +80,7 @@ const demoUsers = [
     isSeller: false,
     location: 'Italy',
     lang: ['Italian', 'Chinese', 'English', 'Spanish'],
+    reviews: []
 
   },
   {
@@ -92,6 +94,7 @@ const demoUsers = [
     isSeller: false,
     location: 'Greece',
     lang: ['English', 'Spanish', 'Hebrew'],
+    reviews:[]
   },
   {
     _id: "u192",

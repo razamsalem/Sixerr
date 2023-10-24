@@ -13,15 +13,7 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig }) {
         <li className="gig-preview" key={gig._id}  onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}>
 
-            {/* <div className="img-container">
-                <Link to={`/gig/${gig._id}`}>
-                    <img className="gig-img" src={gig.imgUrls ? gig.imgUrls[0] : defaultImgUrl} alt="gig-img" />
-                </Link>
-            </div> */}
-
-          
             <GigSlider gig={gig} isHovered={isHovered} />
-           
            
             <div className="flex owner-details">
                 <div className="flex owner-details-1">
