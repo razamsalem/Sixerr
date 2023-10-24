@@ -87,7 +87,7 @@ export function DashboardModal({ watchedUser, orders, loggedUser, closeDashboard
 
                             <div className="map">
                                 <h4 className="sub-header">Views by region</h4>
-                                <GeoChart />
+                                <GeoChart/>
                             </div>
 
                             <div className="data-table">

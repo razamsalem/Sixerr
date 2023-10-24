@@ -71,7 +71,7 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
                     <div className="content-title">
                         {btn.content}
                         {btn.title === 'Seller details' &&
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br /> Nam impedit tempore, molestias doloremque sint?</p>}
+                            <p>...</p>}
                     </div>
                 </div>
 

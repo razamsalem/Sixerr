@@ -22,7 +22,7 @@ export function UserDetails() {
   const loggedUser = useSelector(storeState => storeState.userModule.user)
   const gigs = useSelector(storeState => storeState.gigModule.gigs)
   const orders = useSelector(storeState => storeState.orderModule.orders)
-  const [isDashboardOpen, setDashboardOpen] = useState(false)
+  const [isDashboardOpen, setDashboardOpen] = useState(null)
   const demoSubtitle = utilService.getSubtitle()
   const userGigs = []
 
