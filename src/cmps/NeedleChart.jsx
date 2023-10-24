@@ -1,4 +1,3 @@
-/* eslint-disable no-shadow */
 import React, { PureComponent } from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
 
@@ -42,7 +41,7 @@ const needle = (value, data, cx, cy, iR, oR, color) => {
 export function NeedleChart() {
     return (
         <PieChart width={300} height={220}>
-            <Pie
+            <Pie 
                 dataKey="value"
                 startAngle={180}
                 endAngle={0}
@@ -60,5 +59,5 @@ export function NeedleChart() {
             </Pie>
             {needle(value, data, cx, cy, iR, oR, '#d0d000')}
         </PieChart>
-    );
+    )
 }

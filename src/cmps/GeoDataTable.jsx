@@ -11,9 +11,10 @@ const DemoData = [
     ['https://res.cloudinary.com/de2rdmsca/image/upload/v1698151181/6023402_q06mt2.png', "Israel", 1200, 74, '$1.1K'],
 ]
 
-const DataTable = () => {
+const DataTable = ({ onChangeSorting }) => {
     const [data, setData] = useState(DemoData)
     const [sortConfig, setSortConfig] = useState({ key: 2, direction: "desc" })
+    const [subHeader, setSubHeader] = useState('Views')
 
     const handleSort = (key) => {
         let direction = "asc"
@@ -42,21 +43,33 @@ const DataTable = () => {
 
     return (
         <div className="data-table">
-            <h4 className="sub-header">Top Countries by Views</h4>
+            <h4 className="sub-header">Top Countries by <span className="approved">{subHeader}</span></h4>
             <table>
                 <thead>
                     <tr>
                         <th></th>
-                        <th onClick={() => handleSort(1)}>
+                        <th onClick={() => {
+                            handleSort(1)
+                            setSubHeader('Alphabetical')
+                        }}>
                             Country {getSortIndicator(1)}
                         </th>
-                        <th onClick={() => handleSort(2)}>
+                        <th onClick={() => {
+                            handleSort(2)
+                            setSubHeader('Views')
+                        }}>
                             Total Views {getSortIndicator(2)}
                         </th>
-                        <th onClick={() => handleSort(3)}>
+                        <th onClick={() => {
+                            handleSort(3)
+                            setSubHeader('Orders')
+                        }}>
                             Total Orders {getSortIndicator(3)}
                         </th>
-                        <th onClick={() => handleSort(4)}>
+                        <th onClick={() => {
+                            handleSort(4)
+                            setSubHeader('Revenue')
+                        }}>
                             Total Revenue {getSortIndicator(4)}
                         </th>
                     </tr>
