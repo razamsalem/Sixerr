@@ -44,11 +44,10 @@ async function remove(gigId) {
 }
 
 async function save(gig) {
-    var savedGig
+    let savedGig
     if (gig._id) {
         savedGig = await storageService.put(STORAGE_KEY, gig)
     } else {
-        // Later, owner is set by the backend
         savedGig = await storageService.post(STORAGE_KEY, gig)
     }
     return savedGig
@@ -80,22 +79,18 @@ function getEmptyGig() {
 
     return {
         owner,
-        title: 'I Will..',
-        price: 0,
+        title: 'I will ',
+        price: 5,
         packages: {
             basic: {
                 desc: 'Basic package',
                 features: ['1 page', 'Design customization', 'Content upload', 'Responsive design', 'Source code', 'Detailed code comments']
             }
         },
-        daysToMake: 0,
+        daysToMake: 1,
         description: '',
-        imgUrls: [
-            "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/53382a1f054d78854910ced5344a4388-1672934713/thumbnail-1637/do-professional-youtube-video-editing-within-24hrs.jpg"
-        ],
-        tags: [
-            "service",
-        ],
+        imgUrls: [],
+        tags: [],
         likedByUsers: ['mini-user']
     }
 }

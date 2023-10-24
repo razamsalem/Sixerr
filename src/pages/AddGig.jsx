@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { gigService } from '../services/gig.service.local'
 import { ImgUploader } from '../cmps/ImgUploader'
 import { MultiSelect } from '../cmps/MultiSelect'
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 
 const categories = [
     "Graphics & Design",
@@ -23,132 +24,73 @@ export function AddGig() {
         setGigToEdit(gigService.getEmptyGig())
     }, [])
 
-    console.log(gigToEdit)
-
-
     function handleChange(ev) {
         let { name, value } = ev.target
         if (ev.target.dataset.name) {
             name = ev.target.dataset.name
             value = ev.target.dataset.value
         }
-        if (name === 'rate') value = parseInt(value)
+        if (name === 'price') value = parseInt(value)
 
         setGigToEdit({ ...gigToEdit, [name]: value })
     }
 
     function onUploadedImgs(imgUrl) {
-        console.log(imgUrl)
+        setGigToEdit({ ...gigToEdit, ['imgUrls']: [...gigToEdit.imgUrls, imgUrl] })
     }
 
+    function onChooseTag(ev) {
+        let { value } = ev.target
+        setGigToEdit({ ...gigToEdit, tags: [...value] })
+    }
+
+
+    async function onSaveGig(ev) {
+        ev.preventDefault()
+        if (!gigToEdit.description || !gigToEdit.title) return showErrorMsg('All fields are required')
+        try {
+            const savedGig = await gigService.save(gigToEdit)
+            showSuccessMsg(`Added a new gig! ${savedGig._id}`)
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
+
+    if (!gigToEdit) return
     return (
         <section className="add-gig">
-            <form className='create-gig' onChange={handleChange}>
+            <form className='create-gig' onSubmit={onSaveGig}>
                 <h1 className="heading">Add a gig</h1>
                 <h2 className="sub-heading">Fill the required information and share your details about your new gig</h2>
 
                 <label className='gig-title'>
                     Enter the title of your new gig
-                    <input name='title' type="text" placeholder='I will...' />
+                    <input onChange={handleChange} name='title' value={gigToEdit.title} type="text" placeholder='I will...' />
                 </label>
                 <label className='gig-desc'>
                     Enter a short description for your new gig
-                    <input type="text" />
+                    <input type="text" onChange={handleChange} name='description' value={gigToEdit.description} />
                 </label>
                 <label className='days-to-make'>
                     Number of Days estimated to provide the required service
-                    <input type="number" max={9} />
+                    <input type="number" max={90} onChange={handleChange} name='daysToMake' value={gigToEdit.daysToMake} />
                 </label>
                 <label className='imgs'>
                     Add images of the provided service
                     <ImgUploader onUploaded={onUploadedImgs} />
                 </label>
+                <label className='price'>
+                    Enter Price in USD for this gig
+                    <input type="number" max={10000} onChange={handleChange} name='price' value={gigToEdit.price} />
+                </label>
                 <label className='tags'>
                     Select category tags related to the provided service
-                    <MultiSelect tags={categories} />
+                    <MultiSelect tags={categories} onChooseTag={onChooseTag} chosenTags={gigToEdit.tags} />
                 </label>
+                <button>Continue</button>
             </form>
 
         </section>
     )
 }
-
-
-
-
-
-
-// import { useDispatch, useSelector } from 'react-redux'
-// import { useSearchParams } from 'react-router-dom'
-// import { showErrorMsg, showSuccessMsg, showUserMsg } from '../services/event-bus.service'
-// import { socketService, SOCKET_EVENT_REVIEW_ADDED } from '../services/socket.service'
-// import { loadReviews, addReview, removeReview, getActionAddReview } from '../store/review.actions'
-// import { loadUsers } from '../store/user.actions'
-// import { reviewService } from '../services/review.service'
-// import { BigOrderPreview } from '../cmps/BigOrderPreview'
-// import { RatingStars } from '../cmps/RatingStars'
-
-// export function ReviewIndex() {
-//     const orders = useSelector(storeState => storeState.orderModule.orders)
-//     const [searchParams, setSearchParams] = useSearchParams()
-//     const [reviewToEdit, setReviewToEdit] = useState(reviewService.getEmptyReview())
-//     const [order, setOrder] = useState(null)
-
-//     useEffect(() => {
-//         const params = Object.fromEntries([...searchParams])
-//         loadOrder(params.orderId)
-//     }, [searchParams, orders])
-
-
-//     useEffect(() => {
-//         if (!order || !orders.length) return
-//         setReviewToEdit((prevState) => ({ ...prevState, by: order.buyer, gig: order.gig }))
-//     }, [order])
-
-
-//     function loadOrder(orderId) {
-//         setOrder(orders.filter(order => order._id === orderId)[0])
-//     }
-
-//     const handleChange = ev => {
-//         let { name, value } = ev.target
-//         if (ev.target.dataset.name) {
-//             name = ev.target.dataset.name
-//             value = ev.target.dataset.value
-//         }
-//         if (name === 'rate') value = parseInt(value)
-
-//         setReviewToEdit({ ...reviewToEdit, [name]: value })
-//     }
-
-//     async function onAddReview(ev) {
-//         ev.preventDefault()
-//         if (!reviewToEdit.txt || !reviewToEdit.rate) return showErrorMsg('All fields are required')
-//         try {
-//             await addReview(reviewToEdit)
-//             showSuccessMsg('Review added')
-//         } catch (err) {
-//             showErrorMsg('Cannot add review')
-//         }
-//     }
-//     return (
-//         <section className="review-index">
-//                   <form className='add-review' onChange={handleChange} onSubmit={onAddReview}>
-//         <h1 className='heading'>Public review</h1>
-//         <h2 className='sub-heading'>Share your experience with the community, to help them make better decisions.</h2>
-//         <label className='rate-label'>
-//           Rate your overall satisfaction of the provided service
-//           <RatingStars handleChange={handleChange} rate={reviewToEdit.rate} />
-//         </label>
-//         <label className='txt-label'>
-//           What was it like working with this seller?
-//           <textarea className='review-txt' maxLength="700" name='txt' placeholder='My experience working with this seller was...'>
-//           </textarea>
-//           <span className='letter-count'>{`${reviewToEdit.txt.length} / 700 `}</span>
-//         </label>
-//         <button className='send' title='Send your review'>Send feedback</button>
-//       </form>
-//             <BigOrderPreview order={order} />
-//         </section>
-//     )
-// }
