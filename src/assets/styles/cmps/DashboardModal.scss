@@ -70,8 +70,9 @@
             font-weight: 600;
             font-size: rem(32px);
             text-align: left;
-            letter-spacing: rem(-2px);
             color: $accent-clr;
+            padding-inline-start: rem(16px);
+            margin-block-end: rem(12px);
         }
 
         .front-charts {
@@ -119,6 +120,57 @@
             font-size: rem(18px);
             margin-block: rem(12px);
             padding-inline-start: rem(16px);
+        }
+
+        .data-table {
+            width: 100%;
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            th {
+                background-color: #1dbf73;
+                border: 1px solid #ddd;
+                padding: rem(6px);
+                text-align: left;
+            }
+
+            td {
+                border: 1px solid #1dbf73;
+                text-align: left;
+                padding: rem(6px);
+                
+                &:first-child {
+                    text-align: center;
+                    padding: 0;
+                }
+            }
+
+            tr:nth-child(even) {
+                background-color: #38b77c45;
+            }
+
+            .sub-header {
+                font-size: rem(18px);
+                font-weight: bold;
+                margin-block: rem(18px);
+            }
+
+            .dollar {
+                color: $accent-clr;
+            }
+        }
+
+        .map {
+            padding: 12px;
+            border: 2px solid $accent-clr;
+            border-radius: 12px;
         }
 
 

@@ -4,6 +4,8 @@ import { DoughnutChart } from "./DoughnutChart"
 import { NeedleChart } from "./NeedleChart"
 import { OrderList } from "./OrderList"
 import StatsRadarChart from "./RadarChart"
+import { GeoChart } from "./GeoChart"
+import DataTable from "./GeoDataTable"
 
 export function DashboardModal({ watchedUser, orders, loggedUser, closeDashboard, handleBackgroundClick }) {
 
@@ -33,10 +35,10 @@ export function DashboardModal({ watchedUser, orders, loggedUser, closeDashboard
                         </button>
 
                         <button
-                            className={activeBtn === 'insights' ? 'active' : ''}
-                            onClick={() => setActiveBtn('insights')}
+                            className={activeBtn === 'impressions' ? 'active' : ''}
+                            onClick={() => setActiveBtn('impressions')}
                         >
-                            <span className="fa-solid fa-chart-pie icon"></span> Insights
+                            <span className="fa-solid fa-earth-asia icon"></span> Impressions
                         </button>
 
                     </div>
@@ -66,6 +68,31 @@ export function DashboardModal({ watchedUser, orders, loggedUser, closeDashboard
                                   <h4 className="sub-header">Recent activities</h4>
                                  </div>
                             */}
+                        </>
+                    )}
+
+                    {activeBtn === 'dashboard' && (
+                        <>
+                            <h3 className="header">Dashboard</h3>
+
+                        </>
+                    )}
+
+                    {activeBtn === 'impressions' && (
+                        <>
+                            <h3 className="header">Impressions</h3>
+                            <div className="country-bar">
+                                {/* <CountryBar /> */}
+                            </div>
+
+                            <div className="map">
+                                <h4 className="sub-header">Views by region</h4>
+                                <GeoChart />
+                            </div>
+
+                            <div className="data-table">
+                                <DataTable />
+                            </div>
                         </>
                     )}
 
