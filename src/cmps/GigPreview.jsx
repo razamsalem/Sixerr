@@ -1,18 +1,20 @@
 import { Link } from "react-router-dom"
-
+import { GigSlider } from "./GigSlider"
 export function GigPreview({ gig, onRemoveGig, onUpdateGig }) {
     const defaultImgUrl = 'https://res.cloudinary.com/de2rdmsca/image/upload/v1696229330/no-image-symbol-missing-available-icon-gallery-vector-47533708_yv5p2x.jpg'
 
 
     return (
-
+        
         <li className="gig-preview" key={gig._id}>
 
-            <div className="img-container">
+            {/* <div className="img-container">
                 <Link to={`/gig/${gig._id}`}>
                     <img className="gig-img" src={gig.imgUrls ? gig.imgUrls[0] : defaultImgUrl} alt="gig-img" />
                 </Link>
-            </div>
+            </div> */}
+            <GigSlider gig={gig}/>
+           
 
             <div className="flex owner-details">
                 <div className="flex owner-details-1">

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 import { setUserModalOpen } from '../store/user.actions'
 
 export function LoginSignup(props) {
-    const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
+    const [credentials, setCredentials] = useState(userService.getEmptyUser())
     const [isSignup, setIsSignup] = useState(false)
     const [users, setUsers] = useState([])
     const isUserModalOpen = useSelector(storeState => storeState.userModule.isUserModalOpen)

@@ -27,14 +27,22 @@ export function ReviewList({gigOwnerId}) {
     
     if(!seller) return <div>loading...</div>
     return(
+        
         <section className="reviews">
-            <h1>Reviews</h1>
+              {seller.reviews && seller.reviews.length ?
+              <div>
+              <h1>Reviews</h1>
             <ReviewChart reviews={seller.reviews}/>
             <ul className="review-list">
             {seller.reviews.map((rev, idx) =>
                     <ReviewPreview key={idx} review={rev}/>
                 )}
             </ul>
+            </div> : ''}
+           
+              
+           
         </section>
+        
     )
 }

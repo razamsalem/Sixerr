@@ -16,7 +16,6 @@ export function SimpleSlider({ prevBtnRef }) {
     nextArrow: <NextBtn />,
   };
 
-  // console.log(demoCards);
 
   return (
     <section className="slider-home">

@@ -7,6 +7,7 @@ export function ReviewChart({reviews}) {
         }
         return revs
     }
+    if(!reviews.length) return 
     return(
         <section className="review-chart">
             <div className="review-header stars">

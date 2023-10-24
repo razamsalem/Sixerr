@@ -15,7 +15,7 @@ export const userService = {
     getById,
     remove,
     update,
-    changeScore
+    getEmptyUser
 }
 
 window.userService = userService
@@ -57,7 +57,6 @@ async function login(userCred) {
 
 async function signup(userCred) {
     if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
-    userCred.score = 10000
     const user = await storageService.post('user', userCred)
     // const user = await httpService.post('auth/signup', userCred)
     return saveLocalUser(user)
@@ -84,6 +83,18 @@ function saveLocalUser(user) {
 
 function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
+}
+
+function getEmptyUser(){
+    return {
+            fullname: '',
+            username: '',
+            password: '',
+            desc: '',
+            isSelller: '',
+            location: 'Israel',
+            reviews: []
+    }
 }
 
 function _createusers() {
