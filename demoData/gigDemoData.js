@@ -42,7 +42,6 @@ const gigDemoData = [
     owner: {
       "_id": "u192",
       "fullname": "Julia Carter",
-      "imgUrl": "url",
       "level": "basic/premium",
       "rate": 3.2,
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6eac0adad8586c2d46b7fcf4a5f0d227-1671025218902/9fe6d9ab-6d6a-4199-9934-b9d1675d709d.jpg",
@@ -208,7 +207,7 @@ const gigDemoData = [
     },
     owner: {
       "_id": "d102",
-      "fullname": "Simon",
+      "fullname": "Simon Timber",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/3e02f819fe9719f3988281f83826cbcf-1670335805098/f18b5e11-2353-4e7d-b001-49c9531165cf.jpg",
       "level": "basic/premium",
       "rate": 5,
@@ -252,7 +251,7 @@ const gigDemoData = [
     },
     owner: {
       "_id": "d103",
-      "fullname": "Jason",
+      "fullname": "Jason Cook",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d2214c77229a1b9a1868e03433ccad04-1668453330627/2a7fa61e-c5b3-4176-af0a-0b41e1731c99.jpg",
       "level": "basic/premium",
       "rate": 5,
@@ -346,7 +345,7 @@ const gigDemoData = [
       }
     },
     owner: {
-      "_id": "d105",
+      "_id": "d106",
       "fullname": "Haya Ch",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c2e55a6aa898b7f413bd36827f49dc0d-794152801692271062.3187551/D3B90156-5AD6-4188-88E5-B3564884AF30",
       "level": "basic/premium",
@@ -391,7 +390,7 @@ const gigDemoData = [
     },
     owner: {
       "_id": "d107",
-      "fullname": "Sikandar",
+      "fullname": "Sikandar Yoor",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4ffeeb6a29d87c2528e7d245fe11173b-1653057002928/66803263-ff55-451e-aa76-2345dacb975b.PNG",
       "level": "basic/premium",
       "rate": 4.9,
@@ -442,7 +441,7 @@ const gigDemoData = [
     },
     owner: {
       "_id": "d108",
-      "fullname": "Adnan",
+      "fullname": "Adnan Adnani",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/256d39d8ed1c83a1b86dba441e34478f-1672157011855/10831853-8fc3-4d07-8f53-80d17e361e27.jpg",
       "level": "basic/premium",
       "rate": 4.8,
@@ -491,12 +490,12 @@ const gigDemoData = [
     },
     owner: {
       "_id": "d109",
-      "fullname": "David",
+      "fullname": "David Iz",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6640180a2dbba46cad4068dcd9ad47f1-1646966940115/25a12acd-5e46-4636-a01a-a289c6749009.png",
       "level": "basic/premium",
       "rate": 5,
       "location": "Israel",
-      "description": "Greetings, I'm Atikul Jaman from Bangladesh, a web developer. My expertise is in front-end web development and back-end development. Since then, I have been working in this field for 1+ years. During that period, I developed several dynamic and fully functional websites. With my knowledge of HTML, CSS, Bootstrap, JavaScript, React, NodeJS, ExpressJS, Firebase, and MongoDB, I can handle any project. Now I'm here to help you with my excellent skills. Thanks for reading :)"
+      "description": "Greetings, I'm David Iz from Israel, a web developer. My expertise is in front-end web development and back-end development. Since then, I have been working in this field for 1+ years. During that period, I developed several dynamic and fully functional websites. With my knowledge of HTML, CSS, Bootstrap, JavaScript, React, NodeJS, ExpressJS, Firebase, and MongoDB, I can handle any project. Now I'm here to help you with my excellent skills. Thanks for reading :)"
     },
     daysToMake: 3,
     description:

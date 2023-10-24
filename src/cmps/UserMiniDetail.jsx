@@ -4,7 +4,7 @@ export function UserMiniDetail({ gig }) {
             <div className="owner-img-wrapper flex">
                 <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-large" />
                 <div className="owner-details mini">
-                    <h3 className="gig-title">Taylor P</h3>
+                    <h3 className="gig-title">{gig.owner.fullname}</h3>
                     <div className="star-wrapper">
                         <span className="star-svg">
                             <img src="/src/assets/img/star.svg" alt="star-svg" className="star" />
