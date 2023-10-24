@@ -9,6 +9,7 @@ const demoUsers = [
     desc: "Are you looking for an expert logo designer to design your logo? If your answer is yes, then I welcome you and you are at the right place.",
     isSeller: true,
     location: "Germany",
+
     reviews: [
       {
         "id": "r101",
@@ -38,6 +39,20 @@ const demoUsers = [
           "location": "United States"
         }
       },
+      {
+        "id": "r103",
+        "gig": "{optional-mini-gig}",
+        "txt": "really helpful and on top of everything. will do business again.",
+        "rate": 5,
+        "createdAt": 1697993927389,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u208",
+          "fullname": "Liri C",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696589336/MV5BZDJhYzdkMTUtMTg2MS00ZTM5LWI1OGUtYTY5MzY4NDM3NThjXkEyXkFqcGdeQXVyMjQwMDg0Ng_._V1__okvske.jpg",
+          "location": "Greece"
+        }
+      },
     ],
   },
   {
@@ -51,27 +66,65 @@ const demoUsers = [
     isSeller: false,
     location: 'United States',
     lang: ['English', 'Hebrew'],
+   
+  },
+  {
+    _id: "u207",
+    fullname: "James Q",
+    imgUrl: "https://res.cloudinary.com/de2rdmsca/image/upload/v1696177501/samples/people/boy-snow-hoodie.jpg",
+    username: "james_q55",
+    password: "123",
+    level: "basic/premium",
+    desc: "Are you looking for an expert web developer to design and develop your website? If your answer is yes, then I welcome you and you are at the right place.",
+    isSeller: false,
+    location: 'Italy',
+    lang: ['Italian', 'Chinese', 'English', 'Spanish'],
+
+  },
+  {
+    _id: "u208",
+    fullname: "Liri C",
+    imgUrl: "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696589336/MV5BZDJhYzdkMTUtMTg2MS00ZTM5LWI1OGUtYTY5MzY4NDM3NThjXkEyXkFqcGdeQXVyMjQwMDg0Ng_._V1__okvske.jpg",
+    username: "liri_cohen10",
+    password: "123",
+    level: "basic/premium",
+    desc: "Hey! im Liri, Are you looking for an expert web developer to design and develop your website? If your answer is yes, then I welcome you and you are at the right place.",
+    isSeller: false,
+    location: 'Greece',
+    lang: ['English', 'Spanish', 'Hebrew'],
+  },
+  {
+    _id: "u192",
+    fullname: "Julia Carter",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6eac0adad8586c2d46b7fcf4a5f0d227-1671025218902/9fe6d9ab-6d6a-4199-9934-b9d1675d709d.jpg",
+    username: "julia123",
+    password: "123",
+    level: "basic/premium",
+    desc: "Welcome! I always love to explore new things, design, work, nature, and that's why I love to be called Explorance. I own a creative design studio based in India specializing in Logo and brand design. I am passionate and dedicated in everything I create is minimal, clean, smart, and remarkable. I believe in 100% satisfaction, nothing less! Please free to get in touch, let's work together.",
+    isSeller: true,
+    location: 'Italy',
+    lang: ['English', 'Spanish', 'Hebrew'],
     reviews: [
       {
-        "id": "r103",
+        "id": "r104",
         "gig": "{optional-mini-gig}",
-        "txt": "Very kind and works fast",
-        "rate": 5,
-        "createdAt": 1697993927388,
+        "txt": "exceptional performance . i got more than i was expecting . i highly recomend this lady if you want quality .",
+        "rate": 4,
+        "createdAt": 1697993927785,
         "reviewImgUrl": null,
         "by": {
           "_id": "u101",
           "fullname": "Taylor P",
           "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696177526/cld-sample.jpg",
-          "location": "United States",
+          "location": "Germany",
         }
       },
       {
-        "id": "r106",
+        "id": "r105",
         "gig": "{optional-mini-gig}",
-        "txt": "Nice work, Thank you!",
+        "txt": "Great service!",
         "rate": 5,
-        "createdAt": 1692993933389,
+        "createdAt": 1692993933333,
         "reviewImgUrl": null,
         "by": {
           "_id": "u207",
@@ -81,7 +134,7 @@ const demoUsers = [
         }
       },
       {
-        "id": "r107",
+        "id": "r106",
         "gig": "{optional-mini-gig}",
         "txt": "Okayyy, let's gooo!",
         "rate": 4,
@@ -97,21 +150,21 @@ const demoUsers = [
     ],
   },
   {
-    _id: "u207",
-    fullname: "James Q",
-    imgUrl: "https://res.cloudinary.com/de2rdmsca/image/upload/v1696177501/samples/people/boy-snow-hoodie.jpg",
-    username: "james_q55",
-    password: "123",
+    _id: "u190",
+    fullname: "Micky Smith",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/3e69825348268689975368374cd57bbb-1611383243667/c28fdd4b-d5c7-4035-8379-862ac10d67fd.png",
+    username: "mick",
+    password: "123a",
     level: "basic/premium",
-    desc: "Are you looking for an expert web developer to design and develop your website? If your answer is yes, then I welcome you and you are at the right place.",
-    isSeller: false,
-    location: 'Italy',
-    lang: ['Italian', 'Chinese', 'English', 'Spanish'],
-    reviews: [
+    desc: "Hi, I am Micky, a curious person who is having a strong interest in art. Doing my hobby leads me to work as a graphic designer. Working with many clients to solve their problems helps me to generate new ideas that suitable for the purpose of the creative field. I am used to helping people to visualize their conceptual idea into a unique, timeless, and memorable design. I am always ready to work with you.",
+    isSeller: true,
+    location: 'Peru',
+    lang: ['English', 'Spanish', 'Hebrew'],
+    reviews:[    
       {
-        "id": "r104",
+        "id": "r107",
         "gig": "{optional-mini-gig}",
-        "txt": "Very kind and works fast",
+        "txt": "The output wasn't upto the standard I was looking for really but okay for the money.",
         "rate": 3,
         "createdAt": 1697993927340,
         "reviewImgUrl": null,
@@ -125,7 +178,7 @@ const demoUsers = [
       {
         "id": "r108",
         "gig": "{optional-mini-gig}",
-        "txt": "I am not satisfied with the work of Mr.James..",
+        "txt": "I am not satisfied with the work of Mr.Micky..",
         "rate": 3,
         "createdAt": 1621993933389,
         "reviewImgUrl": null,
@@ -144,25 +197,247 @@ const demoUsers = [
         "createdAt": 1651993933389,
         "reviewImgUrl": null,
         "by": {
-          "_id": "u208",
-          "fullname": "Liri C",
-          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696589336/MV5BZDJhYzdkMTUtMTg2MS00ZTM5LWI1OGUtYTY5MzY4NDM3NThjXkEyXkFqcGdeQXVyMjQwMDg0Ng_._V1__okvske.jpg",
-          "location": "Greece",
+          "_id": "u192",
+          "fullname": "Julia Carter",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6eac0adad8586c2d46b7fcf4a5f0d227-1671025218902/9fe6d9ab-6d6a-4199-9934-b9d1675d709d.jpg",
+          "location": "Italy",
         }
       },
     ],
   },
   {
-    _id: "u208",
-    fullname: "Liri C",
-    imgUrl: "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696589336/MV5BZDJhYzdkMTUtMTg2MS00ZTM5LWI1OGUtYTY5MzY4NDM3NThjXkEyXkFqcGdeQXVyMjQwMDg0Ng_._V1__okvske.jpg",
-    username: "liri_cohen10",
+    _id: "u154",
+    fullname: "Justin Timber",
+    imgUrl: "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/110847760/original/00bbe27e2dc6b3b34bd1a6c02b9b5867e1aff783/do-minimalist-logo-design.jpg",
+    username: "justintimber",
     password: "123",
     level: "basic/premium",
-    desc: "Hey! im Liri, Are you looking for an expert web developer to design and develop your website? If your answer is yes, then I welcome you and you are at the right place.",
-    isSeller: false,
-    location: 'Greece',
-    lang: ['English', 'Spanish', 'Hebrew'],
+    desc: "Hello there, I'm Justin Timber. I bring five years of dedicated experience in the realm of logo design. During this time, I've honed my skills and gained valuable insights in the field. My primary goal is to offer my clients impeccable service, consistently aiming to surpass their expectations. Each project I take on is a chance not just to deliver outstanding results, but also to welcome fresh hurdles that contribute to my growth. My enthusiasm drives me to constantly explore innovative techniques that elevate my work. Thank you for considering my introduction.",
+    isSeller: true,
+    location: 'Israel',
+    lang: ['English', 'Hebrew'],
+    reviews: [
+      {
+        "id": "r112",
+        "gig": "{optional-mini-gig}",
+        "txt": "I was very pleased with the work. It was fast but more than what I expected. I recommend that anyone who needs a logo to use Nikon Studio. More importantly, he told me a day that I should expect the project, and he delivered on the day that he promised. Immaculate work. I would recommend him to anyone needing any graphic service.",
+        "rate": 5,
+        "createdAt": 1693993927112,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "d105",
+          "fullname": "Soaib Saim",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c45eaabd0990937c721c897183c6805f-1661974546688/fc7dd1c0-d3a1-4122-826f-6758abf48a4e.png",
+          "location": "Ukrain",
+        }
+      }
+    ],
+  },
+  {
+    _id: "d101",
+    fullname: "Rhett R.",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/aba588e47c44c19722c421049a09d168-1121175101628566927720/JPEG_20210810_094204_50143180573023551.jpg",
+    username: "rhett123",
+    password: "123",
+    level: "basic/premium",
+    desc: `Hi ! I am a  Graphic designer based in Germany. Specialised in designing iconic and industry-leading logos for Startups and cutting-edge companies. I believe a great logo is an intrinsic factor to a company's success. It is the first step towards credibility and customer loyalty. This is why I will work passionately with you to create the modern, cuttinge-edge, and professional logo your company needs to succeed.
+
+    Less is more
+    Less is Bold
+    Bold is confidence
+    Bold is experimental
+    Experiments bring creativity
+    Creative means smart
+    Smart is communicative, effective, and beautiful.`,
+    isSeller: true,
+    location: 'Israel',
+    lang: ['English', 'Hebrew'],
+    reviews: [
+      {
+        "id": "r112",
+        "gig": "{optional-mini-gig}",
+        "txt": "Not the best result, but good effort.",
+        "rate": 3,
+        "createdAt": 1693993927315,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u102",
+          "fullname": "Jhon I",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696584327/qcw1ydkltzywb3g4s5ty.jpg",
+          "location": "United States",
+        }
+      }
+    ],
+  },
+  {
+    _id: "d102",
+    fullname: "Simon Timber",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/3e02f819fe9719f3988281f83826cbcf-1670335805098/f18b5e11-2353-4e7d-b001-49c9531165cf.jpg",
+    username: "simontimber",
+    password: "123",
+    level: "basic/premium",
+    desc: `I am 'Track' full-stack web developer with more than 10+ years of IT experience, including PHP, MySQL, HTML5, CSS3, Frameworks, javascript/node. js, WordPress, and Plus for you is I am working as an SEO Expert for the last 7 years.
+
+    I am a creative website designer and developer with professional modern elegance. I offer my Web Development, Front End Development, Customizations, Software Solutions Provider and Development, Enterprise Solutions, and digital marketing services.
+    
+    I did the full spectrum of the site-building process: from planning and design to implementation to digital marketing.`,
+    isSeller: true,
+    location: 'Israel',
+    lang: ['English', 'Hebrew'],
+    reviews: [
+      {
+        "id": "r113",
+        "gig": "{optional-mini-gig}",
+        "txt": "Not the best result, but good effort.",
+        "rate": 3,
+        "createdAt": 1693993927315,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u102",
+          "fullname": "Jhon I",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696584327/qcw1ydkltzywb3g4s5ty.jpg",
+          "location": "United States",
+        }
+      }
+    ],
+  },
+  {
+    _id: "d103",
+    fullname: "Jason Cook",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d2214c77229a1b9a1868e03433ccad04-1668453330627/2a7fa61e-c5b3-4176-af0a-0b41e1731c99.jpg",
+    username: "jsoncook",
+    password: "123",
+    level: "basic/premium",
+    desc: `I am 'Track' full-stack web developer with more than 10+ years of IT experience, including PHP, MySQL, HTML5, CSS3, Frameworks, javascript/node. js, WordPress, and Plus for you is I am working as an SEO Expert for the last 7 years.
+
+    I am a creative website designer and developer with professional modern elegance. I offer my Web Development, Front End Development, Customizations, Software Solutions Provider and Development, Enterprise Solutions, and digital marketing services.
+    
+    I did the full spectrum of the site-building process: from planning and design to implementation to digital marketing.`,
+    isSeller: true,
+    location: 'France',
+    lang: ['English', 'Hebrew'],
+    reviews: [
+      {
+        "id": "r114",
+        "gig": "{optional-mini-gig}",
+        "txt": "Not the best result, but good effort.",
+        "rate": 3,
+        "createdAt": 1693993927315,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u102",
+          "fullname": "Jhon I",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696584327/qcw1ydkltzywb3g4s5ty.jpg",
+          "location": "United States",
+        }
+      }
+    ],
+  },
+  {
+    _id: "d105",
+    fullname: "Sohaib Saim",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c45eaabd0990937c721c897183c6805f-1661974546688/fc7dd1c0-d3a1-4122-826f-6758abf48a4e.png",
+    username: "sohaibsaim",
+    password: "123",
+    level: "basic/premium",
+    desc: `Hello, I'm Sohaib, a dedicated Full Stack Software Engineer with a strong background in the MERN stack, NextJS, Firebase, and Python frameworks. With a proven track record in developing efficient, user-centric web applications, I bring a problem-solving mindset and a commitment to delivering high-quality software. Whether you're looking to build a new web application or enhance an existing one, I'm here to provide the expertise and dedication you need to achieve your goals.`,
+    isSeller: true,
+    location: 'Ukrain',
+    lang: ['English', 'Hebrew'],
+    reviews: [
+      {
+        "id": "r115",
+        "gig": "{optional-mini-gig}",
+        "txt": "Not the best result, but good effort.",
+        "rate": 3,
+        "createdAt": 1693993927315,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u102",
+          "fullname": "Jhon I",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696584327/qcw1ydkltzywb3g4s5ty.jpg",
+          "location": "United States",
+        }
+      }
+    ],
+  },
+  {
+      _id: "d106",
+      fullname: "Haya Ch",
+      imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c2e55a6aa898b7f413bd36827f49dc0d-794152801692271062.3187551/D3B90156-5AD6-4188-88E5-B3564884AF30",
+      username: "hayach",
+      password: "123",
+      level: "basic/premium",
+      desc: `I am a Senior Software Engineer having working experience of more than 9 Years in the Front End development.
+
+      I am extremely passionate about my work. In my professional career, I have done more than 800 projects. I would love to assist you with Front end, Shopify, React, and WordPress projects.
+      I have a strong grip on the latest front-end development technologies Html5, Css3, SASS/LESS, Bootstrap, Tailwind, Materialize, Foundation, JavaScript, and jQuery.`,
+      isSeller: true,
+      location: 'Uzbekistan',
+      lang: ['English', 'Hebrew'],
+      reviews: [
+        {
+          "id": "r105",
+          "gig": "{optional-mini-gig}",
+          "txt": "Not the best result, but good effort.",
+          "rate": 3,
+          "createdAt": 1693993927315,
+          "reviewImgUrl": null,
+          "by": {
+            "_id": "u102",
+            "fullname": "Jhon I",
+            "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696584327/qcw1ydkltzywb3g4s5ty.jpg",
+            "location": "United States",
+          }
+        }
+      ],
+  },
+  {
+      _id: "d107",
+      fullname: "Sikandar Yoor",
+      imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4ffeeb6a29d87c2528e7d245fe11173b-1653057002928/66803263-ff55-451e-aa76-2345dacb975b.PNG",
+      username: "sikandaryoor",
+      password: "123",
+      level: "basic/premium",
+      desc: `Hello and thanks for visiting my page.
+
+      I have been a video editor for over 5 years. I use mostly Adobe After Effects 2020, but I can use nearly any program.
+      I can make anything look interesting within a few minutes of editing.
+      Whether its anime clips, video game clips, tv show clips, or anything else.
+      I make it look great and get it done quick. So, don't be afraid to send me a message if you have any questions.
+      ;)`,
+      isSeller: true,
+      location: 'Russia',
+      lang: ['English', 'Hebrew'],
+      reviews: [
+        {
+          "id": "r105",
+          "gig": "{optional-mini-gig}",
+          "txt": "Not the best result, but good effort.",
+          "rate": 3,
+          "createdAt": 1693993927315,
+          "reviewImgUrl": null,
+          "by": {
+            "_id": "u102",
+            "fullname": "Jhon I",
+            "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696584327/qcw1ydkltzywb3g4s5ty.jpg",
+            "location": "United States",
+          }
+        }
+      ],
+  },
+  {
+    _id: "d108",
+    fullname: "Adnan Adnani",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/256d39d8ed1c83a1b86dba441e34478f-1672157011855/10831853-8fc3-4d07-8f53-80d17e361e27.jpg",
+    username: "adnanadnani",
+    password: "123",
+    level: "basic/premium",
+    desc: `I am Adnan, a professional video and photo editor. I had worked with lots of youtube channels and have worked with 200+ companies all over the country now and completed 900++ orders. I believe in quality rather than quantity. I assure you I will do my best to complete your project and make you satisfied.
+    Professional Video Editor and Adobe Premiere Pro Expert!`,
+    isSeller: true,
+    location: 'India',
+    lang: ['English', 'Hebrew'],
     reviews: [
       {
         "id": "r105",
@@ -180,6 +455,35 @@ const demoUsers = [
       }
     ],
   },
+  {
+    _id: "d109",
+    fullname: "David Iz",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4ffeeb6a29d87c2528e7d245fe11173b-1653057002928/66803263-ff55-451e-aa76-2345dacb975b.PNG",
+    username: "davidiz",
+    password: "123",
+    level: "basic/premium",
+    desc: "Greetings, I'm David Iz from Israel, a web developer. My expertise is in front-end web development and back-end development. Since then, I have been working in this field for 1+ years. During that period, I developed several dynamic and fully functional websites. With my knowledge of HTML, CSS, Bootstrap, JavaScript, React, NodeJS, ExpressJS, Firebase, and MongoDB, I can handle any project. Now I'm here to help you with my excellent skills. Thanks for reading :)",
+    isSeller: true,
+    location: 'Israel',
+    lang: ['English', 'Hebrew'],
+    reviews: [
+      {
+        "id": "r105",
+        "gig": "{optional-mini-gig}",
+        "txt": "Not the best result, but good effort.",
+        "rate": 3,
+        "createdAt": 1693993927315,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u102",
+          "fullname": "Jhon I",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696584327/qcw1ydkltzywb3g4s5ty.jpg",
+          "location": "United States",
+        }
+      }
+    ],
+  },
+  
 ]
 
 export default demoUsers

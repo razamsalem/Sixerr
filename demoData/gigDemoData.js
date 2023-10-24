@@ -15,9 +15,11 @@ const gigDemoData = [
       "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696177526/cld-sample.jpg",
       "level": "basic/premium",
       "rate": 5,
+      "location": "Italy",
+      "description":"My name is Taylor P and I am a professional designer offering high-quality logo design services and branding solutions to all kind of businesses since 2013. Still, I am an ordinary man bound to make mistakes like everyone; however, I constantly strive to learn and improve along the way so better service can be provided. Looking forward to working with you! :)"
     },
     daysToMake: 3,
-    description: "You are the best as you are checking the best gig here on Fiverr and you have a very good eye for design. I will design you a logo for businesses to events, I can pull together an excellent, professional-looking artwork to be used on any type of print media or digitally. There are a lot of logos out there - but the great ones always catch your eye and leave a lasting impression. Let's design one together!",
+    description: "Captivating, enriched, elaborate and original is what I believe you're looking for. Your business logo deserves to be created by somebody who gets your business. I am professional designer offering high-quality business Logo design services since 2013 and branding solutions to all kind of businesses",
     imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/292332178/original/18841f3470f65b26636437baa1fd560438fb1a51/do-modern-and-elegant-logo-design-for-your-business.jpeg", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/292332178/original/748f0d7770acaa93f8e7734a78252dd0359ce24b/do-modern-and-elegant-logo-design-for-your-business.jpeg"],
     tags: [
       "logo-design",
@@ -40,10 +42,11 @@ const gigDemoData = [
     owner: {
       "_id": "u192",
       "fullname": "Julia Carter",
-      "imgUrl": "url",
       "level": "basic/premium",
       "rate": 3.2,
-      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6eac0adad8586c2d46b7fcf4a5f0d227-1671025218902/9fe6d9ab-6d6a-4199-9934-b9d1675d709d.jpg"
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6eac0adad8586c2d46b7fcf4a5f0d227-1671025218902/9fe6d9ab-6d6a-4199-9934-b9d1675d709d.jpg",
+      "location": "Italy",
+      "description":"Welcome! I always love to explore new things, design, work, nature, and that's why I love to be called Explorance. I own a creative design studio based in India specializing in Logo and brand design. I am passionate and dedicated in everything I create is minimal, clean, smart, and remarkable. I believe in 100% satisfaction, nothing less! Please free to get in touch, let's work together."
     },
     daysToMake: 27,
     description: "Thank you for stopping by! This gig is intended for anyone who is looking for a well rounded and undefined design for their company or brand. We will try different concepts and ideas to get you where you need to be. If you aren't sure where to start, this is a good gig to choose Unlike a lot of other fiverr artists, my designs do not change in quality depending upon what package you choose. All of my designs deserve the same attention and quality guarantee. My process starts in the traditional form which means I begin with paper and pencil. Once that is complete I refine it with art and/or calligraphy pens. Once that's complete, I bring it into my computer and render it digitally. The colors can be whatever you choose and the packages are all different. So please read them carefully or send me a message if you have any questions",
@@ -72,10 +75,12 @@ const gigDemoData = [
       "imgUrl": "url",
       "level": "basic/premium",
       "rate": 5,
-      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/3e69825348268689975368374cd57bbb-1611383243667/c28fdd4b-d5c7-4035-8379-862ac10d67fd.png"
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/3e69825348268689975368374cd57bbb-1611383243667/c28fdd4b-d5c7-4035-8379-862ac10d67fd.png",
+      "location": "Peru",
+      "description":"Hi, I am Micky, a curious person who is having a strong interest in art. Doing my hobby leads me to work as a graphic designer. Working with many clients to solve their problems helps me to generate new ideas that suitable for the purpose of the creative field. I am used to helping people to visualize their conceptual idea into a unique, timeless, and memorable design. I am always ready to work with you."
     },
     daysToMake: 3,
-    description: "You are the best as you are checking the best gig here on Fiverr and you have a very good eye for design. I will design you a logo for businesses to events, I can pull together an excellent, professional-looking artwork to be used on any type of print media or digitally. There are a lot of logos out there - but the great ones always catch your eye and leave a lasting impression. Let's design one together!",
+    description: "Are you looking for an artist to turn your ideas into linocut Illustration? You are in the right gig! Hi, I am Micky, a full-time graphic designer for more than 5 years. I have a strong interest in linocut Illustration. Most of my works focus on Animals, Botanicals, and Landscapes, but are not limited to other objects. I like to incorporate some Japanese handwriting into the Illustration. In this gig, I will provide a service to create an artistic, high-quality, and unique linocut Illustration based on your request. You can freely discuss this with me before placing your Linocut order.",
     imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/229020114/original/e9d6bca4248af0e976ed0ec1068114090ac8e393/do-professional-modern-minimalist-logo-design.jpg"],
     tags: [
       "txt",
@@ -101,10 +106,12 @@ const gigDemoData = [
       "imgUrl": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/110847760/original/00bbe27e2dc6b3b34bd1a6c02b9b5867e1aff783/do-minimalist-logo-design.jpg",
       "level": "basic/premium",
       "rate": 4,
-      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/505cad63a9a60b5e7f007f0f70b70320-1652367443632/d7945300-9d2e-4919-948b-3bc02f5cc55a.jpg"
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/505cad63a9a60b5e7f007f0f70b70320-1652367443632/d7945300-9d2e-4919-948b-3bc02f5cc55a.jpg",
+      "location": "Israel",
+      "description":"Hello there, I'm Justin Timber. I bring five years of dedicated experience in the realm of logo design. During this time, I've honed my skills and gained valuable insights in the field. My primary goal is to offer my clients impeccable service, consistently aiming to surpass their expectations. Each project I take on is a chance not just to deliver outstanding results, but also to welcome fresh hurdles that contribute to my growth. My enthusiasm drives me to constantly explore innovative techniques that elevate my work. Thank you for considering my introduction."
     },
     daysToMake: 20,
-    description: "Welcome to my minimal logo design gig! Being the face of a brand, the logo design should be a prime need for any brand. I will make a unique logo for your business that will help you stand out from the competition. I've been working as an Expert Logo Designer & Branding Specialist and am trusted by over 13K+ various clients worldwide.",
+    description: "Dive into my unique and eye catching Logo Design expertise. Crafting captivating visuals is my forte, excluding whimsical cartoons.Led by our proficient team, we excel in Business, Website, and YouTube Logo Design.",
     imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/314856443/original/48e49502ac05c89ac031d46924d1f9b0a41b15fa/do-timeless-modern-minimalist-unique-business-logo-design-4e58.png"],
     tags: [
       "logo-design",
@@ -130,6 +137,16 @@ const gigDemoData = [
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/aba588e47c44c19722c421049a09d168-1121175101628566927720/JPEG_20210810_094204_50143180573023551.jpg",
       "level": "basic/premium",
       "rate": 5,
+      "location": "Germany",
+      "description":`Hi ! I am a  Graphic designer based in Germany. Specialised in designing iconic and industry-leading logos for Startups and cutting-edge companies. I believe a great logo is an intrinsic factor to a company's success. It is the first step towards credibility and customer loyalty. This is why I will work passionately with you to create the modern, cuttinge-edge, and professional logo your company needs to succeed.
+
+      Less is more
+      Less is Bold
+      Bold is confidence
+      Bold is experimental
+      Experiments bring creativity
+      Creative means smart
+      Smart is communicative, effective, and beautiful.`
     },
     daysToMake: 1,
     description: `Hello, Greetings!
@@ -190,10 +207,16 @@ const gigDemoData = [
     },
     owner: {
       "_id": "d102",
-      "fullname": "Simon",
+      "fullname": "Simon Timber",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/3e02f819fe9719f3988281f83826cbcf-1670335805098/f18b5e11-2353-4e7d-b001-49c9531165cf.jpg",
       "level": "basic/premium",
       "rate": 5,
+      "location": "Paris",
+      "description": `I am 'Track' full-stack web developer with more than 10+ years of IT experience, including PHP, MySQL, HTML5, CSS3, Frameworks, javascript/node. js, WordPress, and Plus for you is I am working as an SEO Expert for the last 7 years.
+
+      I am a creative website designer and developer with professional modern elegance. I offer my Web Development, Front End Development, Customizations, Software Solutions Provider and Development, Enterprise Solutions, and digital marketing services.
+      
+      I did the full spectrum of the site-building process: from planning and design to implementation to digital marketing.`
     },
     daysToMake: 3,
     description: `
@@ -228,21 +251,27 @@ const gigDemoData = [
     },
     owner: {
       "_id": "d103",
-      "fullname": "Jason",
+      "fullname": "Jason Cook",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d2214c77229a1b9a1868e03433ccad04-1668453330627/2a7fa61e-c5b3-4176-af0a-0b41e1731c99.jpg",
       "level": "basic/premium",
       "rate": 5,
+      "location": "France",
+      "description": `I am 'Track' full-stack web developer with more than 10+ years of IT experience, including PHP, MySQL, HTML5, CSS3, Frameworks, javascript/node. js, WordPress, and Plus for you is I am working as an SEO Expert for the last 7 years.
+
+      I am a creative website designer and developer with professional modern elegance. I offer my Web Development, Front End Development, Customizations, Software Solutions Provider and Development, Enterprise Solutions, and digital marketing services.
+      
+      I did the full spectrum of the site-building process: from planning and design to implementation to digital marketing.`
     },
     daysToMake: 2,
     description: `
     NB: Contact me for Codebase errors/Bugs fixes, JavaScript/PHP issues.
-Are you Looking for skilled Pro design and development for your website and apllications?
-Are you looking for HTML/CSS, ReactJS/NEXTJS Development?
-Are you an agency looking to outsource projects for your clients?
-If yes, I have come to your rescue!
+    Are you Looking for skilled Pro design and development for your website and apllications?
+    Are you looking for HTML/CSS, ReactJS/NEXTJS Development?
+    Are you an agency looking to outsource projects for your clients?
+    If yes, I have come to your rescue!
 
-What I offer here is to share your lenses, picture what you have in mind and then find the best approach to help you actualize your Web Applications Project.
-I develop apps with latest technology using Html/CSS, Reactjs, Nextjs, Nodejs, JavaScript and Laravel.`,
+    What I offer here is to share your lenses, picture what you have in mind and then find the best approach to help you actualize your Web Applications Project.
+    I develop apps with latest technology using Html/CSS, Reactjs, Nextjs, Nodejs, JavaScript and Laravel.`,
 
     imgUrls: [
       "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/285783285/original/31b6e6377fc5d902a8c6c291a6e9657819caa64a/build-web-application-with-react-js-next-js-php-and-node-js.png",
@@ -278,6 +307,8 @@ I develop apps with latest technology using Html/CSS, Reactjs, Nextjs, Nodejs, J
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c45eaabd0990937c721c897183c6805f-1661974546688/fc7dd1c0-d3a1-4122-826f-6758abf48a4e.png",
       "level": "basic/premium",
       "rate": 5,
+      "location": "Ukrain",
+      "description":`Hello, I'm Sohaib, a dedicated Full Stack Software Engineer with a strong background in the MERN stack, NextJS, Firebase, and Python frameworks. With a proven track record in developing efficient, user-centric web applications, I bring a problem-solving mindset and a commitment to delivering high-quality software. Whether you're looking to build a new web application or enhance an existing one, I'm here to provide the expertise and dedication you need to achieve your goals.`
     },
     daysToMake: 2,
     description: `Hi there!
@@ -314,11 +345,16 @@ I develop apps with latest technology using Html/CSS, Reactjs, Nextjs, Nodejs, J
       }
     },
     owner: {
-      "_id": "d105",
+      "_id": "d106",
       "fullname": "Haya Ch",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c2e55a6aa898b7f413bd36827f49dc0d-794152801692271062.3187551/D3B90156-5AD6-4188-88E5-B3564884AF30",
       "level": "basic/premium",
       "rate": 4.9,
+      "location": "Uzbekistan",
+      "description": `I am a Senior Software Engineer having working experience of more than 9 Years in the Front End development.
+
+      I am extremely passionate about my work. In my professional career, I have done more than 800 projects. I would love to assist you with Front end, Shopify, React, and WordPress projects.
+      I have a strong grip on the latest front-end development technologies Html5, Css3, SASS/LESS, Bootstrap, Tailwind, Materialize, Foundation, JavaScript, and jQuery.`
     },
     daysToMake: 2,
     description: `Hello, my name is Haya Ch and i am a front end web developer and i can build a responsive website for you.
@@ -354,10 +390,18 @@ I develop apps with latest technology using Html/CSS, Reactjs, Nextjs, Nodejs, J
     },
     owner: {
       "_id": "d107",
-      "fullname": "Sikandar",
+      "fullname": "Sikandar Yoor",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4ffeeb6a29d87c2528e7d245fe11173b-1653057002928/66803263-ff55-451e-aa76-2345dacb975b.PNG",
       "level": "basic/premium",
       "rate": 4.9,
+      "location": "Russia",
+      "description":`Hello and thanks for visiting my page.
+
+      I have been a video editor for over 5 years. I use mostly Adobe After Effects 2020, but I can use nearly any program.
+      I can make anything look interesting within a few minutes of editing.
+      Whether its anime clips, video game clips, tv show clips, or anything else.
+      I make it look great and get it done quick. So, don't be afraid to send me a message if you have any questions.
+      ;)`
     },
     daysToMake: 2,
     description:
@@ -397,10 +441,13 @@ I develop apps with latest technology using Html/CSS, Reactjs, Nextjs, Nodejs, J
     },
     owner: {
       "_id": "d108",
-      "fullname": "Adnan",
+      "fullname": "Adnan Adnani",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/256d39d8ed1c83a1b86dba441e34478f-1672157011855/10831853-8fc3-4d07-8f53-80d17e361e27.jpg",
       "level": "basic/premium",
       "rate": 4.8,
+      "location": "India",
+      "description": `I am Adnan, a professional video and photo editor. I had worked with lots of youtube channels and have worked with 200+ companies all over the country now and completed 900++ orders. I believe in quality rather than quantity. I assure you I will do my best to complete your project and make you satisfied.
+      Professional Video Editor and Adobe Premiere Pro Expert!`
     },
     daysToMake: 2,
     description:
@@ -443,10 +490,12 @@ I develop apps with latest technology using Html/CSS, Reactjs, Nextjs, Nodejs, J
     },
     owner: {
       "_id": "d109",
-      "fullname": "David",
+      "fullname": "David Iz",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6640180a2dbba46cad4068dcd9ad47f1-1646966940115/25a12acd-5e46-4636-a01a-a289c6749009.png",
       "level": "basic/premium",
       "rate": 5,
+      "location": "Israel",
+      "description": "Greetings, I'm David Iz from Israel, a web developer. My expertise is in front-end web development and back-end development. Since then, I have been working in this field for 1+ years. During that period, I developed several dynamic and fully functional websites. With my knowledge of HTML, CSS, Bootstrap, JavaScript, React, NodeJS, ExpressJS, Firebase, and MongoDB, I can handle any project. Now I'm here to help you with my excellent skills. Thanks for reading :)"
     },
     daysToMake: 3,
     description:

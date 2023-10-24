@@ -141,7 +141,7 @@
     }
 }
 
-@mixin gallry-btn($where: gallery, $type: regular ){
+@mixin gallry-btn($where: gallery, $type: regular) {
     z-index: 2;
     display: grid;
     place-items: center;
@@ -154,13 +154,16 @@
     background: #fff;
     box-shadow: #62646a 0 0.0625em 0.1875em 0;
     color: #404145;
-    @if $type == next {
+
+    @if $type ==next {
         right: -17px;
     }
-    @if $type == prev {
+
+    @if $type ==prev {
         left: -17px;
     }
-    @if $where == detail {
+
+    @if $where ==detail {
         right: 0.125em;
     }
 }
