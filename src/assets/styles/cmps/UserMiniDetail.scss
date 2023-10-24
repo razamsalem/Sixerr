@@ -1,12 +1,28 @@
 .user-mini-detail{
     .owner-img-wrapper{
         gap: 8px;
-        margin-bottom: em(91px);
+        margin-bottom: em(19px);
     }
     .mini{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+    .contact-me{
+        border-radius: 4px;
+        color: #62646a;
+        background-color: white;
+        border: 1px solid #62646a;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 14px;
+        margin: 20px 0px;
+        padding: 12px 24px;
+        &:hover{
+            background: #74767e;
+            color: white;
+            border-color: transparent;
+        }
     }
     .owner-description{
         border: 1px solid #e4e5e7;
@@ -18,11 +34,16 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             margin: 0 0 1.25em;
+            li{
+                padding-bottom: 1em;
+                width: 50%;
+            }
         }
         span{
             display: block;
+            line-height: 25.6px;
         }
-        .owner-description span:nth-child(2n) {
+        span:nth-child(2n) {
            font-weight: 700;
         }
     }

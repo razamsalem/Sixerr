@@ -15,12 +15,15 @@ export function UserMiniDetail({ gig }) {
                 </div>
             </div>
 
+            <button className="contact-me">
+                Contact me
+            </button>
 
             <div className="owner-description">
                 <ul>
                     <li>
                         <span>From</span>
-                        <span>Pakistan</span>
+                        <span>{gig.owner.location}</span>
                     </li>
                     <li>
                         <span>Member since</span>
@@ -40,7 +43,7 @@ export function UserMiniDetail({ gig }) {
                     </li>
                 </ul>
 
-                <article>A young passionate with an incredible common sense and experience of designing the most fitting, branding, contemporary, opulence, unique, and minimal logo designs for any business. Due to designing being my passion, having you as a companion throughout the project, I am more than confident of my expertise, understanding, and communication skills, I am the best designer for you and I have successfully proved that in over 1000 professional projects. You are on the right page where Customer Satisfaction is the top priority and I starve for that! Sincerely, Zunairah!
+                <article>{gig.owner.description}
                 </article>
             </div>
         </section>
