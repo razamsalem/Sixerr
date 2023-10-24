@@ -3,6 +3,7 @@ import { gigService } from '../services/gig.service.local'
 import { ImgUploader } from '../cmps/ImgUploader'
 import { MultiSelect } from '../cmps/MultiSelect'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
+import { BigGigPreview } from '../cmps/BigGigPreview'
 
 const categories = [
     "Graphics & Design",
@@ -64,33 +65,34 @@ export function AddGig() {
                 <h1 className="heading">Add a gig</h1>
                 <h2 className="sub-heading">Fill the required information and share your details about your new gig</h2>
 
-                <label className='gig-title'>
+                <label className='form-label gig-title'>
                     Enter the title of your new gig
-                    <input onChange={handleChange} name='title' value={gigToEdit.title} type="text" placeholder='I will...' />
+                    <input onChange={handleChange} name='title' value={gigToEdit.title} type="text" placeholder='I will...' maxLength={100} />
                 </label>
-                <label className='gig-desc'>
-                    Enter a short description for your new gig
-                    <input type="text" onChange={handleChange} name='description' value={gigToEdit.description} />
+                <label className='form-label gig-desc'>
+                    Enter a description for your new gig
+                    <input type="text" onChange={handleChange} name='description' value={gigToEdit.description} maxLength={140} placeholder='Provided service will include...' />
                 </label>
-                <label className='days-to-make'>
-                    Number of Days estimated to provide the required service
-                    <input type="number" max={90} onChange={handleChange} name='daysToMake' value={gigToEdit.daysToMake} />
+                <label className='form-label days-to-make'>
+                    Est. Days to deliver
+                    <input className='days-input' type="number" max={90} onChange={handleChange} name='daysToMake' value={gigToEdit.daysToMake} />
                 </label>
-                <label className='imgs'>
+                <label className='form-label tags'>
+                    Category tags
+                    <MultiSelect tags={categories} onChooseTag={onChooseTag} chosenTags={gigToEdit.tags} />
+                </label>
+                <label className='form-label price'>
+                    Price in USD
+                    <input className='price-input' type="number" max={999} maxLength={3} onChange={handleChange} name='price' value={gigToEdit.price} >
+                    </input>
+                </label>
+                <label className='form-label imgs'>
                     Add images of the provided service
                     <ImgUploader onUploaded={onUploadedImgs} />
                 </label>
-                <label className='price'>
-                    Enter Price in USD for this gig
-                    <input type="number" max={10000} onChange={handleChange} name='price' value={gigToEdit.price} />
-                </label>
-                <label className='tags'>
-                    Select category tags related to the provided service
-                    <MultiSelect tags={categories} onChooseTag={onChooseTag} chosenTags={gigToEdit.tags} />
-                </label>
-                <button>Continue</button>
+                <button className='send'>Continue</button>
             </form>
-
+            <BigGigPreview gig={gigToEdit} />
         </section>
     )
 }

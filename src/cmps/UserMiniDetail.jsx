@@ -1,4 +1,24 @@
+import { useEffect } from "react";
+import { useState } from "react";
+import { userService } from "../services/user.service";
+
 export function UserMiniDetail({ gig }) {
+    const [location,setLocation] = useState('');
+    async function getLocation() {
+        const seller = await userService.getById(gig.owner._id)
+        setLocation(seller.location)
+    }
+
+    async function getDescUser(){
+        const seller = await userService.getById(gig.owner._id)
+        return seller.desc
+    }
+
+    useEffect(()=>{
+        getLocation()
+        getDescUser()
+    },[])
+
     return (
         <section className="user-mini-detail">
             <div className="owner-img-wrapper flex">
@@ -23,7 +43,7 @@ export function UserMiniDetail({ gig }) {
                 <ul>
                     <li>
                         <span>From</span>
-                        <span>{gig.owner.location}</span>
+                        <span>{location}</span>
                     </li>
                     <li>
                         <span>Member since</span>

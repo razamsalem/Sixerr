@@ -72,7 +72,6 @@ const gigDemoData = [
     owner: {
       "_id": "u190",
       "fullname": "Micky Smith",
-      "imgUrl": "url",
       "level": "basic/premium",
       "rate": 5,
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/3e69825348268689975368374cd57bbb-1611383243667/c28fdd4b-d5c7-4035-8379-862ac10d67fd.png",
@@ -81,7 +80,7 @@ const gigDemoData = [
     },
     daysToMake: 3,
     description: "Are you looking for an artist to turn your ideas into linocut Illustration? You are in the right gig! Hi, I am Micky, a full-time graphic designer for more than 5 years. I have a strong interest in linocut Illustration. Most of my works focus on Animals, Botanicals, and Landscapes, but are not limited to other objects. I like to incorporate some Japanese handwriting into the Illustration. In this gig, I will provide a service to create an artistic, high-quality, and unique linocut Illustration based on your request. You can freely discuss this with me before placing your Linocut order.",
-    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/229020114/original/e9d6bca4248af0e976ed0ec1068114090ac8e393/do-professional-modern-minimalist-logo-design.jpg"],
+    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/66171794/original/a5b0119f0b7cd2489bf1d47e91db59cfd5b65664/design-a-minimalist-logo.jpg","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/66171794/original/84216aa22470c27c5345df6fe761f2925b87174f/design-a-minimalist-logo.jpg","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/66171794/original/dead80d58e35dd47685ba5741d5dd2b26f6aeb5c/design-a-minimalist-logo.jpg"],
     tags: [
       "txt",
       "artisitic",
@@ -112,7 +111,7 @@ const gigDemoData = [
     },
     daysToMake: 20,
     description: "Dive into my unique and eye catching Logo Design expertise. Crafting captivating visuals is my forte, excluding whimsical cartoons.Led by our proficient team, we excel in Business, Website, and YouTube Logo Design.",
-    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/314856443/original/48e49502ac05c89ac031d46924d1f9b0a41b15fa/do-timeless-modern-minimalist-unique-business-logo-design-4e58.png"],
+    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/133223245/original/0d1dc714978f3bd16740534164bf798135f6559b/design-logo-for-your-business.jpg","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/133223245/original/a692e27c0b8cf2ee72a7238118da47bf88be205b/design-logo-for-your-business.jpg","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/133223245/original/22090cc87f2efa4074792af441ca62c3656dbfb6/design-logo-for-your-business.jpg"],
     tags: [
       "logo-design",
       "artisitic",
