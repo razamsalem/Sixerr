@@ -1,21 +1,28 @@
 import { Link } from "react-router-dom"
 import { GigSlider } from "./GigSlider"
+import { HoverableComponent } from "./HoverableComponent"
+import { useState } from "react"
 export function GigPreview({ gig, onRemoveGig, onUpdateGig }) {
+
     const defaultImgUrl = 'https://res.cloudinary.com/de2rdmsca/image/upload/v1696229330/no-image-symbol-missing-available-icon-gallery-vector-47533708_yv5p2x.jpg'
 
+    const [isHovered, setHovered] = useState(false)
 
     return (
         
-        <li className="gig-preview" key={gig._id}>
+        <li className="gig-preview" key={gig._id}  onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}>
 
             {/* <div className="img-container">
                 <Link to={`/gig/${gig._id}`}>
                     <img className="gig-img" src={gig.imgUrls ? gig.imgUrls[0] : defaultImgUrl} alt="gig-img" />
                 </Link>
             </div> */}
-            <GigSlider gig={gig}/>
-           
 
+          
+            <GigSlider gig={gig} isHovered={isHovered} />
+           
+           
             <div className="flex owner-details">
                 <div className="flex owner-details-1">
                     <img src={gig.owner.imgUrl} alt="progile-img" className="owner-profile-img" />
