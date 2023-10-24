@@ -68,11 +68,12 @@
             font-size: rem(12px);
             margin-block-start: auto;
 
-            a {
+            .link {
                 font-size: inherit;
                 font-weight: inherit;
                 margin: 0;
                 text-decoration: underline;
+                color: $dark-clr-1;
             }
         }
 
@@ -122,6 +123,10 @@
             font-weight: 600;
             font-family: inherit;
             background-color: black;
+
+            &.disabled {
+                cursor: not-allowed;
+            }
 
             &:hover,
             &:active {

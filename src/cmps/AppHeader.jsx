@@ -74,11 +74,11 @@ export function AppHeader() {
                     <nav className='links-container'>
                         {routes.map(route => !route.shouldRender ? ''
                             :
-                            <NavLink key={route.path} to={route.path}>{route.label}</NavLink>)}
+                            <NavLink className='btn' key={route.path} to={route.path}>{route.label}</NavLink>)}
 
                         {user &&
                             <>
-                                <NavLink key={'order'} to={'order'}>Orders</NavLink>
+                                <NavLink className='btn' key={'order'} to={'order'}>Orders</NavLink>
                                 <span className="user-info">
 
                                     <DropdownBtn icon={<img src={user.imgUrl} />}>

@@ -112,7 +112,7 @@ export function LoginSignup(props) {
                                 <option value="">Select User</option>
                                 {users.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
                             </select>
-                            <button className='btn continue'>Continue</button>
+                            <button className={`${!credentials.username ? 'disabled' : ''} btn continue`}>Continue</button>
                         </form>}
 
                         <div className="signup-section">
@@ -156,13 +156,13 @@ export function LoginSignup(props) {
                                     />
                                 </label>
                                 <ImgUploader onUploaded={onUploaded} />
-                                <button className='btn continue'>Continue</button>
+                                <button className={`${!credentials.username ? 'disabled' : ''} btn continue`}>Continue</button>
                             </form>}
                         </div>
                         <small className='terms'>
                             By joining, you agree to the
-                            Sixerr <a href="">Terms of Service</a> and to occasionally receive emails from us.
-                            Please read our <a href=""> Privacy Policy </a>to learn how we use your personal data.
+                            Sixerr <a className='link' href="">Terms of Service</a> and to occasionally receive emails from us.
+                            Please read our <a className='link' href=""> Privacy Policy </a>to learn how we use your personal data.
                         </small>
                     </section>
                 </>
