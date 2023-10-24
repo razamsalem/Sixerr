@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: rem(750px) rem(435px);
     justify-content: space-around;
+    margin-block-start: em(40px);
 
     &>*:not(.call-to-action) {
         grid-column: 1;
@@ -11,10 +12,6 @@
 
     img {
         margin: 0;
-    }
-
-    .gig-title {
-        // padding-bottom: rem(16px);
     }
 
     .owner-details {
@@ -42,6 +39,7 @@
     }
 
     .about-gig {
+
         // border-bottom: 1px solid #dadbdd;
         .gig-about-title {
             padding-bottom: em(25px);
@@ -55,9 +53,10 @@
         }
     }
 
-    .about-seller{
+    .about-seller {
         margin-bottom: em(29px);
     }
+
     .carousel {
         padding-inline: em(25px);
         width: 100%;
