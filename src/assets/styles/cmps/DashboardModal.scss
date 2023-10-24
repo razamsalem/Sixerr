@@ -141,6 +141,48 @@
             }
         }
 
+        .general-info {
+            gap: rem(10px);
+
+            .age-info {
+                background-color: $light-clr3;
+                height: rem(200px);
+                width: 40%;
+                border: 1px solid #10e582;
+                border-radius: 12px;
+                margin-block-start: rem(10px);
+                padding: rem(16px);
+                padding-block-end: rem(24px);
+
+            }
+
+            .daily-highs {
+                background-color: $light-clr3;
+                height: rem(200px);
+                width: 60%;
+                border: 1px solid #10e582;
+                border-radius: 12px;
+                margin-block-start: rem(10px);
+                padding: rem(16px);
+                padding-block-end: rem(24px);
+            }
+
+            h4 {
+                color: $accent-clr;
+                text-align: center;
+                font-size: rem(14px);
+                font-weight: 800;
+                padding-block-end: rem(8px);
+            }
+
+        }
+
+        .cards {
+            gap: rem(10px);
+            &>* {
+                width: 33.33%;
+            }
+        }
 
         .sub-header {
             color: $dark-clr-4;

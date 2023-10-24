@@ -9,6 +9,9 @@ import DataTable from "./GeoDataTable"
 import LoadingCircle from "./LoadingCircle"
 import { CompareOrdersChart } from "./CompareOrdersChart"
 import { ViewsBarChart } from "./ViewsBarChart"
+import { AgeRadialBar } from "./AgeRadialBar"
+import { DataComposedChart } from "./DataComposedChart"
+import DashboardCard from "./DashboardCard"
 
 export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundClick }) {
     const [activeBtn, setActiveBtn] = useState('home')
@@ -86,6 +89,7 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                     {activeBtn === 'dashboard' && (
                         <>
                             <h3 className="header mb">Dashboard</h3>
+
                             <div className="orders-data flex">
                                 <div className="compare-orders">
                                     <h4 className="title">Orders compared to last week</h4>
@@ -95,6 +99,23 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                                     <h4 className="title">Orders compared to Views</h4>
                                     <ViewsBarChart />
                                 </div>
+                            </div>
+
+                            <div className="general-info flex">
+                                <div className="age-info">
+                                    <h4 className="title">Clients by age</h4>
+                                    <AgeRadialBar />
+                                </div>
+                                <div className="daily-highs">
+                                    <h4 className="title">Daily highs</h4>
+                                    <DataComposedChart />
+                                </div>
+                            </div>
+                            
+                            <div className="cards flex">
+                                <DashboardCard title="Daily Orders" amount="142" icon="https://res.cloudinary.com/de2rdmsca/image/upload/v1698182770/308830_o5zknq.png" />
+                                <DashboardCard title="Daily Visits" amount="7,080" icon="https://res.cloudinary.com/de2rdmsca/image/upload/v1698182540/depositphotos_69848707-stock-illustration-pictograph-of-eye-icon_1_kgxet3.png" />
+                                <DashboardCard title="Total Earnings" amount="$16,575" icon="https://res.cloudinary.com/de2rdmsca/image/upload/v1698181815/png-transparent-dollar-sign-illustration-united-states-dollar-icon-design-icon-dollar-sign-text-logo-number-thumbnail-removebg-preview_1_kfkinb.png" />
                             </div>
                         </>
                     )}
