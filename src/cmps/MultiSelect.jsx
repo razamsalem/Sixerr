@@ -25,14 +25,14 @@ export function MultiSelect({ tags, onChooseTag, chosenTags }) {
     return (
         <div>
             <FormControl sx={{ m: 1, width: 300 }}>
-                <InputLabel id="demo-multiple-chip-label">Categories</InputLabel>
+                {/* <InputLabel id="demo-multiple-chip-label">Categories</InputLabel> */}
                 <Select
                     labelId="demo-multiple-chip-label"
                     id="demo-multiple-chip"
                     multiple
                     value={chosenTags}
                     onChange={onChooseTag}
-                    input={<OutlinedInput id="select-multiple-chip" label="Categories" />}
+                    input={<OutlinedInput id="select-multiple-chip" />}
                     renderValue={(selected) => (
                         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                             {selected.map((value) => (

@@ -73,13 +73,13 @@ export function AddGig() {
                     Enter a description for your new gig
                     <input type="text" onChange={handleChange} name='description' value={gigToEdit.description} maxLength={140} placeholder='Provided service will include...' />
                 </label>
-                <label className='form-label days-to-make'>
-                    Est. Days to deliver
-                    <input className='days-input' type="number" max={90} onChange={handleChange} name='daysToMake' value={gigToEdit.daysToMake} />
-                </label>
                 <label className='form-label tags'>
                     Category tags
                     <MultiSelect tags={categories} onChooseTag={onChooseTag} chosenTags={gigToEdit.tags} />
+                </label>
+                <label className='form-label days-to-make'>
+                    Est. Days to deliver
+                    <input className='days-input' type="number" max={90} onChange={handleChange} name='daysToMake' value={gigToEdit.daysToMake} />
                 </label>
                 <label className='form-label price'>
                     Price in USD

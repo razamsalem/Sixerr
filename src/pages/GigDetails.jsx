@@ -17,7 +17,7 @@ export function GigDetails() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const defaultImgUrl = 'https://res.cloudinary.com/de2rdmsca/image/upload/v1696229330/no-image-symbol-missing-available-icon-gallery-vector-47533708_yv5p2x.jpg'
+    const defaultImgUrl = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698161431/sixxer-logo_vseimk.png'
 
     useEffect(() => {
         onLoadGig()
@@ -77,14 +77,12 @@ export function GigDetails() {
                             <button className='prev-btn arrow' onClick={clickHandler} >
                                 <i className="fa-solid fa-chevron-left"></i>
                             </button>
-                        // <NextBtn onClick={clickHandler} where={'detail'}/>
-                           
+                            // <NextBtn onClick={clickHandler} where={'detail'}/>
+
                         )
                     }}
                 >
-                    {gig.imgUrls.map(img => {
-                        return <img key={img} src={img} />
-                    })}
+                    {!gig.imgUrls.length ? <img src={defaultImgUrl} /> : gig.imgUrls.map(img => <img key={img} src={img} />)}
                 </Carousel>
             </div>
 
@@ -94,8 +92,8 @@ export function GigDetails() {
                 <p className="gig-description">{gig.description}</p>
             </div>
             <h1 className="about-seller">About the seller</h1>
-            <UserMiniDetail gig={gig}/>
-           <ReviewList gigOwnerId={gig.owner._id}/>
+            <UserMiniDetail gig={gig} />
+            <ReviewList gigOwnerId={gig.owner._id} />
         </section>
     )
 }

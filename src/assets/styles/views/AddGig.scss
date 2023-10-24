@@ -11,16 +11,43 @@
         gap: em(15px);
 
         .heading {
-            color: $dark-clr-4;
+            color: $dark-clr;
             font-size: rem(32px);
         }
 
         .sub-heading {
             font-size: rem(23px);
-            color: $dark-clr;
+            color: $dark-clr-4;
             font-weight: 400;
             margin-block-end: rem(20px);
         }
+
+        .MuiFormControl-root {
+            margin: 0;
+            min-width: 100%;
+            max-width: 100%;
+
+            .MuiChip-root {
+                background-color: $accent-clr;
+                color: $light-clr;
+            }
+
+            .MuiInputBase-root {
+                width: 100%;
+
+                .MuiOutlinedInput-notchedOutline {
+                    border: em(2px) solid lighten($dark-clr-3, 20%);
+                }
+
+                &.Mui-focused {
+                    .MuiOutlinedInput-notchedOutline {
+                        border: em(2px) solid lighten($dark-clr-3, 10%);
+                    }
+                }
+            }
+
+        }
+
 
         .form-label {
             min-width: 80%;
@@ -39,13 +66,11 @@
                 border: em(2px) solid lighten($dark-clr-3, 20%);
                 border-radius: em(5px);
 
-                &.days-input {
-                    width: 10%;
+                &.days-input,
+                &.price-input {
+                    width: 12%;
                 }
 
-                &.price-input {
-                    width: 13%;
-                }
 
                 &:focus-visible {
                     border: em(2px) solid lighten($dark-clr-3, 10%);
@@ -86,7 +111,7 @@
 
         .preview-heading {
             text-align: center;
-            color: $dark-clr-1;
+            color: $dark-clr-4;
             text-transform: uppercase;
             font-weight: 400;
             letter-spacing: em(-1px);
@@ -102,11 +127,23 @@
             font-size: 1.3rem;
             color: black;
             margin-block-end: em(8px);
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+            max-width: 300px;
         }
 
         .gig-preview-details {
             display: grid;
             gap: em(10px);
+            max-width: 100%;
+
+            &>* {
+                min-width: 0;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                hyphens: auto;
+            }
 
             .detail-container {
                 display: grid;
@@ -118,6 +155,17 @@
                     font-size: 1.3rem;
                 }
             }
+        }
+    }
+}
+
+.MuiList-root {
+    .MuiButtonBase-root {
+
+        &.Mui-selected,
+        &.Mui-selected:hover {
+            background-color: darken($light-clr1, 5%);
+            color: $accent-clr;
         }
     }
 }
