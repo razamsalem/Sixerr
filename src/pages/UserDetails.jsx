@@ -84,8 +84,8 @@ export function UserDetails() {
       {isDashboardOpen && (
         <DashboardModal watchedUser={watchedUser} closeDashboard={closeDashboard} handleBackgroundClick={handleBackgroundClick} orders={orders} loggedUser={loggedUser} />
       )}
-      <main className='user-details-container full'>
-        <section className="user-details main-layout">
+      <main className='user-details-container main-layout full'>
+        <section className="user-details ">
           {watchedUser && <div className='user-card'>
             <div className='user-profile-info'>
               <div className="flex justify-center">
@@ -149,7 +149,7 @@ export function UserDetails() {
           </div>}
         </section>
 
-        <section className="gigs-column main-layout">
+        <section className="gigs-column">
           {(watchedUser?.isSeller && <div className='manage-orders'>
             <div className="order-header flex">
               <h1>Manage Orders</h1>

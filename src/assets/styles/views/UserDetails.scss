@@ -1,6 +1,7 @@
 .user-details-container {
     display: flex;
     background-color: $user-bgclr;
+    gap: rem(100px);
 
     .user-details {
         margin-inline-start: 12.063rem;
@@ -208,7 +209,7 @@
             }
 
             .order-header {
-                justify-content: space-between;
+                // justify-content: space-between;
                 align-items: baseline;
                 padding-block-end: 14px;
 
@@ -219,6 +220,7 @@
                     font-weight: 400;
                     background: none;
                     padding: 0;
+                    margin-inline-start: rem(525px);
 
                     &:hover {
                         text-decoration: underline;
