@@ -1,24 +1,16 @@
 import { Link } from "react-router-dom"
 
-const categories = [
-    "Graphics & Design",
-    "Programming & Tech",
-    "Digital Marketing",
-    "Video & Animation",
-    "Writing & Translation",
-    "Music & Audio",
-    "Business",
-    "Data",
-    "Photography"
-]
+export function CategoryNav({ categories, setFilterBy, globalFilterBy, subHeaderPosition }) {
 
-export function CategoryNav({ subHeaderPosition }) {
+    function onSetFilterBy(category) {
+        setFilterBy({ ...globalFilterBy, category })
+    }
 
     return (
         <div className={`${subHeaderPosition} sub-header-container main-layout full animate__animated animate__flipInX`}>
             <nav className="category-header">
                 <ul className="categories-container">
-                    {categories.map(c => <Link key={c} className="category-link">{c}</Link>)}
+                    {categories.map(c => <Link to={'/gig'} key={c.category} onClick={() => { onSetFilterBy(c.category) }} className="category-link">{c.category}</Link>)}
                 </ul>
             </nav>
         </div>

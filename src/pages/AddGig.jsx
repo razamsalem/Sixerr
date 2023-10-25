@@ -43,7 +43,7 @@ export function AddGig() {
 
     function onSelectCategory(ev) {
         let { value } = ev.target
-        setGigToEdit({ ...gigToEdit, category: value })
+        setGigToEdit({ ...gigToEdit, tags: [], category: value })
     }
 
     async function onSaveGig(ev) {

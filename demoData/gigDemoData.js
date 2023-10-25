@@ -16,17 +16,13 @@ const gigDemoData = [
       "level": "basic/premium",
       "rate": 5,
       "location": "Italy",
-      "description":"My name is Taylor P and I am a professional designer offering high-quality logo design services and branding solutions to all kind of businesses since 2013. Still, I am an ordinary man bound to make mistakes like everyone; however, I constantly strive to learn and improve along the way so better service can be provided. Looking forward to working with you! :)"
+      "description": "My name is Taylor P and I am a professional designer offering high-quality logo design services and branding solutions to all kind of businesses since 2013. Still, I am an ordinary man bound to make mistakes like everyone; however, I constantly strive to learn and improve along the way so better service can be provided. Looking forward to working with you! :)"
     },
     daysToMake: 3,
     description: "Captivating, enriched, elaborate and original is what I believe you're looking for. Your business logo deserves to be created by somebody who gets your business. I am professional designer offering high-quality business Logo design services since 2013 and branding solutions to all kind of businesses",
     imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/292332178/original/18841f3470f65b26636437baa1fd560438fb1a51/do-modern-and-elegant-logo-design-for-your-business.jpeg", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/292332178/original/748f0d7770acaa93f8e7734a78252dd0359ce24b/do-modern-and-elegant-logo-design-for-your-business.jpeg"],
-    tags: [
-      "logo-design",
-      "artisitic",
-      "proffesional",
-      "accessible"
-    ],
+    category: "Graphics & Design",
+    tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design'],
     likedByUsers: ['mini-user']
   },
   {
@@ -46,17 +42,13 @@ const gigDemoData = [
       "rate": 3.2,
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6eac0adad8586c2d46b7fcf4a5f0d227-1671025218902/9fe6d9ab-6d6a-4199-9934-b9d1675d709d.jpg",
       "location": "Italy",
-      "description":"Welcome! I always love to explore new things, design, work, nature, and that's why I love to be called Explorance. I own a creative design studio based in India specializing in Logo and brand design. I am passionate and dedicated in everything I create is minimal, clean, smart, and remarkable. I believe in 100% satisfaction, nothing less! Please free to get in touch, let's work together."
+      "description": "Welcome! I always love to explore new things, design, work, nature, and that's why I love to be called Explorance. I own a creative design studio based in India specializing in Logo and brand design. I am passionate and dedicated in everything I create is minimal, clean, smart, and remarkable. I believe in 100% satisfaction, nothing less! Please free to get in touch, let's work together."
     },
     daysToMake: 27,
     description: "Thank you for stopping by! This gig is intended for anyone who is looking for a well rounded and undefined design for their company or brand. We will try different concepts and ideas to get you where you need to be. If you aren't sure where to start, this is a good gig to choose Unlike a lot of other fiverr artists, my designs do not change in quality depending upon what package you choose. All of my designs deserve the same attention and quality guarantee. My process starts in the traditional form which means I begin with paper and pencil. Once that is complete I refine it with art and/or calligraphy pens. Once that's complete, I bring it into my computer and render it digitally. The colors can be whatever you choose and the packages are all different. So please read them carefully or send me a message if you have any questions",
-    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/118127829/original/78fe34ecddb886dd10b291634bbf2e03d55ba64e/create-marketable-and-custom-designs.png","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/118127829/original/53e63acc3b534db6ed25e96f651b6b55c6fa319a/create-marketable-and-custom-designs.png","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/118127829/original/125d9a54d0cc99dba0e3b94d471087cca5993258/create-marketable-and-custom-designs.png"],
-    tags: [
-      "logo-design",
-      "artisitic",
-      "proffesional",
-      "accessible"
-    ],
+    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/118127829/original/78fe34ecddb886dd10b291634bbf2e03d55ba64e/create-marketable-and-custom-designs.png", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/118127829/original/53e63acc3b534db6ed25e96f651b6b55c6fa319a/create-marketable-and-custom-designs.png", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/118127829/original/125d9a54d0cc99dba0e3b94d471087cca5993258/create-marketable-and-custom-designs.png"],
+    category: "Graphics & Design",
+    tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design'],
     likedByUsers: ['mini-user']
   },
   {
@@ -76,17 +68,13 @@ const gigDemoData = [
       "rate": 5,
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/3e69825348268689975368374cd57bbb-1611383243667/c28fdd4b-d5c7-4035-8379-862ac10d67fd.png",
       "location": "Peru",
-      "description":"Hi, I am Micky, a curious person who is having a strong interest in art. Doing my hobby leads me to work as a graphic designer. Working with many clients to solve their problems helps me to generate new ideas that suitable for the purpose of the creative field. I am used to helping people to visualize their conceptual idea into a unique, timeless, and memorable design. I am always ready to work with you."
+      "description": "Hi, I am Micky, a curious person who is having a strong interest in art. Doing my hobby leads me to work as a graphic designer. Working with many clients to solve their problems helps me to generate new ideas that suitable for the purpose of the creative field. I am used to helping people to visualize their conceptual idea into a unique, timeless, and memorable design. I am always ready to work with you."
     },
     daysToMake: 3,
     description: "Are you looking for an artist to turn your ideas into linocut Illustration? You are in the right gig! Hi, I am Micky, a full-time graphic designer for more than 5 years. I have a strong interest in linocut Illustration. Most of my works focus on Animals, Botanicals, and Landscapes, but are not limited to other objects. I like to incorporate some Japanese handwriting into the Illustration. In this gig, I will provide a service to create an artistic, high-quality, and unique linocut Illustration based on your request. You can freely discuss this with me before placing your Linocut order.",
-    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/66171794/original/a5b0119f0b7cd2489bf1d47e91db59cfd5b65664/design-a-minimalist-logo.jpg","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/66171794/original/84216aa22470c27c5345df6fe761f2925b87174f/design-a-minimalist-logo.jpg","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/66171794/original/dead80d58e35dd47685ba5741d5dd2b26f6aeb5c/design-a-minimalist-logo.jpg"],
-    tags: [
-      "txt",
-      "artisitic",
-      "proffesional",
-      "accessible"
-    ],
+    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/66171794/original/a5b0119f0b7cd2489bf1d47e91db59cfd5b65664/design-a-minimalist-logo.jpg", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/66171794/original/84216aa22470c27c5345df6fe761f2925b87174f/design-a-minimalist-logo.jpg", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/66171794/original/dead80d58e35dd47685ba5741d5dd2b26f6aeb5c/design-a-minimalist-logo.jpg"],
+    category: "Graphics & Design",
+    tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design'],
     likedByUsers: ['mini-user']
   },
   {
@@ -107,17 +95,13 @@ const gigDemoData = [
       "rate": 4,
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/505cad63a9a60b5e7f007f0f70b70320-1652367443632/d7945300-9d2e-4919-948b-3bc02f5cc55a.jpg",
       "location": "Israel",
-      "description":"Hello there, I'm Justin Timber. I bring five years of dedicated experience in the realm of logo design. During this time, I've honed my skills and gained valuable insights in the field. My primary goal is to offer my clients impeccable service, consistently aiming to surpass their expectations. Each project I take on is a chance not just to deliver outstanding results, but also to welcome fresh hurdles that contribute to my growth. My enthusiasm drives me to constantly explore innovative techniques that elevate my work. Thank you for considering my introduction."
+      "description": "Hello there, I'm Justin Timber. I bring five years of dedicated experience in the realm of logo design. During this time, I've honed my skills and gained valuable insights in the field. My primary goal is to offer my clients impeccable service, consistently aiming to surpass their expectations. Each project I take on is a chance not just to deliver outstanding results, but also to welcome fresh hurdles that contribute to my growth. My enthusiasm drives me to constantly explore innovative techniques that elevate my work. Thank you for considering my introduction."
     },
     daysToMake: 20,
     description: "Dive into my unique and eye catching Logo Design expertise. Crafting captivating visuals is my forte, excluding whimsical cartoons.Led by our proficient team, we excel in Business, Website, and YouTube Logo Design.",
-    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/133223245/original/0d1dc714978f3bd16740534164bf798135f6559b/design-logo-for-your-business.jpg","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/133223245/original/a692e27c0b8cf2ee72a7238118da47bf88be205b/design-logo-for-your-business.jpg","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/133223245/original/22090cc87f2efa4074792af441ca62c3656dbfb6/design-logo-for-your-business.jpg"],
-    tags: [
-      "logo-design",
-      "artisitic",
-      "proffesional",
-      "accessible"
-    ],
+    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/133223245/original/0d1dc714978f3bd16740534164bf798135f6559b/design-logo-for-your-business.jpg", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/133223245/original/a692e27c0b8cf2ee72a7238118da47bf88be205b/design-logo-for-your-business.jpg", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/133223245/original/22090cc87f2efa4074792af441ca62c3656dbfb6/design-logo-for-your-business.jpg"],
+    category: "Graphics & Design",
+    tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design'],
     likedByUsers: ['mini-user']
   },
   {
@@ -137,7 +121,7 @@ const gigDemoData = [
       "level": "basic/premium",
       "rate": 5,
       "location": "Germany",
-      "description":`Hi ! I am a  Graphic designer based in Germany. Specialised in designing iconic and industry-leading logos for Startups and cutting-edge companies. I believe a great logo is an intrinsic factor to a company's success. It is the first step towards credibility and customer loyalty. This is why I will work passionately with you to create the modern, cuttinge-edge, and professional logo your company needs to succeed.
+      "description": `Hi ! I am a  Graphic designer based in Germany. Specialised in designing iconic and industry-leading logos for Startups and cutting-edge companies. I believe a great logo is an intrinsic factor to a company's success. It is the first step towards credibility and customer loyalty. This is why I will work passionately with you to create the modern, cuttinge-edge, and professional logo your company needs to succeed.
 
       Less is more
       Less is Bold
@@ -149,23 +133,11 @@ const gigDemoData = [
     },
     daysToMake: 1,
     description: `Hello, Greetings!
-
     Are you looking for a Frontend React developer who can Convert your design into a website like Figma to React, PSD to React, XD to React, AI to React, Sketch to React, PDF to React, JPG to React, PNG to React tailwind CSS Bootstrap?
-    
-    
-    
-    Okay, it's the right place.
-    
-    
-    
+    Okay, it's the right place. 
     I have already converted lot of projects into react js website using Tailwind, Ant design, MUI React Bootstrap. Without using any custom CSS.
-    
-     
-    
-    My knowledge and skills:
-    
-    
-    
+ 
+    My knowledge and skills:  
     - HTML5, CSS3, SCSS
     - Bootstrap, Tailwindcss
     - Javascript, ECMAScript (ES6)
@@ -182,12 +154,8 @@ const gigDemoData = [
       "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/276431205/original/916a229ae1873dbb422e035a51295c775d8e84eb/figma-to-react-website-tailwind-css-xd-psd-nextjs-mern-bootstrap-redux-native.jpg",
       "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/2131c99e84445627699efdb41726ad37-1674708252/localhost-3000-landing-%20(2)/figma-to-react-website-tailwind-css-xd-psd-nextjs-mern-bootstrap-redux-native.jpg"
     ],
-    tags: [
-      "Programming & Tech",
-      "Website Design",
-      "Wordpress",
-      "Business"
-    ],
+    category: "Programming & Tech",
+    tags: ['Website Development', 'Business Websites', 'E-Commerce Development', 'Landing Pages', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers'],
     likedByUsers: [{
       "_id": "u102",
       "fullname": "Michelle R",
@@ -226,12 +194,8 @@ const gigDemoData = [
       "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/236786261/original/926a17d6dc1ba37d06d5a0f199881cbe13d62bb4/develop-responsive-website-in-html-css-javascript-react-nodejs-nextjs.png",
       "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/2131c99e84445627699efdb41726ad37-1674708252/localhost-3000-landing-%20(2)/figma-to-react-website-tailwind-css-xd-psd-nextjs-mern-bootstrap-redux-native.jpg"
     ],
-    tags: [
-      "Programming & Tech",
-      "Website Design",
-      "Wordpress",
-      "Business"
-    ],
+    category: "Programming & Tech",
+    tags: ['Website Development', 'E-Commerce Development', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers'],
     likedByUsers: [{
       "_id": "u103",
       "fullname": "David C",
@@ -278,12 +242,8 @@ const gigDemoData = [
       "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs3/285783285/original/6de7187f810b1e5222523d8927aa95230eac62ce/build-web-application-with-react-js-next-js-php-and-node-js.png",
       "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/18208e91f8cb4002460ceec80f50a698-1685735406/credit%20score%20site/build-web-application-with-react-js-next-js-php-and-node-js.jpg"
     ],
-    tags: [
-      "Programming & Tech",
-      "Website Design",
-      "Wordpress",
-      "Business"
-    ],
+    category: "Programming & Tech",
+    tags: ['Website Development', 'Business Websites', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers'],
     likedByUsers: [{
       "_id": "u103",
       "fullname": "David C",
@@ -307,7 +267,7 @@ const gigDemoData = [
       "level": "basic/premium",
       "rate": 5,
       "location": "Ukrain",
-      "description":`Hello, I'm Sohaib, a dedicated Full Stack Software Engineer with a strong background in the MERN stack, NextJS, Firebase, and Python frameworks. With a proven track record in developing efficient, user-centric web applications, I bring a problem-solving mindset and a commitment to delivering high-quality software. Whether you're looking to build a new web application or enhance an existing one, I'm here to provide the expertise and dedication you need to achieve your goals.`
+      "description": `Hello, I'm Sohaib, a dedicated Full Stack Software Engineer with a strong background in the MERN stack, NextJS, Firebase, and Python frameworks. With a proven track record in developing efficient, user-centric web applications, I bring a problem-solving mindset and a commitment to delivering high-quality software. Whether you're looking to build a new web application or enhance an existing one, I'm here to provide the expertise and dedication you need to achieve your goals.`
     },
     daysToMake: 2,
     description: `Hi there!
@@ -321,12 +281,8 @@ const gigDemoData = [
       "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/a8a27616865982a33afed0806eba2b00-1683111037/S%201/do-javascript-jquery-html-css-bootstrap-php-scripts.png",
       "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/0309dfe267c1374477dc20d8ad79c116-1682539071/S%201/do-javascript-jquery-html-css-bootstrap-php-scripts.png",
     ],
-    tags: [
-      "Programming & Tech",
-      "Website Design",
-      "Wordpress",
-      "Business"
-    ],
+    category: "Programming & Tech",
+    tags: ['Website Development', 'Business Websites', 'E-Commerce Development', 'Landing Pages', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers'],
     likedByUsers: [{
       "_id": "u103",
       "fullname": "David C",
@@ -365,12 +321,8 @@ const gigDemoData = [
       "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/231851902/original/810e937316650f59f493faa4f6cc2dc6418939bc/custom-and-wp-web-developer-can-do-all-about-websites.png",
       "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/8458ecf4d0c9052a9a76448c25105e15-1686293112/Screenshot_5/custom-and-wp-web-developer-can-do-all-about-websites.png"
     ],
-    tags: [
-      "Programming & Tech",
-      "Website Design",
-      "Wordpress",
-      "Business"
-    ],
+    category: "Programming & Tech",
+    tags: ['Landing Pages', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers'],
     likedByUsers: [{
       "_id": "u103",
       "fullname": "David C",
@@ -394,7 +346,7 @@ const gigDemoData = [
       "level": "basic/premium",
       "rate": 4.9,
       "location": "Russia",
-      "description":`Hello and thanks for visiting my page.
+      "description": `Hello and thanks for visiting my page.
 
       I have been a video editor for over 5 years. I use mostly Adobe After Effects 2020, but I can use nearly any program.
       I can make anything look interesting within a few minutes of editing.
@@ -417,11 +369,8 @@ const gigDemoData = [
       "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs3/102542765/original/693d9d73087e9cdd1db122b637e950889cc21b3b/do-professional-youtube-video-editing-within-24hrs.jpeg",
       "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/53382a1f054d78854910ced5344a4388-1672934713/thumbnail-1637/do-professional-youtube-video-editing-within-24hrs.jpg"
     ],
-    tags: [
-      "Video & Animation",
-      "Photography",
-      "Graphics & Design",
-    ],
+    category: "Video & Animation",
+    tags: ["Video Editing", "Visual Effects", "Video Art", "Logo Animation", "Character Animation", "Animated GIFs"],
     likedByUsers: [{
       "_id": "u103",
       "fullname": "David C",
@@ -466,11 +415,8 @@ const gigDemoData = [
       "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/292211335/original/f3167f823285d2c3c64a2d6d8535512dc4dd3bee/be-your-pro-tiktok-editor-for-all-your-tiktok-needs.jpg",
       "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/53382a1f054d78854910ced5344a4388-1672934713/thumbnail-1637/do-professional-youtube-video-editing-within-24hrs.jpg"
     ],
-    tags: [
-      "Video & Animation",
-      "Photography",
-      "Graphics & Design",
-    ],
+    category: "Video & Animation",
+    tags: ["Video Editing", "Visual Effects", "Video Art", "Logo Animation", "Character Animation", "Animated GIFs"],
     likedByUsers: [{
       "_id": "u103",
       "fullname": "David C",
@@ -521,10 +467,8 @@ const gigDemoData = [
       "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/240890002/original/ae2b1ba885e8902ae71a128e29d3ba618ecd44d3/build-react-js-next-js-website-with-tailwind-css-c3ff.png",
       "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/af599877044a6f16920afa0a136ae7ed-1691139423/screencapture-localhost-3001-2023-08-04-14_56_38/build-react-js-next-js-website-with-tailwind-css-c3ff.png"
     ],
-    tags: [
-      "Programming & Tech",
-      "Website Design",
-    ],
+    category: "Programming & Tech",
+    tags: ['Website Development', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers'],
     likedByUsers: [{
       "_id": "u103",
       "fullname": "David C",
@@ -534,19 +478,6 @@ const gigDemoData = [
 ]
 
 export default gigDemoData
-
-const allTags = [
-  "webapp",
-  "wordpress",
-  "voice-over",
-  "artisitic",
-  "proffesional",
-  "accessible",
-]
-
-function isPrimaryTag(tag) {
-  return allTags.slice(0, 3).includes(tag)
-}
 
 function loadApp() {
   socketService.on(SOCKET_EVENT_ORDER_ADDED, (order) => {
