@@ -3,21 +3,24 @@ import { useState } from "react";
 import { userService } from "../services/user.service";
 
 export function UserMiniDetail({ gig }) {
-    const [location,setLocation] = useState('');
-    async function getLocation() {
+    const [seller,setSeller] = useState(null)
+
+    useEffect(() => {
+        loadUser()
+    }, [gig.owner._id])
+
+    async function loadUser() {
+        try {
         const seller = await userService.getById(gig.owner._id)
-        setLocation(seller.location)
+        setSeller(seller)
+        } catch (err) {
+            console.log('Had issues in review list ->', err)
+            showErrorMsg('Oops cannot load review')
+            navigate('/')
+        }
     }
 
-    async function getDescUser(){
-        const seller = await userService.getById(gig.owner._id)
-        return seller.desc
-    }
-
-    useEffect(()=>{
-        getLocation()
-        getDescUser()
-    },[])
+    if(!seller) return <div>loading...</div>
 
     return (
         <section className="user-mini-detail">
@@ -43,7 +46,7 @@ export function UserMiniDetail({ gig }) {
                 <ul>
                     <li>
                         <span>From</span>
-                        <span>{location}</span>
+                        <span>{seller.location}</span>
                     </li>
                     <li>
                         <span>Member since</span>
@@ -63,7 +66,7 @@ export function UserMiniDetail({ gig }) {
                     </li>
                 </ul>
 
-                <article>{gig.owner.description}
+                <article>{seller.description}
                 </article>
             </div>
         </section>

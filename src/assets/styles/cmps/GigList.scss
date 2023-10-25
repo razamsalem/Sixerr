@@ -4,8 +4,6 @@
     grid-gap: em(32px);
 
     .gig-preview {
-        max-height: rem(362px);
-        max-width: rem(326px);
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -38,7 +36,7 @@
 
             .gig-img {
                 width: 100%;
-                height: em(200px);
+                aspect-ratio: 1.5 / 1;
                 object-fit: cover;
                 border: 1px solid #e4e5e7;
                 border-radius: 8px;
