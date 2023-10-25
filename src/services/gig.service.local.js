@@ -9,7 +9,7 @@ const STORAGE_KEY = 'gigDB'
 _createGigs()
 
 const categories = [
-    { category: "Graphics & Design", tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design', 'Landing Page Design', 'Icon Design'] },
+    { category: "Graphics & Design", tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design', 'Landing Page Design', 'Icon Design', 'Portraits & Caricatures'] },
     { category: "Programming & Tech", tags: ['Website Development', 'Business Websites', 'E-Commerce Development', 'Landing Pages', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers', 'AI Services', 'Wordpress'] },
     { category: "Digital Marketing", tags: ["Search Engine Optimization (SEO)", "Search Engine Marketing (SEM)", "Local SEO", "E-Commerce SEO", "Video SEO", "Email Marketing", "Guest Posting", "Affiliate Marketing"] },
     { category: "Video & Animation", tags: ["Video Editing", "Visual Effects", "Video Art", "Logo Animation", "Character Animation", "Animated GIFs"] },
@@ -31,7 +31,7 @@ export const gigService = {
 }
 window.gs = gigService
 
-async function query(filterBy = { txt: '', minPrice: '', maxPrice: '', category: '',tags: '' }) {
+async function query(filterBy = { txt: '', minPrice: '', maxPrice: '', category: '', tags: '' }) {
     let gigs = await storageService.query(STORAGE_KEY)
     if (filterBy.txt) {
         const regex = new RegExp(filterBy.txt, 'i')
@@ -48,7 +48,8 @@ async function query(filterBy = { txt: '', minPrice: '', maxPrice: '', category:
     }
     if (filterBy.tags) {
         gigs = gigs.filter(gig => {
-            return gig.tags.includes(filterBy.tags)})
+            return gig.tags.includes(filterBy.tags)
+        })
     }
     return gigs
 }
@@ -73,7 +74,7 @@ async function save(gig) {
 }
 
 export function getDefaultFilter() {
-    return { minPrice: '', maxPrice: '', txt: '',category: '', tags: '' }
+    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '' }
 }
 
 // async function addGigMsg(gigId, txt) {
