@@ -25,7 +25,8 @@
                 color: $dark-clr-1;
                 transition: 0.2s color;
 
-                &:hover {
+                &:hover,
+                &.selected {
                     color: $dark-clr1;
                     box-shadow: inset 0 -2.5px $accent-clr;
                 }
