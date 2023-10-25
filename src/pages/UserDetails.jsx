@@ -171,16 +171,17 @@ export function UserDetails() {
                   userGigs.push(gig)
                 }
               })}
+              {!userGigs.length && <div> <p className='empty'>Surely someone needs your service...
+                <Link className='link' to="/gig/add">create your first gig today!</Link></p>
+                {/* <Link className='link' to="/gig/add"><AddGigCard txt={'Add a gig'} /></Link> */}
+              </div>}
+
               {userGigs &&
                 <div className='gigs-list flex column'>
                   <GigList gigs={userGigs} />
-                  <Link className='link' to="/gig/add"><AddGigCard txt={'Add a Gig'} /></Link>
+                  <Link className='link' to="/gig/add"><AddGigCard txt={'Add a gig'} /></Link>
                 </div>
               }
-              {!userGigs.length && <div> <p className='empty'>Surely someone needs your service...
-                <Link className='link' to="/gig/add">create your first gig today!</Link></p>
-                <Link className='link' to="/gig/add"><AddGigCard txt={'Add Your First Gig'} /></Link>
-              </div>}
             </div>
           </div>)}
           {(!watchedUser?.isSeller && <div className="seller-gigs">
