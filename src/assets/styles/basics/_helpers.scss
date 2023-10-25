@@ -81,6 +81,34 @@
     color: $fulfilled-clr
 }
 
+.pending-label {
+    color: $light-clr;
+    background-color: $pending-clr;
+    padding: 2px 5px;
+    border-radius: 8px;
+}
+
+.approved-label {
+    color: $light-clr;
+    background-color: $accent-clr;
+    padding: 2px 5px;
+    border-radius: 8px;
+}
+
+.rejected-label {
+    color: $light-clr;
+    background-color: $error-clr;
+    padding: 2px 5px;
+    border-radius: 8px;
+}
+
+.fulfilled-label {
+    color: $light-clr;
+    background-color: $fulfilled-clr;
+    padding: 2px 5px;
+    border-radius: 8px;
+}
+
 // Media helpers
 
 .square-ratio {

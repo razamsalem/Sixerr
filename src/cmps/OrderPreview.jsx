@@ -7,10 +7,10 @@ export function OrderPreview({ order, mode, onApproveOrder, onDeclineOrder, onFu
     const profile = mode === 'buyer' ? order.seller : order.buyer
 
     function checkStatus(status) {
-        if (status === 'pending') return 'pending'
-        if (status === 'approved') return 'approved'
-        if (status === 'rejected') return 'rejected'
-        if (status === 'fulfilled') return 'fulfilled'
+        if (status === 'pending') return 'pending-label'
+        if (status === 'approved') return 'approved-label'
+        if (status === 'rejected') return 'rejected-label'
+        if (status === 'fulfilled') return 'fulfilled-label'
     }
 
     return (
