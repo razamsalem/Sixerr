@@ -350,14 +350,7 @@
             background-color: $accent-clr;
         }
     }
-
-    .loading {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%)
-    }
-
+    
     .space {
         grid-column: 2;
         background-color: $light-clr4;
