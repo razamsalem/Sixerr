@@ -10,10 +10,13 @@ import { SearchBarFilter } from './SearchBarFilter'
 import { loadOrders } from '../store/actions/order.actions'
 import { setHeaderPosition, setSubHeaderPosition } from '../store/actions/system.actions'
 import { DropdownBtn } from './DropdownBtn'
+import { gigService } from '../services/gig.service.local'
+import { setFilterBy } from "../store/actions/gig.actions"
 
 export function AppHeader() {
     const navigate = useNavigate()
     const user = useSelector(storeState => storeState.userModule.user)
+    const globalFilterBy = useSelector(storeState => storeState.gigModule.filterBy)
     const headerPosition = useSelector(storeState => storeState.systemModule.headerPosition)
     const subHeaderPosition = useSelector(storeState => storeState.systemModule.subHeaderPosition)
     const location = useLocation()
@@ -59,11 +62,15 @@ export function AppHeader() {
         }
     }, [currentPath])
 
+    function getClearFilter() {
+        return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '' }
+    }
+
     return (
         <>
             <section className={`${headerPosition} main-layout full header-container`}>
                 <header className="app-header">
-                    <Link to={'/home'} className='logo'>
+                    <Link to={'/home'} onClick={() => { setFilterBy(getClearFilter()) }} className='logo'>
                         sixerr<span className='dot'>.</span>
                     </Link>
 
@@ -100,7 +107,7 @@ export function AppHeader() {
                     </nav>
                 </header>
             </section>
-            <CategoryNav subHeaderPosition={subHeaderPosition} />
+            <CategoryNav categories={gigService.categories} globalFilterBy={globalFilterBy} setFilterBy={setFilterBy} subHeaderPosition={subHeaderPosition} />
         </>
 
     )
