@@ -9,22 +9,29 @@ import { setHeaderPosition, setSubHeaderPosition, } from '../store/actions/syste
 
 export function HomePage() {
     const revealHeaderRef = useRef()
-    const prevBtnRef = useRef()
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
-            entries.map(entry => {
-                console.log(entry.boundingClientRect)
 
-                if (entry.boundingClientRect.bottom < 0) {
+            entries.map(entry => {
+
+                if (entry.intersectionRatio === 0) {
                     setHeaderPosition('visible')
                     setSubHeaderPosition('visible')
-                } else {
+                }
+
+                if (entry.intersectionRatio <= 0.5) {
+                    setSubHeaderPosition('visible')
+
+                } else if (entry.intersectionRatio <= 0.7) {
+                    setHeaderPosition('visible')
+                }
+                else {
                     setHeaderPosition('transparent')
                     setSubHeaderPosition('transparent')
                 }
             })
-        })
+        }, { threshold: [0.5, 0.7] })
 
         observer.observe(revealHeaderRef.current)
 
