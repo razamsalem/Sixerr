@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { HeroFilter } from "./HeroFilter"
 
-export function Hero() {
+export function Hero({ revealHeaderRef }) {
     const presenters =
         [{ name: 'jenny', bgColor: '#0A4226', imgUrl: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1696433829/jenny-2x_y42jui.jpg' },
         { name: 'scarllet', bgColor: '#5F1628', imgUrl: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1696433829/scarlett-2x_vjuuid.jpg' },
@@ -31,7 +31,7 @@ export function Hero() {
             {presenters.map(presenter => {
                 return (
                     <article key={presenter.imgUrl} className="full hero-img-container" style={{ backgroundColor: `${presenter.bgColor}` }}>
-                        <div className={`cover-img ${presenter.name === currPresenter.name ? 'visible' : ''}`} style={
+                        <div ref={revealHeaderRef} className={`cover-img ${presenter.name === currPresenter.name ? 'visible' : ''}`} style={
                             { background: `url(${presenter.imgUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }
                         } />
                     </article>)

@@ -5,8 +5,8 @@ import { CategoryCard } from "./CategoryCard.jsx";
 import { NextBtn } from "./NextBtn.jsx";
 import { PrevBtn } from "./PrevBtn.jsx";
 
-export function SimpleSlider({ prevBtnRef }) {
-  
+export function SimpleSlider() {
+
   const [slidesToShow, setSlidesToShow] = useState(5);
 
   useEffect(() => {
@@ -24,9 +24,9 @@ export function SimpleSlider({ prevBtnRef }) {
       }
       else if (windowWidth >= 577) {
         setSlidesToShow(1);
-      } 
+      }
       else {
-        setSlidesToShow(5); 
+        setSlidesToShow(5);
       }
     };
 
@@ -45,7 +45,7 @@ export function SimpleSlider({ prevBtnRef }) {
     speed: 800,
     slidesToShow: slidesToShow,
     slidesToScroll: slidesToShow,
-    prevArrow: <PrevBtn prevBtnRef={prevBtnRef} />,
+    prevArrow: <PrevBtn />,
     nextArrow: <NextBtn />,
   };
   return (
