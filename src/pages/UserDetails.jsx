@@ -16,6 +16,7 @@ import { DashboardModal } from '../cmps/DashboardModal'
 import { showSuccessMsg } from '../services/event-bus.service'
 import becomeSellerBanner from '../assets/img/become-seller.svg'
 import LoadingCircle from '../cmps/LoadingCircle'
+import { AddGigCard } from '../cmps/AddGigCard'
 
 
 export function UserDetails() {
@@ -163,7 +164,7 @@ export function UserDetails() {
               <button onClick={openDashboard} className='dash-btn'>Dashboard Overview</button>
             </div>
             <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} />
-            <div className="my-gigs">
+            <div className="my-gigs ">
               <h1>My Gigs</h1>
               {gigs.map(gig => {
                 if (gig.owner._id === params.id) {
@@ -171,13 +172,15 @@ export function UserDetails() {
                 }
               })}
               {userGigs &&
-                <div>
+                <div className='gigs-list flex column'>
                   <GigList gigs={userGigs} />
+                  <Link className='link' to="/gig/add"><AddGigCard txt={'Add a Gig'} /></Link>
                 </div>
               }
               {!userGigs.length && <div> <p className='empty'>Surely someone needs your service...
-              <Link className='link' to="/gig/add">create your first gig today!</Link></p></div>}
-
+                <Link className='link' to="/gig/add">create your first gig today!</Link></p>
+                <Link className='link' to="/gig/add"><AddGigCard txt={'Add Your First Gig'} /></Link>
+              </div>}
             </div>
           </div>)}
           {(!watchedUser?.isSeller && <div className="seller-gigs">
@@ -185,7 +188,6 @@ export function UserDetails() {
               <img src={becomeSellerBanner} alt="becomeSellerBanner" className="become-seller-img" />
               <h3>Ready to earn on your own terms?</h3>
               <button onClick={() => onBecomeSeller(params.id)}>Become a seller</button>
-
             </div>
           </div>)}
         </section>
