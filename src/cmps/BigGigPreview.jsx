@@ -1,8 +1,6 @@
-import { LongTxt } from "./LongTxt"
-
 export function BigGigPreview({ gig }) {
     const defaultImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698161431/sixxer-logo_vseimk.png'
-    console.log(gig)
+
     return (
         <article className="big-gig-preview">
             <h1 className="preview-heading">Create gig</h1>

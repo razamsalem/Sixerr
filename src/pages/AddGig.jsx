@@ -7,18 +7,6 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BigGigPreview } from '../cmps/BigGigPreview'
 import { MUISelect } from '../cmps/MUISelect'
 
-const categories = [
-    "Graphics & Design",
-    "Programming & Tech",
-    "Digital Marketing",
-    "Video & Animation",
-    "Writing & Translation",
-    "Music & Audio",
-    "Business",
-    "Data",
-    "Photography"
-]
-
 export function AddGig() {
     const [gigToEdit, setGigToEdit] = useState(null)
     const [currCategory, setCurrCategory] = useState({})
