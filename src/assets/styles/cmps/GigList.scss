@@ -1,6 +1,6 @@
 .gig-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     grid-gap: em(32px);
 
     .gig-preview {
@@ -15,26 +15,27 @@
             height: 55%;
             margin-block-end: rem(18px);
 
-            .slick-slider{
+            .slick-slider {
+
                 .gallry-btn-prev,
-                .gallry-btn-next{
+                .gallry-btn-next {
                     height: 40px;
                     width: 40px;
                     font-size: 15px;
                     padding: 0;
                     top: 39%;
                 }
-                
-                .gallry-btn-prev{
+
+                .gallry-btn-prev {
                     left: em(17px);
                 }
 
-                .gallry-btn-next{
+                .gallry-btn-next {
                     right: em(17px);
                 }
 
             }
-            
+
             .gig-img {
                 width: 100%;
                 height: em(200px);

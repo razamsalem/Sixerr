@@ -1,0 +1,37 @@
+.add-gig-card {
+    position: relative;
+    height: rem(198.667px);
+    width: rem(326px);
+    background-color: $light-clr3;
+    border: 2px solid $light-clr2;
+    border-radius: 8px;
+    cursor: pointer;
+    
+    .btn-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        gap: rem(12px);
+        transition: scale 0.4s;
+        color: $accent-clr;
+        
+        .txt {
+            font-size: rem(22px);
+        }
+        
+        .icon {
+            font-size: rem(32px);
+        }
+        
+    }
+    
+    &:hover {
+        
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .btn-container {
+            scale: 1.05;
+        }
+    }
+}
