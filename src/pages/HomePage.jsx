@@ -31,7 +31,7 @@ export function HomePage() {
                     setSubHeaderPosition('transparent')
                 }
             })
-        }, { threshold: [0.5, 0.7] })
+        }, { threshold: [0.5, 0.7, 1] })
 
         observer.observe(revealHeaderRef.current)
 
