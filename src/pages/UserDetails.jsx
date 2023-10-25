@@ -3,17 +3,19 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { utilService } from '../services/util.service'
 import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
+import { storageService } from '../services/async-storage.service'
 import { loadGigs } from '../store/actions/gig.actions.js'
 import { loadUser } from '../store/user.actions'
 import { store } from '../store/store'
-import { showSuccessMsg } from '../services/event-bus.service'
 import { GigList } from '../cmps/GigList'
 import { LongTxt } from '../cmps/LongTxt'
-import becomeSellerBanner from '../assets/img/become-seller.svg'
 import { OrderList } from '../cmps/OrderList'
 import { orderService } from '../services/order.service.local'
 import { approveOrder, declineOrder, fulfillOrder, getActionUpdateOrder, updateOrder } from '../store/actions/order.actions'
 import { DashboardModal } from '../cmps/DashboardModal'
+import { showSuccessMsg } from '../services/event-bus.service'
+import becomeSellerBanner from '../assets/img/become-seller.svg'
+import LoadingCircle from '../cmps/LoadingCircle'
 
 
 export function UserDetails() {
@@ -45,9 +47,12 @@ export function UserDetails() {
   }
   // console.log(user)
 
-  function onBecomeSeller(user) {
-    const updatedUser = { ...user, isSeller: !user.isSeller }
-    store.dispatch({ type: 'SET_WATCHED_USER', user: updatedUser })
+  async function onBecomeSeller(userId) {
+    const user = await storageService.get('user', userId)
+    user.isSeller = true
+    await storageService.put('user', user)
+    location.reload()
+    return user
   }
 
   async function onApproveOrder(ev, order) {
@@ -78,6 +83,8 @@ export function UserDetails() {
       setDashboardOpen(false)
     }
   }
+
+  if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
 
   return (
     <>
@@ -175,7 +182,7 @@ export function UserDetails() {
             <div className="become-seller">
               <img src={becomeSellerBanner} alt="becomeSellerBanner" className="become-seller-img" />
               <h3>Ready to earn on your own terms?</h3>
-              <button onClick={() => onBecomeSeller(watchedUser)}>Become a seller</button>
+              <button onClick={() => onBecomeSeller(params.id)}>Become a seller</button>
 
             </div>
           </div>)}
