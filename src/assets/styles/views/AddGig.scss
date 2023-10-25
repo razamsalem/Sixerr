@@ -29,6 +29,11 @@
             .form-label {
                 min-width: 0;
 
+                .delivery-icon {
+                    margin: em(5px);
+                    color: $dark-clr-3;
+                }
+
                 input {
                     max-width: 25%;
                 }
@@ -96,7 +101,7 @@
                 &::before {
                     content: '$';
                     margin: em(5px);
-                    color: $accent-clr;
+                    color: $dark-clr-3;
                 }
             }
 

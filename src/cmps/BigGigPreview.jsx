@@ -12,8 +12,8 @@ export function BigGigPreview({ gig }) {
                 </h3>
 
                 {gig.daysToMake && <span className="detail-container delivery">
-                    <span className="title">Estimated delivery </span>
-                    <span className="estimated">{`${gig.daysToMake} Day${gig.daysToMake > 1 ? 's' : ''}`}</span>
+                    <span className="title"> Estimated delivery </span>
+                    <span className="estimated"> <i className="fa-solid fa-dolly"></i> {`${gig.daysToMake} Day${gig.daysToMake > 1 ? 's' : ''}`}</span>
                 </span>}
                 <span>
                     {gig.tags.join(', ')}

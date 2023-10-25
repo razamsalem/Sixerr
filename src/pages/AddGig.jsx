@@ -86,6 +86,7 @@ export function AddGig() {
                     <label className='form-label days-to-make'>
                         Est. Days to deliver
                         <span className='days-input'>
+                            <i className="fa-solid fa-dolly delivery-icon"></i>
                             <input type="number" max={90} onChange={handleChange} name='daysToMake' value={gigToEdit.daysToMake} />
                         </span>
                     </label>
