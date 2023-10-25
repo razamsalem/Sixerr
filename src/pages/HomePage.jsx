@@ -35,6 +35,10 @@ export function HomePage() {
 
         observer.observe(revealHeaderRef.current)
 
+        return () => {
+            observer.disconnect()
+        }
+
     }, [])
 
 
