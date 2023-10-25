@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { showErrorMsg, showSuccessMsg, showUserMsg } from '../services/event-bus.service'
 import { socketService, SOCKET_EVENT_REVIEW_ADDED } from '../services/socket.service'
 import { loadReviews, addReview, removeReview, getActionAddReview } from '../store/review.actions'
@@ -14,6 +14,7 @@ export function ReviewIndex() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [reviewToEdit, setReviewToEdit] = useState(reviewService.getEmptyReview())
   const [order, setOrder] = useState(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const params = Object.fromEntries([...searchParams])
@@ -38,7 +39,6 @@ export function ReviewIndex() {
       value = ev.target.dataset.value
     }
     if (name === 'rate') value = parseInt(value)
-
     setReviewToEdit({ ...reviewToEdit, [name]: value })
   }
 
@@ -48,6 +48,7 @@ export function ReviewIndex() {
     try {
       await addReview(reviewToEdit)
       showSuccessMsg('Review added')
+      navigate('/')
     } catch (err) {
       showErrorMsg('Cannot add review')
     }
