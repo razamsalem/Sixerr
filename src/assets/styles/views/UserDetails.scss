@@ -227,6 +227,18 @@
                     }
                 }
             }
+
+            .link {
+                display: inline-block;
+                color: #00698c;
+                font-size: 14px;
+                font-weight: 400;
+                background: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
 
         .seller-gigs {

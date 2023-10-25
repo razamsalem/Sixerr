@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useParams, Link, useLocation } from 'react-router-dom'
 import { utilService } from '../services/util.service'
 import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
 import { storageService } from '../services/async-storage.service'
@@ -175,7 +175,9 @@ export function UserDetails() {
                   <GigList gigs={userGigs} />
                 </div>
               }
-              {!userGigs.length && <div> <p className='empty'>Surely someone needs your service...create your gig today!</p> </div>}
+              {!userGigs.length && <div> <p className='empty'>Surely someone needs your service...
+              <Link className='link' to="/gig/add">create your first gig today!</Link></p></div>}
+
             </div>
           </div>)}
           {(!watchedUser?.isSeller && <div className="seller-gigs">
