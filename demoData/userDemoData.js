@@ -217,7 +217,7 @@ const demoUsers = [
   {
     _id: "u154",
     fullname: "Justin Timber",
-    imgUrl: "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/110847760/original/00bbe27e2dc6b3b34bd1a6c02b9b5867e1aff783/do-minimalist-logo-design.jpg",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/eb6eef20969192eca1d8b1301e91cb4f-1630440851285/60f03cc4-71f2-437b-a241-f9423b6e2728.jpg",
     username: "justintimber",
     password: "123",
     rate: 3.7,
@@ -238,7 +238,7 @@ const demoUsers = [
           "_id": "d105",
           "fullname": "Soaib Saim",
           "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c45eaabd0990937c721c897183c6805f-1661974546688/fc7dd1c0-d3a1-4122-826f-6758abf48a4e.png",
-          "location": "Ukrain",
+          "location": "Ukraine",
         }
       }
     ],
@@ -501,7 +501,151 @@ const demoUsers = [
       }
     ],
   },
-
+  {
+    _id: "eLxx1",
+    fullname: "Elena",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/3211eec040953b9e53d8a3104baca648-1689536066356/5f91dde3-9c16-4fb3-9aa4-bb1ff6f639f7.png",
+    username: "fred1",
+    password: "fred1",
+    rate: 4,
+    level: "basic/premium",
+    desc: "Hi reader, thanks for your time. I'm an experienced young artist and i specialize in 3D animation, graphic designing and pencil Art. I'm familiar with word processing application. Kindly hit me up if if you need any of my services.",
+    isSeller: true,
+    location: 'United states',
+    lang: ['English', 'Hebrew'],
+    reviews: [
+      {
+        "id": "xid12x",
+        "gig": "{optional-mini-gig}",
+        "txt": "Good service, a little slow..",
+        "rate": 4,
+        "createdAt": 1693993927315,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u102",
+          "fullname": "Jhon I",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696584327/qcw1ydkltzywb3g4s5ty.jpg",
+          "location": "United States",
+        },
+      }
+    ],
+  },
+  {
+    _id: "tHx1l",
+    fullname: "Thomas C",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/429c1a9395f66cd8a36b38028ff35aa6-1550219507580/db25059c-6725-4e49-bf82-fa4d2af0a780.jpg",
+    username: "thomasC11",
+    password: "thomas-boy",
+    rate: 5,
+    level: "basic/premium",
+    desc: "Test. Scale. Win. We are a team of entrepreneurs at heart, certified experts working across 6 different timezones with 17 years of e-commerce experience. While your competition sleeps, we’re working on getting you ahead. Our data-driven tactics, and proven playbooks, paired with the skill set of our team’s top 2% talents yield impressive sales results your CFO won’t be able to ignore!",
+    isSeller: true,
+    location: 'United states',
+    lang: ['English'],
+    reviews: [
+      {
+        "id": "rev1",
+        "gig": "{optional-mini-gig}",
+        "txt": "Great work, thank you very much for the amazing results Mr.Thomas!",
+        "rate": 5,
+        "createdAt": 1674493927315,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u154",
+          "fullname": "Justin Timber",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/eb6eef20969192eca1d8b1301e91cb4f-1630440851285/60f03cc4-71f2-437b-a241-f9423b6e2728.jpg",
+          "location": "Canada",
+        },
+      }
+    ],
+  },
+  {
+    _id: "tHx1l",
+    fullname: "Thomas C",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/429c1a9395f66cd8a36b38028ff35aa6-1550219507580/db25059c-6725-4e49-bf82-fa4d2af0a780.jpg",
+    username: "thomasC11",
+    password: "thomas-boy",
+    rate: 5,
+    level: "basic/premium",
+    desc: "Test. Scale. Win. We are a team of entrepreneurs at heart, certified experts working across 6 different timezones with 17 years of e-commerce experience. While your competition sleeps, we’re working on getting you ahead. Our data-driven tactics, and proven playbooks, paired with the skill set of our team’s top 2% talents yield impressive sales results your CFO won’t be able to ignore!",
+    isSeller: true,
+    location: 'United states',
+    lang: ['English'],
+    reviews: [
+      {
+        "id": "rev1",
+        "gig": "{optional-mini-gig}",
+        "txt": "Great work, thank you very much for the amazing results Mr.Thomas!",
+        "rate": 5,
+        "createdAt": 1674493927315,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u154",
+          "fullname": "Justin Timber",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/eb6eef20969192eca1d8b1301e91cb4f-1630440851285/60f03cc4-71f2-437b-a241-f9423b6e2728.jpg",
+          "location": "Canada",
+        },
+      }
+    ],
+  },
+  {
+    _id: "Hssx1l",
+    fullname: "Haseeb",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/7db1f7dfd20c7a062df2b095e73caeef-1664639608927/bdfede03-50b3-463f-9f40-72ba79608605.jpg",
+    username: "HassaMan",
+    password: "LettuceIsTheBest",
+    rate: 3,
+    level: "basic/premium",
+    desc: "Hello everyone! Haseeb ul Hassan is here. Am loves to work on amazon storefront, enhanced brand content (EBC/A+ content) and Amazon Infographics. Just drop a message to see work sample. Thank you :)",
+    isSeller: true,
+    location: 'India',
+    lang: ['English', 'Hindu'],
+    reviews: [
+      {
+        "id": "rev2",
+        "gig": "{optional-mini-gig}",
+        "txt": "Good enough for the price, the results have been okay but i expected more.",
+        "rate": 4,
+        "createdAt": 1684493927315,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u154",
+          "fullname": "Justin Timber",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/eb6eef20969192eca1d8b1301e91cb4f-1630440851285/60f03cc4-71f2-437b-a241-f9423b6e2728.jpg",
+          "location": "Canada",
+        },
+      }
+    ],
+  },
+  {
+    _id: "yox1l",
+    fullname: "Yomi",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4b7fe17dde65726409810dd2541769c4-1681190210085/1f9751ab-3804-48b7-a2ec-7eabe5361ad8.jpg",
+    username: "yomiflex",
+    password: "flex",
+    rate: 5,
+    level: "basic/premium",
+    desc: "Hey there! Nice to meet you, my name is Yomi. I create business documentaries on my YouTube channel @NaijaBoss. I can provide you any content creation services you might need. Shoot me a message with your requirements and lets get to work.",
+    isSeller: true,
+    location: 'United states',
+    lang: ['English'],
+    reviews: [
+      {
+        "id": "rev3",
+        "gig": "{optional-mini-gig}",
+        "txt": "Yomi helped me create my dream youtube channel in no time, provided awesome service and i even found a friend for life :)",
+        "rate": 5,
+        "createdAt": 1694493927315,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u154",
+          "fullname": "Justin Timber",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/eb6eef20969192eca1d8b1301e91cb4f-1630440851285/60f03cc4-71f2-437b-a241-f9423b6e2728.jpg",
+          "location": "Canada",
+        },
+      }
+    ],
+  },
 ]
 
 export default demoUsers

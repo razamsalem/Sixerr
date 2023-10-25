@@ -9,16 +9,17 @@ const STORAGE_KEY = 'gigDB'
 _createGigs()
 
 const categories = [
-    { category: "Graphics & Design", tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design', 'Landing Page Design', 'Icon Design', 'Portraits & Caricatures'] },
-    { category: "Programming & Tech", tags: ['Website Development', 'Business Websites', 'E-Commerce Development', 'Landing Pages', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers', 'AI Services', 'Wordpress'] },
-    { category: "Digital Marketing", tags: ["Search Engine Optimization (SEO)", "Search Engine Marketing (SEM)", "Local SEO", "E-Commerce SEO", "Video SEO", "Email Marketing", "Guest Posting", "Affiliate Marketing"] },
-    { category: "Video & Animation", tags: ["Video Editing", "Visual Effects", "Video Art", "Logo Animation", "Character Animation", "Animated GIFs"] },
-    { category: "Writing & Translation", tags: ["Articles & Blog Posts", "Content Strategy", "Proofreading & Editing", "AI Content Editing", "Book Editing", "Beta Reading", "Writing Advice", "Career Writing", "Resume Writing", "Cover Letters", "LinkedIn Profiles"] },
-    { category: "Music & Audio", tags: ["Music Production & Writing", "Producers & Composers", "Singers & Vocalists", "Session Musicians", "Songwriters", "Beat Making", "Voice Over & Narration", "DJing", "DJ Drops & Tags", "DJ Mixing", "Remixing & Mashups", "Mixing & Mastering", "Audio Editing"] },
-    { category: "Business", tags: ["General & Administrative Virtual Assistant", "E-Commerce Management", "HR Consulting", "Project Management", "Business Formation", "Business Registration"] },
-    { category: "Data", tags: ["Data Science & ML", "Machine Learning", "Data Collection", "Data Entry", "Data Mining & Scraping", "Data Annotation"] },
-    { category: "Photography", tags: ["Products & Lifestyle", "Product Photographers", "Food Photographers", "Lifestyle & Fashion Photographers", "Portrait Photographers", "Event Photographers", "Real Estate Photographers", "Scenic Photographers"] }
-]
+    { category: 'Graphics & Design', tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design', 'Landing Page Design', 'Icon Design', 'Portraits & Caricatures'] },
+    { category: 'Programming & Tech', tags: ['Website Development', 'Business Websites', 'E-Commerce Development', 'Landing Pages', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers', 'AI Services', 'Wordpress'] },
+    { category: 'Digital Marketing', tags: ['Video Marketing', 'E-Commerce Marketing', 'Search Engine Optimization (SEO)', 'Search Engine Marketing (SEM)', 'Local SEO', 'E-Commerce SEO', 'Video SEO', 'Email Marketing', 'Guest Posting', 'Affiliate Marketing'] },
+    { category: 'Video & Animation', tags: ['Video Editing', 'Visual Effects', 'Video Art', 'Logo Animation', 'Character Animation', 'Animated GIFs'] },
+    { category: 'Writing & Translation', tags: ['Articles & Blog Posts', 'Content Strategy', 'Proofreading & Editing', 'AI Content Editing', 'Book Editing', 'Beta Reading', 'Writing Advice', 'Career Writing', 'Resume Writing', 'Cover Letters', 'LinkedIn Profiles'] },
+    { category: 'Music & Audio', tags: ['Music Production & Writing', 'Producers & Composers', 'Singers & Vocalists', 'Session Musicians', 'Songwriters', 'Beat Making', 'Voice Over & Narration', 'DJing', 'DJ Drops & Tags', 'DJ Mixing', 'Remixing & Mashups', 'Mixing & Mastering', 'Audio Editing'] },
+    { category: 'Business', tags: ['General & Administrative Virtual Assistant', 'E-Commerce Management', 'HR Consulting', 'Project Management', 'Business Formation', 'Business Registration'] },
+    { category: 'Data', tags: ['Data Science & ML', 'Machine Learning', 'Data Collection', 'Data Entry', 'Data Mining & Scraping', 'Data Annotation'] },
+    { category: 'Photography', tags: ['Products & Lifestyle', 'Product Photographers', 'Food Photographers', 'Lifestyle & Fashion Photographers', 'Portrait Photographers', 'Event Photographers', 'Real Estate Photographers', 'Scenic Photographers'] }
+];
+
 
 export const gigService = {
     query,

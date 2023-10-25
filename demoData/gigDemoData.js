@@ -458,6 +458,141 @@ const gigDemoData = [
       "imgUrl": "/img/img3.jpg"
     }]
   },
+  {
+    _id: "iz10",
+    title: "I will rank etsy listing with etsy seo title and tags",
+    price: 10,
+    packages: {
+      basic: {
+        desc: 'Search Engine Optimized 13 Targeted (Niche Specific) , Title up to 140 Char',
+        features: ['E-commerce seo audit', '1 page', 'Title optimization', 'Meta tags optimization']
+      }
+    },
+    owner: {
+      "_id": "eLxx1",
+      "fullname": "Elena",
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/3211eec040953b9e53d8a3104baca648-1689536066356/5f91dde3-9c16-4fb3-9aa4-bb1ff6f639f7.png",
+      "level": "basic/premium",
+      "rate": 5
+    },
+    daysToMake: 3,
+    "description": `Hit your targets and maximize your potential with an Etsy SEO Expert
+    🚀I'm an experienced SEO expert and digital marketing consultant specializing in web content writing and e-commerce. Since 2018, I've helped over 2000 Etsy stores thrive and assisted numerous businesses in achieving 7-figure revenues. 💰My tailored approach to SEO and marketing strategies can help take your business to the next level. Trust in my attention to detail and commitment to your success. ✨Let's work together to build your online presence and achieve your goals. 📈 Contact me now.`,
+
+    imgUrls: [
+      "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/225947725/original/adbec7dda710a953a6675b5a74a48aa1fc8a3c79/rank-etsy-listing-with-etsy-seo-title-and-tags.png",
+      "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/225947725/original/863a509d59928b90d89c3af346baabf3ed33f85e/rank-etsy-listing-with-etsy-seo-title-and-tags.png",
+      "https://fiverr-res.cloudinary.com/image/upload/w_1260,q_auto,f_auto,pg_1/20230201/rank-etsy-listing-with-etsy-seo-title-and-tags_rrbfvm"
+    ],
+    category: "Digital Marketing",
+    tags: ['E-Commerce Marketing', 'E-Commerce SEO', 'Video SEO', 'Email Marketing', 'Guest Posting'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
+    _id: "iz11",
+    title: "I will design converting amazon listing enhanced brand content ebc a plus product page",
+    price: 245,
+    packages: {
+      basic: {
+        desc: 'Per A+ Page - Up to 3 modules (The A+ Page may be suitable for multiple products)',
+        features: ['1 keyword researched', '1 competitor researched']
+      }
+    },
+    owner: {
+      "_id": "tHx1l",
+      "fullname": "Thomas C",
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/429c1a9395f66cd8a36b38028ff35aa6-1550219507580/db25059c-6725-4e49-bf82-fa4d2af0a780.jpg",
+      "level": "basic/premium",
+      "rate": 5
+    },
+    daysToMake: 10,
+    "description": `Top Ecommerce Experts here to help scale your business
+    Test. Scale. Win. We are a team of entrepreneurs at heart, certified experts working across 6 different timezones with 17 years of e-commerce experience. While your competition sleeps, we’re working on getting you ahead. Our data-driven tactics, and proven playbooks`,
+
+    imgUrls: [
+      "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/243918182/original/3f74886dad3b74e99fcb661cf74855ac8ca7d3f1/create-amazing-amazon-a-plus-content-ebc.jpg",
+      "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs3/243918182/original/7434b6ebcc4f806a3537a88acf49cafa59a28ae0/create-amazing-amazon-a-plus-content-ebc.jpg",
+      "https://fiverr-res.cloudinary.com/image/upload/w_1260,q_auto,f_auto,pg_1/20230727/ScaledOn_AmazonAplus_EBC_compressed%20(1)_xqghfq"
+    ],
+    category: "Digital Marketing",
+    tags: ['E-Commerce Marketing', 'E-Commerce SEO', 'Video SEO', 'Email Marketing'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
+    _id: "iz12",
+    title: "I will set up your etsy shop,add listings, SEO or do a complete overhaul",
+    price: 40,
+    packages: {
+      basic: {
+        desc: 'I will do complete etsy setup + 5 Products listings+ Complete products SEO',
+        features: ['E-commerce seo audit', '5 pages', 'Title optimization', 'Meta tags optimization', 'Product description']
+      }
+    },
+    owner: {
+      "_id": "Hssx1l",
+      "fullname": "Haseeb",
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/7db1f7dfd20c7a062df2b095e73caeef-1664639608927/bdfede03-50b3-463f-9f40-72ba79608605.jpg",
+      "level": "basic/premium",
+      "rate": 3
+    },
+    daysToMake: 4,
+    "description": 'I will set up your Etsy shop, add listings, will do complete ETSY SEO or do a complete overhaul.',
+
+    imgUrls: [
+      "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/220554120/original/6cf0c27a96274bda696ab3173820032e14d8c937/set-up-your-etsy-shop-and-do-a-complete-product-optimization.jpg",
+      "https://fiverr-res.cloudinary.com/images/w_1260,q_auto,f_auto,pg_1/attachments/delivery/asset/a5f4e5f55b9c9d0df648891d6456cf24-1698157629/Description%20Report%20(3)-1/set-up-your-etsy-shop-and-do-a-complete-product-optimization",
+      "https://fiverr-res.cloudinary.com/images/w_1260,q_auto,f_auto,pg_1/attachments/delivery/asset/8e4594621f7021e710346d43dba0a4db-1697645573/sjoyas%20%20Description_-1/set-up-your-etsy-shop-and-do-a-complete-product-optimization"
+    ],
+    category: "Digital Marketing",
+    tags: ['E-Commerce Marketing', 'E-Commerce SEO', 'Video SEO', 'Email Marketing'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
+    _id: "iz13",
+    title: "I will create cash cow automated youtube channel and videos for you",
+    price: 60,
+    packages: {
+      basic: {
+        desc: 'I will create and setup your channel for you including - Logo and Banner - Tags',
+        features: ['Setup & integrations', 'Channel evaluation', 'Content creation', 'Action plan', 'Reporting']
+      }
+    },
+    owner: {
+      "_id": "yox1l",
+      "fullname": "Yomi",
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4b7fe17dde65726409810dd2541769c4-1681190210085/1f9751ab-3804-48b7-a2ec-7eabe5361ad8.jpg",
+      "level": "basic/premium",
+      "rate": 5
+    },
+    daysToMake: 4,
+    "description": `So you want to start a cash cow channel?
+    Welcome to my YT cash cow gig! As an experienced YT marketer, I can help you turn your cash cow idea into a profitable business. Do you have a burning desire to upload content and make money passively from it. Just like Real estate you can make your money work for you by creating awesome cash cow channels that generate passive income long after they've been created.`,
+
+    imgUrls: [
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/314224924/original/c30df15697c8b951375f964a9c2d8d859743443c/create-cash-cow-automated-youtube-channel-and-videos-for-you.jpeg",
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/314224924/original/cae8fbe9d2cac76f52df15a06fd32ccef5699ac9/create-cash-cow-automated-youtube-channel-and-videos-for-you.jpeg",
+      "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/7e98976d4b7faea4ba7dfdb249418164-1684407730/IMG-20230513-WA0008/create-cash-cow-automated-youtube-channel-and-videos-for-you.jpg"
+    ],
+    category: "Digital Marketing",
+    tags: ['Video Marketing', 'E-Commerce Marketing', 'E-Commerce SEO', 'Video SEO', 'Email Marketing'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
 ]
 
 export default gigDemoData
