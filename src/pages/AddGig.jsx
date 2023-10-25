@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router'
 import { gigService } from '../services/gig.service.local'
 import { ImgUploader } from '../cmps/ImgUploader'
 import { MultiSelect } from '../cmps/MultiSelect'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BigGigPreview } from '../cmps/BigGigPreview'
-import { useNavigate } from 'react-router'
+import { MUISelect } from '../cmps/MUISelect'
 
 const categories = [
     "Graphics & Design",
@@ -18,14 +19,19 @@ const categories = [
     "Photography"
 ]
 
-
 export function AddGig() {
     const [gigToEdit, setGigToEdit] = useState(null)
+    const [currCategory, setCurrCategory] = useState({})
     const navigate = useNavigate()
 
     useEffect(() => {
         setGigToEdit(gigService.getEmptyGig())
     }, [])
+
+    useEffect(() => {
+        if (gigToEdit && gigToEdit.category) setCurrCategory(gigService.categories.find(c => c.category === gigToEdit.category))
+    }, [gigToEdit])
+
 
     function handleChange(ev) {
         let { name, value } = ev.target
@@ -42,11 +48,15 @@ export function AddGig() {
         setGigToEdit({ ...gigToEdit, ['imgUrls']: [...gigToEdit.imgUrls, imgUrl] })
     }
 
-    function onChooseTag(ev) {
+    function onSelectTag(ev) {
         let { value } = ev.target
         setGigToEdit({ ...gigToEdit, tags: [...value] })
     }
 
+    function onSelectCategory(ev) {
+        let { value } = ev.target
+        setGigToEdit({ ...gigToEdit, category: value })
+    }
 
     async function onSaveGig(ev) {
         ev.preventDefault()
@@ -56,7 +66,7 @@ export function AddGig() {
             showSuccessMsg(`Added a new gig! ${savedGig._id}`)
             navigate(`/gig/${savedGig._id}`)
         } catch (err) {
-            console.log(err)
+            showErrorMsg('Cannot add gig at this time..')
         }
 
     }
@@ -77,8 +87,12 @@ export function AddGig() {
                     <input type="text" onChange={handleChange} name='description' value={gigToEdit.description} maxLength={140} placeholder='Provided service will include...' />
                 </label>
                 <label className='form-label tags'>
+                    Select Category
+                    <MUISelect categories={gigService.categories} selectCategory={onSelectCategory} selectedCategory={gigToEdit.category}></MUISelect>
+                </label>
+                <label className='form-label tags'>
                     Category tags
-                    <MultiSelect tags={categories} onChooseTag={onChooseTag} chosenTags={gigToEdit.tags} />
+                    <MultiSelect tags={currCategory.tags || []} onChooseTag={onSelectTag} chosenTags={gigToEdit.tags} />
                 </label>
                 <span className='numbers'>
                     <label className='form-label days-to-make'>
