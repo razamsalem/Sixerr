@@ -155,7 +155,7 @@ const gigDemoData = [
       "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/2131c99e84445627699efdb41726ad37-1674708252/localhost-3000-landing-%20(2)/figma-to-react-website-tailwind-css-xd-psd-nextjs-mern-bootstrap-redux-native.jpg"
     ],
     category: "Programming & Tech",
-    tags: ['Website Development', 'Business Websites', 'E-Commerce Development', 'Landing Pages', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers'],
+    tags: ['AI Services', 'Website Development', 'Business Websites', 'E-Commerce Development', 'Landing Pages', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers'],
     likedByUsers: [{
       "_id": "u102",
       "fullname": "Michelle R",
@@ -195,7 +195,7 @@ const gigDemoData = [
       "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/2131c99e84445627699efdb41726ad37-1674708252/localhost-3000-landing-%20(2)/figma-to-react-website-tailwind-css-xd-psd-nextjs-mern-bootstrap-redux-native.jpg"
     ],
     category: "Programming & Tech",
-    tags: ['Website Development', 'E-Commerce Development', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers'],
+    tags: ['Wordpress', 'Website Development', 'E-Commerce Development', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers'],
     likedByUsers: [{
       "_id": "u103",
       "fullname": "David C",

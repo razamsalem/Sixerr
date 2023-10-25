@@ -10,7 +10,7 @@ _createGigs()
 
 const categories = [
     { category: "Graphics & Design", tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design', 'Landing Page Design', 'Icon Design'] },
-    { category: "Programming & Tech", tags: ['Website Development', 'Business Websites', 'E-Commerce Development', 'Landing Pages', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers'] },
+    { category: "Programming & Tech", tags: ['Website Development', 'Business Websites', 'E-Commerce Development', 'Landing Pages', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers', 'AI Services', 'Wordpress'] },
     { category: "Digital Marketing", tags: ["Search Engine Optimization (SEO)", "Search Engine Marketing (SEM)", "Local SEO", "E-Commerce SEO", "Video SEO", "Email Marketing", "Guest Posting", "Affiliate Marketing"] },
     { category: "Video & Animation", tags: ["Video Editing", "Visual Effects", "Video Art", "Logo Animation", "Character Animation", "Animated GIFs"] },
     { category: "Writing & Translation", tags: ["Articles & Blog Posts", "Content Strategy", "Proofreading & Editing", "AI Content Editing", "Book Editing", "Beta Reading", "Writing Advice", "Career Writing", "Resume Writing", "Cover Letters", "LinkedIn Profiles"] },
@@ -45,6 +45,9 @@ async function query(filterBy = { txt: '', minPrice: '', maxPrice: '', category:
     }
     if (filterBy.category) {
         gigs = gigs.filter(gig => gig.category === filterBy.category)
+    }
+    if (filterBy.tags) {
+        gigs = gigs.filter(gig => gig.tags.includes(filterBy.tags))
     }
     return gigs
 }
