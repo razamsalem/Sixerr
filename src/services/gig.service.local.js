@@ -46,6 +46,9 @@ async function query(filterBy = { txt: '', minPrice: '', maxPrice: '', category:
     if (filterBy.category) {
         gigs = gigs.filter(gig => gig.category === filterBy.category)
     }
+    if (filterBy.tags) {
+        gigs = gigs.filter(gig => gig.tags.includes(filterBy.tags))
+    }
     return gigs
 }
 

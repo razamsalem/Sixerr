@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
 import { PopularTags } from "./PopularTags";
 import { SearchBarFilter } from "./SearchBarFilter";
+import { setFilterBy } from "../store/actions/gig.actions"
 
 export function HeroFilter() {
+    const globalFilterBy = useSelector(storeState => storeState.gigModule.filterBy)
 
     return (
         <section className="hero-cover">
@@ -11,7 +14,7 @@ export function HeroFilter() {
             <section className="search-bar-container">
                 <SearchBarFilter />
             </section>
-            <PopularTags />
+            <PopularTags globalFilterBy={globalFilterBy} setFilterBy={setFilterBy} />
         </section>
     )
 }
