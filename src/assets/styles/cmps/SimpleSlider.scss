@@ -6,7 +6,18 @@
 //     justify-content: center;
 //     padding: 100px 0px;
 // }
-
+@media (min-width: 768px) {
+    .slider-home {
+      /* Styles for screens wider than 768px */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .slider-home {
+      /* Styles for screens wider than 1024px */
+    }
+  }
 .slider-home {
     margin-block-end: rem(96px);
+    
 }

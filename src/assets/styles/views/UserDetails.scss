@@ -2,6 +2,7 @@
     display: flex;
     background-color: $user-bgclr;
     gap: rem(100px);
+    padding-block-end: rem(18px);
 
     .user-details {
         margin-inline-start: 12.063rem;
@@ -30,6 +31,7 @@
                         width: 100%;
                         border-radius: 50%;
                     }
+                    
                 }
 
                 .username-info {
@@ -226,6 +228,10 @@
                         text-decoration: underline;
                     }
                 }
+            }
+
+            .gigs-list {
+                gap: rem(16px);
             }
 
             .link {

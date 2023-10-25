@@ -15,9 +15,9 @@ export function ReviewList({gigOwnerId}) {
     }, [gigOwnerId])
 
     async function loadUser() {
-        const seller = await userService.getById(gigOwnerId)
         try {
-            setSeller(seller)
+        const seller = await userService.getById(gigOwnerId)
+        setSeller(seller)
         } catch (err) {
             console.log('Had issues in review list ->', err)
             showErrorMsg('Oops cannot load review')
