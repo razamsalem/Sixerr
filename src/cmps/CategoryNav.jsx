@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 export function CategoryNav({ categories, setFilterBy, globalFilterBy, subHeaderPosition }) {
 
     function onSetFilterBy(category) {
-        setFilterBy({ ...globalFilterBy, category })
+        setFilterBy({ ...globalFilterBy, tags: '', category })
     }
 
     return (
