@@ -87,7 +87,6 @@ export function AppHeader() {
                             <>
                                 <NavLink className='btn' key={'order'} to={'order'}>Orders</NavLink>
                                 <span className="user-info">
-
                                     <DropdownBtn icon={<img src={user.imgUrl} />}>
                                         <NavLink to={`user/${user._id}`}>
                                             Profile
@@ -96,7 +95,6 @@ export function AppHeader() {
                                             Logout
                                         </span>
                                     </DropdownBtn>
-
                                 </span>
                             </>
 
