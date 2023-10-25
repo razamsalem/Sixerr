@@ -3,18 +3,19 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { utilService } from '../services/util.service'
 import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
+import { storageService } from '../services/async-storage.service'
 import { loadGigs } from '../store/actions/gig.actions.js'
 import { loadUser } from '../store/user.actions'
 import { store } from '../store/store'
-import { showSuccessMsg } from '../services/event-bus.service'
 import { GigList } from '../cmps/GigList'
 import { LongTxt } from '../cmps/LongTxt'
 import { OrderList } from '../cmps/OrderList'
 import { orderService } from '../services/order.service.local'
 import { approveOrder, declineOrder, fulfillOrder, getActionUpdateOrder, updateOrder } from '../store/actions/order.actions'
 import { DashboardModal } from '../cmps/DashboardModal'
+import { showSuccessMsg } from '../services/event-bus.service'
 import becomeSellerBanner from '../assets/img/become-seller.svg'
-import { storageService } from '../services/async-storage.service'
+import LoadingCircle from '../cmps/LoadingCircle'
 
 
 export function UserDetails() {
@@ -82,6 +83,8 @@ export function UserDetails() {
       setDashboardOpen(false)
     }
   }
+
+  if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
 
   return (
     <>
