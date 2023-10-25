@@ -31,7 +31,7 @@ export const gigService = {
 }
 window.gs = gigService
 
-async function query(filterBy = { txt: '', minPrice: '', maxPrice: '', category: '' }) {
+async function query(filterBy = { txt: '', minPrice: '', maxPrice: '', category: '',tags: '' }) {
     let gigs = await storageService.query(STORAGE_KEY)
     if (filterBy.txt) {
         const regex = new RegExp(filterBy.txt, 'i')
@@ -47,7 +47,8 @@ async function query(filterBy = { txt: '', minPrice: '', maxPrice: '', category:
         gigs = gigs.filter(gig => gig.category === filterBy.category)
     }
     if (filterBy.tags) {
-        gigs = gigs.filter(gig => gig.tags.includes(filterBy.tags))
+        gigs = gigs.filter(gig => {
+            return gig.tags.includes(filterBy.tags)})
     }
     return gigs
 }
@@ -72,7 +73,7 @@ async function save(gig) {
 }
 
 export function getDefaultFilter() {
-    return { minPrice: '', maxPrice: '', txt: '' }
+    return { minPrice: '', maxPrice: '', txt: '',category: '', tags: '' }
 }
 
 // async function addGigMsg(gigId, txt) {

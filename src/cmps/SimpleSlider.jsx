@@ -4,7 +4,7 @@ import demoCards from '../../demoData/cardsGalleryDemoData.js';
 import { CategoryCard } from "./CategoryCard.jsx";
 import { NextBtn } from "./NextBtn.jsx";
 import { PrevBtn } from "./PrevBtn.jsx";
-
+import { useSelector } from "react-redux";
 export function SimpleSlider({ prevBtnRef }) {
   const settings = {
     dots: false,
@@ -15,7 +15,6 @@ export function SimpleSlider({ prevBtnRef }) {
     prevArrow: <PrevBtn prevBtnRef={prevBtnRef} />,
     nextArrow: <NextBtn />,
   };
-
 
   return (
     <section className="slider-home">

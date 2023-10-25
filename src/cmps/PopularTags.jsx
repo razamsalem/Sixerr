@@ -7,7 +7,7 @@ export function PopularTags({ globalFilterBy, setFilterBy }) {
         <div className="popular">
             Popular:
             <ul>
-                {tags.map(tag => <li key={tag}><Link to={'/gig'} onClick={() => { setFilterBy({ ...globalFilterBy, tags: [tag] }) }} className="btn">{tag}</Link></li>)}
+                {tags.map(tag => <li key={tag}><Link to={`/gig?tags=${tag}`}  className="btn">{tag}</Link></li>)}
             </ul>
         </div>
     )
