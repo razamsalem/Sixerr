@@ -76,7 +76,7 @@ async function changeScore(by) {
 }
 
 function saveLocalUser(user) {
-    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, score: user.score }
+    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, location: user.location, isSeller: user.isSeller }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
@@ -85,15 +85,15 @@ function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 
-function getEmptyUser(){
+function getEmptyUser() {
     return {
-            fullname: '',
-            username: '',
-            password: '',
-            desc: '',
-            isSelller: '',
-            location: 'Israel',
-            reviews: []
+        fullname: '',
+        username: '',
+        password: '',
+        desc: '',
+        isSeller: '',
+        location: 'Israel',
+        reviews: []
     }
 }
 

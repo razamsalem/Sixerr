@@ -52,8 +52,10 @@ export function userReducer(state = initialState, action) {
             break
         case SET_USER_GIGS:
             newState = { ...state, userGigs: action.userGigs }
+            break
         case SET_MODAL_OPEN:
             newState = { ...state, isUserModalOpen: action.isOpen }
+            break
         default:
     }
     // For debug:
