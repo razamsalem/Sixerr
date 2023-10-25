@@ -593,6 +593,71 @@ const gigDemoData = [
       "imgUrl": "/img/img3.jpg"
     }]
   },
+  {
+    _id: "iz14",
+    title: "I will assist you in your work, write articles and blogs in spanish, french and german",
+    price: 20,
+    packages: {
+      basic: {
+        desc: 'Write 400 words articles and blog in English ,French ,German , Portuguese , Italian , Spanish',
+        features: ['Topic research', 'SEO keywords', 'References & citations', 'Plagiarism check']
+      }
+    },
+    owner: {
+      "_id": "yox1l",
+      "fullname": "Yomi",
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4b7fe17dde65726409810dd2541769c4-1681190210085/1f9751ab-3804-48b7-a2ec-7eabe5361ad8.jpg",
+      "level": "basic/premium",
+      "rate": 5
+    },
+    daysToMake: 1,
+    "description": "If you are looking for someone to get your message across powerfully in articles, blog posts, or marketing material, I am the content writer you need. Let me exploit the opportunity by offering you something phenomenal.",
+
+    imgUrls: [
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/75425541/original/7fd2f9f18010049c4542eca6d17e9928f9e824f7/write-a-600-words-blog-article-for-you.png",
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/311077441/original/58ceec9b19071bbad4ade18f293e5e2250db633f/write-your-way-to-the-top-seo-article-writer.png",
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/311077441/original/38265386757a38d582e1eba680964898f41c5018/write-your-way-to-the-top-seo-article-writer.png"
+    ],
+    category: "Writing & Translation",
+    tags: ['Articles & Blog Posts', 'Content Strategy'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
+    _id: "iz15",
+    title: "I will make you 3 catchy producer beat tags",
+    price: 10,
+    packages: {
+      basic: {
+        desc: '3 Phrases with and without effects High Quality Catchy',
+        features: ['Fast delivery', 'Accepted Revisions', 'Crisp audio', 'Fire tags🔥🚒']
+      }
+    },
+    owner: {
+      "_id": "aax1lr",
+      "fullname": "Aaron B",
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/e0c3546285a4bcc29110abed89772c7c-1648494595657/9d64cf71-f097-4e6a-9670-97afdd1168f8.jpg",
+      "level": "basic/premium",
+      "rate": 4.9
+    },
+    daysToMake: 2,
+    "description": "I will do a custom male vocal tag. I will send you the wav record with and without your preferred impacts, for example, reverb, delay, falter, flanger, and so on. Included on Worldstar, Youtube and then some. I have a very high quality sounding mic and have had skill using Fl Stdudio for over 3 years now!",
+
+    imgUrls: [
+      "https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/irtl09xznjclicrdqd1p/make-you-a-catchy-producer-tag.png",
+      "https://fiverr-res.cloudinary.com/q_auto,f_auto,dpr_2.0/general_assets/gig_gallery_package/assets/audio-delivery-bg.png",
+    ],
+    category: "Music & Audio",
+    tags: ['DJing', 'DJ Drops & Tags', 'DJ Mixing', 'Remixing & Mashups', 'Mixing & Mastering', 'Audio Editing'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
 ]
 
 export default gigDemoData

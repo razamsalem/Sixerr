@@ -646,6 +646,35 @@ const demoUsers = [
       }
     ],
   },
+  {
+    _id: "aax1lr",
+    fullname: "Aaron B",
+    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/e0c3546285a4bcc29110abed89772c7c-1648494595657/9d64cf71-f097-4e6a-9670-97afdd1168f8.jpg",
+    username: "goonin",
+    password: "gooninflex",
+    rate: 4.9,
+    level: "basic/premium",
+    desc: "Thank you for checking out my profile! I am an audio engineer based out of Seattle, Washington. I have been designing, mixing and producing videos and graphics throughout my life. I love helping out small producers fulfilling their dream, and seeing other people enjoy any of my products always puts a smile on my face! :)",
+    isSeller: true,
+    location: 'United states',
+    lang: ['English'],
+    reviews: [
+      {
+        "id": "rev4",
+        "gig": "{optional-mini-gig}",
+        "txt": "Aaron delivered for sure. Fast comms, went beyond the advertised service. Got more than I asked for, great customer service. Definitely got a lot of material I can work with. Really fair pricing, especially compared to what you get. Would recommend without a doubt. Keep up the good work Aaron.",
+        "rate": 5,
+        "createdAt": 1694493927315,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u154",
+          "fullname": "Yomi",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4b7fe17dde65726409810dd2541769c4-1681190210085/1f9751ab-3804-48b7-a2ec-7eabe5361ad8.jpg",
+          "location": "Canada",
+        },
+      }
+    ],
+  },
 ]
 
 export default demoUsers
