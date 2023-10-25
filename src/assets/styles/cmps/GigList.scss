@@ -1,11 +1,9 @@
 .gig-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: em(32px);
 
     .gig-preview {
-        max-height: rem(362px);
-        max-width: rem(326px);
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -15,29 +13,30 @@
             height: 55%;
             margin-block-end: rem(18px);
 
-            .slick-slider{
+            .slick-slider {
+
                 .gallry-btn-prev,
-                .gallry-btn-next{
+                .gallry-btn-next {
                     height: 40px;
                     width: 40px;
                     font-size: 15px;
                     padding: 0;
                     top: 39%;
                 }
-                
-                .gallry-btn-prev{
+
+                .gallry-btn-prev {
                     left: em(17px);
                 }
 
-                .gallry-btn-next{
+                .gallry-btn-next {
                     right: em(17px);
                 }
 
             }
-            
+
             .gig-img {
                 width: 100%;
-                height: em(200px);
+                aspect-ratio: 1.5 / 1;
                 object-fit: cover;
                 border: 1px solid #e4e5e7;
                 border-radius: 8px;

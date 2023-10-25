@@ -1,7 +1,6 @@
 .main-layout {
     display: grid;
-    grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
-    // grid-template-columns: 20px 1fr 20px;
+    grid-template-columns: minmax(12px, 1fr) minmax(auto, 1360px) minmax(12px, 1fr);
 
     >*.full {
         grid-column: 1 / -1;
