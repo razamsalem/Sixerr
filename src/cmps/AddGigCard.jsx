@@ -1,5 +1,3 @@
-
-
 export function AddGigCard({ txt }) {
 
     return (
