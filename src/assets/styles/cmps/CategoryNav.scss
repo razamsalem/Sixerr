@@ -15,9 +15,21 @@
     }
 
     .category-header {
+        display: flex;
+        position: relative;
+
+        .nav-btn {
+            display: none;
+            background-color: transparent;
+            color: $dark-clr;
+            padding: 0 em(10px);
+        }
+
         .categories-container {
+            width: 100%;
             display: flex;
             justify-content: space-between;
+            white-space: nowrap;
 
             .category-link {
                 max-height: rem(40px);
@@ -25,6 +37,14 @@
                 color: $dark-clr-1;
                 transition: 0.2s color;
                 margin-inline-end: em(20px);
+
+                &:first-child {
+                    transition: margin 0.5s;
+                }
+
+                &:last-child {
+                    margin-inline-end: 0;
+                }
 
                 &:hover,
                 &.selected {
@@ -38,10 +58,18 @@
     }
 
     @include for-xl-layout {
-        .categories-container {
+        .category-header {
             overflow: hidden;
-            white-space: nowrap;
+
+            .nav-btn {
+                display: block;
+            }
+
+            .categories-container {
+                overflow: hidden;
+            }
         }
+
     }
 
 }
