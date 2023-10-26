@@ -2,7 +2,7 @@ const gigDemoData = [
   {
     _id: "i101",
     title: "I will create custom company logo design for your business",
-    price: 14.99,
+    price: 15,
     packages: {
       basic: {
         desc: '1 initial concept with JPG+PNG+3D Mockup',
@@ -26,7 +26,7 @@ const gigDemoData = [
   {
     _id: "i102",
     title: "I will design your companys vision",
-    price: 26.99,
+    price: 25,
     packages: {
       basic: {
         desc: '1 initial concept with JPG+PNG+3D Mockup',
@@ -50,7 +50,7 @@ const gigDemoData = [
   {
     _id: "i1qz",
     title: "I will create custom company logo design for your business",
-    price: 12.99,
+    price: 10,
     packages: {
       basic: {
         desc: '1 initial concept with JPG+PNG+3D Mockup',
