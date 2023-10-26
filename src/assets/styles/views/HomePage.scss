@@ -7,4 +7,40 @@
         letter-spacing: em(-1px);
         line-height: rem(38.4px)
     }
+
+
+    .slider-home {
+        max-width: 100%;
+
+        .slick-slider {
+            .slick-slide {
+
+                &>div {
+                    margin: 0 em(12px);
+                }
+
+                img {
+                    transition: opacity 0.4s;
+
+                    &:hover {
+                        opacity: 0.85;
+                    }
+                }
+            }
+
+            .gallery-btn {
+                padding: 0;
+                top: calc($card-carousel-height / 2 - $arrow-btn-size / 2);
+
+                &.next {
+                    right: -$arrow-btn-size / 2;
+                }
+
+                &.prev {
+                    left: -$arrow-btn-size / 2;
+                }
+            }
+        }
+    }
+
 }

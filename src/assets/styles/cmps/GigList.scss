@@ -14,24 +14,21 @@
             margin-block-end: rem(18px);
 
             .slick-slider {
-
-                .gallry-btn-prev,
-                .gallry-btn-next {
+                .gallery-btn {
                     height: 40px;
                     width: 40px;
                     font-size: 15px;
                     padding: 0;
                     top: 39%;
-                }
 
-                .gallry-btn-prev {
-                    left: em(17px);
-                }
+                    &.prev {
+                        left: em(17px);
+                    }
 
-                .gallry-btn-next {
-                    right: em(17px);
+                    &.next {
+                        right: em(17px);
+                    }
                 }
-
             }
 
             .gig-img {

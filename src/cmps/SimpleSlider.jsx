@@ -56,7 +56,7 @@ export function SimpleSlider() {
           </div>
         ))}
       </Slider>
-     </section>
+    </section>
 
   )
 }

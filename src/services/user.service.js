@@ -93,7 +93,8 @@ function getEmptyUser() {
         desc: '',
         isSeller: '',
         location: 'Israel',
-        reviews: []
+        reviews: [],
+        lang: ["English", "Hebrew"]
     }
 }
 

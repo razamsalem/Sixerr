@@ -88,14 +88,14 @@ a:visited {
     }
 }
 
-.gallry-btn {
-    @include gallry-btn;
+.gallery-btn {
+    @include gallery-btn;
 
     &-next {
-        @include gallry-btn($type: next);
+        @include gallery-btn($type: next);
     }
 
     &-prev {
-        @include gallry-btn($type: prev);
+        @include gallery-btn($type: prev);
     }
 }

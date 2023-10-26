@@ -123,6 +123,10 @@
                 color: $dark-clr-1;
                 transition: 0.2s color;
 
+                &:last-child {
+                    margin: 0;
+                }
+
                 &.btn {
 
                     &.join {

@@ -147,7 +147,7 @@
     }
 }
 
-@mixin gallry-btn($where: gallery, $type: regular) {
+@mixin gallery-btn($where: gallery, $type: regular) {
     z-index: 2;
     display: grid;
     place-items: center;
