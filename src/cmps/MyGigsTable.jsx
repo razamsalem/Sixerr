@@ -2,12 +2,17 @@ import { useNavigate } from "react-router";
 import { utilService } from "../services/util.service";
 import { LongTxt } from "./LongTxt";
 import { gigService } from "../services/gig.service.local";
+import { onRemoveGigOptimistic } from '../store/actions/gig.actions'
 
 export function MyGigsTable({ gigs }) {
     const navigate = useNavigate()
 
     function onClickGig(gigId) {
         navigate(`/gig/${gigId}`)
+    }
+
+    function handleActionClick(event) {
+        event.stopPropagation()
     }
 
     return (
@@ -32,7 +37,7 @@ export function MyGigsTable({ gigs }) {
                         <td>{utilService.getRandomDate()}</td>
                         <td><i className="fa-solid fa-dollar-sign"></i>{gig.price}</td>
                         <td><i className="fa-regular fa-eye icon"></i>{utilService.getRandomIntInclusive(121, 7827).toLocaleString()}</td>
-                        <td><i class="fa-solid fa-pen-to-square action"></i> <i class="fa-solid fa-trash action" onClick={() => gigService.remove(gig._id)}></i></td>
+                        <td  onClick={handleActionClick}><i class="fa-solid fa-pen-to-square action"></i> <i class="fa-solid fa-trash action" onClick={() => onRemoveGigOptimistic(gig._id)}></i></td>
                     </tr>
                 ))}
             </tbody>
