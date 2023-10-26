@@ -4,6 +4,7 @@ import { useParams, useNavigate, Link } from "react-router-dom"
 import { Carousel } from 'react-responsive-carousel';
 import { gigService } from "../services/gig.service.local"
 import starUrl from "../assets/img/star.svg"
+import starGrey from "../assets/img/star-grey.svg"
 import { CallToAction } from "../cmps/CallToAction";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../store/reducers/gig.reducer";
 import { ReviewList } from "../cmps/ReviewList";
@@ -21,8 +22,6 @@ export function GigDetails() {
 
     useEffect(() => {
         onLoadGig()
-        // onLoadReviews()
-
     }, [gigId])
 
     async function onLoadGig() {
@@ -54,7 +53,7 @@ export function GigDetails() {
                         <h3 className="gig-title">{gig.owner.fullname}</h3>
                         <div className="star-wrapper">
                             <span className="star-svg">
-                                <img src={starUrl} alt="star-svg" className="star" />
+                                <img src={starGrey} alt="star-svg" className="star" />
                             </span>
                             <span className="owner-rate">{gig.owner.rate}</span>
                             <span className="owner-number-rates">(137)</span>

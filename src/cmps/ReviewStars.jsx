@@ -1,4 +1,4 @@
-import starUrl from "../assets/img/star.svg"
+import starGrey from "../assets/img/star-grey.svg"
 import emptyStar from "../assets/img/empty-star.svg"
 export function ReviewStars({review}) {
     return(
@@ -6,7 +6,7 @@ export function ReviewStars({review}) {
             {Array(review.rate)
             .fill()
             .map((item, i) => (
-                <img src={starUrl} alt="star" key={i} className="star"/>
+                <img src={starGrey} alt="star" key={i} className="star"/>
             ))}
             {Array(5-review.rate)
             .fill()
