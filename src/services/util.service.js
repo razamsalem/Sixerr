@@ -109,7 +109,7 @@ function timeAgo(timestamp) {
     } else if (hours < 48) {
         return "Yesterday";
     } else {
-        return date.toLocaleDateString(); // Show the full date if it's not yesterday
+        return date.toLocaleDateString();
     }
 }
 
