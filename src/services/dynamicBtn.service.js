@@ -7,22 +7,24 @@ async function getBtn() {
     return filterBtns
 }
 
-const filterBtns = [{
-    title: 'Service options',
-    content:'Service'
-},
-{
-    title: 'Seller details',
-    content: 'Seller level'
-},
-{
-    title: 'Budget',
-    content: ''
-},
-{
-    title: 'Delivery time',
-    content: ''
-},
+const filterBtns = [
+    //     {
+
+    //     title: 'Service options',
+    //     content:'Service'
+    // },
+    // {
+    //     title: 'Seller details',
+    //     content: 'Seller level'
+    // },
+    {
+        title: 'Budget',
+        content: ''
+    },
+    {
+        title: 'Delivery time',
+        content: ''
+    },
 ]
 
 // const survey = {
