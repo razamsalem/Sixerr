@@ -14,6 +14,8 @@
         margin: 0;
     }
 
+    
+
     .owner-details {
         h3 {
             padding: em(8px) em(8px) em(8px) 0;
@@ -22,6 +24,13 @@
         .star-wrapper {
             display: flex;
             gap: em(3px);
+            .owner-rate{
+                font-weight: 700;
+            }
+            .owner-number-rates{
+                color: $dark-clr-4;
+                text-decoration: underline;
+            }
         }
     }
 
@@ -31,7 +40,9 @@
         flex-direction: column;
         margin-bottom: em(-13px);
         margin-block-end: em(27px);
-
+       h1{
+            font-size: 28px;
+        }
         .profile-container {
             display: flex;
             gap: rem(12px);
@@ -39,11 +50,11 @@
     }
 
     .about-gig {
-
-        // border-bottom: 1px solid #dadbdd;
+        margin-block-end: em(30px);
         .gig-about-title {
             padding-bottom: em(25px);
             line-height: em(28px);
+            font-size: 1.25rem;
         }
 
         .gig-description {
@@ -55,6 +66,8 @@
 
     .about-seller {
         margin-bottom: em(29px);
+        font-size: 1.25rem;
+        line-height: 28px;
     }
 
     .carousel {

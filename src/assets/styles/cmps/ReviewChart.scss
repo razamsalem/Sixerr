@@ -6,6 +6,9 @@
   
     .review-header{
         margin-bottom: em(13px);
+        h4{
+            padding-right: em(12px);
+        }
     }
     progress{
         width: em(259px);
@@ -14,6 +17,9 @@
         align-items: center;
         display: grid;
         grid-template-columns: 4.0625em 17.5em 3em;
-        font-weight: 600;
+        div{
+            font-weight: 600;
+        }
+    
     }
 }

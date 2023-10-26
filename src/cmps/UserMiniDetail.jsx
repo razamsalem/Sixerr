@@ -30,7 +30,7 @@ export function UserMiniDetail({ gig }) {
                     <h3 className="gig-title">{gig.owner.fullname}</h3>
                     <div className="star-wrapper">
                         <span className="star-svg">
-                            <img src="/src/assets/img/star.svg" alt="star-svg" className="star" />
+                            <img src="/src/assets/img/star-grey.svg" alt="star-svg" className="star" />
                         </span>
                         <span className="owner-rate">5</span>
                         <span className="owner-number-rates">(137)</span>

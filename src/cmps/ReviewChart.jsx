@@ -1,4 +1,4 @@
-import starUrl from "../assets/img/star.svg"
+import starGrey from "../assets/img/star-grey.svg"
 export function ReviewChart({reviews}) {
     function lengthOfreviews() {
         let revs = [0,0,0,0,0];
@@ -15,7 +15,7 @@ export function ReviewChart({reviews}) {
                 {Array(5)
                 .fill()
                 .map((item, i) => (
-                <img src={starUrl} alt="star" key={i} className="star"/>
+                <img src={starGrey} alt="star" key={i} className="star"/>
                  ))}
                 <span className="rate padding">4.9</span>
             </div>
