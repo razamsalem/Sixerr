@@ -11,6 +11,10 @@ export function MyGigsTable({ gigs, setModalOpen }) {
         navigate(`/gig/${gigId}`)
     }
 
+    function onEditGig(gigId) {
+        navigate(`/gig/add/${gigId}`)
+    }
+
     function handleActionClick(event) {
         event.stopPropagation()
     }
@@ -37,7 +41,7 @@ export function MyGigsTable({ gigs, setModalOpen }) {
                         <td>{utilService.getRandomDate()}</td>
                         <td><i className="fa-solid fa-dollar-sign"></i>{gig.price}</td>
                         <td><i className="fa-regular fa-eye icon"></i>{utilService.getRandomIntInclusive(121, 7827).toLocaleString()}</td>
-                        <td onClick={handleActionClick}><i class="fa-solid fa-pen-to-square action"></i> <i class="fa-solid fa-trash action" onClick={() => onRemoveGigOptimistic(gig._id)}></i></td>
+                        <td onClick={handleActionClick}><i class="fa-solid fa-pen-to-square action" onClick={() => onEditGig(gig._id)}></i> <i class="fa-solid fa-trash action" onClick={() => onRemoveGigOptimistic(gig._id)}></i></td>
                     </tr>
                 ))}
             </tbody>
