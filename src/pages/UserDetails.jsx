@@ -157,7 +157,7 @@ export function UserDetails() {
           </div>}
         </section>
 
-        <section className="gigs-column">
+        <section className="gigs-column user-details-layout">
           {(watchedUser?.isSeller && <div className='manage-orders'>
             <div className="order-header flex">
               <h1>Manage Orders</h1>
