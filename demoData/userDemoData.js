@@ -734,7 +734,7 @@ const demoUsers = [
       {
         "id": "rev5",
         "gig": "{optional-mini-gig}",
-        "txt": "my seo went up by a lot. it had been to early to see results, but I am positive that more views and more people will come to my channel and videos!",
+        "txt": "My seo went up by a lot. it had been to early to see results, but I am positive that more views and more people will come to my channel and videos!",
         "rate": 5,
         "createdAt": 1694493927300,
         "reviewImgUrl": null,

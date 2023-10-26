@@ -10,6 +10,7 @@ export function LoginSignup(props) {
     const [isSignup, setIsSignup] = useState(false)
     const [users, setUsers] = useState([])
     const isUserModalOpen = useSelector(storeState => storeState.userModule.isUserModalOpen)
+    const firstFourUsers = users.slice(0, 4)
 
     useEffect(() => {
         loadUsers()
@@ -67,6 +68,7 @@ export function LoginSignup(props) {
     function onUploaded(imgUrl) {
         setCredentials({ ...credentials, imgUrl })
     }
+
     return (
         <>
             <a className="btn login" onClick={onSetSignIn}>Login</a>
@@ -108,9 +110,9 @@ export function LoginSignup(props) {
                                 name="username"
                                 value={credentials.username}
                                 onChange={handleChange}
-                            >
+                        >
                                 <option value="">Select User</option>
-                                {users.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
+                                {firstFourUsers.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
                             </select>
                             <button className={`${!credentials.username ? 'disabled' : ''} btn continue`}>Continue</button>
                         </form>}
