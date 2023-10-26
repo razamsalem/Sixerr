@@ -25,7 +25,8 @@ export function ReviewList({gigOwnerId}) {
         }
     }
     
-    if(!seller) return <div>loading...</div>
+    if (!seller) return <div>{<LoadingCircle />}</div>
+
     return(
         
         <section className="reviews">

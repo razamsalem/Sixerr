@@ -21,7 +21,7 @@ export function UserMiniDetail({ gig }) {
         }
     }
 
-    if(!seller) return <div>loading...</div>
+    if (!seller) return <div className='loading'>{<LoadingCircle />}</div>
 
     return (
         <section className="user-mini-detail">
