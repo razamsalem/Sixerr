@@ -10,7 +10,7 @@ const demoUsers = [
     desc: "Are you looking for an expert logo designer to design your logo? If your answer is yes, then I welcome you and you are at the right place.",
     isSeller: true,
     location: "Germany",
-
+    lang: ['English', 'Hebrew'],
     reviews: [
       {
         "id": "r101",

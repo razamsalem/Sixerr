@@ -7,7 +7,21 @@
     .mini{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
+        div{
+            display: flex;
+            align-items: center;
+            .gig-title{
+                margin-right: 8px;
+            }
+            .username{
+                color: $dark-clr-4;
+                font-weight: 400;
+            }
+        }
+        .user-desc-mini{
+            color: $dark-clr-1;
+        }
     }
     .contact-me{
         border-radius: 4px;

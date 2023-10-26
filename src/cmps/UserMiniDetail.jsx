@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { userService } from "../services/user.service";
+import { display } from "@mui/system";
 
 export function UserMiniDetail({ gig }) {
     const [seller,setSeller] = useState(null)
@@ -27,7 +28,11 @@ export function UserMiniDetail({ gig }) {
             <div className="owner-img-wrapper flex">
                 <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-large" />
                 <div className="owner-details mini">
-                    <h3 className="gig-title">{gig.owner.fullname}</h3>
+                    <div>
+                            <h3 className="gig-title">{gig.owner.fullname}</h3>
+                            <span className="username">@{seller.username}</span>
+                    </div>
+                    <p className="user-desc-mini">Happy to work with you</p>
                     <div className="star-wrapper">
                         <span className="star-svg">
                             <img src="/src/assets/img/star-grey.svg" alt="star-svg" className="star" />
@@ -62,12 +67,13 @@ export function UserMiniDetail({ gig }) {
                     </li>
                     <li>
                         <span>Languages</span>
-                        <span>English</span>
+                        <span>
+                        {seller.lang.map(lan=><span style={{display:'inline'}}>{lan} </span>)}
+                        </span>
                     </li>
                 </ul>
 
-                <article>{seller.description}
-                </article>
+                <article>{seller.desc}</article>
             </div>
         </section>
     )
