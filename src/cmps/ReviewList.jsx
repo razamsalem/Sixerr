@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 import { ReviewPreview } from "./ReviewPreview";
 import { ReviewChart } from "./ReviewChart";
 import { UserMiniDetail } from "./UserMiniDetail";
+import LoadingCircle from "./LoadingCircle";
 
 export function ReviewList({gigOwnerId}) {
     const navigate = useNavigate()

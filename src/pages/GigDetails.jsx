@@ -10,6 +10,7 @@ import { ADD_TO_CART, REMOVE_FROM_CART } from "../store/reducers/gig.reducer";
 import { ReviewList } from "../cmps/ReviewList";
 import { UserMiniDetail } from "../cmps/UserMiniDetail";
 import { userService } from "../services/user.service";
+import LoadingCircle from "../cmps/LoadingCircle";
 
 
 export function GigDetails() {
@@ -18,21 +19,21 @@ export function GigDetails() {
     const { gigId } = useParams()
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const [seller,setSeller] = useState(null)
+    const [seller, setSeller] = useState(null)
 
     async function loadUser() {
         // console.log(gig);
         try {
-        const seller = await userService.getById(gig.owner._id)
-        setSeller(seller)
+            const seller = await userService.getById(gig.owner._id)
+            setSeller(seller)
         } catch (err) {
             console.log('Had issues in review list ->', err)
             showErrorMsg('Oops cannot load review')
             navigate('/')
         }
     }
-    
-   if(gig) loadUser()
+
+    if (gig) loadUser()
 
     async function loadGig() {
         const desiredGig = await gigService.getById(gigId)
@@ -51,13 +52,13 @@ export function GigDetails() {
         loadGig()
     }, [gigId])
 
-   
+
 
     function addToCart(gig) {
         dispatch({ type: ADD_TO_CART, gig })
     }
 
-    if (!gig|| !seller) return <div>Loading...</div>
+    if (!gig || !seller) return <div className='loading'>{<LoadingCircle />}</div>
     return (
         <section className="gig-details">
             <CallToAction gig={gig} addToCart={addToCart} />

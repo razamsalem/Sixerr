@@ -763,7 +763,7 @@ const gigDemoData = [
     owner: {
       "_id": "Ra20Z02",
       "fullname": "Shaon P",
-      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696177526/cld-sample.jpg",
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/1351ddea6267fbdac34406d7b9cb73a5-1695927142342/ea482d66-6692-4e61-b6a3-2e7df1895fa5.png",
       "level": "basic/premium",
       "rate": 5,
     },
