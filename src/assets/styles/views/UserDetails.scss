@@ -245,6 +245,8 @@
                     text-decoration: underline;
                 }
             }
+
+
         }
 
         .seller-gigs {
@@ -311,11 +313,19 @@
         }
     }
 
-    .user-gigs {    
-        h1 {
-            font-size: rem(24px);
-        }
+    .user-gigs {
 
-        
+        h1 {
+            font-size: rem(23px);
+        }
+        .add-gig-btn {
+            cursor: pointer;
+            transition: transform 0.4s;
+
+            &:Hover {
+                transform: scale(1.2);
+            }
+        }
     }
+
 }

@@ -1,62 +1,76 @@
 .gigs-table {
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid #ccc;
+    border: 1px solid $smooth-light-clr;
     background-color: #f5f5f5;
-
+    
     th {
         background-color: #333;
-        color: #fff;
+        color: $light-clr;
         padding: 10px;
         text-align: left;
     }
-
-    /* Style the table data rows */
+    
     tr {
-        border: 1px solid #ccc;
+        border: 1px solid $smooth-light-clr;
+        cursor: pointer;
     }
-
-    /* Style the table data cells */
+    
     td {
+        align-items: center;
         padding: 10px;
     }
 
-    /* Add some spacing to the first cell with the image */
     td:first-child {
-        padding-left: 20px;
+        padding-inline-start: 20px;
     }
 
-    /* Style the image within the first cell */
     td:first-child img {
         max-width: 100px;
         max-height: 100px;
-        border: 1px solid #ccc;
+        border: 1px solid $smooth-light-clr;
     }
 
-    /* Add some spacing to the last cell with the date */
     td:last-child {
         padding-right: 20px;
     }
 
-    /* Style the "Impressions" cell with the eye icon */
     td:nth-child(5) {
-        display: flex;
         align-items: center;
     }
 
-    /* Style the eye icon */
     .icon {
         margin-right: 5px;
         font-size: 18px;
+        color: $fulfilled-clr;
     }
 
-    /* Add alternating background colors to rows for better readability */
+    .action {
+        &:hover {
+            color: $error-clr;
+        }
+
+        &:not(:last-child) {
+            margin-inline-end: rem(12px);
+
+            &:hover {
+                color: $fulfilled-clr;
+            }
+        }
+        
+        &:last-child {
+            &:hover {
+                animation: 2s swing infinite
+            }
+        }
+    }
+
     tr:nth-child(even) {
         background-color: #e5e5e5;
     }
 
-    /* Hover effect for rows */
     tr:hover {
         background-color: #ddd;
     }
+
 }
