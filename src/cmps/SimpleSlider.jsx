@@ -7,46 +7,45 @@ import { PrevBtn } from "./PrevBtn.jsx";
 
 export function SimpleSlider() {
 
-  const [slidesToShow, setSlidesToShow] = useState(5);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const windowWidth = window.innerWidth;
-      if (windowWidth >= 1290) {
-        setSlidesToShow(5);
-      } else if (windowWidth >= 1197) {
-        setSlidesToShow(4);
-      } else if (windowWidth >= 1027) {
-        setSlidesToShow(3);
-      }
-      else if (windowWidth >= 780) {
-        setSlidesToShow(2);
-      }
-      else if (windowWidth >= 577) {
-        setSlidesToShow(1);
-      }
-      else {
-        setSlidesToShow(5);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   const settings = {
     dots: false,
     infinite: true,
     speed: 800,
-    slidesToShow: slidesToShow,
-    slidesToScroll: slidesToShow,
+    slidesToShow: 5,
+    slidesToScroll: 5,
     prevArrow: <PrevBtn />,
     nextArrow: <NextBtn />,
+    responsive: [
+      {
+        breakpoint: 1235,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        }
+      },
+      {
+        breakpoint: 1060,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
   return (
     <section className="slider-home">
@@ -57,7 +56,7 @@ export function SimpleSlider() {
           </div>
         ))}
       </Slider>
-    </section>
+     </section>
 
   )
 }

@@ -15,7 +15,7 @@ export function GigSlider({ gig, isHovered }) {
     prevArrow: isHovered && <PrevBtn />,
     nextArrow: isHovered && <NextBtn />,
   };
-  //   console.log(gig);
+
   return (
 
     <div className="img-container">

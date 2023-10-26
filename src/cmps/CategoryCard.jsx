@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
-import { setFilterBy } from "../store/actions/gig.actions"
-import { useSelector } from "react-redux";
 
 export function CategoryCard({ card }) {
-    const globalFilterBy = useSelector(storeState => storeState.gigModule.filterBy)
     
   return (
     <Link to={`/gig?tags=${card.title}`} >
