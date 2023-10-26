@@ -4,11 +4,15 @@ import { LongTxt } from "./LongTxt";
 import { gigService } from "../services/gig.service.local";
 import { onRemoveGigOptimistic } from '../store/actions/gig.actions'
 
-export function MyGigsTable({ gigs }) {
+export function MyGigsTable({ gigs, setModalOpen }) {
     const navigate = useNavigate()
 
     function onClickGig(gigId) {
         navigate(`/gig/${gigId}`)
+    }
+
+    function onEditGig(gigId) {
+        navigate(`/gig/add/${gigId}`)
     }
 
     function handleActionClick(event) {
@@ -32,12 +36,12 @@ export function MyGigsTable({ gigs }) {
                 {gigs.map((gig, idx) => (
                     <tr key={idx} onClick={() => onClickGig(gig._id)} >
                         <td><img src={gig.imgUrls[0]} alt="Gig Image" /></td>
-                        <td><LongTxt txt={gig.title} length={40} showReadMore={false} /></td>
-                        <td><LongTxt txt={gig.description} length={55} showReadMore={false} /></td>
+                        <td><LongTxt txt={gig.title} length={35} showReadMore={false} /></td>
+                        <td><LongTxt txt={gig.description} length={45} showReadMore={false} /></td>
                         <td>{utilService.getRandomDate()}</td>
                         <td><i className="fa-solid fa-dollar-sign"></i>{gig.price}</td>
                         <td><i className="fa-regular fa-eye icon"></i>{utilService.getRandomIntInclusive(121, 7827).toLocaleString()}</td>
-                        <td  onClick={handleActionClick}><i class="fa-solid fa-pen-to-square action"></i> <i class="fa-solid fa-trash action" onClick={() => onRemoveGigOptimistic(gig._id)}></i></td>
+                        <td onClick={handleActionClick}><i class="fa-solid fa-pen-to-square action" onClick={() => onEditGig(gig._id)}></i> <i class="fa-solid fa-trash action" onClick={() => onRemoveGigOptimistic(gig._id)}></i></td>
                     </tr>
                 ))}
             </tbody>

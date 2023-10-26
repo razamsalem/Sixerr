@@ -376,6 +376,30 @@ const gigDemoData = [
     }]
   },
   {
+    _id: "R8aks45Q",
+    title: "I will design a brand style guide and logo for you",
+    price: 100,
+    packages: {
+      basic: {
+        desc: 'BRAND GUIDELINE FOR YOUR LOGO ',
+        features: ['Includes logo design', 'Logo usage guidelines', 'Color palette', 'Typography guidelines', 'Iconography', 'Brand book design']
+      }
+    },
+    owner: {
+      "_id": "u101",
+      "fullname": "Taylor P",
+      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696177526/cld-sample.jpg",
+      "level": "basic/premium",
+      "rate": 5,
+    },
+    daysToMake: 6,
+    description: "The process if you have a logo already: After you complete my questionnaire and submit your vector file of the logo I will create your editable guideline in PDF format. The process if you DON'T have a logo already: After you complete my questionnaire, I will create logo concepts, after approval of the logo I will create the guideline.",
+    imgUrls: ["https://res.cloudinary.com/de2rdmsca/image/upload/v1698328728/7fc3e2d2da246770dd879d232d1e946c6ad755a7_exmid7.webp", "https://res.cloudinary.com/de2rdmsca/image/upload/v1698328721/178e5fac2ad62b9a85e8be65e9ad3802b2fdc4bd_zfczqg.webp", "https://res.cloudinary.com/de2rdmsca/image/upload/v1698328726/a27bc6ad887e1e7c421805257d146c38b99e97e4_dadpez.webp"],
+    category: "Graphics & Design",
+    tags: ['Logo Design', 'Brand Style Guides', 'UX Design'],
+    likedByUsers: ['mini-user']
+  },
+  {
     _id: "iz8",
     title: "I will build react js next js website with tailwind css",
     price: 50,
@@ -592,6 +616,30 @@ const gigDemoData = [
       "fullname": "David C",
       "imgUrl": "/img/img3.jpg"
     }]
+  },
+  {
+    _id: "FUsdf5",
+    title: "I will professionally promote your instagram account",
+    price: 25,
+    packages: {
+      basic: {
+        desc: 'We will promote your Instagram account for 3 days ',
+        features: ['A lot of likes', 'A lot of followers', 'A lot of comments', 'Everything looks realistic']
+      }
+    },
+    owner: {
+      "_id": "u101",
+      "fullname": "Taylor P",
+      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696177526/cld-sample.jpg",
+      "level": "basic/premium",
+      "rate": 5,
+    },
+    daysToMake: 3,
+    description: "Instagram is one of the most important websites to do marketing for yourself or your business. With more than 1 billion users, you can always reach new people on it. After years of experience in digital marketing and advertising, I managed to make a great marketing team and we are ready to help you to promote your Instagram account.",
+    imgUrls: ["https://res.cloudinary.com/de2rdmsca/image/upload/v1698329461/promote-your-facebook-page-to-country-targeted-audience_oppvsc.jpg", "https://res.cloudinary.com/de2rdmsca/image/upload/v1698329479/promote-your-facebook-page-to-country-targeted-audience_xsam5t.jpg", "https://res.cloudinary.com/de2rdmsca/image/upload/v1698329472/promote-your-facebook-page-to-country-targeted-audience_spzn9u.jpg"],
+    category: "Digital Marketing",
+    tags: ['Social Media Marketing', 'Organic Social Promotions'],
+    likedByUsers: ['mini-user']
   },
   {
     _id: "iz14",
