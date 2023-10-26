@@ -17,6 +17,7 @@ import { showSuccessMsg } from '../services/event-bus.service'
 import becomeSellerBanner from '../assets/img/become-seller.svg'
 import LoadingCircle from '../cmps/LoadingCircle'
 import { AddGigCard } from '../cmps/AddGigCard'
+import { MyGigsTable } from '../cmps/MyGigsTable'
 
 
 export function UserDetails() {
@@ -165,23 +166,32 @@ export function UserDetails() {
             </div>
             <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} />
             <div className="my-gigs ">
-              <h1>My Gigs</h1>
               {gigs.map(gig => {
                 if (gig.owner._id === params.id) {
                   userGigs.push(gig)
                 }
               })}
-              {!userGigs.length && <div> <p className='empty'>Surely someone needs your service...
-                <Link className='link' to="/gig/add">create your first gig today!</Link></p>
-                {/* <Link className='link' to="/gig/add"><AddGigCard txt={'Add a gig'} /></Link> */}
-              </div>}
-
-              {userGigs &&
-                <div className='gigs-list flex column'>
-                  <GigList gigs={userGigs} />
-                  <Link className='link' to="/gig/add"><AddGigCard txt={'Add a gig'} /></Link>
+              {!userGigs.length && <>
+                <h1>My Gigs</h1>
+                <div>
+                  <p className='empty'>
+                    Surely someone needs your service...<Link className='link' to="/gig/add">create your first gig today!</Link>
+                  </p>
                 </div>
-              }
+              </>}
+
+              {userGigs && <>
+                <div className='gigs-list flex column'>
+                  <h1>Best seller gigs</h1>
+                  <GigList gigs={userGigs} onlyTwo={true} />
+                  {/* <Link className='link' to="/gig/add"><AddGigCard txt={'Add a gig'} /></Link> */}
+                </div>
+
+                <section className='user-gigs'>
+                  <h1>My Gigs</h1>
+                  {<MyGigsTable gigs={userGigs} />}
+                </section>
+              </>}
             </div>
           </div>)}
           {(!watchedUser?.isSeller && <div className="seller-gigs">

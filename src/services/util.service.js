@@ -9,7 +9,9 @@ export const utilService = {
     getAssetSrc,
     getSubtitle,
     capitalizeFirstLetter,
-    timeAgo
+    timeAgo,
+    generateRandomDate,
+    getRandomDate
 }
 
 function makeId(length = 6) {
@@ -41,7 +43,7 @@ function makeLorem(size = 100) {
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min)
     max = Math.floor(max)
-    return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive 
+    return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
 
@@ -97,19 +99,29 @@ function timeAgo(timestamp) {
     const seconds = Math.floor(timeDifference / 1000);
     const minutes = Math.floor(seconds / 60);
     const hours = Math.floor(minutes / 60);
-  
-    if (seconds < 60) {
-      return "Just now";
-    } else if (minutes < 60) {
-      return minutes + " minute" + (minutes > 1 ? "s" : "") + " ago";
-    } else if (hours < 24) {
-      return hours + " hour" + (hours > 1 ? "s" : "") + " ago";
-    } else if (hours < 48) {
-      return "Yesterday";
-    } else {
-      return date.toLocaleDateString(); // Show the full date if it's not yesterday
-    }
-  }
-  
 
-  
+    if (seconds < 60) {
+        return "Just now";
+    } else if (minutes < 60) {
+        return minutes + " minute" + (minutes > 1 ? "s" : "") + " ago";
+    } else if (hours < 24) {
+        return hours + " hour" + (hours > 1 ? "s" : "") + " ago";
+    } else if (hours < 48) {
+        return "Yesterday";
+    } else {
+        return date.toLocaleDateString(); // Show the full date if it's not yesterday
+    }
+}
+
+function generateRandomDate(from, to) {
+    return new Date(
+        from.getTime() +
+        Math.random() * (to.getTime() - from.getTime()),
+    );
+}
+
+function getRandomDate() {
+    const dates = ['Mar 06 2023', 'Apr 02 2023', 'Jul 17 2023', 'Mar 25 2023', 'Oct 26 2023', 'May 23 2023', 'Feb 11 2023', 'Dec 12 2022']
+    const slice = getRandomIntInclusive(0, dates.length - 1)
+    return dates[slice]
+}
