@@ -91,6 +91,12 @@ export function AppHeader() {
                                         <NavLink to={`user/${user._id}`}>
                                             Profile
                                         </NavLink>
+                                        {/* Temporary Hidden */}
+                                        {/* {user.isSeller ?
+                                            <NavLink to="/gig/add">
+                                                Add a gig
+                                            </NavLink> : <NavLink to={`gig`}></NavLink>} */}
+
                                         <span onClick={onLogout}>
                                             Logout
                                         </span>
@@ -104,7 +110,7 @@ export function AppHeader() {
                         }
                     </nav>
                 </header>
-            </section>
+            </section >
             <CategoryNav categories={gigService.categories} globalFilterBy={globalFilterBy} setFilterBy={setFilterBy} subHeaderPosition={subHeaderPosition} />
         </>
 

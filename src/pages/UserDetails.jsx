@@ -186,13 +186,13 @@ export function UserDetails() {
                 </div>
               </>}
 
+
               {userGigs.length > 0 && <>
                 {orders.length > 0 &&
                   <div className='gigs-list flex column'>
                     <h1>Best seller gigs </h1>
                     <GigList gigs={userGigs} onlyTwo={true} />
                   </div>}
-
                 <section className='user-gigs'>
                   <h1>My Gigs <i title='Add a new gig' className="fa-solid fa-circle-plus add-gig-btn" onClick={() => onClickAddGig()}></i></h1>
                   {<MyGigsTable gigs={userGigs} />}
