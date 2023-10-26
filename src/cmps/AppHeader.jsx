@@ -91,6 +91,10 @@ export function AppHeader() {
                                         <NavLink to={`user/${user._id}`}>
                                             Profile
                                         </NavLink>
+                                        {user.isSeller ? 
+                                        <NavLink to="/gig/add">
+                                            Add a gig
+                                        </NavLink> : <NavLink to={`gig`}>Services</NavLink>}
                                         <span onClick={onLogout}>
                                             Logout
                                         </span>
