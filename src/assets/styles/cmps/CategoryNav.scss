@@ -17,13 +17,14 @@
     .category-header {
         .categories-container {
             display: flex;
-            gap: rem(30px);
+            justify-content: space-between;
 
             .category-link {
                 max-height: rem(40px);
                 padding-block: rem(11px);
                 color: $dark-clr-1;
                 transition: 0.2s color;
+                margin-inline-end: em(20px);
 
                 &:hover,
                 &.selected {
@@ -36,5 +37,11 @@
         }
     }
 
+    @include for-xl-layout {
+        .categories-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
 
 }

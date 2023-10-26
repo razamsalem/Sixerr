@@ -17,7 +17,8 @@ const categories = [
     { category: 'Music & Audio', tags: ['Music Production & Writing', 'Producers & Composers', 'Singers & Vocalists', 'Session Musicians', 'Songwriters', 'Beat Making', 'Voice Over & Narration', 'DJing', 'DJ Drops & Tags', 'DJ Mixing', 'Remixing & Mashups', 'Mixing & Mastering', 'Audio Editing'] },
     { category: 'Business', tags: ['General & Administrative Virtual Assistant', 'E-Commerce Management', 'HR Consulting', 'Project Management', 'Business Formation', 'Business Registration'] },
     { category: 'Data', tags: ['Data Science & ML', 'Machine Learning', 'Data Collection', 'Data Entry', 'Data Mining & Scraping', 'Data Annotation'] },
-    { category: 'Photography', tags: ['Products & Lifestyle', 'Product Photographers', 'Food Photographers', 'Lifestyle & Fashion Photographers', 'Portrait Photographers', 'Event Photographers', 'Real Estate Photographers', 'Scenic Photographers'] }
+    { category: 'Photography', tags: ['Products & Lifestyle', 'Product Photographers', 'Food Photographers', 'Lifestyle & Fashion Photographers', 'Portrait Photographers', 'Event Photographers', 'Real Estate Photographers', 'Scenic Photographers'] },
+    { category: 'AI Services', tags: ['AI Applications', 'ChatGPT Applications', 'AI Websites', 'AI Chatbots', 'Midjourney Artists', 'DALL-E Artists', 'Stable Diffusion Artists', 'Food Photographers', 'AI Video Art', 'AI Music Videos', 'Voice Synthesis & AI'] }
 ];
 
 
