@@ -31,7 +31,7 @@
                         width: 100%;
                         border-radius: 50%;
                     }
-                    
+
                 }
 
                 .username-info {
@@ -245,6 +245,8 @@
                     text-decoration: underline;
                 }
             }
+
+
         }
 
         .seller-gigs {
@@ -310,4 +312,20 @@
 
         }
     }
+
+    .user-gigs {
+
+        h1 {
+            font-size: rem(23px);
+        }
+        .add-gig-btn {
+            cursor: pointer;
+            transition: transform 0.4s;
+
+            &:Hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
 }
