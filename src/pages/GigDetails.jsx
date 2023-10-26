@@ -9,6 +9,7 @@ import { CallToAction } from "../cmps/CallToAction";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../store/reducers/gig.reducer";
 import { ReviewList } from "../cmps/ReviewList";
 import { UserMiniDetail } from "../cmps/UserMiniDetail";
+import { userService } from "../services/user.service";
 
 
 export function GigDetails() {
@@ -17,14 +18,23 @@ export function GigDetails() {
     const { gigId } = useParams()
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const [seller,setSeller] = useState(null)
 
-    const defaultImgUrl = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698161431/sixxer-logo_vseimk.png'
+    async function loadUser() {
+        // console.log(gig);
+        try {
+        const seller = await userService.getById(gig.owner._id)
+        setSeller(seller)
+        } catch (err) {
+            console.log('Had issues in review list ->', err)
+            showErrorMsg('Oops cannot load review')
+            navigate('/')
+        }
+    }
+    
+   if(gig) loadUser()
 
-    useEffect(() => {
-        onLoadGig()
-    }, [gigId])
-
-    async function onLoadGig() {
+    async function loadGig() {
         const desiredGig = await gigService.getById(gigId)
         try {
             setGig(desiredGig)
@@ -35,11 +45,19 @@ export function GigDetails() {
         }
     }
 
+    const defaultImgUrl = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698161431/sixxer-logo_vseimk.png'
+
+    useEffect(() => {
+        loadGig()
+    }, [gigId])
+
+   
+
     function addToCart(gig) {
         dispatch({ type: ADD_TO_CART, gig })
     }
 
-    if (!gig) return <div>Loading...</div>
+    if (!gig|| !seller) return <div>Loading...</div>
     return (
         <section className="gig-details">
             <CallToAction gig={gig} addToCart={addToCart} />
@@ -50,7 +68,10 @@ export function GigDetails() {
                     <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-meduim" />
 
                     <div className="owner-details">
-                        <h3 className="gig-title">{gig.owner.fullname}</h3>
+                        <div>
+                            <h3 className="gig-title">{gig.owner.fullname}</h3>
+                            <span className="username">@{seller.username}</span>
+                        </div>
                         <div className="star-wrapper">
                             <span className="star-svg">
                                 <img src={starGrey} alt="star-svg" className="star" />
