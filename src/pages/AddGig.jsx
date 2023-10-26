@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import { gigService } from '../services/gig.service.local'
 import { ImgUploader } from '../cmps/ImgUploader'
 import { MultiSelect } from '../cmps/MultiSelect'
@@ -10,16 +10,29 @@ import { MUISelect } from '../cmps/MUISelect'
 export function AddGig() {
     const [gigToEdit, setGigToEdit] = useState(null)
     const [currCategory, setCurrCategory] = useState({})
+    const { gigId } = useParams()
     const navigate = useNavigate()
 
     useEffect(() => {
         setGigToEdit(gigService.getEmptyGig())
-    }, [])
+        onLoadGig()
+    }, [gigId])
 
     useEffect(() => {
         if (gigToEdit && gigToEdit.category) setCurrCategory(gigService.categories.find(c => c.category === gigToEdit.category))
     }, [gigToEdit])
 
+    async function onLoadGig() {
+        const desiredGig = await gigService.getById(gigId)
+        try {
+            setGigToEdit(desiredGig)
+            console.log('test');
+        } catch (err) {
+            console.log('Had issues in addGig ->', err)
+            showErrorMsg('Oops cannot load gig')
+            navigate('/')
+        }
+    }
 
     function handleChange(ev) {
         let { name, value } = ev.target
