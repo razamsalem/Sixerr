@@ -658,6 +658,50 @@ const gigDemoData = [
       "imgUrl": "/img/img3.jpg"
     }]
   },
+  {
+    _id: "iz16",
+    title: "I will create amazing images and concept art using midjourney ai",
+    price: 130,
+    packages: {
+      basic: {
+        desc: '1 Concept art of an AI image + basic edition. IMPORTANT: Please contact me before placing an order.',
+        features: ['1 image', '1 upscaled variation', 'Prompt creation', 'Prompt delivery']
+      }
+    },
+    owner: {
+      "_id": "aax1lb",
+      "fullname": "Jesus S",
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/8dbc4e7b5f760cd24fed43a081943f3d-1657973641858/f4996058-9d75-4afd-adbc-1afdb033a82e.jpg",
+      "level": "basic/premium",
+      "rate": 4.9
+    },
+    daysToMake: 2,
+    "description": `Hello everyone!
+
+
+
+    I love to bring customer ideas to life, it doesn't matter the topic. Let your imagination run wild and let's make awesome AI art together, in any style. You will be involved in the creation process, and I will make a basic edition of the result if needed. Remember, there are limitations in the AI (no blood, no NSFW content, similar face generation, etc.), so if possible, I can help by making a few basic touches and changes to get the desired image.
+    
+    
+    
+    Order now and let's make your concept a reality. Remember to ask any question you want before placing an order, that way I can start right away.
+    
+    
+    
+    IMPORTANT: Midjourney AI won't give you an exact representation of your face, which is important to know beforehand. For cases like this, I create a sample with Midjourney so the client can approve it before placing the order.`,
+
+    imgUrls: [
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/198975847/original/5af0c91ae1a8df6caafb05ece1244108ddf8b9b6/draw-amazing-realistic-painting-from-your-photo.jpg",
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/198975847/original/205e8654e3b0c1dcf8ff25f0894808ffc36316dd/draw-amazing-realistic-painting-from-your-photo.jpg","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/198975847/original/202da5b39d4199e9b4fa3b29c80392d66cacb6b7/draw-amazing-realistic-painting-from-your-photo.png"
+    ],
+    category: "Graphics & Design",
+    tags: ['AI Artists', 'Image Generation', 'Artists'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
 ]
 
 export default gigDemoData
