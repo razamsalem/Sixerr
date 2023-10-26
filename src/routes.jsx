@@ -27,6 +27,12 @@ const routes = [
         shouldRender: false
     },
     {
+        path: 'gig/add/:gigId',
+        component: <AddGig />,
+        label: 'Edit a gig',
+        shouldRender: false
+    },
+    {
         path: `gig/:gigId`,
         component: <GigDetails />,
         shouldRender: false

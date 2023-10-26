@@ -93,25 +93,30 @@ function getAssetSrc(name) {
 }
 
 function timeAgo(timestamp) {
-    const now = new Date();
-    const date = new Date(timestamp * 1000); // Convert timestamp to milliseconds
-    const timeDifference = now - date;
-    const seconds = Math.floor(timeDifference / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-
-    if (seconds < 60) {
-        return "Just now";
-    } else if (minutes < 60) {
-        return minutes + " minute" + (minutes > 1 ? "s" : "") + " ago";
-    } else if (hours < 24) {
-        return hours + " hour" + (hours > 1 ? "s" : "") + " ago";
-    } else if (hours < 48) {
-        return "Yesterday";
-    } else {
-        return date.toLocaleDateString(); // Show the full date if it's not yesterday
-    }
+    let seconds = Math.floor((new Date() - timestamp) / 1000);
+    let interval = seconds / 31536000;
+  if (interval > 1) {
+    return Math.floor(interval) + " years";
+  }
+  interval = seconds / 2592000;
+  if (interval > 1) {
+    return Math.floor(interval) + " months";
+  }
+  interval = seconds / 86400;
+  if (interval > 1) {
+    return Math.floor(interval) + " days";
+  }
+  interval = seconds / 3600;
+  if (interval > 1) {
+    return Math.floor(interval) + " hours";
+  }
+  interval = seconds / 60;
+  if (interval > 1) {
+    return Math.floor(interval) + " minutes";
+  }
+  return Math.floor(seconds) + " seconds";
 }
+
 
 function generateRandomDate(from, to) {
     return new Date(

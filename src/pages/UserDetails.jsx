@@ -18,6 +18,7 @@ import becomeSellerBanner from '../assets/img/become-seller.svg'
 import LoadingCircle from '../cmps/LoadingCircle'
 import { AddGigCard } from '../cmps/AddGigCard'
 import { MyGigsTable } from '../cmps/MyGigsTable'
+import { YesNoModal } from '../cmps/YesNoModal'
 
 
 export function UserDetails() {
@@ -28,6 +29,7 @@ export function UserDetails() {
   const gigs = useSelector(storeState => storeState.gigModule.gigs)
   const orders = useSelector(storeState => storeState.orderModule.orders)
   const [isDashboardOpen, setDashboardOpen] = useState(null)
+  const [isModalOpen, setModalOpen] = useState(null)
   const demoSubtitle = utilService.getSubtitle()
   const userGigs = []
 
@@ -77,13 +79,22 @@ export function UserDetails() {
     setDashboardOpen(true)
   }
 
+  async function openModal() {
+    setModalOpen(true)
+  }
+
   async function closeDashboard() {
     setDashboardOpen(false)
+  }
+
+  async function closeModal() {
+    setModalOpen(false)
   }
 
   function handleBackgroundClick(ev) {
     if (ev.target.classList.contains("modal-background")) {
       setDashboardOpen(false)
+      setModalOpen(false)
     }
   }
 
@@ -95,6 +106,9 @@ export function UserDetails() {
 
   return (
     <>
+      {/* {isModalOpen && (
+        <YesNoModal txt={'Are you sure you want to delete this gig?'} handleBackgroundClick={handleBackgroundClick} onNoClick={closeModal} />
+      )} */}
       {isDashboardOpen && (
         <DashboardModal watchedUser={watchedUser} closeDashboard={closeDashboard} handleBackgroundClick={handleBackgroundClick} orders={orders} loggedUser={loggedUser} />
       )}
@@ -194,8 +208,8 @@ export function UserDetails() {
                     <GigList gigs={userGigs} onlyTwo={true} />
                   </div>}
                 <section className='user-gigs'>
-                  <h1>My Gigs <i title='Add a new gig' className="fa-solid fa-circle-plus add-gig-btn" onClick={() => onClickAddGig()}></i></h1>
-                  {<MyGigsTable gigs={userGigs} />}
+                  <h1>All gigs <i title='Add a new gig' className="fa-solid fa-circle-plus add-gig-btn" onClick={() => onClickAddGig()}></i></h1>
+                  {<MyGigsTable gigs={userGigs} openModal={openModal} />}
                 </section>
               </>}
             </div>

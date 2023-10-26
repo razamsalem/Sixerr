@@ -10,7 +10,7 @@ const demoUsers = [
     desc: "Are you looking for an expert logo designer to design your logo? If your answer is yes, then I welcome you and you are at the right place.",
     isSeller: true,
     location: "Germany",
-
+    lang: ['English', 'Hebrew'],
     reviews: [
       {
         "id": "r101",
@@ -675,6 +675,35 @@ const demoUsers = [
       }
     ],
   },
+  {
+    "_id": "aax1lb",
+    "fullname": "Jesus S",
+    username: "jesussantana",
+    password: "jesus123",
+    "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/8dbc4e7b5f760cd24fed43a081943f3d-1657973641858/f4996058-9d75-4afd-adbc-1afdb033a82e.jpg",
+    "level": "basic/premium",
+    "rate": 4.9,
+    desc: "I am proficient in traditional (pen/pencil/charcoal) drawing and digital painting. If you want anything to be illustrated, be it for a book, a portrait or anything at all, I'm the one you want! My love for drawing will assure you that all the work I will do for you will be in the best quality!",
+    isSeller: true,
+    location: 'Venezuela',
+    lang: ['Spanish', 'English', 'Italian'],
+    reviews: [
+      {
+        "id": "rev5",
+        "gig": "{optional-mini-gig}",
+        "txt": "It is in fact an amazing experience to work with Jesus Santana. Many designers learnt how to work with AI, but Jesus Santana has an exceptional vision and taste. As a bonus, Jesus shows some samples and previews before placing the order. I feel very happy with such cooperation. HIghly recommend!",
+        "rate": 5,
+        "createdAt": 1694493927300,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u154",
+          "fullname": "Yomi",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4b7fe17dde65726409810dd2541769c4-1681190210085/1f9751ab-3804-48b7-a2ec-7eabe5361ad8.jpg",
+          "location": "Canada",
+        },
+      }
+    ],
+  }
 ]
 
 export default demoUsers

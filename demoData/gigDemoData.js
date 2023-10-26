@@ -376,6 +376,30 @@ const gigDemoData = [
     }]
   },
   {
+    _id: "R8aks45Q",
+    title: "I will design a brand style guide and logo for you",
+    price: 100,
+    packages: {
+      basic: {
+        desc: 'BRAND GUIDELINE FOR YOUR LOGO ',
+        features: ['Includes logo design', 'Logo usage guidelines', 'Color palette', 'Typography guidelines', 'Iconography', 'Brand book design']
+      }
+    },
+    owner: {
+      "_id": "u101",
+      "fullname": "Taylor P",
+      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696177526/cld-sample.jpg",
+      "level": "basic/premium",
+      "rate": 5,
+    },
+    daysToMake: 6,
+    description: "The process if you have a logo already: After you complete my questionnaire and submit your vector file of the logo I will create your editable guideline in PDF format. The process if you DON'T have a logo already: After you complete my questionnaire, I will create logo concepts, after approval of the logo I will create the guideline.",
+    imgUrls: ["https://res.cloudinary.com/de2rdmsca/image/upload/v1698328728/7fc3e2d2da246770dd879d232d1e946c6ad755a7_exmid7.webp", "https://res.cloudinary.com/de2rdmsca/image/upload/v1698328721/178e5fac2ad62b9a85e8be65e9ad3802b2fdc4bd_zfczqg.webp", "https://res.cloudinary.com/de2rdmsca/image/upload/v1698328726/a27bc6ad887e1e7c421805257d146c38b99e97e4_dadpez.webp"],
+    category: "Graphics & Design",
+    tags: ['Logo Design', 'Brand Style Guides', 'UX Design'],
+    likedByUsers: ['mini-user']
+  },
+  {
     _id: "iz8",
     title: "I will build react js next js website with tailwind css",
     price: 50,
@@ -594,6 +618,30 @@ const gigDemoData = [
     }]
   },
   {
+    _id: "FUsdf5",
+    title: "I will professionally promote your instagram account",
+    price: 25,
+    packages: {
+      basic: {
+        desc: 'We will promote your Instagram account for 3 days ',
+        features: ['A lot of likes', 'A lot of followers', 'A lot of comments', 'Everything looks realistic']
+      }
+    },
+    owner: {
+      "_id": "u101",
+      "fullname": "Taylor P",
+      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696177526/cld-sample.jpg",
+      "level": "basic/premium",
+      "rate": 5,
+    },
+    daysToMake: 3,
+    description: "Instagram is one of the most important websites to do marketing for yourself or your business. With more than 1 billion users, you can always reach new people on it. After years of experience in digital marketing and advertising, I managed to make a great marketing team and we are ready to help you to promote your Instagram account.",
+    imgUrls: ["https://res.cloudinary.com/de2rdmsca/image/upload/v1698329461/promote-your-facebook-page-to-country-targeted-audience_oppvsc.jpg", "https://res.cloudinary.com/de2rdmsca/image/upload/v1698329479/promote-your-facebook-page-to-country-targeted-audience_xsam5t.jpg", "https://res.cloudinary.com/de2rdmsca/image/upload/v1698329472/promote-your-facebook-page-to-country-targeted-audience_spzn9u.jpg"],
+    category: "Digital Marketing",
+    tags: ['Social Media Marketing', 'Organic Social Promotions'],
+    likedByUsers: ['mini-user']
+  },
+  {
     _id: "iz14",
     title: "I will assist you in your work, write articles and blogs in spanish, french and german",
     price: 20,
@@ -652,6 +700,50 @@ const gigDemoData = [
     ],
     category: "Music & Audio",
     tags: ['DJing', 'DJ Drops & Tags', 'DJ Mixing', 'Remixing & Mashups', 'Mixing & Mastering', 'Audio Editing'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
+    _id: "iz16",
+    title: "I will create amazing images and concept art using midjourney ai",
+    price: 130,
+    packages: {
+      basic: {
+        desc: '1 Concept art of an AI image + basic edition. IMPORTANT: Please contact me before placing an order.',
+        features: ['1 image', '1 upscaled variation', 'Prompt creation', 'Prompt delivery']
+      }
+    },
+    owner: {
+      "_id": "aax1lb",
+      "fullname": "Jesus S",
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/8dbc4e7b5f760cd24fed43a081943f3d-1657973641858/f4996058-9d75-4afd-adbc-1afdb033a82e.jpg",
+      "level": "basic/premium",
+      "rate": 4.9
+    },
+    daysToMake: 2,
+    "description": `Hello everyone!
+
+
+
+    I love to bring customer ideas to life, it doesn't matter the topic. Let your imagination run wild and let's make awesome AI art together, in any style. You will be involved in the creation process, and I will make a basic edition of the result if needed. Remember, there are limitations in the AI (no blood, no NSFW content, similar face generation, etc.), so if possible, I can help by making a few basic touches and changes to get the desired image.
+    
+    
+    
+    Order now and let's make your concept a reality. Remember to ask any question you want before placing an order, that way I can start right away.
+    
+    
+    
+    IMPORTANT: Midjourney AI won't give you an exact representation of your face, which is important to know beforehand. For cases like this, I create a sample with Midjourney so the client can approve it before placing the order.`,
+
+    imgUrls: [
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/198975847/original/5af0c91ae1a8df6caafb05ece1244108ddf8b9b6/draw-amazing-realistic-painting-from-your-photo.jpg",
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/198975847/original/205e8654e3b0c1dcf8ff25f0894808ffc36316dd/draw-amazing-realistic-painting-from-your-photo.jpg","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/198975847/original/202da5b39d4199e9b4fa3b29c80392d66cacb6b7/draw-amazing-realistic-painting-from-your-photo.png"
+    ],
+    category: "Graphics & Design",
+    tags: ['AI Artists', 'Image Generation', 'Artists'],
     likedByUsers: [{
       "_id": "u103",
       "fullname": "David C",
