@@ -6,7 +6,7 @@
     justify-content: space-around;
     margin-block-start: em(40px);
 
-    &>*:not(.call-to-action) {
+    &>*:not(.cta-container) {
         grid-column: 1;
     }
 

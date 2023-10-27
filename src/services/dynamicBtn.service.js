@@ -8,14 +8,14 @@ async function getBtn() {
 }
 
 const filterBtns = [
-    //     {
-    //     title: 'Service options',
-    //     content:'Service'
-    // },
-    // {
-    //     title: 'Seller details',
-    //     content: 'Seller level'
-    // },
+    {
+        title: 'Service options',
+        content: 'Service'
+    },
+    {
+        title: 'Seller details',
+        content: 'Seller level'
+    },
     {
         title: 'Budget',
         content: ''

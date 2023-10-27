@@ -14,6 +14,17 @@ export function GigIndex() {
     const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
     let [searchParams, setSearchParams] = useSearchParams()
 
+    async function loadUser(gig) {
+        try {
+            const seller = await userService.getById(gig.owner._id)
+            return seller;
+        } catch (err) {
+            console.log('Had issues in review list ->', err)
+            showErrorMsg('Oops cannot load review')
+            navigate('/')
+        }
+    }
+
     useEffect(() => {
         setFilterBy(Object.fromEntries([...searchParams]))
     }, [searchParams])
@@ -49,7 +60,7 @@ export function GigIndex() {
         <div>
             <DynamicBtn />
             <main>
-                <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
+                <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} onloadUser={loadUser}/>
             </main>
         </div>
     )

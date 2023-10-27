@@ -5,15 +5,15 @@ import { PrevBtn } from "./PrevBtn.jsx";
 import { Link } from "react-router-dom";
 
 
-export function GigSlider({ gig, isHovered }) {
+export function GigSlider({ gig}) {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: isHovered && <PrevBtn />,
-    nextArrow: isHovered && <NextBtn />,
+    prevArrow: <PrevBtn />,
+    nextArrow: <NextBtn />,
   };
 
   return (

@@ -36,11 +36,11 @@
                 top: calc($card-carousel-height / 2 - $arrow-btn-size / 2);
 
                 &.next {
-                    right: -$arrow-btn-size / 2;
+                    right: calc(-1 * $arrow-btn-size / 2);
                 }
 
                 &.prev {
-                    left: -$arrow-btn-size / 2;
+                    left: calc(-1 * $arrow-btn-size / 2);
                 }
             }
         }

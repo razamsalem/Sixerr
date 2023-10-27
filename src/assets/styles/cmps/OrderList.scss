@@ -1,6 +1,7 @@
 .order-list {
     width: 50vw;
     border-collapse: collapse;
+    border: 1px solid $modal-filter-border-clr;
 
     thead {
         background-color: $light-clr;
