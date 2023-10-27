@@ -6,7 +6,7 @@ const demoUsers = [
     username: "taylor_paul10",
     password: "secret",
     rate: 5,
-    level: "basic/premium",
+    level: 2,
     desc: "Are you looking for an expert logo designer to design your logo? If your answer is yes, then I welcome you and you are at the right place.",
     isSeller: true,
     location: "Germany",
@@ -107,7 +107,7 @@ const demoUsers = [
     username: "julia123",
     password: "123",
     rate: 5,
-    level: "basic/premium",
+    level: 2,
     desc: "Welcome! I always love to explore new things, design, work, nature, and that's why I love to be called Explorance. I own a creative design studio based in India specializing in Logo and brand design. I am passionate and dedicated in everything I create is minimal, clean, smart, and remarkable. I believe in 100% satisfaction, nothing less! Please free to get in touch, let's work together.",
     isSeller: true,
     location: 'Italy',
@@ -164,7 +164,7 @@ const demoUsers = [
     username: "mick",
     password: "123a",
     rate: 4.5,
-    level: "basic/premium",
+    level: 1,
     desc: "Hi, I am Micky, a curious person who is having a strong interest in art. Doing my hobby leads me to work as a graphic designer. Working with many clients to solve their problems helps me to generate new ideas that suitable for the purpose of the creative field. I am used to helping people to visualize their conceptual idea into a unique, timeless, and memorable design. I am always ready to work with you.",
     isSeller: true,
     location: 'Peru',
@@ -221,7 +221,7 @@ const demoUsers = [
     username: "justintimber",
     password: "123",
     rate: 3.7,
-    level: "basic/premium",
+    level: 1,
     desc: "Hello there, I'm Justin Timber. I bring five years of dedicated experience in the realm of logo design. During this time, I've honed my skills and gained valuable insights in the field. My primary goal is to offer my clients impeccable service, consistently aiming to surpass their expectations. Each project I take on is a chance not just to deliver outstanding results, but also to welcome fresh hurdles that contribute to my growth. My enthusiasm drives me to constantly explore innovative techniques that elevate my work. Thank you for considering my introduction.",
     isSeller: true,
     location: 'Israel',
@@ -250,7 +250,7 @@ const demoUsers = [
     username: "rhett123",
     password: "123",
     rate: 4.8,
-    level: "basic/premium",
+    level: 2,
     desc: `Hi ! I am a  Graphic designer based in Germany. Specialised in designing iconic and industry-leading logos for Startups and cutting-edge companies. I believe a great logo is an intrinsic factor to a company's success. It is the first step towards credibility and customer loyalty. This is why I will work passionately with you to create the modern, cuttinge-edge, and professional logo your company needs to succeed.
 
     Less is more
@@ -287,7 +287,7 @@ const demoUsers = [
     username: "simontimber",
     password: "123",
     rate: 4,
-    level: "basic/premium",
+    level: 1,
     desc: `I am 'Track' full-stack web developer with more than 10+ years of IT experience, including PHP, MySQL, HTML5, CSS3, Frameworks, javascript/node. js, WordPress, and Plus for you is I am working as an SEO Expert for the last 7 years.
 
     I am a creative website designer and developer with professional modern elegance. I offer my Web Development, Front End Development, Customizations, Software Solutions Provider and Development, Enterprise Solutions, and digital marketing services.
@@ -320,7 +320,7 @@ const demoUsers = [
     username: "jsoncook",
     password: "123",
     rate: 5,
-    level: "basic/premium",
+    level: 2,
     desc: `I am 'Track' full-stack web developer with more than 10+ years of IT experience, including PHP, MySQL, HTML5, CSS3, Frameworks, javascript/node. js, WordPress, and Plus for you is I am working as an SEO Expert for the last 7 years.
 
     I am a creative website designer and developer with professional modern elegance. I offer my Web Development, Front End Development, Customizations, Software Solutions Provider and Development, Enterprise Solutions, and digital marketing services.
@@ -353,7 +353,7 @@ const demoUsers = [
     username: "sohaibsaim",
     password: "123",
     rate: 3.7,
-    level: "basic/premium",
+    level: 1,
     desc: `Hello, I'm Sohaib, a dedicated Full Stack Software Engineer with a strong background in the MERN stack, NextJS, Firebase, and Python frameworks. With a proven track record in developing efficient, user-centric web applications, I bring a problem-solving mindset and a commitment to delivering high-quality software. Whether you're looking to build a new web application or enhance an existing one, I'm here to provide the expertise and dedication you need to achieve your goals.`,
     isSeller: true,
     location: 'Ukrain',
@@ -382,7 +382,7 @@ const demoUsers = [
     username: "hayach",
     password: "123",
     rate: 3.4,
-    level: "basic/premium",
+    level: 1,
     desc: `I am a Senior Software Engineer having working experience of more than 9 Years in the Front End development.
 
       I am extremely passionate about my work. In my professional career, I have done more than 800 projects. I would love to assist you with Front end, Shopify, React, and WordPress projects.
@@ -414,7 +414,7 @@ const demoUsers = [
     username: "sikandaryoor",
     password: "123",
     rate: 3.2,
-    level: "basic/premium",
+    level: 1,
     desc: `Hello and thanks for visiting my page.
 
       I have been a video editor for over 5 years. I use mostly Adobe After Effects 2020, but I can use nearly any program.
@@ -449,7 +449,7 @@ const demoUsers = [
     username: "adnanadnani",
     password: "123",
     rate: 4,
-    level: "basic/premium",
+    level: 2,
     desc: `I am Adnan, a professional video and photo editor. I had worked with lots of youtube channels and have worked with 200+ companies all over the country now and completed 900++ orders. I believe in quality rather than quantity. I assure you I will do my best to complete your project and make you satisfied.
     Professional Video Editor and Adobe Premiere Pro Expert!`,
     isSeller: true,
@@ -479,7 +479,7 @@ const demoUsers = [
     username: "fred1",
     password: "fred1",
     rate: 4,
-    level: "basic/premium",
+    level: 1,
     desc: "Hi reader, thanks for your time. I'm an experienced young artist and i specialize in 3D animation, graphic designing and pencil Art. I'm familiar with word processing application. Kindly hit me up if if you need any of my services.",
     isSeller: true,
     location: 'United states',
@@ -508,7 +508,7 @@ const demoUsers = [
     username: "fred1",
     password: "fred1",
     rate: 4,
-    level: "basic/premium",
+    level: 2,
     desc: "Hi reader, thanks for your time. I'm an experienced young artist and i specialize in 3D animation, graphic designing and pencil Art. I'm familiar with word processing application. Kindly hit me up if if you need any of my services.",
     isSeller: true,
     location: 'United states',
@@ -537,7 +537,7 @@ const demoUsers = [
     username: "thomasC11",
     password: "thomas-boy",
     rate: 5,
-    level: "basic/premium",
+    level: 2,
     desc: "Test. Scale. Win. We are a team of entrepreneurs at heart, certified experts working across 6 different timezones with 17 years of e-commerce experience. While your competition sleeps, we’re working on getting you ahead. Our data-driven tactics, and proven playbooks, paired with the skill set of our team’s top 2% talents yield impressive sales results your CFO won’t be able to ignore!",
     isSeller: true,
     location: 'United states',
@@ -566,7 +566,7 @@ const demoUsers = [
     username: "thomasC11",
     password: "thomas-boy",
     rate: 5,
-    level: "basic/premium",
+    level: 2,
     desc: "Test. Scale. Win. We are a team of entrepreneurs at heart, certified experts working across 6 different timezones with 17 years of e-commerce experience. While your competition sleeps, we’re working on getting you ahead. Our data-driven tactics, and proven playbooks, paired with the skill set of our team’s top 2% talents yield impressive sales results your CFO won’t be able to ignore!",
     isSeller: true,
     location: 'United states',
@@ -595,7 +595,7 @@ const demoUsers = [
     username: "HassaMan",
     password: "LettuceIsTheBest",
     rate: 3,
-    level: "basic/premium",
+    level: 1,
     desc: "Hello everyone! Haseeb ul Hassan is here. Am loves to work on amazon storefront, enhanced brand content (EBC/A+ content) and Amazon Infographics. Just drop a message to see work sample. Thank you :)",
     isSeller: true,
     location: 'India',
@@ -624,7 +624,7 @@ const demoUsers = [
     username: "yomiflex",
     password: "flex",
     rate: 5,
-    level: "basic/premium",
+    level: 2,
     desc: "Hey there! Nice to meet you, my name is Yomi. I create business documentaries on my YouTube channel @NaijaBoss. I can provide you any content creation services you might need. Shoot me a message with your requirements and lets get to work.",
     isSeller: true,
     location: 'United states',
@@ -653,7 +653,7 @@ const demoUsers = [
     username: "goonin",
     password: "gooninflex",
     rate: 4.9,
-    level: "basic/premium",
+    level: 1,
     desc: "Thank you for checking out my profile! I am an audio engineer based out of Seattle, Washington. I have been designing, mixing and producing videos and graphics throughout my life. I love helping out small producers fulfilling their dream, and seeing other people enjoy any of my products always puts a smile on my face! :)",
     isSeller: true,
     location: 'United states',
@@ -681,7 +681,7 @@ const demoUsers = [
     username: "jesussantana",
     password: "jesus123",
     "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/8dbc4e7b5f760cd24fed43a081943f3d-1657973641858/f4996058-9d75-4afd-adbc-1afdb033a82e.jpg",
-    "level": "basic/premium",
+    "level": 2,
     "rate": 4.9,
     desc: "I am proficient in traditional (pen/pencil/charcoal) drawing and digital painting. If you want anything to be illustrated, be it for a book, a portrait or anything at all, I'm the one you want! My love for drawing will assure you that all the work I will do for you will be in the best quality!",
     isSeller: true,
@@ -710,7 +710,7 @@ const demoUsers = [
     username: "shaonpaulyt",
     password: "Shaon123",
     "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/1351ddea6267fbdac34406d7b9cb73a5-1695927142342/ea482d66-6692-4e61-b6a3-2e7df1895fa5.png",
-    "level": "basic/premium",
+    "level": 1,
     "rate": 4.4,
     desc: "YouTube Specialist And Organic SEO Expert",
     isSeller: true,
