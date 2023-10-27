@@ -6,10 +6,12 @@ import { MultiSelect } from '../cmps/MultiSelect'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BigGigPreview } from '../cmps/BigGigPreview'
 import { MUISelect } from '../cmps/MUISelect'
+import { utilService } from '../services/util.service'
 
 export function AddGig() {
     const [gigToEdit, setGigToEdit] = useState(null)
     const [currCategory, setCurrCategory] = useState({})
+    const [selectedPackage, setSelectedPackage] = useState('basic')
     const { gigId } = useParams()
     const navigate = useNavigate()
 
@@ -63,6 +65,21 @@ export function AddGig() {
         }
     }
 
+    function onAddPackage(packageName, packageData) {
+        const currentPackageCount = Object.keys(gigToEdit.packages).length
+
+        if (currentPackageCount >= 3) {
+            alert('You can only add up to 3 packages.')
+            return
+        }
+
+        setGigToEdit({ ...gigToEdit, packages: { ...gigToEdit.packages, [packageName]: packageData } })
+    }
+
+    function handlePackageChange(packageKey) {
+        setSelectedPackage(packageKey)
+    }
+
     function onUploadedImgs(imgUrl) {
         setGigToEdit({ ...gigToEdit, ['imgUrls']: [...gigToEdit.imgUrls, imgUrl] })
     }
@@ -114,55 +131,44 @@ export function AddGig() {
                     <MultiSelect tags={currCategory.tags || []} onChooseTag={onSelectTag} chosenTags={gigToEdit.tags} />
                 </label>
 
-                <h2 className="sub-heading">Edit Your Packages</h2>
-                {Object.keys(gigToEdit.packages).map((packageName) => (
-                    <div key={packageName}>
-                        <h3>{packageName} Package</h3>
-                        <label>
-                            Package Title
-                            <input
-                                type='text'
-                                name={`packages.${packageName}.title`}
-                                value={gigToEdit.packages[packageName].title}
-                                onChange={handleChange}
-                            />
-                        </label>
-                        <label>
-                            Package Price
-                            <input
-                                type="number"
-                                name={`packages.${packageName}.packPrice`}
-                                value={gigToEdit.packages[packageName].packPrice}
-                                onChange={handleChange}
-                            />
-                        </label>
-                        <label>
-                            Days to Make
-                            <input
-                                type="number"
-                                name={`packages.${packageName}.packDaysToMake`}
-                                value={gigToEdit.packages[packageName].packDaysToMake}
-                                onChange={handleChange}
-                            />
-                        </label>
-                    </div>
-                ))}
+                <h1 className="heading">{gigId ? 'Edit Your Packages' : 'Build Your Packages'}</h1>
+                <h2 className="sub-heading">Offer three sales packages, increase your service to reach a multitude of customers</h2>
 
-                <span className='numbers'>
+                <div className="package-options flex">
+                    {Object.keys(gigToEdit.packages).map((packageKey) => (
+                        <button
+                            key={packageKey}
+                            type="button"
+                            className={`package ${selectedPackage === packageKey ? 'selected' : ''}`}
+                            onClick={() => handlePackageChange(packageKey)}
+                        >
+                            {utilService.capitalizeFirstLetter(packageKey)}
+                        </button>
+                    ))}
+                </div>
+
+                <label className='form-label gig-title'>
+                    Enter a title on your package
+                    <input onChange={handleChange} name={`packages.${selectedPackage}.title`} value={gigToEdit.packages[selectedPackage].title} type="text" maxLength={20} />
+                </label>
+
+                <span className='numbers flex'>
                     <label className='form-label days-to-make'>
-                        Est. Days to deliver
+                        <p className='est'> Est. Days to deliver </p>
                         <span className='days-input'>
                             <i className="fa-solid fa-dolly delivery-icon"></i>
-                            <input type="number" max={90} onChange={handleChange} name='daysToMake' value={gigToEdit.daysToMake} />
+                            <input type="number" min={1} max={90} onChange={handleChange} name={`packages.${selectedPackage}.packDaysToMake`} value={gigToEdit.packages[selectedPackage].packDaysToMake} />
                         </span>
                     </label>
+
                     <label className='form-label price'>
-                        Price in USD
+                        <p> Price in USD </p>
                         <span className='price-input'>
-                            <input type="number" max={999} maxLength={3} onChange={handleChange} name='price' value={gigToEdit.price} />
+                            <input type="number" min={1} max={999} maxLength={3} onChange={handleChange} name={`packages.${selectedPackage}.packPrice`} value={gigToEdit.packages[selectedPackage].packPrice} />
                         </span>
                     </label>
                 </span>
+
                 <label className='form-label imgs'>
                     Add images of the provided service
                     <ImgUploader onUploaded={onUploadedImgs} />

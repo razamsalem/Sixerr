@@ -14,6 +14,10 @@
         .heading {
             color: $accent-clr;
             font-size: rem(32px);
+
+            &:not(:first-child) {
+                margin-block-start: rem(8px);
+            }
         }
 
         .sub-heading {
@@ -24,10 +28,8 @@
         }
 
         .numbers {
-            display: flex;
-
             .form-label {
-                min-width: 0;
+                // min-width: 100%;
 
                 .delivery-icon {
                     margin: em(5px);
@@ -66,6 +68,26 @@
 
         }
 
+
+        .package-options {
+            width: rem(524px); //temporary (until MQ)
+
+            button {
+                flex: 1;
+                font-weight: 700;
+                border: 1px solid $modal-filter-border-clr;
+                font-size: 1em;
+                background-color: $light-clr3;
+                color: $dark-clr-4;
+                padding: 1em;
+
+                &.selected {
+                    background-color: $light-clr;
+                    color: $dark-clr1;
+                    border-bottom: 3px solid $dark-clr1;
+                }
+            }
+        }
 
         .form-label {
             min-width: 80%;
