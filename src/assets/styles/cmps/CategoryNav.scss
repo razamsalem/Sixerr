@@ -58,7 +58,7 @@
         }
     }
 
-    @include for-xl-layout {
+    @include for-small-layout {
         .category-header {
             overflow: hidden;
 
