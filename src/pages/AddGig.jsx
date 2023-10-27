@@ -34,14 +34,33 @@ export function AddGig() {
     }
 
     function handleChange(ev) {
-        let { name, value } = ev.target
-        if (ev.target.dataset.name) {
-            name = ev.target.dataset.name
-            value = ev.target.dataset.value
-        }
-        if (name === 'price') value = parseInt(value)
+        const { name, value } = ev.target
 
-        setGigToEdit({ ...gigToEdit, [name]: value })
+        if (name.startsWith('packages.')) {
+            const [packageName, property] = name.split('.').slice(1)
+            setGigToEdit(prevState => {
+                const updatedPackages = {
+                    ...prevState.packages,
+                    [packageName]: {
+                        ...prevState.packages[packageName],
+                        [property]: value
+                    }
+                }
+
+                console.log('Package Name:', name)
+                console.log('New Value:', value)
+
+                return {
+                    ...prevState,
+                    packages: updatedPackages
+                }
+            })
+        } else {
+            setGigToEdit(prevState => ({
+                ...prevState,
+                [name]: value
+            }))
+        }
     }
 
     function onUploadedImgs(imgUrl) {
@@ -60,7 +79,7 @@ export function AddGig() {
 
     async function onSaveGig(ev) {
         ev.preventDefault()
-        if (!gigToEdit.description || !gigToEdit.title) return showErrorMsg('All fields are required')
+        if (!gigToEdit.description || !gigToEdit.title) return showErrorMsg('All fields are required!')
         try {
             const savedGig = await gigService.save(gigToEdit)
             showSuccessMsg(`Added a new gig! ${savedGig._id}`)
@@ -71,7 +90,7 @@ export function AddGig() {
 
     }
 
-    if (!gigToEdit) return
+    if (!gigToEdit) return null
     return (
         <section className="add-gig">
             <form className='create-gig' onSubmit={onSaveGig}>
@@ -94,6 +113,40 @@ export function AddGig() {
                     Category tags
                     <MultiSelect tags={currCategory.tags || []} onChooseTag={onSelectTag} chosenTags={gigToEdit.tags} />
                 </label>
+
+                <h2 className="sub-heading">Edit Your Packages</h2>
+                {Object.keys(gigToEdit.packages).map((packageName) => (
+                    <div key={packageName}>
+                        <h3>{packageName} Package</h3>
+                        <label>
+                            Package Title
+                            <input
+                                type='text'
+                                name={`packages.${packageName}.title`}
+                                value={gigToEdit.packages[packageName].title}
+                                onChange={handleChange}
+                            />
+                        </label>
+                        <label>
+                            Package Price
+                            <input
+                                type="number"
+                                name={`packages.${packageName}.packPrice`}
+                                value={gigToEdit.packages[packageName].packPrice}
+                                onChange={handleChange}
+                            />
+                        </label>
+                        <label>
+                            Days to Make
+                            <input
+                                type="number"
+                                name={`packages.${packageName}.packDaysToMake`}
+                                value={gigToEdit.packages[packageName].packDaysToMake}
+                                onChange={handleChange}
+                            />
+                        </label>
+                    </div>
+                ))}
 
                 <span className='numbers'>
                     <label className='form-label days-to-make'>
