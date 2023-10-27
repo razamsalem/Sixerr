@@ -69,7 +69,7 @@ export function UserMiniDetail({ gig }) {
                     <li>
                         <span>Languages</span>
                         <span>
-                        {seller.lang.map(lan=><span style={{display:'inline'}}>{lan} </span>)}
+                        {seller.lang.map((lan, idx )=><span key={idx} style={{display:'inline'}}>{lan} </span>)}
                         </span>
                     </li>
                 </ul>
