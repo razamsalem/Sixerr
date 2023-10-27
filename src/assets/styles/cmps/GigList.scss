@@ -105,10 +105,9 @@
             .owner-details-1 {
                 gap: rem(8px);
                 margin-bottom: rem(6px);
+                font-size: 14px;
                 .level-number{
                     margin-left: auto;
-                    // color: #404145;
-                    font-size: 1rem;
                     font-weight: 600;
                     line-height: rem(21px);
                 }
@@ -120,7 +119,7 @@
             }
     
             .owner-fullname {
-                font-size: 1rem;
+              
                 font-weight: 700;
                 line-height: rem(21px);
             }
@@ -130,7 +129,7 @@
             margin-top: rem(20px);
             color: $dark-clr;
             display: -webkit-box;
-            line-height: rem(20.8px);
+            line-height: 1.6rem;
             margin-bottom: rem(8px);
             font-weight: 400;
             min-height: 2.5em;
@@ -151,6 +150,7 @@
             gap: rem(3px);
             font-size: rem(18px);
             line-height: rem(24px);
+            color: $dark-clr1;
             .owner-rate{
                 font-weight: 700;
             }
@@ -165,6 +165,7 @@
             margin-top: rem(8px);
             margin-block-start: 0.5rem;
             font-size: rem(18px);
+            color:$dark-clr1;
         }
 
     }
