@@ -10,13 +10,15 @@
 
 
     .slider-home {
-        max-width: 100%;
+        max-width: 95vw;
+        // Smaller MQs will hold:
+        // justify-self: center;
 
         .slick-slider {
             .slick-slide {
 
                 &>div {
-                    margin: 0 em(12px);
+                    margin: 0 em(7px);
                 }
 
                 img {
