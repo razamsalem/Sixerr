@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export function GigSlider({ gig, isHovered }) {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 800,
     slidesToShow: 1,
