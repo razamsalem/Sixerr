@@ -6,7 +6,7 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig }) {
 
     const defaultImgUrl = 'https://res.cloudinary.com/de2rdmsca/image/upload/v1696229330/no-image-symbol-missing-available-icon-gallery-vector-47533708_yv5p2x.jpg'
 
-    const [isHovered, setHovered] = useState(false)
+    // const [isHovered, setHovered] = useState(false)
     function slicedGigTitle() {
         if(gig.title.length>63){
             return gig.title.substring(0,63)+ '...'
@@ -15,10 +15,9 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig }) {
     }
     return (
         
-        <li className="gig-preview" key={gig._id}  onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}>
+        <li className="gig-preview" key={gig._id}  >
 
-            <GigSlider gig={gig} isHovered={isHovered} />
+            <GigSlider gig={gig} />
            
             <div className="flex owner-details">
                 <div className="flex owner-details-1">

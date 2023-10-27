@@ -21,13 +21,14 @@
                     font-size: em(15px);
                     padding: 0;
                     top: 39%;
-
+                    opacity: 0;
+                    transition: all 0.5s;
                     &.prev {
-                        left: em(17px);
+                        left: em(-35px);
                     }
 
                     &.next {
-                        right: em(17px);
+                        right: em(-35px);
                     }
                 }
                 .slick-dots {
@@ -41,13 +42,13 @@
                     padding: 0;
                     margin: 0;
                     z-index: 1; 
-
+                    li{
+                        width: rem(5px);
+                        height: rem(10px);
+                    }
                 }
-                .slick-dots li{
-                    width: rem(5px);
-                    height: rem(10px);
-                }
-                .slick-dots li button {
+               
+                li button {
                     width: rem(5px); 
                     height: rem(5px); 
                     border-radius: 50%;
@@ -56,19 +57,21 @@
                     padding: 0;
                 }
                 
-                .slick-dots li.slick-active button:before {
+                li.slick-active button:before {
                     color:transparent;
                     width: rem(2px); 
                     height: rem(2px);
                 }
                 
-                .slick-dots li.slick-active button {
+                li:not(.slick-active) button:before {
+                    color:transparent;
+                }
+
+                li.slick-active button {
                     transform: scale(1.75);
                 }
 
-                .slick-dots li:not(.slick-active) button:before {
-                   color:transparent;
-                }
+               
             }
 
             .gig-img {
@@ -86,76 +89,86 @@
             .owner-gig-title {
                 text-decoration: underline;
             }
+            .img-container .slick-slider .gallery-btn{
+                opacity: 1;
+                &.prev{
+                    left: em(17px);
+                }
+                &.next{
+                    right: em(17px);
+                }
         }
-
     }
-
-    .owner-details {
-        flex-direction: column;
-
-        .owner-details-1 {
-            gap: rem(8px);
-            margin-bottom: rem(6px);
-            .level-number{
-                margin-left: auto;
-                // color: #404145;
+        .owner-details {
+            flex-direction: column;
+    
+            .owner-details-1 {
+                gap: rem(8px);
+                margin-bottom: rem(6px);
+                .level-number{
+                    margin-left: auto;
+                    // color: #404145;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    line-height: rem(21px);
+                }
+            }
+    
+            .owner-profile-img {
+                border-radius: 50%;
+                width: rem(24px);
+            }
+    
+            .owner-fullname {
                 font-size: 1rem;
-                font-weight: 600;
+                font-weight: 700;
                 line-height: rem(21px);
             }
         }
-
-        .owner-profile-img {
-            border-radius: 50%;
-            width: rem(24px);
+    
+        .owner-gig-title {
+            margin-top: rem(20px);
+            color: $dark-clr;
+            display: -webkit-box;
+            line-height: rem(20.8px);
+            margin-bottom: rem(8px);
+            font-weight: 400;
+            min-height: 2.5em;
+            font-size: rem(19px);
+    
+            // &:hover {
+            //     text-decoration: underline;
+            // }
         }
-
-        .owner-fullname {
-            font-size: 1rem;
+    
+        .rating-price {
+            line-height: rem(13px);
+            gap: rem(3px);
+            align-items: center;
+        }
+    
+        .rate-wrapper {
+            gap: rem(3px);
+            font-size: rem(18px);
+            line-height: rem(24px);
+            .owner-rate{
+                font-weight: 700;
+            }
+            .owner-number-rates{
+                color: $dark-clr-4;
+            }
+        }
+    
+        .gig-price {
             font-weight: 700;
-            line-height: rem(21px);
+            line-height: rem(24px);
+            margin-top: rem(8px);
+            margin-block-start: 0.5rem;
+            font-size: rem(18px);
         }
+
     }
 
-    .owner-gig-title {
-        margin-top: rem(20px);
-        color: $dark-clr;
-        display: -webkit-box;
-        line-height: rem(20.8px);
-        margin-bottom: rem(8px);
-        font-weight: 400;
-        min-height: 2.5em;
-        font-size: rem(19px);
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-
-    .rating-price {
-        line-height: rem(13px);
-        gap: rem(3px);
-        align-items: center;
-    }
-
-    .rate-wrapper {
-        gap: rem(3px);
-        font-size: rem(18px);
-        line-height: rem(24px);
-        .owner-rate{
-            font-weight: 700;
-        }
-        .owner-number-rates{
-            color: #74767e;
-        }
-    }
-
-    .gig-price {
-        font-weight: 700;
-        line-height: rem(24px);
-        margin-top: rem(8px);
-        margin-block-start: 0.5rem;
-        font-size: rem(18px);
-    }
+   
 
 }
