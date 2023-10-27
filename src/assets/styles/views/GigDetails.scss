@@ -1,6 +1,9 @@
 @import url(react-responsive-carousel/lib/styles/carousel.min.css);
 
 .gig-details {
+    //change later ~ Padding for large/xl MQs only
+    padding-inline: 32px;
+
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     justify-content: space-around;
