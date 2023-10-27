@@ -5,8 +5,16 @@ const gigDemoData = [
     price: 15,
     packages: {
       basic: {
-        desc: '1 initial concept with JPG+PNG+3D Mockup',
-        features: ['1 concept included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file']
+        desc: '1 logo design + High Quality Mock-up + Logo Transparency + NO COMPLEX DESIGN',
+        features: ['1 concept included', 'Logo transparency']
+      },
+      standard: {
+        desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
+        features: ['1 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
+      },
+      premium: {
+        desc: ' 3 Amazing concepts + all source files+ Social Media Kit + 24/7 priority customer services',
+        features: ['3 concepts included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file', 'Include social media kit']
       }
     },
     owner: {
