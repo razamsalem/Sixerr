@@ -2,7 +2,7 @@
 
 .gig-details {
     display: grid;
-    grid-template-columns: rem(750px) rem(435px);
+    grid-template-columns: 1.5fr 1fr;
     justify-content: space-around;
     margin-block-start: em(40px);
 
@@ -14,19 +14,22 @@
         margin: 0;
     }
 
-    
+
 
     .owner-details {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        div{
+
+        div {
             display: flex;
             align-items: center;
-            .gig-title{
+
+            .gig-title {
                 margin-right: 8px;
             }
-            .username{
+
+            .username {
                 color: $dark-clr-4;
                 font-weight: 400;
             }
@@ -35,10 +38,12 @@
         .star-wrapper {
             display: flex;
             gap: em(3px);
-            .owner-rate{
+
+            .owner-rate {
                 font-weight: 700;
             }
-            .owner-number-rates{
+
+            .owner-number-rates {
                 color: $dark-clr-4;
                 text-decoration: underline;
             }
@@ -51,9 +56,11 @@
         flex-direction: column;
         margin-bottom: em(-13px);
         margin-block-end: em(27px);
-       h1{
+
+        h1 {
             font-size: 28px;
         }
+
         .profile-container {
             display: flex;
             gap: rem(12px);
@@ -62,6 +69,7 @@
 
     .about-gig {
         margin-block-end: em(30px);
+
         .gig-about-title {
             padding-bottom: em(25px);
             line-height: em(28px);
@@ -81,49 +89,65 @@
         line-height: 28px;
     }
 
-    .carousel {
-        padding-inline: em(25px);
-        width: 100%;
-        max-height: rem(444px);
+    .carousel-container {
+        position: relative;
+        margin-bottom: 1.875rem;
+        max-width: 740px;
 
-        .arrow {
-            z-index: 2;
-            display: grid;
-            place-items: center;
-            border-radius: 50%;
-            width: $arrow-btn-size;
-            height: $arrow-btn-size;
-            font-size: em(18px);
-            position: absolute;
-            top: calc(50% - $arrow-btn-size / 2);
-            background: $light-clr;
-            box-shadow: $dark-clr-1 0 em(1px) em(3px) 0;
-            color: $dark-clr;
-        }
+        .carousel {
+            position: static;
+            width: 100%;
 
-        .next-btn {
-            right: em(2px);
-        }
+            &.carousel-slider {
+                height: rem($details-carousel-height);
+                max-width: $details-carousel-width;
 
-        .prev-btn {
-            left: em(2px);
-        }
-    }
+                .slide {
+                    background-color: $light-clr1;
 
-    .thumbs {
+                    img {
+                        height: $details-carousel-height;
+                        object-fit: contain;
+                    }
+                }
+            }
 
-        .thumb {
-            height: rem(60px);
-            border: 0;
-            filter: blur(0.6px);
-            opacity: 0.5;
-            cursor: pointer;
+            .arrow {
+                @include gallery-btn;
+                top: calc($details-carousel-height / 2 - $arrow-btn-size / 2);
+            }
 
-            &.selected {
-                filter: none;
-                opacity: 1;
+            .next-btn {
+                right: em(- $arrow-btn-size / 2);
+            }
+
+            .prev-btn {
+                left: em(- $arrow-btn-size / 2);
             }
         }
     }
+
+    .thumbs-wrapper {
+        margin: 20px 0;
+
+
+        .thumbs {
+
+            .thumb {
+                height: rem(60px);
+                border: 0;
+                filter: blur(0.6px);
+                opacity: 0.5;
+                cursor: pointer;
+
+                &.selected {
+                    filter: none;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+
 
 }
