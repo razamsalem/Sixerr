@@ -29,11 +29,11 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder }) {
             </div>
             <article className="call-to-action">
                 <section className="package-heading">
-                    <h1 className='package'>{selectedPackage.charAt(0).toUpperCase() + selectedPackage.slice(1)}</h1>
-                    <h2 className='price'>US $ {price}</h2>
+                    {/* <h1 </h1> */}
+                    <h2 className='price'><span className="price-font">$ {price}</span></h2>
                 </section>
 
-                <h3 className='package-desc'>{desc}</h3>
+                <h3 className='package-desc'><span className='package'>{selectedPackage.charAt(0).toUpperCase() + selectedPackage.slice(1)} </span>{desc}</h3>
 
                 <span className="days-container">
                     <img className='icon time' src={timeImg} alt="time-icon" />
