@@ -13,12 +13,12 @@ export function BigGigPreview({ gig }) {
 
                 {gig.daysToMake && <span className="detail-container delivery">
                     <span className="title"> Estimated delivery </span>
-                    <span className="estimated"> <i className="fa-solid fa-dolly"></i> {`${gig.daysToMake} Day${gig.daysToMake > 1 ? 's' : ''}`}</span>
+                    <span className="estimated"> <i className="fa-solid fa-dolly"></i> {`${gig.packages['basic'].packDaysToMake} Day${gig.packages['basic'].packDaysToMake > 1 ? 's' : ''}`}</span>
                 </span>}
                 <span>
                     {gig.tags.join(', ')}
                 </span>
-                {gig.price > 0 && <h4>{`From $${gig.price}`}</h4>}
+                {gig.price > 0 && <h4 className="bigger">From <span className="approved">${`${gig.packages['basic'].packPrice}`}</span></h4>}
             </section>
         </article>
     )
