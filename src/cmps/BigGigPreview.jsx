@@ -18,7 +18,7 @@ export function BigGigPreview({ gig }) {
                 <span>
                     {gig.tags.join(', ')}
                 </span>
-                {gig.price > 0 && <h4 className="bigger">From <span className="approved">${`${gig.packages['basic'].packPrice}`}</span></h4>}
+                {`${gig.packages['basic'].packPrice}` > 0 && <h4 className="bigger">From <span className="approved">${`${gig.packages['basic'].packPrice}`}</span></h4>}
             </section>
         </article>
     )

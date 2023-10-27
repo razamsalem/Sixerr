@@ -8,7 +8,7 @@ const gigDemoData = [
         title: 'Bronze Package',
         packPrice: 15,
         packDaysToMake: 3,
-        desc: '1 logo design + High Quality Mock-up + Logo Transparency + NO COMPLEX DESIGN',
+        desc: '1 logo design, High Quality Mock-up, Logo Transparency',
         features: ['1 concept included', 'Logo transparency']
       },
       standard: {
@@ -43,11 +43,28 @@ const gigDemoData = [
   {
     _id: "i102",
     title: "I will design your companys vision",
-    price: 25,
+    price: 20,
     packages: {
       basic: {
-        desc: '1 initial concept with JPG+PNG+3D Mockup',
-        features: ['1 concept included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file']
+        title: 'Low Cost Package',
+        packPrice: 20,
+        packDaysToMake: 3,
+        desc: '1 logo design, High Quality Mock-up, Logo Transparency',
+        features: ['1 concept included', 'Logo transparency']
+      },
+      standard: {
+        title: 'Normal Package',
+        packPrice: 40,
+        packDaysToMake: 5,
+        desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
+        features: ['2 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
+      },
+      premium: {
+        title: 'Deluxe Package',
+        packPrice: 60,
+        packDaysToMake: 8,
+        desc: ' 3 Amazing concepts + all source files+ Social Media Kit + 24/7 priority customer services',
+        features: ['3 concepts included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file', 'Include social media kit']
       }
     },
     owner: {

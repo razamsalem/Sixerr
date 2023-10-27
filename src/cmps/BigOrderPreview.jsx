@@ -1,6 +1,6 @@
 export function BigOrderPreview({ order }) {
     if (!order) return
-    console.log(order,"order");
+    console.log(order,"order")
     return (
         <article className="big-order-preview">
             <h1 className="preview-heading">Your order</h1>
