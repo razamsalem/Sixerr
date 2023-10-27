@@ -14,10 +14,11 @@
             margin-block-end: rem(5px);
 
             .slick-slider {
+                position: relative;
                 .gallery-btn {
-                    height: 40px;
-                    width: 40px;
-                    font-size: 15px;
+                    height: em(40px);
+                    width: em(40px);
+                    font-size: em(15px);
                     padding: 0;
                     top: 39%;
 
@@ -29,6 +30,51 @@
                         right: em(17px);
                     }
                 }
+                /* Styles for the dot container */
+                .slick-dots {
+                    position: absolute;
+                    bottom: 20px; /* Adjust vertical placement */
+                    left: 0; /* Adjust horizontal placement */
+                    right: 0;
+                    display: flex;
+                    justify-content: center;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    z-index: 1; /* Place dots over the images */
+
+                }
+                .slick-dots li{
+                    width: 5px;
+                    height: 10px;
+                }
+                .slick-dots li button {
+                    width: 5px; /* Adjust the width of the dots */
+                    height: 5px; /* Adjust the height of the dots */
+                    border-radius: 50%; /* Make the dots round */
+                    background-color: #fff; /* Change the background color of the dots */
+                    transition: all 0.3s; /* Add transition for hover effect */
+                    padding: 0;
+                }
+                
+                .slick-dots li.slick-active button:before {
+                    color:transparent;
+                    width: 2px; 
+                    height: 2px;
+                }
+                
+                .slick-dots li.slick-active button {
+                    transform: scale(1.75);
+                }
+
+                .slick-dots li:not(.slick-active) button:before {
+                   color:transparent;
+                }
+                
+               
+                  
+                  
+                 
             }
 
             .gig-img {
