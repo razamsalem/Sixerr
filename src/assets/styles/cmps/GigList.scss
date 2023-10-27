@@ -16,17 +16,19 @@
             .slick-slider {
                 position: relative;
                 .gallery-btn {
-                    height: em(40px);
-                    width: em(40px);
-                    font-size: em(15px);
+                    height: em(30px);
+                    width: em(30px);
                     padding: 0;
                     top: 39%;
                     opacity: 0;
                     transition: all 0.5s;
+                    i{
+                        font-size: rem(13px);
+                    }
                     &.prev {
                         left: em(-35px);
+                       
                     }
-
                     &.next {
                         right: em(-35px);
                     }
@@ -135,9 +137,6 @@
             min-height: 2.5em;
             font-size: rem(19px);
     
-            // &:hover {
-            //     text-decoration: underline;
-            // }
         }
     
         .rating-price {

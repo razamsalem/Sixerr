@@ -1,18 +1,26 @@
 import { Link } from "react-router-dom"
 import { GigSlider } from "./GigSlider"
 import { HoverableComponent } from "./HoverableComponent"
-import { useState } from "react"
-export function GigPreview({ gig, onRemoveGig, onUpdateGig }) {
+import { useEffect, useState } from "react"
+export function GigPreview({ gig, onRemoveGig, onUpdateGig,onloadUser}) {
+    let [seller, setSeller] = useState(null)
 
-    const defaultImgUrl = 'https://res.cloudinary.com/de2rdmsca/image/upload/v1696229330/no-image-symbol-missing-available-icon-gallery-vector-47533708_yv5p2x.jpg'
+    useEffect(() => {
+        getSeller()
+    }, [])
+    
+    async function getSeller() {
+        setSeller(await onloadUser(gig));
+    }
 
-    // const [isHovered, setHovered] = useState(false)
     function slicedGigTitle() {
-        if(gig.title.length>63){
+        if(gig.title.length>58){
             return gig.title.substring(0,58)+ '...'
         }
         return gig.title
     }
+
+    if(!seller) return ''
     return (
         
         <li className="gig-preview" key={gig._id}  >
@@ -37,7 +45,7 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig }) {
                         </svg>
                     </span>
                     <span className="owner-rate">{gig.owner.rate}</span>
-                    <span className="owner-number-rates">(137)</span>
+                    <span className="owner-number-rates">({seller.reviews.length})</span>
                 </div>
 
             </div>
