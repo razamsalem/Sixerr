@@ -747,6 +747,36 @@ const demoUsers = [
       }
     ],
   },
+  {
+    "_id": "d109",
+      "fullname": "David Iz",
+      username: "davidiz",
+      password: "davidiz123",
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6640180a2dbba46cad4068dcd9ad47f1-1646966940115/25a12acd-5e46-4636-a01a-a289c6749009.png",
+      "level": 1,
+      "rate": 5,
+      "desc": `As a full-stack web developer with over 3 years of experience and completion of over 200+ orders here on Fiverr, I specialize in modern technologies such as React, Next js, Typescript, Tailwind CSS, Node js, Express js, MySQL, MongoDB, Prisma, and many more. My passion lies in building responsive websites that help to improve user experience and grow your business. I always pay attention to detail and dedication to delivering high-quality work. I am committed to exceeding your expectations and delivering results that drive success. Let's work together to bring your ideas to life.`,
+      isSeller: true,
+      location: 'Bangladesh',
+      lang: ['English'],
+      reviews: [
+        {
+          "id": "rev6",
+          "gig": "{optional-mini-gig}",
+          "txt": "David is a very talented developer and puts a lot of energy into the project before the project starts. I am very satisfied with our collaboration, a real blessing to know David.",
+          "rate": 4,
+          "createdAt": 1694493927300,
+          "reviewImgUrl": null,
+          "by": {
+            "_id": "u154",
+            "fullname": "Yomi",
+            "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4b7fe17dde65726409810dd2541769c4-1681190210085/1f9751ab-3804-48b7-a2ec-7eabe5361ad8.jpg",
+            "location": "Canada",
+          },
+        },
+      ]
+}
 ]
+ 
 
 export default demoUsers
