@@ -16,7 +16,7 @@ const gigDemoData = [
         packPrice: 30,
         packDaysToMake: 5,
         desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
-        features: ['1 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
+        features: ['2 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
       },
       premium: {
         title: 'Gold Package',
