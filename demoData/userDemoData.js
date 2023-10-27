@@ -10,7 +10,7 @@ const demoUsers = [
     desc: "Are you looking for an expert logo designer to design your logo? If your answer is yes, then I welcome you and you are at the right place.",
     isSeller: true,
     location: "Germany",
-    lang: ['English', 'Hebrew'],
+    lang: ['English', 'German'],
     reviews: [
       {
         "id": "r101",
@@ -703,7 +703,50 @@ const demoUsers = [
         },
       }
     ],
-  }
+  },
+  {
+    "_id": "Ra20Z02",
+    "fullname": "Shaon P",
+    username: "shaonpaulyt",
+    password: "Shaon123",
+    "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/1351ddea6267fbdac34406d7b9cb73a5-1695927142342/ea482d66-6692-4e61-b6a3-2e7df1895fa5.png",
+    "level": "basic/premium",
+    "rate": 4.4,
+    desc: "YouTube Specialist And Organic SEO Expert",
+    isSeller: true,
+    location: 'Bangladesh',
+    lang: ['German', 'English', 'Italian'],
+    reviews: [
+      {
+        "id": "rev5",
+        "gig": "{optional-mini-gig}",
+        "txt": "Serious guy, I enjoyed working with him",
+        "rate": 4,
+        "createdAt": 1694493927300,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u154",
+          "fullname": "Yomi",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4b7fe17dde65726409810dd2541769c4-1681190210085/1f9751ab-3804-48b7-a2ec-7eabe5361ad8.jpg",
+          "location": "Canada",
+        },
+      },
+      {
+        "id": "rev5",
+        "gig": "{optional-mini-gig}",
+        "txt": "My seo went up by a lot. it had been to early to see results, but I am positive that more views and more people will come to my channel and videos!",
+        "rate": 5,
+        "createdAt": 1694493927300,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u101",
+          "fullname": "Taylor P",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696177526/cld-sample.jpg",
+          "location": "Germany",
+        },
+      }
+    ],
+  },
 ]
 
 export default demoUsers

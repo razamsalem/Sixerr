@@ -740,7 +740,7 @@ const gigDemoData = [
 
     imgUrls: [
       "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/198975847/original/5af0c91ae1a8df6caafb05ece1244108ddf8b9b6/draw-amazing-realistic-painting-from-your-photo.jpg",
-      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/198975847/original/205e8654e3b0c1dcf8ff25f0894808ffc36316dd/draw-amazing-realistic-painting-from-your-photo.jpg","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/198975847/original/202da5b39d4199e9b4fa3b29c80392d66cacb6b7/draw-amazing-realistic-painting-from-your-photo.png"
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/198975847/original/205e8654e3b0c1dcf8ff25f0894808ffc36316dd/draw-amazing-realistic-painting-from-your-photo.jpg", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/198975847/original/202da5b39d4199e9b4fa3b29c80392d66cacb6b7/draw-amazing-realistic-painting-from-your-photo.png"
     ],
     category: "Graphics & Design",
     tags: ['AI Artists', 'Image Generation', 'Artists'],
@@ -749,6 +749,30 @@ const gigDemoData = [
       "fullname": "David C",
       "imgUrl": "/img/img3.jpg"
     }]
+  },
+  {
+    _id: "FUq4sRza",
+    title: "I will optimize your youtube video SEO and channel organically",
+    price: 30,
+    packages: {
+      basic: {
+        desc: '01 Video SEO Title, Description, Hashtags and Tags Research+ Backlinks',
+        features: ['Page/channel evaluation', '15 keywords/hashtags research', '1 video optimized', 'Title & description optimized']
+      }
+    },
+    owner: {
+      "_id": "Ra20Z02",
+      "fullname": "Shaon P",
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/1351ddea6267fbdac34406d7b9cb73a5-1695927142342/ea482d66-6692-4e61-b6a3-2e7df1895fa5.png",
+      "level": "basic/premium",
+      "rate": 5,
+    },
+    daysToMake: 5,
+    description: "Welcome to my YouTube SEO gig! I'm a certified SEO expert with years of experience in helping clients increase their visibility and grow their channels on YouTube. If you want to rank higher in search results, attract more views and subscribers, and boost your online presence, you've come to the right place.",
+    imgUrls: ["https://res.cloudinary.com/de2rdmsca/image/upload/v1698359084/e13cd8fa46f36704c6475da3ce7c29e4f39b2136_ih0uoq.webp", "https://res.cloudinary.com/de2rdmsca/image/upload/v1698359143/5996e86f11851bb75874bde997a39b830c3dbcfe_xndusq.webp", "https://res.cloudinary.com/de2rdmsca/image/upload/v1698359129/571c768d79532944cb766722dbb7313306da948a_dt2nmf.webp"],
+    category: "Digital Marketing",
+    tags: ['Video Marketing', 'Organic Social Promotions', 'Video SEO'],
+    likedByUsers: ['mini-user']
   },
 ]
 

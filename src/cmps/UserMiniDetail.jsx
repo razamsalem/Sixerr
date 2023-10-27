@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { userService } from "../services/user.service";
 import { display } from "@mui/system";
+import LoadingCircle from "./LoadingCircle";
 
 export function UserMiniDetail({ gig }) {
     const [seller,setSeller] = useState(null)
