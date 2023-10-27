@@ -1,29 +1,30 @@
  .cta-container {
      grid-column: 2;
-     grid-row: 2;   
+     grid-row: 2;
      position: sticky;
      top: 12vh;
      justify-self: end;
      width: em(412px);
 
      .package-options {
-        width: 100%;
-        button {
-            flex: 1;
-            font-weight: 700;
-            border: 1px solid $modal-filter-border-clr;
-            font-size: 1em;
-            background-color: $light-clr3;
-            color: $dark-clr-4;
-            padding: 1em;
+         width: 100%;
 
-            &.selected {
-                background-color: $light-clr;
-                color: $dark-clr1;
-                border-bottom: 3px solid $dark-clr1;
-            }
-        }
-    }
+         button {
+             flex: 1;
+             font-weight: 700;
+             border: 1px solid $modal-filter-border-clr;
+             font-size: 1em;
+             background-color: $light-clr3;
+             color: $dark-clr-4;
+             padding: 1em;
+
+             &.selected {
+                 background-color: $light-clr;
+                 color: $dark-clr1;
+                 border-bottom: 3px solid $dark-clr1;
+             }
+         }
+     }
 
      .call-to-action {
          border: 1px solid $dark-clr-2;
@@ -41,17 +42,22 @@
              justify-content: space-between;
              margin-block-end: em(32px);
 
-             .package {
-                 font-weight: 200;
-                 text-transform: uppercase;
-                 font-size: rem(18px);
-             }
-
              .price {
                  font-size: em(20px);
                  font-weight: 200;
                  letter-spacing: em(-1.6px);
+
+                 .price-font {
+                     font-size: rem(24px);
+                     font-weight: 700;
+                 }
              }
+         }
+
+         .package {
+             font-weight: bold;
+             text-transform: uppercase;
+             font-size: rem(18px);
          }
 
          .package-desc {

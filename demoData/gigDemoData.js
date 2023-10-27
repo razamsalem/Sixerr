@@ -5,14 +5,23 @@ const gigDemoData = [
     price: 15,
     packages: {
       basic: {
+        title: 'Bronze Package',
+        packPrice: 15,
+        packDaysToMake: 3,
         desc: '1 logo design + High Quality Mock-up + Logo Transparency + NO COMPLEX DESIGN',
         features: ['1 concept included', 'Logo transparency']
       },
       standard: {
+        title: 'Silver Package',
+        packPrice: 30,
+        packDaysToMake: 5,
         desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
         features: ['1 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
       },
       premium: {
+        title: 'Gold Package',
+        packPrice: 45,
+        packDaysToMake: 8,
         desc: ' 3 Amazing concepts + all source files+ Social Media Kit + 24/7 priority customer services',
         features: ['3 concepts included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file', 'Include social media kit']
       }
