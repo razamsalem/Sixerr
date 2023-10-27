@@ -11,6 +11,18 @@
     margin-block-end: auto;
     background-color: $light-clr;
 
+    .package-options {
+        button {
+            background-color: $light-clr3;
+            color: $dark-clr-4;
+            &.selected {
+                background-color: $light-clr;
+                color: $dark-clr1;
+                border-bottom: 3px solid $dark-clr1;
+            }
+        }
+    }
+
     .icon {
         width: em(16px);
     }

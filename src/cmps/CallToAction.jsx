@@ -39,7 +39,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder }) {
                 <img className='icon time' src={timeImg} alt="time-icon" />
                 <h3>{daysToMake} Days Delivery</h3>
             </span>
-            
+
             <ul className="feature-list">
                 {features.map((feature) => (
                     <span key={feature} className='feature-container'>
