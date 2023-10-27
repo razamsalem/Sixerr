@@ -26,7 +26,6 @@ export function AddGig() {
         const desiredGig = await gigService.getById(gigId)
         try {
             setGigToEdit(desiredGig)
-            console.log('test');
         } catch (err) {
             console.log('Had issues in addGig ->', err)
             showErrorMsg('Oops cannot load gig')
@@ -76,7 +75,7 @@ export function AddGig() {
     return (
         <section className="add-gig">
             <form className='create-gig' onSubmit={onSaveGig}>
-                <h1 className="heading">Add a gig</h1>
+                <h1 className="heading">{gigId ? 'Edit a gig' : 'Add a gig'}</h1>
                 <h2 className="sub-heading">Fill the required information and share your details about your new gig</h2>
 
                 <label className='form-label gig-title'>
@@ -95,6 +94,7 @@ export function AddGig() {
                     Category tags
                     <MultiSelect tags={currCategory.tags || []} onChooseTag={onSelectTag} chosenTags={gigToEdit.tags} />
                 </label>
+
                 <span className='numbers'>
                     <label className='form-label days-to-make'>
                         Est. Days to deliver
