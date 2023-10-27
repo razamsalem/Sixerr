@@ -30,37 +30,36 @@
                         right: em(17px);
                     }
                 }
-                /* Styles for the dot container */
                 .slick-dots {
                     position: absolute;
-                    bottom: 20px; /* Adjust vertical placement */
-                    left: 0; /* Adjust horizontal placement */
+                    bottom: rem(20px);
+                    left: 0; 
                     right: 0;
                     display: flex;
                     justify-content: center;
                     list-style: none;
                     padding: 0;
                     margin: 0;
-                    z-index: 1; /* Place dots over the images */
+                    z-index: 1; 
 
                 }
                 .slick-dots li{
-                    width: 5px;
-                    height: 10px;
+                    width: rem(5px);
+                    height: rem(10px);
                 }
                 .slick-dots li button {
-                    width: 5px; /* Adjust the width of the dots */
-                    height: 5px; /* Adjust the height of the dots */
-                    border-radius: 50%; /* Make the dots round */
-                    background-color: #fff; /* Change the background color of the dots */
-                    transition: all 0.3s; /* Add transition for hover effect */
+                    width: rem(5px); 
+                    height: rem(5px); 
+                    border-radius: 50%;
+                    background-color: #fff;
+                    transition: all 0.3s; 
                     padding: 0;
                 }
                 
                 .slick-dots li.slick-active button:before {
                     color:transparent;
-                    width: 2px; 
-                    height: 2px;
+                    width: rem(2px); 
+                    height: rem(2px);
                 }
                 
                 .slick-dots li.slick-active button {
@@ -70,18 +69,13 @@
                 .slick-dots li:not(.slick-active) button:before {
                    color:transparent;
                 }
-                
-               
-                  
-                  
-                 
             }
 
             .gig-img {
                 width: 100%;
                 aspect-ratio: 1.69 / 1;
                 object-fit: cover;
-                border: 1px solid #e4e5e7;
+                border: 1px solid $light-clr2;
                 border-radius: 8px;
                 margin-bottom: rem(7px);
                 cursor: pointer;
