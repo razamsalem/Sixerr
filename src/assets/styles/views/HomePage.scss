@@ -1,7 +1,7 @@
 .home {
     .title-slide {
         font-size: rem(32px);
-        margin-block-start: rem(105px);
+        margin-block-start: rem(99px);
         padding-block-end: rem(24px);
         font-weight: 1000;
         letter-spacing: em(-1px);
@@ -10,10 +10,10 @@
 
 
     .slider-home {
-        max-width: 95vw;
-        // Smaller MQs will hold:
-        // max-width: 90vw;
-        // justify-self: center;
+        max-width: 83vw;
+        justify-self: center;
+
+        // border: 1px solid yellowgreen;
 
         .slick-slider {
             .slick-slide {
@@ -43,6 +43,37 @@
                     left: calc(-1 * $arrow-btn-size / 2);
                 }
             }
+        }
+    }
+
+
+    @include for-small-layout {
+        .slider-home {
+            max-width: 88vw;
+            justify-self: center;
+            // border: 1px solid red;
+        }
+    }
+
+    @include for-narrow-layout {
+        .slider-home {
+            max-width: 91vw;
+            // border: 1px solid pink;
+        }
+    }
+
+    @include for-normal-layout {
+        .slider-home {
+            max-width: 93vw;
+            // border: 2px solid rgb(177, 18, 135);
+        }
+    }
+
+    @include for-large-layout {
+        .slider-home {
+            max-width: 94vw;
+            justify-self: unset;
+            // border: 2px solid rgb(18, 111, 177);
         }
     }
 

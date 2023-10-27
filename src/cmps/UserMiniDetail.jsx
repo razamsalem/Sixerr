@@ -39,7 +39,7 @@ export function UserMiniDetail({ gig }) {
                             <img src="/src/assets/img/star-grey.svg" alt="star-svg" className="star" />
                         </span>
                         <span className="owner-rate">5</span>
-                        <span className="owner-number-rates">(137)</span>
+                        <span className="owner-number-rates">({seller.reviews.length})</span>
                     </div>
                 </div>
             </div>

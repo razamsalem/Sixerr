@@ -79,7 +79,7 @@ export function GigDetails() {
                                 <img src={starGrey} alt="star-svg" className="star" />
                             </span>
                             <span className="owner-rate">{gig.owner.rate}</span>
-                            <span className="owner-number-rates">(137)</span>
+                            <span className="owner-number-rates">({seller.reviews.length})</span>
                         </div>
                     </div>
                 </div>
