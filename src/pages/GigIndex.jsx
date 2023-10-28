@@ -7,6 +7,7 @@ import { gigService } from '../services/gig.service.local.js'
 import { GigList } from '../cmps/GigList.jsx'
 import { DynamicBtn } from '../cmps/DynamicBtn.jsx'
 import { useSearchParams } from "react-router-dom"
+import LoadingCircle from '../cmps/LoadingCircle.jsx'
 
 
 export function GigIndex() {
@@ -56,11 +57,12 @@ export function GigIndex() {
         }
     }
 
+    if (!gigs.length) return <div className="loading"><LoadingCircle /></div>
     return (
         <div>
             <DynamicBtn />
             <main>
-                <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} onloadUser={loadUser}/>
+                <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} onloadUser={loadUser} />
             </main>
         </div>
     )
