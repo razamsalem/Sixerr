@@ -97,7 +97,6 @@ export function getDefaultFilter() {
 
 function getEmptyGig() {
     let owner = userService.getLoggedinUser()
-    owner.rate = 4.9
 
     return {
         owner,
