@@ -29,7 +29,7 @@ export function GigIndex() {
             return seller;
         } catch (err) {
             console.log('Had issues in review list ->', err)
-            showErrorMsg('Oops cannot load review')
+            showErrorMsg('Oops cannot load review') 
             navigate('/')
         }
     }

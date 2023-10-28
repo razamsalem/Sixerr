@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export function Pagination({ currentPage, totalPages, onPageChange }) {
+    const [activePage, setActivePage] = useState(1)
 
-    async function handlePageChange(newPage) {
+    function handlePageChange(newPage) {
         if (newPage >= 1 && newPage <= totalPages) {
             console.log('currentPage', currentPage)
-            await onPageChange(newPage)
+            onPageChange(newPage)
+            setActivePage(newPage)
         }
     }
 
@@ -14,7 +16,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }) {
             <li
                 key={idx + 1}
                 onClick={() => handlePageChange(idx + 1)}
-                className={`page-number ${currentPage === idx + 1 ? 'active' : ''}`}
+                className={`page-number ${activePage === idx + 1 ? 'active' : ''}`}
             >
                 <span>{idx + 1}</span>
             </li>
