@@ -26,7 +26,7 @@ export function GigIndex() {
     async function loadUser(gig) {
         try {
             const seller = await userService.getById(gig.owner._id)
-            return seller;
+            return seller
         } catch (err) {
             console.log('Had issues in review list ->', err)
             showErrorMsg('Oops cannot load review')
