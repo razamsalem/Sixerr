@@ -10,8 +10,7 @@
 
         .img-container {
             width: 100%;
-            height: 55%;
-            margin-block-end: rem(5px);
+            margin-block-end: rem(12px);
 
             .slick-slider {
                 position: relative;
@@ -87,8 +86,7 @@
                 aspect-ratio: 1.69 / 1;
                 object-fit: cover;
                 border: 1px solid $light-clr2;
-                border-radius: 8px;
-                margin-bottom: rem(7px);
+                border-radius: em(8px);
                 cursor: pointer;
             }
         }
@@ -112,6 +110,7 @@
         }
 
         .owner-details {
+            width: 100%;
             flex-direction: column;
 
             .owner-details-1 {
