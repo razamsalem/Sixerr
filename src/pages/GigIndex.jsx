@@ -65,8 +65,13 @@ export function GigIndex() {
         }
     }
 
-    function handlePageChange(newPage) {
-        setFilterBy({ ...filterBy, page: newPage })
+    async function handlePageChange(newPage) {
+        try {
+            setFilterBy({ ...filterBy, page: newPage })
+            window.scrollTo(0, 0)
+        } catch (error) {
+            console.log('Error while changing the page:', error)
+        }
     }
 
 

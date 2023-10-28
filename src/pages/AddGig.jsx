@@ -14,7 +14,8 @@ export function AddGig() {
     const [selectedPackage, setSelectedPackage] = useState('basic')
     const { gigId } = useParams()
     const navigate = useNavigate()
-
+    window.scrollTo(0, 0)
+    
     useEffect(() => {
         setGigToEdit(gigService.getEmptyGig())
         onLoadGig()
