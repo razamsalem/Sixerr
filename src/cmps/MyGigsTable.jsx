@@ -5,6 +5,7 @@ import { gigService } from "../services/gig.service.local";
 import { onRemoveGigOptimistic } from '../store/actions/gig.actions'
 
 export function MyGigsTable({ gigs, setModalOpen }) {
+    const defaultImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698161431/sixxer-logo_vseimk.png'
     const navigate = useNavigate()
 
     function onClickGig(gigId) {
@@ -35,7 +36,7 @@ export function MyGigsTable({ gigs, setModalOpen }) {
             <tbody>
                 {gigs.map((gig, idx) => (
                     <tr key={idx} onClick={() => onClickGig(gig._id)} >
-                        <td><img src={gig.imgUrls[0]} alt="Gig Image" /></td>
+                        <td><img src={gig.imgUrls[0] || defaultImg} alt="Gig Image" /></td>
                         <td><LongTxt txt={gig.title} length={35} showReadMore={false} /></td>
                         <td><LongTxt txt={gig.description} length={45} showReadMore={false} /></td>
                         <td>{utilService.getRandomDate()}</td>
