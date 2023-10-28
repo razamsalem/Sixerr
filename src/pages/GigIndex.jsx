@@ -77,7 +77,8 @@ export function GigIndex() {
 
     if (!currPageGigs.length) return <div className="loading"><LoadingCircle /></div>
     return (
-        <main>
+        <>
+            <DynamicBtn />
             {currPageGigs.length === 0 ? (
                 <div className="no-gigs-message">No gigs to show</div>
             ) : (
@@ -93,6 +94,6 @@ export function GigIndex() {
                 totalPages={totalPages}
                 onPageChange={handlePageChange}
             />
-        </main>
+        </>
     )
 }
