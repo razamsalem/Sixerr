@@ -8,12 +8,20 @@ import { GigList } from '../cmps/GigList.jsx'
 import { DynamicBtn } from '../cmps/DynamicBtn.jsx'
 import { useSearchParams } from "react-router-dom"
 import LoadingCircle from '../cmps/LoadingCircle.jsx'
+import { Pagination } from '../cmps/Pagination.jsx'
 
 
 export function GigIndex() {
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
     let [searchParams, setSearchParams] = useSearchParams()
+
+    const currentPage = filterBy.page || 1
+    const totalGigsPerPage = 12
+    const totalPages = Math.ceil(gigs.length / totalGigsPerPage)
+    const startIndex = (currentPage - 1) * totalGigsPerPage
+    const endIndex = startIndex + totalGigsPerPage
+    const currPageGigs = gigs.slice(startIndex, endIndex)
 
     async function loadUser(gig) {
         try {
@@ -57,12 +65,22 @@ export function GigIndex() {
         }
     }
 
+    function handlePageChange(newPage) {
+        setFilterBy({ ...filterBy, page: newPage })
+    }
+
+
     if (!gigs.length) return <div className="loading"><LoadingCircle /></div>
     return (
         <div>
             <DynamicBtn />
             <main>
-                <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} onloadUser={loadUser} />
+                <GigList gigs={currPageGigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} onloadUser={loadUser} />
+                <Pagination
+                    currentPage={filterBy.page}
+                    totalPages={totalPages}
+                    onPageChange={handlePageChange}
+                />
             </main>
         </div>
     )

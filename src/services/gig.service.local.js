@@ -76,7 +76,7 @@ async function save(gig) {
 }
 
 export function getDefaultFilter() {
-    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '' }
+    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '', page: 1 }
 }
 
 // async function addGigMsg(gigId, txt) {
