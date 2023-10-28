@@ -63,30 +63,32 @@ export function DynamicBtn() {
     if (!btns) return '<div></div>'
 
     return (
-        <section className="filter-btns">
-            {btns.map((btn, idx) => (
-                <button
-                    key={btn.title}
-                    onClick={(ev) => onToggleArrow(ev, idx)}
-                    className={`filter-btn ${isArrowUp[idx] ? 'arrow-up' : ''}`}
-                >
-                    {btn.title}{' '}
-                    <span className={`icon fa-solid ${isArrowUp[idx] ? 'angle-up' : 'angle-down'}`}></span>
-                </button>
-            ))}
-            <DynamicModal
-                setFilterBy={setFilterBy}
-                globalFilterBy={globalFilterBy}
-                isOpen={selectedBtn !== null}
-                onClose={closeModal}
-                btn={selectedBtn}
-                content={'some content'}
-                position={selectedBtn?.position}
-                modalRef={modalRef}
-            />
+        <section className="filter-btns-container full main-layout">
+            <section className="filter-btns">
+                {btns.map((btn, idx) => (
+                    <button
+                        key={btn.title}
+                        onClick={(ev) => onToggleArrow(ev, idx)}
+                        className={`filter-btn ${isArrowUp[idx] ? 'arrow-up' : ''}`}
+                    >
+                        {btn.title}{' '}
+                        <span className={`icon fa-solid ${isArrowUp[idx] ? 'angle-up' : 'angle-down'}`}></span>
+                    </button>
+                ))}
+                <DynamicModal
+                    setFilterBy={setFilterBy}
+                    globalFilterBy={globalFilterBy}
+                    isOpen={selectedBtn !== null}
+                    onClose={closeModal}
+                    btn={selectedBtn}
+                    content={'some content'}
+                    position={selectedBtn?.position}
+                    modalRef={modalRef}
+                />
 
-            <section className='pills-container'>
-                {filterKeys.map(key => <FilterPill key={key} filterKey={key} filterValue={globalFilterBy[key]} onRemoveFilterPill={onRemoveFilterPill} />)}
+                <section className='pills-container'>
+                    {filterKeys.map(key => <FilterPill key={key} filterKey={key} filterValue={globalFilterBy[key]} onRemoveFilterPill={onRemoveFilterPill} />)}
+                </section>
             </section>
         </section>
     )

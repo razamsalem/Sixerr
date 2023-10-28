@@ -13,16 +13,37 @@
     }
 
     .drop-down-menu {
-        animation-name: short-fade-in-down;
-        animation-duration: 1s;
-
+        top: 140%;
         position: absolute;
-        right: 0;
+        right: em(-6px);
         z-index: 2;
         background-color: $light-clr;
         color: $dark-clr;
-        border-radius: em(6px);
-        box-shadow: em(1px) em(1px) em(10px) lighten($dark-clr-3, 10%);
+        border: em(2px) solid $dark-clr-2;
+        padding-inline: em(10px);
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            right: em(5px);
+            width: 0;
+            height: 0;
+            border-left: em(10px) solid transparent;
+            border-right: em(10px) solid transparent;
+            clear: both;
+            transform: rotateX(180deg);
+        }
+
+        &::before {
+            border-top: em(10px) solid $dark-clr-2;
+            top: em(-10px);
+        }
+
+        &::after {
+            top: em(-7.5px);
+            border-top: em(10px) solid $light-clr;
+        }
 
         &.closed {
             animation-name: short-fade-out;
@@ -35,6 +56,7 @@
             transition: background-color 0.2s, color 0.2s;
             font-weight: 700;
 
+
             &:first-child {
                 border-radius: 6px 6px 0 0;
                 padding-block-start: 5px;
@@ -46,7 +68,7 @@
             }
 
             &:not(:last-child) {
-                border-block-end: 1px solid $dark-clr-3;
+                border-block-end: 1px solid $dark-clr-2;
             }
 
             .action {

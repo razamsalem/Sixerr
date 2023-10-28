@@ -150,36 +150,8 @@
                     position: relative;
 
                     .drop-down-menu {
-                        animation: none;
                         top: 140%;
-                        border: em(2px) solid $dark-clr-2;
-                        padding-inline: em(10px);
-                        box-shadow: none;
-                        border-radius: 0;
-
-
-                        &::before,
-                        &::after {
-                            content: '';
-                            position: absolute;
-                            right: em(5px);
-                            width: 0;
-                            height: 0;
-                            border-left: em(10px) solid transparent;
-                            border-right: em(10px) solid transparent;
-                            clear: both;
-                            transform: rotateX(180deg);
-                        }
-
-                        &::before {
-                            border-top: em(10px) solid $dark-clr-2;
-                            top: em(-10px);
-                        }
-
-                        &::after {
-                            top: em(-7.5px);
-                            border-top: em(10px) solid $light-clr;
-                        }
+                        right: 0;
                     }
 
                     .drop-down-item {
@@ -188,7 +160,6 @@
                         letter-spacing: 0.3px;
                         width: rem(100px);
                         padding-block: em(5px);
-                        border-color: $dark-clr-2;
 
                         &>* {
                             display: block;
