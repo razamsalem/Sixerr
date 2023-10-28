@@ -49,6 +49,17 @@ export function GigDetails() {
 
     const defaultImgUrl = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698161431/sixxer-logo_vseimk.png'
 
+
+    // function avgReviews() {
+    //     let sum = 0
+    //     let reviews = seller.reviews;
+    //     for (let i = 0; i < reviews.length; i++) {
+    //        sum+=reviews[i].rate
+            
+    //     }
+    //     return sum/reviews.length
+    // }
+
     useEffect(() => {
         loadGig()
     }, [gigId])
@@ -80,6 +91,8 @@ export function GigDetails() {
                             </span>
                             <span className="owner-rate">{gig.owner.rate}</span>
                             <span className="owner-number-rates">({seller.reviews.length})</span>
+                            <span className="divider">|</span>
+                            <span className="queue">10 Orders in Queue</span>
                         </div>
                     </div>
                 </div>

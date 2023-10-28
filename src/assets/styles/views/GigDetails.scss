@@ -34,7 +34,6 @@
         .star-wrapper {
             display: flex;
             gap: em(3px);
-
             .owner-rate {
                 font-weight: 700;
             }
@@ -42,6 +41,14 @@
             .owner-number-rates {
                 color: $dark-clr-4;
                 text-decoration: underline;
+                padding-right: 7px;
+            }
+            .divider{
+               color: $light-clr2
+            }
+            .queue{
+                color: $dark-clr-4;
+                padding-left: 7px;
             }
         }
     }
