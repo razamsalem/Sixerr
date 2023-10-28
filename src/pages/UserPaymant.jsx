@@ -1,7 +1,6 @@
-import { useSelector } from "react-redux"
-import cards from "../assets/img/credit-cards.svg"
 import { useState } from "react"
-import { useParams } from "react-router"
+import cards from "../assets/img/credit-cards.svg"
+import ccIcon from "../assets/img/cc-icon.png"
 
 export function UserPayment({ user }) {
     const [radioOptions, setRadioOptions] = useState({ visa: true, paypal: false })
@@ -47,8 +46,8 @@ export function UserPayment({ user }) {
                         <div className="card card-number">
                             <label htmlFor=""><h6>Card Number</h6></label>
                             <label className="credit-card-input-wrapper">
-                                <img src="https://res.cloudinary.com/dgsfbxsed/image/upload/v1696838077/cc-img_np2lxb.svg" alt="credit-card-icon" className="card-logo" />
-                                <input type="text" placeholder="0000 0000 0000 0000" defaultValue='5326-1000-0000-0000' />
+                                <img src={ccIcon} alt="credit-card-icon" className="card-logo" />
+                                <input className="input" type="text" placeholder="5326 1000 2000 3000" defaultValue='5326-1000-2000-3000' />
                             </label>
                         </div>
 

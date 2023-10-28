@@ -8,12 +8,12 @@
         border: none;
         padding: 0 em(4px);
         height: em(42px);
-        margin-top: 10px;
-        border: em(1px) solid #c5c6c9;
+        border: em(1px) solid $light-clr2;
         border-radius: em(4px);
-        width: em(340px);
         padding-left: 1rem;
-
+        margin-top: 8px;
+        color: $dark-clr;
+        font-size: 1rem;
     }
 
     .billing-info-wrapper {
@@ -52,49 +52,64 @@
 
     .payment-methods-wrapper {
         .credit-card-details-wrapper {
-            padding: em(24px) em(18px);
+            padding: 0 1.125em 1.5em;
             border-bottom: em(1px) solid $light-clr4;
         }
 
         .credit-card-details {
             .card {
+                width: 75%;
                 display: flex;
-                flex-wrap: wrap;
                 justify-content: space-between;
-                gap: em(16px);
                 margin-top: em(8px);
-            }
-        }
+                margin-block-end: em(18px);
+                gap: em(16px);
 
-        .credit-card-details .card-number {
-            .credit-card-input-wrapper {
-                display: flex;
-                flex-wrap: nowrap;
-                border: em(1px) solid #c5c6c9;
-                border-radius: em(4px);
-                flex-basis: 100%;
-                align-items: center;
-                height: em(42px);
-                margin-top: em(10px);
-                align-items: center;
-                gap: em(18px);
 
-                input {
-                    border: none;
-                }
+                &>* {
+                    width: 50%;
 
-                .card-logo {
-                    display: inline-block;
-                    height: 2em;
-                    width: 2em;
-                    background: white no-repeat;
-                    border: none;
-                    background-position-y: center;
-                    margin-left: 1rem;
+                    &>* {
+                        width: 100%;
+                    }
                 }
             }
 
+            .card-number {
+                margin-block-end: em(19px);
+                flex-wrap: wrap;
 
+                .credit-card-input-wrapper {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    border: em(1px) solid $light-clr2;
+                    border-radius: em(4px);
+                    flex-basis: 100%;
+                    align-items: center;
+                    height: em(42px);
+                    margin-top: em(8px);
+                    align-items: center;
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        margin: 0;
+                        border: none;
+                    }
+
+                    .card-logo {
+                        display: inline-block;
+                        height: 1.3rem;
+                        width: 1.3rem;
+                        background: white no-repeat;
+                        border: none;
+                        background-position-y: center;
+                        margin-left: 1rem;
+                    }
+                }
+
+
+            }
         }
 
     }
