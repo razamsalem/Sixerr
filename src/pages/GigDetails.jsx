@@ -15,15 +15,20 @@ import { showErrorMsg } from "../services/event-bus.service";
 
 
 export function GigDetails() {
-    // const [reviews, setReviews] = useState(null) 
+
     const [gig, setGig] = useState(null)
     const { gigId } = useParams()
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const [seller, setSeller] = useState(null)
+    const defaultImgUrl = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698161431/sixxer-logo_vseimk.png'
+
+    useEffect(() => {
+        loadGig()
+        window.scrollTo(0, 0)
+    }, [gigId])
 
     async function loadUser() {
-        // console.log(gig);
         try {
             const seller = await userService.getById(gig.owner._id)
             setSeller(seller)
@@ -46,14 +51,6 @@ export function GigDetails() {
             navigate('/')
         }
     }
-
-    const defaultImgUrl = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698161431/sixxer-logo_vseimk.png'
-
-    useEffect(() => {
-        loadGig()
-    }, [gigId])
-
-
 
     function addToCart(gig) {
         dispatch({ type: ADD_TO_CART, gig })
@@ -91,7 +88,6 @@ export function GigDetails() {
                         <button className='next-btn arrow' onClick={clickHandler} >
                             <i className="fa-solid fa-chevron-right"></i>
                         </button>
-                        // <PrevBtn onClick={clickHandler} where={'detail'}/>
                     )
                 }}
                     renderArrowPrev={(clickHandler, hasNext) => {
@@ -99,8 +95,6 @@ export function GigDetails() {
                             <button className='prev-btn arrow' onClick={clickHandler} >
                                 <i className="fa-solid fa-chevron-left"></i>
                             </button>
-                            // <NextBtn onClick={clickHandler} where={'detail'}/>
-
                         )
                     }}
                 >
