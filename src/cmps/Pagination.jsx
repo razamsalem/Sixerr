@@ -8,6 +8,8 @@ export function Pagination({ currentPage, totalPages, onPageChange }) {
             console.log('currentPage', currentPage)
             onPageChange(newPage)
             setActivePage(newPage)
+            console.log('currentPage', currentPage)
+            console.log('activePage', activePage)
         }
     }
 
@@ -37,7 +39,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }) {
             {currentPage < totalPages && (
                 <li
                     className="pagination-arrows"
-                    onClick={() => handlePageChange(currentPage + 1)}
+                    onClick={() => handlePageChange(activePage + 1)}
                 >
                     <i class="fa-solid fa-arrow-right"></i>
                 </li>
