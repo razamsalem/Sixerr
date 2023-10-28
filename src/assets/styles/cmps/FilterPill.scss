@@ -1,0 +1,31 @@
+.pills-container {
+    display: flex;
+    margin-block-end: em(24px);
+
+    .filter-pill {
+        display: flex;
+        align-items: center;
+        gap: em(4px);
+        font-size: rem(14px);
+        padding: em(6px) em(14px);
+        background-color: $light-clr4;
+        border-radius: 3rem;
+        font-weight: 1000;
+        margin-inline-end: 10px;
+        color: black;
+        cursor: default;
+
+        &:hover {
+            color: $dark-clr-1;
+        }
+
+        .close {
+            font-size: rem(15px);
+            color: $dark-clr-1;
+
+            &:hover {
+                color: black;
+            }
+        }
+    }
+}

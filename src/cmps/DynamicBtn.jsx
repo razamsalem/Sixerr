@@ -1,13 +1,21 @@
-import { useState, useEffect, useRef } from 'react';
-
+import { useState, useEffect, useRef } from 'react'
+import { setFilterBy } from '../store/actions/gig.actions'
 import { dynamicService } from "../services/dynamicBtn.service.js"
 import DynamicModal from "./DynamicModal.jsx"
+import { useSelector } from 'react-redux'
+import { FilterPill } from './FilterPill'
 
 export function DynamicBtn() {
+    const globalFilterBy = useSelector(storeState => storeState.gigModule.filterBy)
+    let filterKeys = []
     const [btns, setBtns] = useState(null)
     const [isArrowUp, setIsArrowUp] = useState([])
     const [selectedBtn, setSelectedBtn] = useState(null)
     const modalRef = useRef(null)
+
+    for (const key in globalFilterBy) {
+        if (!filterKeys.includes(key)) filterKeys.push(key)
+    }
 
     useEffect(() => {
         getBtns()
@@ -47,6 +55,11 @@ export function DynamicBtn() {
         setSelectedBtn(null)
     }
 
+    function onRemoveFilterPill(ev) {
+        const filterKey = ev.target.name
+        setFilterBy({ [filterKey]: '' })
+    }
+
     if (!btns) return '<div></div>'
 
     return (
@@ -62,7 +75,8 @@ export function DynamicBtn() {
                 </button>
             ))}
             <DynamicModal
-                // onSetFilter={onSetFilter}
+                setFilterBy={setFilterBy}
+                globalFilterBy={globalFilterBy}
                 isOpen={selectedBtn !== null}
                 onClose={closeModal}
                 btn={selectedBtn}
@@ -70,6 +84,10 @@ export function DynamicBtn() {
                 position={selectedBtn?.position}
                 modalRef={modalRef}
             />
+
+            <section className='pills-container'>
+                {filterKeys.map(key => <FilterPill key={key} filterKey={key} filterValue={globalFilterBy[key]} onRemoveFilterPill={onRemoveFilterPill} />)}
+            </section>
         </section>
     )
 }

@@ -159,25 +159,30 @@
     .radio-list {
         flex-direction: column;
         cursor: pointer;
-        
+
         .radio-item-wrapper {
             padding: rem(9px);
             font-weight: 600;
-            
-            label{
+
+            label {
                 width: rem(175px);
                 align-items: center;
+
                 &:hover {
                     cursor: pointer;
                 }
+
+                input {
+                    margin: 0;
+                }
             }
-            
+
             p {
                 margin-inline-start: rem(8px);
                 // padding-inline-end: rem(60px);
                 font-size: rem(14px);
             }
-            
+
             &:hover {
                 border-radius: 8px;
                 background-color: $light-clr3;
