@@ -5,15 +5,27 @@
     align-items: center;
     padding: 0;
     margin-block-start: rem(47px);
-    justify-content: center;
-    align-items: center;
 
-    .pagination-arrows {    
-        cursor: pointer;
+    .pagination-arrows {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 5px;
-        margin: 0 10px;
-        font-size: 20px;
+        font-size: rem(16px);
         transition: color 0.3s;
+        color: $dark-clr-4;
+        border: 1px solid $light-clr2;
+        border-radius: 50%;
+        width: rem(42px);
+        height: rem(42px);
+        margin: 0 10px;
+        cursor: pointer;
+
+        &:hover {
+            color: $dark-clr-1;
+            background-color: $light-clr1;
+            border-color: $light-clr1;
+        }
     }
 
     .page-number {
@@ -22,7 +34,7 @@
         font-weight: 600;
         line-height: 24px;
         padding: 5px 10px;
-        font-size: rem(20px);
+        font-size: rem(19px);
 
         &:hover {
             color: $dark-clr1;
