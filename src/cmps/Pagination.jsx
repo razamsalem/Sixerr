@@ -8,42 +8,42 @@ export function Pagination({ currentPage, totalPages, onPageChange }) {
             console.log('currentPage', currentPage)
             onPageChange(newPage)
             setActivePage(newPage)
-            console.log('currentPage', currentPage)
-            console.log('activePage', activePage)
         }
     }
 
     function renderPageNumbers() {
-        return Array.from({ length: totalPages }, (_, idx) => (
+        const pageNumbers = Array.from({ length: totalPages }, (_, idx) => idx + 1)
+
+        return pageNumbers.map((page) => (
             <li
-                key={idx + 1}
-                onClick={() => handlePageChange(idx + 1)}
-                className={`page-number ${activePage === idx + 1 ? 'active' : ''}`}
+                key={page}
+                onClick={() => handlePageChange(page)}
+                className={`page-number ${activePage === page ? 'active' : ''}`}
             >
-                <span>{idx + 1}</span>
+                <span>{page}</span>
             </li>
         ))
     }
 
     return (
         <ul className="pagination flex">
-            {currentPage > 1 && (
-                <li
-                    className="pagination-arrows"
-                    onClick={() => handlePageChange(currentPage - 1)}
-                >
-                    <i class="fa-solid fa-arrow-left"></i>
-                </li>
-            )}
+            <li
+                className={`pagination-arrows first-page ${activePage === 1 ? 'disabled' : ''}`}
+                onClick={() =>
+                    currentPage > 1 && handlePageChange(currentPage - 1)
+                }
+            >
+                <i className="fa-solid fa-arrow-left"></i>
+            </li>
             {renderPageNumbers()}
-            {currentPage < totalPages && (
-                <li
-                    className="pagination-arrows"
-                    onClick={() => handlePageChange(activePage + 1)}
-                >
-                    <i class="fa-solid fa-arrow-right"></i>
-                </li>
-            )}
+            <li
+                className={`pagination-arrows last-page ${activePage === totalPages ? 'disabled' : ''}`}
+                onClick={() =>
+                    currentPage < totalPages && handlePageChange(activePage + 1)
+                }
+            >
+                <i className="fa-solid fa-arrow-right"></i>
+            </li>
         </ul>
     )
 }

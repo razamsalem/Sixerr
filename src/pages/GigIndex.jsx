@@ -17,7 +17,7 @@ export function GigIndex() {
     let [searchParams, setSearchParams] = useSearchParams()
 
     const currentPage = filterBy.page || 1
-    const totalGigsPerPage = 4
+    const totalGigsPerPage = 12
     const totalPages = Math.ceil(gigs.length / totalGigsPerPage)
     const startIndex = (currentPage - 1) * totalGigsPerPage
     const endIndex = startIndex + totalGigsPerPage
@@ -29,7 +29,7 @@ export function GigIndex() {
             return seller;
         } catch (err) {
             console.log('Had issues in review list ->', err)
-            showErrorMsg('Oops cannot load review') 
+            showErrorMsg('Oops cannot load review')
             navigate('/')
         }
     }
@@ -75,18 +75,24 @@ export function GigIndex() {
     }
 
 
-    if (!gigs.length) return <div className="loading"><LoadingCircle /></div>
+    if (!currPageGigs.length) return <div className="loading"><LoadingCircle /></div>
     return (
-        <div>
-            <DynamicBtn />
-            <main>
-                <GigList gigs={currPageGigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} onloadUser={loadUser} />
-                <Pagination
-                    currentPage={filterBy.page}
-                    totalPages={totalPages}
-                    onPageChange={handlePageChange}
+        <main>
+            {currPageGigs.length === 0 ? (
+                <div className="no-gigs-message">No gigs to show</div>
+            ) : (
+                <GigList
+                    gigs={currPageGigs}
+                    onRemoveGig={onRemoveGig}
+                    onUpdateGig={onUpdateGig}
+                    onloadUser={loadUser}
                 />
-            </main>
-        </div>
+            )}
+            <Pagination
+                currentPage={filterBy.page}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+            />
+        </main>
     )
 }

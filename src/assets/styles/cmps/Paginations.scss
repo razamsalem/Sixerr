@@ -21,6 +21,12 @@
         margin: 0 10px;
         cursor: pointer;
 
+        &.disabled {
+            opacity: .3;
+            pointer-events: none;
+        }
+
+
         &:hover {
             color: $dark-clr-1;
             background-color: $light-clr1;
