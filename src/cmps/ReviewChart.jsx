@@ -30,9 +30,11 @@ export function ReviewChart({reviews}) {
             {Array(5)
             .fill()
             .map((_, i) => (
-                <div className="review-bars-container" key={i}>
-                    { (5-i===1) ? <div>1 Star</div> : <div>{5-i} Stars</div>}
-                    <progress value={lengthOfreviews()[4-i]/reviews.length*100} max="100" ></progress>
+               <div className="review-bars-container" key={i} style={lengthOfreviews()[4-i]===0? {color:'#e4e5e7'}: {}}>
+                    { (5-i===1) ? <div className="star-number">1 Star</div> : <div className="star-number">{5-i} Stars</div>}
+                        <div className="review-rate-bar">
+                            <span className="percent" style={{width:`${(lengthOfreviews()[4-i]/reviews.length*100)}%`}}></span>
+                        </div>
                     <span>({lengthOfreviews()[4-i]})</span>
                 </div>
             ))}
