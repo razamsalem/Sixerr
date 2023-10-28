@@ -3,9 +3,11 @@ import Slider from "react-slick";
 import { NextBtn } from "./NextBtn.jsx";
 import { PrevBtn } from "./PrevBtn.jsx";
 import { Link } from "react-router-dom";
+const defaultImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698161431/sixxer-logo_vseimk.png'
 
+export function GigSlider({ gig }) {
+  if (!gig.imgUrls.length) gig.imgUrls = [defaultImg]
 
-export function GigSlider({ gig}) {
   const settings = {
     dots: true,
     infinite: true,
@@ -14,7 +16,8 @@ export function GigSlider({ gig}) {
     slidesToScroll: 1,
     prevArrow: <PrevBtn />,
     nextArrow: <NextBtn />,
-  };
+  }
+
 
   return (
 

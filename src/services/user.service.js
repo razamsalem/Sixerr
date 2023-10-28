@@ -76,7 +76,7 @@ async function changeScore(by) {
 }
 
 function saveLocalUser(user) {
-    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, location: user.location, isSeller: user.isSeller }
+    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, location: user.location, isSeller: user.isSeller, rate: user.rate, level: user.level }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
@@ -94,7 +94,8 @@ function getEmptyUser() {
         isSeller: '',
         location: 'Israel',
         reviews: [],
-        lang: ["English", "Hebrew"]
+        lang: ["English", "Hebrew"],
+        level: 1
     }
 }
 

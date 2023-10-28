@@ -10,11 +10,11 @@
 
         .img-container {
             width: 100%;
-            height: 55%;
-            margin-block-end: rem(5px);
+            margin-block-end: rem(12px);
 
             .slick-slider {
                 position: relative;
+
                 .gallery-btn {
                     height: em(30px);
                     width: em(30px);
@@ -22,59 +22,63 @@
                     top: 39%;
                     opacity: 0;
                     transition: all 0.5s;
-                   
-                    i{
+
+                    i {
                         font-size: rem(13px);
                     }
+
                     &.prev {
                         left: em(-35px);
-                       
+
                     }
+
                     &.next {
                         right: em(-35px);
                     }
                 }
+
                 .slick-dots {
                     position: absolute;
                     bottom: rem(20px);
-                    left: 0; 
+                    left: 0;
                     right: 0;
                     display: flex;
                     justify-content: center;
                     list-style: none;
                     padding: 0;
                     margin: 0;
-                    z-index: 1; 
-                    li{
+                    z-index: 1;
+
+                    li {
                         width: rem(5px);
                         height: rem(10px);
                     }
                 }
-               
+
                 li button {
-                    width: rem(5px); 
-                    height: rem(5px); 
+                    width: rem(5px);
+                    height: rem(5px);
                     border-radius: 50%;
                     background-color: #fff;
-                    transition: all 0.3s; 
+                    transition: all 0.3s;
                     padding: 0;
                 }
-                
+
                 li.slick-active button:before {
-                    color:transparent;
-                    width: rem(2px); 
+                    color: transparent;
+                    width: rem(2px);
                     height: rem(2px);
                 }
-                
+
                 li:not(.slick-active) button:before {
-                    color:transparent;
+                    color: transparent;
                 }
 
                 li.slick-active button {
                     transform: scale(1.75);
                 }
 
-               
+
             }
 
             .gig-img {
@@ -82,8 +86,7 @@
                 aspect-ratio: 1.69 / 1;
                 object-fit: cover;
                 border: 1px solid $light-clr2;
-                border-radius: 8px;
-                margin-bottom: rem(7px);
+                border-radius: em(8px);
                 cursor: pointer;
             }
         }
@@ -92,42 +95,47 @@
             .owner-gig-title {
                 text-decoration: underline;
             }
-            .img-container .slick-slider .gallery-btn{
+
+            .img-container .slick-slider .gallery-btn {
                 opacity: 1;
-                &.prev{
+
+                &.prev {
                     left: em(17px);
                 }
-                &.next{
+
+                &.next {
                     right: em(17px);
                 }
+            }
         }
-    }
+
         .owner-details {
+            width: 100%;
             flex-direction: column;
-    
+
             .owner-details-1 {
                 gap: rem(8px);
-                margin-bottom: rem(6px);
                 font-size: 14px;
-                .level-number{
+
+                .level-number {
                     margin-left: auto;
                     font-weight: 600;
                     line-height: rem(21px);
                 }
             }
-    
+
             .owner-profile-img {
                 border-radius: 50%;
                 width: rem(24px);
             }
-    
+
             .owner-fullname {
-              
+
                 font-weight: 700;
                 line-height: rem(21px);
             }
         }
-    
+
         .owner-gig-title {
             margin-top: rem(20px);
             color: $dark-clr;
@@ -137,39 +145,41 @@
             font-weight: 400;
             min-height: 2.5em;
             font-size: rem(19px);
-    
+
         }
-    
+
         .rating-price {
             line-height: rem(13px);
             gap: rem(3px);
             align-items: center;
         }
-    
+
         .rate-wrapper {
             gap: rem(3px);
             font-size: rem(18px);
             line-height: rem(24px);
             color: $dark-clr1;
-            .owner-rate{
+
+            .owner-rate {
                 font-weight: 700;
             }
-            .owner-number-rates{
+
+            .owner-number-rates {
                 color: $dark-clr-4;
             }
         }
-    
+
         .gig-price {
             font-weight: 700;
             line-height: rem(24px);
             margin-top: rem(8px);
             margin-block-start: 0.5rem;
             font-size: rem(18px);
-            color:$dark-clr1;
+            color: $dark-clr1;
         }
 
     }
 
-   
+
 
 }

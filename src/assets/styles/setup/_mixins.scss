@@ -6,6 +6,12 @@
     }
 }
 
+@mixin for-small-layout {
+    @media (min-width: $mobile-breakpoint) {
+        @content;
+    }
+}
+
 @mixin for-narrow-layout {
     @media (min-width: $narrow-breakpoint) {
         @content;
@@ -25,7 +31,7 @@
 }
 
 @mixin for-xl-layout {
-    @media (max-width: $xl-breakpoint) {
+    @media (min-width: $xl-breakpoint) {
         @content;
     }
 }

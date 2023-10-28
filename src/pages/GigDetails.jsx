@@ -11,6 +11,7 @@ import { ReviewList } from "../cmps/ReviewList";
 import { UserMiniDetail } from "../cmps/UserMiniDetail";
 import { userService } from "../services/user.service";
 import LoadingCircle from "../cmps/LoadingCircle";
+import { showErrorMsg } from "../services/event-bus.service";
 
 
 export function GigDetails() {

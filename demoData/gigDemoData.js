@@ -8,7 +8,7 @@ const gigDemoData = [
         title: 'Bronze Package',
         packPrice: 15,
         packDaysToMake: 3,
-        desc: '1 logo design + High Quality Mock-up + Logo Transparency + NO COMPLEX DESIGN',
+        desc: '1 logo design, High Quality Mock-up, Logo Transparency',
         features: ['1 concept included', 'Logo transparency']
       },
       standard: {
@@ -16,7 +16,7 @@ const gigDemoData = [
         packPrice: 30,
         packDaysToMake: 5,
         desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
-        features: ['1 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
+        features: ['2 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
       },
       premium: {
         title: 'Gold Package',
@@ -43,11 +43,28 @@ const gigDemoData = [
   {
     _id: "i102",
     title: "I will design your companys vision",
-    price: 25,
+    price: 20,
     packages: {
       basic: {
-        desc: '1 initial concept with JPG+PNG+3D Mockup',
-        features: ['1 concept included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file']
+        title: 'Low Cost Package',
+        packPrice: 20,
+        packDaysToMake: 3,
+        desc: '1 logo design, High Quality Mock-up, Logo Transparency',
+        features: ['1 concept included', 'Logo transparency']
+      },
+      standard: {
+        title: 'Normal Package',
+        packPrice: 40,
+        packDaysToMake: 5,
+        desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
+        features: ['2 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
+      },
+      premium: {
+        title: 'Deluxe Package',
+        packPrice: 60,
+        packDaysToMake: 8,
+        desc: ' 3 Amazing concepts + all source files+ Social Media Kit + 24/7 priority customer services',
+        features: ['3 concepts included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file', 'Include social media kit']
       }
     },
     owner: {
@@ -57,7 +74,7 @@ const gigDemoData = [
       "rate": 3.2,
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6eac0adad8586c2d46b7fcf4a5f0d227-1671025218902/9fe6d9ab-6d6a-4199-9934-b9d1675d709d.jpg",
     },
-    daysToMake: 27,
+    daysToMake: 3,
     description: "Thank you for stopping by! This gig is intended for anyone who is looking for a well rounded and undefined design for their company or brand. We will try different concepts and ideas to get you where you need to be. If you aren't sure where to start, this is a good gig to choose Unlike a lot of other fiverr artists, my designs do not change in quality depending upon what package you choose. All of my designs deserve the same attention and quality guarantee. My process starts in the traditional form which means I begin with paper and pencil. Once that is complete I refine it with art and/or calligraphy pens. Once that's complete, I bring it into my computer and render it digitally. The colors can be whatever you choose and the packages are all different. So please read them carefully or send me a message if you have any questions",
     imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/118127829/original/78fe34ecddb886dd10b291634bbf2e03d55ba64e/create-marketable-and-custom-designs.png", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/118127829/original/53e63acc3b534db6ed25e96f651b6b55c6fa319a/create-marketable-and-custom-designs.png", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/118127829/original/125d9a54d0cc99dba0e3b94d471087cca5993258/create-marketable-and-custom-designs.png"],
     category: "Graphics & Design",
@@ -70,8 +87,25 @@ const gigDemoData = [
     price: 10,
     packages: {
       basic: {
-        desc: '1 initial concept with JPG+PNG+3D Mockup',
-        features: ['1 concept included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file']
+        title: 'Beginner Package',
+        packPrice: 10,
+        packDaysToMake: 3,
+        desc: '1 logo design, High Quality Mock-up, Logo Transparency',
+        features: ['1 concept included', 'Logo transparency']
+      },
+      standard: {
+        title: 'VIP Package',
+        packPrice: 25,
+        packDaysToMake: 5,
+        desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
+        features: ['2 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
+      },
+      premium: {
+        title: 'Best Package',
+        packPrice: 50,
+        packDaysToMake: 8,
+        desc: ' 3 Amazing concepts + all source files+ Social Media Kit + 24/7 priority customer services',
+        features: ['3 concepts included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file', 'Include social media kit']
       }
     },
     owner: {
@@ -94,8 +128,25 @@ const gigDemoData = [
     price: 60,
     packages: {
       basic: {
-        desc: '1 initial concept with JPG+PNG+3D Mockup',
-        features: ['1 concept included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file']
+        title: 'Starter Package',
+        packPrice: 60,
+        packDaysToMake: 4,
+        desc: '1 logo design, High Quality Mock-up, Logo Transparency',
+        features: ['1 concept included', 'Logo transparency']
+      },
+      standard: {
+        title: 'Professional Package',
+        packPrice: 150,
+        packDaysToMake: 6,
+        desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
+        features: ['2 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
+      },
+      premium: {
+        title: 'Diamond Package',
+        packPrice: 250,
+        packDaysToMake: 8,
+        desc: ' 3 Amazing concepts + all source files+ Social Media Kit + 24/7 priority customer services',
+        features: ['3 concepts included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file', 'Include social media kit']
       }
     },
     owner: {
@@ -106,7 +157,7 @@ const gigDemoData = [
       "rate": 4,
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/505cad63a9a60b5e7f007f0f70b70320-1652367443632/d7945300-9d2e-4919-948b-3bc02f5cc55a.jpg",
     },
-    daysToMake: 20,
+    daysToMake: 4,
     description: "Dive into my unique and eye catching Logo Design expertise. Crafting captivating visuals is my forte, excluding whimsical cartoons.Led by our proficient team, we excel in Business, Website, and YouTube Logo Design.",
     imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/133223245/original/0d1dc714978f3bd16740534164bf798135f6559b/design-logo-for-your-business.jpg", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/133223245/original/a692e27c0b8cf2ee72a7238118da47bf88be205b/design-logo-for-your-business.jpg", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/133223245/original/22090cc87f2efa4074792af441ca62c3656dbfb6/design-logo-for-your-business.jpg"],
     category: "Graphics & Design",
@@ -116,11 +167,28 @@ const gigDemoData = [
   {
     _id: "iz1",
     title: "I will convert figma to react PSD to react js next js tailwind CSS",
-    price: 30,
+    price: 20,
     packages: {
       basic: {
-        desc: 'Basic 1 page react/next app Simple 1 page Header and Footer with 2-3 sections',
-        features: ['Design customization', 'Content upload', 'Responsive design', 'Source code', '1 page']
+        title: 'Basic React',
+        packPrice: 20,
+        packDaysToMake: 1,
+        desc: 'simple two section UI of one page',
+        features: ['1 page', 'Responsive design', 'Browser compatibility']
+      },
+      standard: {
+        title: 'Standard React',
+        packPrice: 40,
+        packDaysToMake: 2,
+        desc: 'simple four section UI of two page, routing',
+        features: ['1 pages', 'Responsive design', 'Browser compatibility', 'Slider/scroller']
+      },
+      premium: {
+        title: 'Premium React',
+        packPrice: 80,
+        packDaysToMake: 4,
+        desc: 'complex design of 3 pages, routing, auth with firebase or mongodb',
+        features: ['3 pages', 'Responsive design', 'Browser compatibility', 'Slider/scroller', 'Custom admin panel', 'Server upload']
       }
     },
     owner: {

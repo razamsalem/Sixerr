@@ -8,6 +8,8 @@ html {
     font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: $dark-clr;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+
 }
 
 body {
@@ -61,6 +63,15 @@ button {
     font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+input[type=number] {
+
+    &::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+}
 .star {
     width: 1em;
 }

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router';
 import { createSearchParams } from 'react-router-dom';
-import { setFilterBy } from '../store/actions/gig.actions';
 import { useSelector } from 'react-redux';
 import { gigService } from '../services/gig.service.local';
 import { DeliveryTimeArea } from './DeliveryTimeArea';
 
-function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filterBy }) {
-    const globalFilterBy = useSelector(storeState => storeState.gigModule.filterBy)
+function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globalFilterBy, setFilterBy }) {
     const [filterByToEdit, setFilterByToEdit] = useState(globalFilterBy)
+
+    // console.log(filterByToEdit)
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -25,9 +25,9 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
     }, [isOpen, onClose, modalRef])
 
 
-    // useEffect(() => {
-    //     setFilterByToEdit({ ...globalFilterBy })
-    // }, [globalFilterBy])
+    useEffect(() => {
+        setFilterByToEdit({ ...globalFilterBy })
+    }, [globalFilterBy])
 
     if (!isOpen) return null
 
@@ -60,7 +60,6 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, filte
     }
 
     function onSubmit() {
-        console.log(filterByToEdit)
         setFilterBy({ ...globalFilterBy, ...filterByToEdit })
     }
 

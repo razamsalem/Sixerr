@@ -9,7 +9,7 @@ const STORAGE_KEY = 'gigDB'
 _createGigs()
 
 const categories = [
-    { category: 'Graphics & Design', tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design', 'Brand Style Guides' , 'Landing Page Design', 'Icon Design', 'Portraits & Caricatures'] },
+    { category: 'Graphics & Design', tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design', 'Brand Style Guides', 'Landing Page Design', 'Icon Design', 'Portraits & Caricatures'] },
     { category: 'Programming & Tech', tags: ['Website Development', 'Business Websites', 'E-Commerce Development', 'Landing Pages', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers', 'AI Services', 'Wordpress'] },
     { category: 'Digital Marketing', tags: ['Video Marketing', 'E-Commerce Marketing', 'Search Engine Optimization (SEO)', 'Search Engine Marketing (SEM)', 'Social Media Marketing', 'Organic Social Promotions', 'Local SEO', 'E-Commerce SEO', 'Video SEO', 'Email Marketing', 'Guest Posting', 'Affiliate Marketing'] },
     { category: 'Video & Animation', tags: ['Video Editing', 'Visual Effects', 'Video Art', 'Logo Animation', 'Character Animation', 'Animated GIFs'] },
@@ -76,7 +76,7 @@ async function save(gig) {
 }
 
 export function getDefaultFilter() {
-    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '' }
+    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '', page: 1 }
 }
 
 // async function addGigMsg(gigId, txt) {
@@ -97,19 +97,35 @@ export function getDefaultFilter() {
 
 function getEmptyGig() {
     let owner = userService.getLoggedinUser()
-    owner.rate = 4.9
 
     return {
         owner,
         title: 'I will ',
-        price: 5,
         packages: {
             basic: {
-                desc: 'Basic package',
-                features: ['1 page', 'Design customization', 'Content upload', 'Responsive design', 'Source code', 'Detailed code comments']
+                title: 'Bronze Package',
+                packPrice: 15,
+                packDaysToMake: 3,
+                desc: '1 logo design + High Quality Mock-up + Logo Transparency + NO COMPLEX DESIGN',
+                features: ['1 concept included', 'Logo transparency']
+            },
+            standard: {
+                title: 'Silver Package',
+                packPrice: 30,
+                packDaysToMake: 5,
+                desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
+                features: ['2 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
+            },
+            premium: {
+                title: 'Gold Package',
+                packPrice: 45,
+                packDaysToMake: 8,
+                desc: ' 3 Amazing concepts + all source files+ Social Media Kit + 24/7 priority customer services',
+                features: ['3 concepts included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file', 'Include social media kit']
             }
         },
-        daysToMake: 1,
+        price: 5, //Don't remove this temporary to make the app work properly
+        daysToMake: 1, //Don't remove this temporary to make the app work properly
         description: '',
         imgUrls: [],
         category: '',

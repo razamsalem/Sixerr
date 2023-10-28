@@ -57,6 +57,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder }) {
                     </div>
                     :
                     <Link to={`${pathname}/checkout`} className='btn continue'>
+                        {/* <i class="fa-solid fa-arrow-right"></i> */}
                         Continue
                     </Link>
                 }

@@ -56,15 +56,17 @@
 
          .package {
              font-weight: bold;
-             text-transform: uppercase;
-             font-size: rem(18px);
+             //  text-transform: uppercase;
+             //  font-size: rem(18px);
          }
 
          .package-desc {
+             display: grid;
              font-size: 1rem;
              font-weight: 400;
              letter-spacing: em(0.35px);
              color: $dark-clr-1;
+             line-height: 1.1;
          }
 
          .days-container {
@@ -106,6 +108,7 @@
 
          .continue {
              @include btn;
+             position: relative;
              display: block;
              text-align: center;
              height: rem(42px);
@@ -116,6 +119,12 @@
              letter-spacing: -0.05em;
              margin-block-end: em(12px);
              border-radius: em(5px);
+
+             .fa-arrow-right {
+                 position: absolute;
+                 right: 25px;
+
+             }
 
              &:hover {
                  background-color: darken($dark-clr-1, 20%);

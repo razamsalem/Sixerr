@@ -3,7 +3,7 @@ import { SellingText } from "../cmps/SellingText";
 export function SellingArea() {
 
     return (
-        <section className="selling-container full">
+        <section className="selling-container main-layout full">
             <div className="selling">
                 <div className="left-info">
                     <h2>The best part<span className="questionmark">?</span> Everything.</h2>
