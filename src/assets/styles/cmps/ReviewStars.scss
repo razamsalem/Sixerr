@@ -1,8 +1,6 @@
 .stars{
     display: flex;
     gap: 4px;
-    align-items: center;
-    // justify-content: center;
     .star{
         height: rem(15px);
         width: rem(15px);
@@ -10,5 +8,6 @@
     .rate.padding{
         line-height: em(21px);
         font-size: rem(14px);
+        font-weight: 700;
     }
 }

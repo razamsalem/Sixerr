@@ -10,16 +10,37 @@
             padding-right: em(12px);
         }
     }
-    progress{
-        width: em(259px);
-    }
+    // progress{
+    //     width: em(259px);
+    //     border: none;
+    //     // appearance: none; 
+    //     // &::-webkit-progress-bar {
+    //     //    background-color: $light-clr2; /* Change to your desired background color */
+    //     // }
+    //     // &::-webkit-progress-value {
+    //     //    background-color: $dark-clr1; /* Change to your desired progress bar color */
+    //     // }
+    // }
     .review-bars-container {
         align-items: center;
         display: grid;
         grid-template-columns: 4.0625em 17.5em 3em;
-        div{
+        width: 100%;
+        .review-rate-bar{
+            background-color: $light-clr2;
+            border-radius: 100px;
+            height: .5em;
+            position: relative;
+            width: 96%;
+            span{
+                background: $dark-clr1;
+                border-radius: 100px;
+                height: 100%;
+                position: absolute;
+            }
+        }
+        .star-number{
             font-weight: 600;
         }
-    
     }
 }

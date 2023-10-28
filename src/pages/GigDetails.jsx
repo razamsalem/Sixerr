@@ -77,6 +77,8 @@ export function GigDetails() {
                             </span>
                             <span className="owner-rate">{gig.owner.rate}</span>
                             <span className="owner-number-rates">({seller.reviews.length})</span>
+                            <span className="divider">|</span>
+                            <span className="queue">10 Orders in Queue</span>
                         </div>
                     </div>
                 </div>
