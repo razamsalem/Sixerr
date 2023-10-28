@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 
-export function CategoryNav({ categories, setFilterBy, globalFilterBy, subHeaderPosition }) {
+export function CategoryNav({ categories, setFilterBy, globalFilterBy, getClearFilter, subHeaderPosition }) {
     const firstChild = useRef()
     const lastChild = useRef()
     const [marginLeft, setMarginLeft] = useState(0)
@@ -41,7 +41,7 @@ export function CategoryNav({ categories, setFilterBy, globalFilterBy, subHeader
     }, [])
 
     function onSetFilterBy(category) {
-        setFilterBy({ ...globalFilterBy, tags: '', category })
+        setFilterBy({ ...getClearFilter(), category })
     }
 
     function onSlideRight() {
