@@ -63,7 +63,7 @@ export function AppHeader() {
     }, [currentPath])
 
     function getClearFilter() {
-        return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '' }
+        return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '', page: '' }
     }
 
     return (
@@ -111,7 +111,7 @@ export function AppHeader() {
                     </nav>
                 </header>
             </section >
-            <CategoryNav categories={gigService.categories} globalFilterBy={globalFilterBy} setFilterBy={setFilterBy} subHeaderPosition={subHeaderPosition} />
+            <CategoryNav categories={gigService.categories} globalFilterBy={globalFilterBy} setFilterBy={setFilterBy} getClearFilter={getClearFilter} subHeaderPosition={subHeaderPosition} />
         </>
 
     )
