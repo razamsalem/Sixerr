@@ -61,6 +61,7 @@
          }
 
          .package-desc {
+             display: grid;
              font-size: 1rem;
              font-weight: 400;
              letter-spacing: em(0.35px);
