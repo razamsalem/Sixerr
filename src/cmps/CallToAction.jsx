@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { utilService } from '../services/util.service';
 
 export function CallToAction({ gig, isPurchase = false, onPurchaseOrder }) {
-    const { price, daysToMake, packages } = gig
+    const { price, daysToMake, packages, imgUrls } = gig
     const [selectedPackage, setSelectedPackage] = useState('basic')
     const { title, packPrice, packDaysToMake, desc, features } = packages[selectedPackage]
     const { pathname } = useLocation()
@@ -28,11 +28,15 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder }) {
                 ))}
             </div>
             <article className="call-to-action">
+                <figure className='preview-container'>
+                    {isPurchase && <img src={imgUrls[0]} alt="Selected gig image preview" />}
+                    {isPurchase && <span className='package-desc'>{desc}</span>}
+                </figure>
                 <section className="package-heading">
                     <h2 className='price'><span className="price-font">$ {packPrice ? packPrice : price}</span></h2>
                 </section>
 
-                <h3 className='package-desc'><span className='package'>{title ? title : selectedPackage.charAt(0).toUpperCase() + selectedPackage.slice(1)} </span>{desc}</h3>
+                <h3 className='package-desc'><span className='package'>{title ? title : selectedPackage.charAt(0).toUpperCase() + selectedPackage.slice(1)} </span>{!isPurchase && desc}</h3>
 
                 <span className="days-container">
                     <img className='icon time' src={timeImg} alt="time-icon" />

@@ -1,10 +1,8 @@
 .checkout {
-    grid-template-columns: 1fr 1fr;
     display: grid;
-    margin-top: 25px;
+    margin-top: rem(50px);
 
     .cta-container {
         grid-row: 1/1;
-        justify-self: center;
     }
 }

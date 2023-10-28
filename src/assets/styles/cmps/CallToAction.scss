@@ -32,6 +32,13 @@
          margin-block-end: auto;
          background-color: $light-clr;
 
+         .preview-container {
+             display: grid;
+             grid-template-columns: 1fr 1.5fr;
+             gap: em(15px);
+             margin-block-end: em(24px);
+         }
+
          .icon {
              width: em(16px);
          }

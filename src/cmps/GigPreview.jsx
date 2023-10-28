@@ -2,31 +2,31 @@ import { Link } from "react-router-dom"
 import { GigSlider } from "./GigSlider"
 import { HoverableComponent } from "./HoverableComponent"
 import { useEffect, useState } from "react"
-export function GigPreview({ gig, onRemoveGig, onUpdateGig,onloadUser}) {
+export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser }) {
     let [seller, setSeller] = useState(null)
 
     useEffect(() => {
         getSeller()
     }, [])
-    
+
     async function getSeller() {
         setSeller(await onloadUser(gig));
     }
 
     function slicedGigTitle() {
-        if(gig.title.length>58){
-            return gig.title.substring(0,58)+ '...'
+        if (gig.title.length > 58) {
+            return gig.title.substring(0, 58) + '...'
         }
         return gig.title
     }
 
-    if(!seller) return ''
+    if (!seller) return ''
     return (
-        
+
         <li className="gig-preview" key={gig._id}  >
 
             <GigSlider gig={gig} />
-           
+
             <div className="flex owner-details">
                 <div className="flex owner-details-1">
                     <img src={gig.owner.imgUrl} alt="progile-img" className="owner-profile-img" />
@@ -51,7 +51,7 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig,onloadUser}) {
             </div>
 
 
-            <span className="gig-price">From ₪{gig.price.toLocaleString()}</span>
+            <span className="gig-price">From ${gig.price.toLocaleString()}</span>
         </li>
 
     )
