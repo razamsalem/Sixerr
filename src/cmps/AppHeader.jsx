@@ -29,7 +29,7 @@ export function AppHeader() {
 
     async function onLogin(credentials) {
         try {
-            navigate('/')
+            // navigate('/')
             const user = await login(credentials)
             showSuccessMsg(`Welcome: ${user.fullname}`)
         } catch (err) {
@@ -38,7 +38,7 @@ export function AppHeader() {
     }
     async function onSignup(credentials) {
         try {
-            navigate('/')
+            // navigate('/')
             const user = await signup(credentials)
             showSuccessMsg(`Welcome new user: ${user.fullname}`)
         } catch (err) {
