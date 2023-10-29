@@ -29,9 +29,15 @@ export function Checkout() {
         }
     }
 
-    async function onPurchaseOrder() {
+    async function onPurchaseOrder(selectedPackage) {
+        const { packPrice, packDaysToMake } = selectedPackage
         const gig = currGig
-        const order = { buyer: loggedUser, seller: gig.owner, gig, status: 'pending' }
+        delete gig.packages
+        let order = { buyer: loggedUser, seller: gig.owner, gig, status: 'pending', packPrice, daysToMake: packDaysToMake }
+        order.createdAt = Date.now()
+
+        console.log(order)
+
         try {
             const orderToSave = await addOrder({ ...order })
             navigate('/order')

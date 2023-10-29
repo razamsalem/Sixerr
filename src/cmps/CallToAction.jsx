@@ -54,7 +54,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, selecte
 
                 {isPurchase ?
                     <div className='purchase-btn-container'>
-                        <button onClick={onPurchaseOrder} className='btn continue'>Pay in USD</button>
+                        <button onClick={() => { onPurchaseOrder(packages[selectedPackage]) }} className='btn continue'>Pay in USD</button>
                         <span>
                             <i className="fa-solid fa-lock"></i>  SSL Secure Payment
                         </span>
