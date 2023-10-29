@@ -17,6 +17,7 @@ import { AddGigCard } from '../cmps/AddGigCard'
 import { MyGigsTable } from '../cmps/MyGigsTable'
 import { YesNoModal } from '../cmps/YesNoModal'
 import { gigService } from '../services/gig.service.local'
+import { ReviewList } from '../cmps/ReviewList'
 
 
 export function UserDetails() {
@@ -183,9 +184,19 @@ export function UserDetails() {
                     }
                     </ul>
                   </div>
+                  <div className="user-linked with-border-top">
+                    <div className="header flex">
+                      <h3>Linked Accounts</h3>
+                      {/* <button>Add new</button> */}
+                    </div>
+                    <ul>
+                      <li><span className='title'><span className='fa-brands fa-google logo'></span>Google</span></li>
+                      <li><span className='title'><span className='fa-brands fa-twitter logo'></span>Twitter</span></li>
+                    </ul>
+                  </div>
                   <div className="user-skills with-border-top">
                     <div className="header flex">
-                      <h3 title='You can make up to four selections.'>Skills</h3>
+                      <h3 title='Let your buyers know your skills. Skills gained through your previous jobs, hobbies or even everyday life.'>Skills</h3>
                       {/* <button>Add new</button> */}
                     </div>
                     <ul>
@@ -198,7 +209,7 @@ export function UserDetails() {
                   </div>
                   <div className="user-education with-border-top">
                     <div className="header flex">
-                      <h3 title='You can make up to four selections.'>Education</h3>
+                      <h3 title='Describe your educational background. It will help buyers get to know you!'>Education</h3>
                       {/* <button>Add new</button> */}
                     </div>
                     <ul>
@@ -239,6 +250,9 @@ export function UserDetails() {
                   <section className='user-gigs'>
                     <h1>All gigs <i title='Add a new gig' className="fa-solid fa-circle-plus add-gig-btn" onClick={() => onClickAddGig()}></i></h1>
                     {<MyGigsTable gigs={gigs} openModal={openModal} />}
+                  </section>
+                  <section className='user-reviews'>
+                    <ReviewList gigOwnerId={params.id} isUserProfile={true} />
                   </section>
                 </>}
               </div>

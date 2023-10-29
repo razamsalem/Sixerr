@@ -137,7 +137,7 @@
                         }
 
                         .user-lang {
-
+                            margin-block: rem(31px);
                             .header {
                                 justify-content: space-between;
                                 padding-block-end: 14px;
@@ -186,7 +186,9 @@
                             }
                         }
 
-                        .user-skills {
+                        .user-linked {
+                            margin-block: rem(31px);
+
                             .header {
                                 justify-content: space-between;
                                 padding-block-end: 14px;
@@ -201,8 +203,45 @@
                             }
 
                             ul {
-                                // padding-block: 10px;
+                                padding-block: 10px;
 
+                                li {
+
+                                    .title {
+                                        font-size: 1rem;
+                                        color: $dark-clr-4;
+                                    }
+
+                                    .logo {
+                                        margin-inline-end: rem(8px);
+                                    }
+
+                                    &:not(:last-child) {
+                                        margin-block-end: rem(10px);
+                                    }
+
+                                }
+                            }
+                        }
+
+                        .user-skills {
+                            .header {
+                                justify-content: space-between;
+                                padding-block-end: 14px;
+                                margin-block-start: 20px;
+                                font-weight: 500;
+
+                                h3 {
+                                    color: $darkest-clr;
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                    line-height: 150%;
+                                }
+                            }
+
+                            ul {
+                                // padding-block: 10px;
+                                margin-block-end: rem(31px);
                                 li {
                                     display: inline;
 
@@ -232,6 +271,8 @@
                         }
 
                         .user-education {
+                            font-weight: 500;
+
                             .header {
                                 justify-content: space-between;
                                 padding-block-end: 14px;
