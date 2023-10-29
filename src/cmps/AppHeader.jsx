@@ -63,7 +63,7 @@ export function AppHeader() {
     }, [currentPath])
 
     function getClearFilter() {
-        return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '', page: '' }
+        return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '', page: '', userId: '' }
     }
 
     return (

@@ -4,21 +4,19 @@ import { useParams, Link, useLocation, useNavigate } from 'react-router-dom'
 import { utilService } from '../services/util.service'
 import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
 import { storageService } from '../services/async-storage.service'
-import { loadGigs } from '../store/actions/gig.actions.js'
 import { loadUser } from '../store/user.actions'
 import { store } from '../store/store'
 import { GigList } from '../cmps/GigList'
-import { LongTxt } from '../cmps/LongTxt'
 import { OrderList } from '../cmps/OrderList'
-import { orderService } from '../services/order.service.local'
-import { approveOrder, declineOrder, fulfillOrder, getActionUpdateOrder, updateOrder } from '../store/actions/order.actions'
+import { approveOrder, declineOrder, fulfillOrder, } from '../store/actions/order.actions'
 import { DashboardModal } from '../cmps/DashboardModal'
-import { showSuccessMsg } from '../services/event-bus.service'
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import becomeSellerBanner from '../assets/img/become-seller.svg'
 import LoadingCircle from '../cmps/LoadingCircle'
 import { AddGigCard } from '../cmps/AddGigCard'
 import { MyGigsTable } from '../cmps/MyGigsTable'
 import { YesNoModal } from '../cmps/YesNoModal'
+import { gigService } from '../services/gig.service.local'
 
 
 export function UserDetails() {
@@ -26,31 +24,38 @@ export function UserDetails() {
   const navigate = useNavigate()
   const watchedUser = useSelector(storeState => storeState.userModule.watchedUser)
   const loggedUser = useSelector(storeState => storeState.userModule.user)
-  const gigs = useSelector(storeState => storeState.gigModule.gigs)
   const orders = useSelector(storeState => storeState.orderModule.orders)
+  const [gigs, setGigs] = useState(null)
   const [isDashboardOpen, setDashboardOpen] = useState(null)
   const [isModalOpen, setModalOpen] = useState(null)
   const demoSubtitle = utilService.getSubtitle()
-  const userGigs = []
 
   useEffect(() => {
     loadUser(params.id)
-    loadGigs()
+    onSetGig()
     socketService.emit(SOCKET_EMIT_USER_WATCH, params.id)
     socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
 
     return () => {
       socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
     }
-
   }, [params.id])
+
+
+  async function onSetGig() {
+    try {
+      const gigs = await gigService.query({ userId: params.id })
+      setGigs(gigs)
+    } catch (err) {
+      showErrorMsg('Could not load user gigs')
+    }
+  }
 
 
   function onUserUpdate(user) {
     showSuccessMsg(`This user ${user.fullname} just got updated from socket, new score: ${user.score}`)
     store.dispatch({ type: 'SET_WATCHED_USER', user })
   }
-  // console.log(user)
 
   async function onBecomeSeller(userId) {
     const user = await storageService.get('user', userId)
@@ -61,17 +66,14 @@ export function UserDetails() {
   }
 
   async function onApproveOrder(ev, order) {
-    // ev.stopPropagation()
     approveOrder(order)
   }
 
   async function onDeclineOrder(ev, order) {
-    // ev.stopPropagation()
     declineOrder(order)
   }
 
   async function onFulfillOrder(ev, order) {
-    // ev.stopPropagation()
     fulfillOrder(order)
   }
 
@@ -186,12 +188,8 @@ export function UserDetails() {
               </div>
               <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} />
               <div className="my-gigs">
-                {gigs.map(gig => {
-                  if (gig.owner._id === params.id) {
-                    userGigs.push(gig)
-                  }
-                })}
-                {!userGigs.length && <>
+
+                {!gigs || !gigs.length && <>
                   <h1>My Gigs</h1>
                   <div>
                     <p className='empty'>
@@ -202,15 +200,14 @@ export function UserDetails() {
                 </>}
 
 
-                {userGigs.length > 0 && <>
-                  {orders.length > 0 &&
-                    <div className='gigs-list flex column'>
-                      <h1>Best seller gigs </h1>
-                      <GigList gigs={userGigs} onlyTwo={true} />
-                    </div>}
+                {gigs && gigs.length > 0 && <>
+                  <div className='gigs-list flex column'>
+                    <h1>Best seller gigs </h1>
+                    <GigList gigs={gigs} onlyTwo={true} />
+                  </div>
                   <section className='user-gigs'>
                     <h1>All gigs <i title='Add a new gig' className="fa-solid fa-circle-plus add-gig-btn" onClick={() => onClickAddGig()}></i></h1>
-                    {<MyGigsTable gigs={userGigs} openModal={openModal} />}
+                    {<MyGigsTable gigs={gigs} openModal={openModal} />}
                   </section>
                 </>}
               </div>

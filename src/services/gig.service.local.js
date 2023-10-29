@@ -53,11 +53,14 @@ async function query(filterBy = { txt: '', minPrice: '', maxPrice: '', category:
             return gig.tags.includes(filterBy.tags)
         })
     }
+    if (filterBy.userId) {
+        gigs = gigs.filter(gig => gig.owner._id === filterBy.userId)
+    }
     return gigs
 }
 
-function getById(gigId) {
-    return storageService.get(STORAGE_KEY, gigId)
+async function getById(gigId) {
+    return await storageService.get(STORAGE_KEY, gigId)
 }
 
 async function remove(gigId) {

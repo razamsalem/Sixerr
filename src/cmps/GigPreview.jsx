@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { GigSlider } from "./GigSlider"
 import { HoverableComponent } from "./HoverableComponent"
 import { useEffect, useState } from "react"
+
 export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser }) {
     let [seller, setSeller] = useState(null)
 
@@ -10,6 +11,7 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser }) {
     }, [])
 
     async function getSeller() {
+        if (!onloadUser) return
         setSeller(await onloadUser(gig));
     }
 
@@ -20,7 +22,6 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser }) {
         return gig.title
     }
 
-    if (!seller) return ''
     return (
 
         <li className="gig-preview" key={gig._id}  >
@@ -45,7 +46,7 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser }) {
                         </svg>
                     </span>
                     <span className="owner-rate">{gig.owner.rate}</span>
-                    <span className="owner-number-rates">({seller.reviews.length})</span>
+                    {seller && <span className="owner-number-rates">({seller.reviews.length})</span>}
                 </div>
 
             </div>
