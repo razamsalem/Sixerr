@@ -22,7 +22,7 @@ export function OrderPreview({ order, mode, onApproveOrder, onDeclineOrder, onFu
                 </div>
 
             </td>
-            <td className='order-title'><LongTxt txt={order.gig.title} length={40} showReadMore={false} /></td>
+            <td className='order-title'><LongTxt txt={order.gig.title} length={33} showReadMore={false} /></td>
             <td>{utilService.calculateDaysFromTimestamp(order.createdAt, order.daysToMake)}</td>
             <td>${order.packPrice}</td>
             <td className="status">

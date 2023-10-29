@@ -21,7 +21,7 @@ const demoOrders = [
     packPrice: 15,
     daysToMake: 3,
     createdAt: 1698570506603,
-    status: "pending"
+    status: "fulfilled"
   },
   {
     _id: "o1226",
@@ -69,7 +69,7 @@ const demoOrders = [
     packPrice: 10,
     daysToMake: 1,
     createdAt: 1698570506603,
-    status: "fulfilled"
+    status: "pending"
   },
 
 ]
