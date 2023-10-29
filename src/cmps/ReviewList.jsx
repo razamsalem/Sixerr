@@ -7,9 +7,9 @@ import { ReviewChart } from "./ReviewChart";
 import { UserMiniDetail } from "./UserMiniDetail";
 import LoadingCircle from "./LoadingCircle";
 
-export function ReviewList({gigOwnerId}) {
+export function ReviewList({ gigOwnerId, isUserProfile }) {
     const navigate = useNavigate()
-    const [seller,setSeller] = useState(null)
+    const [seller, setSeller] = useState(null)
 
     useEffect(() => {
         loadUser()
@@ -17,34 +17,34 @@ export function ReviewList({gigOwnerId}) {
 
     async function loadUser() {
         try {
-        const seller = await userService.getById(gigOwnerId)
-        setSeller(seller)
+            const seller = await userService.getById(gigOwnerId)
+            setSeller(seller)
         } catch (err) {
             console.log('Had issues in review list ->', err)
             showErrorMsg('Oops cannot load review')
             navigate('/')
         }
     }
-    
+
     if (!seller) return <div>{<LoadingCircle />}</div>
 
-    return(
-        
+    return (
+
         <section className="reviews">
-              {seller.reviews && seller.reviews.length ?
-              <div>
-              <h1>Reviews</h1>
-            <ReviewChart reviews={seller.reviews}/>
-            <ul className="review-list">
-            {seller.reviews.map((rev, idx) =>
-                    <ReviewPreview key={idx} review={rev}/>
-                )}
-            </ul>
-            </div> : ''}
-           
-              
-           
+            {seller.reviews && seller.reviews.length ?
+                <div>
+                    <h1>Reviews</h1>
+                    <ReviewChart reviews={seller.reviews} isUserProfile={isUserProfile} />
+                    <ul className="review-list">
+                        {seller.reviews.map((rev, idx) =>
+                            <ReviewPreview key={idx} review={rev} />
+                        )}
+                    </ul>
+                </div> : ''}
+
+
+
         </section>
-        
+
     )
 }

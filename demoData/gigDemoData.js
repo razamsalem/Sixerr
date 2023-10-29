@@ -878,8 +878,25 @@ const gigDemoData = [
     price: 60,
     packages: {
       basic: {
-        desc: 'I will create and setup your channel for you including - Logo and Banner - Tags',
+        title: 'Small Channel',
+        packPrice: 60,
+        packDaysToMake: 4,
+        desc: 'I will create and setup your channel for you',
+        features: ['Setup & integrations', 'Channel evaluation', 'Content creation']
+      },
+      standard: {
+        title: 'Medium Channel',
+        packPrice: 125,
+        packDaysToMake: 5,
+        desc: 'I will create and setup your channel for you including - Tags',
         features: ['Setup & integrations', 'Channel evaluation', 'Content creation', 'Action plan', 'Reporting']
+      },
+      premium: {
+        title: 'Large Channel',
+        packPrice: 350,
+        packDaysToMake: 5,
+        desc: 'I will create and setup your channel for you including - Logo and Banner - Tags',
+        features: ['Setup & integrations', 'Channel evaluation', 'Content creation', 'Action plan', 'Reporting', 'Logo and Banner']
       }
     },
     owner: {
@@ -909,11 +926,28 @@ const gigDemoData = [
   {
     _id: "FUsdf5",
     title: "I will professionally promote your instagram account",
-    price: 25,
+    price: 35,
     packages: {
       basic: {
-        desc: 'We will promote your Instagram account for 3 days ',
-        features: ['A lot of likes', 'A lot of followers', 'A lot of comments', 'Everything looks realistic']
+        title: 'Small account',
+        packPrice: 35,
+        packDaysToMake: 3,
+        desc: 'I will promote your Instagram account for 3 days',
+        features: ['Natural Grow', 'Action plan', 'Content creation']
+      },
+      standard: {
+        title: 'Medium account',
+        packPrice: 55,
+        packDaysToMake: 5,
+        desc: 'I will promote your Instagram account for 5 days',
+        features: ['Natural Grow', 'Action plan', 'Content creation']
+      },
+      premium: {
+        title: 'Large account',
+        packPrice: 70,
+        packDaysToMake: 7,
+        desc: 'I will promote your Instagram account for 1 Week',
+        features: ['Natural Grow', 'Action plan', 'Content creation']
       }
     },
     owner: {

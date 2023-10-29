@@ -17,6 +17,7 @@ import { AddGigCard } from '../cmps/AddGigCard'
 import { MyGigsTable } from '../cmps/MyGigsTable'
 import { YesNoModal } from '../cmps/YesNoModal'
 import { gigService } from '../services/gig.service.local'
+import { ReviewList } from '../cmps/ReviewList'
 
 
 export function UserDetails() {
@@ -136,13 +137,21 @@ export function UserDetails() {
                 </div>
                 <div className="user-stats-desc">
                   <ul className='user-stats with-border-top'>
-                    <li className="location flex">
-                      <span><span className=' fa-solid fa-location-dot location-icon'></span>From</span>
+                    <li className="location info-card-style flex">
+                      <span><span className='fa-solid fa-location-dot icon'></span>From</span>
                       <b>{watchedUser.location ? watchedUser.location : 'Israel'}</b>
                     </li>
-                    <li className="member-since flex">
-                      <span><span className='fa-solid fa-user user-icon'></span>Member since</span>
+                    <li className="member-since info-card-style flex">
+                      <span><span className='fa-solid fa-user icon'></span>Member since</span>
                       <b>Oct 2023</b>
+                    </li>
+                    <li className="member-res-time info-card-style flex">
+                      <span><span className='fa-regular fa-clock icon'></span>Avg. Response Time</span>
+                      <b>1 hour</b>
+                    </li>
+                    <li className="member-res-time info-card-style flex">
+                      <span><span className='fa-solid fa-paper-plane icon'></span>Last Delivery</span>
+                      <b>4 hours</b>
                     </li>
                   </ul>
                 </div>
@@ -175,9 +184,19 @@ export function UserDetails() {
                     }
                     </ul>
                   </div>
+                  <div className="user-linked with-border-top">
+                    <div className="header flex">
+                      <h3>Linked Accounts</h3>
+                      {/* <button>Add new</button> */}
+                    </div>
+                    <ul>
+                      <li><span className='title'><span className='fa-brands fa-google logo'></span>Google</span></li>
+                      <li><span className='title'><span className='fa-brands fa-twitter logo'></span>Twitter</span></li>
+                    </ul>
+                  </div>
                   <div className="user-skills with-border-top">
                     <div className="header flex">
-                      <h3 title='You can make up to four selections.'>Skills</h3>
+                      <h3 title='Let your buyers know your skills. Skills gained through your previous jobs, hobbies or even everyday life.'>Skills</h3>
                       {/* <button>Add new</button> */}
                     </div>
                     <ul>
@@ -190,7 +209,7 @@ export function UserDetails() {
                   </div>
                   <div className="user-education with-border-top">
                     <div className="header flex">
-                      <h3 title='You can make up to four selections.'>Education</h3>
+                      <h3 title='Describe your educational background. It will help buyers get to know you!'>Education</h3>
                       {/* <button>Add new</button> */}
                     </div>
                     <ul>
@@ -205,11 +224,11 @@ export function UserDetails() {
 
           <section className="gigs-column user-details-layout">
             {(watchedUser?.isSeller && <div className='manage-orders'>
-              {gigs && gigs.length > 0 &&<> <div className="order-header flex">
+              {gigs && gigs.length > 0 && <> <div className="order-header flex">
                 <h1>Manage Orders</h1>
                 <button onClick={openDashboard} className='dash-btn'>Dashboard Overview</button>
               </div>
-              <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} /> </>}
+                <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} /> </>}
               <div className="my-gigs">
 
                 {!gigs || !gigs.length && <>
@@ -231,6 +250,9 @@ export function UserDetails() {
                   <section className='user-gigs'>
                     <h1>All gigs <i title='Add a new gig' className="fa-solid fa-circle-plus add-gig-btn" onClick={() => onClickAddGig()}></i></h1>
                     {<MyGigsTable gigs={gigs} openModal={openModal} />}
+                  </section>
+                  <section className='user-reviews'>
+                    <ReviewList gigOwnerId={params.id} isUserProfile={true} />
                   </section>
                 </>}
               </div>
