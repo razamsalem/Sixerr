@@ -69,7 +69,7 @@ const demoOrders = [
     packPrice: 10,
     daysToMake: 1,
     createdAt: 1698570506603,
-    status: "rejected"
+    status: "fulfilled"
   },
 
 ]

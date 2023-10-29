@@ -777,8 +777,25 @@ const gigDemoData = [
     price: 245,
     packages: {
       basic: {
-        desc: 'Per A+ Page - Up to 3 modules (The A+ Page may be suitable for multiple products)',
+        title: 'Basic',
+        packPrice: 245,
+        packDaysToMake: 10,
+        desc: 'Per A+ Page - Up to 3 modules (The A+ Page may be suitable for multiple products).',
         features: ['1 keyword researched', '1 competitor researched']
+      },
+      standard: {
+        title: 'Deluxe',
+        packPrice: 435,
+        packDaysToMake: 10,
+        desc: 'Per A+ Page - Up to 3 modules (The A+ Page may be suitable for multiple products).',
+        features: ['2 keyword researched', '2 competitor researched', '24/6 Online Service']
+      },
+      premium: {
+        title: 'Super Deluxe',
+        packPrice: 720,
+        packDaysToMake: 12,
+        desc: 'Per A+ Page - Up to 3 modules (The A+ Page may be suitable for multiple products)..',
+        features: ['3 keyword researched', '3 competitor researched', '24/7 Online Service']
       }
     },
     owner: {
@@ -811,8 +828,25 @@ const gigDemoData = [
     price: 40,
     packages: {
       basic: {
-        desc: 'I will do complete etsy setup + 5 Products listings+ Complete products SEO',
-        features: ['E-commerce seo audit', '5 pages', 'Title optimization', 'Meta tags optimization', 'Product description']
+        title: 'Medium Shop',
+        packPrice: 40,
+        packDaysToMake: 4,
+        desc: 'I will do complete etsy setup + 5 Products listings + Complete products SEO',
+        features: ['E-commerce seo audit', '5 pages', 'Title optimization']
+      },
+      standard: {
+        title: 'Large Shop',
+        packPrice: 75,
+        packDaysToMake: 7,
+        desc: 'I will do complete etsy setup + 8 Products listings + Complete products SEO',
+        features: ['E-commerce seo audit', '8 pages', 'Title optimization', 'Meta tags optimization']
+      },
+      premium: {
+        title: 'Massive Shop',
+        packPrice: 150,
+        packDaysToMake: 14,
+        desc: 'I will do complete etsy setup + 12 Products listings + Complete products SEO',
+        features: ['E-commerce seo audit', '12 pages', 'Title optimization', 'Meta tags optimization', 'Product description']
       }
     },
     owner: {
