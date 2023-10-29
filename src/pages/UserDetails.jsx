@@ -151,7 +151,7 @@ export function UserDetails() {
                     </li>
                     <li className="member-res-time info-card-style flex">
                       <span><span className='fa-solid fa-paper-plane icon'></span>Last Delivery</span>
-                      <b>3 days</b>
+                      <b>4 hours</b>
                     </li>
                   </ul>
                 </div>
