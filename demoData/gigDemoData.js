@@ -286,8 +286,25 @@ const gigDemoData = [
     price: 85,
     packages: {
       basic: {
+        title: 'Basic',
+        packPrice: 85,
+        packDaysToMake: 4,
+        desc: 'Create for you website',
+        features: ['2 pages', 'Design customization', 'Content upload', 'Responsive design']
+      },
+      standard: {
+        title: 'Deluxe',
+        packPrice: 185,
+        packDaysToMake: 4,
         desc: 'Create and fix website errors and bugs',
-        features: ['2 pages', 'Design customization', 'Content upload', 'Responsive design', 'Source code']
+        features: ['5 pages', 'Design customization', 'Content upload', 'Responsive design']
+      },
+      premium: {
+        title: 'Super Deluxe',
+        packPrice: 320,
+        packDaysToMake: 10,
+        desc: 'FullStack website',
+        features: ['5 pages', 'Content upload', 'Responsive design', 'Design customization', 'Backend', 'Custom admin panel', 'Server upload']
       }
     },
     owner: {
@@ -297,7 +314,7 @@ const gigDemoData = [
       "level": 2,
       "rate": 5,
     },
-    daysToMake: 2,
+    daysToMake: 4,
     description: `
     NB: Contact me for Codebase errors/Bugs fixes, JavaScript/PHP issues.
     Are you Looking for skilled Pro design and development for your website and apllications?
@@ -328,8 +345,25 @@ const gigDemoData = [
     price: 70,
     packages: {
       basic: {
-        desc: 'I will code basic Web Application using HTML, CSS, JavaScript, PHP',
-        features: ['Responsive design', 'Source code']
+        title: 'Basic',
+        packPrice: 70,
+        packDaysToMake: 1,
+        desc: 'Single page Frontend website (Static).',
+        features: ['1 page', 'Content upload', 'Responsive design', 'Design customization']
+      },
+      standard: {
+        title: 'Standard',
+        packPrice: 100,
+        packDaysToMake: 2,
+        desc: 'Major frontend website',
+        features: ['3 pages', 'Content upload', 'Responsive design', 'Design customization', 'Source code']
+      },
+      premium: {
+        title: 'Premium',
+        packPrice: 150,
+        packDaysToMake: 4,
+        desc: 'FullStack website',
+        features: ['5 pages', 'Content upload', 'Responsive design', 'Design customization', 'Backend', 'Custom admin panel', 'Server upload']
       }
     },
     owner: {
@@ -339,7 +373,7 @@ const gigDemoData = [
       "level": 1,
       "rate": 5,
     },
-    daysToMake: 2,
+    daysToMake: 1,
     description: `Hi there!
     Are you looking for a JavaScript Developer to build a responsive and user-friendly website from scratch or add new features or redesign your existing website? then you're in the right place!
 
@@ -365,8 +399,25 @@ const gigDemoData = [
     price: 80,
     packages: {
       basic: {
-        desc: 'I can create responsive & component based web pages in React JS',
-        features: ['Functional website', '2 pages', 'Content upload']
+        title: 'Basic',
+        packPrice: 80,
+        packDaysToMake: 1,
+        desc: 'Single page Frontend website (Static).',
+        features: ['1 page', 'Content upload', 'Responsive design', 'Design customization']
+      },
+      standard: {
+        title: 'Standard',
+        packPrice: 160,
+        packDaysToMake: 2,
+        desc: 'Major frontend website',
+        features: ['3 pages', 'Content upload', 'Responsive design', 'Design customization', 'Source code']
+      },
+      premium: {
+        title: 'Premium',
+        packPrice: 240,
+        packDaysToMake: 4,
+        desc: 'FullStack website',
+        features: ['5 pages', 'Content upload', 'Responsive design', 'Design customization', 'Backend', 'Custom admin panel', 'Server upload']
       }
     },
     owner: {
@@ -376,7 +427,7 @@ const gigDemoData = [
       "level": 1,
       "rate": 4.9,
     },
-    daysToMake: 2,
+    daysToMake: 1,
     description: `Hello, my name is Haya Ch and i am a front end web developer and i can build a responsive website for you.
      I have almost 1 year of experience and complete almost 200+ projects.. 
      I have good skills on HTML5, CSS3, BOOTSTRAP, JAVASCRIPT, REACT JS. I can built a responsive website so that your website will look perfect on all the small and wide screens. i will use advance CSS3 and vanilla javascript for animations on your website. .I can convert figma to html and i can convert psd to html. 
@@ -397,11 +448,28 @@ const gigDemoData = [
   {
     _id: "iz6",
     title: "I will do professional youtube video editing within 24 hours",
-    price: 40,
+    price: 100,
     packages: {
       basic: {
-        desc: 'Cuts, joins,logo placement etc.+ basic edit for <5 mints< 1 GB. please discuss before placing order.',
-        features: ['Up to 10 minutes running time', 'Motion graphics', 'Thumbnail included', 'Include source file']
+        title: 'Small Project ',
+        packPrice: 100,
+        packDaysToMake: 2,
+        desc: 'Basic edits/corrections, I suggest that you get in contact with me first.',
+        features: ['Up to 1 minute running time', 'Sound design & mixing']
+      },
+      standard: {
+        title: 'Medium Project',
+        packPrice: 300,
+        packDaysToMake: 3,
+        desc: 'Professionally Editing will be done with Color Grading, Subtitles, Sound design & mixing, Transition',
+        features: ['Up to 3 minutes running time', 'Sound design & mixing', 'Motion graphics']
+      },
+      premium: {
+        title: 'Large Project',
+        packPrice: 500,
+        packDaysToMake: 3,
+        desc: 'This Package Includes Intro/Outro/Thumbnails/Extremely Professional, 4k Video Editing.',
+        features: ['Up to 6 minutes running time', 'Sound design & mixing', 'Motion graphics', 'Color grading']
       }
     },
     owner: {
@@ -440,8 +508,25 @@ const gigDemoData = [
     price: 10,
     packages: {
       basic: {
-        desc: '✔Basic Clip editing with ✔basic Text and ✔Color Grading.',
-        features: ['Up to 15 minutes of footage provided', 'Up to 1 minute running time', 'Sound design & mixing', 'Motion graphics', 'Subtitles', 'Include source file', 'Color grading']
+        title: '1 Edit tiktoks, reels and shorts',
+        packPrice: 10,
+        packDaysToMake: 2,
+        desc: 'One Video Upto 30 Seconds Of Runtime, Emojies, Logo, Motion Graphics, Color Grading.',
+        features: ['Up to 1 minute running time', 'Sound design & mixing', 'Subtitles']
+      },
+      standard: {
+        title: '5 Edit tiktoks, reels and shorts',
+        packPrice: 50,
+        packDaysToMake: 5,
+        desc: '5 Edit tiktoks, reels and shorts',
+        features: ['Up to 3 minutes running time', 'Sound design & mixing', 'Subtitles', 'Motion graphics']
+      },
+      premium: {
+        title: '10 Edit tiktoks, reels and shorts',
+        packPrice: 100,
+        packDaysToMake: 7,
+        desc: 'This Package Includes Intro/Outro/Thumbnails/Extremely Professional, 4k Video Editing.',
+        features: ['Up to 6 minutes running time', 'Sound design & mixing', 'Subtitles', 'Motion graphics', 'Color grading']
       }
     },
     owner: {
@@ -480,11 +565,28 @@ const gigDemoData = [
   {
     _id: "R8aks45Q",
     title: "I will design a brand style guide and logo for you",
-    price: 100,
+    price: 25,
     packages: {
       basic: {
-        desc: 'BRAND GUIDELINE FOR YOUR LOGO ',
-        features: ['Includes logo design', 'Logo usage guidelines', 'Color palette', 'Typography guidelines', 'Iconography', 'Brand book design']
+        title: 'Cheap Package',
+        packPrice: 25,
+        packDaysToMake: 3,
+        desc: '1 logo design, High Quality Mock-up, Logo Transparency',
+        features: ['1 concept included', 'Logo transparency']
+      },
+      standard: {
+        title: 'Standard Package',
+        packPrice: 50,
+        packDaysToMake: 5,
+        desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
+        features: ['2 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
+      },
+      premium: {
+        title: 'HIGH QUALITY',
+        packPrice: 100,
+        packDaysToMake: 8,
+        desc: ' 3 Amazing concepts + all source files+ Social Media Kit + 24/7 priority customer services',
+        features: ['3 concepts included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file', 'Include social media kit']
       }
     },
     owner: {
@@ -507,8 +609,25 @@ const gigDemoData = [
     price: 50,
     packages: {
       basic: {
-        desc: '1 page simple website having up to 2 sections',
-        features: ['1 page', 'Design customization', 'Content upload', 'Responsive design', 'Source code', 'Detailed code comments']
+        title: 'Basic',
+        packPrice: 50,
+        packDaysToMake: 1,
+        desc: 'Single page Frontend website (Static).',
+        features: ['1 page', 'Content upload', 'Responsive design', 'Design customization']
+      },
+      standard: {
+        title: 'Standard',
+        packPrice: 150,
+        packDaysToMake: 2,
+        desc: 'Major frontend website',
+        features: ['3 pages', 'Content upload', 'Responsive design', 'Design customization', 'Source code']
+      },
+      premium: {
+        title: 'Premium',
+        packPrice: 250,
+        packDaysToMake: 4,
+        desc: 'FullStack website',
+        features: ['5 pages', 'Content upload', 'Responsive design', 'Design customization', 'Backend', 'Custom admin panel', 'Server upload']
       }
     },
     owner: {
@@ -554,11 +673,28 @@ const gigDemoData = [
   {
     _id: "iz9",
     title: "I will do hyper realistic pencil portrait by hand drawing",
-    price: 15,
+    price: 20,
     packages: {
       basic: {
-        desc: '1 Pencil portrait ',
-        features: ['1 Re-do', 'Colored', 'Provide scanned image', 'Send portrait by FedEx', '24/7 Customer service']
+        title: 'Silver',
+        packPrice: 20,
+        packDaysToMake: 3,
+        desc: 'I will make your portrait or any other digital drawing any kind of with in 2 days',
+        features: ['1 figure', 'Include source file', 'Include colors in illustration']
+      },
+      standard: {
+        title: 'Diamond',
+        packPrice: 50,
+        packDaysToMake: 5,
+        desc: 'I will offer a High resolution portrait or any other kind of art with more realistic features',
+        features: ['1 figure', 'Include source file', 'Include colors in illustration', 'Printable resolution file', 'Commercial use']
+      },
+      premium: {
+        title: 'Platinum',
+        packPrice: 100,
+        packDaysToMake: 7,
+        desc: 'I will offer a hyperrealism portrait or any other art you want with much more realism.',
+        features: ['2 figure', 'Include source file', 'Include colors in illustration', 'Printable resolution file', 'Commercial use', 'Include entire body illustration']
       }
     },
     owner: {
@@ -568,7 +704,7 @@ const gigDemoData = [
       "level": 1,
       "rate": 4
     },
-    daysToMake: 4,
+    daysToMake: 3,
     "description": "Hello ! Much obliged for visiting my gig :)\nIn this gig I'm offering you an exceptionally 3 one of a kind, best and reasonable bundles.\nIn case you are thinking for giving somebody uncommon an extremely delightful, eye getting gift( hyper practical hand drawing pencil sketch picture)?\nKindly select the helpful bundle and submit your request at this moment and I'll give you an ideal picture sketch, hand drawing, practical drawing, pencil attracting high goal JPEG/PNG advanced document.\nI will give hand-drawn dark and White or hued reasonable pictures.\nSympathetically give me clear reference photograph however much as could be expected.\nThe material I utilized for Creating pencil representations are:\nDrawing materials: graphite pencil, charcoal, Bristol paper, mono eraser, brush, mixing stump, mechanical pencil, graphite powder and so on .\nYou can give me anything:\nPicture photographs\nFamily photographs\nCreature photographs\nAny item photographs\nScene photographs\nEngineering photographs\nAnything you envision\nKindly reach me prior to submitting your request! Much appreciated.\nI DO NOT DELIVER ORIGINAL PHYSICAL COPY BUT A HIGH RESOLUTION JPEG DIGITA",
 
     imgUrls: [
@@ -587,11 +723,28 @@ const gigDemoData = [
   {
     _id: "iz10",
     title: "I will rank etsy listing with etsy seo title and tags",
-    price: 10,
+    price: 70,
     packages: {
       basic: {
-        desc: 'Search Engine Optimized 13 Targeted (Niche Specific) , Title up to 140 Char',
-        features: ['E-commerce seo audit', '1 page', 'Title optimization', 'Meta tags optimization']
+        title: 'Shop Review',
+        packPrice: 70,
+        packDaysToMake: 5,
+        desc: 'An in-depth report that tells you what is going well and how to improve.',
+        features: ['E-commerce seo audit']
+      },
+      standard: {
+        title: 'Shop Revamp',
+        packPrice: 210,
+        packDaysToMake: 7,
+        desc: 'Optimisation of your store and up to 3 listings',
+        features: ['E-commerce seo audit', 'Title optimization', 'Product description', 'Meta tags optimization']
+      },
+      premium: {
+        title: 'Shop Revamp + 1:1 Training',
+        packPrice: 270,
+        packDaysToMake: 7,
+        desc: 'Standard package + 1:1 video training via Zoom.',
+        features: ['E-commerce seo audit', 'Title optimization', 'Product description', 'Meta tags optimization']
       }
     },
     owner: {
@@ -601,7 +754,7 @@ const gigDemoData = [
       "level": 2,
       "rate": 5
     },
-    daysToMake: 3,
+    daysToMake: 5,
     "description": `Hit your targets and maximize your potential with an Etsy SEO Expert
     🚀I'm an experienced SEO expert and digital marketing consultant specializing in web content writing and e-commerce. Since 2018, I've helped over 2000 Etsy stores thrive and assisted numerous businesses in achieving 7-figure revenues. 💰My tailored approach to SEO and marketing strategies can help take your business to the next level. Trust in my attention to detail and commitment to your success. ✨Let's work together to build your online presence and achieve your goals. 📈 Contact me now.`,
 
