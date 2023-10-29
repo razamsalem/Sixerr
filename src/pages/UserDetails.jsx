@@ -203,7 +203,7 @@ export function UserDetails() {
                 {gigs && gigs.length > 0 && <>
                   <div className='gigs-list flex column'>
                     <h1>Best seller gigs </h1>
-                    <GigList gigs={gigs} onlyTwo={true} />
+                    <GigList gigs={gigs} onlyTwo={true} minimal={true} />
                   </div>
                   <section className='user-gigs'>
                     <h1>All gigs <i title='Add a new gig' className="fa-solid fa-circle-plus add-gig-btn" onClick={() => onClickAddGig()}></i></h1>

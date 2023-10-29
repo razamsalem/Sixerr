@@ -61,8 +61,8 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, selecte
                     </div>
                     :
                     <Link to={`${pathname}/checkout`} className='btn continue'>
-                        {/* <i class="fa-solid fa-arrow-right"></i> */}
                         Continue
+                        {/* <i class="fa-solid fa-arrow-right"></i> */}
                     </Link>
                 }
                 {!isPurchase && <div className='compare'>

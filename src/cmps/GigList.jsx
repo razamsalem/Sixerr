@@ -2,7 +2,7 @@ import { AddGigCard } from "./AddGigCard";
 import { GigPreview } from "./GigPreview";
 import { GigSlider } from "./GigSlider.jsx";
 
-export function GigList({ gigs, onRemoveGig, onUpdateGig, onlyTwo, onloadUser }) {
+export function GigList({ gigs, onRemoveGig, onUpdateGig, onlyTwo, onloadUser, minimal }) {
     const firstTwoGigs = gigs.slice(0, 2)
 
     return (
@@ -10,7 +10,7 @@ export function GigList({ gigs, onRemoveGig, onUpdateGig, onlyTwo, onloadUser })
             <ul className="gig-list">
 
                 {onlyTwo ? firstTwoGigs.map((gig, idx) =>
-                    <GigPreview key={idx} gig={gig} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
+                    <GigPreview key={idx} gig={gig} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} minimal={minimal} />
                 ) : gigs.map((gig, idx) =>
                     <GigPreview key={idx} gig={gig} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} onloadUser={onloadUser} />
                 )}
