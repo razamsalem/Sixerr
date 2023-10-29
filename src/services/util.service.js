@@ -8,6 +8,8 @@ export const utilService = {
     loadFromStorage,
     getAssetSrc,
     getSubtitle,
+    getEducation,
+    getEducationPlace,
     capitalizeFirstLetter,
     timeAgo,
     generateRandomDate,
@@ -83,6 +85,22 @@ function getSubtitle() {
     const randSubtitles = [languageLevel[randIdx], languageLevel[randIdx2], languageLevel[randIdx3]]
 
     return randSubtitles
+}
+
+function getEducation() {
+    const educationLevel = ['B.A. - Communication Design', 'B.A. - Business Managment', 'M.B.A. - Financial Management', 'B.Sc. - Digital Marketing', 'B.Sc. - Computer Science']
+    const randIdx = getRandomIntInclusive(0, educationLevel.length - 1)
+    const randEducation = educationLevel[randIdx]
+
+    return randEducation
+}
+
+function getEducationPlace() {
+    const educationPlace = ['knust, Ghana, Graduated 2022', 'Mariboru, Slovenia, Graduated 2016', 'Saint David, United Kingdom, Graduated 2010', 'Universität Berlin, Germany, Graduated 2017', 'Massachusetts , United States, Graduated 2019']
+    const randIdx = getRandomIntInclusive(0, educationPlace.length - 1)
+    const randEducation = educationPlace[randIdx]
+
+    return randEducation
 }
 
 // util function

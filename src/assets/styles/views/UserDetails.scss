@@ -201,6 +201,84 @@
                                 }
                             }
                         }
+
+                        .user-skills {
+                            .header {
+                                justify-content: space-between;
+                                padding-block-end: 14px;
+                                margin-block-start: 20px;
+
+                                h3 {
+                                    color: $darkest-clr;
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                    line-height: 150%;
+                                }
+                            }
+
+                            ul {
+                                // padding-block: 10px;
+
+                                li {
+                                    display: inline;
+
+                                    .pill {
+                                        display: inline-block;
+                                        border-radius: 15px;
+                                        min-width: 40px;
+                                        text-align: center;
+                                        padding: 5px 12px;
+                                        margin: 0 10px 10px 0;
+                                        border: 1px solid $light-clr2;
+                                        transition: background-color .2s ease-in-out;
+                                        font-size: 1em;
+                                        cursor: default;
+
+                                        &:hover {
+                                            background-color: $light-clr1;
+                                        }
+                                    }
+
+                                    &:not(:last-child) {
+                                        margin-block-end: 10px;
+                                    }
+
+                                }
+                            }
+                        }
+
+                        .user-education {
+                            .header {
+                                justify-content: space-between;
+                                padding-block-end: 14px;
+                                margin-block-start: 20px;
+
+                                h3 {
+                                    color: $darkest-clr;
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                    line-height: 150%;
+                                }
+                            }
+
+                            ul {
+                                padding-block: 10px;
+
+                                li {
+
+                                    .title {
+                                        font-size: 1em;
+                                        line-height: 18px;
+                                        color: $list-title-clr;
+                                    }
+
+                                    &:not(:last-child) {
+                                        margin-block-end: 10px;
+                                    }
+
+                                }
+                            }
+                        }
                     }
                 }
             }

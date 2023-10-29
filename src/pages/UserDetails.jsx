@@ -175,6 +175,29 @@ export function UserDetails() {
                     }
                     </ul>
                   </div>
+                  <div className="user-skills with-border-top">
+                    <div className="header flex">
+                      <h3 title='You can make up to four selections.'>Skills</h3>
+                      {/* <button>Add new</button> */}
+                    </div>
+                    <ul>
+                      <li><span className='pill'>Website design</span></li>
+                      <li><span className='pill'>Shopify marketing</span></li>
+                      <li><span className='pill'>Python</span></li>
+                      <li><span className='pill'>JavaScript</span></li>
+                      <li><span className='pill'>Sales</span></li>
+                    </ul>
+                  </div>
+                  <div className="user-education with-border-top">
+                    <div className="header flex">
+                      <h3 title='You can make up to four selections.'>Education</h3>
+                      {/* <button>Add new</button> */}
+                    </div>
+                    <ul>
+                      <li><span className='title'>{utilService.getEducation()}</span></li>
+                      <li><span className='empty'>{utilService.getEducationPlace()}</span></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>}
