@@ -231,7 +231,7 @@
                                         margin: 0 10px 10px 0;
                                         border: 1px solid $light-clr2;
                                         transition: background-color .2s ease-in-out;
-                                        font-size: 1em;
+                                        font-size: 1rem;
                                         cursor: default;
 
                                         &:hover {
@@ -270,6 +270,7 @@
                                         font-size: 1em;
                                         line-height: 18px;
                                         color: $list-title-clr;
+                                        font-size: 1rem;
                                     }
 
                                     &:not(:last-child) {

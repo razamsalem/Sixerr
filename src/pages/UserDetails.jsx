@@ -205,11 +205,11 @@ export function UserDetails() {
 
           <section className="gigs-column user-details-layout">
             {(watchedUser?.isSeller && <div className='manage-orders'>
-              <div className="order-header flex">
+              {gigs && gigs.length > 0 &&<> <div className="order-header flex">
                 <h1>Manage Orders</h1>
                 <button onClick={openDashboard} className='dash-btn'>Dashboard Overview</button>
               </div>
-              <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} />
+              <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} /> </>}
               <div className="my-gigs">
 
                 {!gigs || !gigs.length && <>
