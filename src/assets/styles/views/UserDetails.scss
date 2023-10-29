@@ -223,18 +223,21 @@
                 // justify-content: space-between;
                 align-items: baseline;
                 padding-block-end: 14px;
+                justify-content: space-between;
 
-                .dash-btn {
-                    display: inline-block;
-                    color: $btn-clr;
-                    font-size: 14px;
-                    font-weight: 400;
-                    background: none;
-                    padding: 0;
-                    margin-inline-start: rem(525px);
+                button {
+                    font-size: 1rem;
+                    line-height: 24px;
+                    padding: 9px 24px;
+                    background-color: $accent-clr;
+                    font-weight: 700;
+                    color: $light-clr !important;
+                    border: 1px solid transparent;
+                    border-radius: 3px;
+                    transition: color .2s, background-color .2s, box-shadow .2s, border .2s;
 
                     &:hover {
-                        text-decoration: underline;
+                        box-shadow: 0 2px 5px 1px rgba(0, 0, 0, .3);
                     }
                 }
             }

@@ -155,14 +155,14 @@ export function UserDetails() {
                   <div className="user-data">
                     <div className="header flex">
                       <h3 title='Tell us more about yourself. Buyers are also interested in learning about you as a person.'>Description</h3>
-                      <button>Edit Description</button>
+                      {/* <button>Edit Description</button> */}
                     </div>
                     <p>{watchedUser.desc ? watchedUser.desc : <span className='empty'>Tell us more about yourself. Buyers are also interested in learning about you as a person.</span>}</p>
                   </div>
                   <div className="user-lang with-border-top">
                     <div className="header flex">
                       <h3 title='You can make up to four selections.'>Languages</h3>
-                      <button>Add new</button>
+                      {/* <button>Add new</button> */}
                     </div>
                     <ul>{watchedUser.lang ? watchedUser.lang.map((lang, idx) => (
                       <li key={idx}><span className='title'>{lang}</span> - <span className='sub-title'>{demoSubtitle[utilService.getRandomIntInclusive(0, 1)]}</span></li>
