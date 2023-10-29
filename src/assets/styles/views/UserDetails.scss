@@ -53,12 +53,12 @@
                         margin-block-end: 24px;
                     }
 
-                    .location {
+                    .info-card-style {
                         display: flex;
                         justify-content: space-between;
                         padding-block-start: 20px;
 
-                        .location-icon {
+                        .icon {
                             width: 13px;
                             height: 13px;
                             color: $dark-clr-1;
@@ -66,22 +66,6 @@
                         }
 
                     }
-
-                    .member-since {
-                        display: flex;
-                        justify-content: space-between;
-                        padding-block-start: 20px;
-
-                        .user-icon {
-                            width: 13px;
-                            height: 13px;
-                            color: $dark-clr-1;
-                            margin-inline-end: 12px;
-
-                        }
-
-                    }
-
 
                 }
 

@@ -136,13 +136,21 @@ export function UserDetails() {
                 </div>
                 <div className="user-stats-desc">
                   <ul className='user-stats with-border-top'>
-                    <li className="location flex">
-                      <span><span className=' fa-solid fa-location-dot location-icon'></span>From</span>
+                    <li className="location info-card-style flex">
+                      <span><span className='fa-solid fa-location-dot icon'></span>From</span>
                       <b>{watchedUser.location ? watchedUser.location : 'Israel'}</b>
                     </li>
-                    <li className="member-since flex">
-                      <span><span className='fa-solid fa-user user-icon'></span>Member since</span>
+                    <li className="member-since info-card-style flex">
+                      <span><span className='fa-solid fa-user icon'></span>Member since</span>
                       <b>Oct 2023</b>
+                    </li>
+                    <li className="member-res-time info-card-style flex">
+                      <span><span className='fa-regular fa-clock icon'></span>Avg. Response Time</span>
+                      <b>1 hour</b>
+                    </li>
+                    <li className="member-res-time info-card-style flex">
+                      <span><span className='fa-solid fa-paper-plane icon'></span>Last Delivery</span>
+                      <b>3 days</b>
                     </li>
                   </ul>
                 </div>
@@ -205,11 +213,11 @@ export function UserDetails() {
 
           <section className="gigs-column user-details-layout">
             {(watchedUser?.isSeller && <div className='manage-orders'>
-              {gigs && gigs.length > 0 &&<> <div className="order-header flex">
+              {gigs && gigs.length > 0 && <> <div className="order-header flex">
                 <h1>Manage Orders</h1>
                 <button onClick={openDashboard} className='dash-btn'>Dashboard Overview</button>
               </div>
-              <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} /> </>}
+                <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} /> </>}
               <div className="my-gigs">
 
                 {!gigs || !gigs.length && <>
