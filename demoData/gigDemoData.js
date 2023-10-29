@@ -232,11 +232,28 @@ const gigDemoData = [
   {
     _id: "iz2",
     title: "I will develop a responsive website in HTML CSS Javascript React Node NextJS",
-    price: 100,
+    price: 50,
     packages: {
       basic: {
+        title: 'Basic',
+        packPrice: 50,
+        packDaysToMake: 1,
         desc: 'Single page Frontend website (Static).',
-        features: ['1 page', 'Content upload', 'Responsive design', 'Source code', 'Design customization']
+        features: ['1 page', 'Content upload', 'Responsive design', 'Design customization']
+      },
+      standard: {
+        title: 'Standard',
+        packPrice: 100,
+        packDaysToMake: 2,
+        desc: 'Major frontend website',
+        features: ['3 pages', 'Content upload', 'Responsive design', 'Design customization', 'Source code']
+      },
+      premium: {
+        title: 'Premium',
+        packPrice: 150,
+        packDaysToMake: 4,
+        desc: 'FullStack website',
+        features: ['5 pages', 'Content upload', 'Responsive design', 'Design customization', 'Backend', 'Custom admin panel', 'Server upload']
       }
     },
     owner: {

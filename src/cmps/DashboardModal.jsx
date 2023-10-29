@@ -91,6 +91,12 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                         <>
                             <h3 className="header mb">Dashboard</h3>
 
+                            <div className="cards flex">
+                                <DashboardCard title="Daily Orders" amount="142" icon="https://res.cloudinary.com/de2rdmsca/image/upload/v1698182770/308830_o5zknq.png" />
+                                <DashboardCard title="Daily Visits" amount="7,080" icon="https://res.cloudinary.com/de2rdmsca/image/upload/v1698182540/depositphotos_69848707-stock-illustration-pictograph-of-eye-icon_1_kgxet3.png" />
+                                <DashboardCard title="Total Earnings" amount="$16,575" icon="https://res.cloudinary.com/de2rdmsca/image/upload/v1698181815/png-transparent-dollar-sign-illustration-united-states-dollar-icon-design-icon-dollar-sign-text-logo-number-thumbnail-removebg-preview_1_kfkinb.png" />
+                            </div>
+                            
                             <div className="orders-data flex">
                                 <div className="compare-orders">
                                     <h4 className="title">Orders compared to last week</h4>
@@ -118,11 +124,6 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                                 </div>
                             </div>
 
-                            <div className="cards flex">
-                                <DashboardCard title="Daily Orders" amount="142" icon="https://res.cloudinary.com/de2rdmsca/image/upload/v1698182770/308830_o5zknq.png" />
-                                <DashboardCard title="Daily Visits" amount="7,080" icon="https://res.cloudinary.com/de2rdmsca/image/upload/v1698182540/depositphotos_69848707-stock-illustration-pictograph-of-eye-icon_1_kgxet3.png" />
-                                <DashboardCard title="Total Earnings" amount="$16,575" icon="https://res.cloudinary.com/de2rdmsca/image/upload/v1698181815/png-transparent-dollar-sign-illustration-united-states-dollar-icon-design-icon-dollar-sign-text-logo-number-thumbnail-removebg-preview_1_kfkinb.png" />
-                            </div>
                         </>
                     )}
 
