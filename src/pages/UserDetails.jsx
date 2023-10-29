@@ -155,14 +155,14 @@ export function UserDetails() {
                   <div className="user-data">
                     <div className="header flex">
                       <h3 title='Tell us more about yourself. Buyers are also interested in learning about you as a person.'>Description</h3>
-                      <button>Edit Description</button>
+                      {/* <button>Edit Description</button> */}
                     </div>
                     <p>{watchedUser.desc ? watchedUser.desc : <span className='empty'>Tell us more about yourself. Buyers are also interested in learning about you as a person.</span>}</p>
                   </div>
                   <div className="user-lang with-border-top">
                     <div className="header flex">
                       <h3 title='You can make up to four selections.'>Languages</h3>
-                      <button>Add new</button>
+                      {/* <button>Add new</button> */}
                     </div>
                     <ul>{watchedUser.lang ? watchedUser.lang.map((lang, idx) => (
                       <li key={idx}><span className='title'>{lang}</span> - <span className='sub-title'>{demoSubtitle[utilService.getRandomIntInclusive(0, 1)]}</span></li>
@@ -175,6 +175,29 @@ export function UserDetails() {
                     }
                     </ul>
                   </div>
+                  <div className="user-skills with-border-top">
+                    <div className="header flex">
+                      <h3 title='You can make up to four selections.'>Skills</h3>
+                      {/* <button>Add new</button> */}
+                    </div>
+                    <ul>
+                      <li><span className='pill'>Website design</span></li>
+                      <li><span className='pill'>Shopify marketing</span></li>
+                      <li><span className='pill'>Python</span></li>
+                      <li><span className='pill'>JavaScript</span></li>
+                      <li><span className='pill'>Sales</span></li>
+                    </ul>
+                  </div>
+                  <div className="user-education with-border-top">
+                    <div className="header flex">
+                      <h3 title='You can make up to four selections.'>Education</h3>
+                      {/* <button>Add new</button> */}
+                    </div>
+                    <ul>
+                      <li><span className='title'>{utilService.getEducation()}</span></li>
+                      <li><span className='empty'>{utilService.getEducationPlace()}</span></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>}
@@ -182,11 +205,11 @@ export function UserDetails() {
 
           <section className="gigs-column user-details-layout">
             {(watchedUser?.isSeller && <div className='manage-orders'>
-              <div className="order-header flex">
+              {gigs && gigs.length > 0 &&<> <div className="order-header flex">
                 <h1>Manage Orders</h1>
                 <button onClick={openDashboard} className='dash-btn'>Dashboard Overview</button>
               </div>
-              <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} />
+              <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} /> </>}
               <div className="my-gigs">
 
                 {!gigs || !gigs.length && <>
