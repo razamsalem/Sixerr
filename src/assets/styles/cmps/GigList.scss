@@ -21,10 +21,12 @@
                     padding: 0;
                     top: 39%;
                     opacity: 0;
-                    transition: all 0.5s;
-
+                    transition: all 0.2s;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    place-items: center;
                     i {
-                        font-size: rem(13px);
+                        font-size: rem(13px); 
                     }
 
                     &.prev {

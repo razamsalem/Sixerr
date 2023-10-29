@@ -6,6 +6,13 @@
     }
 }
 
+
+@mixin for-xs-small-layout {
+    @media (min-width: $xs-mobile-breakpoint) {
+        @content;
+    }
+}
+
 @mixin for-small-layout {
     @media (min-width: $mobile-breakpoint) {
         @content;
