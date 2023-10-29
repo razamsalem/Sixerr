@@ -1,12 +1,12 @@
-import timeImg from '../assets/img/time.svg';
-import checkImg from '../assets/img/check.svg';
-import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
-import { utilService } from '../services/util.service';
+import timeImg from '../assets/img/time.svg'
+import checkImg from '../assets/img/check.svg'
+import { Link, useLocation } from 'react-router-dom'
+import { useState } from 'react'
+import { utilService } from '../services/util.service'
 
-export function CallToAction({ gig, isPurchase = false, onPurchaseOrder }) {
+export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, selectedPack = 'basic' }) {
     const { price, daysToMake, packages, imgUrls } = gig
-    const [selectedPackage, setSelectedPackage] = useState('basic')
+    const [selectedPackage, setSelectedPackage] = useState(selectedPack)
     const { title, packPrice, packDaysToMake, desc, features } = packages[selectedPackage]
     const { pathname } = useLocation()
 
