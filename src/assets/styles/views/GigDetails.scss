@@ -34,6 +34,7 @@
         .star-wrapper {
             display: flex;
             gap: em(3px);
+
             .owner-rate {
                 font-weight: 700;
             }
@@ -43,10 +44,12 @@
                 text-decoration: underline;
                 padding-right: 7px;
             }
-            .divider{
-               color: $light-clr2
+
+            .divider {
+                color: $light-clr2
             }
-            .queue{
+
+            .queue {
                 color: $dark-clr-4;
                 padding-left: 7px;
             }
@@ -122,11 +125,11 @@
             }
 
             .next-btn {
-                right: em(- $arrow-btn-size / 2);
+                right: calc(-1 * $arrow-btn-size / 2);
             }
 
             .prev-btn {
-                left: em(- $arrow-btn-size / 2);
+                left: calc(-1 * $arrow-btn-size / 2);
             }
         }
     }
