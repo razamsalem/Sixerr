@@ -123,7 +123,7 @@
             gap: rem(10px);
 
             .compare-orders {
-                background-color: $light-clr3;
+                background-color: $light-clr;
                 height: rem(200px);
                 width: rem(450px);
                 border: 1px solid #10e582;
@@ -145,7 +145,7 @@
             gap: rem(10px);
 
             .age-info {
-                background-color: $light-clr3;
+                background-color: $light-clr;
                 height: rem(200px);
                 width: 40%;
                 border: 1px solid #10e582;
@@ -157,7 +157,7 @@
             }
 
             .daily-highs {
-                background-color: $light-clr3;
+                background-color: $light-clr;
                 height: rem(200px);
                 width: 60%;
                 border: 1px solid #10e582;
@@ -178,7 +178,7 @@
         }
 
         .stacked-container {
-            background-color: $light-clr3;
+            background-color: $light-clr;
             height: rem(200px);
             width: 100%;
             border: 1px solid #10e582;
@@ -198,6 +198,7 @@
 
         .cards {
             gap: rem(10px);
+
             &>* {
                 width: 33.33%;
             }
@@ -350,7 +351,7 @@
             background-color: $accent-clr;
         }
     }
-    
+
     .space {
         grid-column: 2;
         background-color: $light-clr4;
