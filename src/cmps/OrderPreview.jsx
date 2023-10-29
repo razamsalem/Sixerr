@@ -23,8 +23,8 @@ export function OrderPreview({ order, mode, onApproveOrder, onDeclineOrder, onFu
 
             </td>
             <td className='order-title'><LongTxt txt={order.gig.title} length={40} showReadMore={false} /></td>
-            <td>Thu Aug 04 2022</td>
-            <td>${order.gig.price}</td>
+            <td>{utilService.calculateDaysFromTimestamp(order.createdAt, order.daysToMake)}</td>
+            <td>${order.packPrice}</td>
             <td className="status">
                 {order && <span className={checkStatus(order.status)}> {utilService.capitalizeFirstLetter(order.status)} </span>}
                 {mode === 'seller' &&

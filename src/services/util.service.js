@@ -11,7 +11,8 @@ export const utilService = {
     capitalizeFirstLetter,
     timeAgo,
     generateRandomDate,
-    getRandomDate
+    getRandomDate,
+    calculateDaysFromTimestamp
 }
 
 function makeId(length = 6) {
@@ -95,26 +96,26 @@ function getAssetSrc(name) {
 function timeAgo(timestamp) {
     let seconds = Math.floor((new Date() - timestamp) / 1000);
     let interval = seconds / 31536000;
-  if (interval > 1) {
-    return Math.floor(interval) + " years";
-  }
-  interval = seconds / 2592000;
-  if (interval > 1) {
-    return Math.floor(interval) + " months";
-  }
-  interval = seconds / 86400;
-  if (interval > 1) {
-    return Math.floor(interval) + " days";
-  }
-  interval = seconds / 3600;
-  if (interval > 1) {
-    return Math.floor(interval) + " hours";
-  }
-  interval = seconds / 60;
-  if (interval > 1) {
-    return Math.floor(interval) + " minutes";
-  }
-  return Math.floor(seconds) + " seconds";
+    if (interval > 1) {
+        return Math.floor(interval) + " years";
+    }
+    interval = seconds / 2592000;
+    if (interval > 1) {
+        return Math.floor(interval) + " months";
+    }
+    interval = seconds / 86400;
+    if (interval > 1) {
+        return Math.floor(interval) + " days";
+    }
+    interval = seconds / 3600;
+    if (interval > 1) {
+        return Math.floor(interval) + " hours";
+    }
+    interval = seconds / 60;
+    if (interval > 1) {
+        return Math.floor(interval) + " minutes";
+    }
+    return Math.floor(seconds) + " seconds";
 }
 
 
@@ -129,4 +130,25 @@ function getRandomDate() {
     const dates = ['Mar 06 2023', 'Apr 02 2023', 'Jul 17 2023', 'Mar 25 2023', 'Oct 26 2023', 'May 23 2023', 'Feb 11 2023', 'Dec 12 2022']
     const slice = getRandomIntInclusive(0, dates.length - 1)
     return dates[slice]
+}
+
+function formatDate(date) {
+    const months = [
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+    ];
+
+    const month = months[date.getUTCMonth()];
+    const day = date.getUTCDate();
+    const year = date.getUTCFullYear();
+
+    return `${month} ${day}, ${year}`;
+}
+
+function calculateDaysFromTimestamp(timestamp, expectedDays) {
+    const days = expectedDays * 86400000;
+    timestamp += days;
+
+    const resultDate = new Date(timestamp);
+    return formatDate(resultDate);
 }
