@@ -65,8 +65,8 @@ export function GigDetails() {
                 <div className="profile-container">
                     <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-meduim" />
                     <div className="owner-details">
-                        <div>
-                            <h3 className="gig-title">{gig.owner.fullname}</h3>
+                        <div className="user-container">
+                            <h3 className="user-title">{gig.owner.fullname}</h3>
                             <span className="username">@{seller.username}</span>
                         </div>
                         <div className="star-wrapper">

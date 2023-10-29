@@ -10,58 +10,65 @@
         grid-column: 1;
     }
 
-
-
-    .owner-details {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-
-        div {
-            display: flex;
-            align-items: center;
-
-            .gig-title {
-                margin-right: 8px;
-            }
-
-            .username {
-                color: $dark-clr-4;
-                font-weight: 400;
-            }
-        }
-
-        .star-wrapper {
-            display: flex;
-            gap: em(3px);
-
-            .owner-rate {
-                font-weight: 700;
-            }
-
-            .owner-number-rates {
-                color: $dark-clr-4;
-                text-decoration: underline;
-                padding-right: 7px;
-            }
-
-            .divider {
-                color: $light-clr2
-            }
-
-            .queue {
-                color: $dark-clr-4;
-                padding-left: 7px;
-            }
-        }
-    }
-
     .owner-details-container {
         display: flex;
-        gap: em(16px);
+        gap: em(22px);
         flex-direction: column;
         margin-bottom: em(-13px);
         margin-block-end: em(27px);
+
+        .owner-details {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            column-gap: rem(18px);
+
+            .star-wrapper {
+                height: rem(18px);
+
+                &>* {
+                    height: 100%;
+                }
+            }
+
+            .user-container {
+                display: flex;
+                align-items: center;
+                gap: em(8px);
+
+                .username {
+                    height: rem(18px);
+                    color: $dark-clr-4;
+                    font-weight: 400;
+                }
+
+            }
+
+            .star-wrapper {
+                display: flex;
+                gap: em(3px);
+
+                .owner-rate {
+                    font-weight: 700;
+                }
+
+                .owner-number-rates {
+                    color: $dark-clr-4;
+                    text-decoration: underline;
+                    padding-right: 7px;
+                }
+
+                .divider {
+                    color: $light-clr2
+                }
+
+                .queue {
+                    color: $dark-clr-4;
+                    padding-left: 7px;
+                }
+            }
+        }
 
         h1 {
             font-size: 28px;
@@ -72,6 +79,10 @@
             gap: rem(12px);
         }
     }
+
+
+
+
 
     .about-gig {
         margin-block-end: em(30px);
@@ -98,7 +109,7 @@
     .carousel-container {
         position: relative;
         margin-bottom: 1.875rem;
-        max-width: 740px;
+        max-width: rem(740px);
 
         .carousel {
             position: static;
@@ -156,19 +167,18 @@
     }
 
 
-    @include for-small-layout {}
-
-    @include for-narrow-layout {
+    @include for-small-layout {
         grid-template-columns: 1fr;
         grid-auto-flow: row;
 
         .cta-container {
             grid-column: 1/-1;
-            grid-row: 3;
+            grid-row: 4;
             width: unset;
             justify-self: unset;
             position: unset;
             top: unset;
+            margin-block-end: 32px;
         }
 
         .carousel-container {
@@ -189,14 +199,27 @@
 
             }
         }
+
+        .owner-details-container {
+            .profile-container {
+                .owner-details {
+                    // align-items: center;
+                    // gap: rem(18px);
+                    // flex-direction: column;
+                }
+            }
+        }
+
     }
+
+    @include for-narrow-layout {}
 
     @include for-normal-layout {
         grid-template-columns: 1.5fr 1fr;
 
         .cta-container {
             grid-column: 2;
-            grid-row: 2;
+            grid-row: 3;
             position: sticky;
             top: 12vh;
             justify-self: end;
@@ -225,7 +248,15 @@
             }
         }
 
-
+        .owner-details-container {
+            .profile-container {
+                .owner-details {
+                    flex-direction: column;
+                    align-items: start;
+                    column-gap: unset;
+                }
+            }
+        }
     }
 
     @include for-large-layout {}
