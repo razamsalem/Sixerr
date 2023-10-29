@@ -26,7 +26,7 @@ export function OrderPreview({ order, mode, onApproveOrder, onDeclineOrder, onFu
             <td>{utilService.calculateDaysFromTimestamp(order.createdAt, order.daysToMake)}</td>
             <td>${order.packPrice}</td>
             <td className="status">
-                {order && <span className={checkStatus(order.status)}> {utilService.capitalizeFirstLetter(order.status)} </span>}
+                {order && <span className={`${checkStatus(order.status)} label `}> {utilService.capitalizeFirstLetter(order.status)} </span>}
                 {mode === 'seller' &&
                     <DropdownBtn>
                         <span className="action approve-gig" onClick={(ev) => { onApproveOrder(ev, order) }}>Approve</span>
