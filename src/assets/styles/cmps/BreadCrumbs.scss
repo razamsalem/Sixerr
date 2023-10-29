@@ -1,0 +1,18 @@
+.bread-crumbs {
+    display: flex;
+    align-items: center;
+    gap: em(8px);
+    font-size: rem(14px);
+    letter-spacing: 0.2px;
+    margin-block-end: rem(32px);
+
+    .home {
+        line-height: em(13px);
+    }
+
+    .divider {
+        color: $light-clr5;
+        font-weight: 700;
+    }
+
+}

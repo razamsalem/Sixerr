@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { useParams, useNavigate, Link } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { useParams, useNavigate } from "react-router-dom"
 import { Carousel } from 'react-responsive-carousel';
 import { gigService } from "../services/gig.service.local"
-import starUrl from "../assets/img/star.svg"
 import starGrey from "../assets/img/star-grey.svg"
 import { CallToAction } from "../cmps/CallToAction";
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../store/reducers/gig.reducer";
+import { ADD_TO_CART } from "../store/reducers/gig.reducer";
 import { ReviewList } from "../cmps/ReviewList";
 import { UserMiniDetail } from "../cmps/UserMiniDetail";
 import { userService } from "../services/user.service";
 import LoadingCircle from "../cmps/LoadingCircle";
 import { showErrorMsg } from "../services/event-bus.service";
-
+import { BreadCrumbs } from "../cmps/BreadCrumbs";
 
 export function GigDetails() {
 
@@ -59,13 +58,12 @@ export function GigDetails() {
     if (!gig || !seller) return <div className='loading'>{<LoadingCircle />}</div>
     return (
         <section className="gig-details">
+            <BreadCrumbs category={gig.category} />
             <CallToAction gig={gig} addToCart={addToCart} />
             <div className="owner-details-container">
                 <h1 className="gig-title">{gig.title}</h1>
                 <div className="profile-container">
-
                     <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-meduim" />
-
                     <div className="owner-details">
                         <div>
                             <h3 className="gig-title">{gig.owner.fullname}</h3>
