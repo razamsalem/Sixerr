@@ -2,26 +2,33 @@
 
 .gig-details {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
     justify-content: space-around;
     margin-block-start: em(40px);
 
-    &>*:not(.cta-container) {
+    &>* {
         grid-column: 1;
+    }
+
+    .cta-container {
+        grid-column: 1;
+        grid-row: 4;
+        position: static;
+        width: 100%;
+        margin-bottom: rem(42px);
     }
 
     .owner-details-container {
         display: flex;
         gap: em(22px);
-        flex-direction: column;
+        flex-direction: column-reverse;
         margin-bottom: em(-13px);
         margin-block-end: em(27px);
 
         .owner-details {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            align-items: start;
             justify-content: space-around;
-            align-items: center;
             column-gap: rem(18px);
 
             .star-wrapper {
@@ -107,8 +114,9 @@
     }
 
     .carousel-container {
+        grid-row: 2;
         position: relative;
-        margin-bottom: 1.875rem;
+        width: 100%;
         max-width: rem(740px);
 
         .carousel {
@@ -116,23 +124,22 @@
             width: 100%;
 
             &.carousel-slider {
-                height: rem($details-carousel-height);
+                // height: rem($details-carousel-height);
                 max-width: $details-carousel-width;
 
                 .slide {
                     background-color: $light-clr1;
 
                     img {
-                        height: $details-carousel-height;
-                        object-fit: contain;
-                        // object-fit: cover;
+                        height: $details-carousel-height-mobile;
+                        object-fit: cover;
                     }
                 }
             }
 
             .arrow {
                 @include gallery-btn;
-                top: calc($details-carousel-height / 2 - $arrow-btn-size / 2);
+                top: calc($details-carousel-height-mobile / 2 - $arrow-btn-size / 2);
             }
 
             .next-btn {
@@ -150,6 +157,7 @@
 
 
         .thumbs {
+            display: none;
 
             .thumb {
                 height: rem(60px);
@@ -182,9 +190,23 @@
         }
 
         .carousel-container {
+            margin-bottom: 1.875rem;
+
             max-width: unset;
+            grid-row: 3;
 
             .carousel {
+
+                .arrow {
+                    top: calc($details-carousel-height / 2 - $arrow-btn-size / 2);
+                }
+
+                .thumbs-wrapper {
+                    .thumbs {
+                        display: block;
+                    }
+                }
+
 
                 &.carousel-slider {
                     max-width: unset;
@@ -193,6 +215,7 @@
 
                         img {
                             object-fit: contain;
+                            height: $details-carousel-height;
                         }
                     }
                 }
@@ -201,11 +224,12 @@
         }
 
         .owner-details-container {
+            flex-direction: column;
+
             .profile-container {
                 .owner-details {
-                    // align-items: center;
-                    // gap: rem(18px);
-                    // flex-direction: column;
+                    flex-direction: row;
+                    align-items: center;
                 }
             }
         }
@@ -229,11 +253,12 @@
         .carousel-container {
             max-width: rem(740px);
 
+
             .carousel {
                 width: 100%;
 
                 &.carousel-slider {
-                    height: rem($details-carousel-height);
+                    // height: rem($details-carousel-height);
                     max-width: $details-carousel-width;
 
                     .slide {

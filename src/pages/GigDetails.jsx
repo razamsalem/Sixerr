@@ -82,7 +82,7 @@ export function GigDetails() {
                 </div>
             </div>
 
-            <div className="carousel-container" style={{ marginBottom: '1.875rem', position: 'relative' }}>
+            <div className="carousel-container">
                 <Carousel infiniteLoop={true} showIndicators={false} thumbWidth={'100px'} showStatus={false} renderArrowNext={(clickHandler, hasNext) => {
                     return (
                         <button className='next-btn arrow' onClick={clickHandler} >
