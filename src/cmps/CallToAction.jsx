@@ -31,7 +31,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, selecte
             </div>
             <article className="call-to-action">
                 <figure className='preview-container'>
-                    {isPurchase && <img src={imgUrls[0]} alt="Selected gig image preview" onError={e => e.currentTarget.src = imgNotFound} />}
+                    {isPurchase && <img src={imgUrls[0] || imgNotFound} alt="Selected gig image preview" onError={e => e.currentTarget.src = imgNotFound} />}
                     {isPurchase && <span className='package-desc'>{desc}</span>}
                 </figure>
                 <section className="package-heading">
