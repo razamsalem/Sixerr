@@ -225,6 +225,7 @@
             }
         }
     }
+
     @include for-xs-small-layout{
             display: grid;
             grid-template-columns: 1fr;
@@ -259,9 +260,10 @@
                 text-align: start;
             }
             .package-options {
-                width: 25em;
+                width: 80%;
                 // margin-bottom: 1rem;
-                margin: 0 9% 2rem 9%;
+                // margin: 0 9% 2rem 9%;
+                align-items: start;
             }
         }
         .big-gig-preview {

@@ -1,0 +1,39 @@
+.order-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    height: 60vh;
+    background-color: $light-clr;
+    border: 1px solid $modal-filter-border-clr;
+    border-radius: 12px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    overflow: auto;
+    text-align: center;
+
+    .header {
+        color: $light-clr;
+        background-color: $accent-clr;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .content {
+        padding: 20px;
+        text-align: left;
+        .mini-user {
+            align-items: center;
+            img {
+                width: rem(45px);
+                border-radius: 50%;
+            }
+            
+            h4 {
+                margin-inline: rem(8px);
+            }
+        }
+    }
+}

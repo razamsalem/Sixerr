@@ -1,5 +1,5 @@
 .checkout {
-    
+    margin-bottom: em(55px);
     @include for-xs-small-layout{
         font-size: 14px;
         display: grid;
@@ -20,6 +20,7 @@
             display: block;
             h6{
                 margin-block: rem(20px) 0;
+                padding-bottom: rem(7px);
             }
         }
         .payment-container .payment-methods-wrapper .credit-card-details .card > * > *{
@@ -28,9 +29,13 @@
         .payment-container .payment-methods-wrapper .credit-card-details .card > *{
             width: auto;
         }
-        .payment-container .payment-methods-wrapper .credit-card-details .card-number .credit-card-input-wrapper input{
+        .payment-container .payment-methods-wrapper .credit-card-details .card-number .credit-card-input-wrapper {
+            padding: 20px 20px 20px 0;
+            input{
             width: auto;
-            border: 0.0625em solid #e4e5e7
+            // border: 0.0625em solid #e4e5e7;
+            height: auto;
+            }
         }
     }
 
@@ -55,6 +60,7 @@
             h6{
                 margin-block: rem(20px) 0;
             }
+            width: 100%;
         }
         .payment-container .payment-methods-wrapper .credit-card-details .card > * > *{
             width: 100%;
@@ -79,6 +85,10 @@
         grid-column: 2;
         width: em(412px);
         justify-self: end;
+       
+    }
+    .credit-card-details{
+        padding-right: 83px;  
     }
     }
    

@@ -15,20 +15,21 @@ import becomeSellerBanner from '../assets/img/become-seller.svg'
 import LoadingCircle from '../cmps/LoadingCircle'
 import { AddGigCard } from '../cmps/AddGigCard'
 import { MyGigsTable } from '../cmps/MyGigsTable'
-import { YesNoModal } from '../cmps/YesNoModal'
+import { OrderModal } from '../cmps/OrderModal'
 import { gigService } from '../services/gig.service.local'
 import { ReviewList } from '../cmps/ReviewList'
 
 export function UserDetails() {
   const params = useParams()
   const navigate = useNavigate()
+  const demoSubtitle = utilService.getSubtitle()
   const watchedUser = useSelector(storeState => storeState.userModule.watchedUser)
   const loggedUser = useSelector(storeState => storeState.userModule.user)
   const orders = useSelector(storeState => storeState.orderModule.orders)
   const [gigs, setGigs] = useState(null)
   const [isDashboardOpen, setDashboardOpen] = useState(null)
   const [isModalOpen, setModalOpen] = useState(null)
-  const demoSubtitle = utilService.getSubtitle()
+  const [selectedOrder, setSelectedOrder] = useState(null)
 
   useEffect(() => {
     loadUser(params.id)
@@ -82,8 +83,9 @@ export function UserDetails() {
     setDashboardOpen(true)
   }
 
-  async function openModal() {
+  async function openOrderModal(order) {
     setModalOpen(true)
+    setSelectedOrder(order)
   }
 
   async function closeDashboard() {
@@ -112,9 +114,9 @@ export function UserDetails() {
   if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
   return (
     <>
-      {/* {isModalOpen && (
-        <YesNoModal txt={'Are you sure you want to delete this gig?'} handleBackgroundClick={handleBackgroundClick} onNoClick={closeModal} />
-      )} */}
+      {isModalOpen && (
+        <OrderModal order={selectedOrder} handleBackgroundClick={handleBackgroundClick} />
+      )}
       {isDashboardOpen && (
         <DashboardModal watchedUser={watchedUser} closeDashboard={closeDashboard} handleBackgroundClick={handleBackgroundClick} orders={orders} loggedUser={loggedUser} />
       )}
@@ -266,7 +268,7 @@ export function UserDetails() {
                   <h1>Manage Orders</h1>
                   <button onClick={openDashboard} className='dash-btn'>Dashboard Overview</button>
                 </div>
-                  <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} /> </>}
+                  <OrderList orders={orders} loggedUser={loggedUser} mode='seller' openModal={openOrderModal} onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} /> </>}
                 <div className="my-gigs">
 
                   {!gigs || !gigs.length && <>
@@ -287,7 +289,7 @@ export function UserDetails() {
                     </div>
                     <section className='user-gigs'>
                       <h1>All gigs <i title='Add a new gig' className="fa-solid fa-circle-plus add-gig-btn" onClick={() => onClickAddGig()}></i></h1>
-                      {<MyGigsTable gigs={gigs} openModal={openModal} />}
+                      {<MyGigsTable gigs={gigs} />}
                     </section>
                     <section className='user-reviews'>
                       <ReviewList gigOwnerId={params.id} isUserProfile={true} />

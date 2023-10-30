@@ -4,7 +4,7 @@ import { DropdownBtn } from "./DropdownBtn.jsx"
 import { Link } from "react-router-dom"
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
 
-export function OrderPreview({ order, mode, onApproveOrder, onDeclineOrder, onFulfillOrder }) {
+export function OrderPreview({ order, mode, openModal, onApproveOrder, onDeclineOrder, onFulfillOrder }) {
     const profile = mode === 'buyer' ? order.seller : order.buyer
 
     function checkStatus(status) {
@@ -13,9 +13,9 @@ export function OrderPreview({ order, mode, onApproveOrder, onDeclineOrder, onFu
         if (status === 'rejected') return 'rejected-label'
         if (status === 'fulfilled') return 'fulfilled-label'
     }
-
+    
     return (
-        <tr key={order._id}>
+        <tr key={order._id} onClick={() => openModal(order)}>
             <td>
                 <div className="user-with-img">
                     <img src={profile.imgUrl} alt="Buyer img" onError={e => e.currentTarget.src = defaultUserImg} />

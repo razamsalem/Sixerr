@@ -113,21 +113,21 @@ function getEmptyGig() {
         title: 'I will ',
         packages: {
             basic: {
-                title: 'Bronze Package',
+                title: 'Bronze',
                 packPrice: 15,
                 packDaysToMake: 3,
                 desc: '1 logo design + High Quality Mock-up + Logo Transparency + NO COMPLEX DESIGN',
                 features: ['1 concept included', 'Logo transparency']
             },
             standard: {
-                title: 'Silver Package',
+                title: 'Silver',
                 packPrice: 30,
                 packDaysToMake: 5,
                 desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
                 features: ['2 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
             },
             premium: {
-                title: 'Gold Package',
+                title: 'Gold',
                 packPrice: 45,
                 packDaysToMake: 8,
                 desc: ' 3 Amazing concepts + all source files+ Social Media Kit + 24/7 priority customer services',
