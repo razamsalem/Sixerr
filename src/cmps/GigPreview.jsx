@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { GigSlider } from "./GigSlider"
 import { HoverableComponent } from "./HoverableComponent"
 import { useEffect, useState } from "react"
+const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
 
 export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal }) {
     let [seller, setSeller] = useState(null)
@@ -30,7 +31,7 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal 
 
             <div className="flex owner-details">
                 {!minimal && <div className="flex owner-details-1">
-                    <img src={gig.owner.imgUrl} alt="progile-img" className="owner-profile-img" />
+                    <img src={gig.owner.imgUrl} alt="progile-img" className="owner-profile-img" onError={e => e.currentTarget.src = defaultUserImg} />
                     <span className="owner-fullname">{gig.owner.fullname}</span>
                     <span className="level-number">Level {gig.owner.level}</span>
                 </div>}

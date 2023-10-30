@@ -2,6 +2,7 @@ import { utilService } from "../services/util.service"
 import { LongTxt } from "./LongTxt"
 import { DropdownBtn } from "./DropdownBtn.jsx"
 import { Link } from "react-router-dom"
+const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
 
 export function OrderPreview({ order, mode, onApproveOrder, onDeclineOrder, onFulfillOrder }) {
     const profile = mode === 'buyer' ? order.seller : order.buyer
@@ -17,7 +18,7 @@ export function OrderPreview({ order, mode, onApproveOrder, onDeclineOrder, onFu
         <tr key={order._id}>
             <td>
                 <div className="user-with-img">
-                    <img src={profile.imgUrl} alt="Buyer img" />
+                    <img src={profile.imgUrl} alt="Buyer img" onError={e => e.currentTarget.src = defaultUserImg} />
                     {profile.fullname}
                 </div>
 

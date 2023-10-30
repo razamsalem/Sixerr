@@ -12,6 +12,7 @@ import { setHeaderPosition, setSubHeaderPosition } from '../store/actions/system
 import { DropdownBtn } from './DropdownBtn'
 import { gigService } from '../services/gig.service.local'
 import { setFilterBy } from "../store/actions/gig.actions"
+const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
 
 export function AppHeader() {
     const navigate = useNavigate()
@@ -87,7 +88,7 @@ export function AppHeader() {
                             <>
                                 <NavLink className='btn' key={'order'} to={'order'}>Orders</NavLink>
                                 <span className="user-info">
-                                    <DropdownBtn icon={<img src={user.imgUrl} />}>
+                                    <DropdownBtn icon={<img src={user.imgUrl} onError={e => e.currentTarget.src = defaultUserImg} />}>
                                         <NavLink to={`user/${user._id}`}>
                                             Profile
                                         </NavLink>

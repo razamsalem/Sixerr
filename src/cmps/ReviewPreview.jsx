@@ -8,7 +8,9 @@ import { utilService } from "../services/util.service"
 import { LongTxt } from "./LongTxt"
 import { useState } from "react"
 import { ReviewStars } from "./ReviewStars"
+const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
 import { useNavigate } from "react-router"
+
 
 export function ReviewPreview({ review }) {
     const [isClickedTumsUp, setIsClickedTumsUp] = useState(false)
@@ -22,7 +24,7 @@ export function ReviewPreview({ review }) {
 
     return (
         <li className="review-preview">
-            <img src={review.by.imgUrl} alt="seller img" className="seller-img" onClick={navigateToUser} />
+            <img src={review.by.imgUrl} className="seller-img" onClick={navigateToUser} onError={e => e.currentTarget.src = defaultUserImg} />
             <div className="review-detail">
                 <div className="seller-info">
                     <h4 className="seller-name" onClick={navigateToUser} >{review.by.fullname}</h4>

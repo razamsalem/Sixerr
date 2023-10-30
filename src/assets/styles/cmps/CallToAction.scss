@@ -33,6 +33,7 @@
          background-color: $light-clr;
 
          .preview-container {
+             margin-bottom: em(5px);
              display: grid;
              grid-template-columns: 1fr 1.5fr;
              gap: em(15px);

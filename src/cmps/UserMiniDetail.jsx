@@ -3,6 +3,7 @@ import { useState } from "react";
 import { userService } from "../services/user.service";
 import { display } from "@mui/system";
 import LoadingCircle from "./LoadingCircle";
+const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
 import { useNavigate } from "react-router";
 
 export function UserMiniDetail({ gig }) {
@@ -33,7 +34,7 @@ export function UserMiniDetail({ gig }) {
     return (
         <section className="user-mini-detail">
             <div className="owner-img-wrapper flex">
-                <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-large" onClick={navigateToUser} />
+                <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-large" onClick={navigateToUser} onError={e => e.currentTarget.src = defaultUserImg} />
                 <div className="owner-details mini">
                     <div className="user-info" onClick={navigateToUser}>
                         <h3 className="gig-title">{gig.owner.fullname}</h3>
