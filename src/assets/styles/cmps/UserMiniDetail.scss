@@ -1,29 +1,46 @@
-.user-mini-detail{
+.user-mini-detail {
     margin-block-end: em(30px);
-    .owner-img-wrapper{
+
+    .owner-img-wrapper {
         gap: em(16px);
         margin-bottom: em(19px);
     }
-    .mini{
+
+    .mini {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        div{
+
+        div {
             display: flex;
             align-items: center;
-            .gig-title{
+
+            .gig-title {
                 margin-right: 8px;
             }
-            .username{
+
+            .username {
                 color: $dark-clr-4;
                 font-weight: 400;
             }
         }
-        .user-desc-mini{
+
+        .user-desc-mini {
             color: $dark-clr-1;
         }
+
+        .user-info {
+            cursor: pointer;
+
+            &>* {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
-    .contact-me{
+
+    .contact-me {
         border-radius: 4px;
         color: $dark-clr-1;
         background-color: white;
@@ -33,35 +50,41 @@
         line-height: rem(14px);
         margin: em(20px) 0px;
         padding: em(12px) em(24px);
-        &:hover{
+
+        &:hover {
             background: $dark-clr-4;
             color: white;
             border-color: transparent;
         }
     }
-    .owner-description{
+
+    .owner-description {
         border: 1px solid $light-clr2;
         border-radius: .1875em;
         margin-bottom: 2.25em;
         padding: 1.5em;
-        ul{
+
+        ul {
             border-bottom: 1px solid $light-clr2;
             display: grid;
             grid-template-columns: 1fr 1fr;
             margin: 0 0 1.25em;
-            li{
+
+            li {
                 padding-bottom: 1em;
                 width: 50%;
                 color: $dark-clr-4;
             }
         }
-        span{
+
+        span {
             display: block;
             line-height: rem(25.6px);
             color: $dark-clr-1;
         }
+
         span:nth-child(2n) {
-           font-weight: 700;
+            font-weight: 700;
         }
     }
 }

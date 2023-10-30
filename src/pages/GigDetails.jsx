@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useDispatch } from "react-redux"
 import { useParams, useNavigate } from "react-router-dom"
 import { Carousel } from 'react-responsive-carousel';
@@ -14,12 +14,13 @@ import { showErrorMsg } from "../services/event-bus.service";
 import { BreadCrumbs } from "../cmps/BreadCrumbs";
 
 export function GigDetails() {
-
     const [gig, setGig] = useState(null)
     const { gigId } = useParams()
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const [seller, setSeller] = useState(null)
+    const userInfoRef = useRef(null)
+    const userReviewRef = useRef(null)
     const defaultImgUrl = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698161431/sixxer-logo_vseimk.png'
 
     useEffect(() => {
@@ -51,6 +52,14 @@ export function GigDetails() {
         }
     }
 
+    const scrollToUserInfo = () => {
+        userInfoRef.current.scrollIntoView()
+    }
+
+    const scrollToReview = () => {
+        userReviewRef.current.scrollIntoView()
+    }
+
     function addToCart(gig) {
         dispatch({ type: ADD_TO_CART, gig })
     }
@@ -64,13 +73,13 @@ export function GigDetails() {
                 <div className="owner-details-container">
                     <h1 className="gig-title">{gig.title}</h1>
                     <div className="profile-container">
-                        <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-meduim" />
+                        <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-meduim" onClick={scrollToUserInfo} />
                         <div className="owner-details">
-                            <div className="user-container">
+                            <div className="user-container" onClick={scrollToUserInfo}>
                                 <h3 className="user-title">{gig.owner.fullname}</h3>
                                 <span className="username">@{seller.username}</span>
                             </div>
-                            <div className="star-wrapper">
+                            <div className="star-wrapper" onClick={scrollToReview}>
                                 <span className="star-svg">
                                     <img src={starGrey} alt="star-svg" className="star" />
                                 </span>
@@ -110,9 +119,13 @@ export function GigDetails() {
                 <h1 className="gig-about-title">About this gig</h1>
                 <p className="gig-description">{gig.description}</p>
             </div>
-            <h1 className="about-seller">About the seller</h1>
-            <UserMiniDetail gig={gig} />
-            <ReviewList gigOwnerId={gig.owner._id} />
+            <div className="user-info" ref={userInfoRef}>
+                <h1 className="about-seller">About the seller</h1>
+                <UserMiniDetail gig={gig} />
+            </div>
+            <div className="user-reviews" ref={userReviewRef}>
+                <ReviewList gigOwnerId={gig.owner._id} />
+            </div>
         </section>
     )
 }
