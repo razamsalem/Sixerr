@@ -229,9 +229,7 @@ export function UserDetails() {
             </div>}
           </section>
 
-          {!watchedUser._id !== loggedUser._id &&
-
-            watchedUser.isSeller ? <div></div> :
+          {watchedUser._id !== loggedUser._id && !watchedUser.isSeller &&
             <section className="no-data-found">
               <div className="help-us">
                 <h1>Unfortunately we do not have enough information about this user</h1>
