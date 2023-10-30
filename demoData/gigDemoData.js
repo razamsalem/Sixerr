@@ -1104,6 +1104,59 @@ const gigDemoData = [
     tags: ['Video Marketing', 'Organic Social Promotions', 'Video SEO'],
     likedByUsers: ['mini-user']
   },
+  {
+    _id: "ApOD12yGCxd",
+    title: "I will write SEO blog posts and articles for your website",
+    price: 15,
+    packages: {
+      basic: {
+        title: 'BASIC SEO',
+        packPrice: 15,
+        packDaysToMake: 1,
+        desc: '500 Word SEO Optimized Blog Post',
+        features: ['1 Article', 'Plagiarism check', 'Include keyword research']
+      },
+      standard: {
+        title: 'SEO MAX',
+        packPrice: 25,
+        packDaysToMake: 2,
+        desc: '1000 Word SEO Optimized Blog Post',
+        features: ['1 Article', 'Plagiarism check', 'Include keyword research']
+      },
+      premium: {
+        title: 'SEO PRO MAX',
+        packPrice: 50,
+        packDaysToMake: 3,
+        desc: '1500 Word SEO Optimized Blog Post',
+        features: ['1 Article', 'Plagiarism check', 'Include keyword research', 'On-Standby support']
+      }
+    },
+    owner: {
+      "_id": "zD1109",
+      "fullname": "Karen M",
+      "imgUrl": "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698706620/karenM_axc4rw.webp",
+      "level": 2,
+      "rate": 5,
+    },
+    daysToMake: 3,
+    description: `
+    Hey there! Im Karen, a UK-based writer, and this cozy corner of Fiverr is where words come alive. With over 1000 orders successfully delivered, and not a single frown in the reviews, I'd like to believe I've got a flair for this.
+
+    In my 9+ years of writing and marketing, I've had the remarkable privilege of collaborating with some truly exceptional brands. This includes household names like Fiverr, Spotify, Lyric, Turo, Zuper, and Adidas. Plus, I'm grateful to be working with hundreds of amazing clients every month, which keeps my creative juices in tip-top shape.
+    `,
+    imgUrls: [
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698706621/KarenM-1_gqoziy.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698706621/Karen-m-3_jwo4p8.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698706621/Karen-M-2_jj1paf.webp"
+    ],
+    category: "Writing & Translation",
+    tags: ['Articles & Blog Posts', 'Content Strategy', 'Proofreading & Editing', 'AI Content Editing', 'Book Editing', 'Beta Reading', 'Writing Advice', 'Career Writing', 'Resume Writing', 'Cover Letters', 'LinkedIn Profiles'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
 ]
 
 export default gigDemoData

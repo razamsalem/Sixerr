@@ -804,6 +804,35 @@ const demoUsers = [
         },
       },
     ]
+  },
+  {
+    "_id": "zD1109",
+    "fullname": "Karen M",
+    username: "karenmaristani",
+    password: "karenM",
+    "imgUrl": "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698706620/karenM_axc4rw.webp",
+    "level": 2,
+    "rate": 5,
+    "desc": `With over 9 years of extensive marketing & writing expertise, I am thrilled to offer my assistance in empowering businesses worldwide to achieve their utmost potential through impeccable marketing and writing strategies across diverse topics. My aim is to amplify your following and foster meaningful customer interactions.`,
+    isSeller: true,
+    location: 'United Kingdom',
+    lang: ['English'],
+    reviews: [
+      {
+        "id": "rev7",
+        "gig": "{optional-mini-gig}",
+        "txt": "Karen helped my website sky rocket with her amazing SEO Work! 🚀👩‍🚀",
+        "rate": 5,
+        "createdAt": 1694493928300,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u154",
+          "fullname": "Yomi",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4b7fe17dde65726409810dd2541769c4-1681190210085/1f9751ab-3804-48b7-a2ec-7eabe5361ad8.jpg",
+          "location": "Canada",
+        },
+      },
+    ]
   }
 ]
 
