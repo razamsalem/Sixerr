@@ -1,12 +1,17 @@
 import { useNavigate } from "react-router"
 import { utilService } from "../services/util.service"
 
-export function OrderModal({ order, closeModal, handleBackgroundClick }) {
+export function OrderModal({ order, userSeller, closeModal, handleBackgroundClick }) {
     const { buyer, seller, gig, title, packPrice, daysToMake, status, createdAt, _id } = order
     const navigate = useNavigate()
 
-    function navigateToUser() {
+    function navigateToBuyer() {
         navigate(`/user/${buyer._id}`)
+        closeModal()
+    }
+
+    function navigateToSeller() {
+        navigate(`/user/${seller._id}`)
         closeModal()
     }
 
@@ -21,12 +26,24 @@ export function OrderModal({ order, closeModal, handleBackgroundClick }) {
 
                         <main className="content">
                             <div className="mini-user flex">
-                                <img src={buyer.imgUrl} alt="Buyer picture" onClick={navigateToUser} />
-                                <h4 onClick={navigateToUser} >{buyer.username}</h4>
-                                <p>ordered the <span className="bold">{title}</span> package from you for <span className="bold">${packPrice}</span></p>
+                                {userSeller ? <>
+                                    <img src={buyer.imgUrl} alt="Buyer picture" onClick={navigateToBuyer} />
+                                    <h4 onClick={navigateToBuyer} >{buyer.username}</h4>
+                                    <p>ordered the <span className="bold">{title}</span> package from you for <span className="bold">${packPrice}</span></p>
+                                </>
+                                    :
+                                    <>
+                                        <img src={seller.imgUrl} alt="Seller picture" onClick={navigateToBuyer} />
+                                        <p>You ordered the <span className="bold">{title}</span> package from {seller.fullname} for <span className="bold">${packPrice}</span></p>
+                                    </>
+
+                                }
                             </div>
                             <div className="contact-buyer flex">
-                                <button onClick={navigateToUser}>Contact {buyer.username}</button>
+                                {userSeller ?
+                                    <button onClick={navigateToBuyer}>Contact {buyer.username}</button>
+                                    : <button onClick={navigateToSeller}>Contact {seller.fullname}</button>
+                                }
                             </div>
 
                             <div className="order info with-border-top" >
