@@ -196,8 +196,10 @@ export function UserDetails() {
                         {/* <button>Add new</button> */}
                       </div>
                       <ul>
+                        <li><span className='title'><span className='fa-brands fa-facebook logo'></span>Facebook</span></li>
                         <li><span className='title'><span className='fa-brands fa-google logo'></span>Google</span></li>
                         <li><span className='title'><span className='fa-brands fa-twitter logo'></span>Twitter</span></li>
+                        <li><span className='title'><span className='fa-brands fa-dribbble logo'></span>Dribbble</span></li>
                       </ul>
                     </div>
                     <div className="user-skills with-border-top">
