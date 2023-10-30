@@ -64,6 +64,9 @@ async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, categ
     if (filterBy.daysToMake) {
         gigs = gigs.filter(gig => gig.packages.basic.packDaysToMake <= filterBy.daysToMake)
     }
+    if (filterBy.topRated) {
+        gigs = gigs.filter(gig => gig.owner.rate >= 5)
+    }
     return gigs
 }
 
