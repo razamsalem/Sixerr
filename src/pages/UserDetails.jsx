@@ -106,7 +106,8 @@ export function UserDetails() {
   }
 
   if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
-
+  console.log('watchedUser', watchedUser)
+  console.log('loggedUser', loggedUser)
   return (
     <>
       {/* {isModalOpen && (
@@ -115,7 +116,7 @@ export function UserDetails() {
       {isDashboardOpen && (
         <DashboardModal watchedUser={watchedUser} closeDashboard={closeDashboard} handleBackgroundClick={handleBackgroundClick} orders={orders} loggedUser={loggedUser} />
       )}
-      <main className='user-details-container main-layout full'>
+      <main className={`user-details-container main-layout full ${watchedUser._id === loggedUser._id ? 'bg' : ''}`}>
         <section className='details-container'>
           <section className="user-details ">
             {watchedUser && <div className='user-card'>
@@ -133,6 +134,9 @@ export function UserDetails() {
                     <div className="secondary-name">
                       @{watchedUser.username}
                     </div>
+                    {watchedUser._id !== loggedUser._id &&
+                      <button className='contact'>Contact me</button>
+                    }
                   </div>
                 </div>
                 <div className="user-stats-desc">
@@ -145,14 +149,15 @@ export function UserDetails() {
                       <span><span className='fa-solid fa-user icon'></span>Member since</span>
                       <b>Oct 2023</b>
                     </li>
-                    <li className="member-res-time info-card-style flex">
-                      <span><span className='fa-regular fa-clock icon'></span>Avg. Response Time</span>
-                      <b>1 hour</b>
-                    </li>
-                    <li className="member-res-time info-card-style flex">
-                      <span><span className='fa-solid fa-paper-plane icon'></span>Last Delivery</span>
-                      <b>4 hours</b>
-                    </li>
+                    {watchedUser.isSeller && <>
+                      <li className="member-res-time info-card-style flex">
+                        <span><span className='fa-regular fa-clock icon'></span>Avg. Response Time</span>
+                        <b>1 hour</b>
+                      </li>
+                      <li className="member-res-time info-card-style flex">
+                        <span><span className='fa-solid fa-paper-plane icon'></span>Last Delivery</span>
+                        <b>4 hours</b>
+                      </li> </>}
                   </ul>
                 </div>
               </div>
@@ -184,90 +189,106 @@ export function UserDetails() {
                     }
                     </ul>
                   </div>
-                  <div className="user-linked with-border-top">
-                    <div className="header flex">
-                      <h3>Linked Accounts</h3>
-                      {/* <button>Add new</button> */}
+                  {watchedUser.isSeller && <>
+                    <div className="user-linked with-border-top">
+                      <div className="header flex">
+                        <h3>Linked Accounts</h3>
+                        {/* <button>Add new</button> */}
+                      </div>
+                      <ul>
+                        <li><span className='title'><span className='fa-brands fa-google logo'></span>Google</span></li>
+                        <li><span className='title'><span className='fa-brands fa-twitter logo'></span>Twitter</span></li>
+                      </ul>
                     </div>
-                    <ul>
-                      <li><span className='title'><span className='fa-brands fa-google logo'></span>Google</span></li>
-                      <li><span className='title'><span className='fa-brands fa-twitter logo'></span>Twitter</span></li>
-                    </ul>
-                  </div>
-                  <div className="user-skills with-border-top">
-                    <div className="header flex">
-                      <h3 title='Let your buyers know your skills. Skills gained through your previous jobs, hobbies or even everyday life.'>Skills</h3>
-                      {/* <button>Add new</button> */}
+                    <div className="user-skills with-border-top">
+                      <div className="header flex">
+                        <h3 title='Let your buyers know your skills. Skills gained through your previous jobs, hobbies or even everyday life.'>Skills</h3>
+                        {/* <button>Add new</button> */}
+                      </div>
+                      <ul>
+                        <li><span className='pill'>Website design</span></li>
+                        <li><span className='pill'>Shopify marketing</span></li>
+                        <li><span className='pill'>Python</span></li>
+                        <li><span className='pill'>JavaScript</span></li>
+                        <li><span className='pill'>Sales</span></li>
+                      </ul>
                     </div>
-                    <ul>
-                      <li><span className='pill'>Website design</span></li>
-                      <li><span className='pill'>Shopify marketing</span></li>
-                      <li><span className='pill'>Python</span></li>
-                      <li><span className='pill'>JavaScript</span></li>
-                      <li><span className='pill'>Sales</span></li>
-                    </ul>
-                  </div>
-                  <div className="user-education with-border-top">
-                    <div className="header flex">
-                      <h3 title='Describe your educational background. It will help buyers get to know you!'>Education</h3>
-                      {/* <button>Add new</button> */}
+                    <div className="user-education with-border-top">
+                      <div className="header flex">
+                        <h3 title='Describe your educational background. It will help buyers get to know you!'>Education</h3>
+                        {/* <button>Add new</button> */}
+                      </div>
+                      <ul>
+                        <li><span className='title'>{utilService.getEducation()}</span></li>
+                        <li><span className='empty'>{utilService.getEducationPlace()}</span></li>
+                      </ul>
                     </div>
-                    <ul>
-                      <li><span className='title'>{utilService.getEducation()}</span></li>
-                      <li><span className='empty'>{utilService.getEducationPlace()}</span></li>
-                    </ul>
-                  </div>
+                  </>}
                 </div>
               </div>
             </div>}
           </section>
 
-          <section className="gigs-column user-details-layout">
-            {(watchedUser?.isSeller && <div className='manage-orders'>
-              {gigs && gigs.length > 0 && <> <div className="order-header flex">
-                <h1>Manage Orders</h1>
-                <button onClick={openDashboard} className='dash-btn'>Dashboard Overview</button>
-              </div>
-                <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} /> </>}
-              <div className="my-gigs">
+          {!watchedUser._id !== loggedUser._id &&
 
-                {!gigs || !gigs.length && <>
-                  <h1>My Gigs</h1>
-                  <div>
-                    <p className='empty'>
-                      Surely someone needs your service...<Link className='link' to="/gig/add">create your first gig today!</Link>
-                    </p>
-                    <Link className='link' to="/gig/add"><AddGigCard txt={'Add a gig'} /></Link>
-                  </div>
-                </>}
+            watchedUser.isSeller ? <div></div> :
+            <section className="no-data-found">
+              <div className="help-us">
+                <h1>Unfortunately we do not have enough information about this user</h1>
+                <img className='help-us-img' src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/search_perseus/empty-search-results.aabcd99.png" />
+                <h1>Do you know this user? Help us increase user data</h1>
+                <button>Help us</button>
+              </div>
+            </section>
+          }
+
+          {watchedUser._id === loggedUser._id &&
+
+            <section className="gigs-column user-details-layout">
+              {(watchedUser?.isSeller && <div className='manage-orders'>
+                {gigs && gigs.length > 0 && <> <div className="order-header flex">
+                  <h1>Manage Orders</h1>
+                  <button onClick={openDashboard} className='dash-btn'>Dashboard Overview</button>
+                </div>
+                  <OrderList orders={orders} loggedUser={loggedUser} mode='seller' onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} /> </>}
+                <div className="my-gigs">
+
+                  {!gigs || !gigs.length && <>
+                    <h1>My Gigs</h1>
+                    <div>
+                      <p className='empty'>
+                        Surely someone needs your service...<Link className='link' to="/gig/add">create your first gig today!</Link>
+                      </p>
+                      <Link className='link' to="/gig/add"><AddGigCard txt={'Add a gig'} /></Link>
+                    </div>
+                  </>}
 
 
-                {gigs && gigs.length > 0 && <>
-                  <div className='gigs-list flex column'>
-                    <h1>Best seller gigs </h1>
-                    <GigList gigs={gigs} onlyTwo={true} minimal={true} />
-                  </div>
-                  <section className='user-gigs'>
-                    <h1>All gigs <i title='Add a new gig' className="fa-solid fa-circle-plus add-gig-btn" onClick={() => onClickAddGig()}></i></h1>
-                    {<MyGigsTable gigs={gigs} openModal={openModal} />}
-                  </section>
-                  <section className='user-reviews'>
-                    <ReviewList gigOwnerId={params.id} isUserProfile={true} />
-                  </section>
-                </>}
-              </div>
-            </div>)}
-            {(!watchedUser?.isSeller && <div className="seller-gigs">
-              <div className="become-seller">
-                <img src={becomeSellerBanner} alt="becomeSellerBanner" className="become-seller-img" />
-                <h3>Ready to earn on your own terms?</h3>
-                <button onClick={() => onBecomeSeller(params.id)}>Become a seller</button>
-              </div>
-            </div>)}
-          </section>
+                  {gigs && gigs.length > 0 && <>
+                    <div className='gigs-list flex column'>
+                      <h1>Best seller gigs </h1>
+                      <GigList gigs={gigs} onlyTwo={true} minimal={true} />
+                    </div>
+                    <section className='user-gigs'>
+                      <h1>All gigs <i title='Add a new gig' className="fa-solid fa-circle-plus add-gig-btn" onClick={() => onClickAddGig()}></i></h1>
+                      {<MyGigsTable gigs={gigs} openModal={openModal} />}
+                    </section>
+                    <section className='user-reviews'>
+                      <ReviewList gigOwnerId={params.id} isUserProfile={true} />
+                    </section>
+                  </>}
+                </div>
+              </div>)}
+              {(!watchedUser?.isSeller && <div className="seller-gigs">
+                <div className="become-seller">
+                  <img src={becomeSellerBanner} alt="becomeSellerBanner" className="become-seller-img" />
+                  <h3>Ready to earn on your own terms?</h3>
+                  <button onClick={() => onBecomeSeller(params.id)}>Become a seller</button>
+                </div>
+              </div>)}
+            </section>}
         </section>
       </main >
     </>
-
   )
 }
