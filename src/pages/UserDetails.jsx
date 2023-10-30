@@ -19,7 +19,6 @@ import { YesNoModal } from '../cmps/YesNoModal'
 import { gigService } from '../services/gig.service.local'
 import { ReviewList } from '../cmps/ReviewList'
 
-
 export function UserDetails() {
   const params = useParams()
   const navigate = useNavigate()
@@ -106,9 +105,11 @@ export function UserDetails() {
     navigate('/gig/add')
   }
 
+  if (!loggedUser) {
+    navigate('/')
+    showErrorMsg('You must be logged in to continue')
+  }
   if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
-  console.log('watchedUser', watchedUser)
-  console.log('loggedUser', loggedUser)
   return (
     <>
       {/* {isModalOpen && (
