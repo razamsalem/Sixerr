@@ -1,5 +1,5 @@
 .checkout {
-    
+    margin-bottom: em(55px);
     @include for-xs-small-layout{
         font-size: 14px;
         display: grid;
