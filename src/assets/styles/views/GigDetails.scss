@@ -36,6 +36,10 @@
 
                 &>* {
                     height: 100%;
+                    &:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
                 }
             }
 
@@ -230,6 +234,15 @@
                 .owner-details {
                     flex-direction: row;
                     align-items: center;
+
+
+                    .user-title,
+                    .username {
+                        &:hover {
+                            cursor: pointer;
+                            text-decoration: underline;
+                        }
+                    }
                 }
             }
         }
