@@ -1,4 +1,4 @@
-.yes-no-modal {
+.order-modal {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -22,18 +22,5 @@
         margin: 10px 0;
         padding: 8px 12px; 
         border-radius: 8px;
-
-        &.yes:hover {
-            background-color: $accent-clr;
-        }
-
-        &.no:hover {
-            background-color: $error-clr;
-        }
-
-        &:not(:last-child) {
-            margin-inline-end: rem(16px);
-        }
-
     }
 }

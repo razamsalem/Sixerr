@@ -2,7 +2,7 @@ import { OrderPreview } from "./OrderPreview"
 import { Link } from "react-router-dom"
 
 
-export function OrderList({ orders, loggedUser, mode, onApproveOrder, onDeclineOrder, onFulfillOrder }) {
+export function OrderList({ orders, loggedUser, mode, openModal, onApproveOrder, onDeclineOrder, onFulfillOrder }) {
     if (mode === 'buyer') {
         orders = orders.filter(order => order.buyer._id === loggedUser._id)
     } else if (mode === 'seller') {
@@ -43,7 +43,7 @@ export function OrderList({ orders, loggedUser, mode, onApproveOrder, onDeclineO
                 {
                     <tbody>
                         {orders.map(order => (
-                            <OrderPreview key={order._id} order={order} mode={mode} onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} />
+                            <OrderPreview key={order._id} order={order} mode={mode} openModal={openModal} onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} />
                         ))}
                     </tbody>}
 
