@@ -887,14 +887,14 @@ const gigDemoData = [
       basic: {
         title: 'Small Channel',
         packPrice: 60,
-        packDaysToMake: 4,
+        packDaysToMake: 1,
         desc: 'I will create and setup your channel for you',
         features: ['Setup & integrations', 'Channel evaluation', 'Content creation']
       },
       standard: {
         title: 'Medium Channel',
         packPrice: 125,
-        packDaysToMake: 5,
+        packDaysToMake: 3,
         desc: 'I will create and setup your channel for you including - Tags',
         features: ['Setup & integrations', 'Channel evaluation', 'Content creation', 'Action plan', 'Reporting']
       },

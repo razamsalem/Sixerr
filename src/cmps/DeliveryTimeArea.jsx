@@ -7,8 +7,6 @@ export function DeliveryTimeArea({ handleChange, filterByToEdit }) {
         { txt: 'Anytime', id: 'delivery-time4', value: Infinity }
     ]
 
-    console.log(filterByToEdit)
-
     return (
         <div className="radio-list flex">
 
