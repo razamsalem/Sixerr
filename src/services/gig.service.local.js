@@ -87,25 +87,9 @@ async function save(gig) {
 }
 
 export function getDefaultFilter() {
-    console.log('hi from filter')
     return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '', page: 1, userId: '', daysToMake: '' }
 }
 
-// async function addGigMsg(gigId, txt) {
-//     // Later, this is all done by the backend
-//     const gig = await getById(gigId)
-//     if (!gig.msgs) gig.msgs = []
-
-//     const msg = {
-//         id: utilService.makeId(),
-//         by: userService.getLoggedinUser(),
-//         txt
-//     }
-//     gig.msgs.push(msg)
-//     await storageService.put(STORAGE_KEY, gig)
-
-//     return msg
-// }
 
 function getEmptyGig() {
     let owner = userService.getLoggedinUser()
