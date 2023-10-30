@@ -80,27 +80,28 @@ export function GigDetails() {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div className="carousel-container">
-                <Carousel infiniteLoop={true} showIndicators={false} thumbWidth={'100px'} showStatus={false} renderArrowNext={(clickHandler, hasNext) => {
-                    return (
-                        <button className='next-btn arrow' onClick={clickHandler} >
-                            <i className="fa-solid fa-chevron-right"></i>
-                        </button>
-                    )
-                }}
-                    renderArrowPrev={(clickHandler, hasNext) => {
+                <div className="carousel-container">
+                    <Carousel infiniteLoop={true} showIndicators={false} thumbWidth={'100px'} showStatus={false} renderArrowNext={(clickHandler, hasNext) => {
                         return (
-                            <button className='prev-btn arrow' onClick={clickHandler} >
-                                <i className="fa-solid fa-chevron-left"></i>
+                            <button className='next-btn arrow' onClick={clickHandler} >
+                                <i className="fa-solid fa-chevron-right"></i>
                             </button>
                         )
                     }}
-                >
-                    {!gig.imgUrls.length ? <img src={defaultImgUrl} /> : gig.imgUrls.map(img => <img key={img} src={img} />)}
-                </Carousel>
+                        renderArrowPrev={(clickHandler, hasNext) => {
+                            return (
+                                <button className='prev-btn arrow' onClick={clickHandler} >
+                                    <i className="fa-solid fa-chevron-left"></i>
+                                </button>
+                            )
+                        }}
+                    >
+                        {!gig.imgUrls.length ? <img src={defaultImgUrl} /> : gig.imgUrls.map(img => <img key={img} src={img} />)}
+                    </Carousel>
+                </div>
             </div>
+
+
 
 
             <div className="about-gig">
