@@ -1,4 +1,5 @@
 .review-chart {
+    max-width: rem(450px);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -15,7 +16,7 @@
     .review-bars-container {
         align-items: center;
         display: grid;
-        grid-template-columns: 4.0625em 1fr 3em;
+        grid-template-columns: 4.0625em 1fr auto;
         width: 100%;
 
         .review-rate-bar {

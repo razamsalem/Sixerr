@@ -1,6 +1,6 @@
 .main-layout {
     display: grid;
-    grid-template-columns: minmax(32px, 1fr) minmax(auto, 1360px) minmax(32px, 1fr);
+    grid-template-columns: minmax(12px, 1fr) minmax(auto, $mobile-breakpoint) minmax(12px, 1fr);
 
     >*.full {
         grid-column: 1 / -1;
@@ -10,10 +10,11 @@
         grid-column: 2;
     }
 
-    // @include for-narrow-layout {
-    //     grid-template-columns:
-    //         minmax(20px, 1fr) minmax(auto, $mobile-breakpoint) minmax(20px, 1fr);
-    // }
+    // @include for-mobile-layout {}
+
+    @include for-small-layout {
+        grid-template-columns: minmax(32px, 1fr) minmax(auto, 1360px) minmax(32px, 1fr);
+    }
 
     // @include for-normal-layout {
     //     grid-template-columns:

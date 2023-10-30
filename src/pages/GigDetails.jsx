@@ -66,50 +66,53 @@ export function GigDetails() {
 
     if (!gig || !seller) return <div className='loading'>{<LoadingCircle />}</div>
     return (
-        <section className="gig-details">
+        <section className="gig-details full main-layout">
             <BreadCrumbs category={gig.category} />
             <CallToAction gig={gig} addToCart={addToCart} />
-            <div className="owner-details-container">
-                <h1 className="gig-title">{gig.title}</h1>
-                <div className="profile-container">
-                    <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-meduim" onClick={scrollToUserInfo} />
-                    <div className="owner-details">
-                        <div className="user-container" onClick={scrollToUserInfo}>
-                            <h3 className="user-title">{gig.owner.fullname}</h3>
-                            <span className="username">@{seller.username}</span>
-                        </div>
-                        <div className="star-wrapper" onClick={scrollToReview}>
-                            <span className="star-svg">
-                                <img src={starGrey} alt="star-svg" className="star" />
-                            </span>
-                            <span className="owner-rate">{gig.owner.rate}</span>
-                            <span className="owner-number-rates">({seller.reviews.length})</span>
-                            <span className="divider">|</span>
-                            <span className="queue">10 Orders in Queue</span>
+            <section className="top-details container full main-layout">
+                <div className="owner-details-container">
+                    <h1 className="gig-title">{gig.title}</h1>
+                    <div className="profile-container">
+                        <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-meduim" onClick={scrollToUserInfo} />
+                        <div className="owner-details">
+                            <div className="user-container" onClick={scrollToUserInfo}>
+                                <h3 className="user-title">{gig.owner.fullname}</h3>
+                                <span className="username">@{seller.username}</span>
+                            </div>
+                            <div className="star-wrapper" onClick={scrollToReview}>
+                                <span className="star-svg">
+                                    <img src={starGrey} alt="star-svg" className="star" />
+                                </span>
+                                <span className="owner-rate">{gig.owner.rate}</span>
+                                <span className="owner-number-rates">({seller.reviews.length})</span>
+                                <span className="divider">|</span>
+                                <span className="queue">10 Orders in Queue</span>
+                            </div>
                         </div>
                     </div>
+                    <div className="carousel-container">
+                        <Carousel infiniteLoop={true} showIndicators={false} thumbWidth={'100px'} showStatus={false} renderArrowNext={(clickHandler, hasNext) => {
+                            return (
+                                <button className='next-btn arrow' onClick={clickHandler} >
+                                    <i className="fa-solid fa-chevron-right"></i>
+                                </button>
+                            )
+                        }}
+                            renderArrowPrev={(clickHandler, hasNext) => {
+                                return (
+                                    <button className='prev-btn arrow' onClick={clickHandler} >
+                                        <i className="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                )
+                            }}
+                        >
+                            {!gig.imgUrls.length ? <img src={defaultImgUrl} /> : gig.imgUrls.map(img => <img key={img} src={img} />)}
+                        </Carousel>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div className="carousel-container">
-                <Carousel infiniteLoop={true} showIndicators={false} thumbWidth={'100px'} showStatus={false} renderArrowNext={(clickHandler, hasNext) => {
-                    return (
-                        <button className='next-btn arrow' onClick={clickHandler} >
-                            <i className="fa-solid fa-chevron-right"></i>
-                        </button>
-                    )
-                }}
-                    renderArrowPrev={(clickHandler, hasNext) => {
-                        return (
-                            <button className='prev-btn arrow' onClick={clickHandler} >
-                                <i className="fa-solid fa-chevron-left"></i>
-                            </button>
-                        )
-                    }}
-                >
-                    {!gig.imgUrls.length ? <img src={defaultImgUrl} /> : gig.imgUrls.map(img => <img key={img} src={img} />)}
-                </Carousel>
-            </div>
+
 
 
             <div className="about-gig">
