@@ -36,6 +36,7 @@ export function UserDetails() {
     onSetGig()
     socketService.emit(SOCKET_EMIT_USER_WATCH, params.id)
     socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
+    console.log('gigs', gigs);
 
     return () => {
       socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
@@ -238,6 +239,20 @@ export function UserDetails() {
                 <img className='help-us-img' src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/search_perseus/empty-search-results.aabcd99.png" />
                 <h1>Do you know this user? Help us increase user data</h1>
                 <button>Help us</button>
+              </div>
+            </section>
+          }
+
+          {watchedUser._id !== loggedUser._id && watchedUser.isSeller &&
+            <section className="gigs-column user-details-layout">
+              <div className='manage-orders'>
+                <div className="order-header flex">
+                  <h1 className='user-gigs-preview'>{watchedUser.username}'s Gigs</h1>
+                </div>
+                {gigs ? <GigList gigs={gigs} /> : <h1>no gigs available</h1>}
+                <section className='user-reviews'>
+                  <ReviewList gigOwnerId={params.id} isUserProfile={true} />
+                </section>
               </div>
             </section>
           }

@@ -68,7 +68,36 @@ const demoUsers = [
     isSeller: false,
     location: 'United States',
     lang: ['English', 'Hebrew'],
-    reviews: []
+    reviews: [
+      {
+        "id": "r101",
+        "gig": "{optional-mini-gig}",
+        "txt": "Very nice. Thank you.",
+        "rate": 4,
+        "createdAt": 1697993927300,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u207",
+          "fullname": "James Q",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696177501/samples/people/boy-snow-hoodie.jpg",
+          "location": "Italy"
+        }
+      },
+      {
+        "id": "r103",
+        "gig": "{optional-mini-gig}",
+        "txt": "Love it!",
+        "rate": 5,
+        "createdAt": 1697993927389,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u208",
+          "fullname": "Liri C",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696589336/MV5BZDJhYzdkMTUtMTg2MS00ZTM5LWI1OGUtYTY5MzY4NDM3NThjXkEyXkFqcGdeQXVyMjQwMDg0Ng_._V1__okvske.jpg",
+          "location": "Greece"
+        }
+      },
+    ],
 
   },
   {

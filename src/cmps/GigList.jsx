@@ -4,7 +4,7 @@ import { GigSlider } from "./GigSlider.jsx";
 
 export function GigList({ gigs, onRemoveGig, onUpdateGig, onlyTwo, onloadUser, minimal }) {
     const firstTwoGigs = gigs.slice(0, 2)
-
+    
     return (
         <section className="gig-list-wrapper">
             <ul className="gig-list">
