@@ -17,8 +17,8 @@
             .user-card {
                 position: relative;
                 border: 1px solid $modal-filter-border-clr;
-                padding: 30px;
-                margin-block-start: 50px;
+                padding: rem(30px);
+                margin-block-start: rem(50px);
 
                 font-size: 14px;
                 line-height: 130%;
@@ -191,7 +191,7 @@
 
                                     .title {
                                         font-size: 14px;
-                                        line-height: 18px;
+                                        line-height: rem(18px);
                                         color: $list-title-clr;
                                     }
 
@@ -315,7 +315,7 @@
 
                                     .title {
                                         font-size: 1em;
-                                        line-height: 18px;
+                                        line-height: rem(18px);
                                         color: $list-title-clr;
                                         font-size: 1rem;
                                     }
@@ -413,7 +413,7 @@
                 }
 
                 h3 {
-                    font-size: 18px;
+                    font-size: rem(18px);
                     font-weight: 600;
                     color: $dark-clr;
                 }
@@ -470,10 +470,9 @@
     .no-data-found {
         margin-inline-end: 12.063rem;
         position: relative;
-        border: 1px solid $modal-filter-border-clr;
-        padding: 30px;
+        // padding: 30px;
         width: 100%;
-        margin-block-start: 50px;
+        margin-block-start: rem(50px);
 
         font-size: 14px;
         line-height: 130%;
@@ -484,11 +483,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1.938rem;
+            gap: 2rem;
             padding-block: rem(60px);
 
             h3 {
-                font-size: 18px;
+                font-size: rem(18px);
                 font-weight: 600;
                 color: $dark-clr;
             }
@@ -511,4 +510,4 @@
         }
     }
 
-    }
+}
