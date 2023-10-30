@@ -33,9 +33,9 @@ export function UserDetails() {
   useEffect(() => {
     loadUser(params.id)
     onSetGig()
+    window.scrollTo(0, 0)
     socketService.emit(SOCKET_EMIT_USER_WATCH, params.id)
     socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
-    console.log('gigs', gigs);
 
     return () => {
       socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
