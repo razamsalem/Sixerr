@@ -159,7 +159,7 @@ const gigDemoData = [
     },
     daysToMake: 4,
     description: "Dive into my unique and eye catching Logo Design expertise. Crafting captivating visuals is my forte, excluding whimsical cartoons.Led by our proficient team, we excel in Business, Website, and YouTube Logo Design.",
-    imgUrls: ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/133223245/original/0d1dc714978f3bd16740534164bf798135f6559b/design-logo-for-your-business.jpg", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/133223245/original/a692e27c0b8cf2ee72a7238118da47bf88be205b/design-logo-for-your-business.jpg", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/133223245/original/22090cc87f2efa4074792af441ca62c3656dbfb6/design-logo-for-your-business.jpg"],
+    imgUrls: ["https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/13403224/original/fcae2db6070d58711b4518cece2f1c77ffdb77fe/do-astonishing-and-killer-t-shirt.jpg", "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/13403224/original/ff1883f558e8aac58fb811b48dd08336e858b64b/do-astonishing-and-killer-t-shirt.jpg", "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs3/13403224/original/5afbab01d90051c69ea7f10c025213fde4111426/do-astonishing-and-killer-t-shirt.jpg"],
     category: "Graphics & Design",
     tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design'],
     likedByUsers: ['mini-user']

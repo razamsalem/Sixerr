@@ -1,8 +1,11 @@
 .user-details-container {
     // display: flex;
-    background-color: $user-bgclr;
     gap: rem(100px);
     padding-block-end: rem(18px);
+
+    &.bg {
+        background-color: $user-bgclr;
+    }
 
     .details-container {
         display: flex;
@@ -51,6 +54,23 @@
                         line-height: 24px;
                         color: $co-clr;
                         margin-block-end: 24px;
+                    }
+
+                    .contact {
+                        font-size: rem(14px);
+                        line-height: rem(14px);
+                        padding: 10px 28px;
+                        background-color: $accent-clr;
+                        font-weight: 600;
+                        color: $light-clr !important;
+                        border: 1px solid transparent;
+                        border-radius: 4px;
+                        transition: color .2s, background-color .2s, box-shadow .2s, border .2s;
+                        margin-block-end: rem(24px);
+
+                        &:hover {
+                            background-color: $dark-accent-clr;
+                        }
                     }
 
                     .info-card-style {
@@ -138,6 +158,7 @@
 
                         .user-lang {
                             margin-block: rem(31px);
+
                             .header {
                                 justify-content: space-between;
                                 padding-block-end: 14px;
@@ -242,6 +263,7 @@
                             ul {
                                 // padding-block: 10px;
                                 margin-block-end: rem(31px);
+
                                 li {
                                     display: inline;
 
@@ -383,7 +405,7 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 1.938rem;
-                padding-block: 60px;
+                padding-block: rem(60px);
 
                 .become-seller-img {
                     width: em(252px);
@@ -445,4 +467,48 @@
         }
     }
 
-}
+    .no-data-found {
+        margin-inline-end: 12.063rem;
+        position: relative;
+        border: 1px solid $modal-filter-border-clr;
+        padding: 30px;
+        width: 100%;
+        margin-block-start: 50px;
+
+        font-size: 14px;
+        line-height: 130%;
+        color: $dark-clr-1;
+        background-color: $light-clr;
+
+        .help-us {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.938rem;
+            padding-block: rem(60px);
+
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+                color: $dark-clr;
+            }
+
+            button {
+                font-size: 1rem;
+                line-height: 24px;
+                padding: 9px 24px;
+                background-color: $accent-clr;
+                font-weight: 700;
+                color: $light-clr !important;
+                border: 1px solid transparent;
+                border-radius: 3px;
+                transition: color .2s, background-color .2s, box-shadow .2s, border .2s;
+
+                &:hover {
+                    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, .3);
+                }
+            }
+        }
+    }
+
+    }

@@ -55,6 +55,7 @@ export function ReviewIndex() {
   }
   return (
     <section className="review-index">
+      {/* <div className="review-container"> */}
       <form className='add-review' onChange={handleChange} onSubmit={onAddReview}>
         <h1 className='heading'>Public review</h1>
         <h2 className='sub-heading'>Share your experience with the community, to help them make better decisions.</h2>
@@ -71,6 +72,7 @@ export function ReviewIndex() {
         <button className='send' title='Send your review'>Send feedback</button>
       </form>
       <BigOrderPreview order={order} />
+      {/* </div> */}
     </section>
   )
 }
