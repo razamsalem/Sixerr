@@ -30,10 +30,10 @@ export function Checkout() {
     }
 
     async function onPurchaseOrder(selectedPackage) {
-        const { packPrice, packDaysToMake } = selectedPackage
+        const { title, packPrice, packDaysToMake } = selectedPackage
         const gig = currGig
         delete gig.packages
-        let order = { buyer: loggedUser, seller: gig.owner, gig, status: 'pending', packPrice, daysToMake: packDaysToMake }
+        let order = { buyer: loggedUser, seller: gig.owner, gig, status: 'pending', packPrice, daysToMake: packDaysToMake, title }
         order.createdAt = Date.now()
 
         console.log(order)
