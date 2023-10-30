@@ -22,13 +22,14 @@ import { ReviewList } from '../cmps/ReviewList'
 export function UserDetails() {
   const params = useParams()
   const navigate = useNavigate()
+  const demoSubtitle = utilService.getSubtitle()
   const watchedUser = useSelector(storeState => storeState.userModule.watchedUser)
   const loggedUser = useSelector(storeState => storeState.userModule.user)
   const orders = useSelector(storeState => storeState.orderModule.orders)
   const [gigs, setGigs] = useState(null)
   const [isDashboardOpen, setDashboardOpen] = useState(null)
   const [isModalOpen, setModalOpen] = useState(null)
-  const demoSubtitle = utilService.getSubtitle()
+  const [selectedOrder, setSelectedOrder] = useState(null)
 
   useEffect(() => {
     loadUser(params.id)
@@ -82,8 +83,9 @@ export function UserDetails() {
     setDashboardOpen(true)
   }
 
-  async function openOrderModal() {
+  async function openOrderModal(order) {
     setModalOpen(true)
+    setSelectedOrder(order)
   }
 
   async function closeDashboard() {
@@ -113,7 +115,7 @@ export function UserDetails() {
   return (
     <>
       {isModalOpen && (
-        <OrderModal handleBackgroundClick={handleBackgroundClick} />
+        <OrderModal order={selectedOrder} handleBackgroundClick={handleBackgroundClick} />
       )}
       {isDashboardOpen && (
         <DashboardModal watchedUser={watchedUser} closeDashboard={closeDashboard} handleBackgroundClick={handleBackgroundClick} orders={orders} loggedUser={loggedUser} />

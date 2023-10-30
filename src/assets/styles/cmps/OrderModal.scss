@@ -3,24 +3,37 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30vw;
+    width: 60vw;
+    height: 60vh;
     background-color: $light-clr;
-    border: 1px solid #ccc;
+    border: 1px solid $modal-filter-border-clr;
     border-radius: 12px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
     z-index: 100;
     overflow: auto;
     text-align: center;
-    padding: 20px;
 
-    & > p {
-        margin-block-end: 20px;
+    .header {
+        color: $light-clr;
+        background-color: $accent-clr;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
     }
 
-    & > button {
-        display: inline; 
-        margin: 10px 0;
-        padding: 8px 12px; 
-        border-radius: 8px;
+    .content {
+        padding: 20px;
+        text-align: left;
+        .mini-user {
+            align-items: center;
+            img {
+                width: rem(45px);
+                border-radius: 50%;
+            }
+            
+            h4 {
+                margin-inline: rem(8px);
+            }
+        }
     }
 }

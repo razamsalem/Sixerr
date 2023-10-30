@@ -13,9 +13,9 @@ export function OrderPreview({ order, mode, openModal, onApproveOrder, onDecline
         if (status === 'rejected') return 'rejected-label'
         if (status === 'fulfilled') return 'fulfilled-label'
     }
-
+    
     return (
-        <tr key={order._id} onClick={openModal}>
+        <tr key={order._id} onClick={() => openModal(order)}>
             <td>
                 <div className="user-with-img">
                     <img src={profile.imgUrl} alt="Buyer img" onError={e => e.currentTarget.src = defaultUserImg} />

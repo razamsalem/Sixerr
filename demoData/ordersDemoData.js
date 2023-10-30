@@ -20,6 +20,7 @@ const demoOrders = [
     },
     packPrice: 15,
     daysToMake: 3,
+    title: 'Bronze',
     createdAt: 1698570506603,
     status: "fulfilled"
   },
@@ -42,8 +43,9 @@ const demoOrders = [
       "title": "I will create custom company logo design for your business",
       "imgUrl": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/292332178/original/18841f3470f65b26636437baa1fd560438fb1a51/do-modern-and-elegant-logo-design-for-your-business.jpeg",
     },
-    packPrice: 20,
+    packPrice: 30,
     daysToMake: 2,
+    title: 'Silver',
     createdAt: 1698570506603,
     status: "approved"
   },
@@ -68,6 +70,7 @@ const demoOrders = [
     },
     packPrice: 10,
     daysToMake: 1,
+    title: 'Cheap'
     createdAt: 1698570506603,
     status: "pending"
   },
