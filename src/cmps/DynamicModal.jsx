@@ -7,7 +7,7 @@ import { DeliveryTimeArea } from './DeliveryTimeArea';
 
 function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globalFilterBy, setFilterBy }) {
     const [filterByToEdit, setFilterByToEdit] = useState(globalFilterBy)
-    const sellerOptions = [{ txt: 'Top Rated Seller', name: 'topRated', value: true }, { txt: 'Level 1', name: 'userLevels', value: 1 }, { txt: 'Level 2', name: 'userLevels', value: 2 }]
+    const sellerOptions = [{ txt: 'Top Rated Seller', name: 'topRated', value: true }, { txt: 'Level 1', name: 'basicLevel', value: 1 }, { txt: 'Level 2', name: 'premiumLevel', value: 2 }]
 
 
     useEffect(() => {
@@ -24,7 +24,6 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
         }
     }, [isOpen, onClose, modalRef])
 
-    // console.log(filterByToEdit)
 
     useEffect(() => {
         setFilterByToEdit({ ...globalFilterBy })
@@ -42,8 +41,8 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
 
 
     function handleChange(ev) {
-        const field = ev.target.name;
-        let value = ev.target.value;
+        const field = ev.target.name
+        let value = ev.target.value
 
         console.log(field, value)
 
@@ -61,8 +60,8 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
                 break;
 
             case 'checkbox':
-                value = ev.target.checked;
-                break;
+                value = ev.target.checked
+                break
         }
         setFilterByToEdit((prevFilter) => {
             return { ...prevFilter, [field]: value }

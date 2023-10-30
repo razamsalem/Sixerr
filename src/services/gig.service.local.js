@@ -67,6 +67,16 @@ async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, categ
     if (filterBy.topRated) {
         gigs = gigs.filter(gig => gig.owner.rate >= 5)
     }
+
+
+    if (filterBy.premiumLevel && filterBy.basicLevel) {
+        gigs = gigs.filter(gig => gig.owner.level === 1 || gig.owner.level === 2)
+    } else if (filterBy.basicLevel) {
+        gigs = gigs.filter(gig => gig.owner.level === 1)
+    } else if (filterBy.premiumLevel) {
+        gigs = gigs.filter(gig => gig.owner.level === 2)
+    }
+
     return gigs
 }
 
@@ -90,7 +100,7 @@ async function save(gig) {
 }
 
 export function getDefaultFilter() {
-    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '', page: 1, userId: '', daysToMake: '' }
+    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '', page: 1, userId: '', daysToMake: '', topRated: false, basicLevel: false, premiumLevel: false }
 }
 
 
