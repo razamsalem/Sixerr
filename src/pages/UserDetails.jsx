@@ -115,7 +115,7 @@ export function UserDetails() {
   return (
     <>
       {isModalOpen && (
-        <OrderModal order={selectedOrder} handleBackgroundClick={handleBackgroundClick} />
+        <OrderModal order={selectedOrder} closeModal={closeModal} handleBackgroundClick={handleBackgroundClick} />
       )}
       {isDashboardOpen && (
         <DashboardModal watchedUser={watchedUser} closeDashboard={closeDashboard} handleBackgroundClick={handleBackgroundClick} orders={orders} loggedUser={loggedUser} />

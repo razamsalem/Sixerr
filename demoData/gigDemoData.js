@@ -42,7 +42,7 @@ const gigDemoData = [
   },
   {
     _id: "i102",
-    title: "I will design your company's vision and logos",
+    title: "I will design your company's vision plan and create logos",
     price: 20,
     packages: {
       basic: {

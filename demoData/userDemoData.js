@@ -22,7 +22,7 @@ const demoUsers = [
         "by": {
           "_id": "u207",
           "fullname": "James Q",
-          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696177501/samples/people/boy-snow-hoodie.jpg",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1698681218/desktop-wallpaper-look-face-model-profile-male-guy-for-section-%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D1%8B-model-men_wizuct.jpg",
           "location": "Italy"
         }
       },
@@ -79,7 +79,7 @@ const demoUsers = [
         "by": {
           "_id": "u207",
           "fullname": "James Q",
-          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696177501/samples/people/boy-snow-hoodie.jpg",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1698681218/desktop-wallpaper-look-face-model-profile-male-guy-for-section-%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D1%8B-model-men_wizuct.jpg",
           "location": "Italy"
         }
       },
@@ -103,7 +103,7 @@ const demoUsers = [
   {
     _id: "u207",
     fullname: "James Q",
-    imgUrl: "https://res.cloudinary.com/de2rdmsca/image/upload/v1696177501/samples/people/boy-snow-hoodie.jpg",
+    imgUrl: "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1698681218/desktop-wallpaper-look-face-model-profile-male-guy-for-section-%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D1%8B-model-men_wizuct.jpg",
     username: "james_q55",
     password: "123",
     rate: 4.9,
@@ -166,7 +166,7 @@ const demoUsers = [
         "by": {
           "_id": "u207",
           "fullname": "James Q",
-          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/v1696177501/samples/people/boy-snow-hoodie.jpg",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1698681218/desktop-wallpaper-look-face-model-profile-male-guy-for-section-%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D1%8B-model-men_wizuct.jpg",
           "location": "Italy"
         }
       },
