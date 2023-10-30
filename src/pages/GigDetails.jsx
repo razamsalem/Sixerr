@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useDispatch } from "react-redux"
 import { useParams, useNavigate } from "react-router-dom"
 import { Carousel } from 'react-responsive-carousel';
@@ -14,12 +14,12 @@ import { showErrorMsg } from "../services/event-bus.service";
 import { BreadCrumbs } from "../cmps/BreadCrumbs";
 
 export function GigDetails() {
-
     const [gig, setGig] = useState(null)
     const { gigId } = useParams()
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const [seller, setSeller] = useState(null)
+    const userInfoRef = useRef(null)
     const defaultImgUrl = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698161431/sixxer-logo_vseimk.png'
 
     useEffect(() => {
@@ -51,6 +51,10 @@ export function GigDetails() {
         }
     }
 
+    const scrollToUserInfo = () => {
+        userInfoRef.current.scrollIntoView()
+    }
+
     function addToCart(gig) {
         dispatch({ type: ADD_TO_CART, gig })
     }
@@ -62,7 +66,7 @@ export function GigDetails() {
             <CallToAction gig={gig} addToCart={addToCart} />
             <div className="owner-details-container">
                 <h1 className="gig-title">{gig.title}</h1>
-                <div className="profile-container">
+                <div className="profile-container" onClick={scrollToUserInfo}>
                     <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-meduim" />
                     <div className="owner-details">
                         <div className="user-container">
@@ -107,8 +111,10 @@ export function GigDetails() {
                 <h1 className="gig-about-title">About this gig</h1>
                 <p className="gig-description">{gig.description}</p>
             </div>
+            <div className="user-info" ref={userInfoRef}>
             <h1 className="about-seller">About the seller</h1>
-            <UserMiniDetail gig={gig} />
+                <UserMiniDetail gig={gig} />
+            </div>
             <ReviewList gigOwnerId={gig.owner._id} />
         </section>
     )
