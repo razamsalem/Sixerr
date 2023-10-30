@@ -3,11 +3,15 @@ import { userService } from "../../services/user.service.js"
 import { store } from '../../store/store.js'
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
 import { ADD_GIG, ADD_TO_CART, CLEAR_CART, REMOVE_GIG, REMOVE_FROM_CART, SET_GIGS, UNDO_REMOVE_GIG, UPDATE_GIG, SET_FILTER_BY } from "../reducers/gig.reducer.js"
-
+const defaultFilter = gigService.getDefaultFilter()
 
 // Action Creators:
 export function setFilterBy(filterBy) {
     store.dispatch({ type: SET_FILTER_BY, filterBy })
+}
+
+export function getClearFilter() {
+    return defaultFilter
 }
 
 export function getActionRemoveGig(gigId) {

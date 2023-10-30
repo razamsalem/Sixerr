@@ -34,15 +34,15 @@ export const gigService = {
 window.gs = gigService
 
 async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, category: '', tags: '' }) {
-    console.log(filterBy)
     let gigs = await storageService.query(STORAGE_KEY)
     if (filterBy.txt) {
         const regex = new RegExp(filterBy.txt, 'i')
-        const filteredGigs = []
-        filteredGigs.push(...gigs.filter(gig => gig.tags.some(tag => regex.test(tag))))
-        filteredGigs.push(...gigs.filter(gig => regex.test(gig.title)))
-        filteredGigs.push(...gigs.filter(gig => regex.test(gig.description)))
-        gigs = filteredGigs
+
+        gigs = gigs.filter(gig => {
+            return gig.tags.some(tag => regex.test(tag)) ||
+                regex.test(gig.title) ||
+                regex.test(gig.description)
+        })
     }
     if (filterBy.minPrice) {
         gigs = gigs.filter(gig => gig.price >= filterBy.minPrice)
@@ -87,7 +87,8 @@ async function save(gig) {
 }
 
 export function getDefaultFilter() {
-    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '', page: 1 }
+    console.log('hi from filter')
+    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '', page: 1, userId: '', daysToMake: '' }
 }
 
 // async function addGigMsg(gigId, txt) {

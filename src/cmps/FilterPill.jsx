@@ -13,11 +13,15 @@ export function FilterPill({ filterKey, filterValue, onRemoveFilterPill }) {
             break
         case 'category':
             pillValue = `${filterValue} `
+            break
         case 'tags':
-            pillValue = `Category tags "${filterValue}" `
+            pillValue = `Category tag "${filterValue}" `
             break
         case 'daysToMake':
-            pillValue = `Delivery in ${filterValue} day(s)`
+            if (filterValue < 2) pillValue = `24H Express delivery`
+            else if (filterValue === 'Infinity') pillValue = null
+            else pillValue = `Delivery in ${filterValue} days`
+
         default:
             null
             break;

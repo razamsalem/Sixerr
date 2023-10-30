@@ -11,8 +11,9 @@ import { loadOrders } from '../store/actions/order.actions'
 import { setHeaderPosition, setSubHeaderPosition } from '../store/actions/system.actions'
 import { DropdownBtn } from './DropdownBtn'
 import { gigService } from '../services/gig.service.local'
-import { setFilterBy } from "../store/actions/gig.actions"
+import { getClearFilter, setFilterBy } from "../store/actions/gig.actions"
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
+
 
 export function AppHeader() {
     const navigate = useNavigate()
@@ -63,9 +64,6 @@ export function AppHeader() {
         }
     }, [currentPath])
 
-    function getClearFilter() {
-        return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '', page: '', userId: '' }
-    }
 
     return (
         <>
