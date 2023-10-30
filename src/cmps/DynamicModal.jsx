@@ -44,6 +44,13 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
         const field = ev.target.name;
         let value = ev.target.value;
 
+        switch (field) {
+            case 'daysToMake':
+            case 'maxPrice':
+            case 'minPrice':
+                value = parseFloat(value)
+        }
+
         switch (ev.target.type) {
             case 'number':
             case 'range':
@@ -94,12 +101,12 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
                 }
 
                 {btn.title === 'Delivery time' &&
-                    <DeliveryTimeArea />
+                    <DeliveryTimeArea handleChange={handleChange} filterByToEdit={filterByToEdit} />
                 }
 
             </div>
             <div className='button-row'>
-                <button className='clear-btn' onClick={() => setFilterByToEdit({ minPrice: '', maxPrice: '' })}>Clear All</button>
+                <button className='clear-btn' onClick={() => setFilterByToEdit({ minPrice: '', maxPrice: '', daysToMake: '' })}>Clear All</button>
                 <button className='apply-btn' onClick={onSubmit}>Apply</button>
             </div>
         </div>

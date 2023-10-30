@@ -33,11 +33,16 @@ export const gigService = {
 }
 window.gs = gigService
 
-async function query(filterBy = { txt: '', minPrice: '', maxPrice: '', category: '', tags: '' }) {
+async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, category: '', tags: '' }) {
+    console.log(filterBy)
     let gigs = await storageService.query(STORAGE_KEY)
     if (filterBy.txt) {
         const regex = new RegExp(filterBy.txt, 'i')
-        gigs = gigs.filter(gig => gig.tags.some(tag => regex.test(tag)))
+        const filteredGigs = []
+        filteredGigs.push(...gigs.filter(gig => gig.tags.some(tag => regex.test(tag))))
+        filteredGigs.push(...gigs.filter(gig => regex.test(gig.title)))
+        filteredGigs.push(...gigs.filter(gig => regex.test(gig.description)))
+        gigs = filteredGigs
     }
     if (filterBy.minPrice) {
         gigs = gigs.filter(gig => gig.price >= filterBy.minPrice)
@@ -55,6 +60,9 @@ async function query(filterBy = { txt: '', minPrice: '', maxPrice: '', category:
     }
     if (filterBy.userId) {
         gigs = gigs.filter(gig => gig.owner._id === filterBy.userId)
+    }
+    if (filterBy.daysToMake) {
+        gigs = gigs.filter(gig => gig.packages.basic.packDaysToMake <= filterBy.daysToMake)
     }
     return gigs
 }
