@@ -107,15 +107,15 @@ export function UserDetails() {
     navigate('/gig/add')
   }
 
+  if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
   if (!loggedUser) {
     navigate('/')
     showErrorMsg('You must be logged in to continue')
   }
-  if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
   return (
     <>
       {isModalOpen && (
-        <OrderModal order={selectedOrder} closeModal={closeModal} handleBackgroundClick={handleBackgroundClick} />
+        <OrderModal order={selectedOrder} userSeller={true} closeModal={closeModal} handleBackgroundClick={handleBackgroundClick} />
       )}
       {isDashboardOpen && (
         <DashboardModal watchedUser={watchedUser} closeDashboard={closeDashboard} handleBackgroundClick={handleBackgroundClick} orders={orders} loggedUser={loggedUser} />
