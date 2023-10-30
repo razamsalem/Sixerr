@@ -12,6 +12,7 @@
         grid-area: img;
         height: em(48px);
         width: em(48px);
+        cursor: pointer;
     }
 
     .seller-info {
@@ -19,6 +20,10 @@
 
         h4 {
             margin-bottom: .5em;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
         .country {
