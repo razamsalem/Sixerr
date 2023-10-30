@@ -70,7 +70,7 @@ const demoOrders = [
     },
     packPrice: 10,
     daysToMake: 1,
-    title: 'Cheap'
+    title: 'Cheap',
     createdAt: 1698570506603,
     status: "pending"
   },
