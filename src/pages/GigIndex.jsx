@@ -35,8 +35,24 @@ export function GigIndex() {
     }
 
     useEffect(() => {
-        setFilterBy(Object.fromEntries([...searchParams]))
-    }, [searchParams])
+        const paramFilter = {}
+
+        for (const [key, value] of searchParams) {
+            if (value === 'true') {
+                paramFilter[key] = true
+            } else if (value === 'false') {
+                paramFilter[key] = false
+            } else if (value !== '' && !isNaN(value)) {
+                paramFilter[key] = Number(value)
+            } else if (value.startsWith('[') && value.endsWith(']')) {
+                paramFilter[key] = JSON.parse(value)
+            } else {
+                paramFilter[key] = value
+            }
+        }
+
+        setFilterBy(paramFilter)
+    }, [])
 
 
     useEffect(() => {

@@ -7,8 +7,8 @@ import { DeliveryTimeArea } from './DeliveryTimeArea';
 
 function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globalFilterBy, setFilterBy }) {
     const [filterByToEdit, setFilterByToEdit] = useState(globalFilterBy)
+    const sellerOptions = [{ txt: 'Top Rated Seller', name: 'topRated', value: true }, { txt: 'Level 1', name: 'userLevels', value: 1 }, { txt: 'Level 2', name: 'userLevels', value: 2 }]
 
-    // console.log(filterByToEdit)
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -24,6 +24,7 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
         }
     }, [isOpen, onClose, modalRef])
 
+    // console.log(filterByToEdit)
 
     useEffect(() => {
         setFilterByToEdit({ ...globalFilterBy })
@@ -44,11 +45,13 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
         const field = ev.target.name;
         let value = ev.target.value;
 
+        console.log(field, value)
+
         switch (field) {
             case 'daysToMake':
             case 'maxPrice':
             case 'minPrice':
-                value = parseFloat(value)
+                value = +value
         }
 
         switch (ev.target.type) {
@@ -77,7 +80,15 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
                     <div className="content-title">
                         {btn.content}
                         {btn.title === 'Seller details' &&
-                            <p>...</p>}
+                            <section className='seller-filter-container'>
+                                {sellerOptions.map(option => {
+                                    return <label key={option.txt} className='flex radio-item-wrapper'>
+                                        <input className='form-check-input' type="checkbox" name={option.name} value={option.value} checked={filterByToEdit[option.name]} onChange={handleChange} />
+                                        {option.txt}
+                                    </label>
+                                })}
+                            </section>
+                        }
                     </div>
                 </div>
 
