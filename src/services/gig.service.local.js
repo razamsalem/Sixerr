@@ -100,7 +100,6 @@ export function getDefaultFilter() {
 
 function getEmptyGig() {
     let owner = userService.getLoggedinUser()
-
     return {
         owner,
         title: 'I will ',

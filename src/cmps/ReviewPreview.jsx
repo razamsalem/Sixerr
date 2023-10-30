@@ -9,17 +9,25 @@ import { LongTxt } from "./LongTxt"
 import { useState } from "react"
 import { ReviewStars } from "./ReviewStars"
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
+import { useNavigate } from "react-router"
+
 
 export function ReviewPreview({ review }) {
-    const [isClickedTumsUp, setIsClickedTumsUp] = useState(false);
-    const [isClickedTumsDown, setIsClickedTumsDown] = useState(false);
+    const [isClickedTumsUp, setIsClickedTumsUp] = useState(false)
+    const [isClickedTumsDown, setIsClickedTumsDown] = useState(false)
+    const navigate = useNavigate()
+
+    function navigateToUser() {
+        navigate(`/user/${review.by._id}`)
+    }
+
 
     return (
         <li className="review-preview">
-            <img src={review.by.imgUrl} className="seller-img" onError={e => e.currentTarget.src = defaultUserImg} />
+            <img src={review.by.imgUrl} className="seller-img" onClick={navigateToUser} onError={e => e.currentTarget.src = defaultUserImg} />
             <div className="review-detail">
                 <div className="seller-info">
-                    <h4 className="seller-name">{review.by.fullname}</h4>
+                    <h4 className="seller-name" onClick={navigateToUser} >{review.by.fullname}</h4>
                     <div className="country">
                         <img className="flag" src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png" alt="" />
                         <span>{review.by.location}</span>

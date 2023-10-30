@@ -19,7 +19,6 @@ import { YesNoModal } from '../cmps/YesNoModal'
 import { gigService } from '../services/gig.service.local'
 import { ReviewList } from '../cmps/ReviewList'
 
-
 export function UserDetails() {
   const params = useParams()
   const navigate = useNavigate()
@@ -34,6 +33,7 @@ export function UserDetails() {
   useEffect(() => {
     loadUser(params.id)
     onSetGig()
+    window.scrollTo(0, 0)
     socketService.emit(SOCKET_EMIT_USER_WATCH, params.id)
     socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
 
@@ -105,9 +105,11 @@ export function UserDetails() {
     navigate('/gig/add')
   }
 
+  if (!loggedUser) {
+    navigate('/')
+    showErrorMsg('You must be logged in to continue')
+  }
   if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
-  console.log('watchedUser', watchedUser)
-  console.log('loggedUser', loggedUser)
   return (
     <>
       {/* {isModalOpen && (
@@ -196,8 +198,10 @@ export function UserDetails() {
                         {/* <button>Add new</button> */}
                       </div>
                       <ul>
+                        <li><span className='title'><span className='fa-brands fa-facebook logo'></span>Facebook</span></li>
                         <li><span className='title'><span className='fa-brands fa-google logo'></span>Google</span></li>
                         <li><span className='title'><span className='fa-brands fa-twitter logo'></span>Twitter</span></li>
+                        <li><span className='title'><span className='fa-brands fa-dribbble logo'></span>Dribbble</span></li>
                       </ul>
                     </div>
                     <div className="user-skills with-border-top">
@@ -229,15 +233,27 @@ export function UserDetails() {
             </div>}
           </section>
 
-          {!watchedUser._id !== loggedUser._id &&
-
-            watchedUser.isSeller ? <div></div> :
+          {watchedUser._id !== loggedUser._id && !watchedUser.isSeller &&
             <section className="no-data-found">
               <div className="help-us">
                 <h1>Unfortunately we do not have enough information about this user</h1>
                 <img className='help-us-img' src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/search_perseus/empty-search-results.aabcd99.png" />
                 <h1>Do you know this user? Help us increase user data</h1>
                 <button>Help us</button>
+              </div>
+            </section>
+          }
+
+          {watchedUser._id !== loggedUser._id && watchedUser.isSeller &&
+            <section className="gigs-column user-details-layout">
+              <div className='manage-orders'>
+                <div className="order-header flex">
+                  <h1 className='user-gigs-preview'>{watchedUser.username}'s Gigs</h1>
+                </div>
+                {gigs ? <GigList gigs={gigs} /> : <h1>no gigs available</h1>}
+                <section className='user-reviews'>
+                  <ReviewList gigOwnerId={params.id} isUserProfile={true} />
+                </section>
               </div>
             </section>
           }
