@@ -12,6 +12,8 @@ import { userService } from "../services/user.service";
 import LoadingCircle from "../cmps/LoadingCircle";
 import { showErrorMsg } from "../services/event-bus.service";
 import { BreadCrumbs } from "../cmps/BreadCrumbs";
+const defaultGigImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663092/defaultGigImg_vjtk9e.webp'
+const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
 
 export function GigDetails() {
 
@@ -64,7 +66,7 @@ export function GigDetails() {
                 <div className="owner-details-container">
                     <h1 className="gig-title">{gig.title}</h1>
                     <div className="profile-container">
-                        <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-meduim" />
+                        <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-meduim" onError={e => e.currentTarget.src = defaultUserImg} />
                         <div className="owner-details">
                             <div className="user-container">
                                 <h3 className="user-title">{gig.owner.fullname}</h3>
@@ -97,7 +99,7 @@ export function GigDetails() {
                                 )
                             }}
                         >
-                            {!gig.imgUrls.length ? <img src={defaultImgUrl} /> : gig.imgUrls.map(img => <img key={img} src={img} />)}
+                            {!gig.imgUrls.length ? <img src={defaultImgUrl} onError={e => e.currentTarget.src = defaultGigImg} /> : gig.imgUrls.map(img => <img key={img} src={img} onError={e => e.currentTarget.src = defaultGigImg} />)}
                         </Carousel>
                     </div>
                 </div>

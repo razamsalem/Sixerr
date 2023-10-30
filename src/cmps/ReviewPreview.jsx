@@ -8,13 +8,15 @@ import { utilService } from "../services/util.service"
 import { LongTxt } from "./LongTxt"
 import { useState } from "react"
 import { ReviewStars } from "./ReviewStars"
+const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
+
 export function ReviewPreview({ review }) {
     const [isClickedTumsUp, setIsClickedTumsUp] = useState(false);
     const [isClickedTumsDown, setIsClickedTumsDown] = useState(false);
 
     return (
         <li className="review-preview">
-            <img src={review.by.imgUrl} alt="" className="seller-img" />
+            <img src={review.by.imgUrl} className="seller-img" onError={e => e.currentTarget.src = defaultUserImg} />
             <div className="review-detail">
                 <div className="seller-info">
                     <h4 className="seller-name">{review.by.fullname}</h4>

@@ -3,9 +3,10 @@ import { useState } from "react";
 import { userService } from "../services/user.service";
 import { display } from "@mui/system";
 import LoadingCircle from "./LoadingCircle";
+const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
 
 export function UserMiniDetail({ gig }) {
-    const [seller,setSeller] = useState(null)
+    const [seller, setSeller] = useState(null)
 
     useEffect(() => {
         loadUser()
@@ -13,8 +14,8 @@ export function UserMiniDetail({ gig }) {
 
     async function loadUser() {
         try {
-        const seller = await userService.getById(gig.owner._id)
-        setSeller(seller)
+            const seller = await userService.getById(gig.owner._id)
+            setSeller(seller)
         } catch (err) {
             console.log('Had issues in review list ->', err)
             showErrorMsg('Oops cannot load review')
@@ -27,11 +28,11 @@ export function UserMiniDetail({ gig }) {
     return (
         <section className="user-mini-detail">
             <div className="owner-img-wrapper flex">
-                <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-large" />
+                <img src={gig.owner.imgUrl} alt="owner-img" className="owner-profile-img-large" onError={e => e.currentTarget.src = defaultUserImg} />
                 <div className="owner-details mini">
                     <div>
-                            <h3 className="gig-title">{gig.owner.fullname}</h3>
-                            <span className="username">@{seller.username}</span>
+                        <h3 className="gig-title">{gig.owner.fullname}</h3>
+                        <span className="username">@{seller.username}</span>
                     </div>
                     <p className="user-desc-mini">Happy to work with you</p>
                     <div className="star-wrapper">
@@ -69,7 +70,7 @@ export function UserMiniDetail({ gig }) {
                     <li>
                         <span>Languages</span>
                         <span>
-                        {seller.lang.map((lan, idx )=><span key={idx} style={{display:'inline'}}>{lan} </span>)}
+                            {seller.lang.map((lan, idx) => <span key={idx} style={{ display: 'inline' }}>{lan} </span>)}
                         </span>
                     </li>
                 </ul>

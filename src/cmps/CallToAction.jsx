@@ -3,6 +3,8 @@ import checkImg from '../assets/img/check.svg'
 import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { utilService } from '../services/util.service'
+const imgNotFound = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663092/defaultGigImg_vjtk9e.webp'
+
 
 export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, selectedPack = 'basic' }) {
     const { price, daysToMake, packages, imgUrls } = gig
@@ -29,7 +31,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, selecte
             </div>
             <article className="call-to-action">
                 <figure className='preview-container'>
-                    {isPurchase && <img src={imgUrls[0]} alt="Selected gig image preview" />}
+                    {isPurchase && <img src={imgUrls[0]} alt="Selected gig image preview" onError={e => e.currentTarget.src = imgNotFound} />}
                     {isPurchase && <span className='package-desc'>{desc}</span>}
                 </figure>
                 <section className="package-heading">
