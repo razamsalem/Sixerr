@@ -1218,6 +1218,101 @@ const gigDemoData = [
     }]
   },
   {
+    _id: "AcL11z72",
+    title: "I will setup shopify shipping profiles and shopify tax for domestic and international",
+    price: 25,
+    packages: {
+      basic: {
+        title: 'Domestic',
+        packPrice: 25,
+        packDaysToMake: 1,
+        desc: 'Setup Complete Shipping + Tax for Domestic',
+        features: ['15 minutes live consultation', 'Action plan', 'Store review & feedback (written or recorded)']
+      },
+      standard: {
+        title: 'For 5 Countries',
+        packPrice: 30,
+        packDaysToMake: 2,
+        desc: 'Setup Shipping + Tax For 5 Countries',
+        features: ['15 minutes live consultation', 'Action plan', 'Store review & feedback (written or recorded)', 'More']
+      },
+      premium: {
+        title: 'Super Domestic',
+        packPrice: 150,
+        packDaysToMake: 3,
+        desc: 'Setup Shipping + Tax For 7 Countries',
+        features: ['15 minutes live consultation', 'Action plan', 'Store review & feedback (written or recorded)', 'More']
+      }
+    },
+    owner: {
+      "_id": "fred1",
+      "fullname": "Fredrick F",
+      "imgUrl": "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698678915/fred-1_pvhlr6.webp",
+      "level": 1,
+      "rate": 4
+    },
+    daysToMake: 1,
+    "description": "Hello ! Much obliged for visiting my gig :)\nIn this gig I'm offering you an exceptionally 3 one of a kind, best and reasonable bundles.\nIn case you are thinking for giving somebody uncommon an extremely delightful, eye getting gift( hyper practical hand drawing pencil sketch picture)?\nKindly select the helpful bundle and submit your request at this moment and I'll give you an ideal picture sketch, hand drawing, practical drawing, pencil attracting high goal JPEG/PNG advanced document.\nI will give hand-drawn dark and White or hued reasonable pictures.\nSympathetically give me clear reference photograph however much as could be expected.\nThe material I utilized for Creating pencil representations are:\nDrawing materials: graphite pencil, charcoal, Bristol paper, mono eraser, brush, mixing stump, mechanical pencil, graphite powder and so on .\nYou can give me anything:\nPicture photographs\nFamily photographs\nCreature photographs\nAny item photographs\nScene photographs\nEngineering photographs\nAnything you envision\nKindly reach me prior to submitting your request! Much appreciated.\nI DO NOT DELIVER ORIGINAL PHYSICAL COPY BUT A HIGH RESOLUTION JPEG DIGITA",
+
+    imgUrls: [
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698787851/shop-1_p4ardk.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698787851/shop-2_cdwybx.webp",
+    ],
+    category: "Business",
+    tags: ['General & Administrative Virtual Assistant', 'E-Commerce Management', 'HR Consulting', 'Project Management', 'Business Formation', 'Business Registration'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
+    _id: "iQQax12S02",
+    title: "I will draw a custom dark surrealism for apparel",
+    price: 35,
+    packages: {
+      basic: {
+        title: 'Nice Fellowship',
+        packPrice: 25,
+        packDaysToMake: 1,
+        desc: 'Black and White Illustration, simple background',
+        features: ['1 figure', 'Include source file', 'Printable resolution file', 'Include colors in illustration', 'Commercial use']
+      },
+      standard: {
+        title: 'Unrivaled',
+        packPrice: 40,
+        packDaysToMake: 5,
+        desc: 'Full color illustration, simple background',
+        features: ['1 figure', 'Include source file', 'Printable resolution file', 'Include colors in illustration', 'Commercial use']
+      },
+      premium: {
+        title: 'Terrible Alliance',
+        packPrice: 60,
+        packDaysToMake: 10,
+        desc: 'ull color and detailed illustration with background',
+        features: ['1 figure', 'Include source file', 'Printable resolution file', 'Include colors in illustration', 'Commercial use']
+      }
+    },
+    owner: {
+      "_id": "u192",
+      "fullname": "Julia Carter",
+      "level": 2,
+      "rate": 4.8,
+      "imgUrl": "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698675021/julia-logo_ahamun.webp",
+    },
+    daysToMake: 3,
+    description: "Thank you for stopping by! This gig is intended for anyone who is looking for a well rounded and undefined design for their company or brand. We will try different concepts and ideas to get you where you need to be. If you aren't sure where to start, this is a good gig to choose Unlike a lot of other fiverr artists, my designs do not change in quality depending upon what package you choose. All of my designs deserve the same attention and quality guarantee. My process starts in the traditional form which means I begin with paper and pencil. Once that is complete I refine it with art and/or calligraphy pens. Once that's complete, I bring it into my computer and render it digitally. The colors can be whatever you choose and the packages are all different. So please read them carefully or send me a message if you have any questions",
+    imgUrls: [
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698785634/supply-1_vilfuk.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698785634/supply-2_yls6ee.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698785634/supply-3_cznwsv.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698785635/supply_haweju.webp"
+    ],
+    category: "Graphics & Design",
+    tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design', 'Brand Style Guides', 'Landing Page Design', 'Icon Design', 'Portraits & Caricatures'],
+    likedByUsers: ['mini-user']
+  },
+  {
     _id: "iz16",
     title: "I will create amazing images and concept art using midjourney ai",
     price: 130,
@@ -1412,52 +1507,6 @@ const gigDemoData = [
     }]
   },
   {
-    _id: "iQQax12S02",
-    title: "I will draw a custom dark surrealism for apparel",
-    price: 35,
-    packages: {
-      basic: {
-        title: 'Nice Fellowship',
-        packPrice: 25,
-        packDaysToMake: 1,
-        desc: 'Black and White Illustration, simple background',
-        features: ['1 figure', 'Include source file', 'Printable resolution file', 'Include colors in illustration', 'Commercial use']
-      },
-      standard: {
-        title: 'Unrivaled',
-        packPrice: 40,
-        packDaysToMake: 5,
-        desc: 'Full color illustration, simple background',
-        features: ['1 figure', 'Include source file', 'Printable resolution file', 'Include colors in illustration', 'Commercial use']
-      },
-      premium: {
-        title: 'Terrible Alliance',
-        packPrice: 60,
-        packDaysToMake: 10,
-        desc: 'ull color and detailed illustration with background',
-        features: ['1 figure', 'Include source file', 'Printable resolution file', 'Include colors in illustration', 'Commercial use']
-      }
-    },
-    owner: {
-      "_id": "u192",
-      "fullname": "Julia Carter",
-      "level": 2,
-      "rate": 4.8,
-      "imgUrl": "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698675021/julia-logo_ahamun.webp",
-    },
-    daysToMake: 3,
-    description: "Thank you for stopping by! This gig is intended for anyone who is looking for a well rounded and undefined design for their company or brand. We will try different concepts and ideas to get you where you need to be. If you aren't sure where to start, this is a good gig to choose Unlike a lot of other fiverr artists, my designs do not change in quality depending upon what package you choose. All of my designs deserve the same attention and quality guarantee. My process starts in the traditional form which means I begin with paper and pencil. Once that is complete I refine it with art and/or calligraphy pens. Once that's complete, I bring it into my computer and render it digitally. The colors can be whatever you choose and the packages are all different. So please read them carefully or send me a message if you have any questions",
-    imgUrls: [
-      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698785634/supply-1_vilfuk.jpg",
-      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698785634/supply-2_yls6ee.webp",
-      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698785634/supply-3_cznwsv.jpg",
-      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698785635/supply_haweju.webp"
-    ],
-    category: "Graphics & Design",
-    tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design', 'Brand Style Guides', 'Landing Page Design', 'Icon Design', 'Portraits & Caricatures'],
-    likedByUsers: ['mini-user']
-  },
-  {
     _id: "iQax1rR02",
     title: "I will create a professional dj mix, mashup, custom music project",
     price: 18,
@@ -1546,55 +1595,6 @@ const gigDemoData = [
     ],
     category: "Video & Animation",
     tags: ['Video Art', 'Logo Animation', 'Character Animation', 'Animated GIFs'],
-    likedByUsers: [{
-      "_id": "u103",
-      "fullname": "David C",
-      "imgUrl": "/img/img3.jpg"
-    }]
-  },
-  {
-    _id: "AcL11z72",
-    title: "I will setup shopify shipping profiles and shopify tax for domestic and international",
-    price: 25,
-    packages: {
-      basic: {
-        title: 'Domestic',
-        packPrice: 25,
-        packDaysToMake: 1,
-        desc: 'Setup Complete Shipping + Tax for Domestic',
-        features: ['15 minutes live consultation', 'Action plan', 'Store review & feedback (written or recorded)']
-      },
-      standard: {
-        title: 'For 5 Countries',
-        packPrice: 30,
-        packDaysToMake: 2,
-        desc: 'Setup Shipping + Tax For 5 Countries',
-        features: ['15 minutes live consultation', 'Action plan', 'Store review & feedback (written or recorded)', 'More']
-      },
-      premium: {
-        title: 'Super Domestic',
-        packPrice: 150,
-        packDaysToMake: 3,
-        desc: 'Setup Shipping + Tax For 7 Countries',
-        features: ['15 minutes live consultation', 'Action plan', 'Store review & feedback (written or recorded)', 'More']
-      }
-    },
-    owner: {
-      "_id": "fred1",
-      "fullname": "Fredrick F",
-      "imgUrl": "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698678915/fred-1_pvhlr6.webp",
-      "level": 1,
-      "rate": 4
-    },
-    daysToMake: 1,
-    "description": "Hello ! Much obliged for visiting my gig :)\nIn this gig I'm offering you an exceptionally 3 one of a kind, best and reasonable bundles.\nIn case you are thinking for giving somebody uncommon an extremely delightful, eye getting gift( hyper practical hand drawing pencil sketch picture)?\nKindly select the helpful bundle and submit your request at this moment and I'll give you an ideal picture sketch, hand drawing, practical drawing, pencil attracting high goal JPEG/PNG advanced document.\nI will give hand-drawn dark and White or hued reasonable pictures.\nSympathetically give me clear reference photograph however much as could be expected.\nThe material I utilized for Creating pencil representations are:\nDrawing materials: graphite pencil, charcoal, Bristol paper, mono eraser, brush, mixing stump, mechanical pencil, graphite powder and so on .\nYou can give me anything:\nPicture photographs\nFamily photographs\nCreature photographs\nAny item photographs\nScene photographs\nEngineering photographs\nAnything you envision\nKindly reach me prior to submitting your request! Much appreciated.\nI DO NOT DELIVER ORIGINAL PHYSICAL COPY BUT A HIGH RESOLUTION JPEG DIGITA",
-
-    imgUrls: [
-      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698787851/shop-1_p4ardk.webp",
-      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698787851/shop-2_cdwybx.webp",
-    ],
-    category: "Business",
-    tags: ['General & Administrative Virtual Assistant', 'E-Commerce Management', 'HR Consulting', 'Project Management', 'Business Formation', 'Business Registration'],
     likedByUsers: [{
       "_id": "u103",
       "fullname": "David C",
