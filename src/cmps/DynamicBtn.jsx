@@ -7,6 +7,7 @@ import { FilterPill } from './FilterPill'
 
 export function DynamicBtn() {
     const globalFilterBy = useSelector(storeState => storeState.gigModule.filterBy)
+    const isStickyActive = useSelector(storeState => storeState.systemModule.stickyFilter)
     let filterKeys = []
     const [btns, setBtns] = useState(null)
     const [isArrowUp, setIsArrowUp] = useState([])
@@ -21,6 +22,14 @@ export function DynamicBtn() {
         getBtns()
 
     }, [])
+
+    useEffect(() => {
+        if (selectedBtn) {
+            const newPosition = selectedBtn.target.getBoundingClientRect()
+            setSelectedBtn(selectedBtn => ({ ...selectedBtn, position: newPosition }))
+        }
+
+    }, [isStickyActive])
 
     async function getBtns() {
         const btns = await dynamicService.getBtn()
@@ -49,6 +58,7 @@ export function DynamicBtn() {
                 left: buttonRect.left,
                 btnWidth: buttonRect.width,
             },
+            target: ev.currentTarget
         })
     }
 
@@ -64,7 +74,7 @@ export function DynamicBtn() {
     if (!btns) return '<div></div>'
 
     return (
-        <section className="filter-btns-container full main-layout">
+        <section className={`filter-btns-container full main-layout ${isStickyActive ? 'sticky-active' : ''}`}>
             <section className="filter-btns">
                 {btns.map((btn, idx) => (
                     <button
