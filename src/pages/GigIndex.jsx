@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { loadGigs, addGig, updateGig, removeGig, setFilterBy } from '../store/actions/gig.actions.js'
+import { loadGigs, addGig, updateGig, removeGig, setFilterBy, getClearFilter } from '../store/actions/gig.actions.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { userService } from '../services/user.service.js'
 import { gigService } from '../services/gig.service.local.js'
@@ -63,7 +63,7 @@ export function GigIndex() {
         const loadingTimeout = setTimeout(() => {
             setIsLoading(false)
             console.log('done')
-        }, 1500)
+        }, 1000)
 
         return () => {
             clearTimeout(loadingTimeout)
@@ -125,7 +125,7 @@ export function GigIndex() {
             ) : (
                 <div className="no-gigs-message flex column">
                     <h1>We couldn't find Gigs that match your search</h1>
-                    <button className='clear'>Clear All Filters</button>
+                    <button className='clear' onClick={() => { setFilterBy(getClearFilter()) }}>Clear All Filters</button>
                     <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/search_perseus/no-results-couch.0139585.png" alt="not found" />
                 </div>
             )}
