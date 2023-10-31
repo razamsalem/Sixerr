@@ -17,7 +17,7 @@ export function OrderPreview({ order, mode, openModal, onApproveOrder, onDecline
     function handleActionClick(event) {
         event.stopPropagation()
     }
-    
+
     return (
         <tr key={order._id} onClick={() => openModal(order)}>
             <td>
@@ -32,15 +32,18 @@ export function OrderPreview({ order, mode, openModal, onApproveOrder, onDecline
             <td>${order.packPrice}</td>
             <td onClick={handleActionClick} className="status">
                 {order && <span className={`${checkStatus(order.status)} label `}> {utilService.capitalizeFirstLetter(order.status)} </span>}
-                {mode === 'seller' &&
+                {mode === 'seller' && order.status !== 'fulfilled' && order.status !== 'rejected' &&
                     <DropdownBtn>
                         <span className="action approve-gig" onClick={(ev) => { onApproveOrder(ev, order) }}>Approve</span>
                         <span className="action decline-gig" onClick={(ev) => { onDeclineOrder(ev, order) }}>Decline</span>
                         <span className="action fulfilled-gig" onClick={(ev) => { onFulfillOrder(ev, order) }}>Mark as fulfilled</span>
                     </DropdownBtn>}
 
-                {mode === 'buyer' &&
-                    <Link to={`/order/review?orderId=${order._id}`}>Review</Link>
+                {mode === 'buyer' && order.status === 'fulfilled' &&
+                    <DropdownBtn>
+                        <span> <Link to={`/order/review?orderId=${order._id}`}>Review</Link> </span>
+                        <span>  </span>
+                    </DropdownBtn>
                 }
 
             </td>
