@@ -22,7 +22,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, selecte
     }
 
     function goToCheckout() {
-        if (loggedUser) navigate(`${pathname}/checkout`)
+        if (loggedUser) navigate(`${pathname}/checkout/${selectedPackage}`)
         else {
             showErrorMsg('You must be logged in to purchase services..')
             setUserModalOpen(true)
