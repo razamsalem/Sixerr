@@ -1,7 +1,7 @@
 .review-index {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 12.125rem;
+    // grid-template-columns: 1fr auto;
+    gap: 4rem;
     margin-top: 3.125rem;
     padding-inline: 33px;
 
@@ -10,6 +10,7 @@
         flex-direction: column;
         align-items: start;
         gap: 0.9375em;
+        width: 100%;
 
         .heading {
             color: $dark-clr-4;
@@ -96,7 +97,7 @@
     }
 
     .big-order-preview {
-        width: 26em;
+        grid-row: 1;
         height: fit-content;
         display: flex;
         flex-direction: column;
@@ -136,49 +137,63 @@
         }
     }
 
-    @include for-xs-small-layout{
+    @include for-small-layout {
         display: grid;
         grid-template-columns: 1fr;
         grid-auto-flow: row;
         gap: 5px;
         margin-top: 3.125rem;
         padding-inline: 0;
+
         .add-review {
             margin-bottom: 30px;
             grid-row: 2;
             place-self: center;
             place-items: center;
-            h2{
+
+            h2 {
                 text-align: center;
             }
-            .rate-label{
+
+            .rate-label {
                 place-items: center;
-                .stars{
+
+                .stars {
                     place-content: center;
                 }
             }
-            .txt-label{
+
+            .txt-label {
                 place-items: center;
-                textarea{
+
+                textarea {
                     width: 21em;
                 }
             }
-            
+
         }
+
         .big-order-preview {
-            width: 23em;
+            // width: 23em;
+            width: 100%;
             place-self: center;
             grid-row: 1;
             margin-bottom: em(20px);
+
+            img {
+                width: 50%;
+                align-self: center;
+            }
         }
     }
 
-    @include for-normal-layout{
+    @include for-narrow-layout {
         display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 12.125rem;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 3rem;
         margin-top: 3.125rem;
         padding-inline: 33px;
+
         .add-review {
             display: flex;
             flex-direction: column;
@@ -186,34 +201,40 @@
             gap: 0.9375em;
             grid-column: 1;
             grid-row: 1;
-            h2{
+
+            h2 {
                 text-align: start;
             }
-            .rate-label{
+
+            .rate-label {
                 place-items: start;
-                .stars{
+
+                .stars {
                     place-content: start;
                 }
             }
-            .txt-label{
+
+            .txt-label {
                 place-items: start;
-                textarea{
+
+                textarea {
                     width: 100%;
                 }
             }
         }
+
         .big-order-preview {
-            width: 26em;
+            // width: 26em;
             height: fit-content;
             display: flex;
             flex-direction: column;
             justify-self: end;
-            align-self: center;
+            // align-self: center;
             border: 0.125em solid #e5e5e7;
             padding: 0.875em 1.5em;
             gap: 0.625em;
             grid-column: 2;
         }
-       
+
     }
 }

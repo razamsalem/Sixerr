@@ -112,8 +112,21 @@
             }
         }
 
-        #imgUpload {
-            margin-block-end: em(24px);
+        .upload-preview {
+            padding-block: rem(15px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .user-info-label {
+                display: flex;
+                gap: 5px;
+                align-items: center;
+            }
+
+            #imgUpload {
+                display: none;
+            }
         }
 
         .btn.continue {
