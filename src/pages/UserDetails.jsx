@@ -275,8 +275,8 @@ export function UserDetails() {
                 <div className="my-gigs">
 
                   {!gigs || !gigs.length && <>
-                    <h1>My Gigs</h1>
-                    <div>
+                    <h1 className='no-gigs-header'>My Gigs</h1>
+                    <div className='no-gigs-content'>
                       <p className='empty'>
                         Surely someone needs your service...<Link className='link' to="/gig/add">create your first gig today!</Link>
                       </p>
