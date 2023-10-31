@@ -40,7 +40,15 @@
 
 .dashboard-layout {
     display: grid;
-    grid-template-columns: 1fr minmax(10px, 25px) 3fr minmax(10px, 25px) 1fr;
+    grid-template-columns: 1fr;
+
+    @include for-xl-layout {
+        grid-template-columns: .7fr minmax(1px, 15px) 2fr;
+    }
+
+    @include for-xxl-layout {
+        grid-template-columns: 1fr minmax(10px, 25px) 3fr minmax(10px, 25px) 1fr;
+    }
 }
 
 .gigs-layout {

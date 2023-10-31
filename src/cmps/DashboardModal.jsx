@@ -13,6 +13,7 @@ import { StackedArea } from "./StackedArea"
 import DataTable from "./GeoDataTable"
 import LoadingCircle from "./LoadingCircle"
 import DashboardCard from "./DashboardCard"
+import { DashboardNavBtn } from "./DashboardNavBtn"
 
 export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundClick }) {
     const [activeBtn, setActiveBtn] = useState('home')
@@ -35,33 +36,15 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                 <div className="nav-content">
                     <h1 className="logo">sixerr<span className='dot'>.</span></h1>
                     <div className="buttons flex column">
-
-                        <button
-                            className={activeBtn === 'home' ? 'active' : ''}
-                            onClick={() => setActiveBtn('home')}
-                        >
-                            <span className="fa-solid fa-house icon"></span> Home
-                        </button>
-
-                        <button
-                            className={activeBtn === 'dashboard' ? 'active' : ''}
-                            onClick={() => setActiveBtn('dashboard')}
-                        >
-                            <span className="fa-solid fa-square-poll-vertical icon"></span> Dashboard
-                        </button>
-
-                        <button
-                            className={activeBtn === 'impressions' ? 'active' : ''}
-                            onClick={() => { setActiveBtn('impressions'); setLoading(true) }}
-                        >
-                            <span className="fa-solid fa-earth-asia icon"></span> Impressions
-                        </button>
-
+                        <DashboardNavBtn activeBtn={activeBtn} setActiveBtn={setActiveBtn} setLoading={setLoading} />
                     </div>
                 </div>
 
                 <div className="space"></div>
                 <div className="dashboard-content">
+                    <div className="small-screens">
+                        <DashboardNavBtn activeBtn={activeBtn} setActiveBtn={setActiveBtn} setLoading={setLoading}  />
+                    </div>
                     {activeBtn === 'home' && (
                         <>
                             <h3 className="header">Home</h3>
@@ -96,7 +79,7 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                                 <DashboardCard title="Daily Visits" amount="7,080" icon="https://res.cloudinary.com/de2rdmsca/image/upload/v1698182540/depositphotos_69848707-stock-illustration-pictograph-of-eye-icon_1_kgxet3.png" />
                                 <DashboardCard title="Total Earnings" amount="$16,575" icon="https://res.cloudinary.com/de2rdmsca/image/upload/v1698181815/png-transparent-dollar-sign-illustration-united-states-dollar-icon-design-icon-dollar-sign-text-logo-number-thumbnail-removebg-preview_1_kfkinb.png" />
                             </div>
-                            
+
                             <div className="orders-data flex">
                                 <div className="compare-orders">
                                     <h4 className="title">Orders compared to last week</h4>
@@ -113,7 +96,7 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                                 <StackedArea />
                             </div>
 
-                            <div className="general-info flex">
+                            {/* <div className="general-info flex">
                                 <div className="age-info">
                                     <h4 className="title">Clients by age</h4>
                                     <AgeRadialBar />
@@ -122,7 +105,7 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                                     <h4 className="title">Daily highs</h4>
                                     <DataComposedChart />
                                 </div>
-                            </div>
+                            </div> */}
 
                         </>
                     )}
