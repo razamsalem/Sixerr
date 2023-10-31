@@ -187,8 +187,8 @@
     @include for-mobile-layout {
         .gig-preview {
             border-radius: rem(5px);
-            box-shadow: em(1px) em(1px) em(5px) rgba(211, 211, 211, 0.851);
-            background-color: #fafafa;
+            box-shadow: em(1px) em(1px) em(5px) rgba(211, 211, 211, 0.572);
+            background-color: $light-clr;
             position: relative;
             gap: em(15px);
             height: rem(234px);
