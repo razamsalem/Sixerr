@@ -8,12 +8,11 @@ import { CategoryNav } from './CategoryNav'
 import { useEffect, useState } from 'react'
 import { SearchBarFilter } from './SearchBarFilter'
 import { loadOrders } from '../store/actions/order.actions'
-import { setHeaderPosition, setSubHeaderPosition } from '../store/actions/system.actions'
+import { hideBackdrop, setHeaderPosition, setSubHeaderPosition, showBackdrop } from '../store/actions/system.actions'
 import { DropdownBtn } from './DropdownBtn'
 import { gigService } from '../services/gig.service.local'
 import { getClearFilter, setFilterBy } from "../store/actions/gig.actions"
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
-
 
 export function AppHeader() {
     const navigate = useNavigate()
@@ -73,7 +72,7 @@ export function AppHeader() {
                         sixerr<span className='dot'>.</span>
                     </Link>
 
-                    <div className="searchbar-container">
+                    <div className="searchbar-container" onFocus={showBackdrop} onBlur={hideBackdrop}>
                         <SearchBarFilter />
                     </div>
 
@@ -90,11 +89,11 @@ export function AppHeader() {
                                         <NavLink to={`user/${user._id}`}>
                                             Profile
                                         </NavLink>
-                                        {/* Temporary Hidden */}
-                                        {/* {user.isSeller ?
+
+                                        {user.isSeller ?
                                             <NavLink to="/gig/add">
                                                 Add a gig
-                                            </NavLink> : <NavLink to={`gig`}></NavLink>} */}
+                                            </NavLink> : <NavLink to={`user/${user._id}`}>Become a seller</NavLink>}
 
                                         <span onClick={onLogout}>
                                             Logout
