@@ -77,7 +77,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, selecte
                     :
                     <a onClick={goToCheckout} className='btn continue'>
                         Continue
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <i className="fa-solid fa-arrow-right"></i>
                     </a>
                 }
                 {!isPurchase && <div className='compare'>
