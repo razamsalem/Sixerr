@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { uploadService } from '../services/upload.service'
 import LoadingCircle from './LoadingCircle'
+import threeDots from '../assets/img/3dots.svg'
 
 export function ImgUploader({ onUploaded = null }) {
   const [imgData, setImgData] = useState({
@@ -20,17 +21,17 @@ export function ImgUploader({ onUploaded = null }) {
 
   function getUploadLabel() {
     if (imgData.imgUrl) return 'Upload More?'
-    return isUploading ? <LoadingCircle /> : 'Upload Image'
+    return isUploading ? <img src={threeDots} /> : 'Upload Image'
   }
 
   return (
     <div className="upload-preview">
-      {imgData.imgUrl && <img src={imgData.imgUrl} style={{ maxWidth: '200px', float: 'right' }} />}
       <label className='user-info-label'>
         <i className="fa-solid fa-cloud-arrow-up cloud-icon"></i>
         {getUploadLabel()}
         <input className='user-info-input' type="file" onChange={uploadImg} accept="img/*" id="imgUpload" />
       </label>
+      {imgData.imgUrl && <img src={imgData.imgUrl} style={{ maxWidth: '200px', float: 'right' }} />}
     </div>
   )
 }
