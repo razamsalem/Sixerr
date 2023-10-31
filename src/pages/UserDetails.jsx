@@ -107,12 +107,12 @@ export function UserDetails() {
     navigate('/gig/add')
   }
 
+  if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
   if (!loggedUser) {
     navigate('/')
     showErrorMsg('You must be logged in to continue')
     return
   }
-  if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
   return (
     <>
       {isModalOpen && (
@@ -298,6 +298,7 @@ export function UserDetails() {
                   </>}
                 </div>
               </div>)}
+
               {(!watchedUser?.isSeller && <div className="seller-gigs">
                 <div className="become-seller">
                   <img src={becomeSellerBanner} alt="becomeSellerBanner" className="become-seller-img" />

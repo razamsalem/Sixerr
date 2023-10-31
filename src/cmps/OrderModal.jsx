@@ -34,7 +34,7 @@ export function OrderModal({ order, userSeller, closeModal, handleBackgroundClic
                                     :
                                     <>
                                         <img src={seller.imgUrl} alt="Seller picture" onClick={navigateToBuyer} />
-                                        <p>You ordered the <span className="bold">{title}</span> package from {seller.fullname} for <span className="bold">${packPrice}</span></p>
+                                        <p className="msg">You ordered the <span className="bold">{title}</span> package from <span className="bold">{seller.fullname}</span> for <span className="bold">${packPrice}</span></p>
                                     </>
 
                                 }
