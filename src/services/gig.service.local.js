@@ -44,6 +44,16 @@ async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, categ
                 regex.test(gig.description)
         })
     }
+    if (filterBy.minPrice && filterBy.maxPrice) {
+        if (filterBy.minPrice > filterBy.maxPrice) {
+            [filterBy.minPrice, filterBy.maxPrice] = [filterBy.maxPrice, filterBy.minPrice]
+            gigs = gigs.filter(gig => gig.price <= filterBy.maxPrice)
+        }
+        else {
+            gigs = gigs.filter(gig => gig.price >= filterBy.minPrice && gig.price <= filterBy.maxPrice)
+        }
+    }
+
     if (filterBy.minPrice) {
         gigs = gigs.filter(gig => gig.price >= filterBy.minPrice)
     }

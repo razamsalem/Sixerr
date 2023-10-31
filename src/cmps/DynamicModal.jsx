@@ -92,22 +92,22 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
                 </div>
 
                 {btn.title === 'Budget' &&
-                    <section className='flex-container'>
+                    <form className='flex-container'>
                         <div className="left">
                             <label>MIN.</label>
                             <div className="input-price-filter">
-                                <input type="number" name='minPrice' id='gig-price-range-min' className='min' placeholder='Any' min='0' max='50000' onChange={handleChange} value={filterByToEdit.minPrice} />
+                                <input type="number" name='minPrice' id='gig-price-range-min' className='min' placeholder='Any' min='0' max='999' onChange={handleChange} value={filterByToEdit.minPrice} />
                                 <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696460033/dollar-symbol_hxbp91.png" alt="Dollar symbol" />
                             </div>
                         </div>
                         <div className="right">
                             <label>MAX.</label>
                             <div className="input-price-filter">
-                                <input type="number" name='maxPrice' id='gig-price-range-max' className='max' placeholder='Any' min='0' max='50000' onChange={handleChange} value={filterByToEdit.maxPrice} />
+                                <input type="number" name='maxPrice' id='gig-price-range-max' className='max' placeholder='Any' min='0' max='999' onChange={handleChange} value={filterByToEdit.maxPrice} />
                                 <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1696460033/dollar-symbol_hxbp91.png" alt="Dollar symbol" />
                             </div>
                         </div>
-                    </section>
+                    </form>
                 }
 
                 {btn.title === 'Delivery time' &&
