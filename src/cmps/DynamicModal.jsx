@@ -4,6 +4,7 @@ import { createSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { gigService } from '../services/gig.service.local';
 import { DeliveryTimeArea } from './DeliveryTimeArea';
+import { ServiceOptions } from './ServiceOptions';
 
 function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globalFilterBy, setFilterBy }) {
     const [filterByToEdit, setFilterByToEdit] = useState(globalFilterBy)
@@ -113,6 +114,8 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
                 {btn.title === 'Delivery time' &&
                     <DeliveryTimeArea handleChange={handleChange} filterByToEdit={filterByToEdit} />
                 }
+
+                {btn.title === 'Service options' && <ServiceOptions handleChange={handleChange} filterByToEdit={filterByToEdit}/>}
 
             </div>
             <div className='button-row'>

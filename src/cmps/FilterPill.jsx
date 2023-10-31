@@ -15,7 +15,9 @@ export function FilterPill({ filterKey, filterValue, onRemoveFilterPill }) {
             pillValue = `${filterValue} `
             break
         case 'tags':
-            pillValue = `Category tag "${filterValue}" `
+            if(filterValue && filterValue.length>0){
+                pillValue = `Category tag "${filterValue}" `
+            }
             break
         case 'daysToMake':
             if (filterValue < 2) pillValue = `24H Express delivery`

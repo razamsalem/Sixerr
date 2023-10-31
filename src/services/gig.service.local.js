@@ -33,7 +33,7 @@ export const gigService = {
 }
 window.gs = gigService
 
-async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, category: '', tags: '' }) {
+async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, category: '', tags: [] }) {
     let gigs = await storageService.query(STORAGE_KEY)
     if (filterBy.txt) {
         const regex = new RegExp(filterBy.txt, 'i')
@@ -63,10 +63,14 @@ async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, categ
     if (filterBy.category) {
         gigs = gigs.filter(gig => gig.category === filterBy.category)
     }
-    if (filterBy.tags) {
+    if (filterBy.tags && filterBy.tags.length>0) {
+        // console.log("pp");
         gigs = gigs.filter(gig => {
-            return gig.tags.includes(filterBy.tags)
-        })
+            return gig.tags.some(tag =>{
+                // console.log(tag,"tag");
+                return filterBy.tags.includes(tag)
+            });
+        });
     }
     if (filterBy.userId) {
         gigs = gigs.filter(gig => gig.owner._id === filterBy.userId)
@@ -110,7 +114,7 @@ async function save(gig) {
 }
 
 export function getDefaultFilter() {
-    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: '', page: 1, userId: '', daysToMake: '', topRated: false, basicLevel: false, premiumLevel: false }
+    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: [], page: 1, userId: '', daysToMake: '', topRated: false, basicLevel: false, premiumLevel: false }
 }
 
 
