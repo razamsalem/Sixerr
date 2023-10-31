@@ -1,0 +1,14 @@
+.main-backdrop {
+    width: 100%;
+    height: 100vh;
+    background-color: $backdrop-bg-clr;
+    position: fixed;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.3s opacity;
+
+    &.active {
+        opacity: 1;
+    }
+}
