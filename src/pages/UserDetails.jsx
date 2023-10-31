@@ -18,6 +18,7 @@ import { MyGigsTable } from '../cmps/MyGigsTable'
 import { OrderModal } from '../cmps/OrderModal'
 import { gigService } from '../services/gig.service.local'
 import { ReviewList } from '../cmps/ReviewList'
+import { userService } from '../services/user.service'
 
 export function UserDetails() {
   const params = useParams()
@@ -63,6 +64,7 @@ export function UserDetails() {
     const user = await storageService.get('user', userId)
     user.isSeller = true
     await storageService.put('user', user)
+    await userService.saveLocalUser(user)
     location.reload()
     return user
   }
