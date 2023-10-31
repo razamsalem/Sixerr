@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { GigSlider } from "./GigSlider"
 import { HoverableComponent } from "./HoverableComponent"
 import { useEffect, useState } from "react"
@@ -6,6 +6,7 @@ const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v16986
 
 export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal }) {
     let [seller, setSeller] = useState(null)
+    const navigate = useNavigate()
 
     useEffect(() => {
         getSeller()
@@ -23,6 +24,10 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal 
         return gig.title
     }
 
+    function navigateToUser() {
+        navigate(`/user/${gig.owner._id}`)
+    }
+
     return (
 
         <li className="gig-preview" key={gig._id}  >
@@ -31,8 +36,8 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal 
 
             <div className="flex owner-details">
                 {!minimal && <div className="flex owner-details-1">
-                    <img src={gig.owner.imgUrl} alt="progile-img" className="owner-profile-img" onError={e => e.currentTarget.src = defaultUserImg} />
-                    <span className="owner-fullname">{gig.owner.fullname}</span>
+                    <img src={gig.owner.imgUrl} alt="progile-img" onClick={navigateToUser} className="owner-profile-img" onError={e => e.currentTarget.src = defaultUserImg} />
+                    <span className="owner-fullname" onClick={navigateToUser}>{gig.owner.fullname}</span>
                     <span className="level-number">Level {gig.owner.level}</span>
                 </div>}
 

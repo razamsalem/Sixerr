@@ -132,9 +132,13 @@
             }
 
             .owner-fullname {
-
                 font-weight: 700;
                 line-height: rem(21px);
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
 
