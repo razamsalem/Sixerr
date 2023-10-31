@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
+import { setIsStickyFilter } from "../store/actions/system.actions"
 
 export function CategoryNav({ categories, setFilterBy, globalFilterBy, getClearFilter, subHeaderPosition }) {
     const firstChild = useRef()
     const lastChild = useRef()
+    const categoriesRef = useRef()
     const [marginLeft, setMarginLeft] = useState(0)
     const [isPrev, setIsPrev] = useState(false)
     const [isNext, setIsNext] = useState(false)
@@ -12,6 +14,7 @@ export function CategoryNav({ categories, setFilterBy, globalFilterBy, getClearF
         const observer = new IntersectionObserver((entries) => {
 
             entries.map(entry => {
+                //Nav bar slider Intersection obs
                 if (entry.target === firstChild.current) {
                     if (entry.isIntersecting) setIsPrev(false)
                     else setIsPrev(true)
@@ -31,6 +34,25 @@ export function CategoryNav({ categories, setFilterBy, globalFilterBy, getClearF
             observer.disconnect()
         }
     }, [])
+
+
+    useEffect(() => {
+        //Sticky filter-btns Intersection obs
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.map(entry => {
+                setIsStickyFilter(!entry.isIntersecting)
+            })
+        }, {})
+
+        observer.observe(categoriesRef.current)
+
+        return () => {
+            observer.disconnect()
+        }
+
+    }, [])
+
 
     useEffect(() => {
         window.addEventListener('resize', resetMargin)
@@ -57,7 +79,7 @@ export function CategoryNav({ categories, setFilterBy, globalFilterBy, getClearF
     }
 
     return (
-        <div className={`${subHeaderPosition} sub-header-container main-layout full animate__animated animate__flipInX`}>
+        <div ref={categoriesRef} className={`${subHeaderPosition} sub-header-container main-layout full animate__animated animate__flipInX`}>
             <nav className="category-header">
 
                 <button className={`nav-btn left ${!isPrev ? 'hidden' : ''}`} onClick={onSlideLeft}>
