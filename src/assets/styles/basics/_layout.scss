@@ -40,7 +40,14 @@
     grid-template-columns: 1fr minmax(10px, 25px) 3fr minmax(10px, 25px) 1fr;
 }
 
-.user-details-layout {
-    // display: grid;
-    // grid-template-columns: 1fr minmax(10px, 25px) 1fr;
+.gigs-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(309px, 1fr));
+    grid-gap: em(32px);
+}
+
+.user-layout {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr)minmax(200px, 1fr) minmax(200px, 1fr);   
+    grid-gap: em(32px); 
 }

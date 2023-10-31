@@ -253,7 +253,7 @@ export function UserDetails() {
                 <div className="order-header flex">
                   <h1 className='user-gigs-preview'>{watchedUser.username}'s Gigs</h1>
                 </div>
-                {gigs ? <GigList gigs={gigs} /> : <h1>no gigs available</h1>}
+                {gigs ? <GigList gigs={gigs} onUserProfile={true} /> : <h1>no gigs available</h1>}
                 <section className='user-reviews'>
                   <ReviewList gigOwnerId={params.id} isUserProfile={true} />
                 </section>
@@ -286,7 +286,7 @@ export function UserDetails() {
                   {gigs && gigs.length > 0 && <>
                     <div className='gigs-list flex column'>
                       <h1>Best seller gigs </h1>
-                      <GigList gigs={gigs} onlyTwo={true} minimal={true} />
+                      <GigList gigs={gigs} onUserProfile={true} bestSellerGigs={true} minimal={true} />
                     </div>
                     <section className='user-gigs'>
                       <h1>All gigs <i title='Add a new gig' className="fa-solid fa-circle-plus add-gig-btn" onClick={() => onClickAddGig()}></i></h1>
