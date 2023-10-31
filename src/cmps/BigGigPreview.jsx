@@ -3,7 +3,7 @@ export function BigGigPreview({ gig }) {
 
     return (
         <article className="big-gig-preview">
-            <h1 className="preview-heading">Create gig</h1>
+            <h1 className="preview-heading">Created gig preview</h1>
             <img src={gig.imgUrls.length ? gig.imgUrls[0] : defaultImg} alt="gig-img" />
             <h2 className="gig-heading">{gig.title}</h2>
             <section className="gig-preview-details">
@@ -15,7 +15,7 @@ export function BigGigPreview({ gig }) {
                     <span className="title"> Estimated delivery </span>
                     <span className="estimated"> <i className="fa-solid fa-dolly"></i> {`${gig.packages['basic'].packDaysToMake} Day${gig.packages['basic'].packDaysToMake > 1 ? 's' : ''}`}</span>
                 </span>}
-                <span>
+                <span className="tags">
                     {gig.tags.join(', ')}
                 </span>
                 {`${gig.packages['basic'].packPrice}` > 0 && <h4 className="bigger">From <span className="approved">${`${gig.packages['basic'].packPrice}`}</span></h4>}
