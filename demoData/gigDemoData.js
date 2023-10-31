@@ -974,11 +974,28 @@ const gigDemoData = [
   {
     _id: "iz14",
     title: "I will assist you in your work, write articles and blogs in spanish, french and german",
-    price: 20,
+    price: 35,
     packages: {
       basic: {
+        title: 'Small article',
+        packPrice: 35,
+        packDaysToMake: 3,
         desc: 'Write 400 words articles and blog in English ,French ,German , Portuguese , Italian , Spanish',
-        features: ['Topic research', 'SEO keywords', 'References & citations', 'Plagiarism check']
+        features: ['400 words', 'Topic research', 'SEO keywords', 'References & citations']
+      },
+      standard: {
+        title: 'Medium article',
+        packPrice: 60,
+        packDaysToMake: 5,
+        desc: 'Write 800 words articles and blog in English ,French ,German , Portuguese , Italian , Spanish',
+        features: ['800 words', 'Topic research', 'SEO keywords', 'References & citations', 'Plagiarism check']
+      },
+      premium: {
+        title: 'Large article',
+        packPrice: 85,
+        packDaysToMake: 8,
+        desc: 'Write 1200 words articles and blog in English ,French ,German , Portuguese , Italian , Spanish',
+        features: ['1200 words', 'Topic research', 'SEO keywords', 'References & citations', 'Plagiarism check']
       }
     },
     owner: {
@@ -1010,7 +1027,24 @@ const gigDemoData = [
     price: 10,
     packages: {
       basic: {
+        title: 'Bronze',
+        packPrice: 10,
+        packDaysToMake: 3,
         desc: '3 Phrases with and without effects High Quality Catchy',
+        features: ['Fast delivery', 'Accepted Revisions', 'Fire tags🔥🚒']
+      },
+      standard: {
+        title: 'Silver',
+        packPrice: 25,
+        packDaysToMake: 5,
+        desc: '7 Phrases with and without effects High Quality Catchy',
+        features: ['Fast delivery', 'Accepted Revisions', 'Crisp audio', 'Fire tags🔥🚒']
+      },
+      premium: {
+        title: 'Gold',
+        packPrice: 50,
+        packDaysToMake: 8,
+        desc: '15 Phrases with and without effects High Quality Catchy',
         features: ['Fast delivery', 'Accepted Revisions', 'Crisp audio', 'Fire tags🔥🚒']
       }
     },
@@ -1021,7 +1055,7 @@ const gigDemoData = [
       "level": 1,
       "rate": 4.9
     },
-    daysToMake: 2,
+    daysToMake: 3,
     "description": "I will do a custom male vocal tag. I will send you the wav record with and without your preferred impacts, for example, reverb, delay, falter, flanger, and so on. Included on Worldstar, Youtube and then some. I have a very high quality sounding mic and have had skill using Fl Stdudio for over 3 years now!",
 
     imgUrls: [
@@ -1042,8 +1076,25 @@ const gigDemoData = [
     price: 130,
     packages: {
       basic: {
+        title: 'Bronze',
+        packPrice: 130,
+        packDaysToMake: 3,
         desc: '1 Concept art of an AI image + basic edition. IMPORTANT: Please contact me before placing an order.',
-        features: ['1 image', '1 upscaled variation', 'Prompt creation', 'Prompt delivery']
+        features: ['1 image', '1 upscaled variation', 'Prompt creation']
+      },
+      standard: {
+        title: 'Silver',
+        packPrice: 180,
+        packDaysToMake: 5,
+        desc: '3 Concept art of an AI image + basic edition. IMPORTANT: Please contact me before placing an order.',
+        features: ['3 image', '3 upscaled variation', 'Prompt creation', 'Prompt delivery']
+      },
+      premium: {
+        title: 'Gold',
+        packPrice: 230,
+        packDaysToMake: 7,
+        desc: '6 Concept art of an AI image + basic edition. IMPORTANT: Please contact me before placing an order.',
+        features: ['6 image', '6 upscaled variation', 'Prompt creation', 'Prompt delivery']
       }
     },
     owner: {
@@ -1053,19 +1104,10 @@ const gigDemoData = [
       "level": 2,
       "rate": 4.9
     },
-    daysToMake: 2,
+    daysToMake: 3,
     "description": `Hello everyone!
-
-
-
     I love to bring customer ideas to life, it doesn't matter the topic. Let your imagination run wild and let's make awesome AI art together, in any style. You will be involved in the creation process, and I will make a basic edition of the result if needed. Remember, there are limitations in the AI (no blood, no NSFW content, similar face generation, etc.), so if possible, I can help by making a few basic touches and changes to get the desired image.
-    
-    
-    
     Order now and let's make your concept a reality. Remember to ask any question you want before placing an order, that way I can start right away.
-    
-    
-    
     IMPORTANT: Midjourney AI won't give you an exact representation of your face, which is important to know beforehand. For cases like this, I create a sample with Midjourney so the client can approve it before placing the order.`,
 
     imgUrls: [
@@ -1086,8 +1128,25 @@ const gigDemoData = [
     price: 30,
     packages: {
       basic: {
+        title: 'Bronze',
+        packPrice: 30,
+        packDaysToMake: 5,
         desc: '01 Video SEO Title, Description, Hashtags and Tags Research+ Backlinks',
         features: ['Page/channel evaluation', '15 keywords/hashtags research', '1 video optimized', 'Title & description optimized']
+      },
+      standard: {
+        title: 'Silver',
+        packPrice: 60,
+        packDaysToMake: 6,
+        desc: '03 Video SEO Title, Description, Hashtags and Tags Research+ Backlinks',
+        features: ['Page/channel evaluation', '25 keywords/hashtags research', '3 video optimized', 'Title & description optimized']
+      },
+      premium: {
+        title: 'Gold',
+        packPrice: 90,
+        packDaysToMake: 9,
+        desc: '07 Video SEO Title, Description, Hashtags and Tags Research+ Backlinks',
+        features: ['Page/channel evaluation', '30 keywords/hashtags research', '7 video optimized', 'Title & description optimized']
       }
     },
     owner: {
