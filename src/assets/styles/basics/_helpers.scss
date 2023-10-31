@@ -72,6 +72,14 @@
     transform: translate(-50%, -50%)
 }
 
+.underline {
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .bigger {
     font-size: rem(20.8px);
 }
@@ -113,7 +121,7 @@
     color: $light-clr;
     padding: 2px 5px;
     border-radius: 8px;
-    width: 90px; 
+    width: 90px;
 }
 
 // Media helpers

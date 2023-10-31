@@ -1,6 +1,6 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { loadGigs, addGig, updateGig, removeGig, setFilterBy } from '../store/actions/gig.actions.js'
+import { loadGigs, addGig, updateGig, removeGig, setFilterBy, getClearFilter } from '../store/actions/gig.actions.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { userService } from '../services/user.service.js'
 import { gigService } from '../services/gig.service.local.js'
@@ -14,10 +14,11 @@ import { Pagination } from '../cmps/Pagination.jsx'
 export function GigIndex() {
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
+    const [isLoading, setIsLoading] = useState(true)
     let [searchParams, setSearchParams] = useSearchParams()
 
     const currentPage = filterBy.page || 1
-    const totalGigsPerPage = 12
+    const totalGigsPerPage = 16
     const totalPages = Math.ceil(gigs.length / totalGigsPerPage)
     const startIndex = (currentPage - 1) * totalGigsPerPage
     const endIndex = startIndex + totalGigsPerPage
@@ -58,6 +59,16 @@ export function GigIndex() {
     useEffect(() => {
         loadGigs()
         setSearchParams(filterBy)
+
+        const loadingTimeout = setTimeout(() => {
+            setIsLoading(false)
+            console.log('done')
+        }, 1000)
+
+        return () => {
+            clearTimeout(loadingTimeout)
+        }
+
     }, [filterBy])
 
 
@@ -90,26 +101,34 @@ export function GigIndex() {
         }
     }
 
-
-    if (!currPageGigs.length) return <div className="loading"><LoadingCircle /></div>
     return (
         <>
-            <DynamicBtn />
-            {currPageGigs.length === 0 ? (
-                <div className="no-gigs-message">No gigs to show</div>
+            {isLoading ? (
+                <>
+                    <div className="loading"><LoadingCircle /></div>
+                </>
+            ) : currPageGigs.length ? (
+                <>
+                    <DynamicBtn />
+                    <GigList
+                        gigs={currPageGigs}
+                        onRemoveGig={onRemoveGig}
+                        onUpdateGig={onUpdateGig}
+                        onloadUser={loadUser}
+                    />
+                    <Pagination
+                        currentPage={filterBy.page}
+                        totalPages={totalPages}
+                        onPageChange={handlePageChange}
+                    />
+                </>
             ) : (
-                <GigList
-                    gigs={currPageGigs}
-                    onRemoveGig={onRemoveGig}
-                    onUpdateGig={onUpdateGig}
-                    onloadUser={loadUser}
-                />
+                <div className="no-gigs-message flex column">
+                    <h1>We couldn't find Gigs that match your search</h1>
+                    <button className='clear' onClick={() => { setFilterBy(getClearFilter()) }}>Clear All Filters</button>
+                    <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/search_perseus/no-results-couch.0139585.png" alt="not found" />
+                </div>
             )}
-            <Pagination
-                currentPage={filterBy.page}
-                totalPages={totalPages}
-                onPageChange={handlePageChange}
-            />
         </>
     )
 }

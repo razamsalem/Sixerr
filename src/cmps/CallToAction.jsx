@@ -1,12 +1,17 @@
 import timeImg from '../assets/img/time.svg'
 import checkImg from '../assets/img/check.svg'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { utilService } from '../services/util.service'
+import { useSelector } from 'react-redux'
+import { setUserModalOpen } from '../store/user.actions'
+import { showErrorMsg } from '../services/event-bus.service'
 const imgNotFound = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663092/defaultGigImg_vjtk9e.webp'
 
 
 export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, selectedPack = 'basic' }) {
+    const loggedUser = useSelector(storeState => storeState.userModule.user)
+    const navigate = useNavigate()
     const { price, daysToMake, packages, imgUrls } = gig
     const [selectedPackage, setSelectedPackage] = useState(selectedPack)
     const { title, packPrice, packDaysToMake, desc, features } = packages[selectedPackage]
@@ -14,6 +19,14 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, selecte
 
     function handlePackageChange(packageKey) {
         setSelectedPackage(packageKey)
+    }
+
+    function goToCheckout() {
+        if (loggedUser) navigate(`${pathname}/checkout/${selectedPackage}`)
+        else {
+            showErrorMsg('You must be logged in to purchase services..')
+            setUserModalOpen(true)
+        }
     }
 
     return (
@@ -62,10 +75,10 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, selecte
                         </span>
                     </div>
                     :
-                    <Link to={`${pathname}/checkout`} className='btn continue'>
+                    <a onClick={goToCheckout} className='btn continue'>
                         Continue
-                        {/* <i class="fa-solid fa-arrow-right"></i> */}
-                    </Link>
+                        <i className="fa-solid fa-arrow-right"></i>
+                    </a>
                 }
                 {!isPurchase && <div className='compare'>
                     <a className='compare-link'>Compare packages</a>

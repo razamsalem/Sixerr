@@ -298,7 +298,7 @@
     @include for-narrow-layout {}
 
     @include for-normal-layout {
-        grid-template-columns: minmax(32px, 1fr) minmax(auto, 720px) minmax(auto, 640px) minmax(32px, 1fr);
+        grid-template-columns: minmax(32px, 1fr) minmax(auto, 860px) minmax(auto, 500px) minmax(32px, 1fr);
 
         &>*:not(.cta-container) {
             grid-column: 2;
@@ -349,7 +349,9 @@
         }
     }
 
-    @include for-large-layout {}
+    @include for-large-layout {
+        grid-template-columns: minmax(32px, 1fr) minmax(auto, 760px) minmax(auto, 600px) minmax(32px, 1fr);
+    }
 
     @include for-xl-layout {
         // padding-inline: rem(32px);

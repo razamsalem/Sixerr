@@ -28,13 +28,13 @@ export function OrderModal({ order, userSeller, closeModal, handleBackgroundClic
                             <div className="mini-user flex">
                                 {userSeller ? <>
                                     <img src={buyer.imgUrl} alt="Buyer picture" onClick={navigateToBuyer} />
-                                    <h4 onClick={navigateToBuyer} >{buyer.username}</h4>
+                                    <h4 onClick={navigateToBuyer} className="underline" >{buyer.username}</h4>
                                     <p>ordered the <span className="bold">{title}</span> package from you for <span className="bold">${packPrice}</span></p>
                                 </>
                                     :
                                     <>
-                                        <img src={seller.imgUrl} alt="Seller picture" onClick={navigateToBuyer} />
-                                        <p>You ordered the <span className="bold">{title}</span> package from {seller.fullname} for <span className="bold">${packPrice}</span></p>
+                                        <img src={seller.imgUrl} alt="Seller picture" onClick={navigateToSeller} />
+                                        <p className="msg">You ordered the <span className="bold">{title}</span> package from <span className="underline bold" onClick={navigateToSeller}>{seller.fullname}</span> for <span className="bold">${packPrice}</span></p>
                                     </>
 
                                 }

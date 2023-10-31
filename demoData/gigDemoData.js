@@ -71,7 +71,7 @@ const gigDemoData = [
       "_id": "u192",
       "fullname": "Julia Carter",
       "level": 2,
-      "rate": 3.2,
+      "rate": 4.8,
       "imgUrl": "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698675021/julia-logo_ahamun.webp",
     },
     daysToMake: 3,
@@ -269,7 +269,7 @@ const gigDemoData = [
       "fullname": "Simon Timber",
       "imgUrl": "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698676156/simon-1_mlnqhr.webp",
       "level": 1,
-      "rate": 1,
+      "rate": 4.9,
     },
     daysToMake: 3,
     description: `
@@ -570,6 +570,55 @@ const gigDemoData = [
     }]
   },
   {
+    _id: "ApOD18d",
+    title: "I will convert figma to html, psd to html, xd to html tailwindcss",
+    price: 50,
+    packages: {
+      basic: {
+        title: '1 Landing page website',
+        packPrice: 50,
+        packDaysToMake: 3,
+        desc: 'High Quality coding in HTML, CSS, Bootstrap/Tailwind - extra charge for custom JS',
+        features: ['1 page', 'Responsive design', 'Slider/scroller']
+      },
+      standard: {
+        title: 'Startup',
+        packPrice: 140,
+        packDaysToMake: 5,
+        desc: '2 Pages high quality HTML, CSS, JS Bootstrap/Tailwind development',
+        features: ['2 pages', 'Responsive design', 'Slider/scroller', 'Browser compatibility']
+      },
+      premium: {
+        title: 'Business',
+        packPrice: 295,
+        packDaysToMake: 7,
+        desc: '5 Pages high quality HTML, CSS, JS Bootstrap/Tailwind development',
+        features: ['5 pages', 'Responsive design', 'Slider/scroller', 'Browser compatibility', 'Server upload']
+      }
+    },
+    owner: {
+      "_id": "u207",
+      "fullname": "james_q55",
+      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1698681218/desktop-wallpaper-look-face-model-profile-male-guy-for-section-%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D1%8B-model-men_wizuct.jpg",
+      "level": 2,
+      "rate": 4.7,
+    },
+    daysToMake: 3,
+    description: 'I am a Full stack web and WordPress developer, I have been doing web development for the last 5 years. I have worked with various technologies including ✅ HTML5, ✅ CSS3, ✅ CSS3 Animation, ✅ Bootstrap, ✅ JavaScript, ✅',
+    imgUrls: [
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698760832/convert-figma-to-html-psd-to-html-sketch-to-html-xd-to-html-css-bootstrap_wecbgs.jpg",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698760747/c63a16335bba235adc008ca06bdb19c5945be604_u6dxvg.webp",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698760840/53bef6c1ff746a306eb355208e2cc486476441c4_gvvflf.webp",
+    ],
+    category: "Programming & Tech",
+    tags: ['Website Development', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
     _id: "R8aks45Q",
     title: "I will design a brand style guide and logo for you",
     price: 25,
@@ -830,6 +879,55 @@ const gigDemoData = [
     }]
   },
   {
+    _id: "Ap0ll0207",
+    title: "I will create pixel art characters, items, icon, and animate them",
+    price: 20,
+    packages: {
+      basic: {
+        title: 'Mini Art',
+        packPrice: 20,
+        packDaysToMake: 6,
+        desc: '1 simple figure, simple animation.',
+        features: ['1 initial concept included', '5-second running time', 'Video format included', 'Seamless loop']
+      },
+      standard: {
+        title: 'Gold art',
+        packPrice: 45,
+        packDaysToMake: 7,
+        desc: '1 figure little more complex, simple animation.',
+        features: ['1 initial concept included', '5-second running time', 'Video format included', 'Seamless loop', 'Custom design', 'Based on image/video']
+      },
+      premium: {
+        title: 'Amazing art',
+        packPrice: 70,
+        packDaysToMake: 10,
+        desc: 'landscape, or character with background animation',
+        features: ['1 initial concept included', '5-second running time', 'Video format included', 'Seamless loop', 'Custom design', 'Based on image/video', 'Full color']
+      }
+    },
+    owner: {
+      "_id": "u207",
+      "fullname": "james_q55",
+      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1698681218/desktop-wallpaper-look-face-model-profile-male-guy-for-section-%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D1%8B-model-men_wizuct.jpg",
+      "level": 2,
+      "rate": 4.7,
+    },
+    daysToMake: 6,
+    description: 'If you\'re a fan of retro pixel art and want a custom illustration, NFT, profile picture, avatar, emoticon, twitch banner, game graphics, or anything else pixel-based, I\'m your guy! I specialize in creating all types of pixel art and 8-bit characters and objects, including animation sprites.',
+    imgUrls: [
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698761490/c3a002099d2bd8bc3e0c15b9b2a716be95072dc6_ecp1gj.webp",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698761533/D46F4D7E-5737-4F70-AB2A-A66BC4DE789D_frxo3y.webp",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698761953/316C986E-2D02-4BE9-A3C9-442530D1BF60_kvy6lc.webp",
+    ],
+    category: "Video & Animation",
+    tags: ["Video Editing", "Visual Effects", "Video Art", "Logo Animation", "Character Animation", "Animated GIFs"],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
     _id: "iz12",
     title: "I will set up your etsy shop,add listings, SEO or do a complete overhaul",
     price: 40,
@@ -972,6 +1070,55 @@ const gigDemoData = [
     likedByUsers: ['mini-user']
   },
   {
+    _id: "g87624",
+    title: "I will create cute gifs for your instagram and facebook stories",
+    price: 20,
+    packages: {
+      basic: {
+        title: '1 custom Gif',
+        packPrice: 20,
+        packDaysToMake: 2,
+        desc: 'Custom gif of your character/object with a basic action performed.',
+        features: ['1 initial concept included', 'Seamless loop', 'Based on image/video']
+      },
+      standard: {
+        title: '5 custom Gifs',
+        packPrice: 75,
+        packDaysToMake: 4,
+        desc: 'Custom set of 5 Gifs of simple character/object with 5 different actions performed.',
+        features: ['1 initial concept included', 'Seamless loop', 'Based on image/video', 'Custom design']
+      },
+      premium: {
+        title: '10 custom Gifs',
+        packPrice: 130,
+        packDaysToMake: 7,
+        desc: 'Custom set of 10 Gifs of your character/object with 10 different actions performed.',
+        features: ['1 initial concept included', 'Seamless loop', 'Based on image/video', 'Custom design', 'Full color']
+      }
+    },
+    owner: {
+      "_id": "u207",
+      "fullname": "james_q55",
+      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1698681218/desktop-wallpaper-look-face-model-profile-male-guy-for-section-%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D1%8B-model-men_wizuct.jpg",
+      "level": 2,
+      "rate": 4.7,
+    },
+    daysToMake: 2,
+    description: 'Character to animate must be simple as the GIG example (this could lower the price and I\'ll send a custom 10-15 usd order). Complex character extra (please message me first to discuss a custom offer or if you want to know if your character is simple enough).',
+    imgUrls: [
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698762672/4fcbedd9890b6917ef6de118469a4299d27a09a3_lwxp6n.webp",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698762641/4568df8ba3f075b4355cf4022a8d5419ce81a7d3_y6wpad.webp",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698762664/2e1be8873a3eb361496323b575293cc4759f200d_k6popr.webp",
+    ],
+    category: "Video & Animation",
+    tags: ["Video Editing", "Visual Effects", "Video Art", "Logo Animation", "Character Animation", "Animated GIFs"],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
     _id: "iz14",
     title: "I will assist you in your work, write articles and blogs in spanish, french and german",
     price: 35,
@@ -1069,6 +1216,101 @@ const gigDemoData = [
       "fullname": "David C",
       "imgUrl": "/img/img3.jpg"
     }]
+  },
+  {
+    _id: "AcL11z72",
+    title: "I will setup shopify shipping profiles and shopify tax for domestic and international",
+    price: 25,
+    packages: {
+      basic: {
+        title: 'Domestic',
+        packPrice: 25,
+        packDaysToMake: 1,
+        desc: 'Setup Complete Shipping + Tax for Domestic',
+        features: ['15 minutes live consultation', 'Action plan', 'Store review & feedback (written or recorded)']
+      },
+      standard: {
+        title: 'For 5 Countries',
+        packPrice: 30,
+        packDaysToMake: 2,
+        desc: 'Setup Shipping + Tax For 5 Countries',
+        features: ['15 minutes live consultation', 'Action plan', 'Store review & feedback (written or recorded)', 'More']
+      },
+      premium: {
+        title: 'Super Domestic',
+        packPrice: 150,
+        packDaysToMake: 3,
+        desc: 'Setup Shipping + Tax For 7 Countries',
+        features: ['15 minutes live consultation', 'Action plan', 'Store review & feedback (written or recorded)', 'More']
+      }
+    },
+    owner: {
+      "_id": "fred1",
+      "fullname": "Fredrick F",
+      "imgUrl": "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698678915/fred-1_pvhlr6.webp",
+      "level": 1,
+      "rate": 4
+    },
+    daysToMake: 1,
+    "description": "Hello ! Much obliged for visiting my gig :)\nIn this gig I'm offering you an exceptionally 3 one of a kind, best and reasonable bundles.\nIn case you are thinking for giving somebody uncommon an extremely delightful, eye getting gift( hyper practical hand drawing pencil sketch picture)?\nKindly select the helpful bundle and submit your request at this moment and I'll give you an ideal picture sketch, hand drawing, practical drawing, pencil attracting high goal JPEG/PNG advanced document.\nI will give hand-drawn dark and White or hued reasonable pictures.\nSympathetically give me clear reference photograph however much as could be expected.\nThe material I utilized for Creating pencil representations are:\nDrawing materials: graphite pencil, charcoal, Bristol paper, mono eraser, brush, mixing stump, mechanical pencil, graphite powder and so on .\nYou can give me anything:\nPicture photographs\nFamily photographs\nCreature photographs\nAny item photographs\nScene photographs\nEngineering photographs\nAnything you envision\nKindly reach me prior to submitting your request! Much appreciated.\nI DO NOT DELIVER ORIGINAL PHYSICAL COPY BUT A HIGH RESOLUTION JPEG DIGITA",
+
+    imgUrls: [
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698787851/shop-1_p4ardk.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698787851/shop-2_cdwybx.webp",
+    ],
+    category: "Business",
+    tags: ['General & Administrative Virtual Assistant', 'E-Commerce Management', 'HR Consulting', 'Project Management', 'Business Formation', 'Business Registration'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
+    _id: "iQQax12S02",
+    title: "I will draw a custom dark surrealism for apparel",
+    price: 35,
+    packages: {
+      basic: {
+        title: 'Nice Fellowship',
+        packPrice: 25,
+        packDaysToMake: 1,
+        desc: 'Black and White Illustration, simple background',
+        features: ['1 figure', 'Include source file', 'Printable resolution file', 'Include colors in illustration', 'Commercial use']
+      },
+      standard: {
+        title: 'Unrivaled',
+        packPrice: 40,
+        packDaysToMake: 5,
+        desc: 'Full color illustration, simple background',
+        features: ['1 figure', 'Include source file', 'Printable resolution file', 'Include colors in illustration', 'Commercial use']
+      },
+      premium: {
+        title: 'Terrible Alliance',
+        packPrice: 60,
+        packDaysToMake: 10,
+        desc: 'ull color and detailed illustration with background',
+        features: ['1 figure', 'Include source file', 'Printable resolution file', 'Include colors in illustration', 'Commercial use']
+      }
+    },
+    owner: {
+      "_id": "u192",
+      "fullname": "Julia Carter",
+      "level": 2,
+      "rate": 4.8,
+      "imgUrl": "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698675021/julia-logo_ahamun.webp",
+    },
+    daysToMake: 3,
+    description: "Thank you for stopping by! This gig is intended for anyone who is looking for a well rounded and undefined design for their company or brand. We will try different concepts and ideas to get you where you need to be. If you aren't sure where to start, this is a good gig to choose Unlike a lot of other fiverr artists, my designs do not change in quality depending upon what package you choose. All of my designs deserve the same attention and quality guarantee. My process starts in the traditional form which means I begin with paper and pencil. Once that is complete I refine it with art and/or calligraphy pens. Once that's complete, I bring it into my computer and render it digitally. The colors can be whatever you choose and the packages are all different. So please read them carefully or send me a message if you have any questions",
+    imgUrls: [
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698785634/supply-1_vilfuk.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698785634/supply-2_yls6ee.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698785634/supply-3_cznwsv.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698785635/supply_haweju.webp"
+    ],
+    category: "Graphics & Design",
+    tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design', 'Brand Style Guides', 'Landing Page Design', 'Icon Design', 'Portraits & Caricatures'],
+    likedByUsers: ['mini-user']
   },
   {
     _id: "iz16",
@@ -1210,6 +1452,149 @@ const gigDemoData = [
     ],
     category: "Writing & Translation",
     tags: ['Articles & Blog Posts', 'Content Strategy', 'Proofreading & Editing', 'AI Content Editing', 'Book Editing', 'Beta Reading', 'Writing Advice', 'Career Writing', 'Resume Writing', 'Cover Letters', 'LinkedIn Profiles'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
+    _id: "Ap0ll0OD18d",
+    title: "I will fix bugs errors in your javascript, html, css code",
+    price: 80,
+    packages: {
+      basic: {
+        title: 'Simple bug',
+        packPrice: 80,
+        packDaysToMake: 2,
+        desc: 'I will fix Simple bug',
+        features: ['Bug investigation', 'Fix documentation', 'Detailed code comments']
+      },
+      standard: {
+        title: 'Meduim bug ',
+        packPrice: 150,
+        packDaysToMake: 2,
+        desc: 'I will fix Medium bug',
+        features: ['Bug investigation', 'Fix documentation', 'Detailed code comments']
+      },
+      premium: {
+        title: 'Advanced bug',
+        packPrice: 300,
+        packDaysToMake: 2,
+        desc: 'I will fix Advanced bug',
+        features: ['Bug investigation', 'Fix documentation', 'Detailed code comments']
+      }
+    },
+    owner: {
+      "_id": "u207",
+      "fullname": "james_q55",
+      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1698681218/desktop-wallpaper-look-face-model-profile-male-guy-for-section-%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D1%8B-model-men_wizuct.jpg",
+      "level": 2,
+      "rate": 4.7,
+    },
+    daysToMake: 2,
+    description: 'Hey there, Are you struggling to fix bugs and errors in your JavaScript, Html, CSS code? You\'re in the in the right place!',
+    imgUrls: [
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698761102/5ed4622f7c987d922fa0fd6800a9ab34b467f083_lsbp3q.webp",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698761039/c17db0eb0d70a2b53e647e16b7e67ef129f7c5bc_br08xb.webp",
+    ],
+    category: "Programming & Tech",
+    tags: ['Website Development', 'Web Applications', 'Software Development', 'HTML & CSS Developers', 'JavaScript Developers'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
+    _id: "iQax1rR02",
+    title: "I will create a professional dj mix, mashup, custom music project",
+    price: 18,
+    packages: {
+      basic: {
+        title: 'DJ PARTY, PARTY DJ',
+        packPrice: 18,
+        packDaysToMake: 2,
+        desc: '1 Mashup (2-3 songs) or 1 Custom Professional DJ Mix (8 song max) Satisfaction guaranteed',
+        features: ['8 songs', 'Up to 15 minutes', 'Custom song order', 'Long live Israel💙']
+      },
+      standard: {
+        title: 'DJ In an ice cream van🚒',
+        packPrice: 40,
+        packDaysToMake: 3,
+        desc: 'I will show up in an ice cream van to lit your party up! 🔥',
+        features: ['15 songs', 'Up to 65 minutes', 'Custom song order', 'Long live Israel💙']
+      },
+      premium: {
+        title: 'DJ For a week👩‍🚀!',
+        packPrice: 600,
+        packDaysToMake: 15,
+        desc: 'Reserve a week with the almighty DJ',
+        features: ['Exclusive parties access', 'Full ice-cream van access', 'DJ & Mixing short course', '💙Long live Israel💙']
+      }
+    },
+    owner: {
+      "_id": "u192",
+      "fullname": "Julia Carter",
+      "level": 2,
+      "rate": 4.8,
+      "imgUrl": "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698675021/julia-logo_ahamun.webp",
+    },
+    daysToMake: 3,
+    description: "Thank you for stopping by! This gig is intended for anyone who is looking for a well rounded and undefined design for their company or brand. We will try different concepts and ideas to get you where you need to be. If you aren't sure where to start, this is a good gig to choose Unlike a lot of other fiverr artists, my designs do not change in quality depending upon what package you choose. All of my designs deserve the same attention and quality guarantee. My process starts in the traditional form which means I begin with paper and pencil. Once that is complete I refine it with art and/or calligraphy pens. Once that's complete, I bring it into my computer and render it digitally. The colors can be whatever you choose and the packages are all different. So please read them carefully or send me a message if you have any questions",
+    imgUrls: [
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698786628/pur3_gukv3e.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698786625/positivity_g1d5ol.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698786626/pur1_oj21fq.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698786628/pur-2_nhzivt.webp"
+    ],
+    category: "Music & Audio",
+    tags: ['Music Production & Writing', 'Producers & Composers', 'Singers & Vocalists', 'Session Musicians', 'Songwriters', 'Beat Making', 'Voice Over & Narration', 'DJing', 'DJ Drops & Tags', 'DJ Mixing', 'Remixing & Mashups', 'Mixing & Mastering', 'Audio Editing'],
+    likedByUsers: ['mini-user']
+  },
+  {
+    _id: "AQLz29",
+    title: "I will make a pixel art character or asset for you",
+    price: 10,
+    packages: {
+      basic: {
+        title: 'Silver Pixel',
+        packPrice: 10,
+        packDaysToMake: 3,
+        desc: 'Pixel art character up to 32x32px',
+        features: ['1 figure', 'Include source file', 'Include colors in illustration']
+      },
+      standard: {
+        title: 'Gold Pixel',
+        packPrice: 25,
+        packDaysToMake: 5,
+        desc: 'Pixel art character up to 64x64px',
+        features: ['1 figure', 'Include source file', 'Include colors in illustration', 'Printable resolution file', 'Commercial use']
+      },
+      premium: {
+        title: 'Platinum Pixel',
+        packPrice: 150,
+        packDaysToMake: 7,
+        desc: 'I will offer a hyperrealism portrait or any other art you want with much more realism.',
+        features: ['2 figure', 'Include source file', 'Include colors in illustration', 'Printable resolution file', 'Commercial use', 'Include entire body illustration']
+      }
+    },
+    owner: {
+      "_id": "fred1",
+      "fullname": "Fredrick F",
+      "imgUrl": "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698678915/fred-1_pvhlr6.webp",
+      "level": 1,
+      "rate": 4
+    },
+    daysToMake: 3,
+    "description": "Hello ! Much obliged for visiting my gig :)\nIn this gig I'm offering you an exceptionally 3 one of a kind, best and reasonable bundles.\nIn case you are thinking for giving somebody uncommon an extremely delightful, eye getting gift( hyper practical hand drawing pencil sketch picture)?\nKindly select the helpful bundle and submit your request at this moment and I'll give you an ideal picture sketch, hand drawing, practical drawing, pencil attracting high goal JPEG/PNG advanced document.\nI will give hand-drawn dark and White or hued reasonable pictures.\nSympathetically give me clear reference photograph however much as could be expected.\nThe material I utilized for Creating pencil representations are:\nDrawing materials: graphite pencil, charcoal, Bristol paper, mono eraser, brush, mixing stump, mechanical pencil, graphite powder and so on .\nYou can give me anything:\nPicture photographs\nFamily photographs\nCreature photographs\nAny item photographs\nScene photographs\nEngineering photographs\nAnything you envision\nKindly reach me prior to submitting your request! Much appreciated.\nI DO NOT DELIVER ORIGINAL PHYSICAL COPY BUT A HIGH RESOLUTION JPEG DIGITA",
+
+    imgUrls: [
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698787225/pix-1_qc8xfd.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698787224/pix-2_mhnbwg.webp",
+    ],
+    category: "Video & Animation",
+    tags: ['Video Art', 'Logo Animation', 'Character Animation', 'Animated GIFs'],
     likedByUsers: [{
       "_id": "u103",
       "fullname": "David C",

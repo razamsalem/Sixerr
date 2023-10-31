@@ -40,9 +40,14 @@
                 cursor: pointer;
             }
 
+            .msg {
+                margin-inline: rem(8px);
+            }
+
             .bold {
                 font-weight: 600;
             }
+
         }
 
         .contact-buyer {

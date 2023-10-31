@@ -18,6 +18,7 @@ import { MyGigsTable } from '../cmps/MyGigsTable'
 import { OrderModal } from '../cmps/OrderModal'
 import { gigService } from '../services/gig.service.local'
 import { ReviewList } from '../cmps/ReviewList'
+import { userService } from '../services/user.service'
 
 export function UserDetails() {
   const params = useParams()
@@ -63,6 +64,7 @@ export function UserDetails() {
     const user = await storageService.get('user', userId)
     user.isSeller = true
     await storageService.put('user', user)
+    await userService.saveLocalUser(user)
     location.reload()
     return user
   }
@@ -107,12 +109,12 @@ export function UserDetails() {
     navigate('/gig/add')
   }
 
-  if (!loggedUser) {
-    navigate('/')
-    showErrorMsg('You must be logged in to continue')
-    return
-  }
   if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
+  if (!loggedUser) {
+    // navigate('/')
+    // showErrorMsg('You must be logged in to continue')
+    // return
+  }
   return (
     <>
       {isModalOpen && (
@@ -121,7 +123,8 @@ export function UserDetails() {
       {isDashboardOpen && (
         <DashboardModal watchedUser={watchedUser} closeDashboard={closeDashboard} handleBackgroundClick={handleBackgroundClick} orders={orders} loggedUser={loggedUser} />
       )}
-      <main className={`user-details-container main-layout full ${watchedUser._id === loggedUser._id ? 'bg' : ''}`}>
+      {/* <main className={`user-details-container main-layout full ${watchedUser._id === loggedUser._id ? 'bg' : ''}`}> */}
+      <main className={`user-details-container main-layout full`}>
         <section className='details-container'>
           <section className="user-details ">
             {watchedUser && <div className='user-card'>
@@ -139,7 +142,7 @@ export function UserDetails() {
                     <div className="secondary-name">
                       @{watchedUser.username}
                     </div>
-                    {watchedUser._id !== loggedUser._id &&
+                    {(!loggedUser) || (watchedUser._id !== loggedUser._id) &&
                       <button className='contact'>Contact me</button>
                     }
                   </div>
@@ -236,7 +239,7 @@ export function UserDetails() {
             </div>}
           </section>
 
-          {watchedUser._id !== loggedUser._id && !watchedUser.isSeller &&
+          {(!loggedUser && !watchedUser.isSeller) || (loggedUser && watchedUser._id !== loggedUser._id) && (!watchedUser.isSeller) &&
             <section className="no-data-found">
               <div className="help-us">
                 <h1>Unfortunately we do not have enough information about this user</h1>
@@ -247,13 +250,15 @@ export function UserDetails() {
             </section>
           }
 
-          {watchedUser._id !== loggedUser._id && watchedUser.isSeller &&
+          {((loggedUser && loggedUser._id !== watchedUser._id && watchedUser.isSeller)
+            ||
+            (!loggedUser && watchedUser.isSeller)) &&
             <section className="gigs-column user-details-layout">
               <div className='manage-orders'>
                 <div className="order-header flex">
                   <h1 className='user-gigs-preview'>{watchedUser.username}'s Gigs</h1>
                 </div>
-                {gigs ? <GigList gigs={gigs} /> : <h1>no gigs available</h1>}
+                {gigs ? <GigList gigs={gigs} onUserProfile={true} /> : <h1>no gigs available</h1>}
                 <section className='user-reviews'>
                   <ReviewList gigOwnerId={params.id} isUserProfile={true} />
                 </section>
@@ -261,7 +266,7 @@ export function UserDetails() {
             </section>
           }
 
-          {watchedUser._id === loggedUser._id &&
+          {loggedUser && loggedUser._id === watchedUser._id &&
 
             <section className="gigs-column user-details-layout">
               {(watchedUser?.isSeller && <div className='manage-orders'>
@@ -272,9 +277,9 @@ export function UserDetails() {
                   <OrderList orders={orders} loggedUser={loggedUser} mode='seller' openModal={openOrderModal} onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} /> </>}
                 <div className="my-gigs">
 
-                  {!gigs || !gigs.length && <>
-                    <h1>My Gigs</h1>
-                    <div>
+                  {(!gigs) || (!gigs.length) && <>
+                    <h1 className='no-gigs-header'>My Gigs</h1>
+                    <div className='no-gigs-content'>
                       <p className='empty'>
                         Surely someone needs your service...<Link className='link' to="/gig/add">create your first gig today!</Link>
                       </p>
@@ -286,7 +291,7 @@ export function UserDetails() {
                   {gigs && gigs.length > 0 && <>
                     <div className='gigs-list flex column'>
                       <h1>Best seller gigs </h1>
-                      <GigList gigs={gigs} onlyTwo={true} minimal={true} />
+                      <GigList gigs={gigs} onUserProfile={true} bestSellerGigs={true} minimal={true} />
                     </div>
                     <section className='user-gigs'>
                       <h1>All gigs <i title='Add a new gig' className="fa-solid fa-circle-plus add-gig-btn" onClick={() => onClickAddGig()}></i></h1>
@@ -298,6 +303,7 @@ export function UserDetails() {
                   </>}
                 </div>
               </div>)}
+
               {(!watchedUser?.isSeller && <div className="seller-gigs">
                 <div className="become-seller">
                   <img src={becomeSellerBanner} alt="becomeSellerBanner" className="become-seller-img" />

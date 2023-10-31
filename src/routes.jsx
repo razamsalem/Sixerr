@@ -43,6 +43,11 @@ const routes = [
         shouldRender: false
     },
     {
+        path: `gig/:gigId/checkout/:pack`,
+        component: <Checkout />,
+        shouldRender: false
+    },
+    {
         path: 'order',
         component: <OrderIndex />,
         label: 'Orders',

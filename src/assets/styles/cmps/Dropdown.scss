@@ -2,6 +2,14 @@
     position: relative;
     margin-inline-start: rem(5px);
 
+    a {
+        color: $accent-clr;
+
+        &:hover {
+            color: $dark-accent-clr;
+        }
+    }
+
     i {
         transition: color 0.2s, transform 0.4s;
         font-size: rem(20px);
@@ -55,7 +63,6 @@
             text-align: center;
             transition: background-color 0.2s, color 0.2s;
             font-weight: 700;
-
 
             &:first-child {
                 border-radius: 6px 6px 0 0;

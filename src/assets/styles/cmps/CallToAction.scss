@@ -116,7 +116,7 @@
          .continue {
              @include btn;
              position: relative;
-             display: block;
+             //  display: block;
              text-align: center;
              height: rem(42px);
              width: 100%;
@@ -127,7 +127,14 @@
              margin-block-end: em(12px);
              border-radius: em(5px);
 
+             display: flex;
+             align-items: center;
+             justify-content: center;
+
              .fa-arrow-right {
+                 font-size: rem(13px);
+                 line-height: 1rem;
+
                  position: absolute;
                  right: 25px;
 

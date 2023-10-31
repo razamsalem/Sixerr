@@ -2,11 +2,11 @@ const imgNotFound = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v16986630
 
 export function BigOrderPreview({ order }) {
     if (!order) return
-    console.log(order, "order")
+
     return (
         <article className="big-order-preview">
             <h1 className="preview-heading">Your order</h1>
-            <img src={order.gig.imgUrls[0] || imgNotFound} alt="gig-img" onError={e => e.currentTarget.src = imgNotFound} />
+            <img src={order.gig.imgUrls && order.gig.imgUrls[0] || imgNotFound} alt="gig-img" onError={e => e.currentTarget.src = imgNotFound} />
 
             <h2 className="gig-heading">{order.gig.title}</h2>
             <section className="order-details">

@@ -12,7 +12,7 @@ import { setUserModalOpen } from '../store/user.actions'
 export function Checkout() {
     const navigate = useNavigate()
     const [currGig, setCurrGig] = useState(null)
-    const { gigId } = useParams()
+    const { gigId, pack } = useParams()
     const loggedUser = useSelector(storeState => storeState.userModule.user)
 
     useEffect(() => {
@@ -54,7 +54,7 @@ export function Checkout() {
 
     return (
         <section className="checkout">
-            {currGig !== null && <CallToAction gig={currGig} isPurchase={true} onPurchaseOrder={onPurchaseOrder} />}
+            {currGig !== null && <CallToAction gig={currGig} isPurchase={true} selectedPack={pack} onPurchaseOrder={onPurchaseOrder} />}
             <UserPayment user={loggedUser} />
         </section>
     )

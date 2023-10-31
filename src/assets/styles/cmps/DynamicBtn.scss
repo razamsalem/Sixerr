@@ -15,20 +15,20 @@
         }
         .filter-btn {
             position: relative;
-            font-size: 16px;
+            font-size: rem(16px);
             font-weight: 600;
-            line-height: 24px;
+            line-height: rem(24px);
             text-align: start;
 
-            min-width: 50px;
-            min-height: 48px;
-            padding: 12px 16px;
+            min-width: rem(50px);
+            min-height: rem(48px);
+            padding: rem(12px) rem(16px);
             border: 1px solid $light-clr2;
             border-radius: 8px;
-            margin-block: 32px;
+            margin-block-start: rem(32px);
 
             &:not(:last-child) {
-                margin-inline-end: 12px
+                margin-inline-end: rem(12px)
             }
 
             color: $dark-clr;

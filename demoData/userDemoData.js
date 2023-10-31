@@ -109,10 +109,81 @@ const demoUsers = [
     rate: 4.9,
     level: 1,
     desc: "Are you looking for an expert web developer to design and develop your website? If your answer is yes, then I welcome you and you are at the right place.",
-    isSeller: false,
+    isSeller: true,
     location: 'Italy',
-    lang: ['Italian', 'Chinese', 'English', 'Spanish'],
-    reviews: []
+    lang: ['Italian', 'English', 'Spanish'],
+    reviews: [
+      {
+        "id": "r1012",
+        "gig": "{optional-mini-gig}",
+        "txt": "Very nice. Thank you.",
+        "rate": 4,
+        "createdAt": 1697993927300,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u101",
+          "fullname": "Taylor P",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696177526/cld-sample.jpg",
+          "location": "Germany",
+        }
+      },
+      {
+        "id": "r1044",
+        "gig": "{optional-mini-gig}",
+        "txt": "Very fast, very kind!",
+        "rate": 5,
+        "createdAt": 1697993927389,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "d105",
+          "fullname": "Sohaib Saim",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c45eaabd0990937c721c897183c6805f-1661974546688/fc7dd1c0-d3a1-4122-826f-6758abf48a4e.png",
+          "location": 'Ukrain',
+        }
+      },
+      {
+        "id": "r1033",
+        "gig": "{optional-mini-gig}",
+        "txt": "Love it!",
+        "rate": 5,
+        "createdAt": 1694493928300,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u208",
+          "fullname": "Liri C",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696589336/MV5BZDJhYzdkMTUtMTg2MS00ZTM5LWI1OGUtYTY5MzY4NDM3NThjXkEyXkFqcGdeQXVyMjQwMDg0Ng_._V1__okvske.jpg",
+          "location": "Greece"
+        }
+      },
+      {
+        "id": "r10424",
+        "gig": "{optional-mini-gig}",
+        "txt": "Thanks a lot bro! I will order more, be sure",
+        "rate": 5,
+        "createdAt": 1694493927300,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "d108",
+          "fullname": "Adnan Adnani",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/256d39d8ed1c83a1b86dba441e34478f-1672157011855/10831853-8fc3-4d07-8f53-80d17e361e27.jpg",
+          "location": 'India',
+        }
+      },
+      {
+        "id": "r1230424",
+        "gig": "{optional-mini-gig}",
+        "txt": "Do not order! Doesn't answer messages, after I received the product he just stopped contacting me",
+        "rate": 1,
+        "createdAt": 1621993933389,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "tHx1l",
+          "fullname": "Thomas C",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/429c1a9395f66cd8a36b38028ff35aa6-1550219507580/db25059c-6725-4e49-bf82-fa4d2af0a780.jpg",
+          "location": 'United states',
+        }
+      },
+    ],
 
   },
   {
@@ -135,7 +206,7 @@ const demoUsers = [
     imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6eac0adad8586c2d46b7fcf4a5f0d227-1671025218902/9fe6d9ab-6d6a-4199-9934-b9d1675d709d.jpg",
     username: "julia123",
     password: "123",
-    rate: 5,
+    rate: 4.8,
     level: 2,
     desc: "Welcome! I always love to explore new things, design, work, nature, and that's why I love to be called Explorance. I own a creative design studio based in India specializing in Logo and brand design. I am passionate and dedicated in everything I create is minimal, clean, smart, and remarkable. I believe in 100% satisfaction, nothing less! Please free to get in touch, let's work together.",
     isSeller: true,
@@ -315,7 +386,7 @@ const demoUsers = [
     imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/3e02f819fe9719f3988281f83826cbcf-1670335805098/f18b5e11-2353-4e7d-b001-49c9531165cf.jpg",
     username: "simontimber",
     password: "123",
-    rate: 4,
+    rate: 4.9,
     level: 1,
     desc: `I am 'Track' full-stack web developer with more than 10+ years of IT experience, including PHP, MySQL, HTML5, CSS3, Frameworks, javascript/node. js, WordPress, and Plus for you is I am working as an SEO Expert for the last 7 years.
 
@@ -643,6 +714,20 @@ const demoUsers = [
           "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/eb6eef20969192eca1d8b1301e91cb4f-1630440851285/60f03cc4-71f2-437b-a241-f9423b6e2728.jpg",
           "location": "Canada",
         },
+      },
+      {
+        "id": "resdv2",
+        "gig": "{optional-mini-gig}",
+        "txt": "Thank you!",
+        "rate": 5,
+        "createdAt": 1684493926101,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u154",
+          "fullname": "Yomi",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4b7fe17dde65726409810dd2541769c4-1681190210085/1f9751ab-3804-48b7-a2ec-7eabe5361ad8.jpg",
+          "location": "United states",
+        },
       }
     ],
   },
@@ -671,6 +756,20 @@ const demoUsers = [
           "fullname": "Justin Timber",
           "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/eb6eef20969192eca1d8b1301e91cb4f-1630440851285/60f03cc4-71f2-437b-a241-f9423b6e2728.jpg",
           "location": "Canada",
+        },
+      },
+      {
+        "id": "resdq23v3",
+        "gig": "{optional-mini-gig}",
+        "txt": "Thanks for your help Yomi!",
+        "rate": 5,
+        "createdAt": 1694493927315,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "aax1lr",
+          "fullname": "Aaron B",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/e0c3546285a4bcc29110abed89772c7c-1648494595657/9d64cf71-f097-4e6a-9670-97afdd1168f8.jpg",
+          "location": "United states",
         },
       }
     ],
