@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { uploadService } from '../services/upload.service'
+import LoadingCircle from './LoadingCircle'
 
 export function ImgUploader({ onUploaded = null }) {
   const [imgData, setImgData] = useState({
@@ -19,14 +20,17 @@ export function ImgUploader({ onUploaded = null }) {
 
   function getUploadLabel() {
     if (imgData.imgUrl) return 'Upload More?'
-    return isUploading ? 'Uploading....' : 'Upload Image'
+    return isUploading ? <LoadingCircle /> : 'Upload Image'
   }
 
   return (
     <div className="upload-preview">
       {imgData.imgUrl && <img src={imgData.imgUrl} style={{ maxWidth: '200px', float: 'right' }} />}
-      <label className='user-info-label' htmlFor="imgUpload">{getUploadLabel()}</label>
-      <input className='user-info-input' type="file" onChange={uploadImg} accept="img/*" id="imgUpload" />
+      <label className='user-info-label'>
+        <i className="fa-solid fa-cloud-arrow-up cloud-icon"></i>
+        {getUploadLabel()}
+        <input className='user-info-input' type="file" onChange={uploadImg} accept="img/*" id="imgUpload" />
+      </label>
     </div>
   )
 }
