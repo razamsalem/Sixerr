@@ -21,7 +21,15 @@ export function FilterPill({ filterKey, filterValue, onRemoveFilterPill }) {
             if (filterValue < 2) pillValue = `24H Express delivery`
             else if (filterValue === 'Infinity') pillValue = null
             else pillValue = `Delivery in ${filterValue} days`
-
+            break
+        case 'topRated':
+            pillValue = 'Top rated sellers'
+            break
+        case 'basicLevel':
+            pillValue = 'Basic leveled users'
+            break
+        case 'premiumLevel':
+            pillValue = 'Premium leveled users'
         default:
             null
             break;
