@@ -73,6 +73,7 @@
         .package-options {
             width: rem(524px); //temporary (until MQ)
             margin-bottom: 2rem;
+
             button {
                 flex: 1;
                 font-weight: 700;
@@ -160,10 +161,10 @@
     }
 
     .big-gig-preview {
-        
+
         width: 26em;
         position: sticky;
-        top: 15vh;
+        top: rem(20px);
         height: fit-content;
         display: flex;
         flex-direction: column;
@@ -171,7 +172,7 @@
         border: 0.125em solid #e5e5e7;
         padding: 0.875em 1.5em;
         gap: 0.625em;
-        
+
 
         .preview-heading {
             text-align: center;
@@ -226,39 +227,46 @@
         }
     }
 
-    @include for-xs-small-layout{
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-auto-flow: row;
-            gap: 5px;
-            margin-top: 3.125rem;
-            padding-inline: 0;
-            .create-gig{
-                place-items: center;
-                .sub-heading {
-                    text-align: center;
-                }
-                .package-options {
-                    width: 72vw;
-                    margin-bottom: 2rem;
-                }
+    @include for-xs-small-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+        gap: 5px;
+        margin-top: 3.125rem;
+        padding-inline: 0;
+
+        .create-gig {
+            place-items: center;
+
+            .sub-heading {
+                text-align: center;
             }
-           .big-gig-preview {
-                place-self: center;
+
+            .package-options {
+                width: 72vw;
+                margin-bottom: 2rem;
             }
+        }
+
+        .big-gig-preview {
+            place-self: center;
+        }
     }
-    
-    @include for-normal-layout{
+
+    @include for-normal-layout {
         display: grid;
         grid-template-columns: auto 1fr;
         gap: 29px;
         margin-top: 3.125rem;
         padding-inline: 29px;
-        .create-gig{
+
+        .create-gig {
             place-items: start;
+
             .sub-heading {
                 text-align: start;
             }
+
             .package-options {
                 width: 80%;
                 // margin-bottom: 1rem;
@@ -266,12 +274,13 @@
                 align-items: start;
             }
         }
+
         .big-gig-preview {
             position: sticky;
-            top: 15vh;
+            top: rem(20px);
             place-self: start;
         }
-}
+    }
 }
 
 .MuiList-root {
