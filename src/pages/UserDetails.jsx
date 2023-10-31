@@ -110,6 +110,7 @@ export function UserDetails() {
   if (!loggedUser) {
     navigate('/')
     showErrorMsg('You must be logged in to continue')
+    return
   }
   if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
   return (
