@@ -55,6 +55,12 @@
     }
 }
 
+@mixin for-xxl-layout {
+    @media (min-width: $xxl-breakpoint) {
+        @content;
+    }
+}
+
 /* Media  Mixins */
 @mixin aspect-ratio($width, $height) {
     position: relative;

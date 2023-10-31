@@ -1,4 +1,4 @@
-export function DashboardNavBtn({activeBtn, setActiveBtn, setLoading }) {
+export function DashboardNavBtn({ activeBtn, setActiveBtn, setLoading }) {
     return (
         <>
             <button
@@ -9,11 +9,11 @@ export function DashboardNavBtn({activeBtn, setActiveBtn, setLoading }) {
             </button>
 
             <button
-                className={activeBtn === 'dashboard' ? 'active' : ''}
+                className={`data-btn ${activeBtn === 'dashboard' ? 'active' : ''}`}
                 onClick={() => setActiveBtn('dashboard')}
             >
                 <span className="fa-solid fa-square-poll-vertical icon"></span> Data
-            </button>
+            </button >
 
             <button
                 className={activeBtn === 'impressions' ? 'active' : ''}
