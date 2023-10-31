@@ -184,6 +184,69 @@
 
     }
 
+    @include for-mobile-layout {
+        .gig-preview {
+            border-radius: rem(5px);
+            box-shadow: em(1px) em(1px) em(5px) rgba(211, 211, 211, 0.851);
+            background-color: #fafafa;
+            position: relative;
+            gap: em(15px);
+            height: rem(234px);
+            width: rem(max(360px, 90%));
+            height: rem(150px);
+            overflow: unset;
+            display: flex;
+            flex-direction: row;
 
+            .img-container {
+                width: auto;
+
+                .slick-slider {
+                    width: rem(150px);
+                    height: rem(150px);
+
+                    img {
+                        height: rem(150px);
+                    }
+                }
+            }
+
+            .rate-wrapper {
+                font-size: rem(14px);
+            }
+
+            .owner-gig-title {
+                font-size: rem(14px);
+                margin-block: rem(7px);
+            }
+
+            .owner-container {
+                padding: rem(10px);
+
+                .rating-price {
+                    width: 100%;
+                }
+            }
+
+            .owner-details {
+                padding: rem(10px);
+                flex-direction: column-reverse;
+
+                .owner-details-1 {
+                    display: none;
+                }
+            }
+
+
+            .gig-price {
+                font-size: rem(14px);
+                margin-block-start: auto;
+                position: absolute;
+                bottom: em(4px);
+                right: em(13px);
+            }
+
+        }
+    }
 
 }

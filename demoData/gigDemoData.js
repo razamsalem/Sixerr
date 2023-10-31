@@ -269,7 +269,7 @@ const gigDemoData = [
       "fullname": "Simon Timber",
       "imgUrl": "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698676156/simon-1_mlnqhr.webp",
       "level": 1,
-      "rate": 1,
+      "rate": 4.9,
     },
     daysToMake: 3,
     description: `
