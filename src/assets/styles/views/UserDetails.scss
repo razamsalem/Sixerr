@@ -400,15 +400,38 @@
 
             @media (max-width: $mobile-breakpoint) {
 
-                .order-header {
-                    justify-content: center;
-                }
                 h1 {
                     text-align: center;
                 }
 
                 button {
-                 display: none;   
+                    display: none;
+                }
+
+                .order-header {
+                    justify-content: center;
+                }
+
+                .no-gigs-header {
+                    text-align: center;
+                }
+
+                .no-gigs-content {
+                    text-align: center;
+                }
+            }
+
+            @media (max-width: 990px) {
+                .no-gigs-header {
+                    text-align: center;
+                }
+
+                .no-gigs-content {
+                    text-align: center;
+
+                    .empty {
+                        margin-block-end: rem(12px);
+                    }
                 }
             }
 
