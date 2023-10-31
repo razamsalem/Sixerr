@@ -32,8 +32,8 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
     if (!isOpen) return null
 
     const style = {
-        position: 'absolute',
-        top: position.top + 'px',
+        position: 'fixed',
+        top: position.bottom + 10 + 'px',
         left: position.left + 'px',
         width: isOpen ? 'auto' : 0,
         height: isOpen ? 'auto' : 0,

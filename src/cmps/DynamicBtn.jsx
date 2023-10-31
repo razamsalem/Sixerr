@@ -44,8 +44,9 @@ export function DynamicBtn() {
         setSelectedBtn({
             ...btns[idx],
             position: {
-                top: buttonRect.bottom + window.scrollY,
-                left: buttonRect.left + window.scrollX,
+                top: buttonRect.top,
+                bottom: buttonRect.bottom,
+                left: buttonRect.left,
                 btnWidth: buttonRect.width,
             },
         })
