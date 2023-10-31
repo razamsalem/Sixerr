@@ -11,9 +11,9 @@ export function FilterPill({ filterKey, filterValue, onRemoveFilterPill }) {
         case 'txt':
             pillValue = `Keywords include "${filterValue}" `
             break
-        case 'category':
-            pillValue = `${filterValue} `
-            break
+        // case 'category':
+        //     pillValue = `${filterValue} `
+        //     break
         case 'tags':
             if(filterValue && filterValue.length>0){
                 pillValue = `Category tag "${filterValue}" `

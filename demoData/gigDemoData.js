@@ -37,7 +37,7 @@ const gigDemoData = [
     description: "Captivating, enriched, elaborate and original is what I believe you're looking for. Your business logo deserves to be created by somebody who gets your business. I am professional designer offering high-quality business Logo design services since 2013 and branding solutions to all kind of businesses",
     imgUrls: ["https://res.cloudinary.com/dgsfbxsed/image/upload/v1698674928/taylor-1_nmgnmv.webp", "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698674928/taylor-2_uqjv74.webp"],
     category: "Graphics & Design",
-    tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design'],
+    tags: ['Website Design', 'App Design', 'UX Design'],
     likedByUsers: ['mini-user']
   },
   {

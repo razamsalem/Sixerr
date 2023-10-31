@@ -1,0 +1,21 @@
+.radio-item-wrapper{
+    gap:em(8px);
+    &:hover{
+        border-radius: 8px;
+        background-color: #fafafa;
+    }
+    padding: 12px;
+    .form-check-input{
+        height: 24px;
+        width: 24px;
+        &:checked{
+            background-color: #222325;
+            box-shadow: 0 0 0 0.25rem #dadbdd;
+            border: 1px solid black;
+        }
+        &:focus{
+            box-shadow: 0 0 0 0.25rem #dadbdd;
+            border: 1px solid black;
+        }
+    }
+}

@@ -10,6 +10,9 @@
 
 
     .filter-btns {
+        .border{
+            border:1px solid black;
+        }
         .filter-btn {
             position: relative;
             font-size: 16px;
@@ -34,6 +37,7 @@
 
             &:focus {
                 background-color: $light-clr1;
+                border: 1px solid $dark-clr1;
             }
 
             &:hover {

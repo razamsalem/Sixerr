@@ -6,10 +6,11 @@ import { gigService } from '../services/gig.service.local';
 import { DeliveryTimeArea } from './DeliveryTimeArea';
 import { ServiceOptions } from './ServiceOptions';
 
-function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globalFilterBy, setFilterBy }) {
+function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globalFilterBy, setFilterBy,setClicked }) {
     const [filterByToEdit, setFilterByToEdit] = useState(globalFilterBy)
     const sellerOptions = [{ txt: 'Top Rated Seller', name: 'topRated', value: true }, { txt: 'Level 1', name: 'basicLevel', value: 1 }, { txt: 'Level 2', name: 'premiumLevel', value: 2 }]
-
+  
+    // const [style]
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -64,13 +65,26 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
                 value = ev.target.checked
                 break
         }
+        if(field === 'tags'){
+            setFilterByToEdit((prevFilter) => {
+                const updatedTags = ev.target.checked
+                  ? [...prevFilter[field], ev.target.value]
+                  : prevFilter[field].filter((tag) => tag !== ev.target.value);
+                return { ...prevFilter, [field]: updatedTags };
+              })
+        }
+       else{
         setFilterByToEdit((prevFilter) => {
             return { ...prevFilter, [field]: value }
         })
+       }
+        
+       
     }
 
     function onSubmit() {
         setFilterBy({ ...globalFilterBy, ...filterByToEdit })
+
     }
 
     return (
@@ -119,8 +133,12 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
 
             </div>
             <div className='button-row'>
-                <button className='clear-btn' onClick={() => setFilterByToEdit({ minPrice: '', maxPrice: '', daysToMake: '' })}>Clear All</button>
-                <button className='apply-btn' onClick={onSubmit}>Apply</button>
+                <button className='clear-btn' onClick={() => {setFilterByToEdit({ minPrice: '', maxPrice: '', daysToMake: '' })
+                    setClicked()}}>Clear All</button>
+                <button className='apply-btn' onClick={()=>{
+                    onSubmit()
+                    setClicked()
+                }}>Apply</button>
             </div>
         </div>
     )

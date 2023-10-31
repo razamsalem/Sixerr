@@ -7,37 +7,30 @@ export function ServiceOptions({ handleChange, filterByToEdit }) {
     const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
 
     function getTags() {
-        // console.log(filterBy);
         let category =  gigService.categories.filter(cat=>cat.category===filterBy.category)
-        // console.log(category,"pp");
-        // console.log(category[0].tags);
         return category[0].tags
     }
-
-    function getCategories() {
-       return  gigService.categories.map(cat=>cat.category)
-    }
-
     
         return (
             <div className="radio-list flex">
-                {/* <label className='radio-item flex'>
-                        <input className="form-check-input bigger radio delivery" type="radio" name='serviceOption' onChange={handleChange} />
-                        <div className="inner-radio">
-                            <p>{time.txt}</p>
-                        </div>
-                </label> */}
-                {filterBy.tags && filterBy.tags.length>0 && getTags().map((service,idx)=>{
+                {/* <form>
+                {(filterBy.category==="" || filterBy.tags.length===0) && getCategories().map((cat,idx)=>{
                     return <div key={idx}>
-                                <input type="radio" />
-                                <p>{service}</p>
+                                <input type="radio" name="category" value={cat} onChange={handleChange}/>
+                                <span>{cat}</span>
+                            </div>})}
+                </form> */}
+
+                {filterBy.category!=="" && getTags().map((service,idx)=>{
+                    return <div key={idx} className='seller-filter-container'>
+                                <label htmlFor={idx} className='flex radio-item-wrapper'>
+                                    <input type="checkbox" name="tags" value={service} onChange={handleChange} checked={filterByToEdit.tags.includes(service)} id={idx} className="form-check-input"/>
+                                    {service}
+                                </label>
                             </div>
                 })}
-                {filterBy.tags.length===0 && getCategories().map((cat,idx)=>{
-                    return <div key={idx}>
-                                <input type="radio" />
-                                <p>{cat}</p>
-                            </div>})}
+
+               
         </div>
         )
     

@@ -13,7 +13,8 @@ export function DynamicBtn() {
     const [isArrowUp, setIsArrowUp] = useState([])
     const [selectedBtn, setSelectedBtn] = useState(null)
     const modalRef = useRef(null)
-
+    const [style,setStyle] = useState({})
+    const [clicked,isClicked] = useState(false)
     for (const key in globalFilterBy) {
         if (!filterKeys.includes(key)) filterKeys.push(key)
     }
@@ -68,24 +69,36 @@ export function DynamicBtn() {
 
     function onRemoveFilterPill(ev) {
         const filterKey = ev.target.name
-        setFilterBy({ [filterKey]: '' })
+            setFilterBy({ [filterKey]: '' })
     }
 
+    function getStyle() {
+        setStyle({border:'1px solid black'})
+    }
+
+    function setClicked() {
+        isClicked(prev=>!prev)
+    }
     if (!btns) return '<div></div>'
 
     return (
         <section className={`filter-btns-container full main-layout ${isStickyActive ? 'sticky-active' : ''}`}>
             <section className="filter-btns">
-                {btns.map((btn, idx) => (
-                    <button
-                        key={btn.title}
-                        onClick={(ev) => onToggleArrow(ev, idx)}
-                        className={`filter-btn ${isArrowUp[idx] ? 'arrow-up' : ''}`}
+                {btns.map((btn, idx) => {
+                    return <>
+                     {btn.title === 'Service options' && !globalFilterBy.category ? <></>:
+                     <button
+                     key={btn.title}
+                     onClick={(ev) => onToggleArrow(ev, idx)}
+                     className={`filter-btn ${isArrowUp[idx] ? 'arrow-up' : ''} ${clicked ? 'border' : ''}`}
+                    //  style={clicked?{border:'1px solid black'} : {borderStyle: 'none'}}
                     >
-                        {btn.title}{' '}
-                        <span className={`icon fa-solid ${isArrowUp[idx] ? 'angle-up' : 'angle-down'}`}></span>
-                    </button>
-                ))}
+                     {btn.title}{' '}
+                     <span className={`icon fa-solid ${isArrowUp[idx] ? 'angle-up' : 'angle-down'}`}></span>
+                 </button>}
+                    </>
+                }
+                )}
                 <DynamicModal
                     setFilterBy={setFilterBy}
                     globalFilterBy={globalFilterBy}
@@ -95,6 +108,7 @@ export function DynamicBtn() {
                     content={'some content'}
                     position={selectedBtn?.position}
                     modalRef={modalRef}
+                    setClicked ={setClicked}
                 />
 
                 <section className='pills-container'>
