@@ -107,11 +107,11 @@ export function UserDetails() {
     navigate('/gig/add')
   }
 
-  if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
   if (!loggedUser) {
     navigate('/')
     showErrorMsg('You must be logged in to continue')
   }
+  if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
   return (
     <>
       {isModalOpen && (
