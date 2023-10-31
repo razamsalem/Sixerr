@@ -109,10 +109,81 @@ const demoUsers = [
     rate: 4.9,
     level: 1,
     desc: "Are you looking for an expert web developer to design and develop your website? If your answer is yes, then I welcome you and you are at the right place.",
-    isSeller: false,
+    isSeller: true,
     location: 'Italy',
-    lang: ['Italian', 'Chinese', 'English', 'Spanish'],
-    reviews: []
+    lang: ['Italian', 'English', 'Spanish'],
+    reviews: [
+      {
+        "id": "r1012",
+        "gig": "{optional-mini-gig}",
+        "txt": "Very nice. Thank you.",
+        "rate": 4,
+        "createdAt": 1697993927300,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u101",
+          "fullname": "Taylor P",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696177526/cld-sample.jpg",
+          "location": "Germany",
+        }
+      },
+      {
+        "id": "r1044",
+        "gig": "{optional-mini-gig}",
+        "txt": "Very fast, very kind!",
+        "rate": 5,
+        "createdAt": 1697993927389,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "d105",
+          "fullname": "Sohaib Saim",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c45eaabd0990937c721c897183c6805f-1661974546688/fc7dd1c0-d3a1-4122-826f-6758abf48a4e.png",
+          "location": 'Ukrain',
+        }
+      },
+      {
+        "id": "r1033",
+        "gig": "{optional-mini-gig}",
+        "txt": "Love it!",
+        "rate": 5,
+        "createdAt": 1694493928300,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u208",
+          "fullname": "Liri C",
+          "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1696589336/MV5BZDJhYzdkMTUtMTg2MS00ZTM5LWI1OGUtYTY5MzY4NDM3NThjXkEyXkFqcGdeQXVyMjQwMDg0Ng_._V1__okvske.jpg",
+          "location": "Greece"
+        }
+      },
+      {
+        "id": "r10424",
+        "gig": "{optional-mini-gig}",
+        "txt": "Thanks a lot bro! I will order more, be sure",
+        "rate": 5,
+        "createdAt": 1694493927300,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "d108",
+          "fullname": "Adnan Adnani",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/256d39d8ed1c83a1b86dba441e34478f-1672157011855/10831853-8fc3-4d07-8f53-80d17e361e27.jpg",
+          "location": 'India',
+        }
+      },
+      {
+        "id": "r1230424",
+        "gig": "{optional-mini-gig}",
+        "txt": "Do not order! Doesn't answer messages, after I received the product he just stopped contacting me",
+        "rate": 1,
+        "createdAt": 1621993933389,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "tHx1l",
+          "fullname": "Thomas C",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/429c1a9395f66cd8a36b38028ff35aa6-1550219507580/db25059c-6725-4e49-bf82-fa4d2af0a780.jpg",
+          "location": 'United states',
+        }
+      },
+    ],
 
   },
   {

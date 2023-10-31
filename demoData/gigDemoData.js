@@ -570,6 +570,55 @@ const gigDemoData = [
     }]
   },
   {
+    _id: "ApOD18d",
+    title: "I will convert figma to html, psd to html, xd to html tailwindcss",
+    price: 50,
+    packages: {
+      basic: {
+        title: '1 Landing page website',
+        packPrice: 50,
+        packDaysToMake: 3,
+        desc: 'High Quality coding in HTML, CSS, Bootstrap/Tailwind - extra charge for custom JS',
+        features: ['1 page', 'Responsive design', 'Slider/scroller']
+      },
+      standard: {
+        title: 'Startup',
+        packPrice: 140,
+        packDaysToMake: 5,
+        desc: '2 Pages high quality HTML, CSS, JS Bootstrap/Tailwind development',
+        features: ['2 pages', 'Responsive design', 'Slider/scroller', 'Browser compatibility']
+      },
+      premium: {
+        title: 'Business',
+        packPrice: 295,
+        packDaysToMake: 7,
+        desc: '5 Pages high quality HTML, CSS, JS Bootstrap/Tailwind development',
+        features: ['5 pages', 'Responsive design', 'Slider/scroller', 'Browser compatibility', 'Server upload']
+      }
+    },
+    owner: {
+      "_id": "u207",
+      "fullname": "james_q55",
+      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1698681218/desktop-wallpaper-look-face-model-profile-male-guy-for-section-%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D1%8B-model-men_wizuct.jpg",
+      "level": 2,
+      "rate": 4.7,
+    },
+    daysToMake: 3,
+    description: 'I am a Full stack web and WordPress developer, I have been doing web development for the last 5 years. I have worked with various technologies including ✅ HTML5, ✅ CSS3, ✅ CSS3 Animation, ✅ Bootstrap, ✅ JavaScript, ✅',
+    imgUrls: [
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698760832/convert-figma-to-html-psd-to-html-sketch-to-html-xd-to-html-css-bootstrap_wecbgs.jpg",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698760747/c63a16335bba235adc008ca06bdb19c5945be604_u6dxvg.webp",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698760840/53bef6c1ff746a306eb355208e2cc486476441c4_gvvflf.webp",
+    ],
+    category: "Programming & Tech",
+    tags: ['Website Development', 'Web Applications', 'HTML & CSS Developers', 'JavaScript Developers'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
     _id: "R8aks45Q",
     title: "I will design a brand style guide and logo for you",
     price: 25,
@@ -830,6 +879,55 @@ const gigDemoData = [
     }]
   },
   {
+    _id: "Ap0ll0207",
+    title: "I will create pixel art characters, items, icon, and animate them",
+    price: 20,
+    packages: {
+      basic: {
+        title: 'Mini Art',
+        packPrice: 20,
+        packDaysToMake: 6,
+        desc: '1 simple figure, simple animation.',
+        features: ['1 initial concept included', '5-second running time', 'Video format included', 'Seamless loop']
+      },
+      standard: {
+        title: 'Gold art',
+        packPrice: 45,
+        packDaysToMake: 7,
+        desc: '1 figure little more complex, simple animation.',
+        features: ['1 initial concept included', '5-second running time', 'Video format included', 'Seamless loop', 'Custom design', 'Based on image/video']
+      },
+      premium: {
+        title: 'Amazing art',
+        packPrice: 70,
+        packDaysToMake: 10,
+        desc: 'landscape, or character with background animation',
+        features: ['1 initial concept included', '5-second running time', 'Video format included', 'Seamless loop', 'Custom design', 'Based on image/video', 'Full color']
+      }
+    },
+    owner: {
+      "_id": "u207",
+      "fullname": "james_q55",
+      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1698681218/desktop-wallpaper-look-face-model-profile-male-guy-for-section-%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D1%8B-model-men_wizuct.jpg",
+      "level": 2,
+      "rate": 4.7,
+    },
+    daysToMake: 6,
+    description: 'If you\'re a fan of retro pixel art and want a custom illustration, NFT, profile picture, avatar, emoticon, twitch banner, game graphics, or anything else pixel-based, I\'m your guy! I specialize in creating all types of pixel art and 8-bit characters and objects, including animation sprites.',
+    imgUrls: [
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698761490/c3a002099d2bd8bc3e0c15b9b2a716be95072dc6_ecp1gj.webp",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698761533/D46F4D7E-5737-4F70-AB2A-A66BC4DE789D_frxo3y.webp",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698761953/316C986E-2D02-4BE9-A3C9-442530D1BF60_kvy6lc.webp",
+    ],
+    category: "Video & Animation",
+    tags: ["Video Editing", "Visual Effects", "Video Art", "Logo Animation", "Character Animation", "Animated GIFs"],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
     _id: "iz12",
     title: "I will set up your etsy shop,add listings, SEO or do a complete overhaul",
     price: 40,
@@ -970,6 +1068,55 @@ const gigDemoData = [
     category: "Digital Marketing",
     tags: ['Social Media Marketing', 'Organic Social Promotions'],
     likedByUsers: ['mini-user']
+  },
+  {
+    _id: "g87624",
+    title: "I will create cute gifs for your instagram and facebook stories",
+    price: 20,
+    packages: {
+      basic: {
+        title: '1 custom Gif',
+        packPrice: 20,
+        packDaysToMake: 2,
+        desc: 'Custom gif of your character/object with a basic action performed.',
+        features: ['1 initial concept included', 'Seamless loop', 'Based on image/video']
+      },
+      standard: {
+        title: '5 custom Gifs',
+        packPrice: 75,
+        packDaysToMake: 4,
+        desc: 'Custom set of 5 Gifs of simple character/object with 5 different actions performed.',
+        features: ['1 initial concept included', 'Seamless loop', 'Based on image/video', 'Custom design']
+      },
+      premium: {
+        title: '10 custom Gifs',
+        packPrice: 130,
+        packDaysToMake: 7,
+        desc: 'Custom set of 10 Gifs of your character/object with 10 different actions performed.',
+        features: ['1 initial concept included', 'Seamless loop', 'Based on image/video', 'Custom design', 'Full color']
+      }
+    },
+    owner: {
+      "_id": "u207",
+      "fullname": "james_q55",
+      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1698681218/desktop-wallpaper-look-face-model-profile-male-guy-for-section-%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D1%8B-model-men_wizuct.jpg",
+      "level": 2,
+      "rate": 4.7,
+    },
+    daysToMake: 2,
+    description: 'Character to animate must be simple as the GIG example (this could lower the price and I\'ll send a custom 10-15 usd order). Complex character extra (please message me first to discuss a custom offer or if you want to know if your character is simple enough).',
+    imgUrls: [
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698762672/4fcbedd9890b6917ef6de118469a4299d27a09a3_lwxp6n.webp",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698762641/4568df8ba3f075b4355cf4022a8d5419ce81a7d3_y6wpad.webp",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698762664/2e1be8873a3eb361496323b575293cc4759f200d_k6popr.webp",
+    ],
+    category: "Video & Animation",
+    tags: ["Video Editing", "Visual Effects", "Video Art", "Logo Animation", "Character Animation", "Animated GIFs"],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
   },
   {
     _id: "iz14",
@@ -1210,6 +1357,54 @@ const gigDemoData = [
     ],
     category: "Writing & Translation",
     tags: ['Articles & Blog Posts', 'Content Strategy', 'Proofreading & Editing', 'AI Content Editing', 'Book Editing', 'Beta Reading', 'Writing Advice', 'Career Writing', 'Resume Writing', 'Cover Letters', 'LinkedIn Profiles'],
+    likedByUsers: [{
+      "_id": "u103",
+      "fullname": "David C",
+      "imgUrl": "/img/img3.jpg"
+    }]
+  },
+  {
+    _id: "Ap0ll0OD18d",
+    title: "I will fix bugs errors in your javascript, html, css code",
+    price: 80,
+    packages: {
+      basic: {
+        title: 'Simple bug',
+        packPrice: 80,
+        packDaysToMake: 2,
+        desc: 'I will fix Simple bug',
+        features: ['Bug investigation', 'Fix documentation', 'Detailed code comments']
+      },
+      standard: {
+        title: 'Meduim bug ',
+        packPrice: 150,
+        packDaysToMake: 2,
+        desc: 'I will fix Medium bug',
+        features: ['Bug investigation', 'Fix documentation', 'Detailed code comments']
+      },
+      premium: {
+        title: 'Advanced bug',
+        packPrice: 300,
+        packDaysToMake: 2,
+        desc: 'I will fix Advanced bug',
+        features: ['Bug investigation', 'Fix documentation', 'Detailed code comments']
+      }
+    },
+    owner: {
+      "_id": "u207",
+      "fullname": "james_q55",
+      "imgUrl": "https://res.cloudinary.com/de2rdmsca/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1698681218/desktop-wallpaper-look-face-model-profile-male-guy-for-section-%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D1%8B-model-men_wizuct.jpg",
+      "level": 2,
+      "rate": 4.7,
+    },
+    daysToMake: 2,
+    description: 'Hey there, Are you struggling to fix bugs and errors in your JavaScript, Html, CSS code? You\'re in the in the right place!',
+    imgUrls: [
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698761102/5ed4622f7c987d922fa0fd6800a9ab34b467f083_lsbp3q.webp",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698761039/c17db0eb0d70a2b53e647e16b7e67ef129f7c5bc_br08xb.webp",
+    ],
+    category: "Programming & Tech",
+    tags: ['Website Development', 'Web Applications', 'Software Development', 'HTML & CSS Developers', 'JavaScript Developers'],
     likedByUsers: [{
       "_id": "u103",
       "fullname": "David C",
