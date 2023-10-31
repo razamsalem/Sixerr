@@ -250,3 +250,33 @@
     }
 
 }
+
+.no-gigs-message {
+    margin-block: rem(32px);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: rem(30px);
+
+    .clear {
+        max-width: rem(168px);
+        font-size: rem(14px);
+        line-height: rem(14px);
+        padding: 10px 28px;
+        background-color: $accent-clr;
+        font-weight: 600;
+        color: $light-clr !important;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        transition: color .2s, background-color .2s, box-shadow .2s, border .2s;
+        margin-block-end: rem(24px);
+
+        &:hover {
+            background-color: $dark-accent-clr;
+        }
+    }
+
+    img {
+        max-width: 45%;
+    }
+}
