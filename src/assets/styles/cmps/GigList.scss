@@ -7,6 +7,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        overflow: hidden;
 
         .img-container {
             width: 100%;
@@ -25,8 +26,9 @@
                     top: 50%;
                     transform: translateY(-50%);
                     place-items: center;
+
                     i {
-                        font-size: rem(13px); 
+                        font-size: rem(13px);
                     }
 
                     &.prev {
