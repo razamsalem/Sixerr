@@ -13,6 +13,10 @@ export function OrderPreview({ order, mode, openModal, onApproveOrder, onDecline
         if (status === 'rejected') return 'rejected-label'
         if (status === 'fulfilled') return 'fulfilled-label'
     }
+
+    function handleActionClick(event) {
+        event.stopPropagation()
+    }
     
     return (
         <tr key={order._id} onClick={() => openModal(order)}>
@@ -26,7 +30,7 @@ export function OrderPreview({ order, mode, openModal, onApproveOrder, onDecline
             <td className='order-title'><LongTxt txt={order.gig.title} length={33} showReadMore={false} /></td>
             <td>{utilService.calculateDaysFromTimestamp(order.createdAt, order.daysToMake)}</td>
             <td>${order.packPrice}</td>
-            <td className="status">
+            <td onClick={handleActionClick} className="status">
                 {order && <span className={`${checkStatus(order.status)} label `}> {utilService.capitalizeFirstLetter(order.status)} </span>}
                 {mode === 'seller' &&
                     <DropdownBtn>
