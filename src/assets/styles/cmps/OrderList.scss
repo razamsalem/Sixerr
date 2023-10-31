@@ -1,5 +1,4 @@
 .order-list {
-    // width: 50vw;
     border-collapse: collapse;
     border: 1px solid $modal-filter-border-clr;
 
@@ -55,5 +54,19 @@
 
         }
 
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        width: 100%;
+        margin: auto;
+        thead {
+            display: none;
+        }
+
+        tr, td {
+            padding: rem(7px);
+            display: block;
+        }
+    
     }
 }

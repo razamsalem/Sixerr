@@ -1,8 +1,4 @@
 .gig-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(309px, 1fr));
-    grid-gap: em(32px);
-
     .gig-preview {
         display: flex;
         flex-direction: column;
@@ -134,9 +130,13 @@
             }
 
             .owner-fullname {
-
                 font-weight: 700;
                 line-height: rem(21px);
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
 

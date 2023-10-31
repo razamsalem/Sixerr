@@ -1,15 +1,19 @@
 .user-details-container {
-    // display: flex;
-    gap: rem(100px);
     padding-block-end: rem(18px);
 
     &.bg {
         background-color: $user-bgclr;
     }
 
+    @media only screen and (min-width: 1260px) {
+        gap: rem(100px);
+    }
+
+
     .details-container {
         display: flex;
-        gap: rem(100px);
+        gap: rem(50px);
+        flex-direction: column;
 
         .user-details {
             // margin-inline-start: 12.063rem;
@@ -19,8 +23,9 @@
                 border: 1px solid $modal-filter-border-clr;
                 padding: rem(30px);
                 margin-block-start: rem(50px);
+                min-width: 300px;
 
-                font-size: 14px;
+                font-size: rem(14px);
                 line-height: 130%;
                 color: $dark-clr-1;
                 background-color: $light-clr;
@@ -89,30 +94,36 @@
 
                 }
 
-                @media only screen and (min-width: 600px) {
-                    width: 17rem;
-                }
-
                 @media only screen and (min-width: 1200px) {
-                    width: 21rem;
+                    flex-direction: row;
+                    width: 22rem;
                 }
 
                 @media only screen and (min-width: 1315px) {
+                    flex-direction: row;
                     width: 25rem;
                 }
+
+            }
+
+            @media only screen and (min-width: 1260px) {
+                gap: rem(100px);
             }
 
             .desc-card {
                 position: relative;
                 border: 1px solid $modal-filter-border-clr;
                 padding: 30px;
-                max-width: 400px;
                 margin-block-start: 25px;
 
                 font-size: 14px;
                 line-height: 130%;
                 color: $dark-clr-1;
                 background-color: $light-clr;
+
+                @media only screen and (min-width: 1150px) {
+                    max-width: 400px;
+                }
 
 
                 .user-profile-desc {
@@ -330,7 +341,10 @@
                     }
                 }
             }
+        }
 
+        @media only screen and (min-width: 990px) {
+            flex-direction: row;
         }
     }
 
@@ -384,6 +398,19 @@
                 }
             }
 
+            @media (max-width: $mobile-breakpoint) {
+
+                .order-header {
+                    justify-content: center;
+                }
+                h1 {
+                    text-align: center;
+                }
+
+                button {
+                 display: none;   
+                }
+            }
 
         }
 
@@ -510,9 +537,9 @@
         }
 
     }
-    
-    .user-gigs-preview{
+
+    .user-gigs-preview {
         font-size: rem(20px);
     }
-    
+
 }

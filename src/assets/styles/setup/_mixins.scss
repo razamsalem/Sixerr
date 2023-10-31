@@ -25,6 +25,18 @@
     }
 }
 
+@mixin for-extraNarrow-layout {
+    @media (min-width: $extraNarrow-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-wideNormal-layout {
+    @media (min-width: $wideNormal-breakpoint) {
+        @content;
+    }
+}
+
 @mixin for-normal-layout {
     @media (min-width: $normal-breakpoint) {
         @content;

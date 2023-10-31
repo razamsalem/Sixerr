@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from "react"
 import { useDispatch } from "react-redux"
 import { useParams, useNavigate } from "react-router-dom"
-import { Carousel } from 'react-responsive-carousel';
+import { Carousel } from 'react-responsive-carousel'
 import { gigService } from "../services/gig.service.local"
 import starGrey from "../assets/img/star-grey.svg"
-import { CallToAction } from "../cmps/CallToAction";
-import { ADD_TO_CART } from "../store/reducers/gig.reducer";
-import { ReviewList } from "../cmps/ReviewList";
-import { UserMiniDetail } from "../cmps/UserMiniDetail";
-import { userService } from "../services/user.service";
-import LoadingCircle from "../cmps/LoadingCircle";
-import { showErrorMsg } from "../services/event-bus.service";
-import { BreadCrumbs } from "../cmps/BreadCrumbs";
+import { CallToAction } from "../cmps/CallToAction"
+import { ADD_TO_CART } from "../store/reducers/gig.reducer"
+import { ReviewList } from "../cmps/ReviewList"
+import { UserMiniDetail } from "../cmps/UserMiniDetail"
+import { userService } from "../services/user.service"
+import LoadingCircle from "../cmps/LoadingCircle"
+import { showErrorMsg } from "../services/event-bus.service"
+import { BreadCrumbs } from "../cmps/BreadCrumbs"
 const defaultGigImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663092/defaultGigImg_vjtk9e.webp'
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
 

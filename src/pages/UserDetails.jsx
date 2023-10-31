@@ -18,6 +18,7 @@ import { MyGigsTable } from '../cmps/MyGigsTable'
 import { OrderModal } from '../cmps/OrderModal'
 import { gigService } from '../services/gig.service.local'
 import { ReviewList } from '../cmps/ReviewList'
+import { userService } from '../services/user.service'
 
 export function UserDetails() {
   const params = useParams()
@@ -63,6 +64,7 @@ export function UserDetails() {
     const user = await storageService.get('user', userId)
     user.isSeller = true
     await storageService.put('user', user)
+    await userService.saveLocalUser(user)
     location.reload()
     return user
   }
@@ -107,12 +109,12 @@ export function UserDetails() {
     navigate('/gig/add')
   }
 
+  if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
   if (!loggedUser) {
     navigate('/')
     showErrorMsg('You must be logged in to continue')
     return
   }
-  if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
   return (
     <>
       {isModalOpen && (
@@ -253,7 +255,7 @@ export function UserDetails() {
                 <div className="order-header flex">
                   <h1 className='user-gigs-preview'>{watchedUser.username}'s Gigs</h1>
                 </div>
-                {gigs ? <GigList gigs={gigs} /> : <h1>no gigs available</h1>}
+                {gigs ? <GigList gigs={gigs} onUserProfile={true} /> : <h1>no gigs available</h1>}
                 <section className='user-reviews'>
                   <ReviewList gigOwnerId={params.id} isUserProfile={true} />
                 </section>
@@ -286,7 +288,7 @@ export function UserDetails() {
                   {gigs && gigs.length > 0 && <>
                     <div className='gigs-list flex column'>
                       <h1>Best seller gigs </h1>
-                      <GigList gigs={gigs} onlyTwo={true} minimal={true} />
+                      <GigList gigs={gigs} onUserProfile={true} bestSellerGigs={true} minimal={true} />
                     </div>
                     <section className='user-gigs'>
                       <h1>All gigs <i title='Add a new gig' className="fa-solid fa-circle-plus add-gig-btn" onClick={() => onClickAddGig()}></i></h1>
@@ -298,6 +300,7 @@ export function UserDetails() {
                   </>}
                 </div>
               </div>)}
+
               {(!watchedUser?.isSeller && <div className="seller-gigs">
                 <div className="become-seller">
                   <img src={becomeSellerBanner} alt="becomeSellerBanner" className="become-seller-img" />
