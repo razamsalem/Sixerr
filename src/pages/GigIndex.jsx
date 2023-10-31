@@ -17,7 +17,7 @@ export function GigIndex() {
     let [searchParams, setSearchParams] = useSearchParams()
 
     const currentPage = filterBy.page || 1
-    const totalGigsPerPage = 20
+    const totalGigsPerPage = 16
     const totalPages = Math.ceil(gigs.length / totalGigsPerPage)
     const startIndex = (currentPage - 1) * totalGigsPerPage
     const endIndex = startIndex + totalGigsPerPage

@@ -714,6 +714,20 @@ const demoUsers = [
           "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/eb6eef20969192eca1d8b1301e91cb4f-1630440851285/60f03cc4-71f2-437b-a241-f9423b6e2728.jpg",
           "location": "Canada",
         },
+      },
+      {
+        "id": "resdv2",
+        "gig": "{optional-mini-gig}",
+        "txt": "Thank you!",
+        "rate": 5,
+        "createdAt": 1684493926101,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "u154",
+          "fullname": "Yomi",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4b7fe17dde65726409810dd2541769c4-1681190210085/1f9751ab-3804-48b7-a2ec-7eabe5361ad8.jpg",
+          "location": "United states",
+        },
       }
     ],
   },
@@ -742,6 +756,20 @@ const demoUsers = [
           "fullname": "Justin Timber",
           "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/eb6eef20969192eca1d8b1301e91cb4f-1630440851285/60f03cc4-71f2-437b-a241-f9423b6e2728.jpg",
           "location": "Canada",
+        },
+      },
+      {
+        "id": "resdq23v3",
+        "gig": "{optional-mini-gig}",
+        "txt": "Thanks for your help Yomi!",
+        "rate": 5,
+        "createdAt": 1694493927315,
+        "reviewImgUrl": null,
+        "by": {
+          "_id": "aax1lr",
+          "fullname": "Aaron B",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/e0c3546285a4bcc29110abed89772c7c-1648494595657/9d64cf71-f097-4e6a-9670-97afdd1168f8.jpg",
+          "location": "United states",
         },
       }
     ],
