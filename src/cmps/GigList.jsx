@@ -1,4 +1,3 @@
-import { AddGigCard } from "./AddGigCard";
 import { GigPreview } from "./GigPreview";
 import { GigSlider } from "./GigSlider.jsx";
 

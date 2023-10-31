@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
 import { GigSlider } from "./GigSlider"
-import { HoverableComponent } from "./HoverableComponent"
 import { useEffect, useState } from "react"
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
 
@@ -29,7 +28,7 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal 
     }
 
     return (
-
+        <>
         <li className="gig-preview" key={gig._id}  >
 
             <GigSlider gig={gig} />
@@ -54,12 +53,10 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal 
                     <span className="owner-rate">{gig.owner.rate}</span>
                     {seller && <span className="owner-number-rates">({seller.reviews.length})</span>}
                 </div>}
-
             </div>
-
 
             {!minimal && <span className="gig-price">From ${gig.price.toLocaleString()}</span>}
         </li>
-
+        </>
     )
 }

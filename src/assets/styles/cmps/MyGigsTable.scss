@@ -73,4 +73,23 @@
         background-color: #ddd;
     }
 
+    @media (max-width: $mobile-breakpoint) {
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        thead {
+            display: none;
+        }
+
+        tr, td {
+            padding: rem(7px);
+            display: block;
+
+            .desc-data {
+                display: none;
+            }
+        }
+    
+    }
+
 }
