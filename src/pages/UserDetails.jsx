@@ -111,9 +111,9 @@ export function UserDetails() {
 
   if (!watchedUser) return <div className='loading'>{<LoadingCircle />}</div>
   if (!loggedUser) {
-    navigate('/')
-    showErrorMsg('You must be logged in to continue')
-    return
+    // navigate('/')
+    // showErrorMsg('You must be logged in to continue')
+    // return
   }
   return (
     <>
@@ -123,7 +123,8 @@ export function UserDetails() {
       {isDashboardOpen && (
         <DashboardModal watchedUser={watchedUser} closeDashboard={closeDashboard} handleBackgroundClick={handleBackgroundClick} orders={orders} loggedUser={loggedUser} />
       )}
-      <main className={`user-details-container main-layout full ${watchedUser._id === loggedUser._id ? 'bg' : ''}`}>
+      {/* <main className={`user-details-container main-layout full ${watchedUser._id === loggedUser._id ? 'bg' : ''}`}> */}
+      <main className={`user-details-container main-layout full`}>
         <section className='details-container'>
           <section className="user-details ">
             {watchedUser && <div className='user-card'>
@@ -141,7 +142,7 @@ export function UserDetails() {
                     <div className="secondary-name">
                       @{watchedUser.username}
                     </div>
-                    {watchedUser._id !== loggedUser._id &&
+                    {(!loggedUser) || (watchedUser._id !== loggedUser._id) &&
                       <button className='contact'>Contact me</button>
                     }
                   </div>
@@ -238,7 +239,7 @@ export function UserDetails() {
             </div>}
           </section>
 
-          {watchedUser._id !== loggedUser._id && !watchedUser.isSeller &&
+          {(!loggedUser && !watchedUser.isSeller) || (loggedUser && watchedUser._id !== loggedUser._id) && (!watchedUser.isSeller) &&
             <section className="no-data-found">
               <div className="help-us">
                 <h1>Unfortunately we do not have enough information about this user</h1>
@@ -249,7 +250,9 @@ export function UserDetails() {
             </section>
           }
 
-          {watchedUser._id !== loggedUser._id && watchedUser.isSeller &&
+          {((loggedUser && loggedUser._id !== watchedUser._id && watchedUser.isSeller)
+            ||
+            (!loggedUser && watchedUser.isSeller)) &&
             <section className="gigs-column user-details-layout">
               <div className='manage-orders'>
                 <div className="order-header flex">
@@ -263,7 +266,7 @@ export function UserDetails() {
             </section>
           }
 
-          {watchedUser._id === loggedUser._id &&
+          {loggedUser && loggedUser._id === watchedUser._id &&
 
             <section className="gigs-column user-details-layout">
               {(watchedUser?.isSeller && <div className='manage-orders'>
@@ -274,7 +277,7 @@ export function UserDetails() {
                   <OrderList orders={orders} loggedUser={loggedUser} mode='seller' openModal={openOrderModal} onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} /> </>}
                 <div className="my-gigs">
 
-                  {!gigs || !gigs.length && <>
+                  {(!gigs) || (!gigs.length) && <>
                     <h1 className='no-gigs-header'>My Gigs</h1>
                     <div className='no-gigs-content'>
                       <p className='empty'>
