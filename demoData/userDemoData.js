@@ -206,7 +206,7 @@ const demoUsers = [
     imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6eac0adad8586c2d46b7fcf4a5f0d227-1671025218902/9fe6d9ab-6d6a-4199-9934-b9d1675d709d.jpg",
     username: "julia123",
     password: "123",
-    rate: 5,
+    rate: 4.8,
     level: 2,
     desc: "Welcome! I always love to explore new things, design, work, nature, and that's why I love to be called Explorance. I own a creative design studio based in India specializing in Logo and brand design. I am passionate and dedicated in everything I create is minimal, clean, smart, and remarkable. I believe in 100% satisfaction, nothing less! Please free to get in touch, let's work together.",
     isSeller: true,

@@ -48,7 +48,7 @@ export function ReviewIndex() {
     try {
       await addReview(reviewToEdit)
       showSuccessMsg('Review added')
-      navigate('/')
+      navigate(`/gig/${order.gig._id}`)
     } catch (err) {
       showErrorMsg('Cannot add review')
     }
