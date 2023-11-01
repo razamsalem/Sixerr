@@ -25,7 +25,7 @@ export function ReviewChart({ reviews, isUserProfile }) {
         <section className="review-chart">
             <div className="review-header stars">
                 <h4>{reviews.length} {isUserProfile ? 'reviews for this seller' : 'reviews for this Gig'}</h4>
-                <ReviewStars review={{ rate: Math.ceil(avgReviews()) }} />
+                <ReviewStars review={{ rate: avgReviews()}} />
             </div>
             {Array(5)
                 .fill()
@@ -33,7 +33,7 @@ export function ReviewChart({ reviews, isUserProfile }) {
                     <div className="review-bars-container" key={i} style={lengthOfreviews()[4 - i] === 0 ? { color: '#e4e5e7' } : {}}>
                         {(5 - i === 1) ? <div className="star-number">1 Star</div> : <div className="star-number">{5 - i} Stars</div>}
                         <div className="review-rate-bar">
-                            <span className="percent" style={{ width: `${(lengthOfreviews()[4 - i] / reviews.length * 100)}%` }}></span>
+                            <span className="percent" style={{ width: `${(lengthOfreviews()[4 - i] / reviews.length * 100)}%`}}></span>
                         </div>
                         <span>({lengthOfreviews()[4 - i]})</span>
                     </div>

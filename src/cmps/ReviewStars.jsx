@@ -3,17 +3,17 @@ import emptyStar from "../assets/img/empty-star.svg"
 export function ReviewStars({review}) {
     return(
         <div className="stars">
-            {Array(review.rate)
+            {Array(Math.round(review.rate))
             .fill()
             .map((item, i) => (
                 <img src={starGrey} alt="star" key={i} className="star"/>
             ))}
-            {Array(5-review.rate)
+            {Array(Math.round(5-review.rate))
             .fill()
             .map((_, i) => (
                 <img src={emptyStar} alt="empty-star" key={i} className="star"/>
             ))}
-            <span className="rate padding">{review.rate}</span>
+            <span className="rate padding">{review.rate.toFixed(1).replace(/\.0+$/, '')}</span>
         </div>
     )
 }

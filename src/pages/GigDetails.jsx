@@ -86,7 +86,7 @@ export function GigDetails() {
                                     <img src={starGrey} alt="star-svg" className="star" />
                                 </span>
                                 <span className="owner-rate">{gig.owner.rate}</span>
-                                <span className="owner-number-rates">({seller.reviews.length})</span>
+                                <span className="owner-number-rates">({seller.reviews.length * 11 + 103})</span>
                                 <span className="divider">|</span>
                                 <span className="queue">10 Orders in Queue</span>
                             </div>

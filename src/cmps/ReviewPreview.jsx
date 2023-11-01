@@ -29,7 +29,7 @@ export function ReviewPreview({ review }) {
                 <div className="seller-info">
                     <h4 className="seller-name" onClick={navigateToUser} >{review.by.fullname}</h4>
                     <div className="country">
-                        <img className="flag" src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png" alt="" />
+                        <img className="flag" src={review.by.flag} alt="flag" />
                         <span>{review.by.location}</span>
                     </div>
                 </div>

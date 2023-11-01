@@ -1,21 +1,20 @@
 import { Link, useNavigate } from "react-router-dom"
 import { GigSlider } from "./GigSlider"
 import { useEffect, useState } from "react"
-import { utilService } from "../services/util.service"
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
 
 export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal }) {
-    // let [seller, setSeller] = useState(null)
+    let [seller, setSeller] = useState(null)
     const navigate = useNavigate()
 
-    // useEffect(() => {
-    //     getSeller()
-    // }, [])
+    useEffect(() => {
+        getSeller()
+    }, [])
 
-    // async function getSeller() {
-    //     if (!onloadUser) return
-    //     setSeller(await onloadUser(gig));
-    // }
+    async function getSeller() {
+        if (!onloadUser) return
+        setSeller(await onloadUser(gig));
+    }
 
     function slicedGigTitle() {
         if (gig.title.length > 58) {
@@ -52,7 +51,7 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal 
                         </svg>
                     </span>
                     <span className="owner-rate">{gig.owner.rate}</span>
-                  <span className="owner-number-rates">({utilService.getRandomIntInclusive(100,250)})</span>
+                    {seller && <span className="owner-number-rates">({seller.reviews.length * 11 + 103})</span>}
                 </div>}
             </div>
 
