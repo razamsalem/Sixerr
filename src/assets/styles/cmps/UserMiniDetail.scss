@@ -14,7 +14,7 @@
         div {
             display: flex;
             align-items: center;
-
+            gap: 0.1875em;
             .gig-title {
                 margin-right: 8px;
             }
@@ -37,6 +37,10 @@
                     text-decoration: underline;
                 }
             }
+        }
+        .star-wrapper .owner-number-rates{
+            color: $dark-clr-4;
+            text-decoration: underline;
         }
     }
 

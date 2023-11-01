@@ -25,7 +25,7 @@ export function ReviewChart({ reviews, isUserProfile }) {
         <section className="review-chart">
             <div className="review-header stars">
                 <h4>{reviews.length} {isUserProfile ? 'reviews for this seller' : 'reviews for this Gig'}</h4>
-                <ReviewStars review={{ rate: Math.ceil(avgReviews()) }} />
+                <ReviewStars review={{ rate: avgReviews()}} />
             </div>
             {Array(5)
                 .fill()

@@ -36,7 +36,7 @@ export function ReviewList({ gigOwnerId, isUserProfile }) {
                     <h1>Reviews</h1>
                     <ReviewChart reviews={seller.reviews} isUserProfile={isUserProfile} />
                     <ul className="review-list">
-                        {seller.reviews.map((rev, idx) =>
+                        {seller.reviews.sort((rev1, rev2) => new Date(rev2.createdAt) - new Date(rev1.createdAt)).map((rev, idx) =>
                             <ReviewPreview key={idx} review={rev} />
                         )}
                     </ul>
