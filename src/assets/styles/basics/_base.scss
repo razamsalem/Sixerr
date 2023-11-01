@@ -9,14 +9,15 @@ html {
     color: $dark-clr;
     overflow-x: hidden;
     scroll-behavior: smooth;
+
+    &.modal-open {
+        overflow: hidden;
+    }
 }
 
 body {
     margin: 0;
     accent-color: $dark-clr1;
-    &.modal-open {
-        overflow: hidden;
-    }
 }
 
 main.main-layout {

@@ -45,13 +45,13 @@ export function GigDetails() {
     }
 
     function openModal() {
+        document.documentElement.classList.add('modal-open')
         setModalOpen(true)
-        document.body.classList.add('modal-open')
     }
 
     function closeModal() {
+        document.documentElement.classList.remove('modal-open')
         setModalOpen(false)
-        document.body.classList.remove('modal-open')
     }
 
     if (gig) loadUser()
