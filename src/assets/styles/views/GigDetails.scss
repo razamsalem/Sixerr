@@ -4,6 +4,7 @@
     display: grid;
     justify-content: space-around;
     margin-block-start: em(40px);
+    // line-height: 24px;
 
     .bread-crumbs {
         display: none;
@@ -88,6 +89,7 @@
 
         h1 {
             font-size: 28px;
+            line-height: 36px;
         }
 
         .profile-container {
