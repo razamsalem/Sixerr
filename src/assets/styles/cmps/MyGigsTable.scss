@@ -3,19 +3,26 @@
     border-collapse: collapse;
     border: 1px solid $smooth-light-clr;
     background-color: #f5f5f5;
-    
+
     th {
-        background-color: #333;
-        color: $light-clr;
+        text-align: left;
+        background-color: $light-clr;
+        color: $co-clr;
         padding: 10px;
         text-align: left;
     }
-    
+
     tr {
-        border: 1px solid $smooth-light-clr;
+        background-color: $light-clr;
+        transition: background-color .3s;
+        border-block: 1px solid $modal-filter-border-clr;
         cursor: pointer;
+
+        &:hover {
+            background-color: $user-bgclr
+        }
     }
-    
+
     td {
         align-items: center;
         padding: 10px;
@@ -26,6 +33,7 @@
     }
 
     td:first-child img {
+        min-width: 35px;
         max-width: 100px;
         max-height: 100px;
         border: 1px solid $smooth-light-clr;
@@ -57,18 +65,14 @@
                 color: $fulfilled-clr;
             }
         }
-        
+
         &:last-child {
             &:hover {
                 animation: 2s swing infinite
             }
         }
     }
-
-    tr:nth-child(even) {
-        background-color: $dark-clr-2;
-    }
-
+    
     tr:hover {
         background-color: #ddd;
     }
@@ -77,11 +81,13 @@
         width: 100%;
         text-align: center;
         margin: auto;
+
         thead {
             display: none;
         }
 
-        tr, td {
+        tr,
+        td {
             padding: rem(7px);
             display: block;
 
@@ -89,7 +95,7 @@
                 display: none;
             }
         }
-    
+
     }
 
 }
