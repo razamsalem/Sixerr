@@ -25,8 +25,8 @@ export function MyGigsTable({ gigs }) {
         <table className="gigs-table">
             <thead>
                 <tr>
-                    <th>Title</th>
                     <th></th>
+                    <th>Title</th>
                     {/* <th>Description</th> */}
                     <th>Added</th>
                     <th>Price</th>
