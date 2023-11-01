@@ -4,8 +4,6 @@
     display: grid;
     justify-content: space-around;
     margin-block-start: em(40px);
-    // line-height: 24px;
-
     .bread-crumbs {
         display: none;
     }
@@ -179,8 +177,7 @@
     }
 
     .thumbs-wrapper {
-        margin: 20px 0;
-
+        margin: rem(7px) 0;
 
         .thumbs {
             display: none;
@@ -191,7 +188,6 @@
                 filter: blur(0.6px);
                 opacity: 0.5;
                 cursor: pointer;
-
                 &.selected {
                     filter: none;
                     opacity: 1;
@@ -203,7 +199,7 @@
 
     @include for-small-layout {
         grid-auto-flow: row;
-
+        padding-inline: 0;
         .bread-crumbs {
             display: flex;
         }
@@ -300,6 +296,7 @@
     @include for-narrow-layout {}
 
     @include for-normal-layout {
+        padding-inline: em(32px);
         grid-template-columns: minmax(32px, 1fr) minmax(auto, 860px) minmax(auto, 500px) minmax(32px, 1fr);
 
         &>*:not(.cta-container) {
@@ -352,11 +349,12 @@
     }
 
     @include for-large-layout {
+        padding-inline: em(32px);
         grid-template-columns: minmax(32px, 1fr) minmax(auto, 760px) minmax(auto, 600px) minmax(32px, 1fr);
     }
 
     @include for-xl-layout {
-        // padding-inline: rem(32px);
+        padding-inline: em(32px);
     }
 
 }
