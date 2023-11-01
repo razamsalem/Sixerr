@@ -2,7 +2,7 @@
     position: sticky;
     z-index: 3;
     top: 0;
-    margin-block-start: rem(20px);
+    margin-block-start: rem(5.5px);
     margin-block-end: rem(8px);
     background: $light-clr;
 
@@ -21,7 +21,7 @@
 
 
     .filter-btns {
-        padding-block-end: 1rem;
+        padding-block: 1rem;
         display: grid;
 
         .border-0,

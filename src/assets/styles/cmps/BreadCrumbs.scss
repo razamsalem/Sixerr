@@ -1,13 +1,15 @@
 .bread-crumbs {
     display: flex;
     align-items: center;
-    gap: em(8px);
+    gap: em(6px);
     font-size: rem(14px);
     letter-spacing: 0.2px;
     margin-block-end: rem(32px);
 
     .home {
-        line-height: em(13px);
+        line-height: rem(13px);
+        height: rem(13px);
+        width: rem(13px);
     }
 
     .divider {
