@@ -1,0 +1,41 @@
+.gig-index {
+    .bread-crumbs {
+        margin-block-start: rem(40px);
+        margin-bottom: 0;
+
+    }
+
+    .top-of-gigs {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-block-end: rem(17px);
+
+        .number-of-results {
+            padding-inline-start: rem(4px);
+            line-height: rem(24px);
+            font-size: 1rem;
+            padding-block: rem(8px);
+            color: $dark-clr-4;
+        }
+
+        .sort-container {
+            .sort-title {
+                color: #74767e;
+            }
+
+            .drop-down-btn {
+                color: #222325;
+                font-weight: 600;
+                padding: 10px 8px;
+                border-radius: 8px;
+
+                &:hover {
+                    background-color: #f5f5f5
+                }
+            }
+        }
+    }
+
+
+}

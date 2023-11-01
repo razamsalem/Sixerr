@@ -7,7 +7,7 @@
 
         .img-container {
             width: 100%;
-            margin-block-end: rem(12px);
+            margin-block-end: rem(7px);
 
             .slick-slider {
                 position: relative;
@@ -148,7 +148,7 @@
             margin-bottom: rem(8px);
             font-weight: 400;
             min-height: 2.5em;
-            font-size: rem(19px);
+            font-size: rem(17px);
 
         }
 
@@ -208,16 +208,33 @@
                     img {
                         height: rem(150px);
                     }
+
+                    .gallery-btn {
+                        display: none;
+                    }
+
+                    .slick-dots {
+                        opacity: 0;
+                    }
                 }
             }
 
             .rate-wrapper {
                 font-size: rem(14px);
+                line-height: rem(14px);
+
+                .star-svg {
+                    svg {
+                        height: rem(13px);
+                        width: rem(13px);
+                        fill: #ffc959;
+                    }
+                }
             }
 
             .owner-gig-title {
                 font-size: rem(14px);
-                margin-block: rem(7px);
+                margin-block: 1rem;
             }
 
             .owner-container {
@@ -244,6 +261,15 @@
                 position: absolute;
                 bottom: em(4px);
                 right: em(13px);
+
+                .from {
+                    font-size: rem(12px);
+                    margin-inline-end: rem(1px);
+                    color: $dark-clr-4;
+                    font-weight: 400;
+                }
+
+                .price {}
             }
 
         }
@@ -257,6 +283,10 @@
     justify-content: center;
     align-items: center;
     gap: rem(30px);
+
+    .not-found-header {
+        font-size: 1.6rem;
+    }
 
     .clear {
         max-width: rem(168px);
@@ -277,6 +307,6 @@
     }
 
     img {
-        max-width: 45%;
+        max-width: 40%;
     }
 }

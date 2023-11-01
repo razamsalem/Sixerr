@@ -11,8 +11,9 @@
     }
 
     .divider {
+        margin-inline: em(8px);
+        font-size: em(18px);
+        font-weight: 100;
         color: $light-clr5;
-        font-weight: 700;
     }
-
 }
