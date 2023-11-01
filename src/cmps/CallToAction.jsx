@@ -9,7 +9,7 @@ import { showErrorMsg } from '../services/event-bus.service'
 const imgNotFound = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663092/defaultGigImg_vjtk9e.webp'
 
 
-export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, selectedPack = 'basic' }) {
+export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openModal, selectedPack = 'basic' }) {
     const loggedUser = useSelector(storeState => storeState.userModule.user)
     const navigate = useNavigate()
     const { price, daysToMake, packages, imgUrls } = gig
@@ -54,14 +54,14 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, selecte
                 <h3 className='package-desc'><span className='package'>{title ? title : selectedPackage.charAt(0).toUpperCase() + selectedPackage.slice(1)} </span>{!isPurchase && desc}</h3>
 
                 <span className="days-container">
-                    <img className='icon time' src={timeImg} alt="time-icon" />
+                    <img className='icon clock' src={timeImg} alt="clock-icon" />
                     <h3>{packDaysToMake ? packDaysToMake : daysToMake} Days Delivery</h3>
                 </span>
 
                 <ul className="feature-list">
                     {features.map((feature) => (
                         <span key={feature} className='feature-container'>
-                            <img className='icon check' src={checkImg} alt="time-icon" />
+                            <img className='icon check' src={checkImg} alt="check-icon" />
                             {feature}
                         </span>
                     ))}
@@ -75,7 +75,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, selecte
                         </span>
                     </div>
                     :
-                    <a onClick={goToCheckout} className='btn continue'>
+                    <a onClick={openModal} className='btn continue'>
                         Continue
                         <i className="fa-solid fa-arrow-right"></i>
                     </a>
