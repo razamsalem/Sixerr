@@ -1,6 +1,5 @@
 .review-index {
     display: grid;
-    // grid-template-columns: 1fr auto;
     gap: 4rem;
     margin-top: 3.125rem;
     padding-inline: 33px;
@@ -9,24 +8,26 @@
         display: flex;
         flex-direction: column;
         align-items: start;
-        gap: 0.9375em;
+        gap: em(25px);
         width: 100%;
 
         .heading {
-            color: $dark-clr-4;
+            color: $dark-clr1;
             font-size: rem(32px);
+            font-weight: 900;
         }
 
         .sub-heading {
             font-size: rem(23px);
             color: $dark-clr;
             font-weight: 400;
-            margin-block-end: rem(20px);
+            // margin-block-end: rem(20px);
+            line-height: rem(30px);
         }
 
         label {
-            font-size: 1.3rem;
-            font-weight: 700;
+            font-size: rem(19px);
+            font-weight: 500;
             display: flex;
             flex-direction: column;
             gap: em(7px);
@@ -37,7 +38,9 @@
         .txt-label {
             width: 100%;
             position: relative;
-
+            font-size: rem(19px);
+            font-weight: 500;
+            gap: em(25px);
             textarea {
                 resize: none;
                 font-size: 1.2rem;
@@ -111,14 +114,17 @@
             text-align: center;
             color: $dark-clr-1;
             text-transform: uppercase;
-            font-weight: 400;
-            letter-spacing: em(-1px);
+            font-weight: 900;
+            letter-spacing: 1px
         }
 
         .gig-heading {
             font-size: 1.3rem;
             color: black;
             margin-block-end: em(8px);
+            text-align: center;
+            line-height: em(30px);
+            font-size: em(20px);
         }
 
         .order-details {
@@ -128,11 +134,16 @@
                 display: grid;
                 margin-block-end: em(10px);
                 font-size: 1.2rem;
-
+                grid-template-columns: repeat(2,1fr);
+                font-size: 1rem;
                 .title {
                     font-weight: 700;
-                    font-size: 1.3rem;
                 }
+                .name, .estimated{
+                    justify-self: end;
+                    align-self: center;
+                }
+              
             }
         }
     }
@@ -148,7 +159,7 @@
         .add-review {
             margin-bottom: 30px;
             grid-row: 2;
-            place-self: center;
+            place-self: self-start;
             place-items: center;
 
             h2 {
@@ -176,10 +187,10 @@
         .big-order-preview {
             // width: 23em;
             width: 100%;
-            place-self: center;
+            place-self: self-start;
             grid-row: 1;
             margin-bottom: em(20px);
-
+            height: fit-content;
             img {
                 width: 50%;
                 align-self: center;
@@ -190,7 +201,7 @@
     @include for-narrow-layout {
         display: grid;
         grid-template-columns: 1.5fr 1fr;
-        gap: 3rem;
+        gap: 5rem;
         margin-top: 3.125rem;
         padding-inline: 33px;
 
@@ -225,15 +236,20 @@
 
         .big-order-preview {
             // width: 26em;
-            height: fit-content;
+            height: 83%;
             display: flex;
             flex-direction: column;
             justify-self: end;
+            // height: 83%;
             // align-self: center;
             border: 0.125em solid #e5e5e7;
             padding: 0.875em 1.5em;
             gap: 0.625em;
             grid-column: 2;
+            justify-content: space-around;
+            img{
+                width: 18em;
+            }
         }
 
     }
