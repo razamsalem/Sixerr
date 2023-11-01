@@ -76,7 +76,7 @@ export function UserPayment({ user }) {
                     </article>
                 </form>
 
-                <section className="payments-option">
+                <section className="payments-option-1">
                     <label>
                         <input className="form-check-input radio" type="radio" name="paypal" id="flexRadioDefault1" onChange={onChangeRadioButton} checked={radioOptions.paypal} />
                         <img src="https://res.cloudinary.com/dgsfbxsed/image/upload/v1696838077/paypal-logo_uyhsmo.svg" alt="paypal" className="paypal-logo" />

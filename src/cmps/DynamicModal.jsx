@@ -67,6 +67,7 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
         }
         if(field === 'tags'){
             setFilterByToEdit((prevFilter) => {
+                console.log(prevFilter,"ppp");
                 const updatedTags = ev.target.checked
                   ? [...prevFilter[field], ev.target.value]
                   : prevFilter[field].filter((tag) => tag !== ev.target.value);

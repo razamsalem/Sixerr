@@ -90,7 +90,7 @@ export function DynamicBtn() {
                      <button
                      key={btn.title}
                      onClick={(ev) => onToggleArrow(ev, idx)}
-                     className={`filter-btn ${isArrowUp[idx] ? 'arrow-up' : ''} ${clicked ? 'border' : ''}`}
+                     className={`filter-btn ${isArrowUp[idx] ? 'arrow-up' : ''} ${clicked ? `border-${idx}` : ''}`}
                     //  style={clicked?{border:'1px solid black'} : {borderStyle: 'none'}}
                     >
                      {btn.title}{' '}

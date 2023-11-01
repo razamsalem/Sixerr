@@ -63,6 +63,7 @@
 
          .package {
              font-weight: bold;
+             line-height: rem(36px);
              //  text-transform: uppercase;
              //  font-size: rem(18px);
          }
@@ -73,7 +74,7 @@
              font-weight: 400;
              letter-spacing: em(0.35px);
              color: $dark-clr-1;
-             line-height: 1.1;
+             line-height: rem(21px);
          }
 
          .days-container {

@@ -87,7 +87,7 @@
                     flex-basis: 100%;
                     align-items: center;
                     height: em(42px);
-                    margin-top: em(8px);
+                    // margin-top: em(8px);
                     align-items: center;
 
                     input {
@@ -113,10 +113,25 @@
         }
 
     }
-
+    // .option{
+    //     padding-bottom: 1rem;
+    // }
     .payments-option {
         display: flex;
-        padding: em(16px);
+        padding: 1rem 1rem 0 1rem;
+        height: em(63px);
+        align-items: center;
+        flex-wrap: wrap;
+
+        label {
+            display: flex;
+            gap: em(10px);
+            cursor: pointer;
+        }
+    }
+    .payments-option-1{
+        display: flex;
+        padding: 1rem 1rem 1rem 1rem;
         height: em(63px);
         align-items: center;
         flex-wrap: wrap;

@@ -25,9 +25,9 @@ export function MyGigsTable({ gigs }) {
         <table className="gigs-table">
             <thead>
                 <tr>
-                    <th></th>
                     <th>Title</th>
-                    <th>Description</th>
+                    <th></th>
+                    {/* <th>Description</th> */}
                     <th>Added</th>
                     <th>Price</th>
                     <th>Impressions</th>
@@ -39,7 +39,7 @@ export function MyGigsTable({ gigs }) {
                     <tr key={idx} onClick={() => onClickGig(gig._id)} >
                         <td><img src={gig.imgUrls[0] || defaultImg} alt="Gig Image" onError={e => e.currentTarget.src = imgNotFound} /></td>
                         <td><LongTxt txt={gig.title} length={35} showReadMore={false} /></td>
-                        <td className="desc-data"><LongTxt txt={gig.description} length={45} showReadMore={false} /></td>
+                        {/* <td className="desc-data"><LongTxt txt={gig.description} length={45} showReadMore={false} /></td> */}
                         <td>{utilService.getRandomDate()}</td>
                         <td><i className="fa-solid fa-dollar-sign"></i>{(`${gig.packages['basic'].packPrice}` > 1) ? `${gig.packages['basic'].packPrice}` : gig.price}</td>
                         <td><i className="fa-regular fa-eye icon"></i>{utilService.getRandomIntInclusive(121, 7827).toLocaleString()}</td>

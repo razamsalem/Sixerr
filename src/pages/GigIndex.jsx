@@ -37,8 +37,9 @@ export function GigIndex() {
 
     useEffect(() => {
         const paramFilter = {}
-
+        // console.log(searchParams, "tt");
         for (const [key, value] of searchParams) {
+            console.log(key,value);
             if (value === 'true') {
                 paramFilter[key] = true
             } else if (value === 'false') {

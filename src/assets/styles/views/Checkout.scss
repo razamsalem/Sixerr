@@ -20,7 +20,8 @@
             display: block;
             h6{
                 margin-block: rem(20px) 0;
-                padding-bottom: rem(7px);
+                margin-bottom: 8px;
+                // padding-bottom: rem(7px);
             }
         }
         .payment-container .payment-methods-wrapper .credit-card-details .card > * > *{
@@ -58,7 +59,7 @@
             margin-block-end: 1.125em;
             display: flex;
             h6{
-                margin-block: rem(20px) 0;
+                // margin-block: rem(20px) 0;
             }
             width: 100%;
         }
