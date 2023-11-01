@@ -9,7 +9,7 @@ import { showErrorMsg } from '../services/event-bus.service'
 const imgNotFound = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663092/defaultGigImg_vjtk9e.webp'
 
 
-export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openModal, selectedPack = 'basic' }) {
+export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openModal, selectedPack = 'basic', setPackage }) {
     const loggedUser = useSelector(storeState => storeState.userModule.user)
     const navigate = useNavigate()
     const { price, daysToMake, packages, imgUrls } = gig
@@ -19,6 +19,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
 
     function handlePackageChange(packageKey) {
         setSelectedPackage(packageKey)
+        setPackage(packages[selectedPackage])
     }
 
     function goToCheckout() {
@@ -75,7 +76,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
                         </span>
                     </div>
                     :
-                    <a onClick={openModal} className='btn continue'>
+                    <a onClick={goToCheckout} className='btn continue'>
                         Continue
                         <i className="fa-solid fa-arrow-right"></i>
                     </a>

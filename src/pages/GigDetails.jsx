@@ -24,6 +24,8 @@ export function GigDetails() {
     const dispatch = useDispatch()
     const [seller, setSeller] = useState(null)
     const [isModalOpen, setModalOpen] = useState(false)
+    const [selectedLevel, setSelectedLevel] = useState('null')
+    const [selectedPackage, setSelectedPackage] = useState('basic')
     const userInfoRef = useRef(null)
     const userReviewRef = useRef(null)
     const defaultImgUrl = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698161431/sixxer-logo_vseimk.png'
@@ -67,6 +69,13 @@ export function GigDetails() {
         }
     }
 
+    function setPackage(selectedPackage) {
+        setSelectedPackage(selectedPackage)
+        const { packages } = gig
+        setSelectedLevel(packages[selectedPackage])
+        return packages
+    }
+
     const scrollToUserInfo = () => {
         userInfoRef.current.scrollIntoView()
     }
@@ -86,14 +95,22 @@ export function GigDetails() {
                 <section className="modal-content">
                     <div className="header flex">
                         <div className="header-content">Order options</div>
-                        <button onClick={closeModal}><img src={timeImg} alt="" /></button>
+                        <button onClick={closeModal}><img src={timeImg} alt="close modal" /></button>
+                    </div>
+                    <div className="modal-main">
+                        <div className="selected-order">
+                            <div className="pack flex">
+                                <span className="bold">{selectedPackage}</span>
+                                <span>$5</span>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </CtaModal>
 
             <section className="gig-details full main-layout">
                 <BreadCrumbs category={gig.category} />
-                <CallToAction gig={gig} addToCart={addToCart} openModal={openModal} />
+                <CallToAction gig={gig} addToCart={addToCart} setPackage={setPackage} openModal={openModal} />
                 <section className="top-details container full main-layout">
                     <div className="owner-details-container">
                         <h1 className="gig-title">{gig.title}</h1>

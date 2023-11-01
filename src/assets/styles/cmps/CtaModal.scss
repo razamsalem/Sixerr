@@ -8,8 +8,9 @@
     box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.2);
     transition: right 0.3s ease-in-out;
     z-index: 2000;
-    
+
     .modal-content {
+
         .header {
             justify-content: space-between;
             align-items: center;
@@ -31,8 +32,28 @@
                 padding-block-start: rem(10px);
                 width: rem(34px);
             }
-
         }
+
+        .modal-main {
+            padding-block-start: rem(24px);
+            padding-inline: rem(20px);
+            padding-block-end: rem(20px);
+
+            .selected-order {
+                padding: 1rem rem(20px);
+                border: 2px solid $dark-clr1;
+                border-radius: 8px;
+                
+                .pack {
+                    justify-content: space-between;
+                    .bold {
+                        font-size: rem(18px);
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
     }
 }
 
