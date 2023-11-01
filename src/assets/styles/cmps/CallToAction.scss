@@ -41,8 +41,11 @@
 
          .icon {
              width: em(16px);
-         }
-
+            }
+            
+            .clock {
+               fill: $dark-clr-1;
+            }
          .package-heading {
              display: flex;
              align-items: center;

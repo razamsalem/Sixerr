@@ -6,6 +6,11 @@
     margin-top: 3.125rem;
 
     .create-gig {
+
+        &>* {
+            min-width: 100%;
+        }
+
         display: flex;
         flex-direction: column;
         align-items: start;
