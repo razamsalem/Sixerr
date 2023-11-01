@@ -2,8 +2,8 @@
     position: sticky;
     z-index: 3;
     top: 0;
-    margin-block-start: rem(8px);
-    margin-block-end: rem(8px);
+    margin-block-start: rem(2px);
+    margin-block-end: rem(14px);
     background: $light-clr;
 
     &.sticky-active {
