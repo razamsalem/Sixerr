@@ -19,7 +19,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
 
     function handlePackageChange(packageKey) {
         setSelectedPackage(packageKey)
-        setPackage(packages[selectedPackage])
+        // setPackage(packageKey)
     }
 
     function goToCheckout() {
