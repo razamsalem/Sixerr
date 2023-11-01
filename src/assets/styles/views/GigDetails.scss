@@ -177,8 +177,7 @@
     }
 
     .thumbs-wrapper {
-        margin: 20px 0;
-
+        margin: rem(7px) 0;
 
         .thumbs {
             display: none;
@@ -189,7 +188,6 @@
                 filter: blur(0.6px);
                 opacity: 0.5;
                 cursor: pointer;
-
                 &.selected {
                     filter: none;
                     opacity: 1;
