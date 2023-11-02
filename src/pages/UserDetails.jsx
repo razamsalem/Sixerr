@@ -299,8 +299,14 @@ export function UserDetails() {
                       {<MyGigsTable gigs={gigs} />}
                     </section>
                     <section className='user-reviews'>
-                      {allReviews ? <ReviewList gigOwnerId={params.id} isUserProfile={true} />
-                        : <ReviewList gigOwnerId={params.id} isUserProfile={true} onlyTwo={true} />}
+                      {allReviews ? <>
+                        <ReviewList gigOwnerId={params.id} isUserProfile={true} />
+                        <button onClick={() => setAllReviews(false)}>Show less</button>
+                      </>
+                        : <>
+                          <ReviewList gigOwnerId={params.id} isUserProfile={true} onlyTwo={true} />
+                          <button onClick={() => setAllReviews(true)}>Show more</button>
+                        </>}
                     </section>
                   </>}
                 </div>
