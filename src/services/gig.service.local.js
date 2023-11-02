@@ -105,6 +105,7 @@ async function remove(gigId) {
 
 async function save(gig) {
     let savedGig
+    console.log(gig,"put");
     if (gig._id) {
         savedGig = await storageService.put(STORAGE_KEY, gig)
     } else {
