@@ -95,7 +95,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
                     
                     <footer className='footer'>
                         <div className="purchase-btn">
-                            <button>Continue (${packPrice})</button>
+                            <button onClick={goToCheckout}>Continue (${packPrice})</button>
                             <span className='footer-msg flex'>You won’t be charged yet</span>
                         </div>
                     </footer>
