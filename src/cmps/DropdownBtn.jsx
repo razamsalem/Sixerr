@@ -20,11 +20,11 @@ export function DropdownBtn({ icon = '', children = '' }) {
     }, [])
 
     return (
-        <a className="drop-down-btn" onClick={() => { setIsOpen(!isOpen) }} ref={buttonRef}>
+        <span className="drop-down-btn" onClick={(ev) => { setIsOpen(!isOpen) }} ref={buttonRef}>
             {!icon ?
                 <i className={`${isOpen && 'open'} fa-solid fa-circle-chevron-down`}></i> : icon
             }
             {isOpen && <DropdownMenu items={children} isOpen={isOpen} />}
-        </a>
+        </span>
     )
-}
+} 

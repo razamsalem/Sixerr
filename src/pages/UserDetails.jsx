@@ -31,6 +31,7 @@ export function UserDetails() {
   const [isDashboardOpen, setDashboardOpen] = useState(null)
   const [isModalOpen, setModalOpen] = useState(null)
   const [selectedOrder, setSelectedOrder] = useState(null)
+  const [allReviews, setAllReviews] = useState(null)
 
   useEffect(() => {
     loadUser(params.id)
@@ -260,7 +261,15 @@ export function UserDetails() {
                 </div>
                 {gigs ? <GigList gigs={gigs} onUserProfile={true} /> : <h1>no gigs available</h1>}
                 <section className='user-reviews'>
-                  <ReviewList gigOwnerId={params.id} isUserProfile={true} />
+                  {allReviews ? <>
+                    <ReviewList gigOwnerId={params.id} isUserProfile={true} />
+                    {watchedUser.reviews.length > 1 && <button className='contact' onClick={() => setAllReviews(false)}>Show less</button>}
+                  </>
+                    :
+                    <>
+                      <ReviewList gigOwnerId={params.id} isUserProfile={true} onlyTwo={true} />
+                      {watchedUser.reviews.length > 1 && <button className='contact' onClick={() => setAllReviews(true)}>Show more</button>}
+                    </>}
                 </section>
               </div>
             </section>
@@ -298,7 +307,15 @@ export function UserDetails() {
                       {<MyGigsTable gigs={gigs} />}
                     </section>
                     <section className='user-reviews'>
-                      <ReviewList gigOwnerId={params.id} isUserProfile={true} />
+                      {allReviews ? <>
+                        <ReviewList gigOwnerId={params.id} isUserProfile={true} />
+                        {watchedUser.reviews.length > 1 && <button className='contact' onClick={() => setAllReviews(false)}>Show less</button>}
+                      </>
+                        :
+                        <>
+                          <ReviewList gigOwnerId={params.id} isUserProfile={true} onlyTwo={true} />
+                          {watchedUser.reviews.length > 1 && <button className='contact' onClick={() => setAllReviews(true)}>Show more</button>}
+                        </>}
                     </section>
                   </>}
                 </div>

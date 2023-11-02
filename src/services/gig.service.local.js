@@ -19,7 +19,7 @@ const categories = [
     { category: 'Data', tags: ['Data Science & ML', 'Machine Learning', 'Data Collection', 'Data Entry', 'Data Mining & Scraping', 'Data Annotation'] },
     { category: 'Photography', tags: ['Products & Lifestyle', 'Product Photographers', 'Food Photographers', 'Lifestyle & Fashion Photographers', 'Portrait Photographers', 'Event Photographers', 'Real Estate Photographers', 'Scenic Photographers'] },
     { category: 'AI Services', tags: ['AI Applications', 'ChatGPT Applications', 'AI Websites', 'AI Chatbots', 'Midjourney Artists', 'DALL-E Artists', 'Stable Diffusion Artists', 'Food Photographers', 'AI Video Art', 'AI Music Videos', 'Voice Synthesis & AI'] }
-];
+]
 
 
 export const gigService = {
@@ -29,7 +29,8 @@ export const gigService = {
     remove,
     getEmptyGig,
     getDefaultFilter,
-    categories
+    categories,
+    getCategories
 }
 window.gs = gigService
 
@@ -63,11 +64,9 @@ async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, categ
     if (filterBy.category) {
         gigs = gigs.filter(gig => gig.category === filterBy.category)
     }
-    if (filterBy.tags && filterBy.tags.length>0) {
-        // console.log("pp");
+    if (filterBy.tags && filterBy.tags.length > 0) {
         gigs = gigs.filter(gig => {
-            return gig.tags.some(tag =>{
-                // console.log(tag,"tag");
+            return gig.tags.some(tag => {
                 return filterBy.tags.includes(tag)
             });
         });
@@ -89,6 +88,14 @@ async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, categ
         gigs = gigs.filter(gig => gig.owner.level === 1)
     } else if (filterBy.premiumLevel) {
         gigs = gigs.filter(gig => gig.owner.level === 2)
+    }
+
+    if (filterBy.sortBy) {
+        switch (filterBy.sortBy) {
+            case 'new': gigs = gigs.sort((gig1, gig2) => { return gig2.createdAt - gig1.createdAt })
+                break
+            case 'recommend': gigs = gigs.sort((gig1, gig2) => { return gig2.owner.rate - gig1.owner.rate })
+        }
     }
 
     return gigs
@@ -114,8 +121,12 @@ async function save(gig) {
     return savedGig
 }
 
+export function getCategories() {
+    return categories
+}
+
 export function getDefaultFilter() {
-    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: [], page: 1, userId: '', daysToMake: '', topRated: false, basicLevel: false, premiumLevel: false }
+    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: [], page: 1, userId: '', daysToMake: '', topRated: false, basicLevel: false, premiumLevel: false, sortBy: 'new' }
 }
 
 
@@ -124,6 +135,7 @@ function getEmptyGig() {
     return {
         owner,
         title: 'I will ',
+        createdAt: Date.now(),
         packages: {
             basic: {
                 title: 'Bronze',

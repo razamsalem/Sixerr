@@ -43,7 +43,7 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                 <div className="space"></div>
                 <div className="dashboard-content">
                     <div className="small-screens">
-                        <DashboardNavBtn activeBtn={activeBtn} setActiveBtn={setActiveBtn} setLoading={setLoading}  />
+                        <DashboardNavBtn activeBtn={activeBtn} setActiveBtn={setActiveBtn} setLoading={setLoading} />
                     </div>
                     {activeBtn === 'home' && (
                         <>

@@ -7,6 +7,7 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BigGigPreview } from '../cmps/BigGigPreview'
 import { MUISelect } from '../cmps/MUISelect'
 import { utilService } from '../services/util.service'
+const categories = gigService.getCategories()
 
 export function AddGig() {
     const [gigToEdit, setGigToEdit] = useState(null)
@@ -22,7 +23,7 @@ export function AddGig() {
     }, [gigId])
 
     useEffect(() => {
-        if (gigToEdit && gigToEdit.category) setCurrCategory(gigService.categories.find(c => c.category === gigToEdit.category))
+        if (gigToEdit && gigToEdit.category) setCurrCategory(categories.find(c => c.category === gigToEdit.category))
     }, [gigToEdit])
 
     async function onLoadGig() {
@@ -125,7 +126,7 @@ export function AddGig() {
                 </label>
                 <label className='form-label tags'>
                     Select Category
-                    <MUISelect categories={gigService.categories} selectCategory={onSelectCategory} selectedCategory={gigToEdit.category}></MUISelect>
+                    <MUISelect categories={categories} selectCategory={onSelectCategory} selectedCategory={gigToEdit.category}></MUISelect>
                 </label>
                 <label className='form-label tags'>
                     Category tags

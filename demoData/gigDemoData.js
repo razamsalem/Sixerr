@@ -3,23 +3,24 @@ const gigDemoData = [
     _id: "i101",
     title: "I will create custom company logo design for your business",
     price: 15,
+    createdAt: 1697958053052,
     packages: {
       basic: {
-        title: 'Bronze Package',
+        title: 'Bronze',
         packPrice: 15,
         packDaysToMake: 3,
         desc: '1 logo design, High Quality Mock-up, Logo Transparency',
         features: ['1 concept included', 'Logo transparency']
       },
       standard: {
-        title: 'Silver Package',
+        title: 'Silver',
         packPrice: 30,
         packDaysToMake: 5,
         desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
         features: ['2 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
       },
       premium: {
-        title: 'Gold Package',
+        title: 'Gold',
         packPrice: 45,
         packDaysToMake: 8,
         desc: ' 3 Amazing concepts + all source files+ Social Media Kit + 24/7 priority customer services',
@@ -44,6 +45,7 @@ const gigDemoData = [
     _id: "i102",
     title: "I will design your company's vision plan and create logos",
     price: 20,
+    createdAt: 1697958053052,
     packages: {
       basic: {
         title: 'Low Cost Package',
@@ -88,6 +90,7 @@ const gigDemoData = [
     _id: "i1qz",
     title: "I will create custom company logo design for your business",
     price: 10,
+    createdAt: 1697948053052,
     packages: {
       basic: {
         title: 'Beginner Package',
@@ -131,6 +134,7 @@ const gigDemoData = [
     _id: "i104",
     title: "I will do 3 modern minimalist logo design",
     price: 60,
+    createdAt: 1697948053052,
     packages: {
       basic: {
         title: 'Starter Package',
@@ -176,6 +180,7 @@ const gigDemoData = [
     _id: "iz1",
     title: "I will convert figma to react PSD to react js next js tailwind CSS",
     price: 20,
+    createdAt: 1697948053052,
     packages: {
       basic: {
         title: 'Basic React',
@@ -241,6 +246,7 @@ const gigDemoData = [
     _id: "iz2",
     title: "I will develop a responsive website in HTML CSS Javascript React Node NextJS",
     price: 50,
+    createdAt: 1697938053052,
     packages: {
       basic: {
         title: 'Basic',
@@ -292,6 +298,7 @@ const gigDemoData = [
     _id: "iz3",
     title: "I will build web apps, sites with js, react, nextjs, PHP and node",
     price: 85,
+    createdAt: 1697928053052,
     packages: {
       basic: {
         title: 'Basic',
@@ -351,6 +358,7 @@ const gigDemoData = [
     _id: "iz4",
     title: "I will code HTML CSS javascript PHP web application",
     price: 70,
+    createdAt: 1697918053052,
     packages: {
       basic: {
         title: 'Basic',
@@ -405,6 +413,7 @@ const gigDemoData = [
     _id: "iz5",
     title: "I will be your frontend wizard with html css react js jquery",
     price: 80,
+    createdAt: 1697918053052,
     packages: {
       basic: {
         title: 'Basic',
@@ -457,6 +466,7 @@ const gigDemoData = [
     _id: "iz6",
     title: "I will do professional youtube video editing within 24 hours",
     price: 100,
+    createdAt: 1697918053052,
     packages: {
       basic: {
         title: 'Small Project ',
@@ -514,6 +524,7 @@ const gigDemoData = [
     _id: "iz7",
     title: "I will be your pro Tiktok editor for all your Tiktok needs",
     price: 10,
+    createdAt: 1697608053052,
     packages: {
       basic: {
         title: '1 Edit tiktoks, reels and shorts',
@@ -573,6 +584,7 @@ const gigDemoData = [
     _id: "ApOD18d",
     title: "I will convert figma to html, psd to html, xd to html tailwindcss",
     price: 50,
+    createdAt: 1697608053052,
     packages: {
       basic: {
         title: '1 Landing page website',
@@ -622,6 +634,7 @@ const gigDemoData = [
     _id: "R8aks45Q",
     title: "I will design a brand style guide and logo for you",
     price: 25,
+    createdAt: 1697608053052,
     packages: {
       basic: {
         title: 'Cheap Package',
@@ -663,6 +676,7 @@ const gigDemoData = [
     _id: "iz8",
     title: "I will build react js next js website with tailwind css",
     price: 50,
+    createdAt: 1697608053052,
     packages: {
       basic: {
         title: 'Basic',
@@ -730,6 +744,7 @@ const gigDemoData = [
     _id: "iz9",
     title: "I will do hyper realistic pencil portrait by hand drawing",
     price: 20,
+    createdAt: 1697608053052,
     packages: {
       basic: {
         title: 'Silver',
@@ -780,6 +795,7 @@ const gigDemoData = [
     _id: "iz10",
     title: "I will rank etsy listing with etsy seo title and tags",
     price: 70,
+    createdAt: 1697708053052,
     packages: {
       basic: {
         title: 'Shop Review',
@@ -831,6 +847,7 @@ const gigDemoData = [
     _id: "iz11",
     title: "I will design converting amazon listing enhanced brand content ebc a plus product page",
     price: 245,
+    createdAt: 1697808053052,
     packages: {
       basic: {
         title: 'Basic',
@@ -882,6 +899,7 @@ const gigDemoData = [
     _id: "Ap0ll0207",
     title: "I will create pixel art characters, items, icon, and animate them",
     price: 20,
+    createdAt: 1697808053052,
     packages: {
       basic: {
         title: 'Mini Art',
@@ -931,6 +949,7 @@ const gigDemoData = [
     _id: "iz12",
     title: "I will set up your etsy shop,add listings, SEO or do a complete overhaul",
     price: 40,
+    createdAt: 1697808053052,
     packages: {
       basic: {
         title: 'Medium Shop',
@@ -981,6 +1000,7 @@ const gigDemoData = [
     _id: "iz13",
     title: "I will create cash cow automated youtube channel and videos for you",
     price: 60,
+    createdAt: 1697908053052,
     packages: {
       basic: {
         title: 'Small Channel',
@@ -1032,6 +1052,7 @@ const gigDemoData = [
     _id: "FUsdf5",
     title: "I will professionally promote your instagram account",
     price: 35,
+    createdAt: 1698008053052,
     packages: {
       basic: {
         title: 'Small account',
@@ -1073,6 +1094,7 @@ const gigDemoData = [
     _id: "g87624",
     title: "I will create cute gifs for your instagram and facebook stories",
     price: 20,
+    createdAt: 1698108053052,
     packages: {
       basic: {
         title: '1 custom Gif',
@@ -1122,6 +1144,7 @@ const gigDemoData = [
     _id: "iz14",
     title: "I will assist you in your work, write articles and blogs in spanish, french and german",
     price: 35,
+    createdAt: 1698208053052,
     packages: {
       basic: {
         title: 'Small article',
@@ -1172,6 +1195,7 @@ const gigDemoData = [
     _id: "iz15",
     title: "I will make you 3 catchy producer beat tags",
     price: 10,
+    createdAt: 1698308053052,
     packages: {
       basic: {
         title: 'Bronze',
@@ -1221,6 +1245,7 @@ const gigDemoData = [
     _id: "AcL11z72",
     title: "I will setup shopify shipping profiles and shopify tax for domestic and international",
     price: 25,
+    createdAt: 1698408053052,
     packages: {
       basic: {
         title: 'Domestic',
@@ -1270,6 +1295,7 @@ const gigDemoData = [
     _id: "iQQax12S02",
     title: "I will draw a custom dark surrealism for apparel",
     price: 35,
+    createdAt: 1698508053052,
     packages: {
       basic: {
         title: 'Nice Fellowship',
@@ -1316,6 +1342,7 @@ const gigDemoData = [
     _id: "iz16",
     title: "I will create amazing images and concept art using midjourney ai",
     price: 130,
+    createdAt: 1698608053052,
     packages: {
       basic: {
         title: 'Bronze',
@@ -1368,6 +1395,7 @@ const gigDemoData = [
     _id: "FUq4sRza",
     title: "I will optimize your youtube video SEO and channel organically",
     price: 30,
+    createdAt: 1698708053052,
     packages: {
       basic: {
         title: 'Bronze',
@@ -1409,6 +1437,7 @@ const gigDemoData = [
     _id: "ApOD12yGCxd",
     title: "I will write SEO blog posts and articles for your website",
     price: 15,
+    createdAt: 1698808053052,
     packages: {
       basic: {
         title: 'BASIC SEO',
@@ -1462,6 +1491,7 @@ const gigDemoData = [
     _id: "Ap0ll0OD18d",
     title: "I will fix bugs errors in your javascript, html, css code",
     price: 80,
+    createdAt: 1698908053052,
     packages: {
       basic: {
         title: 'Simple bug',
@@ -1510,6 +1540,7 @@ const gigDemoData = [
     _id: "iQax1rR02",
     title: "I will create a professional dj mix, mashup, custom music project",
     price: 18,
+    createdAt: 1698907053052,
     packages: {
       basic: {
         title: 'DJ PARTY, PARTY DJ',
@@ -1556,6 +1587,7 @@ const gigDemoData = [
     _id: "AQLz29",
     title: "I will make a pixel art character or asset for you",
     price: 10,
+    createdAt: 1698908053052,
     packages: {
       basic: {
         title: 'Silver Pixel',

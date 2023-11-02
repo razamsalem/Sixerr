@@ -16,8 +16,10 @@ $light-clr2: #e4e5e7;
 $light-clr1: #f5f5f5;
 $light-clr: #fff;
 $error-clr: #a33030da;
-$fulfilled-clr: #195dc2;
-$pending-clr: #e7bd32;
+$pending-clr: #c37e10d7;
+$rejected-clr: darken($dark-clr-1, 10%);
+$approved-clr: #ffc82fd7;
+$fulfilled-clr: $dark-accent-clr;
 
 //Modal Colors
 $modal-underline-clr: #efeff0;
@@ -25,6 +27,7 @@ $modal-hover-clr2: #474748;
 $modal-hover-clr: #84868b;
 $modal-filter-txt-clr: #95979d;
 $modal-filter-border-clr: #dadbdd;
+$modal-border-bottom-clr: #f4f4f4;
 
 //Homepage colors
 $home-light-clr: #f1fdf7;
