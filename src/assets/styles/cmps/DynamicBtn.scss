@@ -7,7 +7,7 @@
     background: $light-clr;
 
     &.sticky-active {
-        box-shadow: 0 em(0.266px) em(1.13052px) rgba(0, 0, 0, .069), 0 em(0.89345px) em(3.79717px) rgba(0, 0, 0, .101), 0 em(5px) em(17px) rgba(0, 0, 0, .17);
+        box-shadow: rem(5px) rem(5px) rem(10px) rgba(0, 0, 0, .101);
 
         .filter-btns {
             .pills-container {

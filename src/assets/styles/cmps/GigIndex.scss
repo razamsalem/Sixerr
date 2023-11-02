@@ -5,6 +5,14 @@
 
     }
 
+    .category-header {
+        color: $dark-clr;
+        font-size: rem(32px);
+        font-weight: 700;
+        line-height: rem(36px);
+        padding: rem(8px) 0;
+    }
+
     .top-of-gigs {
         display: flex;
         align-items: center;
@@ -26,13 +34,13 @@
             }
 
             .drop-down-btn {
-                color: #222325;
+                color: $dark-clr;
                 font-weight: 600;
                 padding: 10px 8px;
                 border-radius: 8px;
 
                 &:hover {
-                    background-color: #f5f5f5
+                    background-color: $light-clr1
                 }
 
                 .drop-down-menu {
