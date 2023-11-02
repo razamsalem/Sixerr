@@ -13,6 +13,7 @@ import { DropdownBtn } from './DropdownBtn'
 import { gigService } from '../services/gig.service.local'
 import { getClearFilter, setFilterBy } from "../store/actions/gig.actions"
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
+const categories = gigService.getCategories()
 
 export function AppHeader() {
     const navigate = useNavigate()
@@ -109,7 +110,7 @@ export function AppHeader() {
                     </nav>
                 </header>
             </section >
-            <CategoryNav categories={gigService.categories} globalFilterBy={globalFilterBy} setFilterBy={setFilterBy} getClearFilter={getClearFilter} subHeaderPosition={subHeaderPosition} />
+            <CategoryNav categories={categories} globalFilterBy={globalFilterBy} setFilterBy={setFilterBy} getClearFilter={getClearFilter} subHeaderPosition={subHeaderPosition} />
         </>
 
     )
