@@ -135,7 +135,7 @@ export function GigIndex() {
             ) : currPageGigs.length ? (
                 <>
                     <BreadCrumbs category={filterBy.category} />
-                    <h1 className='category-header'>{filterBy.category}</h1>
+                    <h1 className='category-header'>{filterBy.category || 'Explore page'}</h1>
                     <DynamicBtn />
                     <div className='top-of-gigs'>
                         <ServicesCounter gigs={gigs} />
