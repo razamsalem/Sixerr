@@ -153,6 +153,7 @@
                     .drop-down-menu {
                         top: 140%;
                         right: 0;
+                        padding: rem(5px) rem(15px);
                     }
 
                     .drop-down-item {
@@ -160,10 +161,9 @@
                         font-weight: 400;
                         letter-spacing: 0.3px;
                         width: rem(100px);
-                        padding-block: em(5px);
+                        padding-block: em(6px);
 
                         &>* {
-                            display: block;
                             color: inherit;
                             font-weight: inherit;
                             margin: 0;

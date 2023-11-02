@@ -64,6 +64,11 @@
             transition: background-color 0.2s, color 0.2s;
             font-weight: 700;
 
+            &>* {
+                display: flex;
+                width: 100%;
+            }
+
             &:first-child {
                 border-radius: 6px 6px 0 0;
                 padding-block-start: 5px;
