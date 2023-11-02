@@ -119,10 +119,11 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
                         </button>
                     ))}
                 </div>}
-            <article className="call-to-action">
+                
+            <article className={`call-to-action ${isPurchase ? 'buyer' : ''}`}>
                 <figure className='preview-container'>
                     {isPurchase && <img src={imgUrls[0] || imgNotFound} alt="Selected gig image preview" onError={e => e.currentTarget.src = imgNotFound} />}
-                    {isPurchase && <span className='package-desc'>{desc}</span>}
+                    {isPurchase && <span className='package-desc'>{title}</span>}
                 </figure>
                 <section className="package-heading">
                     <h2 className='price'><span className="price-font">$ {packPrice ? packPrice : price}</span></h2>

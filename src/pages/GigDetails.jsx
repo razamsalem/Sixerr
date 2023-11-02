@@ -135,7 +135,7 @@ export function GigDetails() {
                 <h1 className="about-seller">About the seller</h1>
                 <UserMiniDetail gig={gig} />
             </div>
-            <div className="user-reviews" ref={userReviewRef}>
+            <div className={`user-reviews ${isModalOpen ? 'hide' : ''}`} ref={userReviewRef}>
                 <ReviewList gigOwnerId={gig.owner._id} />
             </div>
         </section>

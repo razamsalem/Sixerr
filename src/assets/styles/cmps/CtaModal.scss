@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     right: rem(-475px);
-    width: rem(475px);
+    max-width: rem(475px);
     height: 100%;
     background-color: $light-clr;
     box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.2);
