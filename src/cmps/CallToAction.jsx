@@ -26,6 +26,19 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
         setSelectedPackage(packageKey)
     }
 
+    function calculateVAT(price) {
+        const vatAmount = 0.17 * price
+        const formattedVAT = parseFloat(vatAmount.toFixed(2))
+        return formattedVAT
+    }
+
+    function calculateOverallPrice(price) {
+        const vatAmount = calculateVAT(price)
+        const serviceFee = 5.25
+        const overallPrice = price + serviceFee + vatAmount
+        return overallPrice
+    }
+
     function goToCheckout() {
         if (loggedUser) {
             navigate(`${pathname}/checkout/${selectedPackage}`)
@@ -119,22 +132,29 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
                         </button>
                     ))}
                 </div>}
-                
+
             <article className={`call-to-action ${isPurchase ? 'buyer' : ''}`}>
                 <figure className='preview-container'>
                     {isPurchase && <img src={imgUrls[0] || imgNotFound} alt="Selected gig image preview" onError={e => e.currentTarget.src = imgNotFound} />}
                     {isPurchase && <span className='package-desc'>{title}</span>}
                 </figure>
-                <section className="package-heading">
-                    <h2 className='price'><span className="price-font">$ {packPrice ? packPrice : price}</span></h2>
-                </section>
 
-                <h3 className='package-desc'><span className='package'>{packTitle ? packTitle : selectedPackage.charAt(0).toUpperCase() + selectedPackage.slice(1)} </span>{!isPurchase && desc}</h3>
+                {!isPurchase &&
+                    <section className="package-heading">
+                        <h2 className='price'><span className="price-font">$ {packPrice ? packPrice : price}</span></h2>
+                    </section>}
 
-                <span className="days-container">
+                {isPurchase && <section className="package-heading flex">
+                    <span className='pack-title'>{packTitle}</span>
+                    <span className='pack-price'>${packPrice}</span>
+                </section>}
+
+                {!isPurchase && <h3 className='package-desc'><span className='package'>{packTitle ? packTitle : selectedPackage.charAt(0).toUpperCase() + selectedPackage.slice(1)} </span>{!isPurchase && desc}</h3>}
+
+                {!isPurchase && <span className="days-container">
                     <img className='icon clock' src={timeImg} alt="clock-icon" />
                     <h3>{packDaysToMake ? packDaysToMake : daysToMake} {packDaysToMake === 1 ? 'Day' : 'Days'} Delivery</h3>
-                </span>
+                </span>}
 
                 <ul className="feature-list">
                     {features.map((feature) => (
@@ -145,23 +165,48 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
                     ))}
                 </ul>
 
-                {isPurchase ?
-                    <div className='purchase-btn-container'>
-                        <button onClick={() => { onPurchaseOrder(packages[selectedPackage]) }} className='btn continue'>Pay in USD</button>
-                        <span>
-                            <i className="fa-solid fa-lock"></i>  SSL Secure Payment
-                        </span>
-                    </div>
-                    :
+
+                {!isPurchase &&
                     <a onClick={openModal} className='btn continue'>
                         Continue
                         <i className="fa-solid fa-arrow-right"></i>
-                    </a>
-                }
+                    </a>}
                 {!isPurchase && <div className='compare'>
                     <a className='compare-link'>Compare packages</a>
                 </div>}
+
             </article>
+            {isPurchase &&
+                <div className="summary">
+                    <div className="summary-table">
+                        <div className="service-fee flex">
+                            <span className='service'>Service fee <span className="fa-solid fa-circle-question icon" title='This helps us operate our platform and offer 24/7 customer support for your orders.'></span></span><span>$5.25</span>
+                        </div>
+                        <div className="tax-fee flex">
+                            <span className='vat'>VAT <span className="fa-solid fa-circle-question icon" title='A 17% Value Added Tax (VAT) applies to the purchase of goods and services in your region.'></span></span><span>${calculateVAT(packPrice)}</span>
+                        </div>
+                    </div>
+                    <div className="summary-footer">
+                        <div className="user-price flex">
+                            <span className='price'>You’ll pay</span><span>${calculateOverallPrice(packPrice)}</span>
+                        </div>
+                        <div className="user-days flex">
+                            <span className='time'>Total delivery time</span><span>{packDaysToMake} {packDaysToMake === 1 ? 'day' : 'days'}</span>
+                        </div>
+
+                        <div className='purchase-btn-container flex'>
+                            <button onClick={() => { onPurchaseOrder(packages[selectedPackage]) }} className='btn continue'>Pay in USD</button>
+                            <span>
+                                <i className="fa-solid fa-lock"></i>  SSL Secure Payment
+                            </span>
+                        </div>
+                    </div>
+                </div>}
+
+            {isPurchase &&
+                <div className="currency-options">
+                    <span className='small'>You will be charged ${calculateOverallPrice(packPrice)}. The order total is an estimation and does not include additional fees your bank may apply.</span>
+                </div>}
         </section>
     )
 }
