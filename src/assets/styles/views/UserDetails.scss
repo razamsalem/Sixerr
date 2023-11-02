@@ -501,11 +501,9 @@
     }
 
     .no-data-found {
-        margin-inline-end: 12.063rem;
         position: relative;
-        // padding: 30px;
+        padding: rem(60px) rem(80px);
         width: 100%;
-        margin-block-start: rem(50px);
 
         font-size: 14px;
         line-height: 130%;
