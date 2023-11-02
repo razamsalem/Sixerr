@@ -184,6 +184,7 @@
     .big-gig-preview {
         box-shadow: rem(2px) rem(2px) rem(15px) #00000050;
         display: grid;
+        gap: 0.425em;
         font-size: rem(12px);
 
         position: sticky;
@@ -191,7 +192,6 @@
         justify-self: end;
         border: 0.125em solid #e5e5e7;
         padding: 0.875em 1.5em;
-        gap: 0.625em;
         margin-block: rem(35px);
         width: 100%;
         flex-direction: row;
@@ -217,13 +217,15 @@
         }
 
         .gig-heading {
-            font-size: 1.3rem;
-            color: black;
+            font-size: 1.1625rem;
+            color: $dark-clr;
             margin-block-end: em(8px);
             overflow-wrap: break-word;
             word-wrap: break-word;
-            hyphens: auto;
-            max-width: 300px;
+
+            &.placeholder {
+                color: $dark-clr-3;
+            }
         }
 
         .gig-preview-details {
@@ -243,18 +245,33 @@
             .description {
                 display: none;
                 font-weight: 400;
+                margin-block-end: rem(11px);
+
+                &.placeholder {
+                    color: $dark-clr-3;
+                }
             }
 
             .detail-container {
-                display: grid;
-                margin-block: em(7px);
-                font-size: 1.2rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
 
                 .title {
                     display: none;
                     font-weight: 700;
                     font-size: 1.3rem;
                 }
+
+                .gig-price,
+                .estimated {
+                    font-size: 19px;
+                    color: $dark-clr-1;
+                    font-weight: 100;
+                }
+
+
+
             }
 
             .tags {
@@ -275,7 +292,7 @@
 
         .big-gig-preview {
             place-self: center;
-            font-size: 1rem;
+            font-size: rem(20px);
 
 
             .preview-heading {
@@ -290,11 +307,19 @@
                 }
 
                 .tags {
+                    font-size: rem(15px);
+                    margin-block-end: 11px;
                     display: unset;
+                    color: $dark-clr-4;
+
+                    &.placeholder {
+                        color: $dark-clr-3;
+                    }
                 }
             }
 
         }
+
     }
 
     @include for-narrow-layout {
@@ -339,6 +364,9 @@
 
                 .description {
                     display: unset;
+                    font-size: 1.0625rem;
+                    color: $dark-clr-1;
+                    font-weight: 100;
                 }
 
             }
