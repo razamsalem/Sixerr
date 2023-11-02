@@ -7,6 +7,7 @@ export const utilService = {
     saveToStorage,
     loadFromStorage,
     getAssetSrc,
+    calculateVAT,
     getSubtitle,
     getEducation,
     getEducationPlace,
@@ -14,7 +15,7 @@ export const utilService = {
     timeAgo,
     generateRandomDate,
     getRandomDate,
-    calculateDaysFromTimestamp
+    calculateDaysFromTimestamp,
 }
 
 function makeId(length = 6) {
@@ -74,6 +75,12 @@ function saveToStorage(key, value) {
 function loadFromStorage(key) {
     const data = localStorage.getItem(key)
     return (data) ? JSON.parse(data) : undefined
+}
+
+function calculateVAT(price) {
+    const vatAmount = 0.17 * price
+    const formattedVAT = parseFloat(vatAmount.toFixed(2))
+    return formattedVAT
 }
 
 function getSubtitle() {

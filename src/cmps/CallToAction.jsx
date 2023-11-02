@@ -26,14 +26,8 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
         setSelectedPackage(packageKey)
     }
 
-    function calculateVAT(price) {
-        const vatAmount = 0.17 * price
-        const formattedVAT = parseFloat(vatAmount.toFixed(2))
-        return formattedVAT
-    }
-
     function calculateOverallPrice(price) {
-        const vatAmount = calculateVAT(price)
+        const vatAmount = utilService.calculateVAT(price)
         const serviceFee = 5.25
         const overallPrice = price + serviceFee + vatAmount
         return overallPrice
@@ -183,7 +177,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
                             <span className='service'>Service fee <span className="fa-solid fa-circle-question icon" title='This helps us operate our platform and offer 24/7 customer support for your orders.'></span></span><span>$5.25</span>
                         </div>
                         <div className="tax-fee flex">
-                            <span className='vat'>VAT <span className="fa-solid fa-circle-question icon" title='A 17% Value Added Tax (VAT) applies to the purchase of goods and services in your region.'></span></span><span>${calculateVAT(packPrice)}</span>
+                            <span className='vat'>VAT <span className="fa-solid fa-circle-question icon" title='A 17% Value Added Tax (VAT) applies to the purchase of goods and services in your region.'></span></span><span>${utilService.calculateVAT(packPrice)}</span>
                         </div>
                     </div>
                     <div className="summary-footer">

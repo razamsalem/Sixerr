@@ -8,6 +8,7 @@ import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
 import { useSelector } from "react-redux"
 import { addOrder } from "../store/actions/order.actions"
 import { setUserModalOpen } from '../store/user.actions'
+import { utilService } from "../services/util.service"
 
 export function Checkout() {
     const navigate = useNavigate()
@@ -18,6 +19,14 @@ export function Checkout() {
     useEffect(() => {
         onLoadGig()
     }, [])
+
+    function calculateRoundedPrice(price) {
+        const vatAmount = utilService.calculateVAT(price)
+        const serviceFee = 5.25
+        const overallPrice = price + serviceFee + vatAmount
+        const roundedOverallPrice = Math.floor(overallPrice)
+        return roundedOverallPrice
+    }
 
     async function onLoadGig() {
         const desiredGig = await gigService.getById(gigId)
@@ -33,7 +42,7 @@ export function Checkout() {
         const { title, packPrice, packDaysToMake } = selectedPackage
         const gig = currGig
         delete gig.packages
-        let order = { buyer: loggedUser, seller: gig.owner, gig, status: 'pending', packPrice, daysToMake: packDaysToMake, title }
+        let order = { buyer: loggedUser, seller: gig.owner, gig, status: 'pending', packPrice: calculateRoundedPrice(packPrice), daysToMake: packDaysToMake, title }
         order.createdAt = Date.now()
 
         console.log(order)
