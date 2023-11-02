@@ -6,6 +6,7 @@ import { TrustedBy } from '../cmps/TrustedBy'
 import { SimpleSlider } from '../cmps/SimpleSlider'
 
 import { setHeaderPosition, setSubHeaderPosition, } from '../store/actions/system.actions'
+import { SuggCategoryArea } from '../cmps/SuggCategoryArea'
 
 export function HomePage() {
     const revealHeaderRef = useRef()
@@ -49,6 +50,7 @@ export function HomePage() {
             <h1 className='title-slide'>Popular services</h1>
             <SimpleSlider />
             <SellingArea />
+            <SuggCategoryArea />
         </section >
     )
 }

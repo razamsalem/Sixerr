@@ -9,7 +9,7 @@ export function PopularTags({ globalFilterBy, setFilterBy }) {
         let category = serviceCategories.filter(cat => cat.tags.includes(tag))
         return category[0].category;
     }
-    console.log(getCategory('Website Design'))
+
     return (
         <div className="popular">
             Popular:
