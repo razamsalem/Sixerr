@@ -23,7 +23,11 @@ export function GigDetails() {
     const [seller, setSeller] = useState(null)
     const userInfoRef = useRef(null)
     const userReviewRef = useRef(null)
-    const defaultImgUrl = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698161431/sixxer-logo_vseimk.png'
+    const defaultImgUrls = [
+        'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663092/defaultGigImg_vjtk9e.webp',
+        'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698914668/default-img-3_afl2mb.webp',
+        'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698914668/default-img-1_qhfps6.webp',
+    ]
 
     useEffect(() => {
         loadGig()
@@ -115,7 +119,7 @@ export function GigDetails() {
                                 )
                             }}
                         >
-                            {!gig.imgUrls.length ? <img src={defaultImgUrl} onError={e => e.currentTarget.src = defaultGigImg} /> : gig.imgUrls.map(img => <img key={img} src={img} onError={e => e.currentTarget.src = defaultGigImg} />)}
+                            {!gig.imgUrls.length ? defaultImgUrls.map(img => <img src={img} />) : gig.imgUrls.map(img => <img key={img} src={img} onError={e => e.currentTarget.src = defaultGigImg} />)}
                         </Carousel>
                     </div>
                 </div>
