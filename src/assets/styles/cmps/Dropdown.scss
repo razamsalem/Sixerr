@@ -64,6 +64,11 @@
             transition: background-color 0.2s, color 0.2s;
             font-weight: 700;
 
+            &>* {
+                display: flex;
+                width: 100%;
+            }
+
             &:first-child {
                 border-radius: 6px 6px 0 0;
                 padding-block-start: 5px;
@@ -79,21 +84,21 @@
             }
 
             .action {
-                display: block;
-                padding: em(5px) em(25px);
+                padding: em(5px) 0 em(5px) 0;
+                white-space: nowrap;
                 font-size: rem(18px);
             }
         }
 
         .approve-gig {
             &:hover {
-                color: $accent-clr;
+                color: $approved-clr;
             }
         }
 
         .decline-gig {
             &:hover {
-                color: $error-clr;
+                color: $pending-clr;
             }
         }
 

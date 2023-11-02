@@ -105,11 +105,11 @@
 }
 
 .approved-label {
-    background-color: $accent-clr;
+    background-color: $approved-clr;
 }
 
 .rejected-label {
-    background-color: $error-clr;
+    background-color: $rejected-clr;
 }
 
 .fulfilled-label {
@@ -119,9 +119,10 @@
 .label {
     text-align: center;
     color: $light-clr;
-    padding: 2px 5px;
-    border-radius: 8px;
-    width: 90px;
+    padding: rem(2px) rem(5px);
+    border-radius: rem(8px);
+    white-space: nowrap;
+    min-width: rem(100px);
 }
 
 // Media helpers

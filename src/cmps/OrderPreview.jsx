@@ -31,11 +31,11 @@ export function OrderPreview({ order, mode, openModal, onApproveOrder, onDecline
             <td>{utilService.calculateDaysFromTimestamp(order.createdAt, order.daysToMake)}</td>
             <td>${order.packPrice}</td>
             <td onClick={handleActionClick} className="status">
-                {order && <span className={`${checkStatus(order.status)} label `}> {utilService.capitalizeFirstLetter(order.status)} </span>}
+                {order && <span className={`${checkStatus(order.status)} label `}> {order.status === 'approved' ? 'In progress' : utilService.capitalizeFirstLetter(order.status)} </span>}
                 {mode === 'seller' && order.status !== 'fulfilled' && order.status !== 'rejected' &&
                     <DropdownBtn>
-                        <span className="action approve-gig" onClick={(ev) => { onApproveOrder(ev, order) }}>Approve</span>
-                        <span className="action decline-gig" onClick={(ev) => { onDeclineOrder(ev, order) }}>Decline</span>
+                        <span className="action approve-gig" onClick={(ev) => { onApproveOrder(ev, order) }}>Approve order</span>
+                        <span className="action decline-gig" onClick={(ev) => { onDeclineOrder(ev, order) }}>Decline order</span>
                         <span className="action fulfilled-gig" onClick={(ev) => { onFulfillOrder(ev, order) }}>Mark as fulfilled</span>
                     </DropdownBtn>}
 
