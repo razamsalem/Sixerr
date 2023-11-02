@@ -92,7 +92,7 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
                             </div>
                         </div>
                     </div>
-                    
+
                     <footer className='footer'>
                         <div className="purchase-btn">
                             <button onClick={goToCheckout}>Continue (${packPrice})</button>
@@ -101,18 +101,18 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
                     </footer>
                 </section>
             </CtaModal>
-
-            <div className="package-options flex">
-                {Object.keys(packages).map((packageKey) => (
-                    <button
-                        key={packageKey}
-                        className={`package ${selectedPackage === packageKey ? 'selected' : ''}`}
-                        onClick={() => handlePackageChange(packageKey)}
-                    >
-                        {utilService.capitalizeFirstLetter(packageKey)}
-                    </button>
-                ))}
-            </div>
+            {!isPurchase &&
+                <div className="package-options flex">
+                    {Object.keys(packages).map((packageKey) => (
+                        <button
+                            key={packageKey}
+                            className={`package ${selectedPackage === packageKey ? 'selected' : ''}`}
+                            onClick={() => handlePackageChange(packageKey)}
+                        >
+                            {utilService.capitalizeFirstLetter(packageKey)}
+                        </button>
+                    ))}
+                </div>}
             <article className="call-to-action">
                 <figure className='preview-container'>
                     {isPurchase && <img src={imgUrls[0] || imgNotFound} alt="Selected gig image preview" onError={e => e.currentTarget.src = imgNotFound} />}
