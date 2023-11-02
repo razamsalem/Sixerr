@@ -65,10 +65,8 @@ async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, categ
         gigs = gigs.filter(gig => gig.category === filterBy.category)
     }
     if (filterBy.tags && filterBy.tags.length > 0) {
-        // console.log("pp");
         gigs = gigs.filter(gig => {
             return gig.tags.some(tag => {
-                // console.log(tag,"tag");
                 return filterBy.tags.includes(tag)
             });
         });
@@ -90,6 +88,14 @@ async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, categ
         gigs = gigs.filter(gig => gig.owner.level === 1)
     } else if (filterBy.premiumLevel) {
         gigs = gigs.filter(gig => gig.owner.level === 2)
+    }
+
+    if (filterBy.sortBy) {
+        switch (filterBy.sortBy) {
+            case 'new': gigs = gigs.sort((gig1, gig2) => { return gig2.createdAt - gig1.createdAt })
+                break
+            case 'recommend': gigs = gigs.sort((gig1, gig2) => { return gig2.owner.rate - gig1.owner.rate })
+        }
     }
 
     return gigs
@@ -119,7 +125,7 @@ export function getCategories() {
 }
 
 export function getDefaultFilter() {
-    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: [], page: 1, userId: '', daysToMake: '', topRated: false, basicLevel: false, premiumLevel: false }
+    return { minPrice: '', maxPrice: '', txt: '', category: '', tags: [], page: 1, userId: '', daysToMake: '', topRated: false, basicLevel: false, premiumLevel: false, sortBy: 'new' }
 }
 
 

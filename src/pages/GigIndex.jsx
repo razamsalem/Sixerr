@@ -98,7 +98,31 @@ export function GigIndex() {
             setFilterBy({ ...filterBy, page: newPage })
             window.scrollTo(0, 0)
         } catch (error) {
+            showErrorMsg('Could not preform action at this time')
             console.log('Error while changing the page:', error)
+        }
+    }
+
+    async function handleSortChange(ev) {
+        const value = (ev.target.dataset.value)
+        try {
+            setFilterBy({ ...filterBy, sortBy: value })
+            window.scrollTo(0, 0)
+        } catch (error) {
+            showErrorMsg('Could not preform action at this time')
+            console.log('Error while changing the page:', error)
+        }
+    }
+
+    function getSortTitle() {
+        const sortBy = filterBy.sortBy
+        switch (sortBy) {
+            case 'recommend': return 'Recommended'
+                break
+            case 'best-selling': return 'Best selling'
+                break
+            case 'new': return 'Newest Arrivals'
+                break
         }
     }
 
@@ -116,10 +140,10 @@ export function GigIndex() {
                         <ServicesCounter gigs={gigs} />
                         <label className='sort-container'>
                             <span className='sort-title'>Sort by:</span>
-                            <DropdownBtn icon='Newest Arrivals'>
-                                <span>Recommended</span>
-                                <span>Best selling</span>
-                                <span>Newest Arrivals</span>
+                            <DropdownBtn icon={getSortTitle()}>
+                                <span data-value={'recommend'} onClick={handleSortChange}>Recommended</span>
+                                <span data-value={'best-selling'} onClick={handleSortChange}>Best selling</span>
+                                <span data-value={'new'} onClick={handleSortChange}>Newest Arrivals</span>
                             </DropdownBtn>
                         </label>
                     </div>
