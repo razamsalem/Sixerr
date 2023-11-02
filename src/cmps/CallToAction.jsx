@@ -27,10 +27,14 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
     }
 
     function goToCheckout() {
-        if (loggedUser) navigate(`${pathname}/checkout/${selectedPackage}`)
+        if (loggedUser) {
+            navigate(`${pathname}/checkout/${selectedPackage}`)
+            document.documentElement.classList.remove('modal-open')
+        }
         else {
             showErrorMsg('You must be logged in to purchase services..')
             setUserModalOpen(true)
+            document.documentElement.classList.remove('modal-open')
         }
     }
 
