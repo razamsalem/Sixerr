@@ -21,6 +21,7 @@ export function GigDetails() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const [seller, setSeller] = useState(null)
+    const [isModalOpen, setModalOpen] = useState(false)
     const userInfoRef = useRef(null)
     const userReviewRef = useRef(null)
     const defaultImgUrls = [
@@ -58,11 +59,12 @@ export function GigDetails() {
         }
     }
 
-    function setPackage(selectedPackage) {
-        setSelectedPackage(selectedPackage)
-        const { packages } = gig
-        setSelectedLevel(packages[selectedPackage])
-        return packages
+    function ShowCarousel() {
+        setModalOpen(false)
+    }
+
+    function hideCarousel() {
+        setModalOpen(true)
     }
 
     const scrollToUserInfo = () => {
@@ -81,7 +83,7 @@ export function GigDetails() {
     return (
         <section className="gig-details full main-layout">
             <BreadCrumbs category={gig.category} />
-            <CallToAction gig={gig} addToCart={addToCart} />
+            <CallToAction gig={gig} addToCart={addToCart} ShowCarousel={ShowCarousel} hideCarousel={hideCarousel} />
             <section className="top-details container full main-layout">
                 <div className="owner-details-container">
                     <h1 className="gig-title">{gig.title}</h1>
@@ -103,7 +105,7 @@ export function GigDetails() {
                             </div>
                         </div>
                     </div>
-                    <div className="carousel-container">
+                    <div className={`carousel-container ${isModalOpen ? 'hide' : ''}`}>
                         <Carousel infiniteLoop={true} showIndicators={false} thumbWidth={'100px'} showStatus={false} renderArrowNext={(clickHandler, hasNext) => {
                             return (
                                 <button className='next-btn arrow' onClick={clickHandler} >

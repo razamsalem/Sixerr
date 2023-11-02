@@ -13,7 +13,7 @@ import CtaModal from './CtaModal'
 const imgNotFound = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663092/defaultGigImg_vjtk9e.webp'
 
 
-export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openModal, selectedPack = 'basic', setPackage }) {
+export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openModal, selectedPack = 'basic', ShowCarousel, hideCarousel }) {
     const loggedUser = useSelector(storeState => storeState.userModule.user)
     const navigate = useNavigate()
     const { title, price, daysToMake, packages, imgUrls } = gig
@@ -37,11 +37,13 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
     function openModal() {
         document.documentElement.classList.add('modal-open')
         setModalOpen(true)
+        hideCarousel()
     }
 
     function closeModal() {
         document.documentElement.classList.remove('modal-open')
         setModalOpen(false)
+        ShowCarousel()
     }
 
     return (

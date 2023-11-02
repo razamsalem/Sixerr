@@ -131,6 +131,9 @@
         width: 100%;
         max-width: $details-carousel-width;
         height: $details-carousel-height-mobile;
+        &.hide {
+            opacity: .4;
+        }
 
         .carousel {
             position: static;
@@ -324,7 +327,6 @@
                     max-width: $details-carousel-width;
 
                     .slide {
-
                         img {
                             height: $details-carousel-height;
                             object-fit: cover;
