@@ -148,6 +148,8 @@
                 align-items: center;
 
                 .drop-down-btn {
+                    display: flex;
+                    cursor: pointer;
                     position: relative;
 
                     .drop-down-menu {

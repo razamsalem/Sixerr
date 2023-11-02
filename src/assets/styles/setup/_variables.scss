@@ -16,7 +16,7 @@ $light-clr2: #e4e5e7;
 $light-clr1: #f5f5f5;
 $light-clr: #fff;
 $error-clr: #a33030da;
-$pending-clr: darken($light-clr5, 8%);
+$pending-clr: $light-clr5;
 $rejected-clr: darken($dark-clr-1, 10%);
 $approved-clr: #ffc82fd7;
 $fulfilled-clr: $dark-accent-clr;
