@@ -1,8 +1,9 @@
 .pills-container {
     display: flex;
-    margin-block: em(16px);
 
     .filter-pill {
+        margin-block-start: rem(16px);
+        // margin-block-end: rem(8px);
         display: flex;
         align-items: center;
         gap: em(4px);

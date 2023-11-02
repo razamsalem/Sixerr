@@ -2,30 +2,47 @@
     position: sticky;
     z-index: 3;
     top: 0;
+    margin-block-start: rem(2px);
+    margin-block-end: rem(14px);
     background: $light-clr;
 
     &.sticky-active {
         box-shadow: 0 em(0.266px) em(1.13052px) rgba(0, 0, 0, .069), 0 em(0.89345px) em(3.79717px) rgba(0, 0, 0, .101), 0 em(5px) em(17px) rgba(0, 0, 0, .17);
+
+        .filter-btns {
+            .pills-container {
+                position: absolute;
+                left: -100%;
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
     }
 
 
     .filter-btns {
-        .border-0, .border-1 , .border-2, .border-3, .border-4{
-            border:1px solid black;
+        padding-block: 1rem;
+        display: grid;
+
+        .border-0,
+        .border-1,
+        .border-2,
+        .border-3,
+        .border-4 {
+            border: 1px solid black;
         }
+
         .filter-btn {
             position: relative;
             font-size: rem(16px);
             font-weight: 600;
             line-height: rem(24px);
             text-align: start;
-
             min-width: rem(50px);
             min-height: rem(48px);
             padding: rem(12px) rem(16px);
-            border: 1px solid $light-clr2;
-            border-radius: 8px;
-            margin-block-start: rem(32px);
+            border: rem(1px) solid $light-clr2;
+            border-radius: rem(8px);
 
             &:not(:last-child) {
                 margin-inline-end: rem(12px)

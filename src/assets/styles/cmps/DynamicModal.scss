@@ -119,6 +119,8 @@
         padding: 16px 24px;
 
         .clear-btn {
+            font-size: 1rem;
+            font-weight: 600;
             border: none;
             line-height: 24px;
             padding: 0;
@@ -127,7 +129,6 @@
             border-radius: 4px;
             cursor: pointer;
             display: inline-block;
-            font-weight: 600;
             position: relative;
             text-align: center;
             text-decoration: none;
@@ -140,10 +141,11 @@
         }
 
         .apply-btn {
+            font-size: 1rem;
+            font-weight: 600;
             line-height: 24px;
             border: 1px solid transparent;
             border-radius: 4px;
-            font-weight: 600;
             padding: 12px 24px;
             position: relative;
             text-align: center;

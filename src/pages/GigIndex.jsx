@@ -9,7 +9,9 @@ import { DynamicBtn } from '../cmps/DynamicBtn.jsx'
 import { useSearchParams } from "react-router-dom"
 import LoadingCircle from '../cmps/LoadingCircle.jsx'
 import { Pagination } from '../cmps/Pagination.jsx'
-
+import { ServicesCounter } from '../cmps/ServicesCounter.jsx'
+import { DropdownBtn } from '../cmps/DropdownBtn.jsx'
+import { BreadCrumbs } from '../cmps/BreadCrumbs.jsx'
 
 export function GigIndex() {
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
@@ -37,9 +39,7 @@ export function GigIndex() {
 
     useEffect(() => {
         const paramFilter = {}
-        // console.log(searchParams, "tt");
         for (const [key, value] of searchParams) {
-            console.log(key,value);
             if (value === 'true') {
                 paramFilter[key] = true
             } else if (value === 'false') {
@@ -103,14 +103,26 @@ export function GigIndex() {
     }
 
     return (
-        <>
+        <section className='gig-index main-layout full'>
             {isLoading ? (
                 <>
                     <div className="loading"><LoadingCircle /></div>
                 </>
             ) : currPageGigs.length ? (
                 <>
+                    <BreadCrumbs category={filterBy.category} />
                     <DynamicBtn />
+                    <div className='top-of-gigs'>
+                        <ServicesCounter gigs={gigs} />
+                        <label className='sort-container'>
+                            <span className='sort-title'>Sort by:</span>
+                            <DropdownBtn icon='Newest Arrivals'>
+                                <span>Recommended</span>
+                                <span>Best selling</span>
+                                <span>Newest Arrivals</span>
+                            </DropdownBtn>
+                        </label>
+                    </div>
                     <GigList
                         gigs={currPageGigs}
                         onRemoveGig={onRemoveGig}
@@ -125,11 +137,11 @@ export function GigIndex() {
                 </>
             ) : (
                 <div className="no-gigs-message flex column">
-                    <h1>We couldn't find Gigs that match your search</h1>
+                    <h1 className='not-found-header'>We couldn't find gigs that match your search</h1>
                     <button className='clear' onClick={() => { setFilterBy(getClearFilter()) }}>Clear All Filters</button>
-                    <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/search_perseus/no-results-couch.0139585.png" alt="not found" />
+                    <img className='not-found-img' src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/search_perseus/no-results-couch.0139585.png" alt="not found" />
                 </div>
             )}
-        </>
+        </section>
     )
 }
