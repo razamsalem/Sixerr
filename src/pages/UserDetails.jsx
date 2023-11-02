@@ -35,6 +35,7 @@ export function UserDetails() {
 
   useEffect(() => {
     loadUser(params.id)
+    setAllReviews(false)
     onSetGig()
     window.scrollTo(0, 0)
     socketService.emit(SOCKET_EMIT_USER_WATCH, params.id)
@@ -43,7 +44,7 @@ export function UserDetails() {
     return () => {
       socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
     }
-  }, [params.id])
+  }, [params.id,])
 
 
   async function onSetGig() {

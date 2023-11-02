@@ -77,4 +77,63 @@
         }
     }
 
+    .categories-section {
+        padding-block-start: rem(96px);
+        padding-block-end: rem(43px);
+
+        h2 {
+            margin-block-end: 40px;
+            padding-block-end: 24px;
+            font-size: rem(32px);
+            line-height: 120%;
+            color: $dark-clr;
+            font-weight: 900;
+        }
+
+        .categories-list {
+            flex-wrap: wrap;
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+
+            .category {
+                position: relative;
+                text-align: center;
+                margin-block-end: rem(55px);
+                width: 20%;
+
+                img {
+                    max-width: rem(48px);
+                    height: rem(48px);
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: rem(48px);
+                    height: rem(2px);
+                    background-color: $trusted-by-clr;
+                    position: absolute;
+                    top: 50px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    transition: all 0.3s;
+                }
+
+                &:hover::after {
+                    width: rem(96px);
+                    background-color: $accent-clr;
+                }
+
+                p {
+                    margin-top: rem(8px);
+                    color: $dark-clr1;
+                }
+            }
+        }
+    }
+
+
 }
