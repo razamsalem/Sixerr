@@ -1,15 +1,17 @@
 .cta-modal-container {
     position: fixed;
     top: 0;
-    right: rem(-460px);
-    width: rem(460px);
+    right: rem(-475px);
+    width: rem(475px);
     height: 100%;
     background-color: $light-clr;
     box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.2);
     transition: right 0.3s ease-in-out;
-    z-index: 2000;
+    z-index: 3000;
 
     .modal-content {
+        flex-direction: column;
+        height: 100%;
 
         .header {
             justify-content: space-between;
@@ -43,13 +45,137 @@
                 padding: 1rem rem(20px);
                 border: 2px solid $dark-clr1;
                 border-radius: 8px;
-                
+
                 .pack {
                     justify-content: space-between;
+                    margin-block-end: rem(4px);
+
                     .bold {
                         font-size: rem(18px);
                         font-weight: 700;
                     }
+                }
+
+                .desc {
+                    font-size: rem(14px);
+                    line-height: rem(21px);
+                    color: $dark-clr;
+
+                    .bold {
+                        font-weight: 600;
+                        padding-inline-end: rem(5px);
+                    }
+                }
+            }
+
+            .order-info {
+                margin-block-start: rem(32px);
+
+                .bold {
+                    font-weight: 600;
+                    font-size: rem(16px);
+                    line-height: rem(24px);
+                }
+
+                .order {
+                    color: $dark-clr;
+                    background-color: $light-clr1 ;
+                    padding: rem(24px) rem(32px);
+                    border-radius: rem(8px);
+                    margin-block-start: rem(12px);
+
+                    .subtitle {
+                        flex-direction: column;
+                        gap: rem(4px);
+
+                        .bolder {
+                            font-size: rem(20px);
+                            line-height: 140%;
+                            font-weight: 700;
+                        }
+
+                        .small {
+                            font-size: rem(14px);
+                            line-height: 21px;
+                        }
+                    }
+
+                    .info {
+                        justify-items: center;
+                        margin-block-start: rem(8px);
+
+                        &.border-top {
+                            margin-block-start: rem(16px);
+                            padding-block-start: rem(16px);
+                            border-top: 1px solid $modal-filter-border-clr;
+                        }
+
+                        .icon {
+                            margin-inline-end: rem(8px);
+
+                            img {
+                                width: rem(16px);
+                                height: rem(14px);
+                            }
+
+                        }
+
+                        .level {
+                            font-size: rem(14px);
+                            font-weight: 600;
+                            line-height: 21px;
+                            color: $dark-clr;
+                        }
+                    }
+
+                    .features {
+                        margin-inline-start: rem(40px);
+                        padding: rem(8px);
+
+                        li {
+                            font-size: rem(14px);
+                            line-height: rem(21px);
+                            font-weight: 400;
+
+                            &:not(:last-child) {
+                                margin-block-end: rem(8px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer {
+            padding: 20px 20px 8px;
+            border-top: 1px solid $light-clr2;
+            margin-top: auto;
+
+            .purchase-btn {
+                button {
+                    display: inline-block;
+                    font-size: rem(16px);
+                    font-weight: 600;
+                    padding: rem(15px) rem(24px);
+                    width: 100%;
+                    border: 1px solid transparent;
+                    border-radius: rem(4px);
+                    background-color: $darkest-clr;
+                    transition: 70ms cubic-bezier(.75, 0, .25, 1);
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $dark-clr;
+                    }
+                }
+
+                .footer-msg {
+                    justify-content: center;
+                    align-items: center;
+                    font-size: rem(12px);
+                    line-height: rem(20px);
+                    color: $dark-clr-1;
+                    margin-block-end: rem(8px);
                 }
             }
         }
@@ -64,7 +190,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1999;
+    z-index: 2999;
 }
 
 .cta-modal-container.open {
