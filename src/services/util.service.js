@@ -14,7 +14,8 @@ export const utilService = {
     timeAgo,
     generateRandomDate,
     getRandomDate,
-    calculateDaysFromTimestamp
+    calculateDaysFromTimestamp,
+    getFlag
 }
 
 function makeId(length = 6) {
@@ -169,4 +170,24 @@ function calculateDaysFromTimestamp(timestamp, expectedDays) {
 
     const resultDate = new Date(timestamp);
     return formatDate(resultDate);
+}
+
+function getFlag(country = 'un') {
+    const flags = {
+        un: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698929556/icons8-un-flag-48_mloykm.png',
+        israel: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928453/israel_rtvzid.png',
+        'united states': 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928453/us_dzydlk.png',
+        italy: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928454/italy_aqlv4l.png',
+        thailand: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928454/thailand_izys0k.png',
+        switzerland: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928454/switzerland_zxnusp.png',
+        norway: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928453/norway_a1j3hd.png',
+        latvia: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928453/latvia_sjfngq.png',
+        germany: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928453/germany_hlgbdi.png',
+        india: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928453/india_zgam0i.png',
+        hungary: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928453/hungary_pdvcek.png',
+        france: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928453/france_wa24fs.png',
+    }
+
+    if (country.toLocaleLowerCase() in flags) return flags[country.toLocaleLowerCase()]
+    else return flags['un']
 }

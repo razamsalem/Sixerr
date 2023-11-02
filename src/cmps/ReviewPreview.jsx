@@ -6,16 +6,22 @@ import thumsDownRed from "../assets/img/thums-down-red.svg"
 import emptyStar from "../assets/img/empty-star.svg"
 import { utilService } from "../services/util.service"
 import { LongTxt } from "./LongTxt"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ReviewStars } from "./ReviewStars"
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
 import { useNavigate } from "react-router"
-
+const defaultFlag = utilService.getFlag('un')
 
 export function ReviewPreview({ review }) {
     const [isClickedTumsUp, setIsClickedTumsUp] = useState(false)
     const [isClickedTumsDown, setIsClickedTumsDown] = useState(false)
     const navigate = useNavigate()
+    const [flag, setFlag] = useState(null)
+
+    useEffect(() => {
+        setFlag(utilService.getFlag(review.by.location))
+    }, [])
+
 
     function navigateToUser() {
         navigate(`/user/${review.by._id}`)
@@ -29,7 +35,7 @@ export function ReviewPreview({ review }) {
                 <div className="seller-info">
                     <h4 className="seller-name" onClick={navigateToUser} >{review.by.fullname}</h4>
                     <div className="country">
-                        <img className="flag" src={review.by.flag} alt="flag" />
+                        <img className="flag" src={flag} alt="flag" onError={e => e.currentTarget.src = defaultFlag} />
                         <span>{review.by.location}</span>
                     </div>
                 </div>
