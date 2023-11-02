@@ -31,6 +31,7 @@ export function UserDetails() {
   const [isDashboardOpen, setDashboardOpen] = useState(null)
   const [isModalOpen, setModalOpen] = useState(null)
   const [selectedOrder, setSelectedOrder] = useState(null)
+  const [allReviews, setAllReviews] = useState(null)
 
   useEffect(() => {
     loadUser(params.id)
@@ -298,7 +299,8 @@ export function UserDetails() {
                       {<MyGigsTable gigs={gigs} />}
                     </section>
                     <section className='user-reviews'>
-                      <ReviewList gigOwnerId={params.id} isUserProfile={true} />
+                      {allReviews ? <ReviewList gigOwnerId={params.id} isUserProfile={true} />
+                        : <ReviewList gigOwnerId={params.id} isUserProfile={true} onlyTwo={true} />}
                     </section>
                   </>}
                 </div>
