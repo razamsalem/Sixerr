@@ -1,3 +1,6 @@
+import { useNavigate } from "react-router"
+import { setFilterBy, getClearFilter } from "../store/actions/gig.actions"
+
 const graphicSvg = 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/graphics-design.91dfe44.svg'
 const digitalSvg = 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/online-marketing.a3e9794.svg'
 const writingSvg = 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/writing-translation.a787f2f.svg'
@@ -10,15 +13,21 @@ const dataSvg = 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out
 const photographySvg = 'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/photography.0cf5a3f.svg'
 
 export function SuggCategoryArea() {
+    const navigate = useNavigate()
     const categoryIcons = [graphicSvg, digitalSvg, writingSvg, videoSvg, musicSvg, programmingSvg, businessSvg, lifestyleSvg, dataSvg, photographySvg]
     const categoryTexts = ["Graphics & Design", "Digital Marketing", "Writing & Translation", "Video & Animation", "Music & Audio", "Programming & Tech", "Business", "Lifestyle", "Data", "Photography"]
+
+    function onSetFilterBy(category) {
+        setFilterBy({ ...getClearFilter(), category })
+        navigate('/gig')
+    }
 
     return (
         <section className='categories-section'>
             <h2>You need it, we've got it</h2>
             <ul className='categories-list flex'>
                 {categoryIcons.map((category, idx) => (
-                    <li className="category" key={idx}>
+                    <li onClick={() => { onSetFilterBy(categoryTexts[idx]) }} className="category" key={idx}>
                         <img src={category} alt={`Category icon ${idx}`} />
                         <p>{categoryTexts[idx]}</p>
                     </li>
