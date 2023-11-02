@@ -26,6 +26,7 @@ export function AppHeader() {
     const subHeaderPosition = useSelector(storeState => storeState.systemModule.subHeaderPosition)
     const location = useLocation()
     const [isModalOpen, setIsModalOpen] = useState(null)
+    const [selectedDropDownBtn, setSelectedDropDownBtn] = useState(null)
     const currentPath = location.pathname
 
     useEffect(() => {
@@ -96,7 +97,7 @@ export function AppHeader() {
                                 <>
                                     <NavLink className='btn' key={'order'} to={'order'}>Orders</NavLink>
                                     <span className="user-info">
-                                        <DropdownBtn icon={<img src={user.imgUrl} onError={e => e.currentTarget.src = defaultUserImg} />}>
+                                        <DropdownBtn selectedBtn={selectedDropDownBtn} setSelectedBtn={setSelectedDropDownBtn} icon={<img src={user.imgUrl} onError={e => e.currentTarget.src = defaultUserImg} />}>
                                             <NavLink to={`user/${user._id}`}>
                                                 Profile
                                             </NavLink>

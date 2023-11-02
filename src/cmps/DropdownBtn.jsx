@@ -1,14 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import { DropdownMenu } from "./DropdownMenu";
 
-export function DropdownBtn({ icon = '', children = '' }) {
-    const [isOpen, setIsOpen] = useState(false);
-    const buttonRef = useRef(null)
+
+export function DropdownBtn({ icon = '', children = '', selectedBtn, setSelectedBtn }) {
+    const buttonRef = useRef('')
 
     function closeDropdown(event) {
         if (buttonRef.current && !buttonRef.current.contains(event.target)) {
-            setIsOpen(false)
+            setSelectedBtn(null)
         }
+    }
+
+    function toggleSelectBtn() {
+        if (selectedBtn === buttonRef.current) setSelectedBtn(null)
+        else setSelectedBtn(buttonRef.current)
     }
 
     useEffect(() => {
@@ -20,11 +25,11 @@ export function DropdownBtn({ icon = '', children = '' }) {
     }, [])
 
     return (
-        <span className="drop-down-btn" onClick={(ev) => { setIsOpen(!isOpen) }} ref={buttonRef}>
+        <span className="drop-down-btn" onClick={toggleSelectBtn} ref={buttonRef}>
             {!icon ?
-                <i className={`${isOpen && 'open'} fa-solid fa-circle-chevron-down`}></i> : icon
+                <i className={`${selectedBtn === buttonRef.current && 'open'} fa-solid fa-circle-chevron-down`}></i> : icon
             }
-            {isOpen && <DropdownMenu items={children} isOpen={isOpen} />}
+            {selectedBtn === buttonRef.current && <DropdownMenu items={children} isOpen={selectedBtn === buttonRef.current} />}
         </span>
     )
 } 

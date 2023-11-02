@@ -1,8 +1,13 @@
+import { useState } from "react"
 import { OrderPreview } from "./OrderPreview"
 import { Link } from "react-router-dom"
 
 
+
 export function OrderList({ orders, loggedUser, mode, openModal, onApproveOrder, onDeclineOrder, onFulfillOrder }) {
+
+    const [selectedBtn, setSelectedBtn] = useState(null)
+
     if (mode === 'buyer') {
         orders = orders.filter(order => order.buyer._id === loggedUser._id)
     } else if (mode === 'seller') {
@@ -43,7 +48,7 @@ export function OrderList({ orders, loggedUser, mode, openModal, onApproveOrder,
                 {
                     <tbody>
                         {orders.map(order => (
-                            <OrderPreview key={order._id} order={order} mode={mode} openModal={openModal} onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} />
+                            <OrderPreview key={order._id} order={order} mode={mode} openModal={openModal} onApproveOrder={onApproveOrder} onDeclineOrder={onDeclineOrder} onFulfillOrder={onFulfillOrder} selectedBtn={selectedBtn} setSelectedBtn={setSelectedBtn} />
                         ))}
                     </tbody>}
 

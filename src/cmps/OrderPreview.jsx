@@ -4,7 +4,7 @@ import { DropdownBtn } from "./DropdownBtn.jsx"
 import { Link } from "react-router-dom"
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
 
-export function OrderPreview({ order, mode, openModal, onApproveOrder, onDeclineOrder, onFulfillOrder }) {
+export function OrderPreview({ order, mode, openModal, onApproveOrder, onDeclineOrder, onFulfillOrder, selectedBtn, setSelectedBtn }) {
     const profile = mode === 'buyer' ? order.seller : order.buyer
 
     function checkStatus(status) {
@@ -33,14 +33,14 @@ export function OrderPreview({ order, mode, openModal, onApproveOrder, onDecline
             <td onClick={handleActionClick} className="status">
                 {order && <span className={`${checkStatus(order.status)} label `}> {order.status === 'approved' ? 'In progress' : utilService.capitalizeFirstLetter(order.status)} </span>}
                 {mode === 'seller' && order.status !== 'fulfilled' && order.status !== 'rejected' &&
-                    <DropdownBtn>
+                    <DropdownBtn selectedBtn={selectedBtn} setSelectedBtn={setSelectedBtn}>
                         <span className="action approve-gig" onClick={(ev) => { onApproveOrder(ev, order) }}>Approve order</span>
                         <span className="action decline-gig" onClick={(ev) => { onDeclineOrder(ev, order) }}>Decline order</span>
                         <span className="action fulfilled-gig" onClick={(ev) => { onFulfillOrder(ev, order) }}>Mark as fulfilled</span>
-                    </DropdownBtn>}
+                    </DropdownBtn >}
 
                 {mode === 'buyer' && order.status === 'fulfilled' &&
-                    <DropdownBtn>
+                    <DropdownBtn selectedBtn={selectedBtn} setSelectedBtn={setSelectedBtn}>
                         <span> <Link to={`/order/review?orderId=${order._id}`}>Review</Link> </span>
                         <span>  </span>
                     </DropdownBtn>
