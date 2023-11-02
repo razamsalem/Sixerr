@@ -12,6 +12,7 @@ import { Pagination } from '../cmps/Pagination.jsx'
 import { ServicesCounter } from '../cmps/ServicesCounter.jsx'
 import { DropdownBtn } from '../cmps/DropdownBtn.jsx'
 import { BreadCrumbs } from '../cmps/BreadCrumbs.jsx'
+import { utilService } from '../services/util.service.js'
 
 export function GigIndex() {
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
@@ -136,6 +137,7 @@ export function GigIndex() {
                 <>
                     <BreadCrumbs category={filterBy.category} />
                     <h1 className='category-header'>{filterBy.category || 'Explore page'}</h1>
+                    <p className='category-sub-header'>{utilService.getCategorySubHeader(filterBy.category)}</p>
                     <DynamicBtn />
                     <div className='top-of-gigs'>
                         <ServicesCounter gigs={gigs} />

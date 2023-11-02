@@ -16,7 +16,8 @@ export const utilService = {
     generateRandomDate,
     getRandomDate,
     calculateDaysFromTimestamp,
-    getFlag
+    getFlag,
+    getCategorySubHeader
 }
 
 function makeId(length = 6) {
@@ -197,4 +198,29 @@ function getFlag(country = 'un') {
 
     if (country.toLocaleLowerCase() in flags) return flags[country.toLocaleLowerCase()]
     else return flags['un']
+}
+
+function getCategorySubHeader(category) {
+    switch (category) {
+        case 'Graphics & Design':
+            return 'Your brand\'s visual identity elevated to perfection.'
+        case 'Programming & Tech':
+            return 'Turn ideas into reality with software, mobile apps, and website development.'
+        case 'Digital Marketing':
+            return 'Boost your online presence and turn clicks into conversions.'
+        case 'Video & Animation':
+            return 'Captivate your audience with engaging visuals'
+        case 'Writing & Translation':
+            return 'Harness the power of words with our writing experts'
+        case 'Music & Audio':
+            return 'Experience the magic of sound with our audio masters'
+        case 'Business':
+            return 'Success starts with strategic solutions.'
+        case 'Data':
+            return 'Success starts with strategic solutions.'
+        case 'Photography':
+            return 'Celebrate moments captured in timeless images.'
+        case 'AI Services':
+            return 'Shape the future with AI-driven solutions.'
+    }
 }

@@ -1,6 +1,6 @@
 .gig-index {
     .bread-crumbs {
-        margin-block-start: rem(45px);
+        margin-block-start: rem(35px);
         margin-bottom: 0;
 
     }
@@ -10,7 +10,11 @@
         font-size: rem(32px);
         font-weight: 700;
         line-height: rem(36px);
-        padding: rem(8px) 0;
+        padding: rem(12px) 0 rem(4px) 0;
+    }
+
+    .category-sub-header {
+        color: $dark-clr-4;
     }
 
     .top-of-gigs {
@@ -30,7 +34,7 @@
 
         .sort-container {
             .sort-title {
-                color: #74767e;
+                color: $dark-clr-4;
             }
 
             .drop-down-btn {
