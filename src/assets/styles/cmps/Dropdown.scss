@@ -84,21 +84,21 @@
             }
 
             .action {
-                display: block;
-                padding: em(5px) em(25px);
+                padding: em(5px) 0 em(5px) 0;
+                white-space: nowrap;
                 font-size: rem(18px);
             }
         }
 
         .approve-gig {
             &:hover {
-                color: $accent-clr;
+                color: $approved-clr;
             }
         }
 
         .decline-gig {
             &:hover {
-                color: $error-clr;
+                color: $pending-clr;
             }
         }
 
