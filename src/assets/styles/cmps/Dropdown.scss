@@ -1,6 +1,7 @@
 .drop-down-btn {
     position: relative;
     margin-inline-start: rem(5px);
+    cursor: pointer;
 
     a {
         color: $accent-clr;

@@ -12,8 +12,11 @@ import { hideBackdrop, setHeaderPosition, setSubHeaderPosition, showBackdrop } f
 import { DropdownBtn } from './DropdownBtn'
 import { gigService } from '../services/gig.service.local'
 import { getClearFilter, setFilterBy } from "../store/actions/gig.actions"
+
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
 const categories = gigService.getCategories()
+
+
 
 export function AppHeader() {
     const navigate = useNavigate()
@@ -22,16 +25,22 @@ export function AppHeader() {
     const headerPosition = useSelector(storeState => storeState.systemModule.headerPosition)
     const subHeaderPosition = useSelector(storeState => storeState.systemModule.subHeaderPosition)
     const location = useLocation()
+    const [isModalOpen, setIsModalOpen] = useState(null)
     const currentPath = location.pathname
-
 
     useEffect(() => {
         loadOrders()
     }, [user])
 
+    useEffect(() => {
+        if (currentPath !== '/home') {
+            setHeaderPosition('static')
+            setSubHeaderPosition('static')
+        }
+    }, [currentPath])
+
     async function onLogin(credentials) {
         try {
-            // navigate('/')
             const user = await login(credentials)
             showSuccessMsg(`Welcome: ${user.fullname}`)
         } catch (err) {
@@ -40,7 +49,6 @@ export function AppHeader() {
     }
     async function onSignup(credentials) {
         try {
-            // navigate('/')
             const user = await signup(credentials)
             showSuccessMsg(`Welcome new user: ${user.fullname}`)
         } catch (err) {
@@ -57,18 +65,20 @@ export function AppHeader() {
         }
     }
 
-    useEffect(() => {
-        if (currentPath !== '/home') {
-            setHeaderPosition('static')
-            setSubHeaderPosition('static')
-        }
-    }, [currentPath])
+    function openModal() {
+        setIsModalOpen(true)
+    }
+
+    function closeModal() {
+        setIsModalOpen(false)
+    }
 
 
     return (
         <>
             <section className={`${headerPosition} main-layout full header-container`}>
                 <header className="app-header">
+                    <i className="hamburger-icon btn fa-solid fa-bars" onClick={openModal} />
                     <Link to={'/home'} onClick={() => { setFilterBy(getClearFilter()) }} className='logo'>
                         sixerr<span className='dot'>.</span>
                     </Link>
@@ -76,38 +86,39 @@ export function AppHeader() {
                     <div className="searchbar-container" onFocus={showBackdrop} onBlur={hideBackdrop}>
                         <SearchBarFilter />
                     </div>
+                    <section className={`menu-backdrop ${isModalOpen ? 'active' : ''}`} onClick={closeModal}>
+                        <nav className={`links-container ${isModalOpen ? 'active' : ''}`}>
+                            {routes.map(route => !route.shouldRender ? ''
+                                :
+                                <NavLink className='btn' key={route.path} to={route.path}>{route.label}</NavLink>)}
 
-                    <nav className='links-container'>
-                        {routes.map(route => !route.shouldRender ? ''
-                            :
-                            <NavLink className='btn' key={route.path} to={route.path}>{route.label}</NavLink>)}
+                            {user &&
+                                <>
+                                    <NavLink className='btn' key={'order'} to={'order'}>Orders</NavLink>
+                                    <span className="user-info">
+                                        <DropdownBtn icon={<img src={user.imgUrl} onError={e => e.currentTarget.src = defaultUserImg} />}>
+                                            <NavLink to={`user/${user._id}`}>
+                                                Profile
+                                            </NavLink>
 
-                        {user &&
-                            <>
-                                <NavLink className='btn' key={'order'} to={'order'}>Orders</NavLink>
-                                <span className="user-info">
-                                    <DropdownBtn icon={<img src={user.imgUrl} onError={e => e.currentTarget.src = defaultUserImg} />}>
-                                        <NavLink to={`user/${user._id}`}>
-                                            Profile
-                                        </NavLink>
+                                            {user.isSeller ?
+                                                <NavLink to="/gig/add">
+                                                    Add a gig
+                                                </NavLink> : <NavLink to={`user/${user._id}`}>Become a seller</NavLink>}
 
-                                        {user.isSeller ?
-                                            <NavLink to="/gig/add">
-                                                Add a gig
-                                            </NavLink> : <NavLink to={`user/${user._id}`}>Become a seller</NavLink>}
+                                            <span onClick={onLogout}>
+                                                Logout
+                                            </span>
+                                        </DropdownBtn>
+                                    </span>
+                                </>
 
-                                        <span onClick={onLogout}>
-                                            Logout
-                                        </span>
-                                    </DropdownBtn>
-                                </span>
-                            </>
-
-                        }
-                        {!user &&
-                            <LoginSignup onLogin={onLogin} onSignup={onSignup} />
-                        }
-                    </nav>
+                            }
+                            {!user &&
+                                <LoginSignup onLogin={onLogin} onSignup={onSignup} />
+                            }
+                        </nav>
+                    </section>
                 </header>
             </section >
             <CategoryNav categories={categories} globalFilterBy={globalFilterBy} setFilterBy={setFilterBy} getClearFilter={getClearFilter} subHeaderPosition={subHeaderPosition} />

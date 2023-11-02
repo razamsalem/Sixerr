@@ -35,11 +35,11 @@
                 max-height: rem(40px);
                 padding-block: rem(11px);
                 color: $dark-clr-1;
-                transition: 0.2s color;
                 margin-inline-end: em(20px);
+                transition: 0.2s color, 0.3s box-shadow;
 
                 &:first-child {
-                    transition: margin 0.5s;
+                    transition: 0.5s margin, 0.3s box-shadow;
                     margin-inline-start: 0;
                 }
 
@@ -55,6 +55,27 @@
             }
 
 
+        }
+    }
+
+    @include for-mobile-layout {
+        .category-header {
+            overflow: hidden;
+
+            .nav-btn {
+                display: block;
+                transition: opacity 0.3s;
+
+                &.hidden {
+                    opacity: 0;
+                    pointer-events: none;
+                    display: none;
+                }
+            }
+
+            .categories-container {
+                overflow: hidden;
+            }
         }
     }
 
