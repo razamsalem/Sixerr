@@ -39,12 +39,22 @@ export function ReviewList({ gigOwnerId, isUserProfile, onlyTwo }) {
                     <h1>Reviews</h1>
                     <ReviewChart reviews={seller.reviews} isUserProfile={isUserProfile} />
                     <ul className="review-list">
-                        {onlyTwo ?
-                            firstRev.sort((rev1, rev2) => new Date(rev2.createdAt) - new Date(rev1.createdAt)).map((rev, idx) =>
+                        {!isUserProfile && !onlyTwo &&
+                            seller.reviews.sort((rev1, rev2) => new Date(rev2.createdAt) - new Date(rev1.createdAt)).map((rev, idx) =>
                                 <ReviewPreview key={idx} review={rev} />
                             )
-                            :
-                            seller.reviews.sort((rev1, rev2) => new Date(rev2.createdAt) - new Date(rev1.createdAt)).map((rev, idx) =>
+                        }
+
+                        {
+                            isUserProfile && onlyTwo &&
+                            firstRev.map((rev, idx) =>
+                                <ReviewPreview key={idx} review={rev} />
+                            )
+                        }
+
+                        {
+                            isUserProfile && !onlyTwo &&
+                            seller.reviews.map((rev, idx) =>
                                 <ReviewPreview key={idx} review={rev} />
                             )
                         }
