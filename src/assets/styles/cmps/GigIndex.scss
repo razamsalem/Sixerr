@@ -37,7 +37,7 @@
 
                 .drop-down-menu {
                     padding: rem(6px) (8px);
-                    top: rem(42px);
+                    top: rem(45px);
                     right: 0;
                     border-width: rem(1px);
                     border-radius: rem(5px);
@@ -48,13 +48,20 @@
                     }
 
                     .drop-down-item {
-                        white-space: nowrap;
-                        padding: rem(9px) rem(30px);
                         border: 0;
-                        font-weight: 100;
+                        padding: 0;
+                        border-radius: rem(5px);
 
                         &:hover {
                             background-color: #f5f5f5;
+                        }
+
+                        span {
+                            display: flex;
+                            white-space: nowrap;
+                            padding-block: rem(10px);
+                            padding-inline: rem(10px) rem(55px);
+                            font-weight: 100;
                         }
                     }
                 }
