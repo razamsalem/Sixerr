@@ -35,6 +35,10 @@ export function GigDetails() {
         window.scrollTo(0, 0)
     }, [gigId])
 
+    useEffect(() => {
+        if (gig && !seller) loadUser()
+    }, [gig])
+
     async function loadUser() {
         try {
             const seller = await userService.getById(gig.owner._id)
@@ -46,7 +50,6 @@ export function GigDetails() {
         }
     }
 
-    if (gig) loadUser()
 
     async function loadGig() {
         const desiredGig = await gigService.getById(gigId)

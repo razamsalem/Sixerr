@@ -45,7 +45,7 @@ export function UserDetails() {
     return () => {
       socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
     }
-  }, [params.id,])
+  }, [])
 
 
   async function onSetGig() {
