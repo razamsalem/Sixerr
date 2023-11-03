@@ -97,4 +97,18 @@
 
         }
     }
+
+    @include for-mobile-layout {
+        .filter-btns {
+            .btns-container {
+                display: flex;
+
+                .filter-btn {
+                    display: flex;
+                    align-items: center;
+                    font-size: rem(13px);
+                }
+            }
+        }
+    }
 }

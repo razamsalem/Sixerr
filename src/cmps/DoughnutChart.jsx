@@ -27,5 +27,5 @@ export const data = {
 }
 
 export function DoughnutChart() {
-    return <Doughnut data={data} width={150} height={150} />
+    return <Doughnut data={data} width={80} height={80} />
 }

@@ -79,10 +79,12 @@ export function AppHeader() {
         <>
             <section className={`${headerPosition} main-layout full header-container`}>
                 <header className="app-header">
-                    <i className="hamburger-icon btn fa-solid fa-bars" onClick={openModal} />
-                    <Link to={'/home'} onClick={() => { setFilterBy(getClearFilter()) }} className='logo'>
-                        sixerr<span className='dot'>.</span>
-                    </Link>
+                    <div className="logo-container">
+                        <i className="hamburger-icon btn fa-solid fa-bars" onClick={openModal} />
+                        <Link to={'/home'} onClick={() => { setFilterBy(getClearFilter()) }} className='logo'>
+                            sixerr<span className='dot'>.</span>
+                        </Link>
+                    </div>
 
                     <div className="searchbar-container" onFocus={showBackdrop} onBlur={hideBackdrop}>
                         <SearchBarFilter />

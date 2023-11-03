@@ -7,7 +7,7 @@ import { ReviewChart } from "./ReviewChart";
 import { UserMiniDetail } from "./UserMiniDetail";
 import LoadingCircle from "./LoadingCircle";
 
-export function ReviewList({ gigOwnerId, isUserProfile, onlyTwo }) {
+export function ReviewList({ gigOwnerId, isUserProfile, onlyFirst }) {
     const navigate = useNavigate()
     const [seller, setSeller] = useState(null)
     const [firstRev, setFirstRev] = useState(null)
@@ -19,7 +19,7 @@ export function ReviewList({ gigOwnerId, isUserProfile, onlyTwo }) {
     async function loadUser() {
         try {
             const seller = await userService.getById(gigOwnerId)
-            const twoFirstReviews = seller.reviews.slice(0, 2)
+            const twoFirstReviews = seller.reviews.slice(0, 3)
             setFirstRev(twoFirstReviews)
             setSeller(seller)
         } catch (err) {
@@ -39,21 +39,21 @@ export function ReviewList({ gigOwnerId, isUserProfile, onlyTwo }) {
                     <h1>Reviews</h1>
                     <ReviewChart reviews={seller.reviews} isUserProfile={isUserProfile} />
                     <ul className="review-list">
-                        {!isUserProfile && !onlyTwo &&
+                        {!isUserProfile && !onlyFirst &&
                             seller.reviews.sort((rev1, rev2) => new Date(rev2.createdAt) - new Date(rev1.createdAt)).map((rev, idx) =>
                                 <ReviewPreview key={idx} review={rev} />
                             )
                         }
 
                         {
-                            isUserProfile && onlyTwo &&
+                            isUserProfile && onlyFirst &&
                             firstRev.map((rev, idx) =>
                                 <ReviewPreview key={idx} review={rev} />
                             )
                         }
 
                         {
-                            isUserProfile && !onlyTwo &&
+                            isUserProfile && !onlyFirst &&
                             seller.reviews.map((rev, idx) =>
                                 <ReviewPreview key={idx} review={rev} />
                             )
