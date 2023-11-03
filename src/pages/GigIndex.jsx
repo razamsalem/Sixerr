@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { loadGigs, addGig, updateGig, removeGig, setFilterBy, getClearFilter } from '../store/actions/gig.actions.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
-import { userService } from '../services/user.service.js'
-import { gigService } from '../services/gig.service.local.js'
+import { userService } from '../services/user.service.http.js'
+import { gigService } from '../services/gig.service.js'
 import { GigList } from '../cmps/GigList.jsx'
 import { DynamicBtn } from '../cmps/DynamicBtn.jsx'
 import { useSearchParams } from "react-router-dom"
@@ -21,13 +21,14 @@ export function GigIndex() {
     let [searchParams, setSearchParams] = useSearchParams()
 
     const currentPage = filterBy.page || 1
-    const totalGigsPerPage = 16
+    const totalGigsPerPage = 10
     const totalPages = Math.ceil(gigs.length / totalGigsPerPage)
     const startIndex = (currentPage - 1) * totalGigsPerPage
     const endIndex = startIndex + totalGigsPerPage
     const currPageGigs = gigs.slice(startIndex, endIndex)
 
     async function loadUser(gig) {
+        console.log(gig, "gig");
         try {
             const seller = await userService.getById(gig.owner._id)
             return seller

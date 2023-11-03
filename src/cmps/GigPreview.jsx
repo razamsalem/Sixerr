@@ -13,7 +13,7 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal 
 
     async function getSeller() {
         if (!onloadUser) return
-        setSeller(await onloadUser(gig));
+        setSeller(await onloadUser(gig))
     }
 
     function slicedGigTitle() {
@@ -26,7 +26,7 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal 
     function navigateToUser() {
         navigate(`/user/${gig.owner._id}`)
     }
-
+    // if(!seller) return ''
     return (
         <>
             <li className="gig-preview" key={gig._id}  >
@@ -51,6 +51,7 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal 
                             </svg>
                         </span>
                         <span className="owner-rate">{gig.owner.rate}</span>
+                        {console.log(seller)}
                         {seller && <span className="owner-number-rates">({seller.reviews.length * 11 + 103})</span>}
                     </div>}
                 </div>

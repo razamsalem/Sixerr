@@ -16,9 +16,9 @@ import LoadingCircle from '../cmps/LoadingCircle'
 import { AddGigCard } from '../cmps/AddGigCard'
 import { MyGigsTable } from '../cmps/MyGigsTable'
 import { OrderModal } from '../cmps/OrderModal'
-import { gigService } from '../services/gig.service.local'
+import { gigService } from '../services/gig.service'
 import { ReviewList } from '../cmps/ReviewList'
-import { userService } from '../services/user.service'
+import { userService } from '../services/user.service.http'
 
 export function UserDetails() {
   const params = useParams()
