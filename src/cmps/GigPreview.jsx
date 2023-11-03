@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom"
 import { GigSlider } from "./GigSlider"
 import { useEffect, useState } from "react"
-const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
+const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
 
 export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal }) {
     let [seller, setSeller] = useState(null)

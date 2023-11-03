@@ -19,6 +19,7 @@ import { OrderModal } from '../cmps/OrderModal'
 import { gigService } from '../services/gig.service'
 import { ReviewList } from '../cmps/ReviewList'
 import { userService } from '../services/user.service.http'
+const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
 
 export function UserDetails() {
   const params = useParams()
@@ -133,7 +134,7 @@ export function UserDetails() {
               <div className='user-profile-info'>
                 <div className="flex justify-center">
                   <div className="user-profile-img">
-                    {watchedUser.imgUrl && <img src={watchedUser.imgUrl} alt="user img" />}
+                    {watchedUser.imgUrl && <img src={watchedUser.imgUrl} alt="user img" onError={e => e.currentTarget.src = defaultUserImg} />}
                   </div>
                 </div>
                 <div className="user-profile-label">

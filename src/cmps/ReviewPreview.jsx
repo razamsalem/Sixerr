@@ -8,7 +8,7 @@ import { utilService } from "../services/util.service"
 import { LongTxt } from "./LongTxt"
 import { useEffect, useState } from "react"
 import { ReviewStars } from "./ReviewStars"
-const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
+const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
 import { useNavigate } from "react-router"
 const defaultFlag = utilService.getFlag('un')
 

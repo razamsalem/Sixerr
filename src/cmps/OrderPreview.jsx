@@ -2,7 +2,7 @@ import { utilService } from "../services/util.service"
 import { LongTxt } from "./LongTxt"
 import { DropdownBtn } from "./DropdownBtn.jsx"
 import { Link } from "react-router-dom"
-const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
+const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
 
 export function OrderPreview({ order, mode, openModal, onApproveOrder, onDeclineOrder, onFulfillOrder, selectedBtn, setSelectedBtn }) {
     const profile = mode === 'buyer' ? order.seller : order.buyer

@@ -13,7 +13,7 @@ import { DropdownBtn } from './DropdownBtn'
 import { gigService } from '../services/gig.service'
 import { getClearFilter, setFilterBy } from "../store/actions/gig.actions"
 
-const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'
+const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
 const categories = gigService.getCategories()
 
 
