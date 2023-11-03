@@ -80,8 +80,6 @@ export function AddGig() {
     }
 
 
-    console.log(gigToEdit)
-
     function onAddPackage(packageName, packageData) {
         const currentPackageCount = Object.keys(gigToEdit.packages).length
 
@@ -119,6 +117,7 @@ export function AddGig() {
             showSuccessMsg(`Added a new gig! ${savedGig._id}`)
             navigate(`/gig/${savedGig._id}`)
         } catch (err) {
+            console.log(err)
             showErrorMsg('Cannot add gig at this time..')
         }
 
@@ -215,7 +214,7 @@ export function AddGig() {
                         <div className="features-container flex">
                             {Object.values(gigToEdit.packages[selectedPackage].features).map((feature, idx) => {
                                 return (
-                                    <label className='feature'>
+                                    <label key={idx} className='feature'>
                                         <input key={idx} className='input-field' onChange={handleChange} name={`packages.${selectedPackage}.features`} data-idx={idx} data-pack={selectedPackage} value={feature} type="text" maxLength={30} required />
                                         <img src={checkImg} alt="Feature" />
                                     </label>

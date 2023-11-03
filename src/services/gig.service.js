@@ -115,15 +115,20 @@ async function remove(gigId) {
 
 async function save(gig) {
     let savedGig
-    console.log(gig,"put");
-    if (gig._id) {
-        savedGig = await httpService.put(`gig/${gig._id}`, gig)
-        // savedGig = await storageService.put(STORAGE_KEY, gig)
-    } else {
-        savedGig = await httpService.post('gig', gig)
-        // savedGig = await storageService.post(STORAGE_KEY, gig)
+    console.log(gig, "put");
+    try {
+        if (gig._id) {
+            savedGig = await httpService.put(`gig/${gig._id}`, gig)
+            // savedGig = await storageService.put(STORAGE_KEY, gig)
+        } else {
+            savedGig = await httpService.post('gig', gig)
+            // savedGig = await storageService.post(STORAGE_KEY, gig)
+        }
+        return savedGig
+
+    } catch (err) {
+        throw err
     }
-    return savedGig
 }
 
 export function getCategories() {
