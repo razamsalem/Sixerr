@@ -14,9 +14,10 @@
     overflow: hidden;
 
     .nav-content {
-        display: block;
         grid-column: 1;
-        padding: 20px;
+        flex-direction: column;
+        max-width: rem(250px);
+        padding: rem(20px);
         border-inline-end: 2px solid $modal-border-bottom-clr;
 
         .logo {

@@ -33,7 +33,7 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
             <div className="dashboard-modal dashboard-layout">
                 <button onClick={closeDashboard} className=" fa-solid fa-x close-btn"></button>
 
-                <div className="nav-content">
+                <div className="nav-content flex">
                     <h1 className="logo">sixerr<span className='dot'>.</span></h1>
                     <div className="buttons flex column">
                         <DashboardNavBtn activeBtn={activeBtn} setActiveBtn={setActiveBtn} setLoading={setLoading} />
