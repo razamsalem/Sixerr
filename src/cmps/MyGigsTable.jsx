@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import { utilService } from "../services/util.service";
 import { LongTxt } from "./LongTxt";
-import { gigService } from "../services/gig.service.local";
+import { gigService } from "../services/gig.service";
 import { onRemoveGigOptimistic } from '../store/actions/gig.actions'
 const imgNotFound = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663092/defaultGigImg_vjtk9e.webp'
 

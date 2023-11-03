@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { userService } from "../services/user.service";
+import { userService } from "../services/user.service.http";
 import { display } from "@mui/system";
 import LoadingCircle from "./LoadingCircle";
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663308/defaultUserImg_psy0oe.png'

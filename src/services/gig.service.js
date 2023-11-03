@@ -1,12 +1,11 @@
 
-import { storageService } from './async-storage.service.js'
+// import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
 import { userService } from './user.service.http.js'
-import demoGigs from '../../demoData/gigDemoData.js'
-// console.log(demoGigs);
-const STORAGE_KEY = 'gigDB'
+import { httpService } from './http.service.js'
+const STORAGE_KEY = 'gig'
 
-_createGigs()
+// _createGigs()
 
 const categories = [
     { category: 'Graphics & Design', tags: ['Logo Design', 'Website Design', 'App Design', 'UX Design', 'Brand Style Guides', 'Landing Page Design', 'Icon Design', 'Portraits & Caricatures'] },
@@ -35,90 +34,94 @@ export const gigService = {
 window.gs = gigService
 
 async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, category: '', tags: [] }) {
-    
-    let gigs = await storageService.query(STORAGE_KEY)
-    console.log(gigs.length,"pp");
-    if (filterBy.txt) {
-        const regex = new RegExp(filterBy.txt, 'i')
+    return httpService.get(STORAGE_KEY, filterBy)
+    // let gigs = await storageService.query(STORAGE_KEY)
+    // console.log(gigs.length,"pp");
+    // if (filterBy.txt) {
+    //     const regex = new RegExp(filterBy.txt, 'i')
 
-        gigs = gigs.filter(gig => {
-            return gig.tags.some(tag => regex.test(tag)) ||
-                regex.test(gig.title) ||
-                regex.test(gig.description)
-        })
-    }
-    if (filterBy.minPrice && filterBy.maxPrice) {
-        if (filterBy.minPrice > filterBy.maxPrice) {
-            [filterBy.minPrice, filterBy.maxPrice] = [filterBy.maxPrice, filterBy.minPrice]
-            gigs = gigs.filter(gig => gig.price <= filterBy.maxPrice)
-        }
-        else {
-            gigs = gigs.filter(gig => gig.price >= filterBy.minPrice && gig.price <= filterBy.maxPrice)
-        }
-    }
+    //     gigs = gigs.filter(gig => {
+    //         return gig.tags.some(tag => regex.test(tag)) ||
+    //             regex.test(gig.title) ||
+    //             regex.test(gig.description)
+    //     })
+    // }
+    // if (filterBy.minPrice && filterBy.maxPrice) {
+    //     if (filterBy.minPrice > filterBy.maxPrice) {
+    //         [filterBy.minPrice, filterBy.maxPrice] = [filterBy.maxPrice, filterBy.minPrice]
+    //         gigs = gigs.filter(gig => gig.price <= filterBy.maxPrice)
+    //     }
+    //     else {
+    //         gigs = gigs.filter(gig => gig.price >= filterBy.minPrice && gig.price <= filterBy.maxPrice)
+    //     }
+    // }
 
-    if (filterBy.minPrice) {
-        gigs = gigs.filter(gig => gig.price >= filterBy.minPrice)
-    }
-    if (filterBy.maxPrice) {
-        gigs = gigs.filter(gig => gig.price <= filterBy.maxPrice)
-    }
-    if (filterBy.category) {
-        gigs = gigs.filter(gig => gig.category === filterBy.category)
-    }
-    if (filterBy.tags && filterBy.tags.length > 0) {
-        gigs = gigs.filter(gig => {
-            return gig.tags.some(tag => {
-                return filterBy.tags.includes(tag)
-            });
-        });
-    }
-    if (filterBy.userId) {
-        gigs = gigs.filter(gig => gig.owner._id === filterBy.userId)
-    }
-    if (filterBy.daysToMake) {
-        gigs = gigs.filter(gig => gig.packages.basic.packDaysToMake <= filterBy.daysToMake)
-    }
-    if (filterBy.topRated) {
-        gigs = gigs.filter(gig => gig.owner.rate >= 5)
-    }
+    // if (filterBy.minPrice) {
+    //     gigs = gigs.filter(gig => gig.price >= filterBy.minPrice)
+    // }
+    // if (filterBy.maxPrice) {
+    //     gigs = gigs.filter(gig => gig.price <= filterBy.maxPrice)
+    // }
+    // if (filterBy.category) {
+    //     gigs = gigs.filter(gig => gig.category === filterBy.category)
+    // }
+    // if (filterBy.tags && filterBy.tags.length > 0) {
+    //     gigs = gigs.filter(gig => {
+    //         return gig.tags.some(tag => {
+    //             return filterBy.tags.includes(tag)
+    //         });
+    //     });
+    // }
+    // if (filterBy.userId) {
+    //     gigs = gigs.filter(gig => gig.owner._id === filterBy.userId)
+    // }
+    // if (filterBy.daysToMake) {
+    //     gigs = gigs.filter(gig => gig.packages.basic.packDaysToMake <= filterBy.daysToMake)
+    // }
+    // if (filterBy.topRated) {
+    //     gigs = gigs.filter(gig => gig.owner.rate >= 5)
+    // }
 
 
-    if (filterBy.premiumLevel && filterBy.basicLevel) {
-        gigs = gigs.filter(gig => gig.owner.level === 1 || gig.owner.level === 2)
-    } else if (filterBy.basicLevel) {
-        gigs = gigs.filter(gig => gig.owner.level === 1)
-    } else if (filterBy.premiumLevel) {
-        gigs = gigs.filter(gig => gig.owner.level === 2)
-    }
+    // if (filterBy.premiumLevel && filterBy.basicLevel) {
+    //     gigs = gigs.filter(gig => gig.owner.level === 1 || gig.owner.level === 2)
+    // } else if (filterBy.basicLevel) {
+    //     gigs = gigs.filter(gig => gig.owner.level === 1)
+    // } else if (filterBy.premiumLevel) {
+    //     gigs = gigs.filter(gig => gig.owner.level === 2)
+    // }
 
-    if (filterBy.sortBy) {
-        switch (filterBy.sortBy) {
-            case 'new': gigs = gigs.sort((gig1, gig2) => { return gig2.createdAt - gig1.createdAt })
-                break
-            case 'recommend': gigs = gigs.sort((gig1, gig2) => { return gig2.owner.rate - gig1.owner.rate })
-        }
-    }
+    // if (filterBy.sortBy) {
+    //     switch (filterBy.sortBy) {
+    //         case 'new': gigs = gigs.sort((gig1, gig2) => { return gig2.createdAt - gig1.createdAt })
+    //             break
+    //         case 'recommend': gigs = gigs.sort((gig1, gig2) => { return gig2.owner.rate - gig1.owner.rate })
+    //     }
+    // }
 
-    return gigs
+    // return gigs
 }
 
 async function getById(gigId) {
-    return await storageService.get(STORAGE_KEY, gigId)
+    return httpService.get(`gig/${gigId}`)
+    // return await storageService.get(STORAGE_KEY, gigId)
 }
 
 async function remove(gigId) {
+    return httpService.delete(`gig/${gigId}`)
     // throw new Error('Nope')
-    await storageService.remove(STORAGE_KEY, gigId)
+    // await storageService.remove(STORAGE_KEY, gigId)
 }
 
 async function save(gig) {
     let savedGig
-    console.log(gig, "put");
+    console.log(gig,"put");
     if (gig._id) {
-        savedGig = await storageService.put(STORAGE_KEY, gig)
+        savedGig = await httpService.put(`gig/${gig._id}`, gig)
+        // savedGig = await storageService.put(STORAGE_KEY, gig)
     } else {
-        savedGig = await storageService.post(STORAGE_KEY, gig)
+        savedGig = await httpService.post('gig', gig)
+        // savedGig = await storageService.post(STORAGE_KEY, gig)
     }
     return savedGig
 }
@@ -142,21 +145,21 @@ function getEmptyGig() {
             basic: {
                 title: 'Bronze',
                 packPrice: 15,
-                packDaysToMake: 1,
+                packDaysToMake: 3,
                 desc: '1 logo design + High Quality Mock-up + Logo Transparency + NO COMPLEX DESIGN',
                 features: ['1 concept included', 'Logo transparency']
             },
             standard: {
                 title: 'Silver',
                 packPrice: 30,
-                packDaysToMake: 2,
+                packDaysToMake: 5,
                 desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
                 features: ['2 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
             },
             premium: {
                 title: 'Gold',
                 packPrice: 45,
-                packDaysToMake: 3,
+                packDaysToMake: 8,
                 desc: ' 3 Amazing concepts + all source files+ Social Media Kit + 24/7 priority customer services',
                 features: ['3 concepts included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file', 'Include social media kit']
             }
@@ -171,13 +174,13 @@ function getEmptyGig() {
     }
 }
 
-function _createGigs() {
-    let gigs = utilService.loadFromStorage(STORAGE_KEY)
-    if (!gigs || !gigs.length) {
-        gigs = demoGigs
-        utilService.saveToStorage(STORAGE_KEY, gigs)
-    }
-}
+// function _createGigs() {
+//     let gigs = utilService.loadFromStorage(STORAGE_KEY)
+//     if (!gigs || !gigs.length) {
+//         gigs = demoGigs
+//         utilService.saveToStorage(STORAGE_KEY, gigs)
+//     }
+// }
 
 
 // TEST DATA

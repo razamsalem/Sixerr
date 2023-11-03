@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { userService } from '../services/user.service'
+import { userService } from '../services/user.service.http'
 import { ImgUploader } from './ImgUploader'
 import { Modal } from './Modal'
 import { useSelector } from 'react-redux'
@@ -18,6 +18,7 @@ export function LoginSignup(props) {
 
     async function loadUsers() {
         const users = await userService.getUsers()
+        console.log(users, "users");
         setUsers(users)
     }
 
@@ -34,6 +35,7 @@ export function LoginSignup(props) {
 
     function onLogin(ev = null) {
         if (ev) ev.preventDefault()
+        console.log(credentials, "cred");
         if (!credentials.username) return
         props.onLogin(credentials)
         clearState()

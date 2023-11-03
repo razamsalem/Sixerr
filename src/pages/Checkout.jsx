@@ -1,7 +1,7 @@
 // import { useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router"
 import { CallToAction } from "../cmps/CallToAction"
-import { gigService } from "../services/gig.service.local"
+import { gigService } from "../services/gig.service"
 import { useEffect, useState } from "react"
 import { UserPayment } from "./UserPaymant"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"

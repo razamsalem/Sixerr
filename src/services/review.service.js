@@ -1,6 +1,6 @@
 import { httpService } from './http.service'
 import { storageService } from './async-storage.service'
-import { userService } from './user.service'
+import { userService } from './user.service.http'
 import { utilService } from './util.service'
 
 
