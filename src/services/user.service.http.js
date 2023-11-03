@@ -24,6 +24,7 @@ async function getUsers() {
         return await httpService.get(`user`)
     } catch (err) {
         console.log('Had issues in getting users', err);
+        throw err
     }
     // return storageService.query('user')
 }
@@ -36,9 +37,10 @@ async function getById(userId) {
         // const user = await storageService.get('user', userId)
         return user
     } catch (err) {
-        console.log('Had issues in getting user', err);
+        console.log('Had issues in getting user', err)
+        throw err
     }
-    
+
 }
 
 // function remove(userId) {
@@ -54,31 +56,34 @@ async function getById(userId) {
 // }
 
 async function login(userCred) {
-    console.log(userCred.password,"userCred");
+    console.log(userCred.password, "userCred");
     try {
         const user = await httpService.post(BASE_URL + 'login', userCred)
         if (user) return saveLocalUser(user)
     } catch (err) {
-        console.log(err);
+        console.log(err)
+        throw err
     }
 }
 
-async function signup({username,fullname,imgUrl,password}) {
+async function signup({ username, fullname, imgUrl, password }) {
     if (!imgUrl) imgUrl = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698775961/user-96_hcptba.png'
     try {
-        const userSignUp = await httpService.post(BASE_URL + 'signup', {username,fullname,imgUrl,password})
+        const userSignUp = await httpService.post(BASE_URL + 'signup', { username, fullname, imgUrl, password })
         if (userSignUp) return saveLocalUser(userSignUp)
     } catch (err) {
-        console.log(err);
+        console.log(err)
+        throw err
     }
 }
 
 async function logout() {
-     try {
+    try {
         await httpService.post(BASE_URL + 'logout')
         sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN)
     } catch (err) {
-        console.log(err);
+        console.log(err)
+        throw err
     }
 }
 

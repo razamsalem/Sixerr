@@ -4,22 +4,27 @@ import { ImgUploader } from './ImgUploader'
 import { Modal } from './Modal'
 import { useSelector } from 'react-redux'
 import { setUserModalOpen } from '../store/user.actions'
+import { showErrorMsg } from '../services/event-bus.service'
 
 export function LoginSignup(props) {
     const [credentials, setCredentials] = useState(userService.getEmptyUser())
     const [isSignup, setIsSignup] = useState(false)
     const [users, setUsers] = useState([])
     const isUserModalOpen = useSelector(storeState => storeState.userModule.isUserModalOpen)
-    const firstFourUsers = users.slice(0, 4)
+    const firstFourUsers = users?.slice(0, 4)
 
     useEffect(() => {
         loadUsers()
     }, [])
 
     async function loadUsers() {
-        const users = await userService.getUsers()
-        console.log(users, "users");
-        setUsers(users)
+        try {
+            const users = await userService.getUsers()
+            console.log(users, "users");
+            setUsers(users)
+        } catch (err) {
+            showErrorMsg('Could not load demo users')
+        }
     }
 
     function clearState() {
@@ -112,9 +117,9 @@ export function LoginSignup(props) {
                                 name="username"
                                 value={credentials.username}
                                 onChange={handleChange}
-                        >
+                            >
                                 <option value="">Select User</option>
-                                {firstFourUsers.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
+                                {firstFourUsers?.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
                             </select>
                             <button className={`${!credentials.username ? 'disabled' : ''} btn continue`}>Continue</button>
                         </form>}
