@@ -111,26 +111,44 @@ export function AddGig() {
 
     if (!gigToEdit) return null
     return (
+
         <section className="add-gig">
-            <form className='create-gig' onSubmit={onSaveGig}>
+            <section className='section-heading full'>
                 <h1 className="heading">{gigId ? 'Edit a gig' : 'Add a gig'}</h1>
-                <h2 className="sub-heading">Fill the required information and share your details about your new gig</h2>
+                <h2 className="sub-heading">Fill the required information and start earning today!</h2>
+            </section>
+
+            <form className='create-gig' onSubmit={onSaveGig}>
+                <label className='form-label imgs'>
+                    <span className='input-title'>
+                        Upload images
+                    </span>
+                    <ImgUploader onUploaded={onUploadedImgs} />
+                </label>
 
                 <label className='form-label gig-title'>
-                    Enter the title of your new gig
-                    <input onChange={handleChange} name='title' value={gigToEdit.title} type="text" placeholder='I will...' maxLength={100} />
+                    <span className='input-title'>
+                        Title
+                    </span>
+                    <input className='input-field title' onChange={handleChange} name='title' value={gigToEdit.title} type="text" placeholder='I will...' maxLength={100} />
                 </label>
                 <label className='form-label gig-desc'>
-                    Enter a description for your new gig
-                    <input type="text" onChange={handleChange} name='description' value={gigToEdit.description} maxLength={140} placeholder='Provided service will include...' />
+                    <span className='input-title'>
+                        Description
+                    </span>
+                    <textarea className='input-field desc' type="text" onChange={handleChange} name='description' value={gigToEdit.description} maxLength={140} placeholder='Provided service will include...' />
                 </label>
                 <label className='form-label tags'>
-                    Select Category
-                    <MUISelect categories={categories} selectCategory={onSelectCategory} selectedCategory={gigToEdit.category}></MUISelect>
+                    <span className='input-title'>
+                        Category
+                    </span>
+                    <MUISelect className='input-field categories' categories={categories} selectCategory={onSelectCategory} selectedCategory={gigToEdit.category}></MUISelect>
                 </label>
                 <label className='form-label tags'>
-                    Category tags
-                    <MultiSelect tags={currCategory.tags || []} onChooseTag={onSelectTag} chosenTags={gigToEdit.tags} />
+                    <span className='input-title'>
+                        Sub-categories
+                    </span>
+                    <MultiSelect className='input-field tags' tags={currCategory.tags || []} onChooseTag={onSelectTag} chosenTags={gigToEdit.tags} />
                 </label>
 
                 <h1 className="heading">{gigId ? 'Edit Your Packages' : 'Build Your Packages'}</h1>
@@ -151,7 +169,7 @@ export function AddGig() {
 
                 <label className='form-label gig-title'>
                     Enter a title on your package
-                    <input onChange={handleChange} name={`packages.${selectedPackage}.title`} value={gigToEdit.packages[selectedPackage].title} type="text" maxLength={20} />
+                    <input className='input-field' onChange={handleChange} name={`packages.${selectedPackage}.title`} value={gigToEdit.packages[selectedPackage].title} type="text" maxLength={20} />
                 </label>
 
                 <span className='numbers flex'>
@@ -159,22 +177,17 @@ export function AddGig() {
                         <p className='est'> Est. Days to deliver </p>
                         <span className='days-input'>
                             <i className="fa-solid fa-dolly delivery-icon"></i>
-                            <input type="number" min={1} max={90} onChange={handleChange} name={`packages.${selectedPackage}.packDaysToMake`} value={gigToEdit.packages[selectedPackage].packDaysToMake} />
+                            <input className='input-field' type="number" min={1} max={90} onChange={handleChange} name={`packages.${selectedPackage}.packDaysToMake`} value={gigToEdit.packages[selectedPackage].packDaysToMake} />
                         </span>
                     </label>
 
                     <label className='form-label price'>
                         <p> Price in USD </p>
                         <span className='price-input'>
-                            <input type="number" min={1} max={999} maxLength={3} onChange={handleChange} name={`packages.${selectedPackage}.packPrice`} value={gigToEdit.packages[selectedPackage].packPrice} />
+                            <input className='input-field' type="number" min={1} max={999} maxLength={3} onChange={handleChange} name={`packages.${selectedPackage}.packPrice`} value={gigToEdit.packages[selectedPackage].packPrice} />
                         </span>
                     </label>
                 </span>
-
-                <label className='form-label imgs'>
-                    Add images of the provided service
-                    <ImgUploader onUploaded={onUploadedImgs} />
-                </label>
                 <button className='send'>Continue</button>
             </form>
             <BigGigPreview gig={gigToEdit} />
