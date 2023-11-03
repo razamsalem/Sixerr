@@ -11,7 +11,7 @@
     }
 
     @include for-mobile-layout {
-        grid-template-columns: minmax(12px, 1fr) minmax(auto, $mobile-breakpoint) minmax(12px, 1fr);
+        grid-template-columns: minmax(15px, 1fr) minmax(auto, $mobile-breakpoint) minmax(15px, 1fr);
 
     }
 

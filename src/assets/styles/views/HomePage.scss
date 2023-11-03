@@ -47,39 +47,10 @@
     }
 
 
-    @include for-small-layout {
-        .slider-home {
-            max-width: 88vw;
-            justify-self: center;
-            // border: 1px solid red;
-        }
-    }
-
-    @include for-narrow-layout {
-        .slider-home {
-            max-width: 91vw;
-            // border: 1px solid pink;
-        }
-    }
-
-    @include for-normal-layout {
-        .slider-home {
-            max-width: 93vw;
-            // border: 2px solid rgb(177, 18, 135);
-        }
-    }
-
-    @include for-large-layout {
-        .slider-home {
-            max-width: 94vw;
-            justify-self: unset;
-            // border: 2px solid rgb(18, 111, 177);
-        }
-    }
-
     .categories-section {
         padding-block-start: rem(96px);
         padding-block-end: rem(43px);
+        margin-block-end: rem(30px);
 
         h2 {
             margin-block-end: 40px;
@@ -132,6 +103,59 @@
                     color: $dark-clr1;
                 }
             }
+        }
+    }
+
+    @include for-mobile-layout {
+        .title-slide {
+            margin-top: rem(24px);
+            padding-block-end: rem(20px);
+            font-size: rem(28px);
+            line-height: 130%;
+        }
+
+        .slider-home {
+            max-width: 91vw;
+        }
+
+        .categories-section {
+            .categories-list {
+                .category {
+                    margin-block-end: 2.8375rem;
+                    margin-block-end: 2.8375rem;
+                    font-size: rem(14px);
+                }
+            }
+        }
+    }
+
+    @include for-small-layout {
+        .slider-home {
+            max-width: 88vw;
+            justify-self: center;
+            // border: 1px solid red;
+        }
+    }
+
+    @include for-narrow-layout {
+        .slider-home {
+            max-width: 91vw;
+            // border: 1px solid pink;
+        }
+    }
+
+    @include for-normal-layout {
+        .slider-home {
+            max-width: 93vw;
+            // border: 2px solid rgb(177, 18, 135);
+        }
+    }
+
+    @include for-large-layout {
+        .slider-home {
+            max-width: 94vw;
+            justify-self: unset;
+            // border: 2px solid rgb(18, 111, 177);
         }
     }
 

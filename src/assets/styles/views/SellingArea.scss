@@ -22,6 +22,10 @@
 
                 color: $dark-clr;
                 padding-block-end: 24px;
+
+                .questionmark {
+                    font-size: 0.9em;
+                }
             }
         }
 
@@ -30,4 +34,36 @@
             align-self: center;
         }
     }
+
+
+    @include for-mobile-layout {
+        padding-block: 1em;
+
+        .selling {
+            padding-block: 1rem;
+            max-height: unset;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: rem(12px);
+
+            .left-info {
+                h2 {
+                    font-size: rem(28px);
+                    line-height: 130%;
+                }
+
+                span {
+                    font-size: rem(16px);
+                    font-stretch: 100%;
+
+                    .budget {
+                        font-size: 1rem;
+                    }
+                }
+
+            }
+        }
+    }
 }
+
+@include for-small-layout {}
