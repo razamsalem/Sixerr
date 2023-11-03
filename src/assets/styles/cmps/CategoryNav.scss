@@ -59,24 +59,7 @@
     }
 
     @include for-mobile-layout {
-        .category-header {
-            overflow: hidden;
-
-            .nav-btn {
-                display: block;
-                transition: opacity 0.3s;
-
-                &.hidden {
-                    opacity: 0;
-                    pointer-events: none;
-                    display: none;
-                }
-            }
-
-            .categories-container {
-                overflow: hidden;
-            }
-        }
+        display: none;
     }
 
     @include for-small-layout {

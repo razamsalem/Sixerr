@@ -3,10 +3,9 @@
 
     .trusted-by {
         display: flex;
-        gap: em(60px);
         justify-content: center;
-        height: em(95px);
         align-items: center;
+        height: em(95px);
 
         span {
             font-size: 1rem;
@@ -25,5 +24,44 @@
         }
     }
 
+    @include for-mobile-layout {
+        .trusted-by {
+            gap: 0;
+
+            span {
+                display: none;
+            }
+
+            .trusted-by-companies {
+                gap: rem(15px);
+
+                img {
+                    height: rem(45px);
+                }
+            }
+        }
+    }
+
+    @include for-small-layout {
+        .trusted-by {
+            gap: rem(15px);
+
+            span {
+                white-space: nowrap;
+                display: unset;
+            }
+
+            .trusted-by-companies {
+                gap: 1.375rem;
+            }
+
+        }
+    }
+
+    @include for-narrow-layout {
+        .trusted-by {
+            gap: em(60px);
+        }
+    }
 
 }

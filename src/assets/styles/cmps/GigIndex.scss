@@ -81,5 +81,10 @@
         }
     }
 
+    @include for-mobile-layout {
+        .top-of-gigs {
+            font-size: rem(13px);
+        }
+    }
 
 }
