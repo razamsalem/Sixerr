@@ -230,7 +230,8 @@
                         font-weight: 400;
                         color: $dark-clr-4;
                         letter-spacing: 0.3px;
-                        width: rem(100px);
+                        min-width: rem(110px);
+                        white-space: nowrap;
                         padding-block: em(6px);
 
                         &>* {

@@ -20,7 +20,6 @@ export function LoginSignup(props) {
     async function loadUsers() {
         try {
             const users = await userService.getUsers()
-            console.log(users, "users");
             setUsers(users)
         } catch (err) {
             showErrorMsg('Could not load demo users')
@@ -40,7 +39,7 @@ export function LoginSignup(props) {
 
     function onLogin(ev = null) {
         if (ev) ev.preventDefault()
-        console.log(credentials, "cred");
+        // console.log(credentials, "cred");
         if (!credentials.username) return
         props.onLogin(credentials)
         clearState()

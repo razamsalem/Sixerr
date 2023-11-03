@@ -29,12 +29,12 @@ export function GigIndex() {
     const currPageGigs = gigs.slice(startIndex, endIndex)
 
     async function loadUser(gig) {
-        console.log(gig, "gig");
+        // console.log(gig, "gig");
         try {
             const seller = await userService.getById(gig.owner._id)
             return seller
         } catch (err) {
-            console.log('Had issues in review list ->', err)
+            // console.log('Had issues in review list ->', err)
             showErrorMsg('Oops cannot load review')
             navigate('/')
         }

@@ -51,7 +51,7 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal 
                             </svg>
                         </span>
                         <span className="owner-rate">{gig.owner.rate}</span>
-                        {console.log(seller)}
+                        {/* {console.log(seller)} */}
                         {seller && <span className="owner-number-rates">({seller.reviews.length * 11 + 103})</span>}
                     </div>}
                 </div>
