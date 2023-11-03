@@ -264,12 +264,12 @@ export function UserDetails() {
                 <section className='user-reviews'>
                   {allReviews ? <>
                     <ReviewList gigOwnerId={params.id} isUserProfile={true} />
-                    {watchedUser.reviews.length > 1 && <button className='contact' onClick={() => setAllReviews(false)}>Show less</button>}
+                    {watchedUser.reviews.length > 2 && <button className='contact' onClick={() => setAllReviews(false)}>Show less</button>}
                   </>
                     :
                     <>
                       <ReviewList gigOwnerId={params.id} isUserProfile={true} onlyTwo={true} />
-                      {watchedUser.reviews.length > 1 && <button className='contact' onClick={() => setAllReviews(true)}>Show more</button>}
+                      {watchedUser.reviews.length > 2 && <button className='contact' onClick={() => setAllReviews(true)}>Show more</button>}
                     </>}
                 </section>
               </div>
@@ -310,12 +310,12 @@ export function UserDetails() {
                     <section className='user-reviews'>
                       {allReviews ? <>
                         <ReviewList gigOwnerId={params.id} isUserProfile={true} />
-                        {watchedUser.reviews.length > 1 && <button className='contact' onClick={() => setAllReviews(false)}>Show less</button>}
+                        {watchedUser.reviews.length > 2 && <button className='contact' onClick={() => setAllReviews(false)}>Show less</button>}
                       </>
                         :
                         <>
                           <ReviewList gigOwnerId={params.id} isUserProfile={true} onlyTwo={true} />
-                          {watchedUser.reviews.length > 1 && <button className='contact' onClick={() => setAllReviews(true)}>Show more</button>}
+                          {watchedUser.reviews.length > 2 && <button className='contact' onClick={() => setAllReviews(true)}>Show more</button>}
                         </>}
                     </section>
                   </>}
