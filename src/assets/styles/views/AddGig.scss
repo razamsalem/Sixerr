@@ -207,7 +207,7 @@
             border: 1px solid #c8c8c85e;
             padding: rem(15px);
             border-radius: rem(4px);
-            margin-top: rem(25px);
+            margin-block: rem(25px);
 
             .heading {
                 font-size: rem(34px);
@@ -257,7 +257,8 @@
 
                         input {
                             font-size: rem(14.5px);
-                            padding: 7px 14px;
+                            padding: rem(9px) rem(28px);
+                            // padding-inline-start: 12px;
                             color: $dark-clr-4;
                             border: 0;
                         }

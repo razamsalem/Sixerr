@@ -216,7 +216,7 @@ export function AddGig() {
                             {Object.values(gigToEdit.packages[selectedPackage].features).map((feature, idx) => {
                                 return (
                                     <label className='feature'>
-                                        <input key={idx} className='input-field' onChange={handleChange} name={`packages.${selectedPackage}.features`} data-idx={idx} data-pack={selectedPackage} value={feature} type="text" maxLength={20} required />
+                                        <input key={idx} className='input-field' onChange={handleChange} name={`packages.${selectedPackage}.features`} data-idx={idx} data-pack={selectedPackage} value={feature} type="text" maxLength={30} required />
                                         <img src={checkImg} alt="Feature" />
                                     </label>
                                 )
