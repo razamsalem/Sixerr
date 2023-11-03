@@ -40,11 +40,7 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                     </div>
                 </div>
 
-                <div className="space"></div>
                 <div className="dashboard-content">
-                    <div className="small-screens">
-                        <DashboardNavBtn activeBtn={activeBtn} setActiveBtn={setActiveBtn} setLoading={setLoading} />
-                    </div>
                     {activeBtn === 'home' && (
                         <>
                             <h3 className="header">Home</h3>
@@ -96,7 +92,7 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                                 <StackedArea />
                             </div>
 
-                            {/* <div className="general-info flex">
+                            <div className="general-info flex">
                                 <div className="age-info">
                                     <h4 className="title">Clients by age</h4>
                                     <AgeRadialBar />
@@ -105,7 +101,7 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                                     <h4 className="title">Daily highs</h4>
                                     <DataComposedChart />
                                 </div>
-                            </div> */}
+                            </div>
 
                         </>
                     )}
@@ -135,19 +131,19 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                     )}
 
                 </div>
-                <div className="space2"></div>
+
                 <div className="user-info">
-                    <div className="user-name">
+                    <div className="user-name flex">
                         {watchedUser.fullname}
+                        <span className="user-profile-img"> {watchedUser.imgUrl && <img src={watchedUser.imgUrl} alt="user img" />} </span>
                     </div>
-                    <div className="user-profile-img">
-                        {watchedUser.imgUrl && <img src={watchedUser.imgUrl} alt="user img" />}
-                    </div>
-                    <div className="stats">
+
+                    <div className="stats flex">
                         <h4><span className="fa-solid fa-star icon"></span> Avg. reviews <span className="avg">4.6</span></h4>
                         <h4><span className="fa-solid fa-clock icon"></span> Avg. res time <span className="avg">1 hour</span></h4>
                         <h4><span className="fa-solid fa-paper-plane icon"></span> Last Delivery <span className="avg">4 hours</span></h4>
                     </div>
+
                     <div className="last-month">
                         <h2>Last 30 days</h2>
 
@@ -155,7 +151,7 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                             <DoughnutChart />
                         </div>
 
-                        <div className="labels">
+                        <div className="labels flex">
                             <p className="fulfilled">Fulfilled <span className="fa-solid fa-arrow-trend-up approved"></span> </p>
                             <p className="approved">Approved <span className="fa-solid fa-arrow-trend-up approved"></span></p>
                             <p className="rejected">Rejected <span className="fa-solid fa-arrow-trend-down rejected"></span></p>
