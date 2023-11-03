@@ -7,7 +7,9 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { BigGigPreview } from '../cmps/BigGigPreview'
 import { MUISelect } from '../cmps/MUISelect'
 import { utilService } from '../services/util.service'
+import checkImg from '../assets/img/check.svg'
 const categories = gigService.getCategories()
+
 
 export function AddGig() {
     const [gigToEdit, setGigToEdit] = useState(null)
@@ -27,8 +29,9 @@ export function AddGig() {
     }, [gigToEdit])
 
     async function onLoadGig() {
-        const desiredGig = await gigService.getById(gigId)
+        if (!gigId) return
         try {
+            const desiredGig = await gigService.getById(gigId)
             setGigToEdit(desiredGig)
         } catch (err) {
             console.log('Had issues in addGig ->', err)
@@ -38,9 +41,18 @@ export function AddGig() {
     }
 
     function handleChange(ev) {
-        const { name, value } = ev.target
+        const { name, value, dataset } = ev.target
+        const { idx, pack } = dataset
 
-        if (name.startsWith('packages.')) {
+
+        if (name.endsWith('features')) {
+            setGigToEdit(gig => {
+                let tempGig = { ...gigToEdit }
+                tempGig.packages[pack].features[idx] = value
+                gig = tempGig
+                return gig
+            })
+        } else if (name.startsWith('packages.')) {
             const [packageName, property] = name.split('.').slice(1)
             setGigToEdit(prevState => {
                 const updatedPackages = {
@@ -51,8 +63,8 @@ export function AddGig() {
                     }
                 }
 
-                console.log('Package Name:', name)
-                console.log('New Value:', value)
+                // console.log('Package Name:', name)
+                // console.log('New Value:', value)
 
                 return {
                     ...prevState,
@@ -66,6 +78,9 @@ export function AddGig() {
             }))
         }
     }
+
+
+    console.log(gigToEdit)
 
     function onAddPackage(packageName, packageData) {
         const currentPackageCount = Object.keys(gigToEdit.packages).length
@@ -128,66 +143,89 @@ export function AddGig() {
 
                 <label className='form-label gig-title'>
                     <span className='input-title'>
-                        Title
+                        <span className='title'>Title</span>
+                        <small className='sub-title'>A short title for your gig</small>
                     </span>
                     <input className='input-field title' onChange={handleChange} name='title' value={gigToEdit.title} type="text" placeholder='I will...' maxLength={100} />
                 </label>
                 <label className='form-label gig-desc'>
                     <span className='input-title'>
-                        Description
+                        <span className='title'>Description</span>
+                        <small className='sub-title'>Extended details about your provided service</small>
                     </span>
-                    <textarea className='input-field desc' type="text" onChange={handleChange} name='description' value={gigToEdit.description} maxLength={140} placeholder='Provided service will include...' />
+                    <textarea className='input-field desc' type="text" onChange={handleChange} name='description' value={gigToEdit.description} maxLength={500} placeholder='Provided service will include...' />
                 </label>
                 <label className='form-label tags'>
                     <span className='input-title'>
-                        Category
+                        <span className='title'>Category</span>
+                        <small className='sub-title'>Related category</small>
                     </span>
                     <MUISelect className='input-field categories' categories={categories} selectCategory={onSelectCategory} selectedCategory={gigToEdit.category}></MUISelect>
                 </label>
                 <label className='form-label tags'>
                     <span className='input-title'>
-                        Sub-categories
+                        <span className='title'>Sub categories</span>
+                        <small className='sub-title'>Related category tags</small>
                     </span>
                     <MultiSelect className='input-field tags' tags={currCategory.tags || []} onChooseTag={onSelectTag} chosenTags={gigToEdit.tags} />
                 </label>
 
-                <h1 className="heading">{gigId ? 'Edit Your Packages' : 'Build Your Packages'}</h1>
-                <h2 className="sub-heading">Offer three sales packages, increase your service to reach a multitude of customers</h2>
 
-                <div className="package-options flex">
-                    {Object.keys(gigToEdit.packages).map((packageKey) => (
-                        <button
-                            key={packageKey}
-                            type="button"
-                            className={`package ${selectedPackage === packageKey ? 'selected' : ''}`}
-                            onClick={() => handlePackageChange(packageKey)}
-                        >
-                            {utilService.capitalizeFirstLetter(packageKey)}
-                        </button>
-                    ))}
-                </div>
+                <section className='build-packs'>
+                    <h1 className="heading">{gigId ? 'Edit Your Packages' : 'Build Your Packages'}</h1>
+                    <h2 className="sub-heading">Offer three sales packages, increase your service to reach a multitude of customers</h2>
 
-                <label className='form-label gig-title'>
-                    Enter a title on your package
-                    <input className='input-field' onChange={handleChange} name={`packages.${selectedPackage}.title`} value={gigToEdit.packages[selectedPackage].title} type="text" maxLength={20} />
-                </label>
+                    <div className="package-options flex">
+                        {Object.keys(gigToEdit.packages).map((packageKey) => (
+                            <button
+                                key={packageKey}
+                                type="button"
+                                className={`package ${selectedPackage === packageKey ? 'selected' : ''}`}
+                                onClick={() => handlePackageChange(packageKey)}
+                            >
+                                {utilService.capitalizeFirstLetter(packageKey)}
+                            </button>
+                        ))}
+                    </div>
 
-                <span className='numbers flex'>
-                    <label className='form-label days-to-make'>
-                        <p className='est'> Est. Days to deliver </p>
-                        <span className='days-input'>
-                            <i className="fa-solid fa-dolly delivery-icon"></i>
-                            <input className='input-field' type="number" min={1} max={90} onChange={handleChange} name={`packages.${selectedPackage}.packDaysToMake`} value={gigToEdit.packages[selectedPackage].packDaysToMake} />
+                    <label className='form-label package-details'>
+                        Package name
+                        <input className='input-field' onChange={handleChange} name={`packages.${selectedPackage}.title`} value={gigToEdit.packages[selectedPackage].title} type="text" maxLength={20} />
+                        <span className='numbers flex'>
+                            <label className='form-label days-to-make'>
+                                {/* <p className='est'> Est. delivery </p> */}
+                                <span className='days-input'>
+                                    <i className="fa-solid fa-dolly delivery-icon"></i>
+                                    <input className='input-field' type="number" min={1} max={90} onChange={handleChange} name={`packages.${selectedPackage}.packDaysToMake`} value={gigToEdit.packages[selectedPackage].packDaysToMake} />
+                                </span>
+                            </label>
+
+                            <label className='form-label price'>
+                                {/* <p> Price in USD </p> */}
+                                <span className='price-input'>
+                                    <input className='input-field' type="number" min={1} max={999} maxLength={3} onChange={handleChange} name={`packages.${selectedPackage}.packPrice`} value={gigToEdit.packages[selectedPackage].packPrice} />
+                                </span>
+                            </label>
                         </span>
                     </label>
 
-                    <label className='form-label price'>
-                        <p> Price in USD </p>
-                        <span className='price-input'>
-                            <input className='input-field' type="number" min={1} max={999} maxLength={3} onChange={handleChange} name={`packages.${selectedPackage}.packPrice`} value={gigToEdit.packages[selectedPackage].packPrice} />
-                        </span>
-                    </label>
-                </span>
+
+                    <section className='add-features form-label'>
+                        <span className='features-heading'>Features</span>
+                        <div className="features-container flex">
+                            {Object.values(gigToEdit.packages[selectedPackage].features).map((feature, idx) => {
+                                return (
+                                    <label className='feature'>
+                                        <input key={idx} className='input-field' onChange={handleChange} name={`packages.${selectedPackage}.features`} data-idx={idx} data-pack={selectedPackage} value={feature} type="text" maxLength={20} required />
+                                        <img src={checkImg} alt="Feature" />
+                                    </label>
+                                )
+                            })}
+                        </div>
+                    </section>
+
+                </section>
+
                 <button className='send'>Continue</button>
             </form>
             <BigGigPreview gig={gigToEdit} />

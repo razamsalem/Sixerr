@@ -18,6 +18,7 @@ export function GigIndex() {
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
     const [isLoading, setIsLoading] = useState(true)
+    const [selectedBtn, setSelectedBtn] = useState(null)
     let [searchParams, setSearchParams] = useSearchParams()
 
     const currentPage = filterBy.page || 1
@@ -143,7 +144,7 @@ export function GigIndex() {
                         <ServicesCounter gigs={gigs} />
                         <label className='sort-container'>
                             <span className='sort-title'>Sort by:</span>
-                            <DropdownBtn icon={getSortTitle()}>
+                            <DropdownBtn icon={getSortTitle()} selectedBtn={selectedBtn} setSelectedBtn={setSelectedBtn}>
                                 <span data-value={'recommend'} onClick={handleSortChange}>Recommended</span>
                                 <span data-value={'best-selling'} onClick={handleSortChange}>Best selling</span>
                                 <span data-value={'new'} onClick={handleSortChange}>Newest Arrivals</span>

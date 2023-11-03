@@ -112,7 +112,7 @@ async function remove(gigId) {
 
 async function save(gig) {
     let savedGig
-    console.log(gig,"put");
+    console.log(gig, "put");
     if (gig._id) {
         savedGig = await storageService.put(STORAGE_KEY, gig)
     } else {
@@ -140,21 +140,21 @@ function getEmptyGig() {
             basic: {
                 title: 'Bronze',
                 packPrice: 15,
-                packDaysToMake: 3,
+                packDaysToMake: 1,
                 desc: '1 logo design + High Quality Mock-up + Logo Transparency + NO COMPLEX DESIGN',
                 features: ['1 concept included', 'Logo transparency']
             },
             standard: {
                 title: 'Silver',
                 packPrice: 30,
-                packDaysToMake: 5,
+                packDaysToMake: 2,
                 desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
                 features: ['2 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
             },
             premium: {
                 title: 'Gold',
                 packPrice: 45,
-                packDaysToMake: 8,
+                packDaysToMake: 3,
                 desc: ' 3 Amazing concepts + all source files+ Social Media Kit + 24/7 priority customer services',
                 features: ['3 concepts included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file', 'Include social media kit']
             }
