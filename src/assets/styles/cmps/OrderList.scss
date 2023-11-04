@@ -45,8 +45,8 @@
                 align-items: center;
 
                 img {
-                    width: 30px;
-                    height: 30px;
+                    width: rem(30px);
+                    height: rem(30px);
                     border-radius: 50%;
                     margin-inline-end: 10px;
                 }
@@ -54,19 +54,27 @@
 
         }
 
+        .order-title {
+            img {
+                width: rem(45px);
+            }
+        }
+
     }
 
     @media (max-width: $mobile-breakpoint) {
         width: 100%;
         margin: auto;
+
         thead {
             display: none;
         }
 
-        tr, td {
+        tr,
+        td {
             padding: rem(7px);
             display: block;
         }
-    
+
     }
 }

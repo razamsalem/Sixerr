@@ -2,11 +2,12 @@ import { utilService } from "../services/util.service"
 import { LongTxt } from "./LongTxt"
 import { DropdownBtn } from "./DropdownBtn.jsx"
 import { Link } from "react-router-dom"
+const defaultGigImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663092/defaultGigImg_vjtk9e.webp'
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
 
 export function OrderPreview({ order, mode, openModal, onApproveOrder, onDeclineOrder, onFulfillOrder, selectedBtn, setSelectedBtn }) {
     const profile = mode === 'buyer' ? order.seller : order.buyer
-
+    console.log(order);
     function checkStatus(status) {
         if (status === 'pending') return 'pending-label'
         if (status === 'approved') return 'approved-label'
@@ -25,9 +26,15 @@ export function OrderPreview({ order, mode, openModal, onApproveOrder, onDecline
                     <img src={profile.imgUrl} alt="Buyer img" onError={e => e.currentTarget.src = defaultUserImg} />
                     {profile.fullname}
                 </div>
-
             </td>
-            <td className='order-title'><LongTxt txt={order.gig.title} length={33} showReadMore={false} /></td>
+
+            <td className='order-title'>
+                <div className="gig-img flex">
+                    {mode === 'buyer' && <img src={order.gig.imgUrls[0]} alt="gig image" onError={e => e.currentTarget.src = defaultGigImg} />}
+                    <LongTxt txt={order.gig.title} length={29} showReadMore={false} />
+                </div>
+            </td>
+
             <td>{utilService.calculateDaysFromTimestamp(order.createdAt, order.daysToMake)}</td>
             <td>${order.packPrice}</td>
             <td onClick={handleActionClick} className="status">
