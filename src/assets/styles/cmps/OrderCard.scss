@@ -1,16 +1,31 @@
+.user-orders {
+    display: flex;
+    align-items: center;
+
+    .header {
+        text-transform: uppercase;
+        font-size: rem(30px);
+        margin-block: rem(30px);
+    }
+
+    button {
+        background: none;
+        color: $dark-clr;
+        border: 1px solid $dark-clr;
+        border-radius: 8px;
+        margin-inline: rem(5px);
+        max-height: rem(36px);
+        font-size: rem(16px);
+    }
+}
+
+
 .buyer-orders-container {
     background-color: $light-clr1;
 
     .buyer-orders {
-        .header {
-            text-transform: uppercase;
-            font-size: rem(30px);
-            margin-block: rem(30px);
-        }
-
 
         .order-card-container {
-            // width: rem(570px);
             flex-direction: column;
             height: rem(380px);
             padding: rem(30px);
@@ -37,7 +52,7 @@
                     text-transform: uppercase;
                     letter-spacing: rem(.5px);
                     color: $dark-clr;
-                    
+
                     gap: rem(5px);
                     align-items: center;
                     margin-block-start: rem(8px);
