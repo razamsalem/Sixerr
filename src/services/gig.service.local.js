@@ -35,9 +35,9 @@ export const gigService = {
 window.gs = gigService
 
 async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, category: '', tags: [] }) {
-    
+
     let gigs = await storageService.query(STORAGE_KEY)
-    console.log(gigs.length,"pp");
+    console.log(gigs.length, "pp");
     if (filterBy.txt) {
         const regex = new RegExp(filterBy.txt, 'i')
 

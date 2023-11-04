@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router';
 import { createSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { gigService } from '../services/gig.service.local';
+import { gigService } from '../services/gig.service';
 import { DeliveryTimeArea } from './DeliveryTimeArea';
 import { ServiceOptions } from './ServiceOptions';
 
-function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globalFilterBy, setFilterBy,setClicked }) {
+function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globalFilterBy, setFilterBy, setClicked }) {
     const [filterByToEdit, setFilterByToEdit] = useState(globalFilterBy)
     const sellerOptions = [{ txt: 'Top Rated Seller', name: 'topRated', value: true }, { txt: 'Level 1', name: 'basicLevel', value: 1 }, { txt: 'Level 2', name: 'premiumLevel', value: 2 }]
-  
+
     // const [style]
 
     useEffect(() => {
@@ -65,22 +65,22 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
                 value = ev.target.checked
                 break
         }
-        if(field === 'tags'){
+        if (field === 'tags') {
             setFilterByToEdit((prevFilter) => {
-                console.log(prevFilter,"ppp");
+                console.log(prevFilter, "ppp");
                 const updatedTags = ev.target.checked
-                  ? [...prevFilter[field], ev.target.value]
-                  : prevFilter[field].filter((tag) => tag !== ev.target.value);
+                    ? [...prevFilter[field], ev.target.value]
+                    : prevFilter[field].filter((tag) => tag !== ev.target.value);
                 return { ...prevFilter, [field]: updatedTags };
-              })
+            })
         }
-       else{
-        setFilterByToEdit((prevFilter) => {
-            return { ...prevFilter, [field]: value }
-        })
-       }
-        
-       
+        else {
+            setFilterByToEdit((prevFilter) => {
+                return { ...prevFilter, [field]: value }
+            })
+        }
+
+
     }
 
     function onSubmit() {
@@ -130,13 +130,15 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
                     <DeliveryTimeArea handleChange={handleChange} filterByToEdit={filterByToEdit} />
                 }
 
-                {btn.title === 'Service options' && <ServiceOptions handleChange={handleChange} filterByToEdit={filterByToEdit}/>}
+                {btn.title === 'Service options' && <ServiceOptions handleChange={handleChange} filterByToEdit={filterByToEdit} />}
 
             </div>
             <div className='button-row'>
-                <button className='clear-btn' onClick={() => {setFilterByToEdit({ minPrice: '', maxPrice: '', daysToMake: '' })
-                    setClicked()}}>Clear All</button>
-                <button className='apply-btn' onClick={()=>{
+                <button className='clear-btn' onClick={() => {
+                    setFilterByToEdit({ minPrice: '', maxPrice: '', daysToMake: '' })
+                    setClicked()
+                }}>Clear All</button>
+                <button className='apply-btn' onClick={() => {
                     onSubmit()
                     setClicked()
                 }}>Apply</button>

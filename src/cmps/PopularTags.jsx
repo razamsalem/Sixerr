@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { gigService } from "../services/gig.service.local"
+import { gigService } from "../services/gig.service"
 const serviceCategories = gigService.getCategories()
 
 export function PopularTags({ globalFilterBy, setFilterBy }) {

@@ -1,4 +1,4 @@
-import { userService } from "../services/user.service.js";
+import { userService } from "../services/user.service.http.js";
 import { socketService } from "../services/socket.service.js";
 import { store } from '../store/store.js'
 
@@ -39,8 +39,8 @@ export async function removeUser(userId) {
 
 export async function login(credentials) {
     try {
-        const {username,password} = credentials
-        const user = await userService.login({username,password})
+        const { username, password } = credentials
+        const user = await userService.login({ username, password })
         store.dispatch({
             type: SET_USER,
             user

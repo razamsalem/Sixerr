@@ -1,4 +1,4 @@
-import { gigService } from "../../services/gig.service.local"
+import { gigService } from "../../services/gig.service"
 
 export const SET_GIGS = 'SET_GIGS'
 export const REMOVE_GIG = 'REMOVE_GIG'
@@ -57,7 +57,7 @@ export function gigReducer(state = initialState, action) {
         case SET_FILTER_BY:
             newState = { ...state, filterBy: { ...state.filterBy, ...action.filterBy } }
             break;
-            default:
+        default:
     }
     return newState
 }

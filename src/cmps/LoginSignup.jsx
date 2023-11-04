@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { userService } from '../services/user.service'
+import { userService } from '../services/user.service.http'
 import { ImgUploader } from './ImgUploader'
 import { Modal } from './Modal'
 import { useSelector } from 'react-redux'
