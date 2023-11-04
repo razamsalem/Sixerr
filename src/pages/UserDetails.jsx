@@ -18,7 +18,7 @@ import { MyGigsTable } from '../cmps/MyGigsTable'
 import { OrderModal } from '../cmps/OrderModal'
 import { gigService } from '../services/gig.service.local'
 import { ReviewList } from '../cmps/ReviewList'
-import { userService } from '../services/user.service.http'
+import { userService } from '../services/user.service'
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
 
 export function UserDetails() {
