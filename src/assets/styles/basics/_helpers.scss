@@ -129,6 +129,13 @@
     cursor: pointer;
 }
 
+.click {
+    cursor: pointer;
+    &:hover {
+        color: $dark-clr-3;
+    }
+}
+
 // Media helpers
 
 .square-ratio {

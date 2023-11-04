@@ -1,6 +1,16 @@
 .order-list {
     border-collapse: collapse;
     border: 1px solid $modal-filter-border-clr;
+    width: 100%;
+
+    &.buyer {
+        td {
+            &.order-status {
+                padding: rem(10px);
+                text-align: center;
+            }
+        }
+    }
 
     thead {
         background-color: $light-clr;
@@ -9,7 +19,12 @@
         td {
             color: $co-clr;
             padding: 10px;
+
+            &.order-status {
+                padding-inline-start: rem(30px);
+            }
         }
+
     }
 
     tbody {
@@ -22,16 +37,17 @@
             &:hover {
                 background-color: $user-bgclr
             }
+
         }
 
         td {
-            padding: 0 15px;
+            padding: 0 rem(20px);
 
             &.status {
                 display: flex;
                 min-height: em(80px);
                 align-items: center;
-                gap: 0.5vw;
+                gap: rem(5px);
                 justify-content: space-between;
                 letter-spacing: 0.2px;
             }
@@ -45,13 +61,44 @@
                 align-items: center;
 
                 img {
-                    width: 30px;
-                    height: 30px;
+                    width: rem(30px);
+                    height: rem(30px);
                     border-radius: 50%;
                     margin-inline-end: 10px;
                 }
             }
 
+            &.status.buyer {
+                flex-direction: column;
+                justify-content: space-evenly;
+
+                .review-btn {
+                    border: 1px solid $dark-accent-clr;
+                    &:hover {
+                        background-color: $accent-clr;
+                        a {
+                            color: $light-clr;
+                        }
+                    }
+                    
+                    a {
+                        color:$dark-accent-clr;
+                    }
+                }
+            }
+
+
+        }
+
+        .order-title {
+            .gig-img {
+                gap: rem(5px);
+                align-items: center;
+
+                img {
+                    width: rem(50px);
+                }
+            }
         }
 
     }
@@ -59,14 +106,16 @@
     @media (max-width: $mobile-breakpoint) {
         width: 100%;
         margin: auto;
+
         thead {
             display: none;
         }
 
-        tr, td {
+        tr,
+        td {
             padding: rem(7px);
             display: block;
         }
-    
+
     }
 }

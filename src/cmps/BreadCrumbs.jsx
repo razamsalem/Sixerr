@@ -16,8 +16,8 @@ export function BreadCrumbs({ category }) {
                 <img className='home-icon' src={home} onClick={() => { setFilterBy(getClearFilter()) }} alt="Home" title='Go to homepage' />
             </Link>
             <span className='divider'>/</span>
-            <Link to={`/gig`} onClick={goToCategory} title={`${category || 'Explore page'} Category`}>
-                {category || 'Explore page'}
+            <Link to={`/gig`} onClick={goToCategory} title={`${category || 'Explore'} Category`}>
+                {category || 'Explore'}
             </Link>
         </article>
     )

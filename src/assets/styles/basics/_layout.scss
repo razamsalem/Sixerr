@@ -18,35 +18,23 @@
     @include for-small-layout {
         grid-template-columns: minmax(32px, 1fr) minmax(auto, 1360px) minmax(32px, 1fr);
     }
-
-    // @include for-normal-layout {
-    //     grid-template-columns:
-    //         minmax(20px, 1fr) minmax(auto, $narrow-breakpoint) minmax(20px, 1fr);
-    // }
-
-    // @include for-wide-layout {
-    //     grid-template-columns:
-    //         minmax(20px, 1fr) minmax(auto, $normal-breakpoint) minmax(20px, 1fr);
-    // }
-
-
-    // .card-grid {
-    //     display: grid;
-    //     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    //     grid-gap: 20px;
-    // }
-
 }
 
 .dashboard-layout {
     display: grid;
-    grid-template-columns: rem(250px) 2fr rem(250px) ;
+    grid-template-columns: rem(250px) rem(950px) rem(250px);
 }
 
 .gigs-layout {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(309px, 1fr));
     grid-gap: em(32px);
+}
+
+.orders-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-gap: em(40px);
 }
 
 .user-layout {

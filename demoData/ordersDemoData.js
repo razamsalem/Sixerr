@@ -16,7 +16,7 @@ const demoOrders = [
     gig: {
       "_id": "i101",
       "title": "I will create custom company logo design for your business",
-      "imgUrls": "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698674928/taylor-1_nmgnmv.webp",
+      "imgUrls": ["https://res.cloudinary.com/dgsfbxsed/image/upload/v1698674928/taylor-1_nmgnmv.webp"],
       "category": "Graphics & Design"
     },
     packPrice: 15,
@@ -42,7 +42,7 @@ const demoOrders = [
     gig: {
       "_id": "i101",
       "title": "I will create custom company logo design for your business",
-      "imgUrls": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/292332178/original/18841f3470f65b26636437baa1fd560438fb1a51/do-modern-and-elegant-logo-design-for-your-business.jpeg",
+      "imgUrls": ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/292332178/original/18841f3470f65b26636437baa1fd560438fb1a51/do-modern-and-elegant-logo-design-for-your-business.jpeg"],
       "category": "Graphics & Design"
     },
     packPrice: 30,
@@ -68,7 +68,7 @@ const demoOrders = [
     gig: {
       "_id": "i104",
       "title": "I will design a brand style guide and logo for you",
-      "imgUrls": "https://res.cloudinary.com/de2rdmsca/image/upload/v1698328728/7fc3e2d2da246770dd879d232d1e946c6ad755a7_exmid7.webp",
+      "imgUrls": ["https://res.cloudinary.com/de2rdmsca/image/upload/v1698328728/7fc3e2d2da246770dd879d232d1e946c6ad755a7_exmid7.webp"],
       "category": "Graphics & Design"
     },
     packPrice: 10,

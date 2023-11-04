@@ -3,8 +3,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 95vw;
-    height: 95vh;
+    width: rem(1450px);
+    min-height: 80vh;
     background-color: $light-clr;
     border: 1px solid #ccc;
     border-radius: 12px;
@@ -74,7 +74,6 @@
             font-size: rem(32px);
             text-align: left;
             color: $accent-clr;
-            padding-inline-start: rem(16px);
             margin-block-end: rem(12px);
         }
 
@@ -83,7 +82,7 @@
         }
 
         .front-charts {
-            justify-content: space-evenly;
+            justify-content: space-between;
 
             .radar {
                 margin-block: rem(20px);
@@ -123,36 +122,10 @@
 
         }
 
-        .small-screens {
-            margin-block: rem(16px);
-            text-align: left;
-            padding-block-end: rem(12px);
-            border-bottom: 1px solid $accent-clr;
-
-            button {
-                font-size: rem(20px);
-                font-weight: 500;
-                text-align: left;
-
-                background: none;
-                color: $list-subtitle-clr;
-
-
-                span {
-                    margin-inline-end: rem(10px);
-                }
-
-                &:hover {
-                    color: $accent-clr;
-                }
-
-                &:focus {
-                    color: $accent-clr;
-                }
-
-                &.active {
-                    color: $accent-clr;
-                }
+        .graph {
+            .sub-header {
+                padding-inline: 0;
+                color: $accent-clr;
             }
         }
 
@@ -161,8 +134,8 @@
 
             .compare-orders {
                 background-color: $light-clr;
-                height: rem(200px);
-                min-width: rem(505px);
+                height: rem(250px);
+                width: rem(470px);
                 border: 1px solid #10e582;
                 border-radius: 12px;
                 padding: rem(16px);
@@ -216,7 +189,7 @@
 
         .stacked-container {
             background-color: $light-clr;
-            height: rem(200px);
+            height: rem(300px);
             width: 100%;
             border: 1px solid #10e582;
             border-radius: 12px;
@@ -250,19 +223,21 @@
 
         .data-table {
             width: 100%;
-
+            
             table {
                 border-collapse: collapse;
                 width: 100%;
                 margin-bottom: 20px;
-                border: 1px solid #ddd;
-                border-radius: 8px;
-                overflow: hidden;
+                border: 1px solid $modal-filter-border-clr;
+                border-radius: 12px;
+                // overflow: hidden;
             }
 
             th {
-                background-color: #1dbf73;
-                border: 1px solid #ddd;
+                background-color: $light-clr3;
+                color:$accent-clr;
+                font-weight: 500;
+                border: 1px solid $modal-filter-border-clr;
                 padding: rem(6px);
                 text-align: left;
 
@@ -272,7 +247,7 @@
             }
 
             td {
-                border: 1px solid #1dbf73;
+                border: 1px solid $modal-filter-border-clr;
                 text-align: left;
                 padding: rem(6px);
 
@@ -283,7 +258,7 @@
             }
 
             tr:nth-child(even) {
-                background-color: #38b77c45;
+                background-color: $modal-border-bottom-clr;
             }
 
             .sub-header {

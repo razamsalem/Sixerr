@@ -69,8 +69,8 @@ export class CompareOrdersChart extends PureComponent {
     return (
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
-          width={500}
-          height={400}
+          width={470}
+          height={300}
           data={data}
           margin={{
             top: 10,

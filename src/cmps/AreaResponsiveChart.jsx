@@ -52,7 +52,7 @@ export class AreaResChart extends PureComponent {
 
     render() {
         return (
-            <div style={{ width: '100%', height: 270 }}>
+            <div style={{ width: '100%', height: 350 }}>
                 <ResponsiveContainer>
                     <AreaChart
                         data={data}

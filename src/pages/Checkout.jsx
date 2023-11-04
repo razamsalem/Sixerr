@@ -1,7 +1,6 @@
-// import { useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router"
 import { CallToAction } from "../cmps/CallToAction"
-import { gigService } from "../services/gig.service"
+import { gigService } from "../services/gig.service.local"
 import { useEffect, useState } from "react"
 import { UserPayment } from "./UserPaymant"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
@@ -44,7 +43,6 @@ export function Checkout() {
         delete gig.packages
         let order = { buyer: loggedUser, seller: gig.owner, gig, status: 'pending', packPrice: calculateRoundedPrice(packPrice), daysToMake: packDaysToMake, title }
         order.createdAt = Date.now()
-
         console.log(order)
 
         try {

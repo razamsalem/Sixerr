@@ -7,9 +7,10 @@
 
     .orders-heading {
         @include logo;
+        text-align: left;
         font-size: rem(28px);
         letter-spacing: rem(-0.6px);
-        margin-block: 1.1rem;
+        margin-block: rem(35px);
     }
 
     .empty-tray {
