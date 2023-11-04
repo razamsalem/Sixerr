@@ -5,6 +5,8 @@ import { Checkout } from './pages/Checkout.jsx'
 import { OrderIndex } from './pages/OrderIndex.jsx'
 import { ReviewIndex } from './pages/ReviewIndex.jsx'
 import { AddGig } from './pages/AddGig.jsx'
+import { OrderCard } from './cmps/OrderCard.jsx'
+import { BuyerOrders } from './pages/BuyerOrders.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
@@ -49,7 +51,7 @@ const routes = [
     },
     {
         path: 'order',
-        component: <OrderIndex />,
+        component: <BuyerOrders />,
         label: 'Orders',
         shouldRender: false
     },
