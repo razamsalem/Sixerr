@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { userService } from '../services/user.service'
+import { userService } from '../services/user.service.http'
 import { ImgUploader } from './ImgUploader'
 import { Modal } from './Modal'
 import { useSelector } from 'react-redux'
@@ -42,7 +42,7 @@ export function LoginSignup(props) {
         if (ev) ev.preventDefault()
         // console.log(credentials, "cred")
 
-        if (!credentials.password) credentials.password = '123'
+        if (!credentials.password) credentials.password = 'secret'
         console.log(credentials)
         if (!credentials.username) return
         props.onLogin(credentials)

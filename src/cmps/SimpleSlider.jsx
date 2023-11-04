@@ -4,8 +4,11 @@ import demoCards from '../../demoData/cardsGalleryDemoData.js';
 import { CategoryCard } from "./CategoryCard.jsx";
 import { NextBtn } from "./NextBtn.jsx";
 import { PrevBtn } from "./PrevBtn.jsx";
+import { setFilterBy } from "../store/actions/gig.actions"
+import { useSelector } from "react-redux";
 
 export function SimpleSlider() {
+  const globalFilterBy = useSelector(storeState => storeState.gigModule.filterBy)
 
 
   const settings = {
@@ -52,7 +55,7 @@ export function SimpleSlider() {
       <Slider {...settings}>
         {demoCards.map((card) => (
           <div key={card.id} className="slide">
-            <CategoryCard card={card} />
+            <CategoryCard card={card} globalFilterBy={globalFilterBy} setFilterBy={setFilterBy}/>
           </div>
         ))}
       </Slider>

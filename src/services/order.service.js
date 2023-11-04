@@ -5,9 +5,9 @@ import { utilService } from './util.service.js'
 import { userService } from './user.service.http.js'
 import demoOrders from '../../demoData/ordersDemoData.js'
 
-const STORAGE_KEY = 'orderDB'
+// const STORAGE_KEY = 'orderDB'
 
-_createOrders()
+// _createOrders()
 
 export const orderService = {
     query,

@@ -10,7 +10,7 @@ import { SearchBarFilter } from './SearchBarFilter'
 import { loadOrders } from '../store/actions/order.actions'
 import { hideBackdrop, setHeaderPosition, setSubHeaderPosition, showBackdrop } from '../store/actions/system.actions'
 import { DropdownBtn } from './DropdownBtn'
-import { gigService } from '../services/gig.service.local'
+import { gigService } from '../services/gig.service'
 import { getClearFilter, setFilterBy } from "../store/actions/gig.actions"
 
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
