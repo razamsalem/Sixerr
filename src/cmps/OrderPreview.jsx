@@ -37,22 +37,17 @@ export function OrderPreview({ order, mode, openModal, onApproveOrder, onDecline
 
             <td>{utilService.calculateDaysFromTimestamp(order.createdAt, order.daysToMake)}</td>
             <td>${order.packPrice}</td>
-            <td onClick={handleActionClick} className="status">
+            <td onClick={handleActionClick} className={`status ${mode === 'buyer' ? 'buyer' : ''}`}>
                 {order && <span className={`${checkStatus(order.status)} label `}> {order.status === 'approved' ? 'In progress' : utilService.capitalizeFirstLetter(order.status)} </span>}
+                {mode === 'buyer' && order.status === 'fulfilled' &&
+                    <span className="review-btn label"> <Link to={`/order/review?orderId=${order._id}`}>Review</Link> </span>
+                }
                 {mode === 'seller' && order.status !== 'fulfilled' && order.status !== 'rejected' &&
                     <DropdownBtn selectedBtn={selectedBtn} setSelectedBtn={setSelectedBtn}>
                         <span className="action approve-gig" onClick={(ev) => { onApproveOrder(ev, order) }}>Approve order</span>
                         <span className="action decline-gig" onClick={(ev) => { onDeclineOrder(ev, order) }}>Decline order</span>
                         <span className="action fulfilled-gig" onClick={(ev) => { onFulfillOrder(ev, order) }}>Mark as fulfilled</span>
                     </DropdownBtn >}
-
-                {mode === 'buyer' && order.status === 'fulfilled' &&
-                    <DropdownBtn selectedBtn={selectedBtn} setSelectedBtn={setSelectedBtn}>
-                        <span> <Link to={`/order/review?orderId=${order._id}`}>Review</Link> </span>
-                        <span>  </span>
-                    </DropdownBtn>
-                }
-
             </td>
         </tr>
     )

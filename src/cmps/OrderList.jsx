@@ -34,14 +34,14 @@ export function OrderList({ orders, loggedUser, mode, openModal, onApproveOrder,
     return (
         <>
             {orders.length > 0 && mode === 'buyer' && <h1 className="orders-heading"> Purchased services<span className="dot">.</span></h1>}
-            {orders.length > 0 && <table className="order-list">
+            {orders.length > 0 && <table className={`order-list ${mode === 'buyer' ? 'buyer' : ''}`}>
                 <thead>
                     <tr>
                         {mode === 'buyer' ? <td>Seller</td> : <td>Buyer</td>}
                         <td>Gig</td>
                         <td>Due on</td>
                         <td>Total</td>
-                        <td>Status</td>
+                        <td className="order-status">Status</td>
                     </tr>
                 </thead>
 

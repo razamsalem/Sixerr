@@ -2,6 +2,17 @@
     border-collapse: collapse;
     border: 1px solid $modal-filter-border-clr;
 
+    &.buyer {
+        width: 95%;
+
+        td {
+            &.order-status {
+                padding: rem(10px);
+                text-align: center;
+            }
+        }
+    }
+
     thead {
         background-color: $light-clr;
         text-transform: uppercase;
@@ -9,7 +20,12 @@
         td {
             color: $co-clr;
             padding: 10px;
+
+            &.order-status {
+                padding-inline-start: rem(30px);
+            }
         }
+
     }
 
     tbody {
@@ -22,6 +38,7 @@
             &:hover {
                 background-color: $user-bgclr
             }
+
         }
 
         td {
@@ -31,7 +48,7 @@
                 display: flex;
                 min-height: em(80px);
                 align-items: center;
-                gap: 0.5vw;
+                gap: rem(5px);
                 justify-content: space-between;
                 letter-spacing: 0.2px;
             }
@@ -52,11 +69,36 @@
                 }
             }
 
+            &.status.buyer {
+                flex-direction: column;
+                justify-content: space-evenly;
+
+                .review-btn {
+                    border: 1px solid $dark-accent-clr;
+                    &:hover {
+                        background-color: $accent-clr;
+                        a {
+                            color: $light-clr;
+                        }
+                    }
+                    
+                    a {
+                        color:$dark-accent-clr;
+                    }
+                }
+            }
+
+
         }
 
         .order-title {
-            img {
-                width: rem(45px);
+            .gig-img {
+                gap: rem(5px);
+                align-items: center;
+
+                img {
+                    width: rem(50px);
+                }
             }
         }
 
