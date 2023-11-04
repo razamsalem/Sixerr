@@ -228,14 +228,16 @@
                 border-collapse: collapse;
                 width: 100%;
                 margin-bottom: 20px;
-                border: 1px solid #ddd;
+                border: 1px solid $modal-filter-border-clr;
                 border-radius: 8px;
                 overflow: hidden;
             }
 
             th {
-                background-color: #1dbf73;
-                border: 1px solid #ddd;
+                background-color: $light-clr3;
+                color:$accent-clr;
+                font-weight: 500;
+                border: 1px solid $modal-filter-border-clr;
                 padding: rem(6px);
                 text-align: left;
 
@@ -245,7 +247,7 @@
             }
 
             td {
-                border: 1px solid #1dbf73;
+                border: 1px solid $modal-filter-border-clr;
                 text-align: left;
                 padding: rem(6px);
 
@@ -256,7 +258,7 @@
             }
 
             tr:nth-child(even) {
-                background-color: #38b77c45;
+                background-color: $modal-border-bottom-clr;
             }
 
             .sub-header {
