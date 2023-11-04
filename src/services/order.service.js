@@ -1,5 +1,6 @@
 
 import { storageService } from './async-storage.service.js'
+import { httpService } from './http.service.js'
 import { utilService } from './util.service.js'
 import { userService } from './user.service.http.js'
 import demoOrders from '../../demoData/ordersDemoData.js'
@@ -10,41 +11,39 @@ _createOrders()
 
 export const orderService = {
     query,
-    getById,
+    // getById,
     save,
-    remove,
+    // remove,
     getEmptyOrder,
 }
 
 async function query(filterBy = {}) {
     try {
-        const loggedUser = userService.getLoggedinUser()
-        let orders = []
+        // const loggedUser = userService.getLoggedinUser()
+        // filterBy.loggedUser = loggedUser
+        const orders = await httpService.get('order', filterBy)
 
-        if (loggedUser) {
-            orders = await storageService.query(STORAGE_KEY)
-            orders = orders.filter(order => order.seller._id === loggedUser._id || order.buyer._id === loggedUser._id)
-        }
+
         return orders
     } catch (err) {
         throw err
     }
 }
 
-async function getById(orderId) {
-    return await storageService.get(STORAGE_KEY, orderId)
-}
+// async function getById(orderId) {
+//     return await storageService.get(STORAGE_KEY, orderId)
+// }
 
-async function remove(orderId) {
-    await storageService.remove(STORAGE_KEY, orderId)
-}
+// async function remove(orderId) {
+//     await storageService.remove(STORAGE_KEY, orderId)
+// }
 
 async function save(order) {
     let savedOrder
     if (order._id) {
-        savedOrder = await storageService.put(STORAGE_KEY, order)
+        savedOrder = await httpService.put('order', order)
     } else {
-        savedOrder = await storageService.post(STORAGE_KEY, order)
+        savedOrder = await httpService.post('order', order)
     }
     return savedOrder
 }

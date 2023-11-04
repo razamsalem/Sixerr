@@ -30,7 +30,7 @@ export function AppHeader() {
     const currentPath = location.pathname
 
     useEffect(() => {
-        loadOrders()
+        if (user) loadOrders()
     }, [user])
 
     useEffect(() => {

@@ -36,7 +36,6 @@ window.gs = gigService
 async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, category: '', tags: [] }) {
     return httpService.get(STORAGE_KEY, filterBy)
     // let gigs = await storageService.query(STORAGE_KEY)
-    // console.log(gigs.length,"pp");
     // if (filterBy.txt) {
     //     const regex = new RegExp(filterBy.txt, 'i')
 
@@ -108,14 +107,17 @@ async function getById(gigId) {
 }
 
 async function remove(gigId) {
-    return httpService.delete(`gig/${gigId}`)
+    try {
+        return httpService.delete(`gig/${gigId}`)
+    } catch (err) {
+        throw err
+    }
     // throw new Error('Nope')
     // await storageService.remove(STORAGE_KEY, gigId)
 }
 
 async function save(gig) {
     let savedGig
-    console.log(gig, "put");
     try {
         if (gig._id) {
             savedGig = await httpService.put(`gig/${gig._id}`, gig)

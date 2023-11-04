@@ -2,8 +2,6 @@ const defaultImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v169866309
 
 export function BigGigPreview({ gig }) {
 
-    console.log(gig)
-
     return (
         <article className="big-gig-preview">
             <h1 className="preview-heading">

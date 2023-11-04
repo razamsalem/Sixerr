@@ -99,17 +99,17 @@ export function removeFromCart(gigId) {
     })
 }
 
-export function onRemoveGigOptimistic(gigId) {
+export async function onRemoveGigOptimistic(gigId) {
     try {
         store.dispatch({
             type: REMOVE_GIG,
             gigId
         })
+        await gigService.remove(gigId)
         showSuccessMsg('Gig removed')
-        gigService.remove(gigId)
-        console.log('Server Reported - Deleted Succesfully');
     } catch (err) {
         showErrorMsg('Cannot remove gig')
+
         console.log('Cannot load gigs', err)
         store.dispatch({
             type: UNDO_REMOVE_GIG,

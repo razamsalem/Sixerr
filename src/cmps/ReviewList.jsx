@@ -6,6 +6,7 @@ import { ReviewPreview } from "./ReviewPreview";
 import { ReviewChart } from "./ReviewChart";
 import { UserMiniDetail } from "./UserMiniDetail";
 import LoadingCircle from "./LoadingCircle";
+import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service";
 
 export function ReviewList({ gigOwnerId, isUserProfile, onlyFirst }) {
     const navigate = useNavigate()

@@ -21,6 +21,8 @@ import { ReviewList } from '../cmps/ReviewList'
 import { userService } from '../services/user.service.http'
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
 
+
+
 export function UserDetails() {
   const params = useParams()
   const navigate = useNavigate()
@@ -45,7 +47,7 @@ export function UserDetails() {
     return () => {
       socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
     }
-  }, [])
+  }, [params.id])
 
 
   async function onSetGig() {
@@ -64,9 +66,10 @@ export function UserDetails() {
   }
 
   async function onBecomeSeller(userId) {
-    const user = await storageService.get('user', userId)
+    const user = await userService.getById(userId)
+    console.log(user)
     user.isSeller = true
-    await storageService.put('user', user)
+    await userService.update(user)
     await userService.saveLocalUser(user)
     location.reload()
     return user

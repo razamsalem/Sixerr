@@ -11,7 +11,8 @@ export function LoginSignup(props) {
     const [isSignup, setIsSignup] = useState(false)
     const [users, setUsers] = useState([])
     const isUserModalOpen = useSelector(storeState => storeState.userModule.isUserModalOpen)
-    const firstFourUsers = users?.slice(0, 4)
+    // const firstFourUsers = users?.slice(0, 4)
+    const firstFourUsers = users
 
     useEffect(() => {
         loadUsers()
@@ -39,7 +40,10 @@ export function LoginSignup(props) {
 
     function onLogin(ev = null) {
         if (ev) ev.preventDefault()
-        // console.log(credentials, "cred");
+        // console.log(credentials, "cred")
+
+        if (!credentials.password) credentials.password = '123'
+        console.log(credentials)
         if (!credentials.username) return
         props.onLogin(credentials)
         clearState()
