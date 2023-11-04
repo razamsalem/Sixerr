@@ -4,7 +4,7 @@ import { useNavigate } from "react-router"
 import { setFilterBy, getClearFilter } from "../store/actions/gig.actions"
 const defaultGigImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663092/defaultGigImg_vjtk9e.webp'
 
-export function OrderCard({ order }) {
+export function OrderCard({ order, openModal }) {
     const [progress, setProgress] = useState(0)
     const navigate = useNavigate()
 
@@ -41,7 +41,7 @@ export function OrderCard({ order }) {
         <section className="order-card-container flex">
             <div className="order-info">
                 <h5 className="card-header">Order status</h5>
-                <h4 className={`status ${order.status}`}>{checkStatus(order.status)[0]} <span className="question"><i title={checkStatus(order.status)[1]} className="fa-regular fa-circle-question"></i></span> </h4>
+                <h4 className={`status flex ${order.status}`}>{checkStatus(order.status)[0]} <span className="question"><i title={checkStatus(order.status)[1]} className="fa-regular fa-circle-question"></i></span> </h4>
                 <p className="date">Due date on {utilService.calculateDaysFromTimestamp(order.createdAt, order.daysToMake)}</p>
 
                 <div className="progress-bar">
@@ -73,7 +73,7 @@ export function OrderCard({ order }) {
                 </div>
 
                 {order.status === 'fulfilled' && <button className="add-review btn" onClick={ReviewGig}>Add a review</button>}
-                <button className="show-order btn">View order</button>
+                <button onClick={() => openModal(order)} className="show-order btn">View order</button>
 
             </div>
         </section >

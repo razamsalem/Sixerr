@@ -32,11 +32,14 @@
                 }
 
                 .status {
-                    color: $dark-clr;
                     font-weight: 700;
                     font-size: rem(18px);
                     text-transform: uppercase;
                     letter-spacing: rem(.5px);
+                    color: $dark-clr;
+                    
+                    gap: rem(5px);
+                    align-items: center;
                     margin-block-start: rem(8px);
                     margin-block-end: rem(4px);
 
