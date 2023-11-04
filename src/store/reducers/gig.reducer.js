@@ -1,4 +1,4 @@
-import { gigService } from "../../services/gig.service"
+import { gigService } from "../../services/gig.service.local"
 
 export const SET_GIGS = 'SET_GIGS'
 export const REMOVE_GIG = 'REMOVE_GIG'

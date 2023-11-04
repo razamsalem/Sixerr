@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { gigService } from "../services/gig.service"
+import { gigService } from "../services/gig.service.local"
 import { useEffect, useState } from "react"
 const categories = gigService.getCategories()
 

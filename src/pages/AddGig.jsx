@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router'
-import { gigService } from '../services/gig.service'
+import { gigService } from '../services/gig.service.local'
 import { ImgUploader } from '../cmps/ImgUploader'
 import { MultiSelect } from '../cmps/MultiSelect'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router';
 import { createSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { gigService } from '../services/gig.service';
+import { gigService } from '../services/gig.service.local';
 import { DeliveryTimeArea } from './DeliveryTimeArea';
 import { ServiceOptions } from './ServiceOptions';
 

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { useDispatch } from "react-redux"
 import { useParams, useNavigate } from "react-router-dom"
 import { Carousel } from 'react-responsive-carousel'
-import { gigService } from "../services/gig.service"
+import { gigService } from "../services/gig.service.local"
 import { CallToAction } from "../cmps/CallToAction"
 import { ADD_TO_CART } from "../store/reducers/gig.reducer"
 import { ReviewList } from "../cmps/ReviewList"
