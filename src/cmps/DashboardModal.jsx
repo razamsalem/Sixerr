@@ -58,11 +58,6 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                                 <h4 className="sub-header">This week's sales</h4>
                                 <AreaResChart />
                             </main>
-                            {/* 
-                                <div className="activities">
-                                  <h4 className="sub-header">Recent activities</h4>
-                                 </div>
-                            */}
                         </>
                     )}
 
@@ -92,7 +87,7 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                                 <StackedArea />
                             </div>
 
-                            <div className="general-info flex">
+                            {/* <div className="general-info flex">
                                 <div className="age-info">
                                     <h4 className="title">Clients by age</h4>
                                     <AgeRadialBar />
@@ -101,7 +96,7 @@ export function DashboardModal({ watchedUser, closeDashboard, handleBackgroundCl
                                     <h4 className="title">Daily highs</h4>
                                     <DataComposedChart />
                                 </div>
-                            </div>
+                            </div> */}
 
                         </>
                     )}

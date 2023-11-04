@@ -3,8 +3,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 95vw;
-    height: 95vh;
+    width: rem(1450px);
+    min-height: 90vh;
     background-color: $light-clr;
     border: 1px solid #ccc;
     border-radius: 12px;
@@ -134,8 +134,8 @@
 
             .compare-orders {
                 background-color: $light-clr;
-                height: rem(200px);
-                min-width: rem(505px);
+                height: rem(250px);
+                width: rem(470px);
                 border: 1px solid #10e582;
                 border-radius: 12px;
                 padding: rem(16px);
@@ -189,7 +189,7 @@
 
         .stacked-container {
             background-color: $light-clr;
-            height: rem(200px);
+            height: rem(300px);
             width: 100%;
             border: 1px solid #10e582;
             border-radius: 12px;

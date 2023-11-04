@@ -53,7 +53,7 @@ export class ViewsBarChart extends PureComponent {
     return (
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
-          width={500}
+          width={470}
           height={300}
           data={data}
           margin={{
