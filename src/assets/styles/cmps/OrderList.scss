@@ -1,10 +1,9 @@
 .order-list {
     border-collapse: collapse;
     border: 1px solid $modal-filter-border-clr;
+    width: 100%;
 
     &.buyer {
-        width: 95%;
-
         td {
             &.order-status {
                 padding: rem(10px);
@@ -42,7 +41,7 @@
         }
 
         td {
-            padding: 0 15px;
+            padding: 0 rem(20px);
 
             &.status {
                 display: flex;

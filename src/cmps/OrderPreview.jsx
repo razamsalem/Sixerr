@@ -35,7 +35,19 @@ export function OrderPreview({ order, mode, openModal, onApproveOrder, onDecline
                 </div>
             </td>
 
+            {mode === 'buyer' &&
+                <td>
+                    {order.title}
+                </td>}
+                
+            {mode === 'buyer' &&
+                <td>
+                    {order.gig.category}
+                </td>
+            }
+
             <td>{utilService.calculateDaysFromTimestamp(order.createdAt, order.daysToMake)}</td>
+
             <td>${order.packPrice}</td>
             <td onClick={handleActionClick} className={`status ${mode === 'buyer' ? 'buyer' : ''}`}>
                 {order && <span className={`${checkStatus(order.status)} label `}> {order.status === 'approved' ? 'In progress' : utilService.capitalizeFirstLetter(order.status)} </span>}
