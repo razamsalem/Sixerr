@@ -223,14 +223,14 @@
 
         .data-table {
             width: 100%;
-
+            
             table {
                 border-collapse: collapse;
                 width: 100%;
                 margin-bottom: 20px;
                 border: 1px solid $modal-filter-border-clr;
-                border-radius: 8px;
-                overflow: hidden;
+                border-radius: 12px;
+                // overflow: hidden;
             }
 
             th {
