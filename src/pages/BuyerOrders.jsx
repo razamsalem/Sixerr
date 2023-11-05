@@ -15,6 +15,13 @@ export function BuyerOrders() {
     let orders = useSelector(storeState => storeState.orderModule.orders)
     console.log(orders,"oo");
     orders = orders.filter(order => order.buyer._id === loggedUser._id)
+
+    useEffect(()=>{
+        socketService.on('order-updated',order=>{
+            console.log('order-updated', order);
+            dispatch(getActionUpdateOrder(order))
+        })
+    },[])
    
     async function showTable() {
         setTableDisplay(true)

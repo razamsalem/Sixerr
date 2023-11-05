@@ -7,7 +7,6 @@ const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v16990
 
 export function OrderPreview({ order, mode, openModal, onApproveOrder, onDeclineOrder, onFulfillOrder, selectedBtn, setSelectedBtn }) {
     const profile = mode === 'buyer' ? order.seller : order.buyer
-    console.log(order);
     function checkStatus(status) {
         if (status === 'pending') return 'pending-label'
         if (status === 'approved') return 'approved-label'

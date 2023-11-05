@@ -11,20 +11,15 @@ export function OrderCard({ order, openModal }) {
     const dispatch = useDispatch()
     let orders = useSelector(storeState => storeState.orderModule.orders)
 
-    // useEffect(()=>{
-    //     socketService.on('order-updated',order=>{
-    //         dispatch(getActionUpdateOrder(order))
-    //     })
-    //     console.log(orders,"oo2");
-    // },[])
+   
 
     useEffect(() => {
         const [, , progress] = checkStatus(order.status)
         setProgress(progress)
-        socketService.on('order-updated',order=>{
-            dispatch(getActionUpdateOrder(order))
-        })
-        console.log(orders,"oo2");
+        // socketService.on('order-updated',order=>{
+        //     dispatch(getActionUpdateOrder(order))
+        // })
+        // console.log(orders,"oo2");
     }, [order.status])
 
     function checkStatus(status) {
@@ -50,7 +45,7 @@ export function OrderCard({ order, openModal }) {
         navigate(`/order/review?orderId=${order._id}`)
     }
 
-    console.log(order)
+    // console.log(order)
     return (
         <section className="order-card-container flex">
             <div className="order-info">
