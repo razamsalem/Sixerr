@@ -13,11 +13,9 @@ import { DropdownBtn } from './DropdownBtn'
 import { gigService } from '../services/gig.service'
 import { getClearFilter, setFilterBy } from "../store/actions/gig.actions"
 import { Modal } from './Modal'
-
+import { MobileAside } from './MobileAside'
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
 const categories = gigService.getCategories()
-
-
 
 export function AppHeader() {
     const navigate = useNavigate()
@@ -42,18 +40,18 @@ export function AppHeader() {
         }
     }, [currentPath])
 
-    useEffect(()=>{
-        socketService.on('order-updated',order=>{
+    useEffect(() => {
+        socketService.on('order-updated', order => {
             dispatch(getActionUpdateOrder(order))
             switch (order.status) {
                 case 'approved':
-                showSuccessMsg(`${order.seller.fullname} approved your order!`) 
+                    showSuccessMsg(`${order.seller.fullname} approved your order!`)
                     break;
                 case 'rejected':
-                    showErrorMsg(`${order.seller.fullname} has rejected your order.`) 
+                    showErrorMsg(`${order.seller.fullname} has rejected your order.`)
                     break;
                 case 'fulfilled':
-                    showSuccessMsg(`${order.seller.fullname} has delivered your order!`) 
+                    showSuccessMsg(`${order.seller.fullname} has delivered your order!`)
                     break;
                 default:
                     break;
@@ -62,7 +60,7 @@ export function AppHeader() {
         return () => {
             socketService.off('order-updated')
         }
-    },[])
+    }, [])
 
     async function onLogin(credentials) {
         try {
@@ -98,7 +96,7 @@ export function AppHeader() {
         <>
             <section className={`${headerPosition} main-layout full header-container`}>
                 <Modal open={isModalOpen} onClose={onToggleModal} isAside={true}>
-                    <h1>Still blazin</h1>
+                    <MobileAside loggedUser={user} defaultUserImg={defaultUserImg} categories={categories} />
                 </Modal>
                 <header className="app-header">
                     <div className="logo-container">
