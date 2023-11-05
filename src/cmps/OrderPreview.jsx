@@ -29,7 +29,7 @@ export function OrderPreview({ order, mode, openModal, onApproveOrder, onDecline
 
             <td className='order-title'>
                 <div className="gig-img flex">
-                    {mode === 'buyer' && <img src={order.gig.imgUrls[0]} alt="gig image" onError={e => e.currentTarget.src = defaultGigImg} />}
+                    {mode === 'buyer' && <img src={order.gig.imgUrls[0] || defaultGigImg} alt="gig image" onError={e => e.currentTarget.src = defaultGigImg} />}
                     <LongTxt txt={order.gig.title} length={29} showReadMore={false} />
                 </div>
             </td>
