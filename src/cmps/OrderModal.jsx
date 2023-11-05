@@ -50,10 +50,6 @@ export function OrderModal({ order, userSeller, closeModal, handleBackgroundClic
                                 <h4 className="top">Order Information</h4>
                                 <ul>
                                     <li>
-                                        <span>Order ID</span>
-                                        <span>#{_id}</span>
-                                    </li>
-                                    <li>
                                         <span>Due on</span>
                                         <span>{utilService.calculateDaysFromTimestamp(createdAt, daysToMake)}</span>
                                     </li>
@@ -64,6 +60,10 @@ export function OrderModal({ order, userSeller, closeModal, handleBackgroundClic
                                     <li>
                                         <span>Status</span>
                                         <span>{status}</span>
+                                    </li>
+                                    <li>
+                                        <span>Order ID</span>
+                                        <span>#{_id}</span>
                                     </li>
                                 </ul>
                             </div>
