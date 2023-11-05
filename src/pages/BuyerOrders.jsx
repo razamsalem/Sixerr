@@ -5,16 +5,25 @@ import { useEffect, useState } from "react";
 import { OrderList } from "../cmps/OrderList";
 import { socketService } from "../services/socket.service";
 import { getActionUpdateOrder } from "../store/actions/order.actions";
+import { showSuccessMsg } from "../services/event-bus.service";
 
 export function BuyerOrders() {
     const [isModalOpen, setModalOpen] = useState(null)
     const [selectedOrder, setSelectedOrder] = useState(null)
     const [isTableDisplay, setTableDisplay] = useState(false)
     const loggedUser = useSelector(storeState => storeState.userModule.user)
-    const dispatch = useDispatch()
     let orders = useSelector(storeState => storeState.orderModule.orders)
     console.log(orders,"oo");
     orders = orders.filter(order => order.buyer._id === loggedUser._id)
+
+    // useEffect(()=>{
+    //     socketService.on('order-updated',order=>{
+    //         dispatch(getActionUpdateOrder(order))
+    //     })
+    //     return () => {
+    //         socketService.off('order-updated')
+    //     }
+    // },[])
    
     async function showTable() {
         setTableDisplay(true)

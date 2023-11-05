@@ -1,5 +1,5 @@
 import { Link, NavLink, createSearchParams, useLocation, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import routes from '../routes'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { login, logout, signup } from '../store/user.actions.js'
@@ -7,7 +7,7 @@ import { LoginSignup } from './LoginSignup.jsx'
 import { CategoryNav } from './CategoryNav'
 import { useEffect, useState } from 'react'
 import { SearchBarFilter } from './SearchBarFilter'
-import { loadOrders } from '../store/actions/order.actions'
+import { getActionUpdateOrder, loadOrders } from '../store/actions/order.actions'
 import { hideBackdrop, setHeaderPosition, setSubHeaderPosition, showBackdrop } from '../store/actions/system.actions'
 import { DropdownBtn } from './DropdownBtn'
 import { gigService } from '../services/gig.service'
@@ -29,6 +29,7 @@ export function AppHeader() {
     const [isModalOpen, setIsModalOpen] = useState(null)
     const [selectedDropDownBtn, setSelectedDropDownBtn] = useState(null)
     const currentPath = location.pathname
+    const dispatch = useDispatch()
 
     useEffect(() => {
         if (user) loadOrders()
@@ -40,6 +41,28 @@ export function AppHeader() {
             setSubHeaderPosition('static')
         }
     }, [currentPath])
+
+    useEffect(()=>{
+        socketService.on('order-updated',order=>{
+            dispatch(getActionUpdateOrder(order))
+            switch (order.status) {
+                case 'approved':
+                showSuccessMsg(`${order.seller.fullname} approved your order!`) 
+                    break;
+                case 'rejected':
+                    showErrorMsg(`${order.seller.fullname} has rejected your order.`) 
+                    break;
+                case 'fulfilled':
+                    showSuccessMsg(`${order.seller.fullname} has delivered your order!`) 
+                    break;
+                default:
+                    break;
+            }
+        })
+        return () => {
+            socketService.off('order-updated')
+        }
+    },[])
 
     async function onLogin(credentials) {
         try {
