@@ -66,7 +66,7 @@ export function OrderCard({ order, openModal }) {
 
             <div className="gig flex">
                 <div className="gig-img">
-                    <img onClick={navigateToGig} src={order.gig.imgUrls[0]} alt="Gig Picture" onError={e => e.currentTarget.src = defaultGigImg} />
+                    <img onClick={navigateToGig} src={order.gig.imgUrls[0] || defaultGigImg} alt="Gig Picture" onError={e => e.currentTarget.src = defaultGigImg} />
                 </div>
 
                 <div className="gig-info">

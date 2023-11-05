@@ -42,7 +42,7 @@ export function LoginSignup(props) {
         if (ev) ev.preventDefault()
         // console.log(credentials, "cred")
 
-        if (!credentials.password) credentials.password = '123'
+        if (!credentials.password) credentials.password = 'secret'
         console.log(credentials)
         if (!credentials.username) return
         props.onLogin(credentials)

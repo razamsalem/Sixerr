@@ -58,7 +58,7 @@
 
         .credit-card-details {
             .card {
-                width: 75%;
+                width: 100%;
                 display: flex;
                 justify-content: space-between;
                 margin-top: em(8px);
@@ -113,6 +113,7 @@
         }
 
     }
+
     // .option{
     //     padding-bottom: 1rem;
     // }
@@ -129,7 +130,8 @@
             cursor: pointer;
         }
     }
-    .payments-option-1{
+
+    .payments-option-1 {
         display: flex;
         padding: 1rem 1rem 1rem 1rem;
         height: em(63px);
@@ -142,4 +144,5 @@
             cursor: pointer;
         }
     }
+
 }

@@ -12,6 +12,7 @@ import { hideBackdrop, setHeaderPosition, setSubHeaderPosition, showBackdrop } f
 import { DropdownBtn } from './DropdownBtn'
 import { gigService } from '../services/gig.service'
 import { getClearFilter, setFilterBy } from "../store/actions/gig.actions"
+import { Modal } from './Modal'
 
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
 const categories = gigService.getCategories()
@@ -66,21 +67,19 @@ export function AppHeader() {
         }
     }
 
-    function openModal() {
-        setIsModalOpen(true)
+    function onToggleModal() {
+        setIsModalOpen(!isModalOpen)
     }
-
-    function closeModal() {
-        setIsModalOpen(false)
-    }
-
 
     return (
         <>
             <section className={`${headerPosition} main-layout full header-container`}>
+                <Modal open={isModalOpen} onClose={onToggleModal} isAside={true}>
+                    <h1>Still blazin</h1>
+                </Modal>
                 <header className="app-header">
                     <div className="logo-container">
-                        <i className="hamburger-icon btn fa-solid fa-bars" onClick={openModal} />
+                        <i className="hamburger-icon btn fa-solid fa-bars" onClick={onToggleModal} />
                         <Link to={'/home'} onClick={() => { setFilterBy(getClearFilter()) }} className='logo'>
                             sixerr<span className='dot'>.</span>
                         </Link>
@@ -89,39 +88,38 @@ export function AppHeader() {
                     <div className="searchbar-container" onFocus={showBackdrop} onBlur={hideBackdrop}>
                         <SearchBarFilter />
                     </div>
-                    <section className={`menu-backdrop ${isModalOpen ? 'active' : ''}`} onClick={closeModal}>
-                        <nav className={`links-container ${isModalOpen ? 'active' : ''}`}>
-                            {routes.map(route => !route.shouldRender ? ''
-                                :
-                                <NavLink className='btn' key={route.path} to={route.path}>{route.label}</NavLink>)}
 
-                            {user &&
-                                <>
-                                    <NavLink className='btn' key={'order'} to={'order'}>Orders</NavLink>
-                                    <span className="user-info">
-                                        <DropdownBtn selectedBtn={selectedDropDownBtn} setSelectedBtn={setSelectedDropDownBtn} icon={<img src={user.imgUrl} onError={e => e.currentTarget.src = defaultUserImg} />}>
-                                            <NavLink to={`user/${user._id}`}>
-                                                Profile
-                                            </NavLink>
+                    <nav className={`links-container }`}>
+                        {routes.map(route => !route.shouldRender ? ''
+                            :
+                            <NavLink className='btn' key={route.path} to={route.path}>{route.label}</NavLink>)}
 
-                                            {user.isSeller ?
-                                                <NavLink to="/gig/add">
-                                                    Add a gig
-                                                </NavLink> : <NavLink to={`user/${user._id}`}>Become a seller</NavLink>}
+                        {user &&
+                            <>
+                                <NavLink className='btn' key={'order'} to={'order'}>Orders</NavLink>
+                                <span className="user-info">
+                                    <DropdownBtn selectedBtn={selectedDropDownBtn} setSelectedBtn={setSelectedDropDownBtn} icon={<img src={user.imgUrl} onError={e => e.currentTarget.src = defaultUserImg} />}>
+                                        <NavLink to={`user/${user._id}`}>
+                                            Profile
+                                        </NavLink>
 
-                                            <span onClick={onLogout}>
-                                                Logout
-                                            </span>
-                                        </DropdownBtn>
-                                    </span>
-                                </>
+                                        {user.isSeller ?
+                                            <NavLink to="/gig/add">
+                                                Add a gig
+                                            </NavLink> : <NavLink to={`user/${user._id}`}>Become a seller</NavLink>}
 
-                            }
-                            {!user &&
-                                <LoginSignup onLogin={onLogin} onSignup={onSignup} />
-                            }
-                        </nav>
-                    </section>
+                                        <span onClick={onLogout}>
+                                            Logout
+                                        </span>
+                                    </DropdownBtn>
+                                </span>
+                            </>
+
+                        }
+                        {!user &&
+                            <LoginSignup onLogin={onLogin} onSignup={onSignup} />
+                        }
+                    </nav>
                 </header>
             </section >
             <CategoryNav categories={categories} globalFilterBy={globalFilterBy} setFilterBy={setFilterBy} getClearFilter={getClearFilter} subHeaderPosition={subHeaderPosition} />

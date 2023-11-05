@@ -1,12 +1,14 @@
 .checkout {
     margin-bottom: em(55px);
-    @include for-xs-small-layout{
+
+    @include for-xs-small-layout {
         font-size: 14px;
         display: grid;
         grid-template-columns: 1fr;
         grid-auto-flow: row;
         margin-top: rem(50px);
         padding-inline: 0;
+
         .cta-container {
             position: static;
             grid-column: 1;
@@ -14,28 +16,34 @@
             justify-self: start;
             width: 100%;
         }
+
         .payment-container .payment-methods-wrapper .credit-card-details .card {
             margin-top: 0.5em;
             margin-block-end: 1.125em;
             display: block;
-            h6{
+
+            h6 {
                 margin-block: rem(20px) 0;
                 margin-bottom: 8px;
                 // padding-bottom: rem(7px);
             }
         }
-        .payment-container .payment-methods-wrapper .credit-card-details .card > * > *{
+
+        .payment-container .payment-methods-wrapper .credit-card-details .card>*>* {
+            // width: auto;
+        }
+
+        .payment-container .payment-methods-wrapper .credit-card-details .card>* {
             width: auto;
         }
-        .payment-container .payment-methods-wrapper .credit-card-details .card > *{
-            width: auto;
-        }
+
         .payment-container .payment-methods-wrapper .credit-card-details .card-number .credit-card-input-wrapper {
             padding: 20px 20px 20px 0;
-            input{
-            width: auto;
-            // border: 0.0625em solid #e4e5e7;
-            height: auto;
+
+            input {
+                width: auto;
+                // border: 0.0625em solid #e4e5e7;
+                height: auto;
             }
         }
     }
@@ -46,6 +54,7 @@
         grid-template-columns: 1fr;
         grid-auto-flow: row;
         margin-top: rem(50px);
+
         .cta-container {
             position: static;
             grid-column: 1;
@@ -53,44 +62,52 @@
             justify-self: start;
             width: 100%;
         }
+
         .payment-container .payment-methods-wrapper .credit-card-details .card {
             font-size: 11px;
             margin-top: 0.5em;
             margin-block-end: 1.125em;
             display: flex;
-            h6{
+
+            h6 {
                 // margin-block: rem(20px) 0;
             }
+
             width: 100%;
         }
-        .payment-container .payment-methods-wrapper .credit-card-details .card > * > *{
+
+        .payment-container .payment-methods-wrapper .credit-card-details .card>*>* {
             width: 100%;
         }
-        .payment-container .payment-methods-wrapper .credit-card-details .card > *{
+
+        .payment-container .payment-methods-wrapper .credit-card-details .card>* {
             width: 100%;
         }
-        .payment-container .payment-methods-wrapper .credit-card-details .card-number .credit-card-input-wrapper input{
+
+        .payment-container .payment-methods-wrapper .credit-card-details .card-number .credit-card-input-wrapper input {
             width: 100%;
             border: none
         }
     }
 
-    @include for-normal-layout{
-    display: grid;
-    margin-top: rem(50px);
-    padding-inline: rem(55px);
-    grid-template-columns: repeat(2,1fr); 
-    grid-auto-flow: column;
-    .cta-container {
-        grid-row: 1;
-        grid-column: 2;
-        width: em(412px);
-        justify-self: end;
-       
+    @include for-normal-layout {
+        display: grid;
+        margin-top: rem(50px);
+        padding-inline: rem(55px);
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-flow: column;
+
+        .cta-container {
+            grid-row: 1;
+            grid-column: 2;
+            width: em(412px);
+            justify-self: end;
+
+        }
+
+        .credit-card-details {
+            padding-right: 83px;
+        }
     }
-    .credit-card-details{
-        padding-right: 83px;  
-    }
-    }
-   
+
 }
