@@ -82,7 +82,7 @@ export function AppHeader() {
         try {
             navigate('/')
             await logout()
-            showSuccessMsg(`Bye now`)
+            showSuccessMsg(`Logged out successfully.`)
         } catch (err) {
             showErrorMsg('Cannot logout')
         }
@@ -96,7 +96,7 @@ export function AppHeader() {
         <>
             <section className={`${headerPosition} main-layout full header-container`}>
                 <Modal open={isModalOpen} onClose={onToggleModal} isAside={true}>
-                    <MobileAside loggedUser={user} defaultUserImg={defaultUserImg} categories={categories} />
+                    <MobileAside onToggleModal={onToggleModal} loggedUser={user} setFilterBy={setFilterBy} onLogout={onLogout} defaultUserImg={defaultUserImg} categories={categories} />
                 </Modal>
                 <header className="app-header">
                     <div className="logo-container">

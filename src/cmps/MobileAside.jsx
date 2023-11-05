@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom"
+import { setUserModalOpen } from "../store/user.actions"
+import { useSelector } from "react-redux"
+import { getClearFilter } from "../store/actions/gig.actions"
 
-export function MobileAside({ loggedUser, defaultUserImg, categories }) {
-    console.log(loggedUser)
+export function MobileAside({ onToggleModal, loggedUser, onLogout, setFilterBy, defaultUserImg, categories }) {
+    const isUserModalOpen = useSelector(storeState => storeState.userModule.isUserModalOpen)
+
+    function toggleLoginModal() {
+        setUserModalOpen(!isUserModalOpen)
+    }
+
+    function onSetFilterBy(category) {
+        setFilterBy({ ...getClearFilter(), category })
+    }
+
     return (
         <aside className="links-container">
             <div className="user-container">
@@ -11,18 +23,24 @@ export function MobileAside({ loggedUser, defaultUserImg, categories }) {
                 </Link>}
                 {!loggedUser &&
                     <div className="login-container">
-                        <Link className="join">Join Sixerr</Link>
+                        <Link className="join" onClick={toggleLoginModal}>Join Sixerr</Link>
                     </div>
                 }
             </div>
-            {!loggedUser && <Link className="login link">Sign in</Link>}
+            {!loggedUser && <Link className="login link" onClick={toggleLoginModal}>Sign in</Link>}
             <h6 className="divider">My Profile</h6>
-            <Link className="link" to={'/home'}>Home</Link>
-            <Link className="link" to={'/order'}>Manage Orders</Link>
-            <Link className="link" to={'/gig'}>Explore</Link>
-            <Link className="link" to={'/gig'}>Log out</Link>
+            <Link className="link" to={'/home'} onClick={onToggleModal}>Home</Link>
+            <Link className="link" to={'/order'} onClick={onToggleModal}>Manage Orders</Link>
+            <Link className="link" to={'/gig'} onClick={onToggleModal}>Explore</Link>
+            {loggedUser && <Link className="link" onClick={() => {
+                onLogout()
+                onToggleModal()
+            }} >Log out</Link>}
             <h6 className="divider">Browse categories</h6>
-            {categories.map(c => <Link className="link mini">{c.category}</Link>)}
+            {categories.map(c => <Link to={`/gig`} onClick={() => {
+                onSetFilterBy(c.category)
+                onToggleModal()
+            }} className="link mini">{c.category}</Link>)}
         </aside>
     )
 }
