@@ -1,6 +1,7 @@
 .user-orders {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     .header {
         text-transform: uppercase;
@@ -16,6 +17,10 @@
         margin-inline: rem(5px);
         max-height: rem(36px);
         font-size: rem(16px);
+
+        &.active {
+            border: 1.5px solid $dark-clr;
+        }
     }
 }
 

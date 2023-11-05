@@ -49,8 +49,10 @@ export function BuyerOrders() {
                     <div className="buyer-orders main-layout">
                         <div className="user-orders ">
                             <h1 className="header"><i className="fa-solid fa-box"></i> My orders</h1>
-                            <button onClick={hideTable}><i className="fa-solid fa-grip"></i></button>
-                            <button onClick={showTable}><i className="fa-solid fa-table"></i></button>
+                            <div>
+                                <button className={`${!isTableDisplay ? 'active' : ''}`} onClick={hideTable}><i className="fa-solid fa-grip"></i></button>
+                                <button onClick={showTable}><i className="fa-solid fa-table"></i></button>
+                            </div>
                         </div>
                         {!orders.length && <span>
                             No orders yet <span className="dot">{','}</span> <br /> Click to find services on sixerr<span className="dot">.</span>
@@ -65,17 +67,14 @@ export function BuyerOrders() {
 
                 {isTableDisplay &&
                     <>
-                        {/* <div className="user-orders">
-                        <h1 className="header"><i className="fa-solid fa-box"></i> My orders</h1>
-                        <button onClick={hideTable}><i className="fa-solid fa-grip"></i></button>
-                        <button onClick={showTable}><i className="fa-solid fa-table"></i></button>
-                    </div> */}
                         <div className="main-layout">
-                        <div className="user-orders ">
-                            <h1 className="header"><i className="fa-solid fa-box"></i> My orders</h1>
-                            <button onClick={hideTable}><i className="fa-solid fa-grip"></i></button>
-                            <button onClick={showTable}><i className="fa-solid fa-table"></i></button>
-                        </div>
+                            <div className="user-orders ">
+                                <h1 className="header"><i className="fa-solid fa-box"></i> My orders</h1>
+                                <div>
+                                    <button onClick={hideTable}><i className="fa-solid fa-grip"></i></button>
+                                    <button className={`${isTableDisplay ? 'active' : ''}`} onClick={showTable}><i className="fa-solid fa-table"></i></button>
+                                </div>
+                            </div>
                             <OrderList orders={orders} openModal={openOrderModal} loggedUser={loggedUser} mode={'buyer'} />
                         </div>
                     </>
