@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { OrderList } from "../cmps/OrderList";
 import { socketService } from "../services/socket.service";
 import { getActionUpdateOrder } from "../store/actions/order.actions";
+import { showSuccessMsg } from "../services/event-bus.service";
 
 export function BuyerOrders() {
     const [isModalOpen, setModalOpen] = useState(null)
@@ -18,8 +19,9 @@ export function BuyerOrders() {
 
     useEffect(()=>{
         socketService.on('order-updated',order=>{
-            console.log('order-updated', order);
+            console.log('order-updated', order)
             dispatch(getActionUpdateOrder(order))
+            showSuccessMsg(`${order.seller.fullname} has changed your order status`)
         })
     },[])
    
