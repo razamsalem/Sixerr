@@ -119,11 +119,17 @@
         }
 
         .categories-section {
+            padding-block-start: 2.5rem;
+
+            h2 {
+                margin-block-end: rem(20px);
+            }
+
             .categories-list {
                 .category {
                     margin-block-end: 2.8375rem;
                     margin-block-end: 2.8375rem;
-                    font-size: rem(14px);
+                    font-size: rem(13px);
                 }
             }
         }

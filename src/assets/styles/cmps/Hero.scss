@@ -80,13 +80,11 @@
     @include for-mobile-layout {
         height: rem(420px);
 
-
-        // .hero-img-container {
-        //     .cover-img:not(.visible) {
-        //         opacity: 0;
-        //         background: none !important;
-        //     }
-        // }
+        .hero-img-container {
+            .cover-img {
+                background: $hero-color-1 !important;
+            }
+        }
 
         .hero-cover {
             width: auto;
