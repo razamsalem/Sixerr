@@ -49,9 +49,13 @@ export function BuyerOrders() {
                     <div className="buyer-orders main-layout">
                         <div className="user-orders">
                             <h1 className="header"><i className="fa-solid fa-box"></i> My orders</h1>
-                            <button onClick={hideTable}><i class="fa-solid fa-grip"></i></button>
-                            <button onClick={showTable}><i class="fa-solid fa-table"></i></button>
+                            <button onClick={hideTable}><i className="fa-solid fa-grip"></i></button>
+                            <button onClick={showTable}><i className="fa-solid fa-table"></i></button>
                         </div>
+
+                            {!orders.length &&   <span>
+                    No orders yet <span className="dot">{','}</span> <br /> Click to find services on sixerr<span className="dot">.</span>
+                </span>}
 
                         <section className="orders-layout">
                             {orders.map(order => (
@@ -65,8 +69,8 @@ export function BuyerOrders() {
                 <>
                     <div className="user-orders">
                         <h1 className="header"><i className="fa-solid fa-box"></i> My orders</h1>
-                        <button onClick={hideTable}><i class="fa-solid fa-grip"></i></button>
-                        <button onClick={showTable}><i class="fa-solid fa-table"></i></button>
+                        <button onClick={hideTable}><i Name="fa-solid fa-grip"></i></button>
+                        <button onClick={showTable}><i className="fa-solid fa-table"></i></button>
                     </div>
                     <OrderList orders={orders} openModal={openOrderModal} loggedUser={loggedUser} mode={'buyer'} />
                 </>
