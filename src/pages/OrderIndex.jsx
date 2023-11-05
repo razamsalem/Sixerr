@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 import { OrderList } from "../cmps/OrderList"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { OrderModal } from "../cmps/OrderModal"
 
 export function OrderIndex() {
@@ -8,6 +8,10 @@ export function OrderIndex() {
     const [selectedOrder, setSelectedOrder] = useState(null)
     const orders = useSelector(storeState => storeState.orderModule.orders)
     const loggedUser = useSelector(storeState => storeState.userModule.user)
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     async function openOrderModal(order) {
         setModalOpen(true)

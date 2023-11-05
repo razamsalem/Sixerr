@@ -1,15 +1,18 @@
-export function Modal({ open, onClose, children }) {
-    const handleContentClick = (event) => {
-        event.stopPropagation();
+import { createPortal } from "react-dom";
+
+export function Modal({ open, onClose, isAside, children }) {
+    function handleContentClick(event) {
+        event.stopPropagation()
     }
 
     if (!open) return null
-    return (
+    return createPortal(
         <div onClick={onClose} className="modal-overlay">
-            <article onClick={handleContentClick} className="modal-content">
+            <article onClick={handleContentClick} className={`modal-content ${isAside ? 'side' : ''}`}>
                 {children}
                 {/* <button onClick={onClose}>Close</button> */}
             </article>
-        </div>
+        </div>,
+        document.getElementById('portal')
     )
 }

@@ -3,7 +3,7 @@
 .gig-details {
     display: grid;
     justify-content: space-around;
-    margin-block-start: em(40px);
+
     .bread-crumbs {
         display: none;
     }
@@ -131,6 +131,7 @@
         width: 100%;
         max-width: $details-carousel-width;
         height: $details-carousel-height-mobile;
+
         &.hide {
             opacity: .2;
         }
@@ -191,6 +192,7 @@
                 filter: blur(0.6px);
                 opacity: 0.5;
                 cursor: pointer;
+
                 &.selected {
                     filter: none;
                     opacity: 1;
@@ -201,8 +203,10 @@
 
 
     @include for-small-layout {
+        margin-block-start: em(40px);
         grid-auto-flow: row;
         padding-inline: 0;
+
         .bread-crumbs {
             display: flex;
         }

@@ -89,39 +89,45 @@
                 display: flex;
             }
 
-            .menu-backdrop {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background-color: rgba(0, 0, 0, 0.5);
-                pointer-events: none;
-                opacity: 0;
-                transition: 0.2s opacity;
-
-                &.active {
-                    opacity: 1;
-                    pointer-events: unset;
-                }
-
-                nav.links-container {
-                    position: fixed;
-                    height: 100vh;
-                    width: 150px;
-                    background-color: #d4d4d4;
-                    flex-direction: column-reverse;
-                    top: 0;
-                    left: -100%;
-                    align-items: flex-start;
-                    justify-content: flex-end;
-                    transition: 0.4s left;
-
-                    &.active {
-                        left: 0;
-                    }
+            .links-container {
+                a {
+                    display: none;
                 }
             }
+
+            // .menu-backdrop {
+            //     position: fixed;
+            //     top: 0;
+            //     left: 0;
+            //     width: 100%;
+            //     height: 100vh;
+            //     background-color: rgba(0, 0, 0, 0.5);
+            //     pointer-events: none;
+            //     opacity: 0;
+            //     transition: 0.2s opacity;
+
+            //     &.active {
+            //         opacity: 1;
+            //         pointer-events: unset;
+            //     }
+
+            //     nav.links-container {
+            //         position: fixed;
+            //         height: 100vh;
+            //         width: 150px;
+            //         background-color: #d4d4d4;
+            //         flex-direction: column-reverse;
+            //         top: 0;
+            //         left: -100%;
+            //         align-items: flex-start;
+            //         justify-content: flex-end;
+            //         transition: 0.4s left;
+
+            //         &.active {
+            //             left: 0;
+            //         }
+            //     }
+            // }
 
         }
 
@@ -261,6 +267,7 @@
         bottom: 0;
         top: unset;
         position: fixed;
+        box-shadow: 5px 5px 15px #00000099;
 
         &.static {
             position: fixed;
@@ -271,10 +278,6 @@
 
             .app-header {
                 .logo-container {
-                    .logo {
-                        color: $dark-clr;
-                    }
-
                     .hamburger-icon {
                         color: $dark-clr;
                     }
@@ -283,14 +286,35 @@
         }
 
         .app-header {
-            .menu-backdrop {
-                bottom: 0;
-                top: unset;
+            .logo-container {
+                .logo {
+                    display: none;
+                }
+            }
 
-                .links-container {
-                    &.active {
-                        top: unset;
+            .searchbar-container {
+                margin-inline: rem(5px);
+            }
 
+            .links-container {
+                .user-info {
+                    .drop-down-btn {
+                        .drop-down-menu {
+                            top: rem(-145px);
+                            right: 0;
+
+                            &::before {
+                                top: unset;
+                                bottom: rem(-11px);
+                                transform: rotate(360deg);
+                            }
+
+                            &::after {
+                                top: unset;
+                                bottom: rem(-9px);
+                                transform: rotate(360deg);
+                            }
+                        }
                     }
                 }
             }

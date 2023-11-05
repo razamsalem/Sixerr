@@ -99,14 +99,23 @@
     }
 
     @include for-mobile-layout {
+        // grid-column: 1/-1;
+
         .filter-btns {
+
             .btns-container {
                 display: flex;
 
                 .filter-btn {
                     display: flex;
+                    flex: 1;
                     align-items: center;
-                    font-size: rem(13px);
+                    padding: rem(5px) rem(7px);
+                    margin-inline-end: rem(3.5px);
+                    white-space: nowrap;
+                    font-size: rem(12px);
+                    min-height: 2rem;
+                    flex-direction: column;
                 }
             }
         }
