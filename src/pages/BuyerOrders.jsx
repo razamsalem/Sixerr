@@ -1,17 +1,21 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { OrderCard } from "../cmps/OrderCard";
 import { OrderModal } from "../cmps/OrderModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { OrderList } from "../cmps/OrderList";
+import { socketService } from "../services/socket.service";
+import { getActionUpdateOrder } from "../store/actions/order.actions";
 
 export function BuyerOrders() {
     const [isModalOpen, setModalOpen] = useState(null)
     const [selectedOrder, setSelectedOrder] = useState(null)
     const [isTableDisplay, setTableDisplay] = useState(false)
     const loggedUser = useSelector(storeState => storeState.userModule.user)
+    const dispatch = useDispatch()
     let orders = useSelector(storeState => storeState.orderModule.orders)
+    console.log(orders,"oo");
     orders = orders.filter(order => order.buyer._id === loggedUser._id)
-
+   
     async function showTable() {
         setTableDisplay(true)
     }

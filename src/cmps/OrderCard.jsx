@@ -2,15 +2,29 @@ import { useEffect, useState } from "react"
 import { utilService } from "../services/util.service"
 import { useNavigate } from "react-router"
 import { setFilterBy, getClearFilter } from "../store/actions/gig.actions"
+import { useDispatch, useSelector } from "react-redux"
 const defaultGigImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663092/defaultGigImg_vjtk9e.webp'
 
 export function OrderCard({ order, openModal }) {
     const [progress, setProgress] = useState(0)
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    let orders = useSelector(storeState => storeState.orderModule.orders)
+
+    // useEffect(()=>{
+    //     socketService.on('order-updated',order=>{
+    //         dispatch(getActionUpdateOrder(order))
+    //     })
+    //     console.log(orders,"oo2");
+    // },[])
 
     useEffect(() => {
         const [, , progress] = checkStatus(order.status)
         setProgress(progress)
+        socketService.on('order-updated',order=>{
+            dispatch(getActionUpdateOrder(order))
+        })
+        console.log(orders,"oo2");
     }, [order.status])
 
     function checkStatus(status) {
