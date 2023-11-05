@@ -67,7 +67,7 @@ export function GigIndex() {
         const loadingTimeout = setTimeout(() => {
             setIsLoading(false)
             console.log('done')
-        }, 2000)
+        }, 1500)
 
         return () => {
             clearTimeout(loadingTimeout)

@@ -6,6 +6,7 @@ import { OrderList } from "../cmps/OrderList";
 import { socketService } from "../services/socket.service";
 import { getActionUpdateOrder } from "../store/actions/order.actions";
 import { showSuccessMsg } from "../services/event-bus.service";
+import LoadingCircle from "../cmps/LoadingCircle";
 
 export function BuyerOrders() {
     const [isModalOpen, setModalOpen] = useState(null)
@@ -13,18 +14,8 @@ export function BuyerOrders() {
     const [isTableDisplay, setTableDisplay] = useState(false)
     const loggedUser = useSelector(storeState => storeState.userModule.user)
     let orders = useSelector(storeState => storeState.orderModule.orders)
-    console.log(orders,"oo");
     orders = orders.filter(order => order.buyer._id === loggedUser._id)
 
-    // useEffect(()=>{
-    //     socketService.on('order-updated',order=>{
-    //         dispatch(getActionUpdateOrder(order))
-    //     })
-    //     return () => {
-    //         socketService.off('order-updated')
-    //     }
-    // },[])
-   
     async function showTable() {
         setTableDisplay(true)
     }
@@ -47,39 +38,48 @@ export function BuyerOrders() {
             setModalOpen(false)
         }
     }
-
+    if (!orders) return <div className='loading'>{<LoadingCircle />}</div>
     return (
         <>
-            {isModalOpen && (
-                <OrderModal order={selectedOrder} userSeller={false} closeModal={closeModal} handleBackgroundClick={handleBackgroundClick} />
-            )}
-            {!isTableDisplay && 
-                <section className="buyer-orders-container full">
+            <section className="buyer-orders-container full">
+                {isModalOpen && (
+                    <OrderModal order={selectedOrder} userSeller={false} closeModal={closeModal} handleBackgroundClick={handleBackgroundClick} />
+                )}
+                {!isTableDisplay &&
                     <div className="buyer-orders main-layout">
-                        <div className="user-orders">
+                        <div className="user-orders ">
                             <h1 className="header"><i className="fa-solid fa-box"></i> My orders</h1>
-                            <button onClick={hideTable}><i class="fa-solid fa-grip"></i></button>
-                            <button onClick={showTable}><i class="fa-solid fa-table"></i></button>
+                            <div>
+                                <button className={`${!isTableDisplay ? 'active' : ''}`} onClick={hideTable}><i className="fa-solid fa-grip"></i></button>
+                                <button onClick={showTable}><i className="fa-solid fa-table"></i></button>
+                            </div>
                         </div>
+                        {!orders.length && <span>
+                            No orders yet <span className="dot">{','}</span> <br /> Click to find services on sixerr<span className="dot">.</span>
+                        </span>}
 
                         <section className="orders-layout">
                             {orders.map(order => (
                                 <OrderCard order={order} loggedUser={loggedUser} openModal={openOrderModal} />
                             ))}
                         </section>
-                    </div>
-                </section>}
+                    </div>}
 
-            {isTableDisplay &&
-                <>
-                    <div className="user-orders">
-                        <h1 className="header"><i className="fa-solid fa-box"></i> My orders</h1>
-                        <button onClick={hideTable}><i class="fa-solid fa-grip"></i></button>
-                        <button onClick={showTable}><i class="fa-solid fa-table"></i></button>
-                    </div>
-                    <OrderList orders={orders} openModal={openOrderModal} loggedUser={loggedUser} mode={'buyer'} />
-                </>
-            }
+                {isTableDisplay &&
+                    <>
+                        <div className="main-layout">
+                            <div className="user-orders ">
+                                <h1 className="header"><i className="fa-solid fa-box"></i> My orders</h1>
+                                <div>
+                                    <button onClick={hideTable}><i className="fa-solid fa-grip"></i></button>
+                                    <button className={`${isTableDisplay ? 'active' : ''}`} onClick={showTable}><i className="fa-solid fa-table"></i></button>
+                                </div>
+                            </div>
+                            <OrderList orders={orders} openModal={openOrderModal} loggedUser={loggedUser} mode={'buyer'} />
+                        </div>
+                    </>
+                }
+            </section>
         </>
     )
 }
