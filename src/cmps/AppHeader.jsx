@@ -7,13 +7,14 @@ import { LoginSignup } from './LoginSignup.jsx'
 import { CategoryNav } from './CategoryNav'
 import { useEffect, useState } from 'react'
 import { SearchBarFilter } from './SearchBarFilter'
-import { getActionUpdateOrder, loadOrders } from '../store/actions/order.actions'
+import { getActionAddOrder, getActionUpdateOrder, loadOrders } from '../store/actions/order.actions'
 import { hideBackdrop, setHeaderPosition, setSubHeaderPosition, showBackdrop } from '../store/actions/system.actions'
 import { DropdownBtn } from './DropdownBtn'
 import { gigService } from '../services/gig.service'
 import { getClearFilter, setFilterBy } from "../store/actions/gig.actions"
 import { Modal } from './Modal'
 import { MobileAside } from './MobileAside'
+import { socketService } from '../services/socket.service'
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
 const categories = gigService.getCategories()
 
@@ -42,7 +43,6 @@ export function AppHeader() {
 
     useEffect(() => {
         socketService.on('order-updated', order => {
-            console.log("order-updated");
             dispatch(getActionUpdateOrder(order))
             switch (order.status) {
                 case 'approved':
@@ -58,8 +58,13 @@ export function AppHeader() {
                     break;
             }
         })
+        socketService.on('order-added', order => {
+            dispatch(getActionAddOrder(order))
+            showSuccessMsg('new order is wating for you') 
+        })
         return () => {
             socketService.off('order-updated')
+            socketService.off('order-added')
         }
     }, [])
 
