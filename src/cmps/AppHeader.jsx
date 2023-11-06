@@ -42,6 +42,7 @@ export function AppHeader() {
 
     useEffect(() => {
         socketService.on('order-updated', order => {
+            console.log("order-updated");
             dispatch(getActionUpdateOrder(order))
             switch (order.status) {
                 case 'approved':
