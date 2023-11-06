@@ -12,7 +12,7 @@ export const userService = {
     getUsers,
     getById,
     // remove,
-    // update,
+    update,
     getEmptyUser
 }
 
@@ -48,12 +48,10 @@ async function getById(userId) {
 //     // return httpService.delete(`user/${userId}`)
 // }
 
-// async function update({ _id, reviews }) {
-//     const user = await storageService.get('user', _id)
-//     user.reviews = reviews
-//     await storageService.put('user', user)
-//     return user
-// }
+async function update(user) {
+    const savedUser = await httpService.put('user', user)
+    return savedUser
+}
 
 async function login(userCred) {
     console.log(userCred.password, "userCred");
