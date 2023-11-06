@@ -26,6 +26,7 @@ export function DynamicBtn() {
 
     useEffect(() => {
         if (selectedBtn) {
+            console.log('scroll ~~~')
             const newPosition = selectedBtn.target.getBoundingClientRect()
             setSelectedBtn(selectedBtn => ({ ...selectedBtn, position: newPosition }))
         }
@@ -50,7 +51,6 @@ export function DynamicBtn() {
         })
 
         const buttonRect = ev.currentTarget.getBoundingClientRect()
-
         setSelectedBtn({
             ...btns[idx],
             position: {
@@ -92,7 +92,7 @@ export function DynamicBtn() {
                 <div className="btns-container">
                     {btns.map((btn, idx) => {
                         return <>
-                            {btn.title === 'Service options' && !globalFilterBy.category ? <></> :
+                            {btn.title === 'Options' && !globalFilterBy.category ? <></> :
                                 <button
                                     key={btn.title}
                                     onClick={(ev) => onToggleArrow(ev, idx)}

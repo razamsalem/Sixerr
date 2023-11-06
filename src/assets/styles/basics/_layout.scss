@@ -12,7 +12,6 @@
 
     @include for-mobile-layout {
         grid-template-columns: minmax(15px, 1fr) minmax(auto, $mobile-breakpoint) minmax(15px, 1fr);
-
     }
 
     @include for-small-layout {
@@ -35,6 +34,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     grid-gap: em(40px);
+
+    @include for-mobile-layout {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 1.5em;
+    }
 }
 
 .user-layout {

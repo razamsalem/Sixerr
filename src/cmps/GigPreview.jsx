@@ -56,7 +56,7 @@ export function GigPreview({ gig, onRemoveGig, onUpdateGig, onloadUser, minimal 
                     </div>}
                 </div>
 
-                {!minimal && <span className="gig-price"> <span className="from">From</span>  <span className="price">${gig.price.toLocaleString()}</span></span>}
+                {!minimal && <span className="gig-price"> <span className="from">From</span>  <span className="price">${gig.packages.basic.packPrice.toLocaleString()}</span></span>}
             </li>
         </>
     )

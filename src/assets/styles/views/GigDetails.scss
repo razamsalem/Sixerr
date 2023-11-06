@@ -3,6 +3,7 @@
 .gig-details {
     display: grid;
     justify-content: space-around;
+    margin-block-end: rem(100px);
 
     .bread-crumbs {
         display: none;
@@ -300,7 +301,9 @@
 
     }
 
-    @include for-narrow-layout {}
+    @include for-narrow-layout {
+        margin-block-end: rem(60px);
+    }
 
     @include for-normal-layout {
         padding-inline: em(32px);

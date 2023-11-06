@@ -9,7 +9,7 @@ async function getBtn() {
 
 const filterBtns = [
     {
-        title: 'Service options',
+        title: 'Options',
         content: 'Service'
     },
     {

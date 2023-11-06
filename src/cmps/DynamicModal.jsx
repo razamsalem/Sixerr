@@ -130,7 +130,7 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
                     <DeliveryTimeArea handleChange={handleChange} filterByToEdit={filterByToEdit} />
                 }
 
-                {btn.title === 'Service options' && <ServiceOptions handleChange={handleChange} filterByToEdit={filterByToEdit} />}
+                {btn.title === 'Options' && <ServiceOptions handleChange={handleChange} filterByToEdit={filterByToEdit} />}
 
             </div>
             <div className='button-row'>

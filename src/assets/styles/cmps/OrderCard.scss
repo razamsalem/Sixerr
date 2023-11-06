@@ -32,7 +32,7 @@
 
         .order-card-container {
             flex-direction: column;
-            height: rem(380px);
+            // height: rem(380px);
             padding: rem(30px);
             margin-block-end: rem(5px);
             background-color: $light-clr;
@@ -149,10 +149,15 @@
             }
 
             .order-data {
+                // grid-template-columns: 1fr 1fr;
                 display: grid;
-                grid-template-columns: 1fr 1fr;
                 margin-block-start: rem(12px);
                 min-height: rem(92px);
+
+                .btn-container {
+                    display: flex;
+                    gap: 1rem;
+                }
 
                 .order {
                     grid-column: 1;
@@ -161,6 +166,7 @@
                     align-items: center;
                     text-transform: uppercase;
                     font-size: rem(14px);
+                    margin-block-end: rem(20px);
                     color: $dark-clr-4;
 
                     h3 {
@@ -179,6 +185,7 @@
                         }
                     }
                 }
+
 
                 .add-review {
                     grid-row: 1;
@@ -204,13 +211,39 @@
 
                     padding: rem(12px);
                     border: 2px solid $modal-filter-border-clr;
-                    width: 60%;
+                    // width: 60%;
                     height: 80%;
                     max-height: rem(37px);
                     transition: .4s;
 
                     &:hover {
                         border-color: $dark-accent-clr;
+                    }
+                }
+            }
+        }
+    }
+
+    @include for-mobile-layout {
+        .buyer-orders {
+            .orders-layout {
+                .order-card-container {
+                    img {
+                        object-fit: cover;
+                    }
+
+                    .order-data {
+                        .order {
+                            h3 {
+                                font-size: 13px;
+                                width: rem(120px);
+                            }
+
+                            span.answer {
+                                font-size: 13px;
+                                margin: 0;
+                            }
+                        }
                     }
                 }
             }

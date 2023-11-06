@@ -17,7 +17,7 @@ export function MobileAside({ onToggleModal, loggedUser, onLogout, setFilterBy, 
     return (
         <aside className="links-container">
             <div className="user-container">
-                {loggedUser && <Link className="user" to={`/user/${loggedUser._id}`}>
+                {loggedUser && <Link className="user" to={`/user/${loggedUser._id}`} onClick={onToggleModal}>
                     <img src={loggedUser.imgUrl} onError={e => e.currentTarget.src = defaultUserImg} />
                     {loggedUser.fullname}
                 </Link>}

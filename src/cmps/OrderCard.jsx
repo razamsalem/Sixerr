@@ -3,7 +3,9 @@ import { utilService } from "../services/util.service"
 import { useNavigate } from "react-router"
 import { setFilterBy, getClearFilter } from "../store/actions/gig.actions"
 import { useDispatch, useSelector } from "react-redux"
+import { LongTxt } from "./LongTxt"
 const defaultGigImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663092/defaultGigImg_vjtk9e.webp'
+
 
 export function OrderCard({ order, openModal }) {
     const [progress, setProgress] = useState(0)
@@ -11,7 +13,7 @@ export function OrderCard({ order, openModal }) {
     const dispatch = useDispatch()
     let orders = useSelector(storeState => storeState.orderModule.orders)
 
-   
+
 
     useEffect(() => {
         const [, , progress] = checkStatus(order.status)
@@ -74,15 +76,19 @@ export function OrderCard({ order, openModal }) {
             <div className="order-data">
                 <div className="order">
                     <h3>Order no.</h3>
-                    <span className="answer">#{order._id}</span>
+                    <span className="answer">
+                        #{order._id}
+                    </span>
                 </div>
                 <div className="order">
                     <h3>Delivery time</h3>
                     <span className="answer"><i className="fa-solid fa-dolly delivery-icon"></i> {order.gig.daysToMake} {order.gig.daysToMake === 1 ? 'Day' : 'Days'}</span>
                 </div>
 
-                {order.status === 'fulfilled' && <button className="add-review btn" onClick={ReviewGig}>Add a review</button>}
-                <button onClick={() => openModal(order)} className="show-order btn">View order</button>
+                <div className="btn-container">
+                    {order.status === 'fulfilled' && <button className="add-review btn" onClick={ReviewGig}>Add a review</button>}
+                    <button onClick={() => openModal(order)} className="show-order btn">View order</button>
+                </div>
 
             </div>
         </section >

@@ -39,7 +39,7 @@ export function LoginSignup(props) {
 
     function onLogin(ev = null) {
         if (ev) ev.preventDefault()
-        if (!isSignupDemo) {
+        if(!isSignupDemo){
             credentials.password = 'secret'
         }
         else if (!credentials.username || !credentials.password) return
@@ -158,7 +158,7 @@ export function LoginSignup(props) {
                             }
                             <button className={`${!credentials.username ? 'disabled' : ''} btn continue`}>Continue</button>
                         </form>}
-                        {!isSignup && <span className='change-action' onClick={onSetSignInDemo}>{!isSignupDemo ? 'You Can Also Sign In with Password' : 'You Can Connect Quickly Through  A Demo User'}</span>}
+                            {!isSignup && <span className='change-action' onClick={onSetSignInDemo}>{!isSignupDemo ? 'You Can Also Sign In with Password' : 'You Can Connect Quickly Through  A Demo User'}</span>}
 
 
 

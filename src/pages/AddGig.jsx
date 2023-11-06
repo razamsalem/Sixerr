@@ -113,7 +113,7 @@ export function AddGig() {
         if (!gigToEdit.description || !gigToEdit.title) return showErrorMsg('All fields are required!')
         try {
             const savedGig = await gigService.save(gigToEdit)
-            showSuccessMsg(`Added a new gig! ${savedGig._id}`)
+            showSuccessMsg(`Created your new gig!`)
             navigate(`/gig/${savedGig._id}`)
         } catch (err) {
             console.log(err)

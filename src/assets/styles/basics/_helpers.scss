@@ -61,6 +61,7 @@
     text-decoration: underline;
     text-underline-offset: em(2px);
     margin-inline-start: em(3px);
+    margin-block-start: rem(15px);
 }
 
 .empty {
@@ -139,6 +140,7 @@
 
 .click {
     cursor: pointer;
+
     &:hover {
         color: $dark-clr-3;
     }
@@ -157,4 +159,3 @@
 .portrait-ratio {
     @include aspect-ratio(9, 16);
 }
-
