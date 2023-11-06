@@ -10,7 +10,6 @@ export function Modal({ open, onClose, isAside, children }) {
         <div onClick={onClose} className="modal-overlay">
             <article onClick={handleContentClick} className={`modal-content ${isAside ? 'side' : ''}`}>
                 {children}
-                {/* <button onClick={onClose}>Close</button> */}
             </article>
         </div>,
         document.getElementById('portal')
