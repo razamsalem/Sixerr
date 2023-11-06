@@ -12,7 +12,7 @@ export function LoginSignup(props) {
     const [isSignupDemo, setIsSignupDemo] = useState(false)
     const [users, setUsers] = useState([])
     const isUserModalOpen = useSelector(storeState => storeState.userModule.isUserModalOpen)
-    const firstFourUsers = users
+    const Developers = users.slice(0, 3)
     useEffect(() => {
         loadUsers()
     }, [])
@@ -39,7 +39,7 @@ export function LoginSignup(props) {
 
     function onLogin(ev = null) {
         if (ev) ev.preventDefault()
-        if (!isSignupDemo) {
+        if(!isSignupDemo){
             credentials.password = 'secret'
         }
         else if (!credentials.username || !credentials.password) return
@@ -153,12 +153,12 @@ export function LoginSignup(props) {
                                     onChange={handleChange}
                                 >
                                     <option value="">Select User</option>
-                                    {firstFourUsers?.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
+                                    {Developers?.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
                                 </select>
                             }
                             <button className={`${!credentials.username ? 'disabled' : ''} btn continue`}>Continue</button>
                         </form>}
-                        {!isSignup && <span className='change-action' onClick={onSetSignInDemo}>{!isSignupDemo ? 'Switch to credentials login' : 'Switch to demo login'}</span>}
+                            {!isSignup && <span className='change-action' onClick={onSetSignInDemo}>{!isSignupDemo ? 'You Can Also Sign In with Password' : 'You Can Connect Quickly Through  A Demo User'}</span>}
 
 
 
