@@ -47,9 +47,17 @@
             gap: rem(12px);
 
             .left-info {
+                max-height: unset;
+
                 h2 {
                     font-size: rem(28px);
                     line-height: 130%;
+                    padding-bottom: rem(20px);
+                }
+
+                li {
+                    // margin-block-start: rem(10px);
+                    padding-block-end: rem(22px);
                 }
 
                 span {
