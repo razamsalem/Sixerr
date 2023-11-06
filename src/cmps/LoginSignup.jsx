@@ -12,7 +12,7 @@ export function LoginSignup(props) {
     const [isSignupDemo, setIsSignupDemo] = useState(false)
     const [users, setUsers] = useState([])
     const isUserModalOpen = useSelector(storeState => storeState.userModule.isUserModalOpen)
-    const firstFourUsers = users
+    const Developers = users.slice(0, 3)
     useEffect(() => {
         loadUsers()
     }, [])
@@ -39,7 +39,7 @@ export function LoginSignup(props) {
 
     function onLogin(ev = null) {
         if (ev) ev.preventDefault()
-        if(!isSignupDemo){
+        if (!isSignupDemo) {
             credentials.password = 'secret'
         }
         else if (!credentials.username || !credentials.password) return
@@ -61,7 +61,7 @@ export function LoginSignup(props) {
 
     function onSetSignInDemo() {
         setIsSignup(false)
-        setIsSignupDemo(prev=>!prev)
+        setIsSignupDemo(prev => !prev)
         // onToggleModal()
     }
 
@@ -87,7 +87,7 @@ export function LoginSignup(props) {
         <>
             <a className="btn login" onClick={onSetSignIn}>Login</a>
             <a className="btn join" onClick={onSetSignup}>Join</a>
-           
+
             <Modal open={isUserModalOpen} onClose={onCloseModal}>
                 <>
                     <img className='cover-img' src="https://res.cloudinary.com/dgsfbxsed/image/upload/v1697448779/login-img_t6g2jm.png" alt="Success starts here" />
@@ -118,34 +118,34 @@ export function LoginSignup(props) {
                                 {isSignup ? 'Sign in' : 'Join here'}
                             </span>
                         </span>
-                    
-                        {!isSignup && <form className="login-form" onSubmit={onLogin}>
-                        {isSignupDemo &&  <label className='user-info-label'>
-                                    Username
-                                    <input
-                                        className='user-info-input'
-                                        type="text"
-                                        name="username"
-                                        value={credentials.username}
-                                        placeholder="Username"
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </label>}
 
-                                {isSignupDemo && <label className='user-info-label'>
-                                    Password
-                                    <input
-                                        className='user-info-input'
-                                        type="password"
-                                        name="password"
-                                        value={credentials.password}
-                                        placeholder="Choose a password"
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </label>}
-                                {!isSignupDemo && 
+                        {!isSignup && <form className="login-form" onSubmit={onLogin}>
+                            {isSignupDemo && <label className='user-info-label'>
+                                Username
+                                <input
+                                    className='user-info-input'
+                                    type="text"
+                                    name="username"
+                                    value={credentials.username}
+                                    placeholder="Username"
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </label>}
+
+                            {isSignupDemo && <label className='user-info-label'>
+                                Password
+                                <input
+                                    className='user-info-input'
+                                    type="password"
+                                    name="password"
+                                    value={credentials.password}
+                                    placeholder="Choose a password"
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </label>}
+                            {!isSignupDemo &&
                                 <select
                                     className='sign-in-select'
                                     name="username"
@@ -153,14 +153,14 @@ export function LoginSignup(props) {
                                     onChange={handleChange}
                                 >
                                     <option value="">Select User</option>
-                                    {firstFourUsers?.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
+                                    {Developers?.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
                                 </select>
-                        }
+                            }
                             <button className={`${!credentials.username ? 'disabled' : ''} btn continue`}>Continue</button>
                         </form>}
-                            {!isSignup && <span className='change-action' onClick={onSetSignInDemo}>{!isSignupDemo ? 'You Can Also Sign In with Password' : 'You Can Connect Quickly Through  A Demo User'}</span>}
+                        {!isSignup && <span className='change-action' onClick={onSetSignInDemo}>{!isSignupDemo ? 'You Can Also Sign In with Password' : 'You Can Connect Quickly Through  A Demo User'}</span>}
 
-                       
+
 
                         <div className="signup-section">
                             {isSignup && <form className="signup-form" onSubmit={onSignup}>
