@@ -141,6 +141,7 @@ function DynamicModal({ btn, isOpen, onClose, content, position, modalRef, globa
                 <button className='apply-btn' onClick={() => {
                     onSubmit()
                     setClicked()
+                    onClose()
                 }}>Apply</button>
             </div>
         </div>
