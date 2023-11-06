@@ -41,9 +41,9 @@ export function AddGig() {
     }
 
     function handleChange(ev) {
-        const { name, value, dataset } = ev.target
+        let { name, value, dataset, type } = ev.target
         const { idx, pack } = dataset
-
+        if (type === 'number') value = +value
 
         if (name.endsWith('features')) {
             setGigToEdit(gig => {
