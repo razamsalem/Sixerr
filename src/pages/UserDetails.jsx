@@ -20,6 +20,7 @@ import { gigService } from '../services/gig.service'
 import { ReviewList } from '../cmps/ReviewList'
 import { userService } from '../services/user.service.http'
 import { ChatApp } from '../cmps/ChatApp'
+import { Chat } from './Chat'
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
 
 
@@ -134,7 +135,7 @@ export function UserDetails() {
       )}
       {/* <main className={`user-details-container main-layout full ${watchedUser._id === loggedUser._id ? 'bg' : ''}`}> */}
       <main className={`user-details-container main-layout full`}>
-      <ChatApp watchedUser={watchedUser} />
+      {/* <Chat watchedUser={watchedUser} /> */}
         <section className='details-container'>
           <section className="user-details ">
             {watchedUser && <div className='user-card'>

@@ -2,13 +2,14 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
 import { socketService, SOCKET_EMIT_SEND_MSG, SOCKET_EVENT_ADD_MSG, SOCKET_EMIT_SET_TOPIC } from '../services/socket.service'
+import { ChatApp } from '../cmps/ChatApp'
 
-export function ChatApp() {
+export function Chat({ watchedUser }) {
     const [msg, setMsg] = useState({ txt: '' })
     const [msgs, setMsgs] = useState([])
     const [topic, setTopic] = useState('Love')
     const [isBotMode, setIsBotMode] = useState(false)
-
+    const [isFirstMsg, setIsFirstMsg] = useState(true)
     const loggedInUser = useSelector(storeState => storeState.userModule.user)
 
     const botTimeoutRef = useRef()
@@ -40,11 +41,11 @@ export function ChatApp() {
     function sendMsg(ev) {
         ev.preventDefault()
         const from = loggedInUser?.fullname || 'Me'
-        const newMsg = { from, txt: msg.txt }
-        socketService.emit(SOCKET_EMIT_SEND_MSG, newMsg)
+        const newMsg = { from, txt: msg.txt, watchedId: watchedUser._id, userId: loggedInUser._id }
+        // socketService.emit(SOCKET_EMIT_SEND_MSG, newMsg)
         if (isBotMode) sendBotResponse()
         // for now - we add the msg ourself
-        // addMsg(newMsg)
+        addMsg(newMsg)
         setMsg({ txt: '' })
     }
 
@@ -53,17 +54,23 @@ export function ChatApp() {
         setMsg(prevMsg => ({ ...prevMsg, [name]: value }))
     }
 
+    function onAddFirstMsg(firstMsg) {
+        setMsg(prevMsg => ({ ...prevMsg, txt: firstMsg }))
+        console.log('msg', msg)
+        console.log('msgs', msgs)
+    }
+
     return (
         <section className="chat">
-            <h2>Lets Chat about {topic}</h2>
+            {/* <h2>Lets Chat about {topic}</h2> */}
 
-            <label>
+            {/* <label>
                 <input type="checkbox" name="isBotMode" checked={isBotMode}
                     onChange={({ target }) => setIsBotMode(target.checked)} />
                 Bot Mode
-            </label>
+            </label> */}
 
-            <div>
+            {/* <div>
                 <label>
                     <input type="radio" name="topic" value="Love"
                         checked={topic === 'Love'} onChange={({ target }) => setTopic(target.value)} />
@@ -77,18 +84,23 @@ export function ChatApp() {
                     Politics
                 </label>
 
-            </div>
+            </div> */}
 
-            <form onSubmit={sendMsg}>
-                <input
-                    type="text" value={msg.txt} onChange={handleFormChange}
-                    name="txt" autoComplete="off" />
-                <button>Send</button>
-            </form>
+            {isFirstMsg ?
+                <ChatApp watchedUser={watchedUser} setIsFirstMsg={setIsFirstMsg} onAddFirstMsg={onAddFirstMsg} />
+                :
+                <>
+                    <form onSubmit={sendMsg}>
+                        <input
+                            type="text" value={msg.txt} onChange={handleFormChange}
+                            name="txt" autoComplete="off" />
+                        <button>Send</button>
+                    </form>
 
-            <ul>
-                {msgs.map((msg, idx) => (<li key={idx}>{msg.from}: {msg.txt}</li>))}
-            </ul>
+                    <ul>
+                        {msgs.map((msg, idx) => (<li key={idx}>{msg.from}: {msg.txt}</li>))}
+                    </ul>
+                </>}
         </section>
     )
 }
