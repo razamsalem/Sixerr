@@ -38,7 +38,7 @@ export function UserDetails() {
   const [selectedOrder, setSelectedOrder] = useState(null)
   const [allReviews, setAllReviews] = useState(null)
 
- 
+
 
   useEffect(() => {
     loadUser(params.id)
@@ -134,7 +134,7 @@ export function UserDetails() {
       )}
       {/* <main className={`user-details-container main-layout full ${watchedUser._id === loggedUser._id ? 'bg' : ''}`}> */}
       <main className={`user-details-container main-layout full`}>
-      {/* <Chat watchedUser={watchedUser} /> */}
+        {/* <Chat watchedUser={watchedUser} /> */}
         <section className='details-container'>
           <section className="user-details ">
             {watchedUser && <div className='user-card'>
