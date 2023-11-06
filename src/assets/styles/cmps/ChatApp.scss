@@ -43,8 +43,8 @@
                 .avg-res-time {
                     font-size: rem(14px);
                     color: $dark-clr-1;
-                    
-                    & > * {
+
+                    &>* {
                         font-weight: 700;
                         margin-inline-start: rem(4px);
                     }
@@ -60,13 +60,13 @@
             font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: rem(16px);
             padding: 0 24px;
-            width: 100%; 
+            width: 100%;
             height: rem(150px);
             border: none;
             outline: none;
             background: none;
             overflow: hidden;
-            resize: none; 
+            resize: none;
 
             &::placeholder {
                 font-size: rem(17px);
@@ -74,7 +74,7 @@
         }
 
         .quick-msg {
-            flex-direction: column  ;
+            flex-direction: column;
             padding: rem(24px) rem(24px) 0;
 
             button {
@@ -90,6 +90,22 @@
                 text-align: start;
                 margin-block-end: rem(12px);
             }
+        }
+
+        .text-footer {
+            padding-inline: rem(24px);
+            padding-block-end: rem(12px);
+            margin-block-start: rem(8px);
+            font-size: rem(14px);
+            line-height: rem(21px);
+            justify-content: end;
+
+            .letter-count {
+                color: $dark-clr-4;
+                font-size: rem(14px);
+                line-height: rem(21px);
+            }
+
         }
     }
 }
