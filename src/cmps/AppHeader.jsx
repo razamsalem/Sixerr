@@ -60,7 +60,7 @@ export function AppHeader() {
         })
         socketService.on('order-added', order => {
             dispatch(getActionAddOrder(order))
-            showSuccessMsg('new order is wating for you') 
+            showSuccessMsg('A new order is waiting for you')
         })
         return () => {
             socketService.off('order-updated')

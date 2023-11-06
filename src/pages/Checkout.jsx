@@ -17,6 +17,7 @@ export function Checkout() {
 
     useEffect(() => {
         onLoadGig()
+        window.scrollTo({ top: 0, behavior: 'smooth' })
     }, [])
 
     function calculateRoundedPrice(price) {

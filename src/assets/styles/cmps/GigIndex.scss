@@ -82,6 +82,8 @@
     }
 
     @include for-mobile-layout {
+        margin-block-end: rem(100px);
+
         .top-of-gigs {
             font-size: rem(13px);
         }
