@@ -11,9 +11,9 @@ export const userService = {
     saveLocalUser,
     getUsers,
     getById,
-    update,
-    getEmptyUser
     // remove,
+    // update,
+    getEmptyUser
 }
 
 window.userService = userService
@@ -48,19 +48,15 @@ async function getById(userId) {
 //     // return httpService.delete(`user/${userId}`)
 // }
 
-async function update({ _id: userId, reviews, isSeller }) {
-    const user = await getById(userId)
-
-    console.log(user, '-------***')
-
-    user.reviews = reviews
-    user.isSeller = isSeller
-
-    await httpService.put(`user/${userId}`, user)
-    return user
-}
+// async function update({ _id, reviews }) {
+//     const user = await storageService.get('user', _id)
+//     user.reviews = reviews
+//     await storageService.put('user', user)
+//     return user
+// }
 
 async function login(userCred) {
+    console.log(userCred.password, "userCred");
     try {
         const user = await httpService.post(BASE_URL + 'login', userCred)
         if (user) return saveLocalUser(user)

@@ -70,9 +70,9 @@ export function DynamicBtn() {
 
     function onRemoveFilterPill(ev) {
         const filterKey = ev.target.name
-        if(filterKey==='topRated' || filterKey=== 'basicLevel' || filterKey==='premiumLevel'){
-        setFilterBy({ [filterKey]: false })
-        }else{
+        if (filterKey === 'topRated' || filterKey === 'basicLevel' || filterKey === 'premiumLevel') {
+            setFilterBy({ [filterKey]: false })
+        } else {
             setFilterBy({ [filterKey]: '' })
         }
     }

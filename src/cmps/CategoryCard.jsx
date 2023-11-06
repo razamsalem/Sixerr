@@ -17,6 +17,7 @@ function getCategory(tag) {
     let category = serviceCategories.filter(cat => cat.tags.includes(tag))
     return replaceAmpersand(category[0].category);
 }
+
   return (
     <Link to={`/gig?&category=${getCategory(card.title)}`} onClick={() => setFilterBy({ ...globalFilterBy, tags: [card.title] })} >
       <div className="catCard">

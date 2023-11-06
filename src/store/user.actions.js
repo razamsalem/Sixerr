@@ -45,7 +45,7 @@ export async function login(credentials) {
             type: SET_USER,
             user
         })
-        socketService.login(user)
+        socketService.login(user._id)
         return user
     } catch (err) {
         console.log('Cannot login', err)
@@ -60,7 +60,7 @@ export async function signup(credentials) {
             type: SET_USER,
             user
         })
-        socketService.login(user)
+        socketService.login(user._id)
         return user
     } catch (err) {
         console.log('Cannot signup', err)

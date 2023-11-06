@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { userService } from "../services/user.service.http";
+import starGrey from "../assets/img/star-grey.svg"
 import { display } from "@mui/system";
 import LoadingCircle from "./LoadingCircle";
 const defaultUserImg = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
@@ -43,7 +44,7 @@ export function UserMiniDetail({ gig }) {
                     <p className="user-desc-mini">Happy to work with you</p>
                     <div className="star-wrapper">
                         <span className="star-svg">
-                            <img src="/src/assets/img/star-grey.svg" alt="star-svg" className="star" />
+                            <img src={starGrey} alt="star-svg" className="star" />
                         </span>
                         <span className="owner-rate">{gig.owner.rate}</span>
                         <span className="owner-number-rates">({seller.reviews.length * 11 + 103})</span>
