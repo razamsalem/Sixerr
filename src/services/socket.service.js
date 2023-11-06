@@ -17,7 +17,6 @@ const baseUrl = (process.env.NODE_ENV === 'production') ? '' : '//localhost:3030
 export const socketService = createSocketService()
 // export const socketService = createDummySocketService()
 
-// for debugging from console
 window.socketService = socketService
 
 socketService.setup()
@@ -29,7 +28,6 @@ function createSocketService() {
     setup() {
       socket = io(baseUrl)
       const user = userService.getLoggedinUser()
-      // console.log(user,"user");
       if (user) this.login(user._id)
     },
     on(eventName, cb) {
