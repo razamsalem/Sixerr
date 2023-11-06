@@ -19,6 +19,22 @@
     border-radius: 7px;
     animation: fade-in-down 1s ease-in-out;
 
+    &.success {
+        border-inline-start: 7px solid $accent-clr;
+
+        .check-icon {
+            color: $accent-clr;
+        }
+    }
+
+    &.error {
+        border-inline-start: 7px solid $error-clr;
+
+        .x-icon {
+            color: $error-clr;
+        }
+    }
+
     .btn.close {
         color: lighten($dark-clr-1, 15%);
         font-size: rem(13px);
@@ -28,22 +44,10 @@
             color: $dark-clr;
         }
     }
-}
 
-
-
-.user-msg.success {
-    border-inline-start: 7px solid $accent-clr;
-
-    .check-icon {
-        color: $accent-clr;
+    @include for-mobile-layout {
+        font-size: rem(13px);
+        text-wrap: nowrap;
     }
-}
 
-.user-msg.error {
-    border-inline-start: 7px solid $error-clr;
-
-    .x-icon {
-        color: $error-clr;
-    }
 }

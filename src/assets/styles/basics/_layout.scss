@@ -35,6 +35,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     grid-gap: em(40px);
+
+    @include for-mobile-layout {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 1.5em;
+    }
 }
 
 .user-layout {
