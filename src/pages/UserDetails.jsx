@@ -69,7 +69,6 @@ export function UserDetails() {
 
   async function onBecomeSeller(userId) {
     const user = await userService.getById(userId)
-    console.log(user)
     user.isSeller = true
     await userService.update(user)
     await userService.saveLocalUser(user)
