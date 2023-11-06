@@ -129,7 +129,7 @@
 
          &.buyer {
              background-color: $light-clr3;
-             max-width: rem(375px);
+             //  max-width: rem(375px);
              padding-block-end: rem(16px);
 
              .preview-container {
@@ -180,7 +180,7 @@
      .summary {
          padding: rem(16px) rem(24px);
          background-color: $light-clr;
-         max-width: rem(375px);
+         //  max-width: rem(375px);
          border-inline: 1px solid $modal-filter-border-clr;
          border-bottom: 1px solid $modal-filter-border-clr;
 
@@ -241,7 +241,7 @@
          background-color: $light-clr3;
          border-inline: 1px solid $modal-filter-border-clr;
          border-bottom: 1px solid $modal-filter-border-clr;
-         max-width: rem(375px);
+         //  max-width: rem(375px);
 
          .small {
              display: inline-block;
@@ -285,4 +285,35 @@
          }
      }
 
+     @include for-mobile-layout {
+         margin-block-end: rem(50px);
+
+         .call-to-action.buyer,
+         .summary,
+         .currency-options {
+             max-width: unset;
+             width: 100%;
+         }
+     }
+
+     @include for-small-layout {
+
+         .call-to-action.buyer,
+         .summary,
+         .currency-options {
+             max-width: unset;
+             width: 100%;
+         }
+     }
+
+
+     @include for-normal-layout {
+
+         .call-to-action.buyer,
+         .summary,
+         .currency-options {
+             max-width: rem(375px);
+             width: unset;
+         }
+     }
  }
