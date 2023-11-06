@@ -45,12 +45,12 @@ export function UserDetails() {
     setAllReviews(false)
     onSetGig()
     window.scrollTo(0, 0)
-    // socketService.emit(SOCKET_EMIT_USER_WATCH, params.id)
-    // socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
+    socketService.emit(SOCKET_EMIT_USER_WATCH, params.id)
+    socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
 
-    // return () => {
-    //   socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
-    // }
+    return () => {
+      socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
+    }
   }, [params.id])
 
 
@@ -71,7 +71,6 @@ export function UserDetails() {
 
   async function onBecomeSeller(userId) {
     const user = await userService.getById(userId)
-    console.log(user)
     user.isSeller = true
     await userService.update(user)
     await userService.saveLocalUser(user)

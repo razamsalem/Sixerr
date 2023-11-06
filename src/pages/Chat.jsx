@@ -42,7 +42,7 @@ export function Chat({ watchedUser }) {
         ev.preventDefault()
         const from = loggedInUser?.fullname || 'Me'
         const newMsg = { from, txt: msg.txt, watchedId: watchedUser._id, userId: loggedInUser._id }
-        // socketService.emit(SOCKET_EMIT_SEND_MSG, newMsg)
+        socketService.emit(SOCKET_EMIT_SEND_MSG, newMsg)
         if (isBotMode) sendBotResponse()
         // for now - we add the msg ourself
         addMsg(newMsg)
