@@ -191,4 +191,20 @@
             }
         }
     }
+
+    @include for-mobile-layout {
+        left: rem(15px) !important;
+        width: 92.5% !important;
+
+        .content-scroll {
+            .flex-container {
+                .input-price-filter {
+                    input {
+                        min-width: rem(135px);
+                    }
+                }
+            }
+
+        }
+    }
 }
