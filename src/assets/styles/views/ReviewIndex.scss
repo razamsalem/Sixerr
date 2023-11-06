@@ -41,6 +41,7 @@
             font-size: rem(19px);
             font-weight: 500;
             gap: em(25px);
+
             textarea {
                 resize: none;
                 font-size: 1.2rem;
@@ -87,6 +88,7 @@
             background-color: $dark-clr;
             align-self: flex-end;
             margin-block-start: rem(10px);
+            margin-block-end: rem(100px);
             font-weight: 700;
             letter-spacing: em(-0.4px);
             padding: em(13px);
@@ -134,16 +136,19 @@
                 display: grid;
                 margin-block-end: em(10px);
                 font-size: 1.2rem;
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns: repeat(2, 1fr);
                 font-size: 1rem;
+
                 .title {
                     font-weight: 700;
                 }
-                .name, .estimated{
+
+                .name,
+                .estimated {
                     justify-self: end;
                     align-self: center;
                 }
-              
+
             }
         }
     }
@@ -191,6 +196,7 @@
             grid-row: 1;
             margin-bottom: em(20px);
             height: fit-content;
+
             img {
                 width: 50%;
                 align-self: center;
@@ -232,6 +238,10 @@
                     width: 100%;
                 }
             }
+
+            .send {
+                margin-block-end: unset;
+            }
         }
 
         .big-order-preview {
@@ -247,10 +257,10 @@
             gap: 0.625em;
             grid-column: 2;
             justify-content: space-around;
-            img{
+
+            img {
                 width: 18em;
             }
         }
-
     }
 }
