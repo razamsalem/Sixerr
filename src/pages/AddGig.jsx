@@ -84,7 +84,6 @@ export function AddGig() {
         const currentPackageCount = Object.keys(gigToEdit.packages).length
 
         if (currentPackageCount >= 3) {
-            alert('You can only add up to 3 packages.')
             return
         }
 
