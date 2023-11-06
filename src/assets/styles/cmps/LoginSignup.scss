@@ -54,13 +54,7 @@
             font-size: em(16px);
             margin-block-end: em(32px);
 
-            .change-action {
-                color: $dark-clr;
-                cursor: pointer;
-                text-decoration: underline;
-                text-underline-offset: em(2px);
-                margin-inline-start: em(3px);
-            }
+          
         }
 
         .terms {
@@ -136,7 +130,7 @@
             font-weight: 600;
             font-family: inherit;
             background-color: black;
-
+            margin-bottom: rem(14px);
             &.disabled {
                 cursor: not-allowed;
             }
