@@ -48,8 +48,17 @@ export function ChatApp({ watchedUser }) {
 
                 <div className="text-footer flex">
                     <div className="letter-count">
-                    {characterCount}/500
+                        {characterCount}/500
                     </div>
+                </div>
+            </div>
+
+            <div className="chat-app-footer flex">
+                <div className="attach">
+                    <i class="fa-solid fa-paperclip"></i>
+                </div>
+                <div className="submit-btn">
+                    <button disabled={!characterCount} className={`${characterCount ? 'active' : ''}`}> <span className="paper-icon"><i class="fa-regular fa-paper-plane"></i> </span>Send message</button>
                 </div>
             </div>
         </section>
