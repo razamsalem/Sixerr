@@ -84,7 +84,7 @@ export function DynamicBtn() {
     function setClicked() {
         isClicked(prev => !prev)
     }
-    if (!btns) return '<div></div>'
+    if (!btns) return ''
 
     return (
         <section className={`filter-btns-container full main-layout ${isStickyActive ? 'sticky-active' : ''}`}>
