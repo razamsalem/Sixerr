@@ -34,7 +34,6 @@ export function OrderList({ orders, loggedUser, mode, openModal, onApproveOrder,
     return (
         <>
             <section className={`${mode === 'buyer' ? 'order-layout' : ''}`}>
-                {/* {orders.length > 0 && mode === 'buyer' && <h1 className="orders-heading"> Purchased services<span className="dot">.</span></h1>} */}
                 {orders.length > 0 && <table className={`order-list ${mode === 'buyer' ? 'buyer' : ''}`}>
                     <thead>
                         <tr>
