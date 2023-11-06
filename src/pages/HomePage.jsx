@@ -7,6 +7,7 @@ import { SimpleSlider } from '../cmps/SimpleSlider'
 
 import { setHeaderPosition, setSubHeaderPosition, } from '../store/actions/system.actions'
 import { SuggCategoryArea } from '../cmps/SuggCategoryArea'
+import { ChatApp } from '../cmps/ChatApp'
 
 export function HomePage() {
     const revealHeaderRef = useRef()

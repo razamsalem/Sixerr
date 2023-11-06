@@ -1,0 +1,170 @@
+.chat-app {
+    width: rem(450px);
+    height: rem(555px);
+    border-radius: rem(4px);
+    border: 1px solid $light-clr2;
+    background-color: $light-clr;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, .05);
+
+    .chat-header {
+        position: relative;
+        min-height: rem(97px);
+        max-height: rem(100px);
+        padding: rem(24px);
+        border-bottom: 1px solid $modal-filter-border-clr;
+
+        .exit-chat-btn {
+            position: absolute;
+            font-size: rem(18px);
+            top: rem(15px);
+            right: rem(15px);
+            color: $dark-clr-4;
+            cursor: pointer;
+        }
+
+        .chat-user-details {
+            gap: rem(16px);
+
+            img {
+                width: rem(48px);
+                border-radius: 50%;
+            }
+
+            .msg-username {
+                line-height: rem(26px);
+                font-size: rem(18px);
+                font-weight: 700;
+                color: $dark-clr;
+            }
+
+            .chat-user-data {
+                flex-direction: column;
+
+                .avg-res-time {
+                    font-size: rem(14px);
+                    color: $dark-clr-1;
+
+                    &>* {
+                        font-weight: 700;
+                        margin-inline-start: rem(4px);
+                    }
+                }
+            }
+        }
+    }
+
+    .chat-msg {
+        padding-block-start: rem(20px);
+
+        .text-msg {
+            font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: rem(16px);
+            padding: 0 24px;
+            width: 100%;
+            height: rem(150px);
+            border: none;
+            outline: none;
+            background: none;
+            overflow: hidden;
+            resize: none;
+
+            &::placeholder {
+                font-size: rem(17px);
+            }
+        }
+
+        .quick-msg {
+            flex-direction: column;
+            padding: rem(24px) rem(24px) 0;
+
+            button {
+                font-size: rem(14px);
+                color: $dark-clr;
+                background-color: $light-clr;
+                padding: rem(7px) rem(16px) rem(3px) !important;
+                border: 1px solid $light-clr2;
+                border-radius: rem(60px);
+                width: fit-content;
+                height: fit-content;
+                min-height: rem(36px);
+                text-align: start;
+                margin-block-end: rem(12px);
+
+                &:hover {
+                    background-color: $light-clr2 ;
+                }
+            }
+        }
+
+        .text-footer {
+            padding-inline: rem(24px);
+            padding-block-end: rem(12px);
+            margin-block-start: rem(8px);
+            font-size: rem(14px);
+            line-height: rem(21px);
+            justify-content: end;
+
+            .letter-count {
+                color: $dark-clr-4;
+                font-size: rem(14px);
+                line-height: rem(21px);
+            }
+
+        }
+    }
+
+    .chat-app-footer {
+        justify-content: space-between;
+        padding: rem(12px) rem(24px) rem(24px) rem(24px);
+
+        .attach {
+            color: $dark-clr-4;
+            font-size: rem(18px);
+
+            &>* {
+                padding: rem(10px);
+                border-radius: 50%;
+                font-size: rem(22px);
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $light-clr2 ;
+                }
+            }
+        }
+
+        .submit-btn {
+
+            button {
+                padding-block: rem(9px);
+                padding-inline: rem(16px);
+
+                font-size: rem(16px);
+                font-weight: 600;
+                line-height: rem(24px);
+
+                border: 1px solid transparent;
+                border-radius: rem(8px);
+                background-color: $modal-underline-clr;
+                color: $dark-clr-3;
+
+                transition: 0.6s;
+                cursor: default;
+
+                .paper-icon {
+                    color: $light-clr;
+                    font-size: rem(16px);
+                    margin-inline-end: rem(4px);
+                }
+
+                &.active {
+                    background-color: $dark-clr1;
+                    color: $light-clr;
+                    cursor: pointer;
+                }
+            }
+
+
+        }
+    }
+}
