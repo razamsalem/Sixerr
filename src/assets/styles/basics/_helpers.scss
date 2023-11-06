@@ -55,6 +55,14 @@
     border-top: 1px solid $modal-filter-border-clr
 }
 
+.change-action {
+    color: $dark-clr;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: em(2px);
+    margin-inline-start: em(3px);
+}
+
 .empty {
     color: $list-subtitle-clr;
     font-size: 14px;
@@ -149,3 +157,4 @@
 .portrait-ratio {
     @include aspect-ratio(9, 16);
 }
+

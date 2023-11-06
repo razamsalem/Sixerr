@@ -9,11 +9,10 @@ import { showErrorMsg } from '../services/event-bus.service'
 export function LoginSignup(props) {
     const [credentials, setCredentials] = useState(userService.getEmptyUser())
     const [isSignup, setIsSignup] = useState(false)
+    const [isSignupDemo, setIsSignupDemo] = useState(false)
     const [users, setUsers] = useState([])
     const isUserModalOpen = useSelector(storeState => storeState.userModule.isUserModalOpen)
-    // const firstFourUsers = users?.slice(0, 4)
     const firstFourUsers = users
-
     useEffect(() => {
         loadUsers()
     }, [])
@@ -40,11 +39,10 @@ export function LoginSignup(props) {
 
     function onLogin(ev = null) {
         if (ev) ev.preventDefault()
-        // console.log(credentials, "cred")
-
-        if (!credentials.password) credentials.password = 'secret'
-        console.log(credentials)
-        if (!credentials.username) return
+        if(!isSignupDemo){
+            credentials.password = 'secret'
+        }
+        else if (!credentials.username || !credentials.password) return
         props.onLogin(credentials)
         clearState()
     }
@@ -59,6 +57,12 @@ export function LoginSignup(props) {
     function onSetSignIn() {
         setIsSignup(false)
         onToggleModal()
+    }
+
+    function onSetSignInDemo() {
+        setIsSignup(false)
+        setIsSignupDemo(prev=>!prev)
+        // onToggleModal()
     }
 
     function onSetSignup() {
@@ -83,7 +87,7 @@ export function LoginSignup(props) {
         <>
             <a className="btn login" onClick={onSetSignIn}>Login</a>
             <a className="btn join" onClick={onSetSignup}>Join</a>
-
+           
             <Modal open={isUserModalOpen} onClose={onCloseModal}>
                 <>
                     <img className='cover-img' src="https://res.cloudinary.com/dgsfbxsed/image/upload/v1697448779/login-img_t6g2jm.png" alt="Success starts here" />
@@ -114,18 +118,49 @@ export function LoginSignup(props) {
                                 {isSignup ? 'Sign in' : 'Join here'}
                             </span>
                         </span>
+                    
                         {!isSignup && <form className="login-form" onSubmit={onLogin}>
-                            <select
-                                className='sign-in-select'
-                                name="username"
-                                value={credentials.username}
-                                onChange={handleChange}
-                            >
-                                <option value="">Select User</option>
-                                {firstFourUsers?.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
-                            </select>
+                        {isSignupDemo &&  <label className='user-info-label'>
+                                    Username
+                                    <input
+                                        className='user-info-input'
+                                        type="text"
+                                        name="username"
+                                        value={credentials.username}
+                                        placeholder="Username"
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </label>}
+
+                                {isSignupDemo && <label className='user-info-label'>
+                                    Password
+                                    <input
+                                        className='user-info-input'
+                                        type="password"
+                                        name="password"
+                                        value={credentials.password}
+                                        placeholder="Choose a password"
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </label>}
+                                {!isSignupDemo && 
+                                <select
+                                    className='sign-in-select'
+                                    name="username"
+                                    value={credentials.username}
+                                    onChange={handleChange}
+                                >
+                                    <option value="">Select User</option>
+                                    {firstFourUsers?.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
+                                </select>
+                        }
                             <button className={`${!credentials.username ? 'disabled' : ''} btn continue`}>Continue</button>
                         </form>}
+                            {!isSignup && <span className='change-action' onClick={onSetSignInDemo}>{!isSignupDemo ? 'You Can Also Sign In with Password' : 'You Can Connect Quickly Through  A Demo User'}</span>}
+
+                       
 
                         <div className="signup-section">
                             {isSignup && <form className="signup-form" onSubmit={onSignup}>
