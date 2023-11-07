@@ -39,19 +39,21 @@ export function Checkout() {
     }
 
     async function onPurchaseOrder(selectedPackage) {
-        const { title, packPrice, packDaysToMake } = selectedPackage
-        const gig = currGig
-        delete gig.packages
-        let order = { buyer: loggedUser, seller: gig.owner, gig, status: 'pending', packPrice: calculateRoundedPrice(packPrice), daysToMake: packDaysToMake, title }
-        order.createdAt = Date.now()
-        console.log(order)
-
         try {
+            const { title, packPrice, packDaysToMake } = selectedPackage
+            const gig = currGig
+            delete gig.packages
+            let order = { buyer: loggedUser, seller: gig.owner, gig, status: 'pending', packPrice: calculateRoundedPrice(packPrice), daysToMake: packDaysToMake, title }
+            order.createdAt = Date.now()
+
+            console.log(order, 'Order before server')
+
             const orderToSave = await addOrder({ ...order })
             navigate('/order')
             showSuccessMsg(`Purchased service successfully!`)
         } catch (err) {
             console.log('Cannot add order to storage', err)
+            showErrorMsg('Cannot purchase order')
             if (err.includes('logged')) {
                 showErrorMsg('You must be logged in to purchase services..')
                 setUserModalOpen(true)
