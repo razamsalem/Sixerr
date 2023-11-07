@@ -149,8 +149,22 @@
                     background-color: $light-clr2;
                     border-radius: em(5px);
 
+
+
                     img {
-                        display: none;
+                        position: static;
+                        width: rem(25px);
+                        height: rem(25px);
+
+                        &.img-preview {
+                            display: none;
+                        }
+
+                        .loading {
+                            position: static;
+                            margin-block-start: rem(15px);
+                            margin-inline-start: rem(15px);
+                        }
                     }
 
                     .user-info-label {
