@@ -18,6 +18,7 @@ export function GigIndex() {
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
     const [isLoading, setIsLoading] = useState(true)
+    console.log(isLoading)
     const [selectedBtn, setSelectedBtn] = useState(null)
     let [searchParams, setSearchParams] = useSearchParams()
 
@@ -111,6 +112,12 @@ export function GigIndex() {
         try {
             setFilterBy({ ...filterBy, sortBy: value })
             window.scrollTo(0, 0)
+            setIsLoading(true)
+            const loadingTimeout = setTimeout(() => {
+                setIsLoading(false)
+                console.log('done')
+            }, 1500)
+
         } catch (error) {
             showErrorMsg('Could not preform action at this time')
             console.log('Error while changing the page:', error)
