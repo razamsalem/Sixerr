@@ -1637,8 +1637,8 @@ const gigDemoData = [
 
 export default gigDemoData
 
-function loadApp() {
-  socketService.on(SOCKET_EVENT_ORDER_ADDED, (order) => {
-    showSuccessMsg(`Another order was just made, check it out ${order.gig._id}`)
-  })
-}
+// function loadApp() {
+//   socketService.on(SOCKET_EVENT_ORDER_ADDED, (order) => {
+//     showSuccessMsg(`Another order was just made, check it out ${order.gig._id}`)
+//   })
+// }

@@ -49,7 +49,7 @@ export function UserDetails() {
     socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
 
     return () => {
-      socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
+      // socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
     }
   }, [params.id])
 

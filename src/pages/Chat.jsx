@@ -15,16 +15,16 @@ export function Chat({ watchedUser }) {
     const botTimeoutRef = useRef()
 
     useEffect(() => {
-        socketService.on(SOCKET_EVENT_ADD_MSG, addMsg)
-        return () => {
-            socketService.off(SOCKET_EVENT_ADD_MSG, addMsg)
-            botTimeoutRef.current && clearTimeout(botTimeoutRef.current)
-        }
+        // socketService.on(SOCKET_EVENT_ADD_MSG, addMsg)
+        // return () => {
+        //     socketService.off(SOCKET_EVENT_ADD_MSG, addMsg)
+        //     botTimeoutRef.current && clearTimeout(botTimeoutRef.current)
+        // }
     }, [])
 
-    useEffect(() => {
-        socketService.emit(SOCKET_EMIT_SET_TOPIC, topic)
-    }, [topic])
+    // useEffect(() => {
+    //     socketService.emit(SOCKET_EMIT_SET_TOPIC, topic)
+    // }, [topic])
 
     function addMsg(newMsg) {
         setMsgs(prevMsgs => [...prevMsgs, newMsg])

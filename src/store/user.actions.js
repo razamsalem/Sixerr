@@ -45,6 +45,7 @@ export async function login(credentials) {
             type: SET_USER,
             user
         })
+        socketService.logout()
         socketService.login(user._id)
         return user
     } catch (err) {
