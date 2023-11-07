@@ -17,7 +17,8 @@ export const utilService = {
     getRandomDate,
     calculateDaysFromTimestamp,
     getFlag,
-    getCategorySubHeader
+    getCategorySubHeader,
+    getRandomFloat
 }
 
 function makeId(length = 6) {
@@ -52,6 +53,10 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
+function getRandomFloat(min, max) {
+    const randomFloat = Math.random() * (max - min) + min;
+    return Math.round(randomFloat * 10) / 10
+}
 
 function randomPastTime() {
     const HOUR = 1000 * 60 * 60
@@ -195,6 +200,7 @@ function getFlag(country = 'un') {
         hungary: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928453/hungary_pdvcek.png',
         france: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928453/france_wa24fs.png',
         venezuela: 'https://res.cloudinary.com/de2rdmsca/image/upload/v1699385249/Flag_of_Venezuela__state_nngcam.svg',
+        Slovenia: 'https://random.country/wp-content/uploads/2022/04/slovenia-flag.jpg',
     }
 
     if (country.toLocaleLowerCase() in flags) return flags[country.toLocaleLowerCase()]

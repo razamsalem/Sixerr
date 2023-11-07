@@ -67,7 +67,7 @@ export function GigIndex() {
         const loadingTimeout = setTimeout(() => {
             setIsLoading(false)
             console.log('done')
-        }, 1500)
+        }, 2000)
 
         return () => {
             clearTimeout(loadingTimeout)
@@ -115,7 +115,7 @@ export function GigIndex() {
             const loadingTimeout = setTimeout(() => {
                 setIsLoading(false)
                 console.log('done')
-            }, 1500)
+            }, 2500)
 
         } catch (error) {
             showErrorMsg('Could not preform action at this time')
