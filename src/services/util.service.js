@@ -194,7 +194,7 @@ function getFlag(country = 'un') {
         india: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928453/india_zgam0i.png',
         hungary: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928453/hungary_pdvcek.png',
         france: 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1698928453/france_wa24fs.png',
-        venezuela: 'https://res.cloudinary.com/de2rdmsca/image/upload/v1699383519/Flag_of_Venezuela.svg_hcurxb.png',
+        venezuela: 'https://res.cloudinary.com/de2rdmsca/image/upload/v1699385249/Flag_of_Venezuela__state_nngcam.svg',
     }
 
     if (country.toLocaleLowerCase() in flags) return flags[country.toLocaleLowerCase()]

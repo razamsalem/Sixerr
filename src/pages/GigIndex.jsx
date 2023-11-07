@@ -18,7 +18,6 @@ export function GigIndex() {
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
     const [isLoading, setIsLoading] = useState(true)
-    console.log(isLoading)
     const [selectedBtn, setSelectedBtn] = useState(null)
     let [searchParams, setSearchParams] = useSearchParams()
 
