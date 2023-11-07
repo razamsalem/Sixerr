@@ -161,14 +161,14 @@ function getEmptyGig() {
                 packPrice: 30,
                 packDaysToMake: 5,
                 desc: '2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file',
-                features: ['2 concept included', 'Logo transparency', 'Printable file', 'Include 3D mockup']
+                features: ['2 concept included', 'Logo transparency', 'Printable file']
             },
             premium: {
                 title: 'Gold',
                 packPrice: 45,
                 packDaysToMake: 8,
                 desc: ' 3 Amazing concepts + all source files+ Social Media Kit + 24/7 priority customer services',
-                features: ['3 concepts included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file', 'Include social media kit']
+                features: ['3 concepts included', 'Logo transparency', 'Vector file', 'Printable file', 'Include 3D mockup', 'Include source file']
             }
         },
         price: 5, //Don't remove this temporary to make the app work properly
