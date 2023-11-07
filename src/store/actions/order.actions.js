@@ -57,7 +57,6 @@ export async function addOrder(order) {
         if (!loggedUser) return Promise.reject('Not logged in')
 
         const savedOrder = await orderService.save(order)
-        console.log('Added Order', savedOrder)
         store.dispatch(getActionAddOrder(savedOrder))
         return savedOrder
     } catch (err) {

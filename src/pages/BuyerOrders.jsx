@@ -60,8 +60,8 @@ export function BuyerOrders() {
                         </span>}
 
                         <section className="orders-layout">
-                            {orders.map(order => (
-                                <OrderCard order={order} loggedUser={loggedUser} openModal={openOrderModal} />
+                            {orders.map((order, idx) => (
+                                <OrderCard key={idx} order={order} loggedUser={loggedUser} openModal={openOrderModal} />
                             ))}
                         </section>
                     </div>}

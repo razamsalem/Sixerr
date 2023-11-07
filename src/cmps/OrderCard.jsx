@@ -84,9 +84,11 @@ export function OrderCard({ order, openModal }) {
                     <h3>Delivery time</h3>
                     <span className="answer"><i className="fa-solid fa-dolly delivery-icon"></i> {order.gig.daysToMake} {order.gig.daysToMake === 1 ? 'Day' : 'Days'}</span>
                 </div>
-
-                <div className="btn-container">
+                <div className="btn-review flex">
                     {order.status === 'fulfilled' && <button className="add-review btn" onClick={ReviewGig}>Add a review</button>}
+                </div>
+
+                <div className="btn-order flex">
                     <button onClick={() => openModal(order)} className="show-order btn">View order</button>
                 </div>
 
