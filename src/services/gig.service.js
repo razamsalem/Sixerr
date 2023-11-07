@@ -48,18 +48,18 @@ async function query(filterBy = { txt: '', minPrice: null, maxPrice: null, categ
     // if (filterBy.minPrice && filterBy.maxPrice) {
     //     if (filterBy.minPrice > filterBy.maxPrice) {
     //         [filterBy.minPrice, filterBy.maxPrice] = [filterBy.maxPrice, filterBy.minPrice]
-    //         gigs = gigs.filter(gig => gig.price <= filterBy.maxPrice)
+    //         gigs = gigs.filter(gig => gig.packages.packPrice <= filterBy.maxPrice)
     //     }
     //     else {
-    //         gigs = gigs.filter(gig => gig.price >= filterBy.minPrice && gig.price <= filterBy.maxPrice)
+    //         gigs = gigs.filter(gig => gig.packages.packPrice >= filterBy.minPrice && gig.packages.packPrice <= filterBy.maxPrice)
     //     }
     // }
 
     // if (filterBy.minPrice) {
-    //     gigs = gigs.filter(gig => gig.price >= filterBy.minPrice)
+    //     gigs = gigs.filter(gig => gig.packages.packPrice >= filterBy.minPrice)
     // }
     // if (filterBy.maxPrice) {
-    //     gigs = gigs.filter(gig => gig.price <= filterBy.maxPrice)
+    //     gigs = gigs.filter(gig => gig.packages.packPrice <= filterBy.maxPrice)
     // }
     // if (filterBy.category) {
     //     gigs = gigs.filter(gig => gig.category === filterBy.category)
