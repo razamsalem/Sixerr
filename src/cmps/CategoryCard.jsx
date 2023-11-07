@@ -5,11 +5,10 @@ const serviceCategories = gigService.getCategories()
 export function CategoryCard({ card, globalFilterBy, setFilterBy }) {
 // console.log(card);
   function replaceAmpersand(str) {
-    if (typeof str === 'string') {
-      return str.replace(/&/g, '+%26+').replace(/\s/g, '');
+    if (str.includes('&')) {
+      return str.replace(/&/g, '+%26+').replace(/\s/g, '')
     } else {
-      console.error('Input is not a string.');
-      return str;
+      return str
     }
   }
   
