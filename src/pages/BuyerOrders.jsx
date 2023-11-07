@@ -15,6 +15,7 @@ export function BuyerOrders() {
     const loggedUser = useSelector(storeState => storeState.userModule.user)
     let orders = useSelector(storeState => storeState.orderModule.orders)
     orders = orders.filter(order => order.buyer._id === loggedUser._id)
+    orders.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
 
     async function showTable() {
         setTableDisplay(true)
