@@ -57,8 +57,10 @@ export function ReviewIndex() {
     <section className="review-index">
       {/* <div className="review-container"> */}
       <form className='add-review' onChange={handleChange} onSubmit={onAddReview}>
-        <h1 className='heading'>Public review</h1>
-        <h2 className='sub-heading'>Share your experience with the community, to help them make better decisions.</h2>
+        <div className='heading-container'>
+          <h1 className='heading'>Public review</h1>
+          <h2 className='sub-heading'>Share your experience with the community, to help them make better decisions.</h2>
+        </div>
         <label className='rate-label'>
           Rate your overall satisfaction of the provided service
           <RatingStars handleChange={handleChange} rate={reviewToEdit.rate} />
