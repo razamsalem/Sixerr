@@ -56,7 +56,7 @@ export function OrderCard({ order, openModal }) {
                 <p className="date">Due date on {utilService.calculateDaysFromTimestamp(order.createdAt, order.daysToMake)}</p>
 
                 <div className="progress-bar">
-                    <div className="progress" style={{ width: `${progress}%` }}></div>
+                    <div className={`progress progress-${progress}`} style={{ width: `${progress}%` }}></div>
                 </div>
                 <input readOnly type="range" id="progressInput" min="0" max="100" value="0"></input>
             </div>
@@ -84,9 +84,11 @@ export function OrderCard({ order, openModal }) {
                     <h3>Delivery time</h3>
                     <span className="answer"><i className="fa-solid fa-dolly delivery-icon"></i> {order.gig.daysToMake} {order.gig.daysToMake === 1 ? 'Day' : 'Days'}</span>
                 </div>
+                {order.status === 'fulfilled' && <div className="btn-review flex">
+                    <button className="add-review btn" onClick={ReviewGig}>Add a review</button>
+                </div>}
 
-                <div className="btn-container">
-                    {order.status === 'fulfilled' && <button className="add-review btn" onClick={ReviewGig}>Add a review</button>}
+                <div className="btn-order flex">
                     <button onClick={() => openModal(order)} className="show-order btn">View order</button>
                 </div>
 

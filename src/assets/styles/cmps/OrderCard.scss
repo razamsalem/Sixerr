@@ -29,8 +29,8 @@
     background-color: $light-clr1;
 
     .buyer-orders {
-
         .order-card-container {
+            overflow: hidden;
             flex-direction: column;
             // height: rem(380px);
             padding: rem(30px);
@@ -38,7 +38,7 @@
             background-color: $light-clr;
 
             &:last-child {
-                margin-block-end: rem(50px);
+                // margin-block-end: rem(50px);
             }
 
             .order-info {
@@ -111,6 +111,19 @@
                     height: 100%;
                     background-color: $dark-accent-clr;
                     transition: width 0.3s ease-in-out;
+
+                    &.progress-25 {
+                        background-color: $pending-clr;
+                    }
+
+                    &.progress-50 {
+                        background-color: $approved-clr;
+                    }
+
+                    &.progress-100 {
+                        background-color: $accent-clr;
+                    }
+
                 }
 
                 #progressInput {
@@ -126,7 +139,7 @@
 
                 .gig-img {
                     cursor: pointer;
-                    width: 30%;
+                    width: 100%;
                     max-width: rem(140px);
 
                     img {
@@ -149,15 +162,33 @@
             }
 
             .order-data {
-                // grid-template-columns: 1fr 1fr;
                 display: grid;
-                margin-block-start: rem(12px);
+                grid-template-columns: 1fr 1fr;
                 min-height: rem(92px);
+                margin-block-start: rem(12px);
 
-                .btn-container {
-                    display: flex;
-                    gap: 1rem;
+                .btn-review {
+                    grid-column: 2;
+                    grid-row: 1;
+                    justify-content: end;
+
+                    &>* {
+                        color: $light-clr !important;
+                        background-color: $dark-accent-clr !important;
+                        width: rem(128px);
+                    }
                 }
+
+                .btn-order {
+                    grid-column: 2;
+                    grid-row: 2;
+                    justify-content: end;
+
+                    &>* {
+                        width: rem(128px);
+                    }
+                }
+
 
                 .order {
                     grid-column: 1;
@@ -184,15 +215,6 @@
                             margin-inline-end: rem(1px);
                         }
                     }
-                }
-
-
-                .add-review {
-                    grid-row: 1;
-                }
-
-                .show-order {
-                    grid-row: 2;
                 }
 
                 .btn {
@@ -222,10 +244,31 @@
                 }
             }
         }
+
+        .no-orders-msg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            text-align: center;
+            font-size: rem(35px);
+
+            img {
+                width: rem(200px);
+            }
+        }
     }
 
     @include for-mobile-layout {
         .buyer-orders {
+            .no-orders-msg {
+                font-size: rem(18px);
+                img {
+                    width: rem(70px);
+                }
+            }
+
             .orders-layout {
                 .order-card-container {
                     img {
@@ -233,7 +276,13 @@
                     }
 
                     .order-data {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: 1fr;
+
                         .order {
+                            justify-content: space-between;
+                            margin-block-end: rem(12px);
+
                             h3 {
                                 font-size: 13px;
                                 width: rem(120px);
@@ -244,6 +293,36 @@
                                 margin: 0;
                             }
                         }
+
+                        .btn-review {
+                            grid-column: 1;
+                            grid-row: 3;
+                            justify-content: center;
+
+                            &>* {
+                                flex-grow: 1;
+                                width: rem(128px);
+                                color: $light-clr !important;
+                                background-color: $dark-accent-clr !important;
+                            }
+                        }
+
+                        .btn-order {
+                            grid-column: 1;
+                            grid-row: 4;
+                            justify-content: center;
+                            margin-block-start: rem(12px);
+
+                            &>* {
+                                flex-grow: 1;
+                                width: rem(128px);
+                            }
+                        }
+
+                        .btn {
+                            padding-block: rem(25px);
+                        }
+
                     }
                 }
             }

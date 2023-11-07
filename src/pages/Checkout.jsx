@@ -46,8 +46,6 @@ export function Checkout() {
             let order = { buyer: loggedUser, seller: gig.owner, gig, status: 'pending', packPrice: calculateRoundedPrice(packPrice), daysToMake: packDaysToMake, title }
             order.createdAt = Date.now()
 
-            console.log(order, 'Order before server')
-
             const orderToSave = await addOrder({ ...order })
             navigate('/order')
             showSuccessMsg(`Purchased service successfully!`)

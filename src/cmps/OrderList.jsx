@@ -1,12 +1,14 @@
 import { useState } from "react"
 import { OrderPreview } from "./OrderPreview"
 import { Link } from "react-router-dom"
-
-
+import emptyTray from "../assets/img/empty-tray.svg"
 
 export function OrderList({ orders, loggedUser, mode, openModal, onApproveOrder, onDeclineOrder, onFulfillOrder }) {
-
     const [selectedBtn, setSelectedBtn] = useState(null)
+
+    function navigateToExplore() {
+        navigate('/gig')
+    }
 
     if (mode === 'buyer') {
         orders = orders.filter(order => order.buyer._id === loggedUser._id)
@@ -16,12 +18,10 @@ export function OrderList({ orders, loggedUser, mode, openModal, onApproveOrder,
 
     if (mode === 'buyer' && !orders.length) return (
         <>
-            <Link to={'/gig'} className="logo">
-                <i className="empty-tray fa-solid fa-inbox"></i>
-                <span>
-                    No orders yet <span className="dot">{','}</span> <br /> Click to find services on sixerr<span className="dot">.</span>
-                </span>
-            </Link>
+            <div className="no-orders-msg">
+                <img src={emptyTray} alt="No order icon" /> <br />
+                No orders yet <span className="dot">{','}</span> <br /> <span className="click" onClick={navigateToExplore}>Click to find services on sixerr</span><span className="dot">.</span>
+            </div>
         </>
     )
 
