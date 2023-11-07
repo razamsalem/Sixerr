@@ -17,7 +17,8 @@ export const utilService = {
     getRandomDate,
     calculateDaysFromTimestamp,
     getFlag,
-    getCategorySubHeader
+    getCategorySubHeader,
+    getRandomFloat
 }
 
 function makeId(length = 6) {
@@ -52,6 +53,10 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
+function getRandomFloat(min, max) {
+    const randomFloat = Math.random() * (max - min) + min;
+    return Math.round(randomFloat * 10) / 10
+}
 
 function randomPastTime() {
     const HOUR = 1000 * 60 * 60
