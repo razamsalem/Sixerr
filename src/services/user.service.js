@@ -85,6 +85,7 @@ function getEmptyUser() {
         desc: '',
         isSeller: '',
         location: 'Israel',
+        rate: utilService.getRandomFloat(4.5, 5),
         reviews: [],
         lang: ["English", "Hebrew"],
         level: 1
