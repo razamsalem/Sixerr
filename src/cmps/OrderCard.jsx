@@ -56,7 +56,7 @@ export function OrderCard({ order, openModal }) {
                 <p className="date">Due date on {utilService.calculateDaysFromTimestamp(order.createdAt, order.daysToMake)}</p>
 
                 <div className="progress-bar">
-                    <div className="progress" style={{ width: `${progress}%` }}></div>
+                    <div className={`progress progress-${progress}`} style={{ width: `${progress}%` }}></div>
                 </div>
                 <input readOnly type="range" id="progressInput" min="0" max="100" value="0"></input>
             </div>
@@ -66,7 +66,7 @@ export function OrderCard({ order, openModal }) {
                     <img onClick={navigateToGig} src={order.gig.imgUrls[0] || defaultGigImg} alt="Gig Picture" onError={e => e.currentTarget.src = defaultGigImg} />
                 </div>
 
-                <div className="gig-info"> 
+                <div className="gig-info">
                     <h4 className="gig-title">{order.gig.title}</h4>
                     <h5 onClick={() => onSetFilterBy(order.gig.category)} className="click">{order.gig.category}</h5>
                     <h5 className="seller">From <span className="click" onClick={navigateToSeller}>{order.seller.fullname}</span></h5>

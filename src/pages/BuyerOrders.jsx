@@ -1,18 +1,18 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import emptyTray from "../assets/img/empty-tray.svg"
 import { OrderCard } from "../cmps/OrderCard";
 import { OrderModal } from "../cmps/OrderModal";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { OrderList } from "../cmps/OrderList";
-import { socketService } from "../services/socket.service";
-import { getActionUpdateOrder } from "../store/actions/order.actions";
-import { showSuccessMsg } from "../services/event-bus.service";
 import LoadingCircle from "../cmps/LoadingCircle";
+import { useNavigate } from "react-router";
 
 export function BuyerOrders() {
     const [isModalOpen, setModalOpen] = useState(null)
     const [selectedOrder, setSelectedOrder] = useState(null)
     const [isTableDisplay, setTableDisplay] = useState(false)
     const loggedUser = useSelector(storeState => storeState.userModule.user)
+    const navigate = useNavigate()
     let orders = useSelector(storeState => storeState.orderModule.orders)
     orders = orders.filter(order => order.buyer._id === loggedUser._id)
     orders.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
@@ -34,11 +34,17 @@ export function BuyerOrders() {
         setModalOpen(false)
     }
 
+    function navigateToExplore() {
+        navigate('/gig')
+    }
+
     function handleBackgroundClick(ev) {
         if (ev.target.classList.contains("modal-background")) {
             setModalOpen(false)
         }
     }
+
+
     if (!orders) return <div className='loading'>{<LoadingCircle />}</div>
     return (
         <>
@@ -55,9 +61,10 @@ export function BuyerOrders() {
                                 <button onClick={showTable}><i className="fa-solid fa-table"></i></button>
                             </div>
                         </div>
-                        {!orders.length && <span>
-                            No orders yet <span className="dot">{','}</span> <br /> Click to find services on sixerr<span className="dot">.</span>
-                        </span>}
+                        {!orders.length && <div className="no-orders-msg">
+                            <img src={emptyTray} alt="No order icon" /> <br />
+                            No orders yet <span className="dot">{','}</span> <br /> <span className="click" onClick={navigateToExplore}>Click to find services on sixerr</span><span className="dot">.</span>
+                        </div>}
 
                         <section className="orders-layout">
                             {orders.map((order, idx) => (

@@ -111,6 +111,19 @@
                     height: 100%;
                     background-color: $dark-accent-clr;
                     transition: width 0.3s ease-in-out;
+
+                    &.progress-25 {
+                        background-color: $pending-clr;
+                    }
+
+                    &.progress-50 {
+                        background-color: $approved-clr;
+                    }
+
+                    &.progress-100 {
+                        background-color: $accent-clr;
+                    }
+
                 }
 
                 #progressInput {
@@ -158,14 +171,14 @@
                     grid-column: 2;
                     grid-row: 1;
                     justify-content: end;
-                    
+
                     &>* {
                         color: $light-clr !important;
                         background-color: $dark-accent-clr !important;
                         width: rem(128px);
                     }
                 }
-                
+
                 .btn-order {
                     grid-column: 2;
                     grid-row: 2;
@@ -231,10 +244,31 @@
                 }
             }
         }
+
+        .no-orders-msg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            text-align: center;
+            font-size: rem(35px);
+
+            img {
+                width: rem(200px);
+            }
+        }
     }
 
     @include for-mobile-layout {
         .buyer-orders {
+            .no-orders-msg {
+                font-size: rem(18px);
+                img {
+                    width: rem(70px);
+                }
+            }
+
             .orders-layout {
                 .order-card-container {
                     img {
@@ -244,10 +278,11 @@
                     .order-data {
                         grid-template-columns: 1fr;
                         grid-template-rows: 1fr;
-                        
+
                         .order {
                             justify-content: space-between;
                             margin-block-end: rem(12px);
+
                             h3 {
                                 font-size: 13px;
                                 width: rem(120px);
@@ -271,23 +306,23 @@
                                 background-color: $dark-accent-clr !important;
                             }
                         }
-                        
+
                         .btn-order {
                             grid-column: 1;
                             grid-row: 4;
                             justify-content: center;
                             margin-block-start: rem(12px);
-        
+
                             &>* {
                                 flex-grow: 1;
                                 width: rem(128px);
                             }
                         }
-        
+
                         .btn {
-                            padding-block:rem(25px) ;
+                            padding-block: rem(25px);
                         }
-                        
+
                     }
                 }
             }
