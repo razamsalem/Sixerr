@@ -5,7 +5,7 @@ export function BigOrderPreview({ order }) {
 
     return (
         <article className="big-order-preview">
-            <h1 className="preview-heading">Your order</h1>
+            <h2 className="preview-heading">Your order</h2>
             <img src={order.gig.imgUrls && order.gig.imgUrls[0] || imgNotFound} alt="gig-img" onError={e => e.currentTarget.src = imgNotFound} />
 
             <h2 className="gig-heading">{order.gig.title}</h2>
