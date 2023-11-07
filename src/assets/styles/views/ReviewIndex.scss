@@ -2,7 +2,7 @@
     display: grid;
     gap: 4rem;
     margin-top: 3.125rem;
-    padding-inline: 33px;
+    padding-inline: 0;
 
     .add-review {
         display: flex;
@@ -15,24 +15,24 @@
             color: $dark-clr1;
             font-size: rem(32px);
             font-weight: 900;
+            margin-bottom: em(9px);
+            
         }
 
         .sub-heading {
-            font-size: rem(23px);
-            color: $dark-clr;
+            font-size: 19px;
             font-weight: 400;
-            // margin-block-end: rem(20px);
-            line-height: rem(30px);
+            line-height: 23px;
         }
 
         label {
-            font-size: rem(19px);
-            font-weight: 500;
-            display: flex;
-            flex-direction: column;
-            gap: em(7px);
-            color: $dark-clr;
-            margin-bottom: 5px;
+                font-size: 1.1875rem;
+                font-weight: 500;
+                display: flex;
+                flex-direction: column;
+                color: #404145;
+                margin-bottom: 5px;
+                gap: 1.3125em;
         }
 
         .txt-label {
@@ -40,7 +40,8 @@
             position: relative;
             font-size: rem(19px);
             font-weight: 500;
-            gap: em(25px);
+            // gap: em(25px);
+            gap: em(11px);
 
             textarea {
                 resize: none;
@@ -71,8 +72,10 @@
 
         .rate-label {
             .stars {
+                justify-content: space-around;
                 .fa-star {
-                    font-size: 1.7rem;
+                    // font-size: rem(22px);
+                    font-size: rem(32px);
                     cursor: pointer;
 
                     &.fa-solid {
@@ -110,11 +113,11 @@
         align-self: center;
         border: 0.125em solid #e5e5e7;
         padding: 0.875em 1.5em;
-        gap: 0.625em;
+        gap: 22px;
 
         .preview-heading {
             text-align: center;
-            color: $dark-clr-1;
+            color: $dark-clr1;
             text-transform: uppercase;
             font-weight: 900;
             letter-spacing: 1px
@@ -123,10 +126,10 @@
         .gig-heading {
             font-size: 1.3rem;
             color: black;
-            margin-block-end: em(8px);
-            text-align: center;
-            line-height: em(30px);
-            font-size: em(20px);
+            /* margin-block-end: 0.5em; */
+            text-align: left;
+            line-height: 1.3125em;
+            font-size: 1.25em;
         }
 
         .order-details {
@@ -219,12 +222,18 @@
             grid-column: 1;
             grid-row: 1;
 
+            .heading-container{
+                margin-block-end: rem(15px);
+            }
+
             h2 {
                 text-align: start;
             }
 
             .rate-label {
                 place-items: start;
+                margin-block-end: rem(15px);
+                gap: 0.8rem;
 
                 .stars {
                     place-content: start;
@@ -262,5 +271,9 @@
                 width: 18em;
             }
         }
+    }
+
+    @include for-mobile-layout{
+        
     }
 }
