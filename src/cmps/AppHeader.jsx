@@ -117,9 +117,18 @@ export function AppHeader() {
                     </div>
 
                     <nav className={`links-container }`}>
-                        {routes.map(route => !route.shouldRender ? ''
-                            :
-                            <NavLink className='btn' key={route.path} to={route.path}>{route.label}</NavLink>)}
+                    {routes.map(route =>
+                        !route.shouldRender ? '' :
+                            route.label === 'Explore' ? (
+                            <NavLink className='btn' key={route.path} to={route.path} onClick={() => setFilterBy(getClearFilter())}>
+                                {route.label}
+                            </NavLink>
+                            ) : (
+                            <NavLink className='btn' key={route.path} to={route.path}>
+                                {route.label}
+                            </NavLink>
+                            )
+                        )}
 
                         {user &&
                             <>

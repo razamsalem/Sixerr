@@ -20,8 +20,9 @@ export function ImgUploader({ onUploaded = null }) {
   }
 
   function getUploadLabel() {
+    if (imgData.imgUrl && isUploading) return <img className='loading' src={threeDots} />
     if (imgData.imgUrl) return 'Upload More?'
-    return isUploading ? <img src={threeDots} /> : 'Upload Image'
+    return isUploading ? <img className='loading' src={threeDots} /> : 'Upload Image'
   }
 
   return (
@@ -31,7 +32,7 @@ export function ImgUploader({ onUploaded = null }) {
         {getUploadLabel()}
         <input className='user-info-input' type="file" onChange={uploadImg} accept="img/*" id="imgUpload" />
       </label>
-      {imgData.imgUrl && <img src={imgData.imgUrl} style={{ maxWidth: '200px', float: 'right' }} />}
+      {imgData.imgUrl && <img className='img-preview' src={imgData.imgUrl} style={{ maxWidth: '200px', float: 'right' }} />}
     </div>
   )
 }

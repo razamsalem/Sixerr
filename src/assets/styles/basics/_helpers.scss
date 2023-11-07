@@ -56,12 +56,17 @@
 }
 
 .change-action {
+    text-align: center;
     color: $dark-clr;
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: em(2px);
     margin-inline-start: em(3px);
     margin-block-start: rem(15px);
+
+    &.demo {
+        color: $dark-clr-1;
+    }
 }
 
 .empty {

@@ -2,35 +2,35 @@
     padding: 0;
 
     li {
-        padding-block-end: 24px;
+        padding-block-end: rem(24px);
     }
-    
+
     span {
         display: flex;
         text-align: left;
         align-items: center;
-        padding-block-end: 8px;
+        padding-block-end: rem(8px);
     }
 
     img {
-        width: 24px;
-        margin-inline-end: 10px;
+        width: rem(24px);
+        margin-inline-end: rem(10px);
     }
 
     h6 {
-        font-size: 18px;
+        font-size: rem(18px);
         line-height: 140%;
         font-weight: 700;
         color: $dark-clr;
     }
 
     .txt {
-        max-width: 471px;
-        max-height: 52px;
+        max-width: rem(471px);
+        // max-height: rem(52px);
 
         p {
-            font-size: 18px;
-            line-height: 26px;
+            font-size: rem(18px);
+            line-height: 1;
             display: block;
             color: $dark-clr-1;
         }

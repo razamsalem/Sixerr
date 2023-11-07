@@ -286,6 +286,10 @@
         }
 
         .app-header {
+            .hamburger-icon {
+                padding: 0;
+            }
+
             .logo-container {
                 .logo {
                     display: none;
