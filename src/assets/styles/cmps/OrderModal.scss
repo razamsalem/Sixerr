@@ -101,4 +101,28 @@
             }
         }
     }
+
+    @include for-mobile-layout {
+        width: 100%;
+        max-height: 100%;
+
+        .contact-buyer {
+            button {
+                margin-block-start: rem(18px);
+            }
+        }
+
+        .info {
+            ul {
+                li {
+                    display: flex;
+                    width: 100% !important;
+                    justify-content: space-between;
+                    color: $co-clr;
+                    color: $dark-clr-1;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
 }

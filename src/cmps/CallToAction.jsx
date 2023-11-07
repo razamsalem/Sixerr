@@ -89,8 +89,8 @@ export function CallToAction({ gig, isPurchase = false, onPurchaseOrder, openMod
 
                                 <div className="features">
                                     <ul>
-                                        {features.map(feature => (
-                                            <li>{feature}</li>
+                                        {features.map((feature, idx) => (
+                                            <li key={idx}>{feature}</li>
                                         ))}
                                     </ul>
                                 </div>
