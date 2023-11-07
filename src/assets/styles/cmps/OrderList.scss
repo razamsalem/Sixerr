@@ -6,8 +6,8 @@
     &.buyer {
         td {
             &.order-status {
-                padding: rem(10px);
-                text-align: center;
+                // padding: rem(10px);
+                // text-align: center;
             }
         }
     }
@@ -19,10 +19,7 @@
         td {
             color: $co-clr;
             padding: 10px;
-
-            &.order-status {
-                padding-inline-start: rem(30px);
-            }
+            padding-inline-start: 20px;
         }
 
     }
