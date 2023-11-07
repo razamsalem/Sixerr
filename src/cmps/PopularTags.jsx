@@ -6,13 +6,7 @@ export function PopularTags({ globalFilterBy, setFilterBy }) {
     const tags = ['Website Design', 'Wordpress', 'Logo Design', 'AI Services']
 
     function replaceAmpersand(str) {
-        if (typeof str === 'string') {
-          return str.replace(/&/g, '+%26+').replace(/\s/g, '');
-        } else {
-          // Handle non-string input (optional)
-          console.error('Input is not a string.');
-          return str;
-        }
+          return str.replace(/&/g, '+%26+').replace(/\s/g, '')
       }
       
     function getCategory(tag) {
