@@ -111,6 +111,12 @@ export function GigIndex() {
         try {
             setFilterBy({ ...filterBy, sortBy: value })
             window.scrollTo(0, 0)
+            setIsLoading(true)
+            const loadingTimeout = setTimeout(() => {
+                setIsLoading(false)
+                console.log('done')
+            }, 1500)
+
         } catch (error) {
             showErrorMsg('Could not preform action at this time')
             console.log('Error while changing the page:', error)

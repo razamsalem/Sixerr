@@ -2,20 +2,26 @@ import { useSelector } from "react-redux";
 import emptyTray from "../assets/img/empty-tray.svg"
 import { OrderCard } from "../cmps/OrderCard";
 import { OrderModal } from "../cmps/OrderModal";
-import {  useState } from "react";
+import { useState } from "react";
 import { OrderList } from "../cmps/OrderList";
 import LoadingCircle from "../cmps/LoadingCircle";
 import { useNavigate } from "react-router";
+import { DropdownBtn } from "../cmps/DropdownBtn";
 
 export function BuyerOrders() {
     const [isModalOpen, setModalOpen] = useState(null)
     const [selectedOrder, setSelectedOrder] = useState(null)
     const [isTableDisplay, setTableDisplay] = useState(false)
+    const [selectedBtn, setSelectedBtn] = useState(null)
+    const [selectedSort, setSelectedSort] = useState(true)
     const loggedUser = useSelector(storeState => storeState.userModule.user)
     const navigate = useNavigate()
+
     let orders = useSelector(storeState => storeState.orderModule.orders)
     orders = orders.filter(order => order.buyer._id === loggedUser._id)
-    orders.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+    const sortNew = [...orders].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+    const sortOld = [...orders].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
+    const sortedOrders = selectedSort ? sortNew : sortOld
 
     async function showTable() {
         setTableDisplay(true)
@@ -44,7 +50,6 @@ export function BuyerOrders() {
         }
     }
 
-
     if (!orders) return <div className='loading'>{<LoadingCircle />}</div>
     return (
         <>
@@ -57,6 +62,13 @@ export function BuyerOrders() {
                         <div className="user-orders ">
                             <h1 className="header"><i className="fa-solid fa-box"></i> My orders</h1>
                             <div>
+                                <label className='sort-container'>
+                                    <span className='sort-title'>Sort</span>
+                                    <DropdownBtn selectedBtn={selectedBtn} setSelectedBtn={setSelectedBtn}>
+                                        <span data-value={'newest'} onClick={() => setSelectedSort(true)}>Newest</span>
+                                        <span data-value={'oldest'} onClick={() => setSelectedSort(false)}>Oldest</span>
+                                    </DropdownBtn>
+                                </label>
                                 <button className={`${!isTableDisplay ? 'active' : ''}`} onClick={hideTable}><i className="fa-solid fa-grip"></i></button>
                                 <button onClick={showTable}><i className="fa-solid fa-table"></i></button>
                             </div>
@@ -67,7 +79,7 @@ export function BuyerOrders() {
                         </div>}
 
                         <section className="orders-layout">
-                            {orders.map((order, idx) => (
+                            {sortedOrders.map((order, idx) => (
                                 <OrderCard key={idx} order={order} loggedUser={loggedUser} openModal={openOrderModal} />
                             ))}
                         </section>
@@ -79,11 +91,18 @@ export function BuyerOrders() {
                             <div className="user-orders ">
                                 <h1 className="header"><i className="fa-solid fa-box"></i> My orders</h1>
                                 <div>
+                                    <label className='sort-container'>
+                                        <span className='sort-title'>Sort</span>
+                                        <DropdownBtn selectedBtn={selectedBtn} setSelectedBtn={setSelectedBtn}>
+                                            <span data-value={'newest'} onClick={() => setSelectedSort(true)}>Newest</span>
+                                            <span data-value={'oldest'} onClick={() => setSelectedSort(false)}>Oldest</span>
+                                        </DropdownBtn>
+                                    </label>
                                     <button onClick={hideTable}><i className="fa-solid fa-grip"></i></button>
                                     <button className={`${isTableDisplay ? 'active' : ''}`} onClick={showTable}><i className="fa-solid fa-table"></i></button>
                                 </div>
                             </div>
-                            <OrderList orders={orders} openModal={openOrderModal} loggedUser={loggedUser} mode={'buyer'} />
+                            <OrderList orders={sortedOrders} openModal={openOrderModal} loggedUser={loggedUser} mode={'buyer'} />
                         </div>
                     </>
                 }
