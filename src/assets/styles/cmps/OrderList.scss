@@ -3,15 +3,6 @@
     border: 1px solid $modal-filter-border-clr;
     width: 100%;
 
-    &.buyer {
-        td {
-            &.order-status {
-                // padding: rem(10px);
-                // text-align: center;
-            }
-        }
-    }
-
     thead {
         background-color: $light-clr;
         text-transform: uppercase;
