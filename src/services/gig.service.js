@@ -174,7 +174,8 @@ function getEmptyGig() {
         price: 5, //Don't remove this temporary to make the app work properly
         daysToMake: 1, //Don't remove this temporary to make the app work properly
         description: '',
-        imgUrls: ['https://res.cloudinary.com/dgsfbxsed/image/upload/v1699295916/img-1_irmyfa.webp', 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699295916/img-2_sqsmdp.webp'],
+        // imgUrls: ['https://res.cloudinary.com/dgsfbxsed/image/upload/v1699295916/img-1_irmyfa.webp', 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699295916/img-2_sqsmdp.webp'],
+        imgUrls: [],
         category: '',
         tags: [],
         likedByUsers: ['mini-user']
