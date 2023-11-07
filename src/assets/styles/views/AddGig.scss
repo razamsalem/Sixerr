@@ -152,7 +152,6 @@
 
 
                     img {
-                        position: static;
                         width: rem(25px);
                         height: rem(25px);
 
@@ -160,8 +159,7 @@
                             display: none;
                         }
 
-                        .loading {
-                            position: static;
+                        .loading-img {
                             margin-block-start: rem(15px);
                             margin-inline-start: rem(15px);
                         }

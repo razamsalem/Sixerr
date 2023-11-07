@@ -20,9 +20,9 @@ export function ImgUploader({ onUploaded = null }) {
   }
 
   function getUploadLabel() {
-    if (imgData.imgUrl && isUploading) return <img className='loading' src={threeDots} />
+    if (imgData.imgUrl && isUploading) return <img className='loading-img' src={threeDots} />
     if (imgData.imgUrl) return 'Upload More?'
-    return isUploading ? <img className='loading' src={threeDots} /> : 'Upload Image'
+    return isUploading ? <img className='loading-img' src={threeDots} /> : 'Upload Image'
   }
 
   return (
