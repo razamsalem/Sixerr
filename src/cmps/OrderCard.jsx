@@ -66,7 +66,7 @@ export function OrderCard({ order, openModal }) {
                     <img onClick={navigateToGig} src={order.gig.imgUrls[0] || defaultGigImg} alt="Gig Picture" onError={e => e.currentTarget.src = defaultGigImg} />
                 </div>
 
-                <div className="gig-info">
+                <div className="gig-info"> 
                     <h4 className="gig-title">{order.gig.title}</h4>
                     <h5 onClick={() => onSetFilterBy(order.gig.category)} className="click">{order.gig.category}</h5>
                     <h5 className="seller">From <span className="click" onClick={navigateToSeller}>{order.seller.fullname}</span></h5>
