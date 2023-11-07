@@ -29,8 +29,8 @@
     background-color: $light-clr1;
 
     .buyer-orders {
-
         .order-card-container {
+            overflow: hidden;
             flex-direction: column;
             // height: rem(380px);
             padding: rem(30px);
@@ -162,7 +162,7 @@
                     &>* {
                         color: $light-clr !important;
                         background-color: $dark-accent-clr !important;
-                        width: 128px;
+                        width: rem(128px);
                     }
                 }
                 
@@ -172,7 +172,7 @@
                     justify-content: end;
 
                     &>* {
-                        width: 128px;
+                        width: rem(128px);
                     }
                 }
 
@@ -242,7 +242,12 @@
                     }
 
                     .order-data {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: 1fr;
+                        
                         .order {
+                            justify-content: space-between;
+                            margin-block-end: rem(12px);
                             h3 {
                                 font-size: 13px;
                                 width: rem(120px);
@@ -253,6 +258,36 @@
                                 margin: 0;
                             }
                         }
+
+                        .btn-review {
+                            grid-column: 1;
+                            grid-row: 3;
+                            justify-content: center;
+
+                            &>* {
+                                flex-grow: 1;
+                                width: rem(128px);
+                                color: $light-clr !important;
+                                background-color: $dark-accent-clr !important;
+                            }
+                        }
+                        
+                        .btn-order {
+                            grid-column: 1;
+                            grid-row: 4;
+                            justify-content: center;
+                            margin-block-start: rem(12px);
+        
+                            &>* {
+                                flex-grow: 1;
+                                width: rem(128px);
+                            }
+                        }
+        
+                        .btn {
+                            padding-block:rem(25px) ;
+                        }
+                        
                     }
                 }
             }
