@@ -27,6 +27,7 @@
 
 .buyer-orders-container {
     background-color: $light-clr1;
+    padding-block-end: rem(60px);
 
     .buyer-orders {
         .order-card-container {
@@ -260,23 +261,25 @@
     .sort-container {
         font-size: rem(16px);
         font-weight: 700;
+
         .drop-down-btn {
             .drop-down-menu {
                 width: rem(120px);
                 padding: rem(10px);
+
                 .drop-down-item {
                     &:not(:last-child) {
                         padding-block-end: rem(10px);
                     }
-                    
+
                     &:last-child {
                         padding-block-start: rem(10px);
                     }
-                    
-                    & > * {
+
+                    &>* {
                         color: $dark-clr-4;
                         justify-content: center;
-                        
+
                         &:hover {
                             color: $dark-clr;
                         }
