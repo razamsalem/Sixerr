@@ -1,4 +1,5 @@
 import { httpService } from './http.service'
+import { utilService } from './util.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 const BASE_URL = 'auth/'
@@ -98,6 +99,7 @@ function getLoggedinUser() {
 
 function getEmptyUser() {
     return {
+        rate: utilService.getRandomFloat(4.5, 5),
         fullname: '',
         username: '',
         password: '',
