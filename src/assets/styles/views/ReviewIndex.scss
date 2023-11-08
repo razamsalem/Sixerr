@@ -243,8 +243,8 @@
 
                 .stars {
                     place-content: start;
-                    margin-inline: rem(22px);
-                    margin-block-end: rem(15px);
+                    margin: unset;
+                    gap: rem(15px);
                 }
             }
 
