@@ -37,7 +37,6 @@ export function getActionUpdateGig(gig) {
 export async function loadGigs() {
     try {
         const { filterBy } = store.getState().gigModule
-        console.log();
         const gigs = await gigService.query(filterBy)
 
         store.dispatch({

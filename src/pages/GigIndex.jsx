@@ -55,26 +55,27 @@ export function GigIndex() {
                 paramFilter[key] = value
             }
         }
-
         setFilterBy(paramFilter)
         window.scrollTo({ top: 0, behavior: 'smooth' })
     }, [])
 
 
     useEffect(() => {
-        loadGigs()
         setSearchParams(filterBy)
-
-        const loadingTimeout = setTimeout(() => {
-            setIsLoading(false)
-            console.log('done')
-        }, 2000)
-
-        return () => {
-            clearTimeout(loadingTimeout)
-        }
+        onLoadGigs()
 
     }, [filterBy])
+
+    async function onLoadGigs() {
+        try {
+            setIsLoading(true)
+            await loadGigs()
+            setIsLoading(false)
+        } catch (err) {
+            setIsLoading(false)
+            console.log('error when loading gigs', err)
+        }
+    }
 
 
     async function onRemoveGig(gigId) {
@@ -113,11 +114,8 @@ export function GigIndex() {
             setFilterBy({ ...filterBy, sortBy: value })
             window.scrollTo(0, 0)
             setIsLoading(true)
-            const loadingTimeout = setTimeout(() => {
-                setIsLoading(false)
-                console.log('done')
-            }, 2500)
-
+            await loadGigs()
+            setIsLoading(false)
         } catch (error) {
             showErrorMsg('Could not preform action at this time')
             console.log('Error while changing the page:', error)
