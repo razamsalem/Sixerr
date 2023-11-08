@@ -57,6 +57,7 @@ export function GigIndex() {
         }
 
         setFilterBy(paramFilter)
+        window.scrollTo({ top: 0, behavior: 'smooth' })
     }, [])
 
 

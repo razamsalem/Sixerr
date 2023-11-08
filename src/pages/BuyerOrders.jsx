@@ -61,10 +61,9 @@ export function BuyerOrders() {
                     <div className="buyer-orders main-layout">
                         <div className="user-orders ">
                             <h1 className="header"><i className="fa-solid fa-box"></i> My orders</h1>
-                            <div>
+                            <div className="btns-container">
                                 <label className='sort-container'>
-                                    <span className='sort-title'>Sort</span>
-                                    <DropdownBtn selectedBtn={selectedBtn} setSelectedBtn={setSelectedBtn}>
+                                    <DropdownBtn icon={<i class="sort-btn fa-solid fa-filter"></i>} selectedBtn={selectedBtn} setSelectedBtn={setSelectedBtn}>
                                         <span data-value={'newest'} onClick={() => setSelectedSort(true)}>Newest</span>
                                         <span data-value={'oldest'} onClick={() => setSelectedSort(false)}>Oldest</span>
                                     </DropdownBtn>
@@ -90,10 +89,9 @@ export function BuyerOrders() {
                         <div className="main-layout">
                             <div className="user-orders ">
                                 <h1 className="header"><i className="fa-solid fa-box"></i> My orders</h1>
-                                <div>
+                                <div className="btns-container">
                                     <label className='sort-container'>
-                                        <span className='sort-title'>Sort</span>
-                                        <DropdownBtn selectedBtn={selectedBtn} setSelectedBtn={setSelectedBtn}>
+                                        <DropdownBtn icon={<i class="sort-btn fa-solid fa-filter"></i>} selectedBtn={selectedBtn} setSelectedBtn={setSelectedBtn}>
                                             <span data-value={'newest'} onClick={() => setSelectedSort(true)}>Newest</span>
                                             <span data-value={'oldest'} onClick={() => setSelectedSort(false)}>Oldest</span>
                                         </DropdownBtn>

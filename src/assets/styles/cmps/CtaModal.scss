@@ -181,6 +181,13 @@
         }
 
     }
+
+    @include for-mobile-layout {
+        .modal-content {
+            width: 100%;
+        }
+    }
+
 }
 
 .modal-backdrop {

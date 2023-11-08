@@ -20,7 +20,7 @@ export function ReviewList({ gigOwnerId, isUserProfile, onlyFirst }) {
     async function loadUser() {
         try {
             const seller = await userService.getById(gigOwnerId)
-            const twoFirstReviews = seller.reviews.slice(0, 3)
+            const twoFirstReviews = seller.reviews?.slice(0, 3)
             setFirstRev(twoFirstReviews)
             setSeller(seller)
         } catch (err) {
@@ -35,7 +35,7 @@ export function ReviewList({ gigOwnerId, isUserProfile, onlyFirst }) {
     return (
 
         <section className="reviews">
-            {seller.reviews && seller.reviews.length ?
+            {seller.reviews && seller?.reviews.length ?
                 <div>
                     <h1>Reviews</h1>
                     <ReviewChart reviews={seller.reviews} isUserProfile={isUserProfile} />

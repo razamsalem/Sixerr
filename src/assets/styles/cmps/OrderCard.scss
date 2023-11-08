@@ -5,11 +5,17 @@
 
     .header {
         text-transform: uppercase;
-        font-size: rem(30px);
+        font-size: rem(26px);
         margin-block: rem(30px);
     }
 
-    button {
+    .btns-container {
+        display: flex;
+        align-items: center;
+    }
+
+    button,
+    .drop-down-btn {
         background: none;
         color: $dark-clr;
         border: 1px solid $dark-clr;
@@ -17,6 +23,11 @@
         margin-inline: rem(5px);
         max-height: rem(36px);
         font-size: rem(16px);
+        padding: rem(5px) rem(10px);
+
+        .sort-btn {
+            font-size: 1rem;
+        }
 
         &.active {
             border: 1.5px solid $dark-clr;
