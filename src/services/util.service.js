@@ -202,7 +202,7 @@ function getFlag(country = 'un') {
         venezuela: 'https://res.cloudinary.com/de2rdmsca/image/upload/v1699385249/Flag_of_Venezuela__state_nngcam.svg',
         slovenia: 'https://res.cloudinary.com/de2rdmsca/image/upload/v1699451197/Flag_of_Slovenia_q3nvfd.svg',
         belgium: 'https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e7-1f1ea.png',
-        colombia: 'https://res.cloudinary.com/de2rdmsca/image/upload/v1699456324/colombia-flag_acidvb.gif',
+        colombia: 'https://res.cloudinary.com/de2rdmsca/image/upload/v1699456284/2000px-Flag_of_Colombia_svg-500x500_kkjh6j.png',
     }
 
     if (country.toLocaleLowerCase() in flags) return flags[country.toLocaleLowerCase()]
