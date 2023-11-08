@@ -65,10 +65,10 @@ async function login(userCred) {
     }
 }
 
-async function signup({ username, fullname, imgUrl, password }) {
+async function signup({ username, fullname, imgUrl, password, rate }) {
     if (!imgUrl) imgUrl = 'https://res.cloudinary.com/dgsfbxsed/image/upload/v1699048789/user-1_conuzo.png'
     try {
-        const userSignUp = await httpService.post(BASE_URL + 'signup', { username, fullname, imgUrl, password })
+        const userSignUp = await httpService.post(BASE_URL + 'signup', { username, fullname, imgUrl, password, rate })
         if (userSignUp) return saveLocalUser(userSignUp)
     } catch (err) {
         console.log(err)
