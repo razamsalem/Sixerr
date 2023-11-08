@@ -16,7 +16,7 @@
             font-size: rem(32px);
             font-weight: 900;
             margin-bottom: em(9px);
-            
+
         }
 
         .sub-heading {
@@ -26,13 +26,13 @@
         }
 
         label {
-                font-size: 1.1875rem;
-                font-weight: 500;
-                display: flex;
-                flex-direction: column;
-                color: #404145;
-                margin-bottom: 5px;
-                gap: 1.3125em;
+            font-size: 1.1875rem;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            color: #404145;
+            margin-bottom: rem(10px);
+            gap: 0.8125em;
         }
 
         .txt-label {
@@ -72,10 +72,11 @@
 
         .rate-label {
             .stars {
-                justify-content: space-around;
+                justify-content: space-between;
+
                 .fa-star {
                     // font-size: rem(22px);
-                    font-size: rem(32px);
+                    font-size: rem(38px);
                     cursor: pointer;
 
                     &.fa-solid {
@@ -179,6 +180,11 @@
 
                 .stars {
                     place-content: center;
+                    margin: unset;
+
+                    .fa-star {
+                        font-size: rem(32px);
+                    }
                 }
             }
 
@@ -222,7 +228,7 @@
             grid-column: 1;
             grid-row: 1;
 
-            .heading-container{
+            .heading-container {
                 margin-block-end: rem(15px);
             }
 
@@ -233,10 +239,12 @@
             .rate-label {
                 place-items: start;
                 margin-block-end: rem(15px);
-                gap: 0.8rem;
+                margin-bottom: 0.825rem;
 
                 .stars {
                     place-content: start;
+                    margin-inline: rem(22px);
+                    margin-block-end: rem(15px);
                 }
             }
 
@@ -254,16 +262,12 @@
         }
 
         .big-order-preview {
-            // width: 26em;
-            height: 83%;
             display: flex;
             flex-direction: column;
             justify-self: end;
-            // height: 83%;
-            // align-self: center;
             border: 0.125em solid #e5e5e7;
             padding: 0.875em 1.5em;
-            gap: 0.625em;
+            gap: 1.625em;
             grid-column: 2;
             justify-content: space-around;
 
@@ -273,7 +277,5 @@
         }
     }
 
-    @include for-mobile-layout{
-        
-    }
+    @include for-mobile-layout {}
 }
