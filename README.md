@@ -1,7 +1,7 @@
 # Sixerr - A Fullstack application based on Fiverr marketplace. 🛒
 
 ## In this team-effort project we implemented: 
-- A fullstack application that relies on React, State management w/ Redux and Express on the server-side. 🌟
+- A fullstack application that relies on React, State management w/ Redux, ExpressJS & MongoDB on the server-side. 🌟
   
 - Sockets for real-time updates on ordering-system using SocketIO. 🌐
   
