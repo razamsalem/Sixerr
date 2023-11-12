@@ -1,8 +1,18 @@
-# React + Vite
+# Sixerr - A Fullstack application based on Fiverr marketplace. 🛒
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## In this team-effort project we implemented: 
+- A fullstack application that relies on React, State management w/ Redux and Express on the server-side. 🌟
+  
+- Sockets for real-time updates on ordering-system using SocketIO. 🌐
+  
+- A Fully responisve, beautiful app including Pixel perfect design. 📲
+  
+- Advanced SCSS usage such as container queries, mixins and advanced UI Techniques such as the Intersection Observer API 🤩.
+  
+- Usage of libraries such as Bootsrap, MUI, Sliders and more. 🧰
+ 
+## [Take a look today 👀](https://sixerr.onrender.com)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Sixerr Homepage](https://res.cloudinary.com/dgsfbxsed/image/upload/v1699778450/sixerr-img-1_ryuo3l.png)
+![Sixerr Explore - Mobile](https://res.cloudinary.com/dgsfbxsed/image/upload/v1699778756/sixerr-img-5_fjmdkm.png)
+![Sixerr Gig Details - Mobile](https://res.cloudinary.com/dgsfbxsed/image/upload/v1699778446/sixerr-img-3_p2obpt.png)
