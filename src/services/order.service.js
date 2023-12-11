@@ -9,8 +9,6 @@ export const orderService = {
     query,
     save,
     getEmptyOrder,
-    // getById,
-    // remove,
 }
 
 async function query(filterBy = {}) {
@@ -22,14 +20,6 @@ async function query(filterBy = {}) {
         throw err
     }
 }
-
-// async function getById(orderId) {
-//     return await storageService.get(STORAGE_KEY, orderId)
-// }
-
-// async function remove(orderId) {
-//     await storageService.remove(STORAGE_KEY, orderId)
-// }
 
 async function save(order) {
     let savedOrder
